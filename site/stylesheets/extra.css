@@ -1,0 +1,30 @@
+/* Guide_line/docs/stylesheets/extra.css */
+:root {
+    --md-primary-fg-color:        #00E5FF; /* Cyan Neon chuẩn của bro */
+    --md-primary-fg-color--light: #00b8cc;
+    --md-primary-fg-color--dark:  #00E5FF;
+    --md-accent-fg-color:         #00E5FF;
+    --md-default-bg-color:        #050505; /* Deep black */
+    --md-default-fg-color:        #FFFFFF;
+    --md-code-font:               'JetBrains Mono', monospace;
+    --md-text-font:               'Inter', sans-serif;
+}
+
+/* Header mờ ảo giống style.css */
+.md-header {
+    background-color: rgba(5, 5, 5, 0.9) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #1a1a1a;
+}
+
+.md-tabs {
+    background-color: transparent !important;
+}
+
+/* Nút bấm và link */
+a.md-content__button {
+    background: #00E5FF;
+    color: #000;
+    border-radius: 4px;
+    font-weight: bold;
+}
