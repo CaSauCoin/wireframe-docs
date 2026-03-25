@@ -1,65 +1,126 @@
 # Configuration and Session Storage
 
-WireFrame stores user configuration and session data in a JSON file via `ConfigManager`.
+WireFrame stores user configuration and session data in a JSON file via the configuration system. This page documents file locations, session behavior, and how to reset configuration.
 
 ---
 
-## Config file location
+## Config File Location
 
-On Linux:
+| OS | Path |
+|---|---|
+| **Linux** | `~/.config/wireframe/user_config.json` |
+| **Windows** | `%APPDATA%\WireFrame\user_config.json` |
+| **macOS** | `~/Library/Application Support/WireFrame/user_config.json` |
 
-- Under the user’s home directory, in `~/.config/wireframe/user_config.json`.
-
-On Windows (if used):
-
-- Under `%APPDATA%\WireFrame\user_config.json`.
-
-`ConfigManager::getConfigPath` ensures the directory exists and creates the file if needed.
+WireFrame ensures the directory exists and creates the file if it doesn't already exist.
 
 ---
 
-## Session data
+## Config File Structure
 
-`SessionData`:
-
-- `openProjects` – list of project paths open during last session.
-- `openDocuments` – list of schematic/PCB files open during last session.
-
-Stored as:
+The config file is a JSON document with the following sections:
 
 ```json
-"session": {
-  "openProjects": [
-    "/path/to/Project1.prjxml"
-  ],
-  "openDocs": [
-    "/path/to/Project1_sch.schxml",
-    "/path/to/Project1_pcb.pcbxml"
-  ]
+{
+  "auth": {
+    "email": "user@example.com",
+    "token": "abc123...",
+    "activated": true
+  },
+  "session": {
+    "openProjects": [
+      "/home/user/Projects/MyBoard.prjxml"
+    ],
+    "openDocs": [
+      "/home/user/Projects/main.schxml",
+      "/home/user/Projects/board.pcbxml"
+    ]
+  }
 }
 ```
 
-On startup:
+### Sections
 
-1. `ConfigManager::load` reads config.
-2. `ProjectManager` and `Document_Manager` reopen listed projects and documents, if they still exist.
+| Section | Description |
+|---|---|
+| `auth` | Authentication data (email, activation token, activation status) |
+| `session` | Session restoration data (open projects and documents) |
 
 ---
 
-## Updating and clearing config
+## Session Data
 
-The app updates config:
+Session data tracks:
 
-- When auth data changes (login/logout).
-- When session data changes (opening/closing projects/documents).
+| Field | Type | Description |
+|---|---|---|
+| `openProjects` | Array of strings | Paths to project files (`.prjxml`) open during last session |
+| `openDocuments` | Array of strings | Paths to schematic/PCB files (`.schxml`, `.pcbxml`) open during last session |
 
-You can:
+### Startup behavior
 
-- **Clear auth data**:
-  - Use “Log out” / “Deactivate” action or delete the config file.
-- **Reset layout and session**:
-  - Delete `user_config.json` and let the app recreate it on next launch.
+1. WireFrame reads the config file.
+2. WireFrame reopens listed projects (if files still exist on disk).
+3. the document manager reopens listed documents.
+4. The **Project Structure** and **Editor** tabs are re-populated.
 
-> **Image placeholder**  
-> `![Config JSON](img/reference/config-json.png)`  
-> _Example of the JSON config file opened in a text editor, with auth and session sections highlighted._
+### Automatic saving
+
+The config is updated automatically when:
+
+- You **open or close** a project or document.
+- You **log in or out** (auth data changes).
+- The app is **closed normally** (session snapshot).
+
+<!-- TODO: Replace with actual screenshot
+     Capture the config file opened in a text editor (VS Code, Sublime, or terminal `cat` output):
+     - _The JSON content with `auth` and `session` sections visible._
+     - _The `openProjects` array showing 1–2 project paths._
+     - _The `openDocs` array showing 2–3 document paths._
+     - _Syntax highlighting for JSON._
+     Suggested size: 600×400px.
+-->
+
+[//]: # (![Config Json]&#40;../img/reference/config-json.png&#41;)
+
+
+---
+
+## Resetting Configuration
+
+### Clear authentication
+
+| Method | Steps |
+|---|---|
+| **In-app** | Use "Log out" or "Deactivate" action (if available in Help or Tools menu) |
+| **Manual** | Delete the config file or remove the `"auth"` section |
+
+### Reset layout and session
+
+| Method | Steps |
+|---|---|
+| **Delete config** | Remove `user_config.json` — the app recreates it with defaults on next launch |
+| **Delete ImGui config** | Remove `imgui.ini` in the working directory to reset panel layout |
+
+### Reset everything
+
+```bash
+# Linux
+rm ~/.config/wireframe/user_config.json
+rm imgui.ini  # if present in the app directory
+
+# Windows (PowerShell)
+Remove-Item "$env:APPDATA\WireFrame\user_config.json"
+Remove-Item imgui.ini
+```
+
+!!! warning "Data loss"
+    Deleting the config file removes all saved session data and authentication. You will need to sign in again and reopen your projects.
+
+---
+
+## See Also
+
+- [Installation](../installation.md) — first launch and activation.
+- [Projects & Files](../projects.md) — project and document management.
+- [FAQ & Troubleshooting](../faq.md) — common config-related issues.
