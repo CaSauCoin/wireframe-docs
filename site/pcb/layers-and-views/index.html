@@ -6,15 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="Complete user guide for WireFrame EDA — a lightweight schematic and PCB design environment built with ImGui, GLFW and OpenGL.">
+      
       
       
         <link rel="canonical" href="https://wireframe.com.vn/docs/pcb/layers-and-views/">
       
       
-        <link rel="prev" href="../routing">
+        <link rel="prev" href="../routing/">
       
       
-        <link rel="next" href="../zones-and-planes">
+        <link rel="next" href="../zones-and-planes/">
       
       
         
@@ -25,7 +27,7 @@
     
     
       
-        <title>Layers & Views - WireFrame EDA Docs</title>
+        <title>Layers & Views - WireFrame EDA Documentation</title>
       
     
     
@@ -46,8 +48,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
       
     
     
@@ -76,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#layers-and-views" class="md-skip">
+        <a href="#layer-definitions" class="md-skip">
           Skip to content
         </a>
       
@@ -85,15 +87,21 @@
       
     </div>
     
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
     
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="WireFrame EDA Docs" class="md-header__button md-logo" aria-label="WireFrame EDA Docs" data-md-component="logo">
+    <a href="../.." title="WireFrame EDA Documentation" class="md-header__button md-logo" aria-label="WireFrame EDA Documentation" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 4h12v1h3v2h-3v2h3v2h-3v2h3v2h-3v2h3v2h-3v1H6v-1H3v-2h3v-2H3v-2h3v-2H3V9h3V7H3V5h3zm5 11v3h1v-3zm2 0v3h1v-3zm2 0v3h1v-3z"/></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -104,7 +112,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            WireFrame EDA Docs
+            WireFrame EDA Documentation
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -141,6 +149,11 @@
       </label>
       <nav class="md-search__options" aria-label="Search">
         
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
@@ -167,14 +180,8 @@
     
   </nav>
   
-</header>
     
-    <div class="md-container" data-md-component="container">
       
-      
-        
-          
-            
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
   <div class="md-grid">
     <ul class="md-tabs__list">
@@ -206,9 +213,11 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../getting-started" class="md-tabs__link">
+        <a href="../../installation/" class="md-tabs__link">
           
   
+  
+    
   
   Getting Started
 
@@ -226,9 +235,11 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../schematic" class="md-tabs__link">
+        <a href="../../schematic/" class="md-tabs__link">
           
   
+  
+    
   
   Schematic Design
 
@@ -248,9 +259,11 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href=".." class="md-tabs__link">
+        <a href="../" class="md-tabs__link">
           
   
+  
+    
   
   PCB Layout
 
@@ -268,9 +281,11 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../libraries/symbols-library" class="md-tabs__link">
+        <a href="../../libraries/symbols-library/" class="md-tabs__link">
           
   
+  
+    
   
   Libraries
 
@@ -288,9 +303,11 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../advanced/selection-and-editing" class="md-tabs__link">
+        <a href="../../advanced/selection-and-editing/" class="md-tabs__link">
           
   
+  
+    
   
   Advanced Features
 
@@ -308,9 +325,11 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../reference/config-and-session" class="md-tabs__link">
+        <a href="../../reference/config-and-session/" class="md-tabs__link">
           
   
+  
+    
   
   Reference
 
@@ -320,10 +339,35 @@
   
 
       
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tutorial/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tutorial
+
+      </a>
+    </li>
+  
+
+      
     </ul>
   </div>
 </nav>
-          
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
         
       
       <main class="md-main" data-md-component="main">
@@ -342,13 +386,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="WireFrame EDA Docs" class="md-nav__button md-logo" aria-label="WireFrame EDA Docs" data-md-component="logo">
+    <a href="../.." title="WireFrame EDA Documentation" class="md-nav__button md-logo" aria-label="WireFrame EDA Documentation" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 4h12v1h3v2h-3v2h3v2h-3v2h3v2h-3v2h3v2h-3v1H6v-1H3v-2h3v-2H3v-2h3v-2H3V9h3V7H3V5h3zm5 11v3h1v-3zm2 0v3h1v-3zm2 0v3h1v-3z"/></svg>
 
     </a>
-    WireFrame EDA Docs
+    WireFrame EDA Documentation
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -387,6 +431,16 @@
   
   
     
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -441,35 +495,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Introduction
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../installation" class="md-nav__link">
+      <a href="../../installation/" class="md-nav__link">
         
   
   
@@ -497,7 +523,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ui-overview" class="md-nav__link">
+      <a href="../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ui-overview/" class="md-nav__link">
         
   
   
@@ -525,14 +579,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../projects" class="md-nav__link">
+      <a href="../../projects/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Projects Management
+    Projects & Files
   
 
     
@@ -561,6 +615,20 @@
   
     
     
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
     
     
       
@@ -578,8 +646,9 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-            
+          <div class="md-nav__link md-nav__container">
+            <a href="../../schematic/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -593,8 +662,14 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
@@ -608,32 +683,6 @@
           <ul class="md-nav__list" data-md-scrollfix>
             
               
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../schematic" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -642,7 +691,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../schematic/placing-components" class="md-nav__link">
+      <a href="../../schematic/placing-components/" class="md-nav__link">
         
   
   
@@ -670,7 +719,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../schematic/wiring-and-nets" class="md-nav__link">
+      <a href="../../schematic/wiring-and-nets/" class="md-nav__link">
         
   
   
@@ -698,7 +747,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../schematic/properties-and-attributes" class="md-nav__link">
+      <a href="../../schematic/properties-and-attributes/" class="md-nav__link">
         
   
   
@@ -726,7 +775,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../schematic/graphics-and-annotations" class="md-nav__link">
+      <a href="../../schematic/graphics-and-annotations/" class="md-nav__link">
         
   
   
@@ -764,6 +813,24 @@
   
     
     
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
     
     
       
@@ -782,8 +849,9 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
-            
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -797,8 +865,14 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
@@ -812,32 +886,6 @@
           <ul class="md-nav__list" data-md-scrollfix>
             
               
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -846,7 +894,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../footprints-and-placement" class="md-nav__link">
+      <a href="../footprints-and-placement/" class="md-nav__link">
         
   
   
@@ -874,7 +922,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../routing" class="md-nav__link">
+      <a href="../routing/" class="md-nav__link">
         
   
   
@@ -908,8 +956,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -929,7 +975,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="" class="md-nav__link md-nav__link--active">
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -952,8 +998,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -965,10 +1009,27 @@
   <a href="#layer-definitions" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Layer definitions
+        Layer Definitions
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Layer Definitions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-layer-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default layer stack
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -976,7 +1037,7 @@
   <a href="#layer-panel-ui" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Layer panel (UI)
+        Layer Panel (UI)
       
     </span>
   </a>
@@ -987,10 +1048,27 @@
   <a href="#layer-colors-and-rendering" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Layer colors and rendering
+        Layer Colors and Rendering
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Layer Colors and Rendering">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hidden-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hidden layers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -998,7 +1076,35 @@
   <a href="#view-controls" class="md-nav__link">
     <span class="md-ellipsis">
       
-        View controls
+        View Controls
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="View Controls">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Navigation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
       
     </span>
   </a>
@@ -1021,7 +1127,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../zones-and-planes" class="md-nav__link">
+      <a href="../zones-and-planes/" class="md-nav__link">
         
   
   
@@ -1049,7 +1155,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../dfm-and-drc" class="md-nav__link">
+      <a href="../dfm-and-drc/" class="md-nav__link">
         
   
   
@@ -1077,7 +1183,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fabrication-and-export" class="md-nav__link">
+      <a href="../fabrication-and-export/" class="md-nav__link">
         
   
   
@@ -1112,6 +1218,12 @@
   
   
     
+    
+      
+        
+      
+        
+      
     
     
     
@@ -1166,7 +1278,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../libraries/symbols-library" class="md-nav__link">
+      <a href="../../libraries/symbols-library/" class="md-nav__link">
         
   
   
@@ -1194,7 +1306,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../libraries/footprints-library" class="md-nav__link">
+      <a href="../../libraries/footprints-library/" class="md-nav__link">
         
   
   
@@ -1229,6 +1341,14 @@
   
   
     
+    
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1283,7 +1403,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/selection-and-editing" class="md-nav__link">
+      <a href="../../advanced/selection-and-editing/" class="md-nav__link">
         
   
   
@@ -1311,7 +1431,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/3d-viewer" class="md-nav__link">
+      <a href="../../advanced/3d-viewer/" class="md-nav__link">
         
   
   
@@ -1339,7 +1459,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/shortcuts" class="md-nav__link">
+      <a href="../../advanced/shortcuts/" class="md-nav__link">
         
   
   
@@ -1374,6 +1494,16 @@
   
   
     
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1428,7 +1558,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/config-and-session" class="md-nav__link">
+      <a href="../../reference/config-and-session/" class="md-nav__link">
         
   
   
@@ -1456,7 +1586,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/file-formats" class="md-nav__link">
+      <a href="../../reference/file-formats/" class="md-nav__link">
         
   
   
@@ -1477,9 +1607,92 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ & Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1501,8 +1714,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1514,10 +1725,27 @@
   <a href="#layer-definitions" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Layer definitions
+        Layer Definitions
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Layer Definitions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-layer-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default layer stack
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1525,7 +1753,7 @@
   <a href="#layer-panel-ui" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Layer panel (UI)
+        Layer Panel (UI)
       
     </span>
   </a>
@@ -1536,10 +1764,27 @@
   <a href="#layer-colors-and-rendering" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Layer colors and rendering
+        Layer Colors and Rendering
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Layer Colors and Rendering">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hidden-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hidden layers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1547,7 +1792,35 @@
   <a href="#view-controls" class="md-nav__link">
     <span class="md-ellipsis">
       
-        View controls
+        View Controls
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="View Controls">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Navigation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
       
     </span>
   </a>
@@ -1571,88 +1844,274 @@
 
 
 
-<h1 id="layers-and-views">Layers and Views</h1>
-<p>PCB layers are managed by <code>LayerManager</code> and influence visibility, color and type of drawing/rendering.</p>
+  <h1>Layers & Views</h1>
+
+<p>T# Layers and Views</p>
+<p>ooPCB layers control visibility, color, and rendering of board elements. This page covers layer definitions, the Layer panel, rendering behavior, and view controls.</p>
 <hr />
-<h2 id="layer-definitions">Layer definitions</h2>
-<p><code>LayerManager</code> defines:</p>
+<h2 id="layer-definitions">Layer Definitions<a class="headerlink" href="#layer-definitions" title="Permanent link">&para;</a></h2>
+<p>WireFrame defines the board layer stack. Each layer has:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>Layer identifier (e.g., F.Cu)</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>Display name (e.g., "F.Cu", "B.SilkS")</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>Layer type: Signal, Silk, Mask, Paste, Fab, Edge, User</td>
+</tr>
+<tr>
+<td><code>color</code></td>
+<td>Rendering color (editable)</td>
+</tr>
+<tr>
+<td><code>isVisible</code></td>
+<td>Whether the layer is drawn on the canvas</td>
+</tr>
+</tbody>
+</table>
+<h3 id="default-layer-stack">Default layer stack<a class="headerlink" href="#default-layer-stack" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Type</th>
+<th>Typical color</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>F.Cu</strong></td>
+<td>Signal</td>
+<td>Red</td>
+<td>Front copper (traces, pads)</td>
+</tr>
+<tr>
+<td><strong>B.Cu</strong></td>
+<td>Signal</td>
+<td>Blue</td>
+<td>Back copper</td>
+</tr>
+<tr>
+<td><strong>F.SilkS</strong></td>
+<td>Silk</td>
+<td>Yellow</td>
+<td>Front silkscreen (labels, outlines)</td>
+</tr>
+<tr>
+<td><strong>B.SilkS</strong></td>
+<td>Silk</td>
+<td>Magenta</td>
+<td>Back silkscreen</td>
+</tr>
+<tr>
+<td><strong>F.Mask</strong></td>
+<td>Mask</td>
+<td>Purple</td>
+<td>Front solder mask openings</td>
+</tr>
+<tr>
+<td><strong>B.Mask</strong></td>
+<td>Mask</td>
+<td>Green</td>
+<td>Back solder mask openings</td>
+</tr>
+<tr>
+<td><strong>F.Paste</strong></td>
+<td>Paste</td>
+<td>Light red</td>
+<td>Front solder paste</td>
+</tr>
+<tr>
+<td><strong>B.Paste</strong></td>
+<td>Paste</td>
+<td>Light blue</td>
+<td>Back solder paste</td>
+</tr>
+<tr>
+<td><strong>F.Fab</strong></td>
+<td>Fab</td>
+<td>Grey</td>
+<td>Front fabrication layer</td>
+</tr>
+<tr>
+<td><strong>B.Fab</strong></td>
+<td>Fab</td>
+<td>Grey</td>
+<td>Back fabrication layer</td>
+</tr>
+<tr>
+<td><strong>F.CrtYd</strong></td>
+<td>Courtyard</td>
+<td>Light grey</td>
+<td>Front courtyard (clearance areas)</td>
+</tr>
+<tr>
+<td><strong>B.CrtYd</strong></td>
+<td>Courtyard</td>
+<td>Light grey</td>
+<td>Back courtyard</td>
+</tr>
+<tr>
+<td><strong>Edge.Cuts</strong></td>
+<td>Edge</td>
+<td>Magenta</td>
+<td>Board outline / physical shape</td>
+</tr>
+<tr>
+<td><strong>Dwgs.User</strong></td>
+<td>User</td>
+<td>Grey</td>
+<td>User drawing annotations</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="layer-panel-ui">Layer Panel (UI)<a class="headerlink" href="#layer-panel-ui" title="Permanent link">&para;</a></h2>
+<p>Open via <strong>View → Toggle Layers</strong> or from the sidebar. The panel shows a table:</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Interaction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Eye icon</strong></td>
+<td>Click to toggle layer visibility (hidden layers are not rendered)</td>
+</tr>
+<tr>
+<td><strong>Color patch</strong></td>
+<td>Click to open a color picker and customize the layer color</td>
+</tr>
+<tr>
+<td><strong>Layer name</strong></td>
+<td>Click to set this layer as the <strong>active routing/drawing layer</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>active layer</strong> is highlighted with a distinct background (e.g., brighter or with a cyan indicator).</p>
+<!-- TODO: Replace with actual screenshot
+     Capture the Layer panel:
+     - _F.Cu shown first: eye icon enabled (visible), red color patch, **highlighted as the active layer** (brighter background or cyan indicator)._
+     - _B.Cu: blue color patch, visible, not active._
+     - _F.SilkS: yellow patch, visible._
+     - _B.SilkS, F.Mask, B.Mask: some with eye icons toggled off (greyed out text)._
+     - _Edge.Cuts: magenta patch, visible._
+     - _At least 10 layers visible in the list._
+     - _If a color picker is open (for one layer), show it as well._
+     Suggested size: 280×500px.
+-->
+<p><img alt="Layer Panel Detail" src="../../img/pcb/layer-panel-detail.png" /></p>
+<hr />
+<h2 id="layer-colors-and-rendering">Layer Colors and Rendering<a class="headerlink" href="#layer-colors-and-rendering" title="Permanent link">&para;</a></h2>
+<p>Rendering uses layer colors throughout:</p>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Color source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Traces</td>
+<td>Color of the trace's assigned layer</td>
+</tr>
+<tr>
+<td>Footprint graphics</td>
+<td>Color from the layer system based on each graphic's layer</td>
+</tr>
+<tr>
+<td>Pads</td>
+<td>Typically follows copper layer color</td>
+</tr>
+<tr>
+<td>Silkscreen</td>
+<td>F.SilkS / B.SilkS layer color (default: yellow / magenta)</td>
+</tr>
+<tr>
+<td>Board outline</td>
+<td>Edge.Cuts layer color (default: magenta)</td>
+</tr>
+<tr>
+<td>Zones</td>
+<td>Semi-transparent fill using the zone's layer color</td>
+</tr>
+</tbody>
+</table>
+<h3 id="hidden-layers">Hidden layers<a class="headerlink" href="#hidden-layers" title="Permanent link">&para;</a></h3>
 <ul>
-<li><code>PcbLayer</code>:</li>
-<li><code>id</code> (e.g., <code>PcbLayerId::F_Cu</code>).</li>
-<li><code>name</code> (e.g., <code>F.Cu</code>, <code>B.Cu</code>, <code>Edge.Cuts</code>).</li>
-<li><code>type</code> (<code>Signal</code>, <code>Silk</code>, <code>Mask</code>, <code>Paste</code>, <code>Fab</code>, <code>Edge</code>, <code>User</code>).</li>
-<li><code>color</code>.</li>
-<li><code>isVisible</code>.</li>
-</ul>
-<p>Default layers include:</p>
-<ul>
-<li><strong>Signal</strong>: F.Cu (0), B.Cu (31)</li>
-<li><strong>Silk</strong>: F.SilkS, B.SilkS</li>
-<li><strong>Mask</strong>: F.Mask, B.Mask</li>
-<li><strong>Paste</strong>: F.Paste, B.Paste</li>
-<li><strong>Fab</strong>: F.Fab, B.Fab</li>
-<li><strong>Courtyard</strong>: F.CrtYd, B.CrtYd</li>
-<li><strong>Edge</strong>: Edge.Cuts</li>
-<li><strong>User drawing</strong>: Dwgs.User</li>
+<li>When a layer is hidden (eye icon off), its traces, graphics, and pads are <strong>not drawn</strong>.</li>
+<li>Underlying data still exists — you can still select and edit hidden-layer items if you know they're there.</li>
 </ul>
 <hr />
-<h2 id="layer-panel-ui">Layer panel (UI)</h2>
-<p>Open via View menu or main menu:</p>
-<ul>
-<li>Shows a table:</li>
-<li>Column for <strong>visibility</strong>:<ul>
-<li>Eye icon toggles <code>isVisible</code>.</li>
-</ul>
-</li>
-<li>Column for <strong>color</strong>:<ul>
-<li>Color patch opens a color picker.</li>
-</ul>
-</li>
-<li>Column for <strong>name</strong>:<ul>
-<li>Clicking a layer selects it as the current PCB routing/drawing layer.</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p><strong>Image placeholder</strong><br />
-<code>![Layer panel detail](img/pcb/layer-panel-detail.png)</code><br />
-<em>Layer panel with 'F.Cu' highlighted as active routing layer, B.Cu visible but not active, several mask/silk layers greyed out.</em></p>
-</blockquote>
+<h2 id="view-controls">View Controls<a class="headerlink" href="#view-controls" title="Permanent link">&para;</a></h2>
+<h3 id="navigation">Navigation<a class="headerlink" href="#navigation" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Input</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pan</td>
+<td>Middle mouse button drag</td>
+</tr>
+<tr>
+<td>Zoom</td>
+<td>Mouse scroll wheel (centered on cursor)</td>
+</tr>
+<tr>
+<td>Fit to board</td>
+<td><span class="keys"><kbd class="key-f">F</kbd></span> (default) or <strong>View → Fit to Screen</strong></td>
+</tr>
+<tr>
+<td>Zoom to selection</td>
+<td><span class="keys"><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-f">F</kbd></span></td>
+</tr>
+<tr>
+<td>Zoom 100%</td>
+<td><span class="keys"><kbd class="key-1">1</kbd></span></td>
+</tr>
+</tbody>
+</table>
+<!-- TODO: Replace with actual video
+     Record a 15-second clip:
+     1. _A PCB with both F.Cu and B.Cu traces visible (red and blue)._
+     2. _Click the eye icon for B.Cu — all back-side traces and blue pads disappear._
+     3. _Click the eye icon for F.SilkS — silkscreen labels disappear._
+     4. _Re-enable both layers — everything reappears._
+     5. _Use the mouse wheel to zoom in on a dense area._
+     Resolution: 1280×720 at 30fps.
+-->
+<video controls width="100%">
+  <source src="../../img/pcb/layer-visibility.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
 <hr />
-<h2 id="layer-colors-and-rendering">Layer colors and rendering</h2>
-<p>Rendering functions (<code>FootprintRenderer</code>, <code>DrawingRenderer</code>, trace rendering) use layer colors:</p>
+<h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Traces:</li>
-<li>Drawn in the color of their layer.</li>
-<li>Footprint graphics:</li>
-<li>Lines, arcs, circles and polygons use per‑graphic <code>layerId</code> and color from <code>LayerManager</code>.</li>
-<li>Silkscreen:</li>
-<li>Typically yellow or cyan depending on side.</li>
-<li>Edge.Cuts:</li>
-<li>Magenta or another distinct color.</li>
+<li><a href="../">PCB Editor Overview</a> — general PCB workspace description.</li>
+<li><a href="../routing/">Routing</a> — the active layer determines which copper layer traces are routed on.</li>
+<li><a href="../fabrication-and-export/">Fabrication &amp; Export</a> — layer selection for Gerber export.</li>
 </ul>
-<p>Layer visibility:</p>
-<ul>
-<li>Hidden layers:</li>
-<li>Their traces and graphics are not drawn.</li>
-<li>However, underlying data still exist and can be operated on via selection/hotkeys (depending on future design decisions).</li>
-</ul>
-<hr />
-<h2 id="view-controls">View controls</h2>
-<p>Navigation:</p>
-<ul>
-<li>Pan:</li>
-<li>Middle mouse drag on the PCB canvas.</li>
-<li>Zoom:</li>
-<li>Mouse wheel, centered on mouse cursor.</li>
-<li>Fit:</li>
-<li>A "fit to board" or "fit to selection" command can be triggered (e.g., via keyboard).</li>
-<li>Uses controller functions similar to schematic's <code>fitAll</code>/<code>zoomToSelection</code>.</li>
-</ul>
-<blockquote>
-<p><strong>Video placeholder</strong><br />
-<em>Short video: user toggles visibility of B.Cu and silkscreen, then uses mouse wheel to zoom in on a small portion of the board.</em></p>
-</blockquote>
 
 
 
@@ -1670,6 +2129,8 @@
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -1683,6 +2144,46 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../routing/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Routing (Tracks &amp; Vias)">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Routing (Tracks & Vias)
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../zones-and-planes/" class="md-footer__link md-footer__link--next" aria-label="Next: Zones &amp; Planes">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Zones & Planes
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
@@ -1692,9 +2193,17 @@
     </div>
   
   
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/CaSauCoin/WireFrame_Product" target="_blank" rel="noopener" title="WireFrame on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
     </a>
   
 </div>
@@ -1712,7 +2221,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.expand", "navigation.indexes", "navigation.footer", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.tabs.link", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "stable", "provider": "mike"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>

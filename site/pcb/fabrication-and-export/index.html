@@ -6,15 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="Complete user guide for WireFrame EDA — a lightweight schematic and PCB design environment built with ImGui, GLFW and OpenGL.">
+      
       
       
         <link rel="canonical" href="https://wireframe.com.vn/docs/pcb/fabrication-and-export/">
       
       
-        <link rel="prev" href="../dfm-and-drc">
+        <link rel="prev" href="../dfm-and-drc/">
       
       
-        <link rel="next" href="../../libraries/symbols-library">
+        <link rel="next" href="../../libraries/symbols-library/">
       
       
         
@@ -25,7 +27,7 @@
     
     
       
-        <title>Fabrication & Export - WireFrame EDA Docs</title>
+        <title>Fabrication & Export - WireFrame EDA Documentation</title>
       
     
     
@@ -46,8 +48,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
       
     
     
@@ -85,15 +87,21 @@
       
     </div>
     
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
     
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="WireFrame EDA Docs" class="md-header__button md-logo" aria-label="WireFrame EDA Docs" data-md-component="logo">
+    <a href="../.." title="WireFrame EDA Documentation" class="md-header__button md-logo" aria-label="WireFrame EDA Documentation" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 4h12v1h3v2h-3v2h3v2h-3v2h3v2h-3v2h3v2h-3v1H6v-1H3v-2h3v-2H3v-2h3v-2H3V9h3V7H3V5h3zm5 11v3h1v-3zm2 0v3h1v-3zm2 0v3h1v-3z"/></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -104,7 +112,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            WireFrame EDA Docs
+            WireFrame EDA Documentation
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -141,6 +149,11 @@
       </label>
       <nav class="md-search__options" aria-label="Search">
         
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
@@ -167,14 +180,8 @@
     
   </nav>
   
-</header>
     
-    <div class="md-container" data-md-component="container">
       
-      
-        
-          
-            
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
   <div class="md-grid">
     <ul class="md-tabs__list">
@@ -206,9 +213,11 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../getting-started" class="md-tabs__link">
+        <a href="../../installation/" class="md-tabs__link">
           
   
+  
+    
   
   Getting Started
 
@@ -226,9 +235,11 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../schematic" class="md-tabs__link">
+        <a href="../../schematic/" class="md-tabs__link">
           
   
+  
+    
   
   Schematic Design
 
@@ -248,9 +259,11 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href=".." class="md-tabs__link">
+        <a href="../" class="md-tabs__link">
           
   
+  
+    
   
   PCB Layout
 
@@ -268,9 +281,11 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../libraries/symbols-library" class="md-tabs__link">
+        <a href="../../libraries/symbols-library/" class="md-tabs__link">
           
   
+  
+    
   
   Libraries
 
@@ -288,9 +303,11 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../advanced/selection-and-editing" class="md-tabs__link">
+        <a href="../../advanced/selection-and-editing/" class="md-tabs__link">
           
   
+  
+    
   
   Advanced Features
 
@@ -308,9 +325,11 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../reference/config-and-session" class="md-tabs__link">
+        <a href="../../reference/config-and-session/" class="md-tabs__link">
           
   
+  
+    
   
   Reference
 
@@ -320,10 +339,35 @@
   
 
       
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tutorial/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tutorial
+
+      </a>
+    </li>
+  
+
+      
     </ul>
   </div>
 </nav>
-          
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
         
       
       <main class="md-main" data-md-component="main">
@@ -342,13 +386,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="WireFrame EDA Docs" class="md-nav__button md-logo" aria-label="WireFrame EDA Docs" data-md-component="logo">
+    <a href="../.." title="WireFrame EDA Documentation" class="md-nav__button md-logo" aria-label="WireFrame EDA Documentation" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 4h12v1h3v2h-3v2h3v2h-3v2h3v2h-3v2h3v2h-3v1H6v-1H3v-2h3v-2H3v-2h3v-2H3V9h3V7H3V5h3zm5 11v3h1v-3zm2 0v3h1v-3zm2 0v3h1v-3z"/></svg>
 
     </a>
-    WireFrame EDA Docs
+    WireFrame EDA Documentation
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -387,6 +431,16 @@
   
   
     
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -441,35 +495,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Introduction
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../installation" class="md-nav__link">
+      <a href="../../installation/" class="md-nav__link">
         
   
   
@@ -497,7 +523,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ui-overview" class="md-nav__link">
+      <a href="../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ui-overview/" class="md-nav__link">
         
   
   
@@ -525,14 +579,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../projects" class="md-nav__link">
+      <a href="../../projects/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Projects Management
+    Projects & Files
   
 
     
@@ -561,6 +615,20 @@
   
     
     
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
     
     
       
@@ -578,8 +646,9 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-            
+          <div class="md-nav__link md-nav__container">
+            <a href="../../schematic/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -593,8 +662,14 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
@@ -608,32 +683,6 @@
           <ul class="md-nav__list" data-md-scrollfix>
             
               
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../schematic" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -642,7 +691,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../schematic/placing-components" class="md-nav__link">
+      <a href="../../schematic/placing-components/" class="md-nav__link">
         
   
   
@@ -670,7 +719,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../schematic/wiring-and-nets" class="md-nav__link">
+      <a href="../../schematic/wiring-and-nets/" class="md-nav__link">
         
   
   
@@ -698,7 +747,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../schematic/properties-and-attributes" class="md-nav__link">
+      <a href="../../schematic/properties-and-attributes/" class="md-nav__link">
         
   
   
@@ -726,7 +775,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../schematic/graphics-and-annotations" class="md-nav__link">
+      <a href="../../schematic/graphics-and-annotations/" class="md-nav__link">
         
   
   
@@ -764,6 +813,24 @@
   
     
     
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
     
     
       
@@ -782,8 +849,9 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
-            
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -797,8 +865,14 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
@@ -812,32 +886,6 @@
           <ul class="md-nav__list" data-md-scrollfix>
             
               
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -846,7 +894,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../footprints-and-placement" class="md-nav__link">
+      <a href="../footprints-and-placement/" class="md-nav__link">
         
   
   
@@ -874,7 +922,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../routing" class="md-nav__link">
+      <a href="../routing/" class="md-nav__link">
         
   
   
@@ -902,7 +950,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../layers-and-views" class="md-nav__link">
+      <a href="../layers-and-views/" class="md-nav__link">
         
   
   
@@ -930,7 +978,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../zones-and-planes" class="md-nav__link">
+      <a href="../zones-and-planes/" class="md-nav__link">
         
   
   
@@ -958,7 +1006,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../dfm-and-drc" class="md-nav__link">
+      <a href="../dfm-and-drc/" class="md-nav__link">
         
   
   
@@ -1013,7 +1061,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="" class="md-nav__link md-nav__link--active">
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1046,13 +1094,52 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#schematic-pdf-export" class="md-nav__link">
+  <a href="#export-overview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Schematic PDF export
+        Export Overview
       
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#schematic-pdf-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schematic PDF Export
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Schematic PDF Export">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#content-included" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Content included
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steps
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1060,10 +1147,38 @@
   <a href="#pcb-gerber-export" class="md-nav__link">
     <span class="md-ellipsis">
       
-        PCB Gerber export
+        PCB Gerber Export
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="PCB Gerber Export">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-exported-per-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is exported per layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#export-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Export workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1071,7 +1186,7 @@
   <a href="#drill-and-nc-files" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Drill and NC files
+        Drill and NC Files
       
     </span>
   </a>
@@ -1087,13 +1202,80 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="BOM (Bill of Materials)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#columns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Columns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steps_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steps
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
   <a href="#gerber-viewer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Gerber viewer
+        Gerber Viewer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gerber Viewer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
       
     </span>
   </a>
@@ -1123,6 +1305,12 @@
   
   
     
+    
+      
+        
+      
+        
+      
     
     
     
@@ -1177,7 +1365,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../libraries/symbols-library" class="md-nav__link">
+      <a href="../../libraries/symbols-library/" class="md-nav__link">
         
   
   
@@ -1205,7 +1393,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../libraries/footprints-library" class="md-nav__link">
+      <a href="../../libraries/footprints-library/" class="md-nav__link">
         
   
   
@@ -1240,6 +1428,14 @@
   
   
     
+    
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1294,7 +1490,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/selection-and-editing" class="md-nav__link">
+      <a href="../../advanced/selection-and-editing/" class="md-nav__link">
         
   
   
@@ -1322,7 +1518,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/3d-viewer" class="md-nav__link">
+      <a href="../../advanced/3d-viewer/" class="md-nav__link">
         
   
   
@@ -1350,7 +1546,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/shortcuts" class="md-nav__link">
+      <a href="../../advanced/shortcuts/" class="md-nav__link">
         
   
   
@@ -1385,6 +1581,16 @@
   
   
     
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1439,7 +1645,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/config-and-session" class="md-nav__link">
+      <a href="../../reference/config-and-session/" class="md-nav__link">
         
   
   
@@ -1467,7 +1673,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/file-formats" class="md-nav__link">
+      <a href="../../reference/file-formats/" class="md-nav__link">
         
   
   
@@ -1488,9 +1694,92 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ & Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1522,13 +1811,52 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#schematic-pdf-export" class="md-nav__link">
+  <a href="#export-overview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Schematic PDF export
+        Export Overview
       
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#schematic-pdf-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schematic PDF Export
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Schematic PDF Export">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#content-included" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Content included
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steps
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1536,10 +1864,38 @@
   <a href="#pcb-gerber-export" class="md-nav__link">
     <span class="md-ellipsis">
       
-        PCB Gerber export
+        PCB Gerber Export
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="PCB Gerber Export">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-exported-per-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is exported per layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#export-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Export workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1547,7 +1903,7 @@
   <a href="#drill-and-nc-files" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Drill and NC files
+        Drill and NC Files
       
     </span>
   </a>
@@ -1563,13 +1919,80 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="BOM (Bill of Materials)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#columns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Columns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steps_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steps
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
   <a href="#gerber-viewer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Gerber viewer
+        Gerber Viewer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gerber Viewer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
       
     </span>
   </a>
@@ -1593,129 +2016,311 @@
 
 
 
-<h1 id="fabrication-and-export">Fabrication and Export</h1>
-<p>WireFrame can export:</p>
-<ul>
-<li>Schematic PDFs.</li>
-<li>PCB Gerbers/drill files.</li>
-<li>BOM CSV.</li>
-<li>Gerber viewer previews.</li>
-<li>Optional 3D preview images.</li>
-</ul>
+<h1 id="fabrication-and-export">Fabrication and Export<a class="headerlink" href="#fabrication-and-export" title="Permanent link">&para;</a></h1>
+<p>WireFrame exports production-ready files for PCB manufacturing and documentation. This page covers Gerber export, drill files, BOM, schematic PDFs, and the built-in Gerber viewer.</p>
 <hr />
-<h2 id="schematic-pdf-export">Schematic PDF export</h2>
-<p><code>PdfExporter::exportSchematic</code> converts a <code>SchematicDocument</code> into a vector‑based PDF:</p>
-<ul>
-<li>Draws:</li>
-<li>Components:<ul>
-<li>Outline, pins, designator and value text.</li>
-</ul>
-</li>
-<li>Wires and junctions.</li>
-<li>Graphics (rectangles, circles, text).</li>
-<li>Title block and border (from <code>PageSettings</code>).</li>
-<li>Applies color → black/grey conversions suitable for printing.</li>
-</ul>
-<p>From the UI:</p>
-<ul>
-<li><strong>File → Export → Schematic PDF…</strong> (when a schematic is active).</li>
-<li>Choose output filename.</li>
+<h2 id="export-overview">Export Overview<a class="headerlink" href="#export-overview" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Export type</th>
+<th>Format</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Gerber</strong></td>
+<td>RS-274X <code>.gbr</code></td>
+<td>Copper, mask, silk, and outline layers for PCB fabrication</td>
+</tr>
+<tr>
+<td><strong>Drill</strong></td>
+<td>Excellon <code>.drl</code></td>
+<td>Via and hole positions/diameters</td>
+</tr>
+<tr>
+<td><strong>BOM</strong></td>
+<td>CSV <code>.csv</code></td>
+<td>Bill of Materials for component ordering</td>
+</tr>
+<tr>
+<td><strong>Schematic PDF</strong></td>
+<td>PDF <code>.pdf</code></td>
+<td>Printable schematic documentation</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="schematic-pdf-export">Schematic PDF Export<a class="headerlink" href="#schematic-pdf-export" title="Permanent link">&para;</a></h2>
+<p><code>PdfExporter::exportSchematic</code> generates a vector-based PDF from a <code>SchematicDocument</code>:</p>
+<h3 id="content-included">Content included<a class="headerlink" href="#content-included" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Rendering</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Components</td>
+<td>Outlines, pins, designator and value text</td>
+</tr>
+<tr>
+<td>Wires and junctions</td>
+<td>Black/grey lines and dots</td>
+</tr>
+<tr>
+<td>Graphics</td>
+<td>Rectangles, circles, text annotations</td>
+</tr>
+<tr>
+<td>Title block</td>
+<td>Border, title, company, revision, date</td>
+</tr>
+</tbody>
+</table>
+<p>Colors are converted to <strong>black/grey</strong> for print-friendly output.</p>
+<h3 id="steps">Steps<a class="headerlink" href="#steps" title="Permanent link">&para;</a></h3>
+<ol>
+<li>With a schematic active: <strong>File → Export → Schematic PDF…</strong></li>
+<li>Choose the output filename.</li>
 <li>The PDF is written to disk.</li>
-</ul>
-<blockquote>
-<p><strong>Image placeholder</strong><br />
-<code>![Schematic PDF](img/fabrication/schematic-pdf.png)</code><br />
-<em>Screenshot of a generated schematic PDF page opened in an external PDF viewer.</em></p>
-</blockquote>
-<hr />
-<h2 id="pcb-gerber-export">PCB Gerber export</h2>
-<p><code>GerberWriter</code> generates RS‑274X Gerber data:</p>
-<ul>
-<li>Handles:</li>
-<li>Outline of traces (<code>Trace</code> objects):<ul>
-<li>Converts widths to mm.</li>
-<li>Ensures minimum width, round‑capped strokes.</li>
-</ul>
-</li>
-<li>Pads (<code>Pad</code> in <code>PlacedFootprint</code>):<ul>
-<li>Circular pads as flashes.</li>
-<li>Rectangular/oval pads as drawn shapes.</li>
-</ul>
-</li>
-<li>Polygons/zones (<code>ZoneManager</code> islands):<ul>
-<li>Filled polygons with optional holes.</li>
-</ul>
-</li>
-<li>Board outline (Edge.Cuts).</li>
-</ul>
-<p>Workflow:</p>
-<ol>
-<li>From PCB document, open <strong>Fabrication</strong> dialog.</li>
-<li>Select which layers to export (e.g., F.Cu, B.Cu, F.SilkS, Edge.Cuts).</li>
-<li>For each layer:</li>
-<li><code>GerberWriter::startFile</code> writes header and aperture setup.</li>
-<li>Objects are written with coordinates in mm.</li>
-<li><code>GerberWriter::endFile</code> finalizes file.</li>
-<li>Optionally compress outputs into a ZIP for manufacturer.</li>
 </ol>
-<blockquote>
-<p><strong>Image placeholder</strong><br />
-<code>![Gerber file list](img/fabrication/gerber-files.png)</code><br />
-<em>Dialog showing generated <code>.gbr</code> and drill files for each relevant layer.</em></p>
-</blockquote>
+<!-- TODO: Replace with actual screenshot
+     Capture a generated schematic PDF opened in an external PDF viewer (e.g., browser or Acrobat):
+     - _A full schematic page with components, wires, labels, and annotations rendered in black._
+     - _The title block visible at the bottom-right with Title, Company, Revision, Date fields filled._
+     - _Pin names and numbers visible on an IC symbol._
+     - _The page border visible._
+     Suggested size: 800×600px.
+-->
+<p><img alt="Schematic Pdf" src="../../img/fabrication/schematic-pdf.png" /></p>
 <hr />
-<h2 id="drill-and-nc-files">Drill and NC files</h2>
-<p>While not fully detailed here, a similar process writes drill files from:</p>
-<ul>
-<li>Vias</li>
-<li>Holes</li>
-<li>Plated vs non‑plated holes.</li>
-</ul>
-<p>Parameters:</p>
-<ul>
-<li>Diameters and coordinates converted to manufacturer units.</li>
-</ul>
-<hr />
-<h2 id="bom-bill-of-materials">BOM (Bill of Materials)</h2>
-<p><code>PcbBomExporter::generateCSVString</code> produces a CSV:</p>
-<p>Columns:</p>
-<ul>
-<li><code>Designator</code></li>
-<li><code>Value</code></li>
-<li><code>Footprint</code></li>
-<li><code>Layer</code> (Top or Bottom)</li>
-</ul>
-<p>Each placed footprint with a non‑empty value contributes one row.</p>
-<p>User steps:</p>
+<h2 id="pcb-gerber-export">PCB Gerber Export<a class="headerlink" href="#pcb-gerber-export" title="Permanent link">&para;</a></h2>
+<p>WireFrame generates RS-274X Gerber files — the industry standard for PCB fabrication data.</p>
+<h3 id="what-is-exported-per-layer">What is exported per layer<a class="headerlink" href="#what-is-exported-per-layer" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Gerber representation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Traces</td>
+<td>Stroked paths with round-capped ends, width in mm</td>
+</tr>
+<tr>
+<td>Pads</td>
+<td>Circular pads as flashes; rectangular/oval as drawn shapes</td>
+</tr>
+<tr>
+<td>Zones</td>
+<td>Filled polygons with optional holes</td>
+</tr>
+<tr>
+<td>Board outline</td>
+<td>Edge.Cuts layer as outlines</td>
+</tr>
+</tbody>
+</table>
+<h3 id="export-workflow">Export workflow<a class="headerlink" href="#export-workflow" title="Permanent link">&para;</a></h3>
 <ol>
-<li>From PCB context menu or fabrication dialog, choose <strong>Export BOM</strong>.</li>
-<li>Choose destination CSV file.</li>
-<li>Open in spreadsheet software for ordering or documentation.</li>
+<li>From a PCB document: <strong>File → Export → Gerber…</strong> (or open the <strong>Fabrication</strong> dialog).</li>
+<li>Select which layers to export:</li>
 </ol>
-<blockquote>
-<p><strong>Image placeholder</strong><br />
-<code>![BOM in spreadsheet](img/fabrication/bom-spreadsheet.png)</code><br />
-<em>Generated BOM CSV opened in a spreadsheet with columns for designator, value, footprint and layer.</em></p>
-</blockquote>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Typical filename</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>F.Cu</td>
+<td><code>MyBoard-F_Cu.gbr</code></td>
+</tr>
+<tr>
+<td>B.Cu</td>
+<td><code>MyBoard-B_Cu.gbr</code></td>
+</tr>
+<tr>
+<td>F.SilkS</td>
+<td><code>MyBoard-F_SilkS.gbr</code></td>
+</tr>
+<tr>
+<td>F.Mask</td>
+<td><code>MyBoard-F_Mask.gbr</code></td>
+</tr>
+<tr>
+<td>B.Mask</td>
+<td><code>MyBoard-B_Mask.gbr</code></td>
+</tr>
+<tr>
+<td>Edge.Cuts</td>
+<td><code>MyBoard-Edge_Cuts.gbr</code></td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Choose the output directory.</li>
+<li>Click <strong>Export</strong> — one <code>.gbr</code> file is generated per selected layer.</li>
+<li>Optionally compress outputs into a <strong>ZIP</strong> for the manufacturer.</li>
+</ol>
+<!-- TODO: Replace with actual screenshot
+     Capture the Fabrication/Gerber export dialog:
+     - _A list of available layers with checkboxes (F.Cu ✓, B.Cu ✓, F.SilkS ✓, Edge.Cuts ✓, others unchecked)._
+     - _An output directory field with a Browse button._
+     - _An "Export" button (cyan accent)._
+     - _After export: a status message or file list showing the generated `.gbr` files with file sizes._
+     Suggested size: 600×400px.
+-->
+<p><img alt="Gerber Files" src="../../img/fabrication/gerber-files.png" /></p>
 <hr />
-<h2 id="gerber-viewer">Gerber viewer</h2>
-<p><code>GerberViewerDialog</code> is an internal viewer for inspecting Gerber layers:</p>
-<ul>
-<li>Parses a subset of Gerber commands from provided content.</li>
-<li>Displays:</li>
-<li>Lines/traces with configured thickness.</li>
-<li>Flashes (e.g., pads) as small circles.</li>
-<li>Provides pan and zoom within the preview canvas.</li>
+<h2 id="drill-and-nc-files">Drill and NC Files<a class="headerlink" href="#drill-and-nc-files" title="Permanent link">&para;</a></h2>
+<p>Drill files contain via and hole data for CNC drilling:</p>
+<table>
+<thead>
+<tr>
+<th>Content</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Via positions</td>
+<td>X, Y coordinates for each via</td>
+</tr>
+<tr>
+<td>Hole positions</td>
+<td>X, Y coordinates for each hole</td>
+</tr>
+<tr>
+<td>Diameters</td>
+<td>Drill tool sizes</td>
+</tr>
+<tr>
+<td>Plating</td>
+<td>Plated vs. non-plated hole separation</td>
+</tr>
+</tbody>
+</table>
+<p>Format: Excellon NC drill (text-based coordinate format).</p>
+<hr />
+<h2 id="bom-bill-of-materials">BOM (Bill of Materials)<a class="headerlink" href="#bom-bill-of-materials" title="Permanent link">&para;</a></h2>
+<p>WireFrame produces a CSV file from placed footprints:</p>
+<h3 id="columns">Columns<a class="headerlink" href="#columns" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Designator</td>
+<td>Component reference</td>
+<td>R1, R2, U1</td>
+</tr>
+<tr>
+<td>Value</td>
+<td>Component value</td>
+<td>10kΩ, 100nF, STM32F103</td>
+</tr>
+<tr>
+<td>Footprint</td>
+<td>Package name</td>
+<td>R_0603, LQFP-48</td>
+</tr>
+<tr>
+<td>Layer</td>
+<td>Board side</td>
+<td>Top / Bottom</td>
+</tr>
+</tbody>
+</table>
+<h3 id="steps_1">Steps<a class="headerlink" href="#steps_1" title="Permanent link">&para;</a></h3>
+<ol>
+<li>From the Fabrication dialog or <strong>File → Export → BOM…</strong></li>
+<li>Choose the output <code>.csv</code> filename.</li>
+<li>Open in a spreadsheet application for ordering or documentation.</li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">BOM content</p>
+<p>Only footprints with a <strong>non-empty Value</strong> property are included. Ensure all components have values assigned before exporting.</p>
+</div>
+<!-- TODO: Replace with actual screenshot
+     Capture the generated BOM CSV opened in a spreadsheet application (LibreOffice Calc, Excel, or Google Sheets):
+     - _Four columns visible: Designator, Value, Footprint, Layer._
+     - _5–10 rows of data (e.g., R1/10kΩ/R_0603/Top, C1/100nF/C_0402/Top, U1/STM32F103/LQFP-48/Top)._
+     - _Column headers in bold or with a distinct background._
+     Suggested size: 600×350px.
+-->
+<p><img alt="Bom Spreadsheet" src="../../img/fabrication/bom-spreadsheet.png" /></p>
+<hr />
+<h2 id="gerber-viewer">Gerber Viewer<a class="headerlink" href="#gerber-viewer" title="Permanent link">&para;</a></h2>
+<p><code>GerberViewerDialog</code> is a built-in viewer for inspecting exported Gerber files without external software.</p>
+<h3 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Parse Gerber commands</td>
+<td>Reads a subset of RS-274X commands</td>
+</tr>
+<tr>
+<td>Display traces/lines</td>
+<td>Drawn with configured thickness</td>
+</tr>
+<tr>
+<td>Display flashes (pads)</td>
+<td>Shown as small circles/shapes</td>
+</tr>
+<tr>
+<td>Pan and zoom</td>
+<td>Navigate within the preview canvas</td>
+</tr>
+</tbody>
+</table>
+<h3 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Tools → Gerber Viewer</strong> from the menu.</li>
+<li>Open a generated <code>.gbr</code> file.</li>
+<li>Pan and zoom to inspect:<ul>
+<li>Trace continuity.</li>
+<li>Pad alignment.</li>
+<li>Board outline integrity.</li>
 </ul>
-<p>Use cases:</p>
+</li>
+</ol>
+<!-- TODO: Replace with actual video
+     Record a 15-second clip:
+     1. _Open the Gerber Viewer dialog._
+     2. _Load a generated F.Cu Gerber file._
+     3. _The viewer renders the copper layer — traces and pads visible._
+     4. _Pan to a dense area (e.g., QFP IC pads)._
+     5. _Zoom in to verify pad spacing and trace routing._
+     Resolution: 1280×720 at 30fps.
+-->
+
+<hr />
+<h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Quick verification that exported data is sane.</li>
-<li>No need to launch external CAM software for minor checks.</li>
+<li><a href="../dfm-and-drc/">DFM &amp; DRC</a> — run checks before exporting.</li>
+<li><a href="../layers-and-views/">Layers &amp; Views</a> — layer selection for export.</li>
+<li><a href="../../reference/file-formats/">File Formats</a> — detailed format specifications.</li>
 </ul>
-<blockquote>
-<p><strong>Video placeholder</strong><br />
-<em>Short video where user opens a generated F.Cu Gerber file in the built‑in viewer, pans around and zooms into a BGA area to inspect pad and trace spacing.</em></p>
-</blockquote>
 
 
 
@@ -1733,6 +2338,8 @@
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -1746,6 +2353,46 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../dfm-and-drc/" class="md-footer__link md-footer__link--prev" aria-label="Previous: DFM &amp; DRC Check">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                DFM & DRC Check
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../libraries/symbols-library/" class="md-footer__link md-footer__link--next" aria-label="Next: Symbols Library">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Symbols Library
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
@@ -1755,9 +2402,17 @@
     </div>
   
   
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/CaSauCoin/WireFrame_Product" target="_blank" rel="noopener" title="WireFrame on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
     </a>
   
 </div>
@@ -1775,7 +2430,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.expand", "navigation.indexes", "navigation.footer", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.tabs.link", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "stable", "provider": "mike"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>

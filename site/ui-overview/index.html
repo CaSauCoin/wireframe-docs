@@ -6,15 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="Complete user guide for WireFrame EDA — a lightweight schematic and PCB design environment built with ImGui, GLFW and OpenGL.">
+      
       
       
         <link rel="canonical" href="https://wireframe.com.vn/docs/ui-overview/">
       
       
-        <link rel="prev" href="../installation">
+        <link rel="prev" href="../getting-started/">
       
       
-        <link rel="next" href="../projects">
+        <link rel="next" href="../projects/">
       
       
         
@@ -25,7 +27,7 @@
     
     
       
-        <title>UI Overview - WireFrame EDA Docs</title>
+        <title>UI Overview - WireFrame EDA Documentation</title>
       
     
     
@@ -46,8 +48,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
       
     
     
@@ -85,15 +87,21 @@
       
     </div>
     
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
     
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="WireFrame EDA Docs" class="md-header__button md-logo" aria-label="WireFrame EDA Docs" data-md-component="logo">
+    <a href=".." title="WireFrame EDA Documentation" class="md-header__button md-logo" aria-label="WireFrame EDA Documentation" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 4h12v1h3v2h-3v2h3v2h-3v2h3v2h-3v2h3v2h-3v1H6v-1H3v-2h3v-2H3v-2h3v-2H3V9h3V7H3V5h3zm5 11v3h1v-3zm2 0v3h1v-3zm2 0v3h1v-3z"/></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -104,7 +112,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            WireFrame EDA Docs
+            WireFrame EDA Documentation
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -141,6 +149,11 @@
       </label>
       <nav class="md-search__options" aria-label="Search">
         
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
@@ -167,14 +180,8 @@
     
   </nav>
   
-</header>
     
-    <div class="md-container" data-md-component="container">
       
-      
-        
-          
-            
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
   <div class="md-grid">
     <ul class="md-tabs__list">
@@ -208,9 +215,11 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../getting-started" class="md-tabs__link">
+        <a href="../installation/" class="md-tabs__link">
           
   
+  
+    
   
   Getting Started
 
@@ -228,9 +237,11 @@
     
     
       <li class="md-tabs__item">
-        <a href="../schematic" class="md-tabs__link">
+        <a href="../schematic/" class="md-tabs__link">
           
   
+  
+    
   
   Schematic Design
 
@@ -248,9 +259,11 @@
     
     
       <li class="md-tabs__item">
-        <a href="../pcb" class="md-tabs__link">
+        <a href="../pcb/" class="md-tabs__link">
           
   
+  
+    
   
   PCB Layout
 
@@ -268,9 +281,11 @@
     
     
       <li class="md-tabs__item">
-        <a href="../libraries/symbols-library" class="md-tabs__link">
+        <a href="../libraries/symbols-library/" class="md-tabs__link">
           
   
+  
+    
   
   Libraries
 
@@ -288,9 +303,11 @@
     
     
       <li class="md-tabs__item">
-        <a href="../advanced/selection-and-editing" class="md-tabs__link">
+        <a href="../advanced/selection-and-editing/" class="md-tabs__link">
           
   
+  
+    
   
   Advanced Features
 
@@ -308,9 +325,11 @@
     
     
       <li class="md-tabs__item">
-        <a href="../reference/config-and-session" class="md-tabs__link">
+        <a href="../reference/config-and-session/" class="md-tabs__link">
           
   
+  
+    
   
   Reference
 
@@ -320,10 +339,35 @@
   
 
       
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../tutorial/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tutorial
+
+      </a>
+    </li>
+  
+
+      
     </ul>
   </div>
 </nav>
-          
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
         
       
       <main class="md-main" data-md-component="main">
@@ -342,13 +386,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="WireFrame EDA Docs" class="md-nav__button md-logo" aria-label="WireFrame EDA Docs" data-md-component="logo">
+    <a href=".." title="WireFrame EDA Documentation" class="md-nav__button md-logo" aria-label="WireFrame EDA Documentation" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 4h12v1h3v2h-3v2h3v2h-3v2h3v2h-3v2h3v2h-3v1H6v-1H3v-2h3v-2H3v-2h3v-2H3V9h3V7H3V5h3zm5 11v3h1v-3zm2 0v3h1v-3zm2 0v3h1v-3z"/></svg>
 
     </a>
-    WireFrame EDA Docs
+    WireFrame EDA Documentation
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -389,6 +433,16 @@
   
   
     
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -444,14 +498,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../getting-started" class="md-nav__link">
+      <a href="../installation/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Introduction
+    Installation
   
 
     
@@ -472,14 +526,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../installation" class="md-nav__link">
+      <a href="../getting-started/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Installation
+    Introduction
   
 
     
@@ -527,7 +581,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="" class="md-nav__link md-nav__link--active">
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -563,10 +617,71 @@
   <a href="#menu-bar" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Menu bar
+        Menu Bar
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Menu Bar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-menu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File menu
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edit-menu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Edit menu
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-menu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        View menu
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tools-menu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tools menu
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#help-menu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Help menu
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -574,7 +689,7 @@
   <a href="#docking-layout" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Docking layout
+        Docking Layout
       
     </span>
   </a>
@@ -585,10 +700,27 @@
   <a href="#project-structure-panel" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Project Structure panel
+        Project Structure Panel
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Project Structure Panel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interactions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -596,10 +728,49 @@
   <a href="#editor-panel" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Editor panel
+        Editor Panel
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Editor Panel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#canvas-behavior-common-to-schematic-and-pcb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Canvas behavior (common to schematic and PCB)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schematic-canvas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schematic canvas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pcb-canvas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PCB canvas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -607,10 +778,38 @@
   <a href="#library-panel" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Library panel
+        Library Panel
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Library Panel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-a-schematic-is-active" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When a schematic is active
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-a-pcb-is-active" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When a PCB is active
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -618,10 +817,38 @@
   <a href="#properties-panel" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Properties panel
+        Properties Panel
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Properties Panel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schematic-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schematic properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pcb-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PCB properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -668,7 +895,7 @@
   <a href="#layer-panel-pcb-only" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Layer panel (PCB only)
+        Layer Panel (PCB Only)
       
     </span>
   </a>
@@ -679,7 +906,18 @@
   <a href="#notifications-and-logger" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Notifications and logger
+        Notifications and Logger
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
       
     </span>
   </a>
@@ -702,14 +940,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../projects" class="md-nav__link">
+      <a href="../projects/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Projects Management
+    Projects & Files
   
 
     
@@ -738,6 +976,20 @@
   
     
     
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
     
     
       
@@ -755,8 +1007,9 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-            
+          <div class="md-nav__link md-nav__container">
+            <a href="../schematic/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -770,8 +1023,14 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
@@ -785,32 +1044,6 @@
           <ul class="md-nav__list" data-md-scrollfix>
             
               
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../schematic" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -819,7 +1052,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../schematic/placing-components" class="md-nav__link">
+      <a href="../schematic/placing-components/" class="md-nav__link">
         
   
   
@@ -847,7 +1080,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../schematic/wiring-and-nets" class="md-nav__link">
+      <a href="../schematic/wiring-and-nets/" class="md-nav__link">
         
   
   
@@ -875,7 +1108,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../schematic/properties-and-attributes" class="md-nav__link">
+      <a href="../schematic/properties-and-attributes/" class="md-nav__link">
         
   
   
@@ -903,7 +1136,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../schematic/graphics-and-annotations" class="md-nav__link">
+      <a href="../schematic/graphics-and-annotations/" class="md-nav__link">
         
   
   
@@ -939,6 +1172,24 @@
   
     
     
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
     
     
       
@@ -956,8 +1207,9 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
-            
+          <div class="md-nav__link md-nav__container">
+            <a href="../pcb/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -971,8 +1223,14 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
@@ -986,32 +1244,6 @@
           <ul class="md-nav__list" data-md-scrollfix>
             
               
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../pcb" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -1020,7 +1252,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pcb/footprints-and-placement" class="md-nav__link">
+      <a href="../pcb/footprints-and-placement/" class="md-nav__link">
         
   
   
@@ -1048,7 +1280,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pcb/routing" class="md-nav__link">
+      <a href="../pcb/routing/" class="md-nav__link">
         
   
   
@@ -1076,7 +1308,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pcb/layers-and-views" class="md-nav__link">
+      <a href="../pcb/layers-and-views/" class="md-nav__link">
         
   
   
@@ -1104,7 +1336,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pcb/zones-and-planes" class="md-nav__link">
+      <a href="../pcb/zones-and-planes/" class="md-nav__link">
         
   
   
@@ -1132,7 +1364,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pcb/dfm-and-drc" class="md-nav__link">
+      <a href="../pcb/dfm-and-drc/" class="md-nav__link">
         
   
   
@@ -1160,7 +1392,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pcb/fabrication-and-export" class="md-nav__link">
+      <a href="../pcb/fabrication-and-export/" class="md-nav__link">
         
   
   
@@ -1195,6 +1427,12 @@
   
   
     
+    
+      
+        
+      
+        
+      
     
     
     
@@ -1249,7 +1487,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../libraries/symbols-library" class="md-nav__link">
+      <a href="../libraries/symbols-library/" class="md-nav__link">
         
   
   
@@ -1277,7 +1515,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../libraries/footprints-library" class="md-nav__link">
+      <a href="../libraries/footprints-library/" class="md-nav__link">
         
   
   
@@ -1312,6 +1550,14 @@
   
   
     
+    
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1366,7 +1612,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../advanced/selection-and-editing" class="md-nav__link">
+      <a href="../advanced/selection-and-editing/" class="md-nav__link">
         
   
   
@@ -1394,7 +1640,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../advanced/3d-viewer" class="md-nav__link">
+      <a href="../advanced/3d-viewer/" class="md-nav__link">
         
   
   
@@ -1422,7 +1668,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../advanced/shortcuts" class="md-nav__link">
+      <a href="../advanced/shortcuts/" class="md-nav__link">
         
   
   
@@ -1457,6 +1703,16 @@
   
   
     
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1511,7 +1767,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/config-and-session" class="md-nav__link">
+      <a href="../reference/config-and-session/" class="md-nav__link">
         
   
   
@@ -1539,7 +1795,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/file-formats" class="md-nav__link">
+      <a href="../reference/file-formats/" class="md-nav__link">
         
   
   
@@ -1560,9 +1816,92 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ & Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1597,10 +1936,71 @@
   <a href="#menu-bar" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Menu bar
+        Menu Bar
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Menu Bar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-menu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File menu
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edit-menu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Edit menu
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-menu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        View menu
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tools-menu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tools menu
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#help-menu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Help menu
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1608,7 +2008,7 @@
   <a href="#docking-layout" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Docking layout
+        Docking Layout
       
     </span>
   </a>
@@ -1619,10 +2019,27 @@
   <a href="#project-structure-panel" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Project Structure panel
+        Project Structure Panel
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Project Structure Panel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interactions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1630,10 +2047,49 @@
   <a href="#editor-panel" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Editor panel
+        Editor Panel
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Editor Panel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#canvas-behavior-common-to-schematic-and-pcb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Canvas behavior (common to schematic and PCB)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schematic-canvas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schematic canvas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pcb-canvas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PCB canvas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1641,10 +2097,38 @@
   <a href="#library-panel" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Library panel
+        Library Panel
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Library Panel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-a-schematic-is-active" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When a schematic is active
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-a-pcb-is-active" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When a PCB is active
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1652,10 +2136,38 @@
   <a href="#properties-panel" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Properties panel
+        Properties Panel
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Properties Panel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schematic-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schematic properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pcb-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PCB properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1702,7 +2214,7 @@
   <a href="#layer-panel-pcb-only" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Layer panel (PCB only)
+        Layer Panel (PCB Only)
       
     </span>
   </a>
@@ -1713,7 +2225,18 @@
   <a href="#notifications-and-logger" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Notifications and logger
+        Notifications and Logger
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
       
     </span>
   </a>
@@ -1737,197 +2260,706 @@
 
 
 
-<h1 id="user-interface-overview">User Interface Overview</h1>
-<p>This page explains the main parts of the WireFrame UI.</p>
-<blockquote>
-<p><strong>Image placeholder</strong><br />
-<code>![UI overview](img/ui-overview/layout-annotated.png)</code><br />
-<em>Annotated screenshot labeling menu bar, project tree, editor tabs, library panel, properties panel, layer panel, and status/notification area.</em></p>
-</blockquote>
+<h1 id="user-interface-overview">User Interface Overview<a class="headerlink" href="#user-interface-overview" title="Permanent link">&para;</a></h1>
+<p>This page provides a detailed tour of every part of the WireFrame UI. Understanding the layout will help you work efficiently as you design schematics and PCBs.
+<img alt="WireFrame UI layout annotated" src="../img/ui-overview/layout-annotated.png" /></p>
 <hr />
-<h2 id="menu-bar">Menu bar</h2>
-<p>Located at the top of the window, providing:</p>
-<ul>
-<li><strong>File</strong></li>
-<li>New Project, Open Project, Open, Save, Save As, Close Project.</li>
-<li>Project‑level export (PDF, Gerber, BOM, etc. when a PCB is active).</li>
-<li><strong>Edit</strong></li>
-<li>Undo, Redo, Cut, Copy, Paste, Delete.</li>
-<li><strong>View</strong></li>
-<li>Toggle panels (Library, Layers, Properties, etc.).</li>
-<li>Open 3D viewer.</li>
-<li><strong>Tools</strong></li>
-<li>Schematic symbol editor.</li>
-<li>PCB footprint wizard.</li>
-<li>Design rules panel.</li>
-<li>Gerber viewer.</li>
-<li><strong>Help</strong></li>
-<li>About dialog.</li>
-<li>Update checks, if enabled.</li>
-</ul>
+<h2 id="menu-bar">Menu Bar<a class="headerlink" href="#menu-bar" title="Permanent link">&para;</a></h2>
+<p>Located at the top of the window. Provides access to all major operations:</p>
+<h3 id="file-menu">File menu<a class="headerlink" href="#file-menu" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Shortcut</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>New Project…</td>
+<td></td>
+<td>Create a new <code>.prjxml</code> project</td>
+</tr>
+<tr>
+<td>Open Project…</td>
+<td></td>
+<td>Open an existing project</td>
+</tr>
+<tr>
+<td>Open…</td>
+<td><span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-o">O</kbd></span></td>
+<td>Open a schematic or PCB file</td>
+</tr>
+<tr>
+<td>New Schematic</td>
+<td><span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-n">N</kbd></span></td>
+<td>Create a new schematic document</td>
+</tr>
+<tr>
+<td>New PCB</td>
+<td></td>
+<td>Create a new PCB document</td>
+</tr>
+<tr>
+<td>Save</td>
+<td><span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-s">S</kbd></span></td>
+<td>Save the active document</td>
+</tr>
+<tr>
+<td>Save As…</td>
+<td><span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-s">S</kbd></span></td>
+<td>Save with a new filename</td>
+</tr>
+<tr>
+<td>Close Project</td>
+<td></td>
+<td>Close the active project</td>
+</tr>
+<tr>
+<td>Export →</td>
+<td></td>
+<td>Sub-menu for PDF, Gerber, BOM export</td>
+</tr>
+</tbody>
+</table>
+<h3 id="edit-menu">Edit menu<a class="headerlink" href="#edit-menu" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Shortcut</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Undo</td>
+<td><span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-z">Z</kbd></span></td>
+<td>Undo last action</td>
+</tr>
+<tr>
+<td>Redo</td>
+<td><span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-y">Y</kbd></span></td>
+<td>Redo last undone action</td>
+</tr>
+<tr>
+<td>Cut</td>
+<td><span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-x">X</kbd></span></td>
+<td>Cut selected items to clipboard</td>
+</tr>
+<tr>
+<td>Copy</td>
+<td><span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-c">C</kbd></span></td>
+<td>Copy selected items</td>
+</tr>
+<tr>
+<td>Paste</td>
+<td><span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-v">V</kbd></span></td>
+<td>Paste from clipboard</td>
+</tr>
+<tr>
+<td>Delete</td>
+<td><span class="keys"><kbd class="key-delete">Del</kbd></span></td>
+<td>Delete selected items</td>
+</tr>
+</tbody>
+</table>
+<h3 id="view-menu">View menu<a class="headerlink" href="#view-menu" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Toggle Library</td>
+<td>Show/hide the Library panel</td>
+</tr>
+<tr>
+<td>Toggle Layers</td>
+<td>Show/hide the Layer panel (PCB)</td>
+</tr>
+<tr>
+<td>Toggle Properties</td>
+<td>Show/hide the Properties panel</td>
+</tr>
+<tr>
+<td>3D Viewer…</td>
+<td>Open the 3D PCB viewer</td>
+</tr>
+<tr>
+<td>Fit to Screen</td>
+<td>Zoom to fit all content</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tools-menu">Tools menu<a class="headerlink" href="#tools-menu" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Symbol Editor</td>
+<td>Open the symbol library editor</td>
+</tr>
+<tr>
+<td>Footprint Wizard</td>
+<td>Open the footprint generator</td>
+</tr>
+<tr>
+<td>Design Rules</td>
+<td>Open design rules configuration</td>
+</tr>
+<tr>
+<td>DFM Check</td>
+<td>Run DFM/DRC checks on the active PCB</td>
+</tr>
+<tr>
+<td>Gerber Viewer</td>
+<td>Open the built-in Gerber file viewer</td>
+</tr>
+<tr>
+<td>Keymap…</td>
+<td>Open the keyboard shortcut editor</td>
+</tr>
+</tbody>
+</table>
+<h3 id="help-menu">Help menu<a class="headerlink" href="#help-menu" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>About</td>
+<td>Show version and license information</td>
+</tr>
+<tr>
+<td>Check for Updates</td>
+<td>Check for newer versions (if enabled)</td>
+</tr>
+</tbody>
+</table>
 <hr />
-<h2 id="docking-layout">Docking layout</h2>
-<p>WireFrame uses ImGui docking:</p>
+<h2 id="docking-layout">Docking Layout<a class="headerlink" href="#docking-layout" title="Permanent link">&para;</a></h2>
+<p>WireFrame uses <strong>docking layout</strong>, giving you full control over panel arrangement:</p>
 <ul>
-<li>You can <strong>drag tabs</strong> to move panels around.</li>
-<li>Layout is persistent via ImGui configuration.</li>
-<li>Common panels:</li>
-<li>Project Structure.</li>
-<li>Editor (center).</li>
-<li>Library.</li>
-<li>Properties.</li>
-<li>Layers (PCB only).</li>
-<li>Logger notification overlay (non‑docked, top‑over‑content).</li>
+<li><strong>Drag tabs</strong> to move panels between docking zones (left, right, bottom, center).</li>
+<li><strong>Float panels</strong> by dragging them outside the docking area — they become independent windows.</li>
+<li><strong>Split zones</strong> by dropping a panel on the edge of an existing zone.</li>
+<li><strong>Layout persistence</strong>: your arrangement is saved automatically via ImGui configuration and restored on next launch.</li>
 </ul>
+<p>Common default panels:</p>
+<table>
+<thead>
+<tr>
+<th>Panel</th>
+<th>Default position</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Project Structure</td>
+<td>Left</td>
+</tr>
+<tr>
+<td>Editor (canvas)</td>
+<td>Center</td>
+</tr>
+<tr>
+<td>Library</td>
+<td>Right (top)</td>
+</tr>
+<tr>
+<td>Properties</td>
+<td>Right (bottom)</td>
+</tr>
+<tr>
+<td>Layers (PCB only)</td>
+<td>Right (middle)</td>
+</tr>
+<tr>
+<td>Logger / Notifications</td>
+<td>Overlay (bottom-right)</td>
+</tr>
+</tbody>
+</table>
 <hr />
-<h2 id="project-structure-panel">Project Structure panel</h2>
-<p>Shows:</p>
+<h2 id="project-structure-panel">Project Structure Panel<a class="headerlink" href="#project-structure-panel" title="Permanent link">&para;</a></h2>
+<p>Shows all open projects and their contents in a tree view:</p>
 <ul>
-<li>Open projects (<code>.prjxml</code>), each as a root node.</li>
-<li>Under each project:</li>
-<li><strong>Schematics</strong> (<code>.schxml</code>).</li>
-<li><strong>PCBs</strong> (<code>.pcbxml</code>).</li>
+<li><strong>Project node</strong> (<code>.prjxml</code>) — the root.<ul>
+<li><strong>Schematics</strong> — lists all <code>.schxml</code> files registered in the project.</li>
+<li><strong>PCBs</strong> — lists all <code>.pcbxml</code> files registered in the project.</li>
 </ul>
-<p>Features:</p>
-<ul>
-<li>Click a schematic or PCB file to open/focus its document.</li>
-<li>Right‑click project/file for context actions:</li>
-<li>Add new schematic/PCB.</li>
-<li>Rename.</li>
-<li>Remove from project (or delete from disk, depending on dialog).</li>
-<li>When opened without a project, you can still recursively browse a folder.</li>
-</ul>
-<blockquote>
-<p><strong>Image placeholder</strong><br />
-<code>![Project tree](img/ui-overview/project-tree.png)</code><br />
-<em>Project panel showing one project with two schematics and one PCB under it.</em></p>
-</blockquote>
-<p>See <a href="../projects">Projects &amp; Files</a> for more.</p>
-<hr />
-<h2 id="editor-panel">Editor panel</h2>
-<p>The central area holds:</p>
-<ul>
-<li>One tab per open <strong>Document</strong>.</li>
-<li>Supported document types:</li>
-<li><strong>SchematicDocument</strong> (schematic editor).</li>
-<li><strong>PcbDocument</strong> (PCB editor).</li>
-</ul>
-<p>Common behavior:</p>
-<ul>
-<li>Tabs show filename or "Untitled".</li>
-<li>Dirty state is tracked; closing a dirty tab prompts to save.</li>
-<li>Right‑click a tab to close or manage.</li>
-</ul>
-<p>Within each document:</p>
-<ul>
-<li>A <strong>canvas</strong> (schematic or PCB) that:</li>
-<li>Shows a grid and page/board outline.</li>
-<li>Supports pan (middle‑button drag) and zoom (mouse wheel).</li>
-<li>A <strong>floating toolbar</strong> specific to the document type.</li>
-</ul>
-<hr />
-<h2 id="library-panel">Library panel</h2>
-<p>Context‑sensitive:</p>
-<ul>
-<li><strong>When a schematic is active</strong>:</li>
-<li>Shows loaded symbol libraries.</li>
-<li>Filter bar for symbol names.</li>
-<li>Double‑click a symbol to start placing it in the schematic.</li>
-<li>
-<p>Right‑click to unload symbols or manage symbol libraries.</p>
 </li>
-<li>
-<p><strong>When a PCB is active</strong>:</p>
-</li>
-<li>Shows loaded footprint libraries.</li>
-<li>Filter bar for footprint names.</li>
-<li>Double‑click to place a footprint or assign to a selected schematic component (depending on workflow).</li>
 </ul>
-<blockquote>
-<p><strong>Image placeholder</strong><br />
-<code>![Library panel schematic](img/ui-overview/library-panel-schematic.png)</code><br />
-<em>Library panel listing symbols with a search box and status bar for loading.</em></p>
-</blockquote>
+<h3 id="interactions">Interactions<a class="headerlink" href="#interactions" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>How</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Open a document</td>
+<td>Click a schematic or PCB entry</td>
+</tr>
+<tr>
+<td>Add new schematic/PCB</td>
+<td>Right-click project → Add New…</td>
+</tr>
+<tr>
+<td>Rename a file</td>
+<td>Right-click → Rename</td>
+</tr>
+<tr>
+<td>Remove from project</td>
+<td>Right-click → Remove</td>
+</tr>
+<tr>
+<td>Delete from disk</td>
+<td>Right-click → Delete (with confirmation)</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Standalone mode</p>
+<p>You can open schematic/PCB files without a project. They appear as standalone tabs in the editor but are not linked to a project tree.</p>
+</div>
+<!-- TODO: Replace with actual screenshot
+     Capture the Project Structure panel showing:
+     - One project ("SampleBoard.prjxml") expanded
+     - Under "Schematics": two files (main.schxml, power.schxml)
+     - Under "PCBs": one file (SampleBoard.pcbxml)
+     - One file highlighted (currently open)
+     - A right-click context menu visible (Add New, Remove, Delete)
+     Crop to the panel only. 300×500px.
+-->
+<p><img alt="Project Structure panel" src="../img/ui-overview/project-tree.png" /></p>
+<p>See <a href="../projects/">Projects &amp; Files</a> for more details.</p>
 <hr />
-<h2 id="properties-panel">Properties panel</h2>
-<p>Displays information about the current selection and active document:</p>
+<h2 id="editor-panel">Editor Panel<a class="headerlink" href="#editor-panel" title="Permanent link">&para;</a></h2>
+<p>The central area where you design. It holds:</p>
 <ul>
-<li><strong>Schematic</strong>:</li>
-<li>Component properties (designator, value, footprint, rotation, attributes).</li>
-<li>Wire/net properties (net name, connections).</li>
-<li>
-<p>Page settings (title, revision, sheet number, paper size).</p>
-</li>
-<li>
-<p><strong>PCB</strong>:</p>
-</li>
-<li>Footprint properties (value, reference, layer, description).</li>
-<li>Pad parameters, 3D model alignment.</li>
-<li>Trace properties (width, net, layer).</li>
-<li>Board boundary and DRC/DFM settings.</li>
+<li><strong>One tab per open document</strong> (schematic or PCB).</li>
+<li>Tab shows the <strong>filename</strong> (or "Untitled-SCH-N" / "Untitled-PCB-N" for new documents).</li>
+<li>A <strong>dot</strong> or <strong>asterisk</strong> next to the name indicates unsaved changes.</li>
+<li>Right-click a tab to <strong>Close</strong>, <strong>Close Others</strong>, or <strong>Close All</strong>.</li>
 </ul>
-<p>Edits are applied via <em>command objects</em> and are undoable.</p>
-<blockquote>
-<p><strong>Image placeholder</strong><br />
-<code>![Properties panel schematic](img/ui-overview/properties-schematic.png)</code><br />
-<em>Properties panel showing a resistor’s designator, value, footprint and text attribute controls.</em></p>
-</blockquote>
+<h3 id="canvas-behavior-common-to-schematic-and-pcb">Canvas behavior (common to schematic and PCB)<a class="headerlink" href="#canvas-behavior-common-to-schematic-and-pcb" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Grid</td>
+<td>Dot grid for alignment; grid spacing depends on zoom level</td>
+</tr>
+<tr>
+<td>Pan</td>
+<td>Hold middle mouse button and drag</td>
+</tr>
+<tr>
+<td>Zoom</td>
+<td>Mouse scroll wheel, centered on cursor</td>
+</tr>
+<tr>
+<td>Fit to screen</td>
+<td>Press <span class="keys"><kbd class="key-f">F</kbd></span> (default) to fit all content in view</td>
+</tr>
+<tr>
+<td>Zoom to selection</td>
+<td>Press <span class="keys"><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-f">F</kbd></span> to zoom to selected items</td>
+</tr>
+</tbody>
+</table>
+<h3 id="schematic-canvas">Schematic canvas<a class="headerlink" href="#schematic-canvas" title="Permanent link">&para;</a></h3>
+<p>Displays a page outline (A4/A3/custom), title block border, and all placed components, wires and graphics.</p>
+<h3 id="pcb-canvas">PCB canvas<a class="headerlink" href="#pcb-canvas" title="Permanent link">&para;</a></h3>
+<p>Displays the board area, placed footprints, traces, vias, zones and ratsnest lines.</p>
 <hr />
-<h2 id="toolbars">Toolbars</h2>
-<h3 id="schematic-toolbar">Schematic toolbar</h3>
-<p>A floating toolbar over the schematic canvas (center top) with tools such as:</p>
+<h2 id="library-panel">Library Panel<a class="headerlink" href="#library-panel" title="Permanent link">&para;</a></h2>
+<p>Context-sensitive — content changes based on the active document type:</p>
+<h3 id="when-a-schematic-is-active">When a schematic is active<a class="headerlink" href="#when-a-schematic-is-active" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Select.</li>
-<li>Wire.</li>
-<li>Net label.</li>
-<li>Text.</li>
-<li>Line, Rectangle, Circle, Arc, Polygon.</li>
-<li>Junction.</li>
-<li>Harness.</li>
-<li>GND, VCC placement.</li>
+<li>Shows loaded <strong>symbol libraries</strong> and their symbols.</li>
+<li><strong>Search filter</strong> at the top for quick lookup (type partial name like <code>STM32</code> or <code>R_</code>).</li>
+<li><strong>Double-click</strong> a symbol to start placing it on the schematic canvas.</li>
+<li><strong>Right-click</strong> for options: Unload Library, Reload, Link Footprint.</li>
 </ul>
-<p>The current drawing mode is highlighted.</p>
-<h3 id="pcb-toolbar">PCB toolbar</h3>
-<p>A similar floating toolbar over the PCB canvas, with tools:</p>
+<!-- TODO: Replace with actual screenshot
+     Capture the Library panel in schematic context:
+     - Search box at the top with "res" typed
+     - Filtered list: "R", "R_0402", "R_0603", "R_1206"
+     - Status bar: "Ready — 150 symbols"
+     - One symbol highlighted
+     Crop to panel only. 280×400px.
+-->
+<p><img alt="Library panel — schematic symbols" src="../img/ui-overview/library-panel-schematic.png" /></p>
+<h3 id="when-a-pcb-is-active">When a PCB is active<a class="headerlink" href="#when-a-pcb-is-active" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Select.</li>
-<li>Place footprint.</li>
-<li>Route trace.</li>
-<li>Draw via.</li>
-<li>Place mechanical hole.</li>
-<li>Draw line, rect, circle, arc, polygon, text.</li>
-<li>Measure.</li>
+<li>Shows loaded <strong>footprint libraries</strong> and their footprints.</li>
+<li>Same <strong>search filter</strong> functionality.</li>
+<li><strong>Double-click</strong> to place a footprint on the PCB, or to assign to a selected component.</li>
+<li><strong>Right-click</strong> for options: Unload, Reload, Open in Footprint Wizard.</li>
 </ul>
+<!-- TODO: Replace with actual screenshot
+     Same as above but showing footprint names (SOT-23, QFP-48, R_0603_1608Metric).
+     PCB editor visible in background. 280×400px.
+-->
+<p><img alt="Library panel — PCB footprints" src="../img/ui-overview/library-panel-pcb.png" /></p>
 <hr />
-<h2 id="layer-panel-pcb-only">Layer panel (PCB only)</h2>
-<p>Shows a table of PCB layers:</p>
-<ul>
-<li>Visibility eye icon (toggle per layer).</li>
-<li>Color patch (editable).</li>
-<li>Layer name; clicking selects current routing layer.</li>
-</ul>
-<blockquote>
-<p><strong>Image placeholder</strong><br />
-<code>![Layer panel](img/ui-overview/layer-panel.png)</code><br />
-<em>Layer list with eye icons, color squares, and active routing layer highlighted.</em></p>
-</blockquote>
+<h2 id="properties-panel">Properties Panel<a class="headerlink" href="#properties-panel" title="Permanent link">&para;</a></h2>
+<p>Displays editable information about the current selection and active document:</p>
+<h3 id="schematic-properties">Schematic properties<a class="headerlink" href="#schematic-properties" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Selection</th>
+<th>Properties shown</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Single component</td>
+<td>Designator, Value, Comment, Footprint, Rotation, Position</td>
+</tr>
+<tr>
+<td>Net label</td>
+<td>Net name, Position, Font size, Visibility</td>
+</tr>
+<tr>
+<td>Wire</td>
+<td>Net name, Connected pins list</td>
+</tr>
+<tr>
+<td>Graphic object</td>
+<td>Position, Size, Color, Layer, Line width</td>
+</tr>
+<tr>
+<td>No selection</td>
+<td>Page settings (paper size, title, company, revision, date)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pcb-properties">PCB properties<a class="headerlink" href="#pcb-properties" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Selection</th>
+<th>Properties shown</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Footprint</td>
+<td>Reference, Value, Layer, Position, Rotation, 3D model</td>
+</tr>
+<tr>
+<td>Trace</td>
+<td>Net name, Layer, Width, Length</td>
+</tr>
+<tr>
+<td>Via</td>
+<td>Net name, Position, Diameter, Drill</td>
+</tr>
+<tr>
+<td>Pad</td>
+<td>Number, Net, Shape, Size, Drill, Layers</td>
+</tr>
+<tr>
+<td>Zone</td>
+<td>Net name, Layer, Priority, Clearance</td>
+</tr>
+<tr>
+<td>No selection</td>
+<td>Board boundary, Design rules summary</td>
+</tr>
+</tbody>
+</table>
+<p>All property edits are applied through the command system and are fully <strong>undoable/redoable</strong>.</p>
+<!-- TODO: Replace with actual screenshot
+     Properties panel with a resistor selected:
+     - Designator: R1, Value: 10kΩ, Comment: empty, Footprint: R_0603_1608Metric
+     - Rotation and position fields
+     - Text attribute controls (designator visibility, font size)
+     - Selected resistor highlighted on schematic canvas in background
+     350×500px.
+-->
+<p><img alt="Properties panel — component selected" src="../img/ui-overview/properties-schematic.png" /></p>
 <hr />
-<h2 id="notifications-and-logger">Notifications and logger</h2>
-<p>The <strong>Logger</strong> overlay shows transient messages at the bottom or corner of the editor panel:</p>
+<h2 id="toolbars">Toolbars<a class="headerlink" href="#toolbars" title="Permanent link">&para;</a></h2>
+<h3 id="schematic-toolbar">Schematic toolbar<a class="headerlink" href="#schematic-toolbar" title="Permanent link">&para;</a></h3>
+<p>A floating toolbar over the schematic canvas (centered at the top):</p>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Icon description</th>
+<th>Mode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Select</td>
+<td>Arrow cursor</td>
+<td>Default selection and move mode</td>
+</tr>
+<tr>
+<td>Wire</td>
+<td>Angled line</td>
+<td>Draw orthogonal wires between pins</td>
+</tr>
+<tr>
+<td>Label</td>
+<td>"A" with tag</td>
+<td>Place net labels</td>
+</tr>
+<tr>
+<td>Text</td>
+<td>"T"</td>
+<td>Place text annotations</td>
+</tr>
+<tr>
+<td>Line</td>
+<td>Diagonal line</td>
+<td>Draw straight lines</td>
+</tr>
+<tr>
+<td>Rectangle</td>
+<td>Rectangle outline</td>
+<td>Draw rectangles</td>
+</tr>
+<tr>
+<td>Circle</td>
+<td>Circle outline</td>
+<td>Draw circles</td>
+</tr>
+<tr>
+<td>Arc</td>
+<td>Curved line</td>
+<td>Draw arcs</td>
+</tr>
+<tr>
+<td>Polygon</td>
+<td>Pentagon</td>
+<td>Draw polygons (multi-vertex)</td>
+</tr>
+<tr>
+<td>Junction</td>
+<td>Filled dot</td>
+<td>Place junction dots</td>
+</tr>
+<tr>
+<td>Harness</td>
+<td>Bundled wires</td>
+<td>Draw net harness graphics</td>
+</tr>
+<tr>
+<td>GND</td>
+<td>Ground symbol</td>
+<td>Place GND power symbol</td>
+</tr>
+<tr>
+<td>VCC</td>
+<td>Arrow-up symbol</td>
+<td>Place VCC power symbol</td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>active tool</strong> is highlighted with a cyan background. Click a different tool button to change modes.</p>
+<h3 id="pcb-toolbar">PCB toolbar<a class="headerlink" href="#pcb-toolbar" title="Permanent link">&para;</a></h3>
+<p>A similar floating toolbar over the PCB canvas:</p>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Icon description</th>
+<th>Mode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Select</td>
+<td>Arrow cursor</td>
+<td>Default selection and move mode</td>
+</tr>
+<tr>
+<td>Place Footprint</td>
+<td>IC package</td>
+<td>Place a footprint from library</td>
+</tr>
+<tr>
+<td>Route Trace</td>
+<td>Trace path</td>
+<td>Route traces between pads</td>
+</tr>
+<tr>
+<td>Draw Via</td>
+<td>Via circle</td>
+<td>Place vias</td>
+</tr>
+<tr>
+<td>Place Hole</td>
+<td>Drill circle</td>
+<td>Place mechanical holes</td>
+</tr>
+<tr>
+<td>Draw Line</td>
+<td>Diagonal line</td>
+<td>Draw graphic lines</td>
+</tr>
+<tr>
+<td>Draw Rect</td>
+<td>Rectangle</td>
+<td>Draw graphic rectangles</td>
+</tr>
+<tr>
+<td>Draw Circle</td>
+<td>Circle</td>
+<td>Draw graphic circles</td>
+</tr>
+<tr>
+<td>Draw Arc</td>
+<td>Arc</td>
+<td>Draw graphic arcs</td>
+</tr>
+<tr>
+<td>Draw Polygon</td>
+<td>Pentagon</td>
+<td>Draw graphic polygons</td>
+</tr>
+<tr>
+<td>Draw Text</td>
+<td>"T"</td>
+<td>Place text on silkscreen/fab layers</td>
+</tr>
+<tr>
+<td>Measure</td>
+<td>Ruler</td>
+<td>Measure distances on the board</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="layer-panel-pcb-only">Layer Panel (PCB Only)<a class="headerlink" href="#layer-panel-pcb-only" title="Permanent link">&para;</a></h2>
+<p>Displayed when a PCB document is active. Shows a table of all board layers:</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Eye icon</strong></td>
+<td>Toggle layer visibility (click to show/hide)</td>
+</tr>
+<tr>
+<td><strong>Color patch</strong></td>
+<td>Layer color — click to open color picker</td>
+</tr>
+<tr>
+<td><strong>Layer name</strong></td>
+<td>Click to set as the <strong>active routing/drawing layer</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The currently <strong>active layer</strong> is highlighted (e.g., F.Cu with a cyan indicator).</p>
+<!-- TODO: Replace with actual screenshot
+     Layer panel showing:
+     - F.Cu: eye on, red patch, highlighted as active
+     - B.Cu: blue patch, visible
+     - F.SilkS, B.SilkS, F.Mask, B.Mask (some hidden/greyed)
+     - Edge.Cuts: magenta patch
+     - 8–10 layers listed
+     250×400px.
+-->
+<p><img alt="Layer panel" src="../img/ui-overview/layer-panel.png" /></p>
+<hr />
+<h2 id="notifications-and-logger">Notifications and Logger<a class="headerlink" href="#notifications-and-logger" title="Permanent link">&para;</a></h2>
+<p>The <strong>Logger overlay</strong> displays transient messages at the bottom-right corner of the editor:</p>
+<table>
+<thead>
+<tr>
+<th>Severity</th>
+<th>Icon</th>
+<th>Color</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Info</td>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h-2V7h2m0 10h-2v-6h2m-1-9A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg></span></td>
+<td>Blue</td>
+<td>"Project loaded successfully"</td>
+</tr>
+<tr>
+<td>Success</td>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8z"/></svg></span></td>
+<td>Green</td>
+<td>"File saved: main.schxml"</td>
+</tr>
+<tr>
+<td>Warning</td>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2z"/></svg></span></td>
+<td>Yellow</td>
+<td>"Library parsing: 2 symbols skipped"</td>
+</tr>
+<tr>
+<td>Error</td>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41z"/></svg></span></td>
+<td>Red</td>
+<td>"Failed to save: permission denied"</td>
+</tr>
+</tbody>
+</table>
+<p>Messages auto-fade after a few seconds. They are used for:</p>
 <ul>
-<li>Info, Success, Warning, Error with icons.</li>
-<li>Auto‑fades after a few seconds.</li>
-<li>Used for:</li>
-<li>File I/O success/fail.</li>
-<li>Project operations.</li>
+<li>File I/O success or failure.</li>
+<li>Project operations (open, close, create).</li>
 <li>DFM/DRC results summary.</li>
+<li>Library loading progress.</li>
 </ul>
-<blockquote>
-<p><strong>Video placeholder</strong><br />
-<em>Short video showing a user deleting a footprint and a yellow warning toast appearing at the bottom of the editor, then fading out.</em></p>
-</blockquote>
+<!-- TODO: Replace with actual video (MP4, 10 seconds, 1280×720 at 30fps)
+     1. User saves a file → green toast appears bottom-right
+     2. Toast fades after 3–4 seconds
+     3. User loads invalid library → yellow warning toast appears
+-->
+
+<video controls width="100%">
+  <source src="../img/ui-overview/notification-toast.webm" type="video/webm">
+  <source src="../img/ui-overview/notification-toast.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
 <hr />
-<p>Next: see <a href="../projects">Projects and Files</a> for how projects are structured and linked to documents.</p>
+<h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../projects/">Projects &amp; Files</a> — how projects are structured and linked to documents.</li>
+<li><a href="../schematic/">Schematic Editor</a> — detailed guide to the schematic workspace.</li>
+<li><a href="../pcb/">PCB Editor</a> — detailed guide to the PCB workspace.</li>
+<li><a href="../advanced/shortcuts/">Keyboard Shortcuts</a> — full list of customizable key bindings.</li>
+</ul>
 
 
 
@@ -1945,6 +2977,8 @@
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -1958,6 +2992,46 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../getting-started/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Introduction">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Introduction
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../projects/" class="md-footer__link md-footer__link--next" aria-label="Next: Projects &amp; Files">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Projects & Files
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
@@ -1967,9 +3041,17 @@
     </div>
   
   
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/CaSauCoin/WireFrame_Product" target="_blank" rel="noopener" title="WireFrame on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
     </a>
   
 </div>
@@ -1987,7 +3069,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.expand", "navigation.indexes", "navigation.footer", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.tabs.link", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "stable", "provider": "mike"}}</script>
     
     
       <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>

@@ -1,143 +1,228 @@
 # User Interface Overview
 
-This page explains the main parts of the WireFrame UI.
-
-> **Image placeholder**  
-> `![UI overview](img/ui-overview/layout-annotated.png)`  
-> _Annotated screenshot labeling menu bar, project tree, editor tabs, library panel, properties panel, layer panel, and status/notification area._
+This page provides a detailed tour of every part of the WireFrame UI. Understanding the layout will help you work efficiently as you design schematics and PCBs.
+![WireFrame UI layout annotated](img/ui-overview/layout-annotated.png)
 
 ---
 
-## Menu bar
+## Menu Bar
 
-Located at the top of the window, providing:
+Located at the top of the window. Provides access to all major operations:
 
-- **File**
-  - New Project, Open Project, Open, Save, Save As, Close Project.
-  - Project‑level export (PDF, Gerber, BOM, etc. when a PCB is active).
-- **Edit**
-  - Undo, Redo, Cut, Copy, Paste, Delete.
-- **View**
-  - Toggle panels (Library, Layers, Properties, etc.).
-  - Open 3D viewer.
-- **Tools**
-  - Schematic symbol editor.
-  - PCB footprint wizard.
-  - Design rules panel.
-  - Gerber viewer.
-- **Help**
-  - About dialog.
-  - Update checks, if enabled.
+### File menu
 
----
+| Action | Shortcut | Description |
+|---|---|---|
+| New Project… | | Create a new `.prjxml` project |
+| Open Project… | | Open an existing project |
+| Open… | ++ctrl+o++ | Open a schematic or PCB file |
+| New Schematic | ++ctrl+n++ | Create a new schematic document |
+| New PCB | | Create a new PCB document |
+| Save | ++ctrl+s++ | Save the active document |
+| Save As… | ++ctrl+shift+s++ | Save with a new filename |
+| Close Project | | Close the active project |
+| Export → | | Sub-menu for PDF, Gerber, BOM export |
 
-## Docking layout
+### Edit menu
 
-WireFrame uses ImGui docking:
+| Action | Shortcut | Description |
+|---|---|---|
+| Undo | ++ctrl+z++ | Undo last action |
+| Redo | ++ctrl+y++ | Redo last undone action |
+| Cut | ++ctrl+x++ | Cut selected items to clipboard |
+| Copy | ++ctrl+c++ | Copy selected items |
+| Paste | ++ctrl+v++ | Paste from clipboard |
+| Delete | ++delete++ | Delete selected items |
 
-- You can **drag tabs** to move panels around.
-- Layout is persistent via ImGui configuration.
-- Common panels:
-  - Project Structure.
-  - Editor (center).
-  - Library.
-  - Properties.
-  - Layers (PCB only).
-  - Logger notification overlay (non‑docked, top‑over‑content).
+### View menu
 
----
+| Action | Description |
+|---|---|
+| Toggle Library | Show/hide the Library panel |
+| Toggle Layers | Show/hide the Layer panel (PCB) |
+| Toggle Properties | Show/hide the Properties panel |
+| 3D Viewer… | Open the 3D PCB viewer |
+| Fit to Screen | Zoom to fit all content |
 
-## Project Structure panel
+### Tools menu
 
-Shows:
+| Action | Description |
+|---|---|
+| Symbol Editor | Open the symbol library editor |
+| Footprint Wizard | Open the footprint generator |
+| Design Rules | Open design rules configuration |
+| DFM Check | Run DFM/DRC checks on the active PCB |
+| Gerber Viewer | Open the built-in Gerber file viewer |
+| Keymap… | Open the keyboard shortcut editor |
 
-- Open projects (`.prjxml`), each as a root node.
-- Under each project:
-  - **Schematics** (`.schxml`).
-  - **PCBs** (`.pcbxml`).
+### Help menu
 
-Features:
-
-- Click a schematic or PCB file to open/focus its document.
-- Right‑click project/file for context actions:
-  - Add new schematic/PCB.
-  - Rename.
-  - Remove from project (or delete from disk, depending on dialog).
-- When opened without a project, you can still recursively browse a folder.
-
-> **Image placeholder**  
-> `![Project tree](img/ui-overview/project-tree.png)`  
-> _Project panel showing one project with two schematics and one PCB under it._
-
-See [Projects & Files](projects.md) for more.
+| Action | Description |
+|---|---|
+| About | Show version and license information |
+| Check for Updates | Check for newer versions (if enabled) |
 
 ---
 
-## Editor panel
+## Docking Layout
 
-The central area holds:
+WireFrame uses **docking layout**, giving you full control over panel arrangement:
 
-- One tab per open **Document**.
-- Supported document types:
-  - **SchematicDocument** (schematic editor).
-  - **PcbDocument** (PCB editor).
+- **Drag tabs** to move panels between docking zones (left, right, bottom, center).
+- **Float panels** by dragging them outside the docking area — they become independent windows.
+- **Split zones** by dropping a panel on the edge of an existing zone.
+- **Layout persistence**: your arrangement is saved automatically via ImGui configuration and restored on next launch.
 
-Common behavior:
+Common default panels:
 
-- Tabs show filename or "Untitled".
-- Dirty state is tracked; closing a dirty tab prompts to save.
-- Right‑click a tab to close or manage.
-
-Within each document:
-
-- A **canvas** (schematic or PCB) that:
-  - Shows a grid and page/board outline.
-  - Supports pan (middle‑button drag) and zoom (mouse wheel).
-- A **floating toolbar** specific to the document type.
+| Panel | Default position |
+|---|---|
+| Project Structure | Left |
+| Editor (canvas) | Center |
+| Library | Right (top) |
+| Properties | Right (bottom) |
+| Layers (PCB only) | Right (middle) |
+| Logger / Notifications | Overlay (bottom-right) |
 
 ---
 
-## Library panel
+## Project Structure Panel
 
-Context‑sensitive:
+Shows all open projects and their contents in a tree view:
 
-- **When a schematic is active**:
-  - Shows loaded symbol libraries.
-  - Filter bar for symbol names.
-  - Double‑click a symbol to start placing it in the schematic.
-  - Right‑click to unload symbols or manage symbol libraries.
+- **Project node** (`.prjxml`) — the root.
+    - **Schematics** — lists all `.schxml` files registered in the project.
+    - **PCBs** — lists all `.pcbxml` files registered in the project.
 
-- **When a PCB is active**:
-  - Shows loaded footprint libraries.
-  - Filter bar for footprint names.
-  - Double‑click to place a footprint or assign to a selected schematic component (depending on workflow).
+### Interactions
 
-> **Image placeholder**  
-> `![Library panel schematic](img/ui-overview/library-panel-schematic.png)`  
-> _Library panel listing symbols with a search box and status bar for loading._
+| Action | How |
+|---|---|
+| Open a document | Click a schematic or PCB entry |
+| Add new schematic/PCB | Right-click project → Add New… |
+| Rename a file | Right-click → Rename |
+| Remove from project | Right-click → Remove |
+| Delete from disk | Right-click → Delete (with confirmation) |
+
+!!! info "Standalone mode"
+    You can open schematic/PCB files without a project. They appear as standalone tabs in the editor but are not linked to a project tree.
+
+<!-- TODO: Replace with actual screenshot
+     Capture the Project Structure panel showing:
+     - One project ("SampleBoard.prjxml") expanded
+     - Under "Schematics": two files (main.schxml, power.schxml)
+     - Under "PCBs": one file (SampleBoard.pcbxml)
+     - One file highlighted (currently open)
+     - A right-click context menu visible (Add New, Remove, Delete)
+     Crop to the panel only. 300×500px.
+-->
+![Project Structure panel](img/ui-overview/project-tree.png)
+
+See [Projects & Files](projects.md) for more details.
 
 ---
 
-## Properties panel
+## Editor Panel
 
-Displays information about the current selection and active document:
+The central area where you design. It holds:
 
-- **Schematic**:
-  - Component properties (designator, value, footprint, rotation, attributes).
-  - Wire/net properties (net name, connections).
-  - Page settings (title, revision, sheet number, paper size).
+- **One tab per open document** (schematic or PCB).
+- Tab shows the **filename** (or "Untitled-SCH-N" / "Untitled-PCB-N" for new documents).
+- A **dot** or **asterisk** next to the name indicates unsaved changes.
+- Right-click a tab to **Close**, **Close Others**, or **Close All**.
 
-- **PCB**:
-  - Footprint properties (value, reference, layer, description).
-  - Pad parameters, 3D model alignment.
-  - Trace properties (width, net, layer).
-  - Board boundary and DRC/DFM settings.
+### Canvas behavior (common to schematic and PCB)
 
-Edits are applied via *command objects* and are undoable.
+| Feature | Description |
+|---|---|
+| Grid | Dot grid for alignment; grid spacing depends on zoom level |
+| Pan | Hold middle mouse button and drag |
+| Zoom | Mouse scroll wheel, centered on cursor |
+| Fit to screen | Press ++f++ (default) to fit all content in view |
+| Zoom to selection | Press ++shift+f++ to zoom to selected items |
 
-> **Image placeholder**  
-> `![Properties panel schematic](img/ui-overview/properties-schematic.png)`  
-> _Properties panel showing a resistor’s designator, value, footprint and text attribute controls._
+### Schematic canvas
+
+Displays a page outline (A4/A3/custom), title block border, and all placed components, wires and graphics.
+
+### PCB canvas
+
+Displays the board area, placed footprints, traces, vias, zones and ratsnest lines.
+
+---
+
+## Library Panel
+
+Context-sensitive — content changes based on the active document type:
+
+### When a schematic is active
+
+- Shows loaded **symbol libraries** and their symbols.
+- **Search filter** at the top for quick lookup (type partial name like `STM32` or `R_`).
+- **Double-click** a symbol to start placing it on the schematic canvas.
+- **Right-click** for options: Unload Library, Reload, Link Footprint.
+
+<!-- TODO: Replace with actual screenshot
+     Capture the Library panel in schematic context:
+     - Search box at the top with "res" typed
+     - Filtered list: "R", "R_0402", "R_0603", "R_1206"
+     - Status bar: "Ready — 150 symbols"
+     - One symbol highlighted
+     Crop to panel only. 280×400px.
+-->
+![Library panel — schematic symbols](img/ui-overview/library-panel-schematic.png)
+
+### When a PCB is active
+
+- Shows loaded **footprint libraries** and their footprints.
+- Same **search filter** functionality.
+- **Double-click** to place a footprint on the PCB, or to assign to a selected component.
+- **Right-click** for options: Unload, Reload, Open in Footprint Wizard.
+
+<!-- TODO: Replace with actual screenshot
+     Same as above but showing footprint names (SOT-23, QFP-48, R_0603_1608Metric).
+     PCB editor visible in background. 280×400px.
+-->
+![Library panel — PCB footprints](img/ui-overview/library-panel-pcb.png)
+
+---
+
+## Properties Panel
+
+Displays editable information about the current selection and active document:
+
+### Schematic properties
+
+| Selection | Properties shown |
+|---|---|
+| Single component | Designator, Value, Comment, Footprint, Rotation, Position |
+| Net label | Net name, Position, Font size, Visibility |
+| Wire | Net name, Connected pins list |
+| Graphic object | Position, Size, Color, Layer, Line width |
+| No selection | Page settings (paper size, title, company, revision, date) |
+
+### PCB properties
+
+| Selection | Properties shown |
+|---|---|
+| Footprint | Reference, Value, Layer, Position, Rotation, 3D model |
+| Trace | Net name, Layer, Width, Length |
+| Via | Net name, Position, Diameter, Drill |
+| Pad | Number, Net, Shape, Size, Drill, Layers |
+| Zone | Net name, Layer, Priority, Clearance |
+| No selection | Board boundary, Design rules summary |
+
+All property edits are applied through the command system and are fully **undoable/redoable**.
+
+<!-- TODO: Replace with actual screenshot
+     Properties panel with a resistor selected:
+     - Designator: R1, Value: 10kΩ, Comment: empty, Footprint: R_0603_1608Metric
+     - Rotation and position fields
+     - Text attribute controls (designator visibility, font size)
+     - Selected resistor highlighted on schematic canvas in background
+     350×500px.
+-->
+![Properties panel — component selected](img/ui-overview/properties-schematic.png)
 
 ---
 
@@ -145,61 +230,107 @@ Edits are applied via *command objects* and are undoable.
 
 ### Schematic toolbar
 
-A floating toolbar over the schematic canvas (center top) with tools such as:
+A floating toolbar over the schematic canvas (centered at the top):
 
-- Select.
-- Wire.
-- Net label.
-- Text.
-- Line, Rectangle, Circle, Arc, Polygon.
-- Junction.
-- Harness.
-- GND, VCC placement.
+| Tool | Icon description | Mode |
+|---|---|---|
+| Select | Arrow cursor | Default selection and move mode |
+| Wire | Angled line | Draw orthogonal wires between pins |
+| Label | "A" with tag | Place net labels |
+| Text | "T" | Place text annotations |
+| Line | Diagonal line | Draw straight lines |
+| Rectangle | Rectangle outline | Draw rectangles |
+| Circle | Circle outline | Draw circles |
+| Arc | Curved line | Draw arcs |
+| Polygon | Pentagon | Draw polygons (multi-vertex) |
+| Junction | Filled dot | Place junction dots |
+| Harness | Bundled wires | Draw net harness graphics |
+| GND | Ground symbol | Place GND power symbol |
+| VCC | Arrow-up symbol | Place VCC power symbol |
 
-The current drawing mode is highlighted.
+The **active tool** is highlighted with a cyan background. Click a different tool button to change modes.
 
 ### PCB toolbar
 
-A similar floating toolbar over the PCB canvas, with tools:
+A similar floating toolbar over the PCB canvas:
 
-- Select.
-- Place footprint.
-- Route trace.
-- Draw via.
-- Place mechanical hole.
-- Draw line, rect, circle, arc, polygon, text.
-- Measure.
-
----
-
-## Layer panel (PCB only)
-
-Shows a table of PCB layers:
-
-- Visibility eye icon (toggle per layer).
-- Color patch (editable).
-- Layer name; clicking selects current routing layer.
-
-> **Image placeholder**  
-> `![Layer panel](img/ui-overview/layer-panel.png)`  
-> _Layer list with eye icons, color squares, and active routing layer highlighted._
+| Tool | Icon description | Mode |
+|---|---|---|
+| Select | Arrow cursor | Default selection and move mode |
+| Place Footprint | IC package | Place a footprint from library |
+| Route Trace | Trace path | Route traces between pads |
+| Draw Via | Via circle | Place vias |
+| Place Hole | Drill circle | Place mechanical holes |
+| Draw Line | Diagonal line | Draw graphic lines |
+| Draw Rect | Rectangle | Draw graphic rectangles |
+| Draw Circle | Circle | Draw graphic circles |
+| Draw Arc | Arc | Draw graphic arcs |
+| Draw Polygon | Pentagon | Draw graphic polygons |
+| Draw Text | "T" | Place text on silkscreen/fab layers |
+| Measure | Ruler | Measure distances on the board |
 
 ---
 
-## Notifications and logger
+## Layer Panel (PCB Only)
 
-The **Logger** overlay shows transient messages at the bottom or corner of the editor panel:
+Displayed when a PCB document is active. Shows a table of all board layers:
 
-- Info, Success, Warning, Error with icons.
-- Auto‑fades after a few seconds.
-- Used for:
-  - File I/O success/fail.
-  - Project operations.
-  - DFM/DRC results summary.
+| Column | Description |
+|---|---|
+| **Eye icon** | Toggle layer visibility (click to show/hide) |
+| **Color patch** | Layer color — click to open color picker |
+| **Layer name** | Click to set as the **active routing/drawing layer** |
 
-> **Video placeholder**  
-> _Short video showing a user deleting a footprint and a yellow warning toast appearing at the bottom of the editor, then fading out._
+The currently **active layer** is highlighted (e.g., F.Cu with a cyan indicator).
+
+<!-- TODO: Replace with actual screenshot
+     Layer panel showing:
+     - F.Cu: eye on, red patch, highlighted as active
+     - B.Cu: blue patch, visible
+     - F.SilkS, B.SilkS, F.Mask, B.Mask (some hidden/greyed)
+     - Edge.Cuts: magenta patch
+     - 8–10 layers listed
+     250×400px.
+-->
+![Layer panel](img/ui-overview/layer-panel.png)
 
 ---
 
-Next: see [Projects and Files](projects.md) for how projects are structured and linked to documents.
+## Notifications and Logger
+
+The **Logger overlay** displays transient messages at the bottom-right corner of the editor:
+
+| Severity | Icon | Color | Example |
+|---|---|---|---|
+| Info | :material-information: | Blue | "Project loaded successfully" |
+| Success | :material-check-circle: | Green | "File saved: main.schxml" |
+| Warning | :material-alert: | Yellow | "Library parsing: 2 symbols skipped" |
+| Error | :material-close-circle: | Red | "Failed to save: permission denied" |
+
+Messages auto-fade after a few seconds. They are used for:
+
+- File I/O success or failure.
+- Project operations (open, close, create).
+- DFM/DRC results summary.
+- Library loading progress.
+
+<!-- TODO: Replace with actual video (MP4, 10 seconds, 1280×720 at 30fps)
+     1. User saves a file → green toast appears bottom-right
+     2. Toast fades after 3–4 seconds
+     3. User loads invalid library → yellow warning toast appears
+-->
+
+<video controls width="100%">
+  <source src="../img/ui-overview/notification-toast.webm" type="video/webm">
+  <source src="../img/ui-overview/notification-toast.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+---
+
+## See Also
+
+- [Projects & Files](projects.md) — how projects are structured and linked to documents.
+- [Schematic Editor](schematic/index.md) — detailed guide to the schematic workspace.
+- [PCB Editor](pcb/index.md) — detailed guide to the PCB workspace.
+- [Keyboard Shortcuts](advanced/shortcuts.md) — full list of customizable key bindings.

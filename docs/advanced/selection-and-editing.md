@@ -1,92 +1,144 @@
 # Selection and Editing
 
-Selection and editing are unified across schematic and PCB via `SelectionManager`.
+Selection and editing operations are unified across schematic and PCB editors via the selection system. This page covers selection basics, moving, context menus, clipboard, and keyboard operations.
 
 ---
 
-## Selection basics
+## Selection Basics
 
-- **Click**:
-  - Left‑click on an object selects it.
-  - Clicking empty space clears selection (unless a tool is active).
-- **Box selection**:
-  - Left‑click and drag on empty area.
-  - Draws a semi‑transparent rectangle.
-  - On release, selects items whose bounding boxes intersect the rectangle.
+| Action | Input | Result |
+|---|---|---|
+| Select one item | Left-click on it | Single selection (previous cleared) |
+| Add to selection | ++ctrl++"Click"++ | Add item to existing selection |
+| Box select | Left-click + drag on empty area | Selects all items whose bounds intersect the box |
+| Clear selection | Click on empty area | Deselects everything |
 
-Selections are stored as:
+### Selection storage
 
-- `m_selectedCompIds` – schematic component IDs.
-- `m_selectedWireIds` – schematic wire IDs.
-- `m_selectedGraphicIds` – graphic object IDs.
-- `m_selectedViaIds`, `m_selectedHoleIds`, `m_selectedTraceIds` – PCB objects.
-- `m_selectedLibrarySymbol` – currently highlighted symbol in library.
+Items are tracked by type:
+
+| Selection set | Editor | Stored items |
+|---|---|---|
+| Components | Schematic | Component IDs |
+| Wires | Schematic | Wire IDs |
+| Graphics | Both | Graphic object IDs |
+| Traces | PCB | Trace IDs |
+| Vias | PCB | Via IDs |
+| Holes | PCB | Hole IDs |
 
 ---
 
-## Moving selection
+## Moving Selection
 
-1. Select items.
+1. Select one or more items.
 2. Click and drag them on the canvas.
-3. During drag:
-   - Positions update in real time for feedback.
-4. On release:
-   - For schematic: `MoveCommand` stored (components + wires).
-   - For PCB: `PcbMoveCommand` stored (footprints, traces, vias and holes).
+3. Items follow the cursor in real time.
+4. On mouse release:
 
-Undo/redo returns items exactly to their previous positions and wire/trace shapes.
+| Editor | Command | What's captured |
+|---|---|---|
+| Schematic | an undoable move command | Component positions + wire geometries |
+| PCB | an undoable move command | Footprint, trace, via, and hole positions |
 
----
-
-## Context menus
-
-Right‑click on:
-
-- Component:
-  - Rotate, Flip (schematic), Edit properties, Delete.
-- Wire or trace:
-  - Delete, Change net, Start dragging segment.
-- Graphics:
-  - Delete, Change layer, Flip (PCB).
-- Footprint:
-  - Rotate, Flip, Unplace, Edit 3D model, Delete.
-
-`SelectionManager::renderContextMenu` coordinates these operations and triggers appropriate commands.
+**Undo** (++ctrl+z++) restores all items to their exact previous positions, including wire/trace shapes.
 
 ---
 
-## Copy, cut, paste (schematic and PCB)
+## Context Menus
 
-### Schematic
+Right-click on any object to open a context-specific menu:
 
-- `handleCopySchematic`:
-  - Fills `m_copiedComponents` and `m_copiedWires`.
-- `handlePasteSchematic`:
-  - Executes `PasteCommand`:
-    - Creates new components via `ComponentManager::pasteNewComponent`.
-    - Adds new wires via `WireManager::addWire`.
-    - Remaps component IDs and pin attachments.
+### Schematic context menus
 
-### PCB
+| Object | Available actions |
+|---|---|
+| Component | Rotate, Edit Properties, Delete |
+| Wire | Delete, Change Net, Start Dragging Segment |
+| Graphic | Delete, Change Layer, Change Color |
+| Net label | Edit Net Name, Delete |
+| Empty canvas | Paste (if clipboard has content) |
 
-- `handlePcbCopy` / `handlePcbPaste`:
-  - Copy footprints, traces, vias, holes and graphics into clipboard structures.
-  - Paste at the mouse world position with preserved relative geometry.
+### PCB context menus
+
+| Object | Available actions |
+|---|---|
+| Footprint | Rotate, Flip, Unplace, Edit 3D Model, Delete |
+| Trace | Delete, Change Net |
+| Via | Delete, Edit Properties |
+| Graphic | Delete, Change Layer |
+| Empty canvas | Paste |
 
 ---
 
-## Keyboard operations
+## Copy, Cut, Paste
 
-Operations that rely on keyboard shortcuts:
+### Schematic clipboard
 
-- **Undo / Redo** – uses `CommandHistory`:
-  - `executeCommand` pushes a command on the undo stack and clears the redo stack.
-- **Delete** – mapped to Delete or Backspace:
-  - Calls `SelectionManager::handleDelete`.
-- **Copy / Cut / Paste** – map to `Ctrl+C`, `Ctrl+X`, `Ctrl+V` equivalents.
-- **Rotate**, **Flip**, **Align** – triggered via mapping in `Key_Map`.
+| Operation | Shortcut | Handler |
+|---|---|---|
+| Copy | ++ctrl+c++ | Copy handler — stores selected components and wires |
+| Cut | ++ctrl+x++ | Copy + Delete |
+| Paste | ++ctrl+v++ | Paste handler → a paste command |
 
-See [Shortcuts](shortcuts.md) for a more detailed overview.
+During schematic paste:
 
-> **Video placeholder**  
-> _Short clip: user selects mixed schematic elements (components, wires and graphics), hits Copy, clicks elsewhere, hits Paste and sees a cloned group appear._
+- New components are created via the paste operation.
+- New wires are added via the wire system.
+- Component IDs are **remapped** (R1 → R5) to avoid conflicts.
+- Wire pin attachments are **remapped** from old to new IDs.
+
+### PCB clipboard
+
+| Operation | Shortcut | Handler |
+|---|---|---|
+| Copy | ++ctrl+c++ | Copy handler — stores footprints, traces, vias, holes, graphics |
+| Cut | ++ctrl+x++ | Copy + Delete |
+| Paste | ++ctrl+v++ | Paste handler — places at mouse position with preserved geometry |
+
+During PCB paste:
+
+- Relative positions between items are preserved.
+- New IDs are generated for all pasted items.
+- The pasted group follows the mouse until you click to place.
+
+<!-- TODO: Replace with actual video
+     Record a 15-second clip:
+     1. _Select a group of schematic components and wires using box select._
+     2. _Press Ctrl+C to copy._
+     3. _Click elsewhere on the canvas._
+     4. _Press Ctrl+V — a cloned group appears attached to the mouse._
+     5. _Click to place the pasted group._
+     6. _The new components have different IDs (R3, R4 instead of R1, R2)._
+     Resolution: 1280×720 at 30fps.
+-->
+<video controls width="100%">
+  <source src="../../img/advanced/copy-paste-demo.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+
+## Keyboard Operations
+
+| Operation | Shortcut | Description |
+|---|---|---|
+| Undo | ++ctrl+z++ | Reverts the last command from the command history system |
+| Redo | ++ctrl+y++ or ++ctrl+shift+z++ | Re-applies the last undone command |
+| Delete | ++delete++ or ++backspace++ | Deletes the current selection |
+| Copy | ++ctrl+c++ | Copy selection to clipboard |
+| Cut | ++ctrl+x++ | Cut selection |
+| Paste | ++ctrl+v++ | Paste from clipboard |
+| Rotate | ++r++ | Rotate selected items |
+| Flip | ++f++ | Flip selected items (PCB: front/back) |
+| Select All | ++ctrl+a++ | Select all items on the canvas |
+
+All operations go through the **Command pattern** — every mutation pushes to the undo stack, enabling full undo/redo history.
+
+See [Keyboard Shortcuts](shortcuts.md) for the complete key binding reference.
+
+---
+
+## See Also
+
+- [Schematic Editor](../schematic/index.md) — schematic-specific interactions.
+- [PCB Editor](../pcb/index.md) — PCB-specific interactions.
+- [Keyboard Shortcuts](shortcuts.md) — customize all key bindings.

@@ -6,15 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="Complete user guide for WireFrame EDA — a lightweight schematic and PCB design environment built with ImGui, GLFW and OpenGL.">
+      
       
       
         <link rel="canonical" href="https://wireframe.com.vn/docs/pcb/dfm-and-drc/">
       
       
-        <link rel="prev" href="../zones-and-planes">
+        <link rel="prev" href="../zones-and-planes/">
       
       
-        <link rel="next" href="../fabrication-and-export">
+        <link rel="next" href="../fabrication-and-export/">
       
       
         
@@ -25,7 +27,7 @@
     
     
       
-        <title>DFM & DRC Check - WireFrame EDA Docs</title>
+        <title>DFM & DRC Check - WireFrame EDA Documentation</title>
       
     
     
@@ -46,8 +48,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
       
     
     
@@ -85,15 +87,21 @@
       
     </div>
     
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
     
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="WireFrame EDA Docs" class="md-header__button md-logo" aria-label="WireFrame EDA Docs" data-md-component="logo">
+    <a href="../.." title="WireFrame EDA Documentation" class="md-header__button md-logo" aria-label="WireFrame EDA Documentation" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 4h12v1h3v2h-3v2h3v2h-3v2h3v2h-3v2h3v2h-3v1H6v-1H3v-2h3v-2H3v-2h3v-2H3V9h3V7H3V5h3zm5 11v3h1v-3zm2 0v3h1v-3zm2 0v3h1v-3z"/></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -104,7 +112,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            WireFrame EDA Docs
+            WireFrame EDA Documentation
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -141,6 +149,11 @@
       </label>
       <nav class="md-search__options" aria-label="Search">
         
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
@@ -167,14 +180,8 @@
     
   </nav>
   
-</header>
     
-    <div class="md-container" data-md-component="container">
       
-      
-        
-          
-            
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
   <div class="md-grid">
     <ul class="md-tabs__list">
@@ -206,9 +213,11 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../getting-started" class="md-tabs__link">
+        <a href="../../installation/" class="md-tabs__link">
           
   
+  
+    
   
   Getting Started
 
@@ -226,9 +235,11 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../schematic" class="md-tabs__link">
+        <a href="../../schematic/" class="md-tabs__link">
           
   
+  
+    
   
   Schematic Design
 
@@ -248,9 +259,11 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href=".." class="md-tabs__link">
+        <a href="../" class="md-tabs__link">
           
   
+  
+    
   
   PCB Layout
 
@@ -268,9 +281,11 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../libraries/symbols-library" class="md-tabs__link">
+        <a href="../../libraries/symbols-library/" class="md-tabs__link">
           
   
+  
+    
   
   Libraries
 
@@ -288,9 +303,11 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../advanced/selection-and-editing" class="md-tabs__link">
+        <a href="../../advanced/selection-and-editing/" class="md-tabs__link">
           
   
+  
+    
   
   Advanced Features
 
@@ -308,9 +325,11 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../reference/config-and-session" class="md-tabs__link">
+        <a href="../../reference/config-and-session/" class="md-tabs__link">
           
   
+  
+    
   
   Reference
 
@@ -320,10 +339,35 @@
   
 
       
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tutorial/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tutorial
+
+      </a>
+    </li>
+  
+
+      
     </ul>
   </div>
 </nav>
-          
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
         
       
       <main class="md-main" data-md-component="main">
@@ -342,13 +386,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="WireFrame EDA Docs" class="md-nav__button md-logo" aria-label="WireFrame EDA Docs" data-md-component="logo">
+    <a href="../.." title="WireFrame EDA Documentation" class="md-nav__button md-logo" aria-label="WireFrame EDA Documentation" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 4h12v1h3v2h-3v2h3v2h-3v2h3v2h-3v2h3v2h-3v1H6v-1H3v-2h3v-2H3v-2h3v-2H3V9h3V7H3V5h3zm5 11v3h1v-3zm2 0v3h1v-3zm2 0v3h1v-3z"/></svg>
 
     </a>
-    WireFrame EDA Docs
+    WireFrame EDA Documentation
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -387,6 +431,16 @@
   
   
     
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -441,35 +495,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Introduction
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../installation" class="md-nav__link">
+      <a href="../../installation/" class="md-nav__link">
         
   
   
@@ -497,7 +523,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ui-overview" class="md-nav__link">
+      <a href="../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ui-overview/" class="md-nav__link">
         
   
   
@@ -525,14 +579,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../projects" class="md-nav__link">
+      <a href="../../projects/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Projects Management
+    Projects & Files
   
 
     
@@ -561,6 +615,20 @@
   
     
     
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
     
     
       
@@ -578,8 +646,9 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-            
+          <div class="md-nav__link md-nav__container">
+            <a href="../../schematic/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -593,8 +662,14 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
@@ -608,32 +683,6 @@
           <ul class="md-nav__list" data-md-scrollfix>
             
               
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../schematic" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -642,7 +691,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../schematic/placing-components" class="md-nav__link">
+      <a href="../../schematic/placing-components/" class="md-nav__link">
         
   
   
@@ -670,7 +719,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../schematic/wiring-and-nets" class="md-nav__link">
+      <a href="../../schematic/wiring-and-nets/" class="md-nav__link">
         
   
   
@@ -698,7 +747,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../schematic/properties-and-attributes" class="md-nav__link">
+      <a href="../../schematic/properties-and-attributes/" class="md-nav__link">
         
   
   
@@ -726,7 +775,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../schematic/graphics-and-annotations" class="md-nav__link">
+      <a href="../../schematic/graphics-and-annotations/" class="md-nav__link">
         
   
   
@@ -764,6 +813,24 @@
   
     
     
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
     
     
       
@@ -782,8 +849,9 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
-            
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -797,8 +865,14 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
@@ -812,32 +886,6 @@
           <ul class="md-nav__list" data-md-scrollfix>
             
               
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -846,7 +894,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../footprints-and-placement" class="md-nav__link">
+      <a href="../footprints-and-placement/" class="md-nav__link">
         
   
   
@@ -874,7 +922,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../routing" class="md-nav__link">
+      <a href="../routing/" class="md-nav__link">
         
   
   
@@ -902,7 +950,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../layers-and-views" class="md-nav__link">
+      <a href="../layers-and-views/" class="md-nav__link">
         
   
   
@@ -930,7 +978,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../zones-and-planes" class="md-nav__link">
+      <a href="../zones-and-planes/" class="md-nav__link">
         
   
   
@@ -985,7 +1033,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="" class="md-nav__link md-nav__link--active">
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1021,7 +1069,35 @@
   <a href="#running-checks" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Running checks
+        Running Checks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Running Checks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#executed-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executed checks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#violation-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Violation Format
       
     </span>
   </a>
@@ -1029,15 +1105,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#types-of-checks" class="md-nav__link">
+  <a href="#types-of-checks-detail" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Types of checks
+        Types of Checks (Detail)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Types of checks">
+    <nav class="md-nav" aria-label="Types of Checks (Detail)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1107,10 +1183,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#orphans-missing-components" class="md-nav__link">
+  <a href="#orphans-and-missing-components" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Orphans &amp; missing components
+        Orphans and missing components
       
     </span>
   </a>
@@ -1123,10 +1199,49 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#viewing-violations" class="md-nav__link">
+  <a href="#viewing-and-fixing-violations" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Viewing violations
+        Viewing and Fixing Violations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Viewing and Fixing Violations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#navigating-violations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Navigating violations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#severity-icons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Severity icons
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
       
     </span>
   </a>
@@ -1149,7 +1264,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fabrication-and-export" class="md-nav__link">
+      <a href="../fabrication-and-export/" class="md-nav__link">
         
   
   
@@ -1184,6 +1299,12 @@
   
   
     
+    
+      
+        
+      
+        
+      
     
     
     
@@ -1238,7 +1359,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../libraries/symbols-library" class="md-nav__link">
+      <a href="../../libraries/symbols-library/" class="md-nav__link">
         
   
   
@@ -1266,7 +1387,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../libraries/footprints-library" class="md-nav__link">
+      <a href="../../libraries/footprints-library/" class="md-nav__link">
         
   
   
@@ -1301,6 +1422,14 @@
   
   
     
+    
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1355,7 +1484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/selection-and-editing" class="md-nav__link">
+      <a href="../../advanced/selection-and-editing/" class="md-nav__link">
         
   
   
@@ -1383,7 +1512,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/3d-viewer" class="md-nav__link">
+      <a href="../../advanced/3d-viewer/" class="md-nav__link">
         
   
   
@@ -1411,7 +1540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/shortcuts" class="md-nav__link">
+      <a href="../../advanced/shortcuts/" class="md-nav__link">
         
   
   
@@ -1446,6 +1575,16 @@
   
   
     
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1500,7 +1639,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/config-and-session" class="md-nav__link">
+      <a href="../../reference/config-and-session/" class="md-nav__link">
         
   
   
@@ -1528,7 +1667,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/file-formats" class="md-nav__link">
+      <a href="../../reference/file-formats/" class="md-nav__link">
         
   
   
@@ -1549,9 +1688,92 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ & Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1586,7 +1808,35 @@
   <a href="#running-checks" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Running checks
+        Running Checks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Running Checks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#executed-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executed checks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#violation-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Violation Format
       
     </span>
   </a>
@@ -1594,15 +1844,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#types-of-checks" class="md-nav__link">
+  <a href="#types-of-checks-detail" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Types of checks
+        Types of Checks (Detail)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Types of checks">
+    <nav class="md-nav" aria-label="Types of Checks (Detail)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1672,10 +1922,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#orphans-missing-components" class="md-nav__link">
+  <a href="#orphans-and-missing-components" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Orphans &amp; missing components
+        Orphans and missing components
       
     </span>
   </a>
@@ -1688,10 +1938,49 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#viewing-violations" class="md-nav__link">
+  <a href="#viewing-and-fixing-violations" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Viewing violations
+        Viewing and Fixing Violations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Viewing and Fixing Violations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#navigating-violations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Navigating violations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#severity-icons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Severity icons
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
       
     </span>
   </a>
@@ -1715,99 +2004,256 @@
 
 
 
-<h1 id="dfm-and-drc-checks">DFM and DRC Checks</h1>
-<p>The <code>PcbDFMManager</code> runs Design For Manufacturability (DFM) checks on a <code>PcbDocument</code> and produces a list of <code>DFMViolation</code> entries.</p>
+<h1 id="dfm-and-drc-checks">DFM and DRC Checks<a class="headerlink" href="#dfm-and-drc-checks" title="Permanent link">&para;</a></h1>
+<p>The the DFM engine runs Design For Manufacturability (DFM) and Design Rule Check (DRC) analyses on a the PCB document, producing a list of violations to fix before manufacturing.</p>
 <hr />
-<h2 id="running-checks">Running checks</h2>
-<p>From a PCB document:</p>
+<h2 id="running-checks">Running Checks<a class="headerlink" href="#running-checks" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Open <strong>Design Rules / DFM</strong> panel or a <strong>Fabrication</strong> dialog.</li>
-<li>Click “Run DFM” or similar.</li>
-<li><code>PcbDFMManager::runFullCheck</code> is called, which executes:</li>
-<li><code>checkBoardOutline</code></li>
-<li><code>checkUnconnectedNets</code></li>
-<li><code>checkTraceWidths</code></li>
-<li><code>checkClearance</code></li>
-<li><code>checkDrillSizes</code></li>
-<li><code>checkComponents</code></li>
-<li><code>checkOrphans</code></li>
-<li><code>checkMissingComponents</code></li>
+<li>Open the <strong>DFM/DRC panel</strong> from <strong>Tools → DFM Check</strong> or the Design Rules panel.</li>
+<li>Click <strong>Run DFM</strong>.</li>
+<li>WireFrame executes all check subroutines.</li>
+<li>The results panel populates with violations.</li>
 </ol>
-<p>Each check populates a vector of <code>DFMViolation</code>:</p>
-<ul>
-<li><code>code</code> – short code like <code>E01</code>, <code>W02</code>.</li>
-<li><code>message</code> – human‑readable description.</li>
-<li><code>location</code> – approximate board position of the issue.</li>
-<li><code>isCritical</code> – whether it is an error or warning.</li>
-</ul>
-<blockquote>
-<p><strong>Image placeholder</strong><br />
-<code>![DFM panel](img/pcb/dfm-panel.png)</code><br />
-<em>Panel listing errors and warnings with codes, messages and a "Zoom to" button.</em></p>
-</blockquote>
+<h3 id="executed-checks">Executed checks<a class="headerlink" href="#executed-checks" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Board outline</td>
+<td><code>checkBoardOutline</code></td>
+<td>Validates outline geometry</td>
+</tr>
+<tr>
+<td>Unconnected nets</td>
+<td><code>checkUnconnectedNets</code></td>
+<td>Finds nets with remaining ratsnest lines</td>
+</tr>
+<tr>
+<td>Trace widths</td>
+<td><code>checkTraceWidths</code></td>
+<td>Verifies widths against net class minimums</td>
+</tr>
+<tr>
+<td>Clearances</td>
+<td><code>checkClearance</code></td>
+<td>Checks spacing between copper elements</td>
+</tr>
+<tr>
+<td>Drill sizes</td>
+<td><code>checkDrillSizes</code></td>
+<td>Validates via/hole diameters</td>
+</tr>
+<tr>
+<td>Components</td>
+<td><code>checkComponents</code></td>
+<td>Checks for overlaps and out-of-bounds</td>
+</tr>
+<tr>
+<td>Orphans</td>
+<td><code>checkOrphans</code></td>
+<td>Finds unconnected traces/vias</td>
+</tr>
+<tr>
+<td>Missing components</td>
+<td><code>checkMissingComponents</code></td>
+<td>Identifies missing schematic footprints</td>
+</tr>
+</tbody>
+</table>
 <hr />
-<h2 id="types-of-checks">Types of checks</h2>
-<h3 id="board-outline">Board outline</h3>
+<h2 id="violation-format">Violation Format<a class="headerlink" href="#violation-format" title="Permanent link">&para;</a></h2>
+<p>Each a DFM violation entry contains:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>code</code></td>
+<td>Short identifier</td>
+<td><code>E01</code>, <code>W02</code></td>
+</tr>
+<tr>
+<td><code>message</code></td>
+<td>Human-readable description</td>
+<td>"Trace width below minimum for net class 'Power'"</td>
+</tr>
+<tr>
+<td><code>location</code></td>
+<td>Board position of the issue</td>
+<td>(1200, 800)</td>
+</tr>
+<tr>
+<td><code>isCritical</code></td>
+<td>Error (true) or warning (false)</td>
+<td><code>true</code></td>
+</tr>
+</tbody>
+</table>
+<!-- TODO: Replace with actual screenshot
+     Capture the DFM results panel after running checks:
+     - _A list of violations with columns: **Severity** (icon), **Code**, **Message**, **Location**._
+     - _2–3 **red error** rows (e.g., "E01: Unconnected net GND", "E03: Clearance violation at (450, 300)")._
+     - _1–2 **yellow warning** rows (e.g., "W01: Trace width close to minimum")._
+     - _A "Zoom to" button or clickable row for each violation._
+     - _A summary line at the bottom: "3 errors, 2 warnings"._
+     Suggested size: 600×350px.
+-->
+<p><img alt="Dfm Panel" src="../../img/pcb/dfm-panel.png" /></p>
+<hr />
+<h2 id="types-of-checks-detail">Types of Checks (Detail)<a class="headerlink" href="#types-of-checks-detail" title="Permanent link">&para;</a></h2>
+<h3 id="board-outline">Board outline<a class="headerlink" href="#board-outline" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Ensures the board boundary is well‑formed.</li>
-<li>Warns if:</li>
-<li>No outline is defined.</li>
-<li>Outline is self‑intersecting or degenerate.</li>
-<li>Footprints lie outside the board area.</li>
+<li>Ensures the board boundary is <strong>well-formed</strong> (not self-intersecting, not degenerate).</li>
+<li>Warns if <strong>no outline is defined</strong>.</li>
+<li>Flags footprints that <strong>extend outside</strong> the board area.</li>
 </ul>
-<h3 id="unconnected-nets">Unconnected nets</h3>
+<h3 id="unconnected-nets">Unconnected nets<a class="headerlink" href="#unconnected-nets" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Uses <code>PcbNetlistManager</code> connectivity to find nets where:</li>
-<li>Ratsnest lines remain.</li>
-<li>Pins w/ same net are not connected by traces/zones.</li>
+<li>Uses the PCB netlist engine connectivity data.</li>
+<li>Reports nets where <strong>ratsnest lines remain</strong> (pins not connected by traces or zones).</li>
+<li>Each unconnected pin pair is listed as a violation.</li>
 </ul>
-<h3 id="trace-widths">Trace widths</h3>
+<h3 id="trace-widths">Trace widths<a class="headerlink" href="#trace-widths" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Verifies trace widths against <code>DesignSettings</code>:</li>
-<li>Each net has a net class (e.g., Default, Power).</li>
-<li>Checks that trace width ≥ class minimum.</li>
+<li>Checks each trace width against its <strong>net class minimum</strong>:</li>
 </ul>
-<h3 id="clearances">Clearances</h3>
+<table>
+<thead>
+<tr>
+<th>Net class</th>
+<th>Min width</th>
+<th>Example nets</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Default</td>
+<td>6 mil</td>
+<td>Signal nets</td>
+</tr>
+<tr>
+<td>Power</td>
+<td>12 mil</td>
+<td>VCC, GND</td>
+</tr>
+</tbody>
+</table>
 <ul>
-<li>Computes distances between:</li>
-<li>Trace segments.</li>
-<li>Traces and pads or vias.</li>
-<li>Pads and other pads.</li>
-<li>Flags violations where distance &lt; required clearance.</li>
+<li>Flags traces below their class minimum.</li>
 </ul>
-<h3 id="drill-sizes">Drill sizes</h3>
+<h3 id="clearances">Clearances<a class="headerlink" href="#clearances" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Checks via and hole diameters vs minimum allowed sizes.</li>
-<li>Flags too small drills.</li>
+<li>Computes distances between copper elements:</li>
 </ul>
-<h3 id="components">Components</h3>
+<table>
+<thead>
+<tr>
+<th>Pair</th>
+<th>Check</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Trace ↔ Trace</td>
+<td>Segment distance ≥ clearance</td>
+</tr>
+<tr>
+<td>Trace ↔ Pad</td>
+<td>Segment-to-circle/rect distance ≥ clearance</td>
+</tr>
+<tr>
+<td>Pad ↔ Pad</td>
+<td>Center distance minus radii ≥ clearance</td>
+</tr>
+<tr>
+<td>Copper ↔ Board edge</td>
+<td>Distance from outline ≥ edge clearance</td>
+</tr>
+</tbody>
+</table>
+<h3 id="drill-sizes">Drill sizes<a class="headerlink" href="#drill-sizes" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Checks:</li>
-<li>If footprints have overlapping bounding boxes (possible collisions).</li>
-<li>If components extend beyond board edge.</li>
+<li>Checks via and hole diameters against the <strong>minimum allowed drill size</strong>.</li>
+<li>Flags too-small drills that may be impossible to manufacture.</li>
 </ul>
-<h3 id="orphans-missing-components">Orphans &amp; missing components</h3>
+<h3 id="components">Components<a class="headerlink" href="#components" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Orphan traces or vias:</li>
-<li>Unconnected to any pad or within a net.</li>
-<li>Missing footprints:</li>
-<li>Components in schematic/netlist without corresponding footprints on PCB.</li>
+<li>Checks for <strong>overlapping footprint bounding boxes</strong> (potential physical collisions).</li>
+<li>Verifies all footprints are <strong>inside the board boundary</strong>.</li>
+</ul>
+<h3 id="orphans-and-missing-components">Orphans and missing components<a class="headerlink" href="#orphans-and-missing-components" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Orphan traces/vias</strong>: copper not connected to any pad or net.</li>
+<li><strong>Missing footprints</strong>: components in the schematic netlist without corresponding placed footprints on the PCB.</li>
 </ul>
 <hr />
-<h2 id="viewing-violations">Viewing violations</h2>
-<p>The DFM/DRC panel:</p>
+<h2 id="viewing-and-fixing-violations">Viewing and Fixing Violations<a class="headerlink" href="#viewing-and-fixing-violations" title="Permanent link">&para;</a></h2>
+<h3 id="navigating-violations">Navigating violations<a class="headerlink" href="#navigating-violations" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Double-click</strong> a violation in the list — the view pans and zooms to the <code>location</code>.</li>
+<li>The problematic area is centered on screen.</li>
+<li>Fix the issue (reroute a trace, increase clearance, place a missing component, etc.).</li>
+<li><strong>Re-run DFM</strong> to verify the fix.</li>
+</ol>
+<h3 id="severity-icons">Severity icons<a class="headerlink" href="#severity-icons" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Severity</th>
+<th>Icon</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Error</strong> (critical)</td>
+<td><span class="twemoji" style="color: red"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41z"/></svg></span></td>
+<td>Must be fixed before fabrication</td>
+</tr>
+<tr>
+<td><strong>Warning</strong></td>
+<td><span class="twemoji" style="color: orange"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2z"/></svg></span></td>
+<td>Should be reviewed but may be acceptable</td>
+</tr>
+</tbody>
+</table>
+<!-- TODO: Replace with actual video
+     Record a 20-second clip:
+     1. _Click "Run DFM" — the panel fills with 3–4 violations._
+     2. _Double-click a clearance error — the view zooms to the tight area._
+     3. _Drag the offending trace to increase clearance._
+     4. _Click "Run DFM" again — the error count drops by one._
+     5. _Repeat for another violation._
+     Resolution: 1280×720 at 30fps.
+-->
+<video controls width="100%">
+  <source src="../../img/pcb/dfm-fix-cycle.webm" type="video/webm">
+  <source src="../../img/pcb/dfm-fix-cycle.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+<div class="admonition warning">
+<p class="admonition-title">Export readiness</p>
+<p>Do not export Gerber files until all <strong>critical errors</strong> (red) are resolved. Warnings should be reviewed but typically don't block production.</p>
+</div>
+<hr />
+<h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Lists violations with severity.</li>
-<li>Allows double‑click / button to:</li>
-<li>Pan and zoom to <code>location</code>.</li>
-<li>Colors or icons:</li>
-<li>Red for critical errors.</li>
-<li>Yellow for warnings.</li>
+<li><a href="../routing/">Routing</a> — fix trace-related violations by rerouting.</li>
+<li><a href="../zones-and-planes/">Zones &amp; Planes</a> — zone connectivity affects unconnected-net checks.</li>
+<li><a href="../fabrication-and-export/">Fabrication &amp; Export</a> — export only after DRC passes.</li>
 </ul>
-<blockquote>
-<p><strong>Video placeholder</strong><br />
-<em>Short clip where user runs "Run DFM", then clicks each error to center the view on the problematic area.</em></p>
-</blockquote>
 
 
 
@@ -1825,6 +2271,8 @@
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -1838,6 +2286,46 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../zones-and-planes/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Zones &amp; Planes">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Zones & Planes
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../fabrication-and-export/" class="md-footer__link md-footer__link--next" aria-label="Next: Fabrication &amp; Export">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Fabrication & Export
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
@@ -1847,9 +2335,17 @@
     </div>
   
   
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/CaSauCoin/WireFrame_Product" target="_blank" rel="noopener" title="WireFrame on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
     </a>
   
 </div>
@@ -1867,7 +2363,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.expand", "navigation.indexes", "navigation.footer", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.tabs.link", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "stable", "provider": "mike"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
