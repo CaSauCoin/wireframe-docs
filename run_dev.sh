@@ -28,36 +28,29 @@ echo ">> [Init] Virtual Environment (venv) activated."
 echo "--------------------------------------------------"
 echo ">> [1/2] Starting Docs Server..."
 
-if [ -d "docs" ] && [ -f "docs/mkdocs.yml" ]; then
-    cd docs
-    # Run in background (&) so we can proceed to start Backend
+if [ -f "mkdocs.yml" ]; then
+    # mkdocs.yml is in the current directory (Guide_line/)
     python3 -m mkdocs serve --dev-addr 127.0.0.1:8001 &
-    cd ..
     echo "   -> Docs running at: http://127.0.0.1:8001"
-elif [ -d "Guide_line" ] && [ -f "Guide_line/mkdocs.yml" ]; then
-    # Fallback for old structure
-    cd Guide_line
+elif [ -d "docs" ] && [ -f "docs/mkdocs.yml" ]; then
+    cd docs
     python3 -m mkdocs serve --dev-addr 127.0.0.1:8001 &
     cd ..
     echo "   -> Docs running at: http://127.0.0.1:8001"
 else
-    echo "   !! WARNING: docs/mkdocs.yml not found. Skipping Docs."
+    echo "   !! WARNING: mkdocs.yml not found. Skipping Docs."
 fi
 
-# 3. START BACKEND (FOREGROUND PROCESS)
+# 3. BACKEND (OPTIONAL - only if backend/ exists)
 echo "--------------------------------------------------"
-echo ">> [2/2] Starting Backend Server..."
 
 if [ -d "backend" ]; then
+    echo ">> [2/2] Starting Backend Server..."
     cd backend
 
     # --- ENVIRONMENT CONFIGURATION (LOCAL) ---
-    # These flags tell the Python code we are running locally
     export APP_ENV="local"
     export BASE_URL="http://127.0.0.1:8000"
-
-    # Optional: Enable Test Mode (Disable DB/Redis) if needed
-    # export DOCS_TEST_MODE=true
 
     echo "   -> Environment: $APP_ENV"
     echo "   -> Base URL:    $BASE_URL"
@@ -65,11 +58,13 @@ if [ -d "backend" ]; then
     echo "   -> API Docs:    http://127.0.0.1:8000/docs"
     echo "--------------------------------------------------"
 
-    # Run Uvicorn
     python3 -m uvicorn index:app --reload --port 8000
 else
-    echo "ERROR: 'backend' folder not found!"
-    exit 1
+    echo ">> [2/2] No backend/ folder found. Running docs only."
+    echo "=================================================="
+    echo "   Docs server: http://127.0.0.1:8001"
+    echo "   Press Ctrl+C to stop."
+    echo "=================================================="
 fi
 
 # Script stays here until you press Ctrl+C
