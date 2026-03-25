@@ -1,46 +1,77 @@
-site_name: WireFrame EDA Docs
-site_url: https://wireframe.com.vn/docs/
+site_name: WireFrame EDA Documentation
+site_url: https://guideline-one.vercel.app/
+site_description: >-
+  Complete user guide for WireFrame EDA — a lightweight schematic and PCB design
+  environment built with ImGui, GLFW and OpenGL.
 copyright: '© 2026 WireFrame EDA. All rights reserved.'
 
-# Cấu hình giao diện Material
+# Theme configuration (Material dark mode)
 theme:
   name: material
-  palette: 
-    scheme: slate       # Chế độ tối (Dark mode)
-    primary: cyan       # Màu chủ đạo neon cyan
+  language: en
+  palette:
+    scheme: slate
+    primary: cyan
     accent: cyan
+  font:
+    text: Roboto
+    code: JetBrains Mono
+  icon:
+    logo: material/chip
+    repo: fontawesome/brands/github
   features:
-    - navigation.tabs           # Menu ngang phía trên
-    - navigation.sections       # Menu dọc tự động mở rộng
-    - navigation.top            # Nút "Back to top"
-    - navigation.expand         # Mở rộng menu
-    - search.suggest            # Gợi ý khi tìm kiếm
-    - search.highlight          # Highlight kết quả tìm
-    - content.code.copy         # Nút copy code
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.top
+    - navigation.expand
+    - navigation.indexes
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.tabs.link
+    - toc.follow
 
-# CSS tùy chỉnh (để giống app chính)
+# Custom CSS
 extra_css:
   - stylesheets/extra.css
 
-# CẤU TRÚC MENU ĐIỀU HƯỚNG (Logic mới)
+# Extra configuration
+extra:
+  version:
+    provider: mike
+    default: stable
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/CaSauCoin/WireFrame_Product
+      name: WireFrame on GitHub
+  generator: false
+
+# Plugins
+plugins:
+  - search
+
+# Navigation structure
 nav:
   - Home: index.md
-  
+
   - Getting Started:
-      - Introduction: getting-started.md
       - Installation: installation.md
+      - Introduction: getting-started.md
       - UI Overview: ui-overview.md
-      - Projects Management: projects.md
+      - Projects & Files: projects.md
 
   - Schematic Design:
-      - Overview: schematic/index.md
+      - schematic/index.md
       - Placing Components: schematic/placing-components.md
       - Wiring & Nets: schematic/wiring-and-nets.md
       - Properties & Attributes: schematic/properties-and-attributes.md
       - Graphics & Annotations: schematic/graphics-and-annotations.md
 
   - PCB Layout:
-      - Overview: pcb/index.md
+      - pcb/index.md
       - Footprints & Placement: pcb/footprints-and-placement.md
       - Routing (Tracks & Vias): pcb/routing.md
       - Layers & Views: pcb/layers-and-views.md
@@ -60,15 +91,33 @@ nav:
   - Reference:
       - Config & Session: reference/config-and-session.md
       - File Formats: reference/file-formats.md
+      - FAQ & Troubleshooting: faq.md
+      - Changelog: changelog.md
 
-# Các plugin hỗ trợ Markdown
+  - Tutorial: tutorial/index.md
+
+
+# Markdown extensions
 markdown_extensions:
-  - admonition            # Để tạo các box Note/Warning đẹp
-  - pymdownx.details      # Để tạo các đoạn text ẩn/hiện (Collapsible)
-  - pymdownx.highlight:   # Tô màu code
+  - admonition
+  - pymdownx.details
+  - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
-  - attr_list             # Để chỉnh ảnh/table dễ hơn
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - attr_list
   - md_in_html
+  - tables
+  - def_list
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.keys

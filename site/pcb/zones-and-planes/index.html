@@ -6,15 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="Complete user guide for WireFrame EDA — a lightweight schematic and PCB design environment built with ImGui, GLFW and OpenGL.">
       
       
-        <link rel="canonical" href="https://wireframe.com.vn/docs/pcb/zones-and-planes/">
+      
+        <link rel="canonical" href="https://guideline-one.vercel.app/pcb/zones-and-planes/">
       
       
-        <link rel="prev" href="../layers-and-views">
+        <link rel="prev" href="../layers-and-views/">
       
       
-        <link rel="next" href="../dfm-and-drc">
+        <link rel="next" href="../dfm-and-drc/">
       
       
         
@@ -25,7 +27,7 @@
     
     
       
-        <title>Zones & Planes - WireFrame EDA Docs</title>
+        <title>Zones & Planes - WireFrame EDA Documentation</title>
       
     
     
@@ -46,8 +48,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
       
     
     
@@ -85,15 +87,21 @@
       
     </div>
     
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
     
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="WireFrame EDA Docs" class="md-header__button md-logo" aria-label="WireFrame EDA Docs" data-md-component="logo">
+    <a href="../.." title="WireFrame EDA Documentation" class="md-header__button md-logo" aria-label="WireFrame EDA Documentation" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 4h12v1h3v2h-3v2h3v2h-3v2h3v2h-3v2h3v2h-3v1H6v-1H3v-2h3v-2H3v-2h3v-2H3V9h3V7H3V5h3zm5 11v3h1v-3zm2 0v3h1v-3zm2 0v3h1v-3z"/></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -104,7 +112,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            WireFrame EDA Docs
+            WireFrame EDA Documentation
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -141,6 +149,11 @@
       </label>
       <nav class="md-search__options" aria-label="Search">
         
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
@@ -167,14 +180,8 @@
     
   </nav>
   
-</header>
     
-    <div class="md-container" data-md-component="container">
       
-      
-        
-          
-            
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
   <div class="md-grid">
     <ul class="md-tabs__list">
@@ -206,9 +213,11 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../getting-started" class="md-tabs__link">
+        <a href="../../installation/" class="md-tabs__link">
           
   
+  
+    
   
   Getting Started
 
@@ -226,9 +235,11 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../schematic" class="md-tabs__link">
+        <a href="../../schematic/" class="md-tabs__link">
           
   
+  
+    
   
   Schematic Design
 
@@ -248,9 +259,11 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href=".." class="md-tabs__link">
+        <a href="../" class="md-tabs__link">
           
   
+  
+    
   
   PCB Layout
 
@@ -268,9 +281,11 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../libraries/symbols-library" class="md-tabs__link">
+        <a href="../../libraries/symbols-library/" class="md-tabs__link">
           
   
+  
+    
   
   Libraries
 
@@ -288,9 +303,11 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../advanced/selection-and-editing" class="md-tabs__link">
+        <a href="../../advanced/selection-and-editing/" class="md-tabs__link">
           
   
+  
+    
   
   Advanced Features
 
@@ -308,9 +325,11 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../reference/config-and-session" class="md-tabs__link">
+        <a href="../../reference/config-and-session/" class="md-tabs__link">
           
   
+  
+    
   
   Reference
 
@@ -320,10 +339,35 @@
   
 
       
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tutorial/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tutorial
+
+      </a>
+    </li>
+  
+
+      
     </ul>
   </div>
 </nav>
-          
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
         
       
       <main class="md-main" data-md-component="main">
@@ -342,13 +386,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="WireFrame EDA Docs" class="md-nav__button md-logo" aria-label="WireFrame EDA Docs" data-md-component="logo">
+    <a href="../.." title="WireFrame EDA Documentation" class="md-nav__button md-logo" aria-label="WireFrame EDA Documentation" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 4h12v1h3v2h-3v2h3v2h-3v2h3v2h-3v2h3v2h-3v1H6v-1H3v-2h3v-2H3v-2h3v-2H3V9h3V7H3V5h3zm5 11v3h1v-3zm2 0v3h1v-3zm2 0v3h1v-3z"/></svg>
 
     </a>
-    WireFrame EDA Docs
+    WireFrame EDA Documentation
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -387,6 +431,16 @@
   
   
     
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -441,35 +495,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Introduction
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../installation" class="md-nav__link">
+      <a href="../../installation/" class="md-nav__link">
         
   
   
@@ -497,7 +523,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ui-overview" class="md-nav__link">
+      <a href="../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ui-overview/" class="md-nav__link">
         
   
   
@@ -525,14 +579,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../projects" class="md-nav__link">
+      <a href="../../projects/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Projects Management
+    Projects & Files
   
 
     
@@ -561,6 +615,20 @@
   
     
     
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
     
     
       
@@ -578,8 +646,9 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-            
+          <div class="md-nav__link md-nav__container">
+            <a href="../../schematic/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -593,8 +662,14 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
@@ -608,32 +683,6 @@
           <ul class="md-nav__list" data-md-scrollfix>
             
               
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../schematic" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -642,7 +691,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../schematic/placing-components" class="md-nav__link">
+      <a href="../../schematic/placing-components/" class="md-nav__link">
         
   
   
@@ -670,7 +719,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../schematic/wiring-and-nets" class="md-nav__link">
+      <a href="../../schematic/wiring-and-nets/" class="md-nav__link">
         
   
   
@@ -698,7 +747,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../schematic/properties-and-attributes" class="md-nav__link">
+      <a href="../../schematic/properties-and-attributes/" class="md-nav__link">
         
   
   
@@ -726,7 +775,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../schematic/graphics-and-annotations" class="md-nav__link">
+      <a href="../../schematic/graphics-and-annotations/" class="md-nav__link">
         
   
   
@@ -764,6 +813,24 @@
   
     
     
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
     
     
       
@@ -782,8 +849,9 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
-            
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -797,8 +865,14 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
@@ -812,32 +886,6 @@
           <ul class="md-nav__list" data-md-scrollfix>
             
               
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -846,7 +894,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../footprints-and-placement" class="md-nav__link">
+      <a href="../footprints-and-placement/" class="md-nav__link">
         
   
   
@@ -874,7 +922,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../routing" class="md-nav__link">
+      <a href="../routing/" class="md-nav__link">
         
   
   
@@ -902,7 +950,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../layers-and-views" class="md-nav__link">
+      <a href="../layers-and-views/" class="md-nav__link">
         
   
   
@@ -957,7 +1005,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="" class="md-nav__link md-nav__link--active">
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -993,10 +1041,27 @@
   <a href="#basic-concepts" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Basic concepts
+        Basic Concepts
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Basic Concepts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#computed-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Computed output
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1004,10 +1069,38 @@
   <a href="#creating-a-zone" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Creating a zone
+        Creating a Zone
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Creating a Zone">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manual-zone-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manual zone creation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quick-ground-plane" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick ground plane
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1015,10 +1108,38 @@
   <a href="#zone-fill-computation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Zone fill computation
+        Zone Fill Computation
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Zone Fill Computation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Process
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rendered-result" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rendered result
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1026,7 +1147,7 @@
   <a href="#ground-plane-from-board-outline" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Ground plane from board outline
+        Ground Plane from Board Outline
       
     </span>
   </a>
@@ -1037,7 +1158,29 @@
   <a href="#zone-interaction-with-nets" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Zone interaction with nets
+        Zone Interaction with Nets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zone-properties-and-editing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zone Properties and Editing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
       
     </span>
   </a>
@@ -1060,7 +1203,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../dfm-and-drc" class="md-nav__link">
+      <a href="../dfm-and-drc/" class="md-nav__link">
         
   
   
@@ -1088,7 +1231,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fabrication-and-export" class="md-nav__link">
+      <a href="../fabrication-and-export/" class="md-nav__link">
         
   
   
@@ -1123,6 +1266,12 @@
   
   
     
+    
+      
+        
+      
+        
+      
     
     
     
@@ -1177,7 +1326,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../libraries/symbols-library" class="md-nav__link">
+      <a href="../../libraries/symbols-library/" class="md-nav__link">
         
   
   
@@ -1205,7 +1354,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../libraries/footprints-library" class="md-nav__link">
+      <a href="../../libraries/footprints-library/" class="md-nav__link">
         
   
   
@@ -1240,6 +1389,14 @@
   
   
     
+    
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1294,7 +1451,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/selection-and-editing" class="md-nav__link">
+      <a href="../../advanced/selection-and-editing/" class="md-nav__link">
         
   
   
@@ -1322,7 +1479,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/3d-viewer" class="md-nav__link">
+      <a href="../../advanced/3d-viewer/" class="md-nav__link">
         
   
   
@@ -1350,7 +1507,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/shortcuts" class="md-nav__link">
+      <a href="../../advanced/shortcuts/" class="md-nav__link">
         
   
   
@@ -1385,6 +1542,16 @@
   
   
     
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1439,7 +1606,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/config-and-session" class="md-nav__link">
+      <a href="../../reference/config-and-session/" class="md-nav__link">
         
   
   
@@ -1467,7 +1634,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/file-formats" class="md-nav__link">
+      <a href="../../reference/file-formats/" class="md-nav__link">
         
   
   
@@ -1488,9 +1655,92 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ & Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1525,10 +1775,27 @@
   <a href="#basic-concepts" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Basic concepts
+        Basic Concepts
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Basic Concepts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#computed-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Computed output
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1536,10 +1803,38 @@
   <a href="#creating-a-zone" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Creating a zone
+        Creating a Zone
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Creating a Zone">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manual-zone-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manual zone creation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quick-ground-plane" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick ground plane
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1547,10 +1842,38 @@
   <a href="#zone-fill-computation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Zone fill computation
+        Zone Fill Computation
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Zone Fill Computation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Process
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rendered-result" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rendered result
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1558,7 +1881,7 @@
   <a href="#ground-plane-from-board-outline" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Ground plane from board outline
+        Ground Plane from Board Outline
       
     </span>
   </a>
@@ -1569,7 +1892,29 @@
   <a href="#zone-interaction-with-nets" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Zone interaction with nets
+        Zone Interaction with Nets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zone-properties-and-editing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zone Properties and Editing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
       
     </span>
   </a>
@@ -1593,96 +1938,238 @@
 
 
 
-<h1 id="zones-and-copper-planes">Zones and Copper Planes</h1>
-<p>Copper zones (fills) are managed by <code>ZoneManager</code> and <code>PcbZone</code>.</p>
+<h1 id="zones-and-copper-planes">Zones and Copper Planes<a class="headerlink" href="#zones-and-copper-planes" title="Permanent link">&para;</a></h1>
+<p>Copper zones (fills/pours) cover board areas with copper, typically for ground planes or power distribution. Zones are managed by the zone engine.</p>
 <hr />
-<h2 id="basic-concepts">Basic concepts</h2>
-<p>A <code>PcbZone</code> includes:</p>
-<ul>
-<li><code>id</code></li>
-<li><code>netName</code> (e.g., <code>GND</code>)</li>
-<li><code>layerId</code> (e.g., F.Cu)</li>
-<li><code>priority</code> (for overlapping zones)</li>
-<li><code>outline</code> – user‑drawn polygon.</li>
-<li><code>cutouts</code> – shapes to be excluded (circles, rectangles, capsules).</li>
-<li><strong>Computed islands</strong>:</li>
-<li><code>vector&lt;ZoneIsland&gt;</code> each with:<ul>
-<li><code>outer</code> – outer polygon (filled copper area).</li>
-<li><code>holes</code> – polygons representing holes inside the island.</li>
+<h2 id="basic-concepts">Basic Concepts<a class="headerlink" href="#basic-concepts" title="Permanent link">&para;</a></h2>
+<p>A a copper zone includes:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>Unique zone identifier</td>
+</tr>
+<tr>
+<td><code>netName</code></td>
+<td>Assigned net (e.g., <code>GND</code>, <code>VCC</code>)</td>
+</tr>
+<tr>
+<td><code>layerId</code></td>
+<td>Copper layer (e.g., F.Cu, B.Cu)</td>
+</tr>
+<tr>
+<td><code>priority</code></td>
+<td>Higher-priority zones override lower ones where they overlap</td>
+</tr>
+<tr>
+<td><code>outline</code></td>
+<td>User-drawn polygon defining the zone boundary</td>
+</tr>
+<tr>
+<td><code>cutouts</code></td>
+<td>Shapes excluded from the fill (circles, rectangles, capsules)</td>
+</tr>
+<tr>
+<td><code>minClearance</code></td>
+<td>Minimum clearance from pads and traces</td>
+</tr>
+</tbody>
+</table>
+<h3 id="computed-output">Computed output<a class="headerlink" href="#computed-output" title="Permanent link">&para;</a></h3>
+<p>After fill computation, each zone contains <strong>islands</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Structure</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Outer boundary</td>
+<td>Outer polygon of the filled copper area</td>
+</tr>
+<tr>
+<td>Internal holes</td>
+<td>Hole polygons inside the island (clearance areas)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="creating-a-zone">Creating a Zone<a class="headerlink" href="#creating-a-zone" title="Permanent link">&para;</a></h2>
+<h3 id="manual-zone-creation">Manual zone creation<a class="headerlink" href="#manual-zone-creation" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Select a copper layer (e.g., <strong>F.Cu</strong>) as the active layer.</li>
+<li>Use the <strong>Draw Polygon</strong> tool to draw a closed polygon.</li>
+<li>Assign zone properties:<ul>
+<li><strong>Net name</strong> (e.g., <code>GND</code>).</li>
+<li><strong>Clearance</strong> (e.g., 8 mil).</li>
+<li><strong>Priority</strong> (default: 0).</li>
 </ul>
 </li>
-</ul>
-<p>Clearance and style parameters:</p>
-<ul>
-<li><code>minClearance</code> – clearance from pads/traces.</li>
-<li><code>thermalSpokeWidth</code> – for thermals on pads (future/partial support).</li>
-</ul>
-<hr />
-<h2 id="creating-a-zone">Creating a zone</h2>
-<ol>
-<li>Draw a polygon on the desired copper layer.</li>
-<li>Assign:</li>
-<li>Net name.</li>
-<li>Layer.</li>
-<li>Clearance and priority.</li>
+<li>WireFrame computes the filled copper islands.</li>
 </ol>
-<p>Internally:</p>
-<ul>
-<li><code>ZoneManager::addZone</code> assigns a new ID and keeps track of the zone.</li>
-<li><code>ZoneManager::rebuildZoneFills</code> processes:</li>
-<li>Original outline.</li>
-<li>Cutouts.</li>
-<li>Interactions with pads, traces and other zones.</li>
-</ul>
-<blockquote>
-<p><strong>Image placeholder</strong><br />
-<code>![Zone outline](img/pcb/zone-outline.png)</code><br />
-<em>User selecting an area with a polygon outline representing the top copper GND pour.</em></p>
-</blockquote>
+<h3 id="quick-ground-plane">Quick ground plane<a class="headerlink" href="#quick-ground-plane" title="Permanent link">&para;</a></h3>
+<p>Use <strong>Tools → Fill GND Plane</strong> (or equivalent menu action):</p>
+<ol>
+<li>WireFrame infers the board outline from Edge.Cuts geometry.</li>
+<li>Generates a GND zone covering the entire board interior.</li>
+<li>Clearances are computed around all pads and traces.</li>
+</ol>
+<!-- TODO: Replace with actual screenshot
+     Capture a zone being created or just after creation:
+     - _The zone polygon outline visible on F.Cu (dashed or highlighted border)._
+     - _The zone assigned to "GND" net (visible in Properties panel or as text on the zone)._
+     - _Inside the zone: filled copper area with clearance gaps around pads of other nets._
+     - _Thermal connections visible on GND pads (spoke-style connections)._
+     Suggested size: 700×500px.
+-->
+<p><img alt="Zone Outline" src="../../img/pcb/zone-outline.png" /></p>
 <hr />
-<h2 id="zone-fill-computation">Zone fill computation</h2>
-<p><code>ZoneManager::rebuildZoneFills</code> uses Clipper2:</p>
-<ul>
-<li>Converts ImGui <code>ImVec2</code> points to Clipper <code>Path64</code> with scaling.</li>
-<li>Applies boolean operations to:</li>
-<li>Subtract clearances around pads/traces (same or different nets).</li>
-<li>Apply cutouts (user‑defined shapes).</li>
-<li>Converts results back to sets of <code>ZoneIsland</code> structures.</li>
+<h2 id="zone-fill-computation">Zone Fill Computation<a class="headerlink" href="#zone-fill-computation" title="Permanent link">&para;</a></h2>
+<p>WireFrame uses the <strong>Clipper2</strong> library for polygon boolean operations:</p>
+<h3 id="process">Process<a class="headerlink" href="#process" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Convert zone outline points to Clipper <code>Path64</code> with scaling.</li>
+<li>Apply <strong>boolean subtraction</strong> for:<ul>
+<li>Clearances around pads and traces of <strong>different</strong> nets.</li>
+<li>User-defined cutouts.</li>
+<li>Other zones with higher priority.</li>
 </ul>
-<p>Islands are then:</p>
+</li>
+<li>Convert results back to zone island structures.</li>
+</ol>
+<h3 id="rendered-result">Rendered result<a class="headerlink" href="#rendered-result" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Rendered as filled polygons in the PCB view.</li>
-<li>Used during DFM/DRC and ratsnest connectivity checks.</li>
+<li>Filled islands are drawn as <strong>semi-transparent polygons</strong> on the PCB canvas.</li>
+<li>Clearance gaps appear around non-matching pads and traces.</li>
+<li>Same-net pads connect to the zone (with thermal relief, when supported).</li>
 </ul>
+<div class="admonition info">
+<p class="admonition-title">Performance</p>
+<p>Zone fill computation can be intensive for complex boards with many pads and traces. The fill is rebuilt when you explicitly trigger it or when relevant objects change.</p>
+</div>
 <hr />
-<h2 id="ground-plane-from-board-outline">Ground plane from board outline</h2>
-<p><code>PcbDocument::fillGroundPlane</code>:</p>
-<ul>
-<li>Attempts to infer board outline geometry from:</li>
-<li>Closed polygons.</li>
-<li>Edge.Cuts graphics.</li>
-<li>Generates a GND zone covering the board interior.</li>
-<li>Uses <code>ZoneManager</code> to build actual islands.</li>
+<h2 id="ground-plane-from-board-outline">Ground Plane from Board Outline<a class="headerlink" href="#ground-plane-from-board-outline" title="Permanent link">&para;</a></h2>
+<p>the ground plane fill feature automates ground plane creation:</p>
+<ol>
+<li>Infers board outline geometry from:<ul>
+<li>Closed polygons on Edge.Cuts.</li>
+<li>Board boundary settings.</li>
 </ul>
-<p>From the user’s perspective:</p>
+</li>
+<li>Creates a GND zone covering the entire board interior.</li>
+<li>Uses the zone engine to compute islands.</li>
+</ol>
+<p>From the user's perspective:</p>
 <ul>
-<li>A menu action like “Fill Ground Plane” triggers this.</li>
-<li>The board is filled with a semi‑transparent copper area attached to <code>GND</code> net.</li>
+<li>Click <strong>"Fill GND Plane"</strong> → the board fills with copper.</li>
+<li>All non-GND pads show clearance gaps.</li>
+<li>GND pads have thermal connections (spokes).</li>
 </ul>
-<blockquote>
-<p><strong>Video placeholder</strong><br />
-<em>Short clip: user clicks "Fill GND Plane" and the entire board inside Edge.Cuts is filled with a hatched/solid copper zone, showing thermals around pads.</em></p>
-</blockquote>
+<!-- TODO: Replace with actual video
+     Record a 15-second clip:
+     1. _A PCB with placed footprints and routed traces, but no copper fill._
+     2. _Click "Tools → Fill GND Plane" from the menu._
+     3. _The board fills with a semi-transparent copper overlay on the active layer._
+     4. _Zoom in to show clearance gaps around non-GND pads._
+     5. _Show thermal connections (spokes) on a GND pad if visible._
+     Resolution: 1280×720 at 30fps.
+-->
+<video controls width="100%">
+  <source src="../../img/pcb/fill-gnd-plane.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
 <hr />
-<h2 id="zone-interaction-with-nets">Zone interaction with nets</h2>
-<p><code>PcbNetlistManager</code> integrates zones when building connectivity graphs:</p>
+<h2 id="zone-interaction-with-nets">Zone Interaction with Nets<a class="headerlink" href="#zone-interaction-with-nets" title="Permanent link">&para;</a></h2>
+<p>the PCB netlist engine integrates zones into the connectivity graph:</p>
+<table>
+<thead>
+<tr>
+<th>Rule</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Same-net pads</td>
+<td>Pads touching a same-net zone are treated as connected</td>
+</tr>
+<tr>
+<td>Same-net traces</td>
+<td>Traces entering the zone area connect to the net</td>
+</tr>
+<tr>
+<td>Different-net pads</td>
+<td>Clearance gap is maintained around the pad</td>
+</tr>
+<tr>
+<td>Different-net traces</td>
+<td>Clearance gap is maintained around the trace</td>
+</tr>
+</tbody>
+</table>
+<p>zone membership testing tests if a location is inside a same-net copper area — useful for routing constraints and DFM checks.</p>
+<hr />
+<h2 id="zone-properties-and-editing">Zone Properties and Editing<a class="headerlink" href="#zone-properties-and-editing" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Editable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Net name</td>
+<td>Yes</td>
+<td>Assign which net the zone belongs to</td>
+</tr>
+<tr>
+<td>Layer</td>
+<td>Yes</td>
+<td>Which copper layer the zone fills</td>
+</tr>
+<tr>
+<td>Priority</td>
+<td>Yes</td>
+<td>Higher values override lower priority zones</td>
+</tr>
+<tr>
+<td>Clearance</td>
+<td>Yes</td>
+<td>Minimum gap from other-net copper</td>
+</tr>
+<tr>
+<td>Outline</td>
+<td>Yes</td>
+<td>Drag vertices to reshape the zone boundary</td>
+</tr>
+<tr>
+<td>Cutouts</td>
+<td>Yes</td>
+<td>Add shapes to exclude from the fill</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Zone priority</p>
+<p>Use priority to create nested zones — for example, a VCC island inside a GND plane. The VCC zone should have a higher priority number than the GND zone.</p>
+</div>
+<hr />
+<h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Pads touching same‑net zones are treated as connected.</li>
-<li>Traces entering the zone area also connect to that net (with clearance constraints).</li>
-</ul>
-<p>Additionally:</p>
-<ul>
-<li><code>ZoneManager::isPointInsideSameNetZone</code> can be used to test if a location is inside a same‑net copper area, useful for routing constraints and DFM checks.</li>
+<li><a href="../routing/">Routing</a> — traces interact with zone clearances.</li>
+<li><a href="../dfm-and-drc/">DFM &amp; DRC</a> — zone connectivity is checked during DRC.</li>
+<li><a href="../layers-and-views/">Layers &amp; Views</a> — zone visibility follows layer settings.</li>
 </ul>
 
 
@@ -1701,6 +2188,8 @@
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -1714,6 +2203,46 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../layers-and-views/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Layers &amp; Views">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Layers & Views
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../dfm-and-drc/" class="md-footer__link md-footer__link--next" aria-label="Next: DFM &amp; DRC Check">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                DFM & DRC Check
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
@@ -1723,9 +2252,17 @@
     </div>
   
   
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/CaSauCoin/WireFrame_Product" target="_blank" rel="noopener" title="WireFrame on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
     </a>
   
 </div>
@@ -1743,7 +2280,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.expand", "navigation.indexes", "navigation.footer", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.tabs.link", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "stable", "provider": "mike"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>

@@ -1,151 +1,229 @@
 # Wiring and Nets
 
-Wiring connects component pins into electrical nets. Wire behavior is controlled by `WireManager`, `WireRenderer`, and `SchNetlistManager`.
+Wiring connects component pins into electrical nets. This page covers wire drawing, pin attachment, net labels, power symbols, and netlist management.
 
 ---
 
-## Wire drawing mode
+## Wire Drawing Mode
 
-Select the **Wire** tool in the schematic toolbar.
+Select the **Wire** tool from the schematic toolbar (or press ++w++).
 
-Behavior:
+### Drawing a wire
 
-1. Click on:
-   - A pin tip, or
-   - An empty point on the canvas
-   to start a wire.
-2. A temporary wire follows the mouse.
-3. Each left‑click adds a vertex.
-4. Right‑click or an end‑wire shortcut ends the wire.
+1. **Click** on a component pin tip (or any point on the canvas) to start a wire.
+2. A temporary wire follows the mouse — wires are drawn **orthogonally** (horizontal/vertical segments).
+3. **Left-click** to add each vertex (corner point).
+4. **Right-click** or press ++esc++ to end the current wire.
 
-When started from a pin:
+| Action | Input |
+|---|---|
+| Start wire | Click on pin or canvas |
+| Add vertex | Left-click |
+| End wire | Right-click or ++esc++ |
+| Cancel wire | ++esc++ (before first vertex) |
 
-- `WireManager::startWireFromPin` locates the pin tip in world coordinates.
-- The first vertex is attached to that pin in `Wire::pinAttachments`.
+When starting from a pin:
+
+- WireFrame snaps the first vertex to the pin tip in world coordinates.
+- The first vertex is automatically attached to that pin internally.
+
+<!-- TODO: Replace with actual video
+     Record a 20-second screen capture showing:
+     1. _Press W to activate the Wire tool (toolbar button highlights)._
+     2. _Click on Pin 1 of a resistor — a wire starts from the pin tip._
+     3. _Move the mouse — the wire follows orthogonally with a right-angle preview._
+     4. _Click to add a vertex (corner)._
+     5. _Click on Pin 1 of another resistor — the wire terminates and attaches to the destination pin._
+     6. _A junction dot appears if the wire intersects an existing wire._
+     Resolution: 1280×720 at 30fps.
+-->
+<video controls width="100%">
+  <source src="../../img/schematic/wire-drawing.webm" type="video/webm">
+  <source src="../../img/schematic/wire-drawing.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
 
 ---
 
-## Connecting to pins and existing wires
+## Connecting to Pins and Existing Wires
 
 When you click to finish a wire on:
 
-- **Another pin**:
-  - The final vertex is snapped to the pin tip.
-  - `pinAttachments` records the component ID and pin number.
+### Another pin
 
-- **An existing wire vertex/segment**:
-  - The new wire shares that vertex position.
-  - `WireRenderer` visually merges them; `SchNetlistManager` treats them as a single net.
+- The final vertex **snaps** to the pin tip position.
+- `pinAttachments` records the component ID and pin number for both endpoints.
+- The two pins are now on the same net.
 
-> **Image placeholder**  
-> `![Wire attachment](img/schematic/wire-attachment.png)`  
-> _A demonstration where a wire is drawn from one pin, clicks into another pin, and a junction dot is automatically added when multiple wires meet._
+### An existing wire vertex or segment
+
+- The new wire shares that vertex position.
+- WireFrame visually merges them at the connection point.
+- WireFrame treats them as a **single net** — all connected wires and pins belong to the same net.
+
+<!-- TODO: Replace with actual screenshot
+     Capture a schematic area showing wire connections:
+     - _A wire running from Pin 1 of component R1 to Pin 3 of component U1 — both endpoints visually touching the pin tips._
+     - _A second wire branching from the middle of the first wire to another component — a **junction dot** (filled circle) visible at the branch point._
+     - _A third wire connecting two pins that are close together, showing clean orthogonal routing._
+     - _Zoom in enough to see the pin tips and junction clearly._
+     Suggested size: 600×400px.
+-->
+
+[//]: # (![Wire Attachment]&#40;../img/schematic/wire-attachment.png&#41;)
+
 
 ---
 
-## Wire geometry and editing
+## Wire Geometry and Editing
 
 Each `Wire` stores:
 
-- `id`: unique wire ID.
-- `points`: ordered list of vertices (ImVec2 in world coordinates).
-- `pinAttachments`: map from point index → attached pin (componentId, pinNumber).
-- `netName`: optional explicit net name.
+| Property | Type | Description |
+|---|---|---|
+| `id` | String | Unique wire ID |
+| `points` | List of coordinates | Ordered vertices in world coordinates |
+| `pinAttachments` | Map (index → pin) | Which vertices attach to which component pins |
+| `netName` | String (optional) | Explicit net name (from labels) |
 
-Editing operations:
+### Editing operations
 
-- **Move vertex**:
-  - Drag a wire vertex within a small radius (`findDraggableVertexAt`).
-  - `WireManager::moveVertex` updates position and may detach pin attachments if moved away.
-- **Drag segment**:
-  - Click and drag a segment (between two vertices).
-  - `Interactive_Wire_Dragger` inserts two new vertices and allows orthogonal dragging.
-  - On release, `simplifyWirePath` removes redundant collinear vertices.
+| Operation | How | Command |
+|---|---|---|
+| **Move vertex** | Drag a wire vertex (small hit radius) | Undo-supported command |
+| **Drag segment** | Click and drag a segment between vertices | Inserts two new vertices, allows orthogonal adjustment |
+| **Simplify** | Automatic | auto-simplification removes collinear redundant vertices |
+| **Delete wire** | Select + ++delete++ | Undo-supported command |
 
-All edits are captured by commands like `ModifyWireCommand`.
+!!! info "Wire auto-simplification"
+    After dragging a segment, auto-simplification automatically removes unnecessary vertices that are collinear, keeping the wire geometry clean.
+
+<!-- TODO: Replace with actual video
+     Record a 15-second clip:
+     1. _Drag a single wire vertex to a new position — the adjacent segments adjust._
+     2. _Drag a wire segment (between two vertices) — two new vertices are created and the segment moves orthogonally._
+     3. _Release the mouse — redundant vertices are removed automatically._
+     4. _Undo to restore the original wire shape._
+     Resolution: 1280×720 at 30fps.
+-->
+
+[//]: # (<video controls width="100%">)
+
+[//]: # (  <source src="../../img/schematic/wire-editing.webm" type="video/webm">)
+
+[//]: # (  <source src="../../img/schematic/wire-editing.mp4" type="video/mp4">)
+
+[//]: # (  Your browser does not support the video tag.)
+
+[//]: # (</video>)
+
 
 ---
 
 ## Junctions
 
-When three or more connections meet at a point:
+Junction dots indicate where **three or more** wire connections meet at a single point:
 
-- `WireRenderer` counts occurrences of each wire vertex (and pin positions).
-- If a point has connectivity ≥ 3, a junction circle is drawn.
+- WireFrame automatically counts wire vertex and pin occurrences at each position.
+- If a point has **connectivity ≥ 3**, a filled junction circle is drawn.
+- You can also manually place junction dots using the **Junction** tool.
 
-You can also explicitly place junctions via the **Junction** tool (graphics).
-
----
-
-## Net labels and power symbols
-
-Net naming is driven by:
-
-- **NetLabel components** (`type == "NetLabel"`) and their value.
-- **Power symbols** (VCC, GND, VDD) that may imply specific net names.
-
-Workflow:
-
-1. Use **Label** mode to place a `NetLabel`.
-2. Edit its value in the Properties panel (e.g. `SCL`, `+5V`).
-3. All connected wires to that label share the same net name.
-
-Power symbols:
-
-- Placed via **PlacingVCC** / **PlacingGND** modes.
-- `Component_Library` defines single‑pin components for VCC, GND, etc.
-
-`ChangeNetNameCommand` and `ChangeComponentValueCommand` synchronize displayed text and actual net names.
-
-> **Image placeholder**  
-> `![Net labels](img/schematic/net-labels.png)`  
-> _Labels on different parts of a schematic all use the same name (e.g., +3V3) and highlight as one net._
+Without a junction, two crossing wires are treated as **not connected** (they simply overlap visually).
 
 ---
 
-## Schematic netlist
+## Net Labels and Power Symbols
 
-`SchNetlistManager::rebuild` constructs a net graph from:
+### Net labels
 
-- All wires and their attached pins.
-- Shared vertices between wires.
-- Net labels and power symbols.
+1. Press ++l++ or select the **Label** tool.
+2. Click on the canvas to place a `NetLabel` component.
+3. Edit its **Value** in the Properties panel (e.g., `SDA`, `SCL`, `+5V`, `RESET`).
+4. All wires connected to that label's pin share the **same net name**.
 
-Rules:
+### Power symbols
 
-- Wires sharing vertices form a **cluster**.
-- Cluster net names are determined by priority:
-  1. Net labels (and certain power symbols) with user values.
-  2. Pin‑based default names (“Net_U1_1”).
-  3. If still unnamed, a generic wire‑based name (e.g., `Net_Wire_X`).
+| Symbol | Toolbar mode | Description |
+|---|---|---|
+| **GND** | `PlacingGND` (press ++g++) | Ground reference — single-pin component |
+| **VCC** | `PlacingVCC` | Positive power rail — single-pin component |
+| **VDD** | Via library | Additional power symbols available in `Component_Library` |
 
-The result is a map:
+Power symbols are simplified components with a single pin at the origin. They implicitly assign net names to connected wires.
 
-```text
-netName -> SchNet { name, set<PinRef> }
+!!! tip "Consistent naming"
+    Use the same label value everywhere a net should be connected. For example, all `+3V3` labels will merge into a single net, even if they are on different parts of the schematic sheet.
+
+<!-- TODO: Replace with actual screenshot
+     Capture a schematic section showing net naming:
+     - _Two or three **net labels** placed on different wires, all showing the same name (e.g., "+3V3") — indicating they belong to the same net._
+     - _A **GND** symbol connected to the bottom of a capacitor._
+     - _A **VCC** symbol connected to the top of a voltage regulator._
+     - _All net names visible as text next to the label symbols._
+     - _If possible, show the same net name appearing in two separate locations on the schematic to demonstrate connectivity across distance._
+     Suggested size: 700×400px.
+-->
+![Net Labels](../img/schematic/net-labels.png)
+
+
+---
+
+## Schematic Netlist
+
+WireFrame constructs a net graph from all wires, pins, and labels:
+
+### Algorithm
+
+1. Group all wires that share vertices into **clusters**.
+2. Collect all pins attached to each cluster.
+3. Determine net name by priority:
+    1. **Net labels** and power symbols with user-defined values (highest priority).
+    2. **Pin-based default names** (e.g., `Net_U1_1`).
+    3. **Generic wire-based names** (e.g., `Net_Wire_42`) as fallback.
+
+### Result
+
+The netlist produces a map:
+
+```
+netName → SchNet { name, set<PinRef(componentId, pinNumber)> }
 ```
 
 This netlist is used for:
 
-- Schematic net highlighting.
-- PCB netlist generation.
-- DRC/DFM consistency checks between schematic and PCB.
+- **Net highlighting** on the schematic canvas.
+- **PCB netlist generation** during schematic-to-PCB conversion.
+- **DRC consistency checks** between schematic and PCB.
 
 ---
 
-## Net highlighting
+## Net Highlighting
 
-Using `WireRenderer::renderNetHighlight`:
+When you select a net label or a wire:
 
-- Highlight a selected net name across:
-  - Wires.
-  - Connected pins.
-  - Net labels.
+- WireFrame draws all wires, pins, and labels on that net in a **distinct highlight color**.
+- This helps you trace connectivity across complex schematics.
 
-From the UI:
+<!-- TODO: Replace with actual video
+     Record a 10-second clip:
+     1. _Click on a net label (e.g., "SDA") on the schematic._
+     2. _All wires connected to the SDA net light up with a bright highlight color (e.g., yellow or orange overlay)._
+     3. _Pins on the SDA net also show the highlight._
+     4. _Click on empty space to deselect — the highlight fades._
+     Resolution: 1280×720 at 30fps.
+-->
+<video controls width="100%">
+  <source src="../../img/schematic/net-highlight.webm" type="video/webm">
+  <source src="../../img/schematic/net-highlight.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
-- Selecting a `NetLabel` or choosing a net from a list (when implemented) can set the highlighted net.
-- The schematic canvas shows that net in a distinct color overlay.
 
-> **Video placeholder**  
-> _Short clip where user clicks a net label, and all wires/pins on that net are softly highlighted across the sheet._
+---
+
+## See Also
+
+- [Placing Components](placing-components.md) — place the symbols that wires connect.
+- [Properties & Attributes](properties-and-attributes.md) — edit net names and component values.
+- [PCB Editor](../pcb/index.md) — the netlist generated here drives PCB routing.

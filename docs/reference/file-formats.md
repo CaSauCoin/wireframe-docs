@@ -1,26 +1,57 @@
 # File Formats
 
-WireFrame uses several custom and standard file formats.
+WireFrame uses several custom XML-based file formats alongside standard industry formats. This page documents all file types and their structure.
 
 ---
 
-## Project files (`.prjxml`)
+## Overview
 
-XML structure (simplified):
+| Format | Extension | Purpose |
+|---|---|---|
+| Project | `.prjxml` | Links schematics, PCBs, and libraries |
+| Schematic | `.schxml` | Circuit design with components, wires, graphics |
+| PCB | `.pcbxml` | Board layout with footprints, traces, zones |
+| Symbol library | `.kicad_sym` | KiCad symbol definitions (native support) |
+| Footprint library | `.kicad_mod` | KiCad footprint definitions (native support) |
+| Gerber | `.gbr` | PCB fabrication layers (export) |
+| Drill | `.drl` | Via and hole data (export) |
+| BOM | `.csv` | Bill of Materials (export) |
+| PDF | `.pdf` | Schematic documentation (export) |
+
+### Importable formats from other EDA tools
+
+| Format | Extension | Source |
+|---|---|---|
+| KiCad project | `.kicad_pro`, `.pro` | KiCad 5/6/7/8 |
+| KiCad schematic | `.kicad_sch` | KiCad 6/7/8 |
+| KiCad PCB | `.kicad_pcb` | KiCad 6/7/8 |
+| Altium project | `.PrjPcb` | Altium Designer |
+| Altium schematic | `.SchDoc` | Altium Designer |
+| Altium PCB | `.PcbDoc` | Altium Designer |
+| Altium symbol library | `.SchLib`, `.IntLib` | Altium Designer |
+| Altium footprint library | `.PcbLib` | Altium Designer |
+| Eagle schematic | `.sch` | Eagle / Autodesk (XML, v6+) |
+| Eagle board | `.brd` | Eagle / Autodesk (XML, v6+) |
+| Eagle library | `.lbr` | Eagle / Autodesk (XML, v6+) |
+
+---
+
+## Project Files (`.prjxml`)
+
+XML structure:
 
 ```xml
 <WireFrameProject>
   <Settings>
     <LibFolder>lib</LibFolder>
-    <!-- other settings -->
+    <!-- additional project-wide settings -->
   </Settings>
   <Schematics>
     <File>relative/path/to/schematic1.schxml</File>
-    <!-- more -->
+    <File>relative/path/to/schematic2.schxml</File>
   </Schematics>
   <PCBs>
     <File>relative/path/to/board1.pcbxml</File>
-    <!-- more -->
   </PCBs>
   <Libraries>
     <Library>path/to/symbol-lib.kicad_sym</Library>
@@ -29,89 +60,128 @@ XML structure (simplified):
 </WireFrameProject>
 ```
 
-- Paths are typically relative to the project root.
-- Additional project‑wide settings may be added over time.
+| Element | Description |
+|---|---|
+| `<Settings>` | Project-wide configuration (library folder, etc.) |
+| `<Schematics>` | List of schematic file paths (relative to project root) |
+| `<PCBs>` | List of PCB file paths (relative to project root) |
+| `<Libraries>` | Library file paths used by the project |
+
+!!! info "Path convention"
+    Paths are typically **relative** to the project root directory (parent of the `.prjxml` file). This keeps projects portable.
 
 ---
 
-## Schematic files (`.schxml`)
+## Schematic Files (`.schxml`)
 
-`FileManager::saveSchematic` / `loadSchematic` handle:
+the schematic save function handle:
 
-- Components:
-  - `PlacedComponent` entries with ID, symbol reference, position, rotation.
-  - Pin positions and attributes.
-- Wires:
-  - `Wire` lists with `points` and `pinAttachments`.
-- Graphics:
-  - Lines, rectangles, circles, arcs, polygons, junctions, harnesses.
-- Page settings:
-  - Paper size, title block, border colors.
+| Content | Elements |
+|---|---|
+| **Components** | placed component entries with ID, symbol reference, position, rotation, pin positions, attributes |
+| **Wires** | `Wire` lists with `points` (vertices) and `pinAttachments` (component pin references) |
+| **Graphics** | Lines, rectangles, circles, arcs, polygons, junctions, harnesses |
+| **Page settings** | Paper size, title block (title, company, revision, date, author), border colors |
 
-XML schema is internal and may evolve; avoid editing by hand unless necessary.
+!!! warning "Hand-editing"
+    The XML schema is internal and may evolve between versions. Avoid manual editing unless necessary — use the application UI instead.
 
 ---
 
-## PCB files (`.pcbxml`)
+## PCB Files (`.pcbxml`)
 
-`FileManager::savePcb` / `loadPcb` handle:
+the PCB save function handle:
 
-- Footprints:
-  - Positions, rotations, layers.
-  - Pad definitions (imported from footprints).
-  - Graphics.
-  - 3D model params (optional).
-- Traces, vias, holes:
-  - Geometry and net names.
-- Layers:
-  - Layer visibility and color.
-- Netlist:
-  - Nets and their pin sets.
-- Zones:
-  - Original outlines and computed islands.
-- Design rules:
-  - Net classes and assignments.
+| Content | Elements |
+|---|---|
+| **Footprints** | Positions, rotations, layers, pad definitions, graphics, 3D model params |
+| **Traces** | Geometry (polyline points), net names, layers, widths |
+| **Vias** | Position, net, diameter, drill |
+| **Holes** | Position, diameter, plated flag, net |
+| **Layers** | Definitions with visibility and color settings |
+| **Netlist** | Net names and their pin sets |
+| **Zones** | Outlines, cutouts, computed islands |
+| **Design rules** | Net class definitions and assignments |
+| **Graphics** | Board outline, dimensions, silkscreen, fab layer content |
 
 PCB XML may also embed references to library files for footprints and 3D models.
 
 ---
 
-## Library files
+## Library Files
 
-- **Symbols**: KiCad `.kicad_sym` or older `.lib` converted to a parsed `SymbolData` collection.
-- **Footprints**: KiCad `.kicad_mod` files.
+### Symbol libraries (`.kicad_sym`)
 
-WireFrame tries to remain compatible with KiCad structures for:
+WireFrame reads KiCad v6/v7/v8 format symbol files:
 
-- Easier reuse of existing libraries.
-- Smoother data interchange.
+- S-expression based format.
+- Parsed by the KiCad symbol parser.
+- Contains symbol definitions with pins, graphics, texts, and properties.
 
----
+### Footprint libraries (`.kicad_mod`)
 
-## Manufacturing files
+WireFrame reads and writes KiCad footprint files:
 
-- **Gerber**:
-  - Generated via `GerberWriter` with mm units and 4.4 coordinate format.
-  - One file per layer type (F.Cu, B.Cu, F.SilkS, Edge.Cuts, etc.).
+- S-expression based format.
+- Parsed by the KiCad footprint parser.
+- Contains pad definitions, graphics, reference text, and 3D model references.
+- `saveToKicadMod` exports generated footprints back to this format.
 
-- **Drill (NC)**:
-  - Not detailed here, but similar concept: coordinates + drill diameters.
-
-- **BOM CSV**:
-  - Simple comma‑separated file with four columns:
-    - Designator
-    - Value
-    - Footprint
-    - Layer
+!!! tip "KiCad compatibility"
+    WireFrame maintains compatibility with KiCad structures to enable easy reuse of existing libraries and smoother data interchange.
 
 ---
 
-## PDF
+## Manufacturing Files
 
-Schematic PDFs:
+### Gerber (`.gbr`)
 
-- Single‑page or multi‑page depending on design.
-- Vector lines for wires and graphics.
-- Flattened fonts and colors suitable for printing.
+| Property | Value |
+|---|---|
+| Format | RS-274X |
+| Units | Millimeters |
+| Coordinate format | 4.4 (integer.decimal) |
+| One file per layer | F.Cu, B.Cu, F.SilkS, F.Mask, B.Mask, Edge.Cuts, etc. |
 
-Generated by `PdfExporter` with coordinates converted from schematic world units to PDF points (mm → pt).
+Generated by the Gerber export engine.
+
+### Drill (`.drl`)
+
+| Property | Value |
+|---|---|
+| Format | Excellon NC |
+| Content | Via and hole coordinates with drill diameters |
+| Separation | Plated and non-plated holes in separate files (or sections) |
+
+### BOM (`.csv`)
+
+| Column | Description |
+|---|---|
+| Designator | Component reference (R1, C1, U1) |
+| Value | Electrical value (10kΩ, 100nF) |
+| Footprint | Package name (R_0603, LQFP-48) |
+| Layer | Board side (Top / Bottom) |
+
+Simple comma-separated format. Generated by the BOM export engine.
+
+---
+
+## PDF Export
+
+| Property | Value |
+|---|---|
+| Content | Schematic pages with components, wires, graphics, title block |
+| Format | Vector-based PDF |
+| Colors | Converted to black/grey for printing |
+| Units | Schematic world units → PDF points (mm → pt) |
+| Pages | Single or multi-page depending on design |
+
+Generated by the PDF export engine.
+
+---
+
+## See Also
+
+- [Projects & Files](../projects.md) — how projects organize documents.
+- [Fabrication & Export](../pcb/fabrication-and-export.md) — export workflows for Gerber, drill, BOM.
+- [Config & Session](config-and-session.md) — user configuration file format.

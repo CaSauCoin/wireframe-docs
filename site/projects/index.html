@@ -6,15 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="Complete user guide for WireFrame EDA — a lightweight schematic and PCB design environment built with ImGui, GLFW and OpenGL.">
       
       
-        <link rel="canonical" href="https://wireframe.com.vn/docs/projects/">
+      
+        <link rel="canonical" href="https://guideline-one.vercel.app/projects/">
       
       
-        <link rel="prev" href="../ui-overview">
+        <link rel="prev" href="../ui-overview/">
       
       
-        <link rel="next" href="../schematic">
+        <link rel="next" href="../schematic/">
       
       
         
@@ -25,7 +27,7 @@
     
     
       
-        <title>Projects Management - WireFrame EDA Docs</title>
+        <title>Projects & Files - WireFrame EDA Documentation</title>
       
     
     
@@ -46,8 +48,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
       
     
     
@@ -85,15 +87,21 @@
       
     </div>
     
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
     
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="WireFrame EDA Docs" class="md-header__button md-logo" aria-label="WireFrame EDA Docs" data-md-component="logo">
+    <a href=".." title="WireFrame EDA Documentation" class="md-header__button md-logo" aria-label="WireFrame EDA Documentation" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 4h12v1h3v2h-3v2h3v2h-3v2h3v2h-3v2h3v2h-3v1H6v-1H3v-2h3v-2H3v-2h3v-2H3V9h3V7H3V5h3zm5 11v3h1v-3zm2 0v3h1v-3zm2 0v3h1v-3z"/></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -104,13 +112,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            WireFrame EDA Docs
+            WireFrame EDA Documentation
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Projects Management
+              Projects & Files
             
           </span>
         </div>
@@ -141,6 +149,11 @@
       </label>
       <nav class="md-search__options" aria-label="Search">
         
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
@@ -167,14 +180,8 @@
     
   </nav>
   
-</header>
     
-    <div class="md-container" data-md-component="container">
       
-      
-        
-          
-            
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
   <div class="md-grid">
     <ul class="md-tabs__list">
@@ -208,9 +215,11 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../getting-started" class="md-tabs__link">
+        <a href="../installation/" class="md-tabs__link">
           
   
+  
+    
   
   Getting Started
 
@@ -228,9 +237,11 @@
     
     
       <li class="md-tabs__item">
-        <a href="../schematic" class="md-tabs__link">
+        <a href="../schematic/" class="md-tabs__link">
           
   
+  
+    
   
   Schematic Design
 
@@ -248,9 +259,11 @@
     
     
       <li class="md-tabs__item">
-        <a href="../pcb" class="md-tabs__link">
+        <a href="../pcb/" class="md-tabs__link">
           
   
+  
+    
   
   PCB Layout
 
@@ -268,9 +281,11 @@
     
     
       <li class="md-tabs__item">
-        <a href="../libraries/symbols-library" class="md-tabs__link">
+        <a href="../libraries/symbols-library/" class="md-tabs__link">
           
   
+  
+    
   
   Libraries
 
@@ -288,9 +303,11 @@
     
     
       <li class="md-tabs__item">
-        <a href="../advanced/selection-and-editing" class="md-tabs__link">
+        <a href="../advanced/selection-and-editing/" class="md-tabs__link">
           
   
+  
+    
   
   Advanced Features
 
@@ -308,9 +325,11 @@
     
     
       <li class="md-tabs__item">
-        <a href="../reference/config-and-session" class="md-tabs__link">
+        <a href="../reference/config-and-session/" class="md-tabs__link">
           
   
+  
+    
   
   Reference
 
@@ -320,10 +339,35 @@
   
 
       
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../tutorial/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tutorial
+
+      </a>
+    </li>
+  
+
+      
     </ul>
   </div>
 </nav>
-          
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
         
       
       <main class="md-main" data-md-component="main">
@@ -342,13 +386,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="WireFrame EDA Docs" class="md-nav__button md-logo" aria-label="WireFrame EDA Docs" data-md-component="logo">
+    <a href=".." title="WireFrame EDA Documentation" class="md-nav__button md-logo" aria-label="WireFrame EDA Documentation" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 4h12v1h3v2h-3v2h3v2h-3v2h3v2h-3v2h3v2h-3v1H6v-1H3v-2h3v-2H3v-2h3v-2H3V9h3V7H3V5h3zm5 11v3h1v-3zm2 0v3h1v-3zm2 0v3h1v-3z"/></svg>
 
     </a>
-    WireFrame EDA Docs
+    WireFrame EDA Documentation
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -389,6 +433,16 @@
   
   
     
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -444,35 +498,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../getting-started" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Introduction
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../installation" class="md-nav__link">
+      <a href="../installation/" class="md-nav__link">
         
   
   
@@ -500,7 +526,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../ui-overview" class="md-nav__link">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ui-overview/" class="md-nav__link">
         
   
   
@@ -544,7 +598,7 @@
   <span class="md-ellipsis">
     
   
-    Projects Management
+    Projects & Files
   
 
     
@@ -555,14 +609,14 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="" class="md-nav__link md-nav__link--active">
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
     
   
-    Projects Management
+    Projects & Files
   
 
     
@@ -591,12 +645,12 @@
   <a href="#project-files-prjxml" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Project files (.prjxml)
+        Project Files (.prjxml)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Project files (.prjxml)">
+    <nav class="md-nav" aria-label="Project Files (.prjxml)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -621,6 +675,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#adding-files-to-a-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding files to a project
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -635,6 +700,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Schematics (.schxml)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-behaviors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key behaviors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#saving" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Saving
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -646,13 +739,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="PCBs (.pcbxml)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#saving_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Saving
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
   <a href="#linking-schematics-and-pcbs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Linking schematics and PCBs
+        Linking Schematics and PCBs
       
     </span>
   </a>
@@ -660,10 +770,121 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#library-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Library Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Library Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#symbol-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Symbol libraries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#footprint-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Footprint libraries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#managing-library-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Managing library references
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#importing-projects-from-other-eda-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Importing Projects from Other EDA Tools
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Importing Projects from Other EDA Tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#importing-a-kicad-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Importing a KiCad project
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#importing-an-altium-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Importing an Altium project
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#importing-an-eagle-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Importing an Eagle project
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#session-restoration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Session restoration
+        Session Restoration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
       
     </span>
   </a>
@@ -694,6 +915,20 @@
   
     
     
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
     
     
       
@@ -711,8 +946,9 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-            
+          <div class="md-nav__link md-nav__container">
+            <a href="../schematic/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -726,8 +962,14 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
@@ -741,32 +983,6 @@
           <ul class="md-nav__list" data-md-scrollfix>
             
               
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../schematic" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -775,7 +991,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../schematic/placing-components" class="md-nav__link">
+      <a href="../schematic/placing-components/" class="md-nav__link">
         
   
   
@@ -803,7 +1019,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../schematic/wiring-and-nets" class="md-nav__link">
+      <a href="../schematic/wiring-and-nets/" class="md-nav__link">
         
   
   
@@ -831,7 +1047,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../schematic/properties-and-attributes" class="md-nav__link">
+      <a href="../schematic/properties-and-attributes/" class="md-nav__link">
         
   
   
@@ -859,7 +1075,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../schematic/graphics-and-annotations" class="md-nav__link">
+      <a href="../schematic/graphics-and-annotations/" class="md-nav__link">
         
   
   
@@ -895,6 +1111,24 @@
   
     
     
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
     
     
       
@@ -912,8 +1146,9 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
-            
+          <div class="md-nav__link md-nav__container">
+            <a href="../pcb/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -927,8 +1162,14 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
@@ -942,32 +1183,6 @@
           <ul class="md-nav__list" data-md-scrollfix>
             
               
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../pcb" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -976,7 +1191,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pcb/footprints-and-placement" class="md-nav__link">
+      <a href="../pcb/footprints-and-placement/" class="md-nav__link">
         
   
   
@@ -1004,7 +1219,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pcb/routing" class="md-nav__link">
+      <a href="../pcb/routing/" class="md-nav__link">
         
   
   
@@ -1032,7 +1247,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pcb/layers-and-views" class="md-nav__link">
+      <a href="../pcb/layers-and-views/" class="md-nav__link">
         
   
   
@@ -1060,7 +1275,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pcb/zones-and-planes" class="md-nav__link">
+      <a href="../pcb/zones-and-planes/" class="md-nav__link">
         
   
   
@@ -1088,7 +1303,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pcb/dfm-and-drc" class="md-nav__link">
+      <a href="../pcb/dfm-and-drc/" class="md-nav__link">
         
   
   
@@ -1116,7 +1331,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pcb/fabrication-and-export" class="md-nav__link">
+      <a href="../pcb/fabrication-and-export/" class="md-nav__link">
         
   
   
@@ -1151,6 +1366,12 @@
   
   
     
+    
+      
+        
+      
+        
+      
     
     
     
@@ -1205,7 +1426,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../libraries/symbols-library" class="md-nav__link">
+      <a href="../libraries/symbols-library/" class="md-nav__link">
         
   
   
@@ -1233,7 +1454,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../libraries/footprints-library" class="md-nav__link">
+      <a href="../libraries/footprints-library/" class="md-nav__link">
         
   
   
@@ -1268,6 +1489,14 @@
   
   
     
+    
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1322,7 +1551,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../advanced/selection-and-editing" class="md-nav__link">
+      <a href="../advanced/selection-and-editing/" class="md-nav__link">
         
   
   
@@ -1350,7 +1579,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../advanced/3d-viewer" class="md-nav__link">
+      <a href="../advanced/3d-viewer/" class="md-nav__link">
         
   
   
@@ -1378,7 +1607,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../advanced/shortcuts" class="md-nav__link">
+      <a href="../advanced/shortcuts/" class="md-nav__link">
         
   
   
@@ -1413,6 +1642,16 @@
   
   
     
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1467,7 +1706,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/config-and-session" class="md-nav__link">
+      <a href="../reference/config-and-session/" class="md-nav__link">
         
   
   
@@ -1495,7 +1734,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/file-formats" class="md-nav__link">
+      <a href="../reference/file-formats/" class="md-nav__link">
         
   
   
@@ -1516,9 +1755,92 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ & Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1553,12 +1875,12 @@
   <a href="#project-files-prjxml" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Project files (.prjxml)
+        Project Files (.prjxml)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Project files (.prjxml)">
+    <nav class="md-nav" aria-label="Project Files (.prjxml)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1583,6 +1905,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#adding-files-to-a-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding files to a project
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1597,6 +1930,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Schematics (.schxml)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-behaviors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key behaviors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#saving" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Saving
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1608,13 +1969,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="PCBs (.pcbxml)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#saving_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Saving
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
   <a href="#linking-schematics-and-pcbs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Linking schematics and PCBs
+        Linking Schematics and PCBs
       
     </span>
   </a>
@@ -1622,10 +2000,121 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#library-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Library Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Library Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#symbol-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Symbol libraries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#footprint-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Footprint libraries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#managing-library-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Managing library references
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#importing-projects-from-other-eda-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Importing Projects from Other EDA Tools
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Importing Projects from Other EDA Tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#importing-a-kicad-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Importing a KiCad project
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#importing-an-altium-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Importing an Altium project
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#importing-an-eagle-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Importing an Eagle project
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#session-restoration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Session restoration
+        Session Restoration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
       
     </span>
   </a>
@@ -1649,101 +2138,420 @@
 
 
 
-<h1 id="projects-and-files">Projects and Files</h1>
-<p>WireFrame uses a project‑oriented structure to keep schematics, PCBs and libraries organized.</p>
+<h1 id="projects-and-files">Projects and Files<a class="headerlink" href="#projects-and-files" title="Permanent link">&para;</a></h1>
+<p>WireFrame uses a project-oriented structure to keep schematics, PCBs and libraries organized. This page explains the project file format, document types, and how they link together.</p>
 <hr />
-<h2 id="project-files-prjxml">Project files (<code>.prjxml</code>)</h2>
-<p>A project file (<code>*.prjxml</code>) stores:</p>
-<ul>
-<li>A list of schematic files.</li>
-<li>A list of PCB files.</li>
-<li>The project library folder name.</li>
-<li>Libraries used by the project.</li>
-</ul>
-<h3 id="creating-a-project">Creating a project</h3>
+<h2 id="project-files-prjxml">Project Files (<code>.prjxml</code>)<a class="headerlink" href="#project-files-prjxml" title="Permanent link">&para;</a></h2>
+<p>A project file (<code>*.prjxml</code>) is an XML document that stores:</p>
+<table>
+<thead>
+<tr>
+<th>Content</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Schematic list</td>
+<td>Paths to all <code>.schxml</code> files in the project</td>
+</tr>
+<tr>
+<td>PCB list</td>
+<td>Paths to all <code>.pcbxml</code> files in the project</td>
+</tr>
+<tr>
+<td>Library folder</td>
+<td>Default folder for symbol and footprint libraries</td>
+</tr>
+<tr>
+<td>Library references</td>
+<td>Specific library files used by the project</td>
+</tr>
+</tbody>
+</table>
+<h3 id="creating-a-project">Creating a project<a class="headerlink" href="#creating-a-project" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>File → New Project…</strong></li>
-<li>Choose a <code>.prjxml</code> path.</li>
-<li>WireFrame:</li>
+<li>Choose a location and <code>.prjxml</code> filename.</li>
+<li>WireFrame:<ul>
 <li>Creates the project file.</li>
-<li>Sets project root directory.</li>
-<li>Sets a default library folder (e.g. <code>lib/</code>).</li>
+<li>Sets the project root directory (parent folder of the <code>.prjxml</code>).</li>
+<li>Creates a default library folder (e.g., <code>lib/</code>) if needed.</li>
+</ul>
+</li>
 </ol>
-<h3 id="opening-a-project">Opening a project</h3>
+<!-- TODO: Replace with actual screenshot
+     Capture the "New Project" dialog:
+     - _A file browser dialog with the filename field showing a sample name (e.g., "MyBoard.prjxml")._
+     - _The parent folder visible in the directory path._
+     - _The "Create" or "Save" button highlighted._
+     Suggested size: 600×400px.
+-->
+<video controls width="100%">
+  <source src="../img/projects/new-project-dialog.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+<h3 id="opening-a-project">Opening a project<a class="headerlink" href="#opening-a-project" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>File → Open Project…</strong></li>
-<li>Select a <code>.prjxml</code>.</li>
-<li>The <strong>ProjectStructure panel</strong> parses the XML and lists:</li>
+<li>Select a <code>.prjxml</code> file.</li>
+<li>The <strong>Project Structure</strong> panel parses the XML and displays:<ul>
 <li><code>&lt;Schematics&gt;</code> → schematic file entries.</li>
 <li><code>&lt;PCBs&gt;</code> → PCB file entries.</li>
 <li><code>&lt;Libraries&gt;</code> → symbol and footprint library references.</li>
+</ul>
+</li>
 </ol>
+<!-- TODO: Replace with actual screenshot
+     Capture the Project Structure panel after opening a multi-file project:
+     - _Project node expanded ("PowerSupply.prjxml")._
+     - _"Schematics" section with 2–3 schematic files listed._
+     - _"PCBs" section with 1 PCB file._
+     - _File icons distinguishing schematic from PCB documents._
+     Crop to the panel only. Suggested size: 300×450px.
+-->
+<p><img alt="Project Tree Expanded" src="../img/projects/project-tree-expanded.png" /></p>
+<h3 id="adding-files-to-a-project">Adding files to a project<a class="headerlink" href="#adding-files-to-a-project" title="Permanent link">&para;</a></h3>
+<p>Right-click the project node or a section (Schematics / PCBs) in the Project Structure panel:</p>
+<ul>
+<li><strong>Add Existing…</strong> — browse for an existing <code>.schxml</code> or <code>.pcbxml</code> to link into the project.</li>
+<li><strong>Add New…</strong> — create a new schematic or PCB and automatically register it in the project.</li>
+</ul>
 <hr />
-<h2 id="schematics-schxml">Schematics (<code>.schxml</code>)</h2>
+<h2 id="schematics-schxml">Schematics (<code>.schxml</code>)<a class="headerlink" href="#schematics-schxml" title="Permanent link">&para;</a></h2>
 <p>Each schematic document includes:</p>
+<table>
+<thead>
+<tr>
+<th>Content</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Components</td>
+<td>Placed symbols with IDs, positions, rotations, and attributes</td>
+</tr>
+<tr>
+<td>Wires</td>
+<td>Wire vertices, pin attachments, and net names</td>
+</tr>
+<tr>
+<td>Graphics</td>
+<td>Lines, rectangles, circles, arcs, polygons, text</td>
+</tr>
+<tr>
+<td>Page settings</td>
+<td>Paper size, title block (title, company, revision, date, author)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="key-behaviors">Key behaviors<a class="headerlink" href="#key-behaviors" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Placed components with IDs and attributes.</li>
-<li>Wires, wire vertices and pin attachments.</li>
-<li>Net labels, text and graphics (lines, rectangles, circles, etc.).</li>
-<li>Page settings (paper size, title block data).</li>
+<li>The schematic <strong>netlist</strong> is rebuilt from wires and labels using the netlist engine.</li>
+<li>Components are tied to <strong>symbol definitions</strong> from loaded libraries (via the library system).</li>
+<li><strong>Cross-document mapping</strong>: schematic component IDs can be linked to PCB footprints by matching IDs.</li>
 </ul>
-<p>Important aspects:</p>
+<h3 id="saving">Saving<a class="headerlink" href="#saving" title="Permanent link">&para;</a></h3>
 <ul>
-<li>The schematic <strong>netlist</strong> is rebuilt from wires and labels using <code>SchNetlistManager</code>.</li>
-<li>Components are tied to symbol definitions from loaded libraries (via <code>LibraryManager</code>).</li>
-<li>Cross‑document mapping: schematic component IDs can be linked to PCB footprints by ID.</li>
-</ul>
-<p>Saving a schematic:</p>
-<ul>
-<li><strong>File → Save</strong> updates the <code>.schxml</code> via <code>FileManager::saveSchematic</code>.</li>
-<li><strong>File → Save As…</strong> writes to a new file and updates the document path.</li>
+<li><strong>File → Save</strong> (<span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-s">S</kbd></span>) — updates the <code>.schxml</code> via the save function.</li>
+<li><strong>File → Save As…</strong> (<span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-s">S</kbd></span>) — writes to a new file and updates the document path.</li>
 </ul>
 <hr />
-<h2 id="pcbs-pcbxml">PCBs (<code>.pcbxml</code>)</h2>
+<h2 id="pcbs-pcbxml">PCBs (<code>.pcbxml</code>)<a class="headerlink" href="#pcbs-pcbxml" title="Permanent link">&para;</a></h2>
 <p>Each PCB document records:</p>
+<table>
+<thead>
+<tr>
+<th>Content</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Footprints</td>
+<td>Placed packages with positions, rotations, pads, and layers</td>
+</tr>
+<tr>
+<td>Traces &amp; vias</td>
+<td>Routed connections with net names, widths, and layer assignments</td>
+</tr>
+<tr>
+<td>Holes</td>
+<td>Mechanical and plated holes with diameters</td>
+</tr>
+<tr>
+<td>Graphics</td>
+<td>Board outline, dimensions, silkscreen text and shapes</td>
+</tr>
+<tr>
+<td>Netlist</td>
+<td>Net definitions and pin-to-net assignments</td>
+</tr>
+<tr>
+<td>Zones</td>
+<td>Copper zone outlines and computed fill islands</td>
+</tr>
+<tr>
+<td>Design rules</td>
+<td>Net classes, clearances, trace widths, via/drill sizes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="saving_1">Saving<a class="headerlink" href="#saving_1" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Placed footprints and their parameters.</li>
-<li>Traces, vias and mechanical holes.</li>
-<li>Drawing graphics (board outline, dimensions, etc.).</li>
-<li>Netlist data and zone definitions.</li>
-<li>Design rules (net classes, clearances, via sizes).</li>
-</ul>
-<p>Saving a PCB:</p>
-<ul>
-<li><strong>File → Save</strong> calls <code>FileManager::savePcb</code> with:</li>
-<li>Footprints</li>
-<li>Traces</li>
-<li>Layers</li>
-<li>Netlist</li>
-<li>Drawings</li>
-<li>Zones</li>
-<li>Design settings</li>
+<li><strong>File → Save</strong> — calls the save function with all board data (footprints, traces, layers, netlist, drawings, zones, design settings).</li>
+<li><strong>File → Save As…</strong> — writes to a new file path.</li>
 </ul>
 <hr />
-<h2 id="linking-schematics-and-pcbs">Linking schematics and PCBs</h2>
-<p>While the code supports full netlist propagation, from the user’s perspective the typical flow is:</p>
+<h2 id="linking-schematics-and-pcbs">Linking Schematics and PCBs<a class="headerlink" href="#linking-schematics-and-pcbs" title="Permanent link">&para;</a></h2>
+<p>The typical workflow for linking a schematic to a PCB:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>┌─────────────┐     ┌──────────────┐     ┌─────────────┐
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>│  Schematic   │────▶│  Convert to  │────▶│    PCB      │
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>│  (design)    │     │  PCB action  │     │  (layout)   │
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>└─────────────┘     └──────────────┘     └─────────────┘
+</code></pre></div>
 <ol>
-<li>Design a schematic and assign footprints (via symbol properties).</li>
-<li>Use a <strong>Convert to PCB</strong> or similar action from the document manager (when implemented) to:</li>
+<li><strong>Design the schematic</strong> and assign footprints to all components (via symbol properties).</li>
+<li>Use <strong>Project → Convert to PCB</strong> (or equivalent) to:<ul>
 <li>Create a new PCB document.</li>
-<li>Populate footprints matching schematic IDs.</li>
-<li>Transfer netlist to the PCB.</li>
-</ol>
-<p>Later, changes in the schematic can be re‑applied to PCB by updating netlists and marking nets dirty to recompute ratsnests.</p>
-<blockquote>
-<p><strong>Video placeholder</strong><br />
-<em>Short clip showing: user edits a schematic, runs "Update PCB from Schematic", then PCB netnames and ratsnest update accordingly.</em></p>
-</blockquote>
-<hr />
-<h2 id="session-restoration">Session restoration</h2>
-<p>The application stores session data (open projects/documents) in a user config file. On startup:</p>
-<ul>
-<li>It restores:</li>
-<li>Previously open projects.</li>
-<li>Previously open documents.</li>
-<li>It then re‑populates the ProjectStructure and Editor tabs.</li>
+<li>Populate footprints matching schematic component IDs.</li>
+<li>Transfer the netlist (net names and pin connections) to the PCB.</li>
 </ul>
-<p>Details are in <a href="../reference/config-and-session">Config &amp; Session</a>.</p>
+</li>
+<li><strong>Later updates</strong>: changes in the schematic can be re-applied to the PCB by updating netlists. Modified or added nets are marked dirty and the ratsnest is recomputed.</li>
+</ol>
+<!-- TODO: Replace with actual video
+     Record a 20–30 second screen capture showing:
+     1. _A completed schematic with 5–6 components, wires, and labels visible._
+     2. _The user clicking "Project → Convert to PCB" from the menu bar._
+     3. _A new PCB tab appearing with footprints clustered together and ratsnest lines everywhere._
+     4. _The user briefly panning around the new PCB to show all footprints loaded correctly._
+     Resolution: 1280×720 at 30fps. Keep actions slow for clarity.
+-->
+<video controls width="100%">
+  <source src="../img/projects/schematic-to-pcb.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+<div class="admonition warning">
+<p class="admonition-title">Footprint assignment required</p>
+<p>Components without a Footprint property in the schematic will be skipped during conversion. Always verify that every component has a footprint assigned before converting.</p>
+</div>
+<hr />
+<h2 id="library-management">Library Management<a class="headerlink" href="#library-management" title="Permanent link">&para;</a></h2>
+<p>Projects can reference external library files for both symbols and footprints:</p>
+<h3 id="symbol-libraries">Symbol libraries<a class="headerlink" href="#symbol-libraries" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Loaded from KiCad <code>.kicad_sym</code> files.</li>
+<li>Registered in the project's <code>&lt;Libraries&gt;</code> section.</li>
+<li>Symbols are available in the Library panel when a schematic is active.</li>
+</ul>
+<h3 id="footprint-libraries">Footprint libraries<a class="headerlink" href="#footprint-libraries" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Loaded from KiCad <code>.kicad_mod</code> files.</li>
+<li>Also registered in the project's <code>&lt;Libraries&gt;</code> section.</li>
+<li>Footprints are available when a PCB is active.</li>
+</ul>
+<h3 id="managing-library-references">Managing library references<a class="headerlink" href="#managing-library-references" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>How</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Add a library</td>
+<td>Load it via the Library panel, then it's auto-registered</td>
+</tr>
+<tr>
+<td>Remove a library</td>
+<td>Right-click in Library panel → Unload</td>
+</tr>
+<tr>
+<td>View library path</td>
+<td>Check the <code>.prjxml</code> file's <code>&lt;Libraries&gt;</code> section</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Shared libraries</p>
+<p>You can share a single set of library files across multiple projects by keeping them in a common folder and referencing the same path from each project.</p>
+</div>
+<hr />
+<h2 id="importing-projects-from-other-eda-tools">Importing Projects from Other EDA Tools<a class="headerlink" href="#importing-projects-from-other-eda-tools" title="Permanent link">&para;</a></h2>
+<h3 id="importing-a-kicad-project">Importing a KiCad project<a class="headerlink" href="#importing-a-kicad-project" title="Permanent link">&para;</a></h3>
+<p>WireFrame can import existing KiCad projects to bring in your schematics, PCB layouts, and library references:</p>
+<ol>
+<li>Go to <strong>File → Import → KiCad Project…</strong></li>
+<li>Select the KiCad project file (<code>.kicad_pro</code> or <code>.pro</code>).</li>
+<li>WireFrame reads the project structure and converts:</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>KiCad file</th>
+<th>Converted to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.kicad_pro</code> / <code>.pro</code></td>
+<td><code>.prjxml</code> (WireFrame project)</td>
+</tr>
+<tr>
+<td><code>.kicad_sch</code></td>
+<td><code>.schxml</code> (WireFrame schematic)</td>
+</tr>
+<tr>
+<td><code>.kicad_pcb</code></td>
+<td><code>.pcbxml</code> (WireFrame PCB)</td>
+</tr>
+<tr>
+<td><code>.kicad_sym</code></td>
+<td>Loaded as symbol library (no conversion needed)</td>
+</tr>
+<tr>
+<td><code>.kicad_mod</code></td>
+<td>Loaded as footprint library (no conversion needed)</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>After import, the project appears in the <strong>Project Structure</strong> panel with all linked files.</li>
+</ol>
+<!-- TODO: Replace with actual screenshot
+     Capture the "Import KiCad Project" dialog:
+     - _A file browser showing `.kicad_pro` files._
+     - _After import: the Project Structure panel showing the converted project with schematics and PCBs listed._
+     Suggested size: 700×450px.
+-->
+
+<video controls width="100%">
+  <source src="../img/projects/import-kicad.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+<div class="admonition tip">
+<p class="admonition-title">Library compatibility</p>
+<p>KiCad symbol (<code>.kicad_sym</code>) and footprint (<code>.kicad_mod</code>) libraries are natively supported — no conversion is needed. They are loaded directly by WireFrame.</p>
+</div>
+<h3 id="importing-an-altium-project">Importing an Altium project<a class="headerlink" href="#importing-an-altium-project" title="Permanent link">&para;</a></h3>
+<p>WireFrame supports importing Altium Designer projects and libraries:</p>
+<ol>
+<li>Go to <strong>File → Import → Altium Project…</strong></li>
+<li>Select the Altium project file (<code>.PrjPcb</code>).</li>
+<li>WireFrame converts the project structure:</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Altium file</th>
+<th>Converted to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.PrjPcb</code></td>
+<td><code>.prjxml</code> (WireFrame project)</td>
+</tr>
+<tr>
+<td><code>.SchDoc</code></td>
+<td><code>.schxml</code> (WireFrame schematic)</td>
+</tr>
+<tr>
+<td><code>.PcbDoc</code></td>
+<td><code>.pcbxml</code> (WireFrame PCB)</td>
+</tr>
+<tr>
+<td><code>.SchLib</code> / <code>.IntLib</code></td>
+<td>Symbol library (converted on import)</td>
+</tr>
+<tr>
+<td><code>.PcbLib</code></td>
+<td>Footprint library (converted on import)</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>The imported project opens in the Project Structure panel.</li>
+</ol>
+<!-- TODO: Replace with actual screenshot
+     Capture the "Import Altium Project" dialog:
+     - _A file browser showing `.PrjPcb` files._
+     - _An import progress dialog or log showing conversion status._
+     - _After import: the Project Structure panel showing the converted project._
+     Suggested size: 700×450px.
+-->
+
+<video controls width="100%">
+  <source src="../img/projects/import-altium.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+<div class="admonition warning">
+<p class="admonition-title">Altium import limitations</p>
+<ul>
+<li>Complex Altium features (room definitions, embedded components, advanced design rules) may not be fully converted.</li>
+<li>Always review the imported design and run DRC after import.</li>
+<li>Altium 3D model references may need to be re-linked if the model paths differ.</li>
+</ul>
+</div>
+<h3 id="importing-an-eagle-project">Importing an Eagle project<a class="headerlink" href="#importing-an-eagle-project" title="Permanent link">&para;</a></h3>
+<p>WireFrame can also import Eagle (Autodesk) designs:</p>
+<ol>
+<li>Go to <strong>File → Import → Eagle Project…</strong></li>
+<li>Select the Eagle schematic (<code>.sch</code>) or board (<code>.brd</code>) file.</li>
+<li>WireFrame converts components, nets, traces, and board geometry.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Eagle file</th>
+<th>Converted to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.sch</code></td>
+<td><code>.schxml</code> (WireFrame schematic)</td>
+</tr>
+<tr>
+<td><code>.brd</code></td>
+<td><code>.pcbxml</code> (WireFrame PCB)</td>
+</tr>
+<tr>
+<td><code>.lbr</code></td>
+<td>Symbol + footprint libraries (converted on import)</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Eagle version support</p>
+<p>Eagle XML format (version 6+) is supported. Binary formats from older Eagle versions are not supported.</p>
+</div>
+<hr />
+<h2 id="session-restoration">Session Restoration<a class="headerlink" href="#session-restoration" title="Permanent link">&para;</a></h2>
+<p>The application stores session data (open projects and documents) in a user config file. On startup, WireFrame automatically:</p>
+<ol>
+<li>Restores previously open <strong>projects</strong> (<code>.prjxml</code>).</li>
+<li>Restores previously open <strong>documents</strong> (<code>.schxml</code> / <code>.pcbxml</code>).</li>
+<li>Re-populates the <strong>Project Structure</strong> panel and <strong>Editor</strong> tabs.</li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">Config details</p>
+<p>Session data is stored in <code>user_config.json</code>. See <a href="../reference/config-and-session/">Config &amp; Session</a> for the file location and format.</p>
+</div>
+<hr />
+<h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../getting-started/">Getting Started</a> — creating your first project step by step.</li>
+<li><a href="../reference/file-formats/">File Formats</a> — XML schema details for <code>.prjxml</code>, <code>.schxml</code>, <code>.pcbxml</code>.</li>
+<li><a href="../reference/config-and-session/">Config &amp; Session</a> — session storage and configuration.</li>
+</ul>
 
 
 
@@ -1761,6 +2569,8 @@
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -1774,6 +2584,46 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../ui-overview/" class="md-footer__link md-footer__link--prev" aria-label="Previous: UI Overview">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                UI Overview
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../schematic/" class="md-footer__link md-footer__link--next" aria-label="Next: Schematic Editor Overview">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Schematic Editor Overview
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
@@ -1783,9 +2633,17 @@
     </div>
   
   
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/CaSauCoin/WireFrame_Product" target="_blank" rel="noopener" title="WireFrame on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
     </a>
   
 </div>
@@ -1803,7 +2661,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.expand", "navigation.indexes", "navigation.footer", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.tabs.link", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "stable", "provider": "mike"}}</script>
     
     
       <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
