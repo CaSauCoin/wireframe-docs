@@ -16,7 +16,7 @@ This page explains how to **download, install, and launch** WireFrame EDA on all
      1. _Visit download page (browser window showing the release page)._
      2. _Download the installer for your OS (three icons: Windows logo, Apple logo, Linux penguin)._
      3. _Run the installer (progress bar)._
-     4. _Launch and activate (WireFrame splash screen)._
+     4. _Launch application (WireFrame splash screen)._
      Use a clean, dark-themed graphic style consistent with the app. Suggested size: 800×200px.
 -->
 ![Installation Overview](img/installation/installation-overview.png)
@@ -200,33 +200,7 @@ The pre-built binary requires:
 
 ---
 
-## 5. First Launch and Activation
-
-On first start, WireFrame displays an **activation overlay**:
-
-1. Enter your **account email** and **license key** (or activation token).
-2. Click **Sign In** or **Activate**.
-3. Wait for the server to confirm — a spinner or status message is shown.
-4. Once activated, the overlay disappears and the full editor is available.
-
-<!-- TODO: Replace with actual screenshot
-     Capture the activation overlay:
-     - _The overlay should cover the full window with a semi-transparent dark background._
-     - _In the center: a dialog box with fields for **Email** and **License Key**._
-     - _Below the fields: a prominent **Activate** or **Sign In** button (cyan accent)._
-     - _A status line showing either "Connecting…" or "Activation successful ✓"._
-     - _The WireFrame logo or app name visible at the top of the dialog._
-     Suggested size: 800×500px.
--->
-![Activation Screen](img/installation/activation-screen.png)
-
-
-!!! info "Resetting activation"
-    To log out or reset your activation, delete the configuration file at `~/.config/wireframe/user_config.json` (Linux) or `%APPDATA%\WireFrame\user_config.json` (Windows). See [Config & Session](reference/config-and-session.md) for details.
-
----
-
-## 6. Verifying the Installation
+## 5. Verifying the Installation
 
 After launching, verify that everything works:
 
@@ -240,7 +214,7 @@ If any of these fail, check the [FAQ & Troubleshooting](faq.md) page.
 
 ---
 
-## 7. Next Steps
+## 6. Next Steps
 
 You're ready to start designing! Continue with:
 

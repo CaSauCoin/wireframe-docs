@@ -1,148 +1,133 @@
 # DFM and DRC Checks
 
-The the DFM engine runs Design For Manufacturability (DFM) and Design Rule Check (DRC) analyses on a the PCB document, producing a list of violations to fix before manufacturing.
+Before exporting Gerber files, run **DFM/DRC** to detect and fix design errors. DFM (Design For Manufacturability) verifies that your board can actually be manufactured correctly.
+
+!!! warning "Run DRC before exporting"
+    Do not export Gerber files while **critical errors (red)** remain. Manufacturers may reject the order or the produced board may be defective.
 
 ---
 
-## Running Checks
+## Running DFM Checks
 
-1. Open the **DFM/DRC panel** from **Tools → DFM Check** or the Design Rules panel.
-2. Click **Run DFM**.
-3. WireFrame executes all check subroutines.
-4. The results panel populates with violations.
+1. Go to **Tools → DFM Check** (or from the Design Rules panel)
+2. Click **Run DFM**
+3. WireFrame executes all check routines
+4. Results populate in the DFM panel
 
-### Executed checks
-
-| Check | Function | Description |
-|---|---|---|
-| Board outline | `checkBoardOutline` | Validates outline geometry |
-| Unconnected nets | `checkUnconnectedNets` | Finds nets with remaining ratsnest lines |
-| Trace widths | `checkTraceWidths` | Verifies widths against net class minimums |
-| Clearances | `checkClearance` | Checks spacing between copper elements |
-| Drill sizes | `checkDrillSizes` | Validates via/hole diameters |
-| Components | `checkComponents` | Checks for overlaps and out-of-bounds |
-| Orphans | `checkOrphans` | Finds unconnected traces/vias |
-| Missing components | `checkMissingComponents` | Identifies missing schematic footprints |
+```
+DFM Results Panel:
+──────────────────────────────────────────────────────
+🔴 E01 | Unconnected net: GND (3 pins)         [Zoom]
+🔴 E03 | Clearance violation at (45.2, 12.8)   [Zoom]
+🟡 W01 | Trace width close to minimum: R3      [Zoom]
+🟡 W02 | Component near board edge: J1         [Zoom]
+──────────────────────────────────────────────────────
+  3 errors, 2 warnings
+```
 
 ---
 
-## Violation Format
+## Understanding the Results
 
-Each a DFM violation entry contains:
-
-| Field | Description | Example |
+| Icon | Type | Meaning |
 |---|---|---|
-| `code` | Short identifier | `E01`, `W02` |
-| `message` | Human-readable description | "Trace width below minimum for net class 'Power'" |
-| `location` | Board position of the issue | (1200, 800) |
-| `isCritical` | Error (true) or warning (false) | `true` |
-
-<!-- TODO: Replace with actual screenshot
-     Capture the DFM results panel after running checks:
-     - _A list of violations with columns: **Severity** (icon), **Code**, **Message**, **Location**._
-     - _2–3 **red error** rows (e.g., "E01: Unconnected net GND", "E03: Clearance violation at (450, 300)")._
-     - _1–2 **yellow warning** rows (e.g., "W01: Trace width close to minimum")._
-     - _A "Zoom to" button or clickable row for each violation._
-     - _A summary line at the bottom: "3 errors, 2 warnings"._
-     Suggested size: 600×350px.
--->
-![Dfm Panel](../img/pcb/dfm-panel.png)
-
+| 🔴 **Error** | Critical | **Must be fixed** before export — board will fail if ignored |
+| 🟡 **Warning** | Non-critical | Should be reviewed — may be acceptable in some situations |
 
 ---
 
-## Types of Checks (Detail)
+## Check Types Explained
 
-### Board outline
+### 🔴 Unconnected Nets
 
-- Ensures the board boundary is **well-formed** (not self-intersecting, not degenerate).
-- Warns if **no outline is defined**.
-- Flags footprints that **extend outside** the board area.
+Detects nets that still have **ratsnest lines** (pads not connected by a trace or zone).
 
-### Unconnected nets
+- Example: `"Unconnected net: GND (pin U1.3, J1.2)"`
+- **Fix:** Route a trace or add a copper zone to complete the connection
 
-- Uses the PCB netlist engine connectivity data.
-- Reports nets where **ratsnest lines remain** (pins not connected by traces or zones).
-- Each unconnected pin pair is listed as a violation.
+### 🔴 Clearance Violations
 
-### Trace widths
+Two copper elements from different nets are too close together.
 
-- Checks each trace width against its **net class minimum**:
+- Checks: trace ↔ trace, trace ↔ pad, pad ↔ pad, copper ↔ board edge
+- **Fix:** Re-route the trace to a different path, or reduce trace width to create more clearance
 
-| Net class | Min width | Example nets |
+### 🔴 Trace Width
+
+A trace is too narrow for its assigned net class:
+
+| Net class | Minimum width | Used for |
 |---|---|---|
-| Default | 6 mil | Signal nets |
-| Power | 12 mil | VCC, GND |
+| Default (Signal) | 6 mil | Standard signal traces |
+| Power | 12 mil | VCC, GND power rails |
 
-- Flags traces below their class minimum.
+- **Fix:** Increase the trace width in the Properties panel
 
-### Clearances
+### 🔴 Drill Sizes
 
-- Computes distances between copper elements:
+A via or hole diameter is too small for the manufacturer to drill.
 
-| Pair | Check |
-|---|---|
-| Trace ↔ Trace | Segment distance ≥ clearance |
-| Trace ↔ Pad | Segment-to-circle/rect distance ≥ clearance |
-| Pad ↔ Pad | Center distance minus radii ≥ clearance |
-| Copper ↔ Board edge | Distance from outline ≥ edge clearance |
+- **Fix:** Increase the drill diameter in the Via or Hole Properties panel
 
-### Drill sizes
+### 🟡 Component Near Board Edge
 
-- Checks via and hole diameters against the **minimum allowed drill size**.
-- Flags too-small drills that may be impossible to manufacture.
+A footprint is too close to Edge.Cuts and may be clipped during manufacturing.
 
-### Components
+- **Fix:** Move the footprint further inward, or increase the board size
+- *Note:* This is a warning (not an error) to accommodate castellated holes and edge connectors
 
-- Checks for **overlapping footprint bounding boxes** (potential physical collisions).
-- Verifies all footprints are **inside the board boundary**.
+### 🔴 Missing Components
 
-### Orphans and missing components
+Components exist in the schematic netlist but have no corresponding placed footprint on the PCB.
 
-- **Orphan traces/vias**: copper not connected to any pad or net.
-- **Missing footprints**: components in the schematic netlist without corresponding placed footprints on the PCB.
+- **Fix:** Return to the schematic, verify the Footprint field is set correctly, then run Convert to PCB again
+
+### 🔴 Orphan Traces / Vias
+
+Copper that is not connected to any net or pad.
+
+- **Fix:** Select and delete the orphan traces/vias
+
+### 🔴 Board Outline
+
+No board outline found (Edge.Cuts is empty), or the outline is malformed (self-intersecting, not closed).
+
+- **Fix:** Draw a valid board outline using the Rectangle or Polygon tool on the Edge.Cuts layer
 
 ---
 
 ## Viewing and Fixing Violations
 
-### Navigating violations
+### Step 1: Double-click a violation
 
-1. **Double-click** a violation in the list — the view pans and zooms to the `location`.
-2. The problematic area is centered on screen.
-3. Fix the issue (reroute a trace, increase clearance, place a missing component, etc.).
-4. **Re-run DFM** to verify the fix.
+- The canvas **automatically pans and zooms** to the violation location
+- The problematic area is centered on screen
 
-### Severity icons
+### Step 2: Fix the issue
 
-| Severity | Icon | Meaning |
-|---|---|---|
-| **Error** (critical) | :material-close-circle:{ style="color: red" } | Must be fixed before fabrication |
-| **Warning** | :material-alert:{ style="color: orange" } | Should be reviewed but may be acceptable |
+- Route the missing trace
+- Move a trace to increase clearance
+- Delete an orphan trace
+- Place the missing footprint
 
-<!-- TODO: Replace with actual video
-     Record a 20-second clip:
-     1. _Click "Run DFM" — the panel fills with 3–4 violations._
-     2. _Double-click a clearance error — the view zooms to the tight area._
-     3. _Drag the offending trace to increase clearance._
-     4. _Click "Run DFM" again — the error count drops by one._
-     5. _Repeat for another violation._
-     Resolution: 1280×720 at 30fps.
--->
-<video controls width="100%">
-  <source src="../../img/pcb/dfm-fix-cycle.webm" type="video/webm">
-  <source src="../../img/pcb/dfm-fix-cycle.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+### Step 3: Re-run DFM
 
+Click **Run DFM** again to confirm the issue is resolved.
 
-!!! warning "Export readiness"
-    Do not export Gerber files until all **critical errors** (red) are resolved. Warnings should be reviewed but typically don't block production.
+```
+DFM Workflow:
+
+  Run DFM
+     ↓
+  Any red errors?
+  ├─ Yes → Double-click error → Fix → Run DFM again
+  └─ No  → Ready to export Gerbers ✅
+```
 
 ---
 
 ## See Also
 
-- [Routing](routing.md) — fix trace-related violations by rerouting.
-- [Zones & Planes](zones-and-planes.md) — zone connectivity affects unconnected-net checks.
-- [Fabrication & Export](fabrication-and-export.md) — export only after DRC passes.
+- [Routing](routing.md) — fix trace-related violations by re-routing
+- [Zones & Planes](zones-and-planes.md) — zone connectivity affects unconnected net checks
+- [Fabrication & Export](fabrication-and-export.md) — export only after DRC passes cleanly

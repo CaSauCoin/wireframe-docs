@@ -11,8 +11,8 @@ hide:
 # WireFrame EDA
 
 <p class="wf-subtitle">
-A lightweight, keyboard-driven EDA environment for schematic capture, PCB layout,<br>
-3D visualization and manufacturing export — all in one desktop application.
+A streamlined environment for schematic capture, PCB layout, 3D visualization,<br>
+and manufacturing export — built for speed, precision, and KiCad compatibility.
 </p>
 
 <div class="wf-cta">
@@ -22,21 +22,28 @@ A lightweight, keyboard-driven EDA environment for schematic capture, PCB layout
 
 </div>
 
-<!-- TODO: Replace with actual screenshot
-     Capture the WireFrame main window immediately after launch. The screenshot should show:
-     - _The **dark-themed window** with the menu bar at the top (File, Edit, View, Project, Tools, Help)._
-     - _The **Project Structure** panel on the left side (empty or with a sample project open)._
-     - _The **central editor area** showing either an empty docking space or a sample schematic/PCB tab._
-     - _The **Library panel** on the right side._
-     - _The cyan accent color visible on active UI elements._
-     - _Window size: approximately 1920×1080 for best readability._
--->
 ![Welcome Screen](img/home/welcome-screen.png)
-
 
 ---
 
-## Key Features
+## The WireFrame Workflow
+
+```
+┌─────────────┐   ┌─────────────┐   ┌─────────────┐   ┌─────────────┐   ┌─────────────┐
+│   Create    │──▶│   Design    │──▶│   Convert   │──▶│   Route &   │──▶│   Export    │
+│   Project   │   │  Schematic  │   │   to PCB    │   │   Verify    │   │   Gerbers   │
+└─────────────┘   └─────────────┘   └─────────────┘   └─────────────┘   └─────────────┘
+```
+
+1. **Create Project** — Centralize schematics, PCBs, and libraries in a single `.prjxml` file
+2. **Design Schematic** — Place components, draw wires, assign net labels, configure properties
+3. **Convert to PCB** — Automatically import netlist and footprints into the PCB editor
+4. **Layout & Route** — Place footprints, route traces, fill copper zones, run DFM/DRC
+5. **Export** — Generate Gerber, drill, BOM — ready for your manufacturer
+
+---
+
+## Core Capabilities
 
 <div class="wf-grid" markdown>
 
@@ -44,7 +51,7 @@ A lightweight, keyboard-driven EDA environment for schematic capture, PCB layout
 
 ### :material-chip: Schematic Editor
 
-Design circuits with a full-featured schematic editor — place symbols from KiCad-compatible libraries, wire nets, add labels and power symbols, and manage multi-sheet designs.
+Draft robust circuits with an intuitive schematic engine. Place components from KiCad-compatible libraries, route nets with orthogonal wires, assign net labels (`SDA`, `GND`, `+3V3`), and manage a fully automatic netlist.
 
 </div>
 
@@ -52,7 +59,7 @@ Design circuits with a full-featured schematic editor — place symbols from KiC
 
 ### :material-developer-board: PCB Layout
 
-Route traces with 45° guidance, place vias and zones, manage multi-layer stacks, and run DFM/DRC checks before exporting Gerber files for fabrication.
+Translate schematics into physical boards with precision. WireFrame offers 45° routing guidance, multi-layer management, intelligent copper zone generation with priority sorting, and an advanced DFM clearance engine that correctly handles board-edge geometries and castellated holes.
 
 </div>
 
@@ -60,23 +67,23 @@ Route traces with 45° guidance, place vias and zones, manage multi-layer stacks
 
 ### :material-library-shelves: Library Management
 
-Load KiCad symbol (`.kicad_sym`) and footprint (`.kicad_mod`) libraries. Link footprints to symbols, generate custom footprints with the built-in wizard.
+Load KiCad `.kicad_sym` and `.kicad_mod` libraries natively. Create new footprints with the Footprint Wizard. Assign STEP/OBJ 3D models and fine-tune alignment with the 3D Model Alignment dialog.
 
 </div>
 
 <div class="wf-card" markdown>
 
-### :material-rotate-3d: 3D Viewer
+### :material-rotate-3d: 3D Visualization
 
-Preview your PCB in 3D with imported STEP/OBJ models. Orbit, pan and zoom to verify component placement, clearances and board aesthetics before manufacturing.
+Validate your design before fabrication. Render high-fidelity 3D previews with STEP and OBJ models. WYSIWYG accuracy is guaranteed by a precise Z-Y-X rotation pipeline with correct bottom-layer flip orientation.
 
 </div>
 
 <div class="wf-card" markdown>
 
-### :material-keyboard: Keyboard-Driven
+### :material-keyboard: Keyboard-Driven Workflow
 
-Fully customizable key map for every action — from placing wires to running DRC. Built for speed with an ImGui docking interface that keeps everything one keystroke away.
+++w++ wire · ++x++ route · ++r++ rotate · ++f++ flip · ++v++ via · ++g++ GND. Every action is one keystroke away. The full keymap is customizable via **Tools → Keymap**.
 
 </div>
 
@@ -84,15 +91,15 @@ Fully customizable key map for every action — from placing wires to running DR
 
 ### :material-export: Fabrication Export
 
-Export production-ready Gerber files, Excellon drill data, BOM spreadsheets and schematic PDFs. Verify outputs instantly with the built-in Gerber viewer.
+Generate industry-standard Gerber (RS-274X) with WYSIWYG silkscreen accuracy, Excellon drill files, and BOM CSV. Includes a **Toner Transfer PDF Exporter** — multi-page, 1:1 scale, with automatic mirroring — designed for hobbyist manual PCB fabrication.
 
 </div>
 
 <div class="wf-card" markdown>
 
-### :material-swap-horizontal: Import & Compatibility
+### :material-swap-horizontal: Seamless Import
 
-Import projects from KiCad, Altium Designer, and Eagle. Load symbol and footprint libraries from all major EDA formats — no manual conversion needed.
+Import KiCad 5.x legacy projects (`.sch`, `-cache.lib`, `.pro`) and modern KiCad 6+ formats (`.kicad_sch`, `.kicad_pcb`) natively. No manual conversion needed.
 
 </div>
 
@@ -100,47 +107,30 @@ Import projects from KiCad, Altium Designer, and Eagle. Load symbol and footprin
 
 ---
 
-## Typical Workflow
-
-```
-┌───────────┐   ┌───────────┐   ┌────────────┐   ┌────────────┐   ┌──────────┐
-│  Create    │──▶│  Design   │──▶│  Convert   │──▶│  Route &   │──▶│  Export   │
-│  Project   │   │  Schematic│   │  to PCB    │   │  Verify    │   │  Gerbers  │
-└───────────┘   └───────────┘   └────────────┘   └────────────┘   └──────────┘
-```
-
-1. **Create or open a project** — Organize schematics, PCBs and libraries under a single `.prjxml` project file.
-2. **Design the schematic** — Place components, wire nets, add power symbols and labels, configure sheet properties.
-3. **Convert to PCB** — Generate a PCB document from the schematic with footprints and netlist automatically linked.
-4. **Route and verify** — Place footprints, route traces, add zones, then run DFM/DRC checks to catch errors.
-5. **Export for fabrication** — Generate Gerber/drill files, export BOM and schematic PDFs, and preview in the Gerber viewer.
-
----
-
-## Who Is This For?
+## Designed For
 
 | Audience | Why WireFrame? |
 |---|---|
-| **Electronics hobbyists** | Simple, focused tool — no bloated menus. Start designing in minutes. |
-| **Students & educators** | Lightweight install, clear workflow from schematic to Gerber. |
-| **Professional engineers** | Keyboard-driven speed, KiCad library compatibility, batch export. |
-| **Open-source contributors** | C++17 codebase with ImGui — easy to extend and hack on. |
+| **Electronics Hobbyists** | Clean interface, Toner Transfer PDF for DIY board making, easy KiCad library import |
+| **Students & Academia** | Lightweight installation, transparent workflow from schematic to Gerber |
+| **Professional Engineers** | Keyboard-driven efficiency, full KiCad ecosystem compatibility, robust DFM/DRC engine |
+| **Open-Source Developers** | Built on C++17 and ImGui — performant, extensible architecture |
 
 ---
 
-## Documentation Map
+## Documentation
 
-| Section | What You'll Learn |
+| Section | Content |
 |---|---|
-| [Getting Started](getting-started.md) | Launch the app, understand the UI, create your first project |
-| [Tutorial](tutorial/index.md) | Build a simple LED circuit from scratch in 15 minutes |
-| [Schematic Design](schematic/index.md) | Place components, wire nets, manage properties |
-| [PCB Layout](pcb/index.md) | Footprints, routing, zones, DRC and fabrication export |
-| [Libraries](libraries/symbols-library.md) | Load, create and manage symbols and footprints |
-| [Advanced Features](advanced/selection-and-editing.md) | Selection, 3D viewer, keyboard shortcuts |
-| [Reference](reference/file-formats.md) | File formats, config, FAQ, changelog |
+| [Getting Started](getting-started.md) | Launch, main UI, create your first project |
+| [Tutorial](tutorial/index.md) | Complete walkthrough: LED circuit from scratch to Gerber |
+| [Schematic Editor](schematic/index.md) | Place components, draw wires, manage nets |
+| [PCB Editor](pcb/index.md) | Footprints, routing, zones, DFM, Gerber export |
+| [Libraries](libraries/symbols-library.md) | Create and manage symbol and footprint libraries |
+| [Advanced Features](advanced/selection-and-editing.md) | Advanced selection, 3D viewer, keymap customization |
+| [Reference](reference/file-formats.md) | File formats, configuration, FAQ, changelog |
 
 ---
 
 !!! tip "New to WireFrame?"
-    Start with the [Getting Started](getting-started.md) guide for a quick orientation, or jump straight into the [Tutorial](tutorial/index.md) to design a simple LED circuit from scratch.
+    Start with [Getting Started](getting-started.md) to learn the interface, or jump straight into the [Tutorial](tutorial/index.md) to experience the full workflow hands-on.
