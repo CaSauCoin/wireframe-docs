@@ -22,11 +22,6 @@ The config file is a JSON document with the following sections:
 
 ```json
 {
-  "auth": {
-    "email": "user@example.com",
-    "token": "abc123...",
-    "activated": true
-  },
   "session": {
     "openProjects": [
       "/home/user/Projects/MyBoard.prjxml"
@@ -43,7 +38,6 @@ The config file is a JSON document with the following sections:
 
 | Section | Description |
 |---|---|
-| `auth` | Authentication data (email, activation token, activation status) |
 | `session` | Session restoration data (open projects and documents) |
 
 ---
@@ -69,12 +63,11 @@ Session data tracks:
 The config is updated automatically when:
 
 - You **open or close** a project or document.
-- You **log in or out** (auth data changes).
 - The app is **closed normally** (session snapshot).
 
 <!-- TODO: Replace with actual screenshot
      Capture the config file opened in a text editor (VS Code, Sublime, or terminal `cat` output):
-     - _The JSON content with `auth` and `session` sections visible._
+     - _The JSON content with `session` section visible._
      - _The `openProjects` array showing 1–2 project paths._
      - _The `openDocs` array showing 2–3 document paths._
      - _Syntax highlighting for JSON._
@@ -87,13 +80,6 @@ The config is updated automatically when:
 ---
 
 ## Resetting Configuration
-
-### Clear authentication
-
-| Method | Steps |
-|---|---|
-| **In-app** | Use "Log out" or "Deactivate" action (if available in Help or Tools menu) |
-| **Manual** | Delete the config file or remove the `"auth"` section |
 
 ### Reset layout and session
 
@@ -115,12 +101,12 @@ Remove-Item imgui.ini
 ```
 
 !!! warning "Data loss"
-    Deleting the config file removes all saved session data and authentication. You will need to sign in again and reopen your projects.
+    Deleting the config file removes all saved session data. You will need to reopen your projects.
 
 ---
 
 ## See Also
 
-- [Installation](../installation.md) — first launch and activation.
+- [Installation](../installation.md)
 - [Projects & Files](../projects.md) — project and document management.
 - [FAQ & Troubleshooting](../faq.md) — common config-related issues.

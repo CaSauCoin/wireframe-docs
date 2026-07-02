@@ -1,120 +1,95 @@
-# PCB Editor Overview
+# PCB Editor — Overview
 
-The PCB editor handles board layout — from component placement to trace routing, copper zones, design rule checks, and manufacturing file export.
+The PCB Editor handles board layout — from component placement to trace routing, copper zones, design rule checks, and manufacturing file export.
 
 ---
 
-## What You Can Do
+## What You Can Do Here
 
-| Task | Tool / Feature |
+| Task | Tool |
 |---|---|
-| Place footprints from libraries or schematic | Library panel / Available Footprints dialog |
-| Route traces between pads | Route Trace tool with 45° guidance |
-| Place vias and change routing layers | Via tool / ++v++ during routing |
-| Add mechanical holes | Place Hole tool |
+| Place footprints from library or schematic | Library panel / Available Footprints dialog |
+| Route copper traces between pads | Route Trace tool (++x++) |
+| Place vias to switch routing layers | Via tool (++v++) |
+| Add mechanical holes (screws, standoffs) | Place Hole tool |
 | Define the board outline | Edge.Cuts layer + drawing tools |
-| Fill copper zones (ground planes) | Zone Manager / Fill GND Plane |
-| Run DFM/DRC checks | DFM panel |
-| Export Gerber, drill, BOM | Fabrication dialog |
-| Preview the board in 3D | 3D Viewer |
+| Fill copper zones (ground planes) | Zone / Fill GND Plane |
+| Run DFM / DRC checks | Tools → DFM Check |
+| Export Gerber, drill, BOM, PDF | File → Export or Fabrication dialog |
+| Preview the board in 3D | View → 3D Viewer |
 
 ---
 
-## PCB Workspace
+## Workspace
 
-The workspace consists of:
+```
+┌─────────────────────────── PCB Canvas ──────────────────────────────┐
+│  [▷][📦 Place][── Route][● Via][○ Hole][□][○][T][📏]               │  ← Toolbar
+│                                                    ┌──────────────┐  │
+│ · · ┌─────────────────────────────────────────┐   │ Layer Panel  │  │
+│ · · │              Board Area                 │   │ 👁 🟥 F.Cu  │  │
+│ · · │                                         │   │ 👁 🟦 B.Cu  │  │
+│ · · │  [R1]═══trace═══════════[U1]            │   │ 👁 🟡 Silk  │  │
+│ · · │       ╌╌╌ratsnest╌╌╌╌╌  [J1]           │   │   🟣 Mask   │  │
+│ · · │                                         │   │ 👁 🟫 Edge │  │
+│ · · │  ══════ via ══════ trace ══════          │   └──────────────┘  │
+│ · · └─────────────────────────────────────────┘                      │
+└──────────────────────────────────────────────────────────────────────┘
+```
 
-- **Canvas** — the board area with grid, showing footprints, traces, zones, and ratsnest lines.
-- **PCB toolbar** — floating at the top of the canvas.
-- **Layer panel** — toggle visibility and select the active routing layer.
-- **Library panel** — lists loaded footprint libraries.
-- **Properties panel** — edits properties of the selected PCB item.
-
-<!-- TODO: Replace with actual screenshot
-     Capture a PCB board at a mid-design stage:
-     - _8–12 footprints placed on the board (mix of SMD and through-hole)._
-     - _Several routed traces visible in red (F.Cu) and blue (B.Cu) colors._
-     - _A few remaining **ratsnest lines** (thin, dashed) showing unrouted connections._
-     - _A **copper zone** (GND) fill visible on one layer with clearance gaps around pads._
-     - _The **board outline** visible in magenta (Edge.Cuts)._
-     - _The PCB toolbar at the top with the Select tool active._
-     - _Layer panel on the right showing F.Cu highlighted._
-     Suggested size: 1280×720px.
--->
-![Workspace](../img/pcb/workspace.png)
-
+- **Canvas** — the board area with grid, footprints, traces, zones, and **ratsnest** lines (unrouted connections)
+- **Toolbar** — floating tool buttons above the canvas
+- **Layer panel** — toggle visibility and select the active routing layer
+- **Library panel** — footprint list for placement
+- **Properties panel** — edit properties of the selected PCB object
 
 ---
 
 ## PCB Toolbar Tools
 
-| Tool | Icon | Mode | Shortcut |
-|---|---|---|---|
-| **Select** | Arrow | Default selection and move | ++esc++ |
-| **Place Footprint** | IC package | Place from library or available list | — |
-| **Route Trace** | Trace path | Route traces between pads | ++x++ |
-| **Draw Via** | Via circle | Place vias manually | ++v++ |
-| **Place Hole** | Drill circle | Place mechanical holes | — |
-| **Draw Line** | Line | Draw graphic lines | — |
-| **Draw Rect** | Rectangle | Draw rectangles (board outline, etc.) | — |
-| **Draw Circle** | Circle | Draw circles | — |
-| **Draw Arc** | Arc | Draw arcs | — |
-| **Draw Polygon** | Pentagon | Draw polygons | — |
-| **Draw Text** | "T" | Place text on silk/fab layers | — |
-| **Measure** | Ruler | Measure distances between points | — |
+| Tool | Shortcut | Function |
+|---|---|---|
+| **Select** | ++esc++ | Select and move objects |
+| **Place Footprint** | — | Place a footprint from the library |
+| **Route Trace** | ++x++ | Route copper traces between pads |
+| **Draw Via** | ++v++ | Place a via manually |
+| **Place Hole** | — | Place a mechanical hole |
+| **Draw Line / Rect / Circle / Arc / Polygon** | — | Draw graphic shapes on any layer |
+| **Draw Text** | — | Place text on silkscreen or fab layers |
+| **Measure** | — | Measure distances on the board |
 
 ---
 
-## Board Boundary
+## Board Outline (Edge.Cuts)
 
-Each the PCB document includes a board boundary:
+Every PCB needs a board outline that defines its **physical shape**:
 
-- Defined by a board boundary definition (simple rectangular min/max) or by **Edge.Cuts** drawing objects (rectangles/polygons).
-- Used for:
-    - DFM checks (footprints inside board area).
-    - Zone fill clipping.
-    - Gerber export (board outline layer).
+1. In the **Layer panel**, click **Edge.Cuts** to make it the active layer
+2. Use the **Draw Rectangle** (or Polygon) tool to draw the board shape
+3. The outline appears in magenta
 
-!!! tip "Defining the board outline"
-    Switch to the **Edge.Cuts** layer and use the Rectangle or Polygon drawing tool. This creates the physical board shape that manufacturers will cut.
+!!! tip "Why Edge.Cuts matters"
+    The board outline is used for:
+    - Telling the manufacturer where to cut the board
+    - Defining the valid placement area for footprints (DFM checks this)
+    - Clipping copper zone fills at the board edge
 
 ---
 
-## Nets and Ratsnests
+## Ratsnest Lines
 
-WireFrame manages electrical connectivity:
+Ratsnest lines are **thin dashed lines** showing connections that have not yet been routed:
 
-| Concept | Description |
-|---|---|
-| **PcbNet** | A named net with a set of pin references (footprint ID + pad number) |
-| **Pad-to-net map** | Maps each pad to its net name |
-| **Connectivity graph** | Includes traces, vias, and zones |
-| **Ratsnest lines** | Thin lines drawn between unconnected endpoints of the same net |
+```
+     [R1]                [U1]
+      ┤├╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌[Pin]
+            ratsnest line
+         (connection not yet routed)
+```
 
-Ratsnest lines:
-
-- Are **rebuilt automatically** when nets are marked dirty (after edits).
-- **Disappear** as you route traces to complete connections.
-
-<!-- TODO: Replace with actual video
-     Record a 15-second clip:
-     1. _A PCB with several unrouted ratsnest lines visible._
-     2. _Route one trace from pad to pad — the ratsnest line between them disappears._
-     3. _Route another trace — another line vanishes._
-     4. _Briefly zoom out to show the remaining ratsnest lines._
-     Resolution: 1280×720 at 30fps.
--->
-
-[//]: # (<video controls width="100%">)
-
-[//]: # (  <source src="../../img/pcb/ratsnest-demo.webm" type="video/webm">)
-
-[//]: # (  <source src="../../img/pcb/ratsnest-demo.mp4" type="video/mp4">)
-
-[//]: # (  Your browser does not support the video tag.)
-
-[//]: # (</video>)
-
+- Ratsnest lines **automatically update** after every edit
+- When you **route a trace**, the corresponding ratsnest line **disappears**
+- The goal is to **route until all ratsnest lines are gone**
 
 ---
 
@@ -123,8 +98,8 @@ Ratsnest lines:
 | Page | What you'll learn |
 |---|---|
 | [Footprints & Placement](footprints-and-placement.md) | Load libraries, place and arrange footprints |
-| [Routing](routing.md) | Route traces, manage vias and holes |
+| [Routing](routing.md) | Route traces, vias, mechanical holes |
 | [Layers & Views](layers-and-views.md) | Layer management, visibility, navigation |
-| [Zones & Planes](zones-and-planes.md) | Copper fills, ground planes, zone priorities |
+| [Zones & Planes](zones-and-planes.md) | Copper fills, ground planes, zone priority |
 | [DFM & DRC](dfm-and-drc.md) | Design rule and manufacturability checks |
 | [Fabrication & Export](fabrication-and-export.md) | Gerber, drill, BOM, PDF export |

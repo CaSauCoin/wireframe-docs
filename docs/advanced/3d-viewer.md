@@ -1,77 +1,55 @@
 # 3D Viewer
 
-The 3D viewer renders a three-dimensional representation of your PCB board, showing component placement and board geometry. It is powered by the 3D viewer, the 3D renderer, and the 3D camera.
+The 3D Viewer renders a three-dimensional representation of your PCB — showing component placement, board geometry, and spatial relationships — so you can validate your design before manufacturing.
 
 ---
 
 ## Opening the 3D Viewer
 
-From a PCB document:
+From an open PCB document:
 
-1. Use **View → 3D Viewer…** or an equivalent toolbar button.
-2. The 3D viewer opens as a **separate ImGui window**.
+1. Go to **View → 3D Viewer…**
+2. The 3D viewer opens as a separate window
 3. It renders:
-    - The **board** as a 3D extruded shape (based on Edge.Cuts outline and board thickness).
-    - **Footprints** with 3D models (STEP/OBJ) if available.
-    - **Simple colored boxes** for footprints without 3D models.
+    - The **board** as a 3D extruded shape derived from the Edge.Cuts outline
+    - **Footprints** with 3D models (STEP/OBJ) if available
+    - **Simple colored boxes** for footprints without 3D models
 
-<!-- TODO: Replace with actual screenshot
-     Capture the 3D viewer showing a populated PCB:
-     - _The board visible as a semi-transparent green slab (PCB substrate) with the correct outline shape._
-     - _Several 3D component models visible: resistors as small rectangular blocks, an IC with visible pins, a connector standing upright._
-     - _Components on both sides of the board (if any are flipped to the back)._
-     - _The board rotated at an angle (~30° pitch, ~15° yaw) to show depth and perspective._
-     - _A dark background with simple lighting (ambient + diffuse)._
-     Suggested size: 800×600px.
--->
-![3D Viewer](../img/3d/3d-viewer.png)
+```
+3D Viewer — isometric view:
 
+          [Capacitor C1]         [IC U1]
+               │                    │
+     ┌─────────┴────────────────────┴───────┐  ← PCB board (green)
+     │   ■  [R1]            [J1]  ■         │
+     │   □           □               □     │
+     └──────────────────────────────────────┘
+          ↑ Board outline (Edge.Cuts)
+```
 
 ---
 
 ## Camera Controls
 
-the 3D camera manages the 3D view:
-
-| Control | Input | Description |
+| Action | Input | Effect |
 |---|---|---|
-| **Orbit** | Left or right mouse button drag | Rotates the camera around the target point |
-| **Pan** | Middle mouse button drag | Moves the target point parallel to the screen |
-| **Zoom** | Mouse scroll wheel | Changes distance from the target |
-
-Camera parameters:
-
-| Parameter | Description |
-|---|---|
-| `target` | The point the camera looks at (center of orbit) |
-| `distance` | Distance from camera to target |
-| `yaw` | Horizontal rotation angle |
-| `pitch` | Vertical rotation angle |
-
-The camera computes view matrices using a standard look-at function with **Z-up** convention.
+| **Orbit** | Left or right mouse button drag | Rotate the camera around the board |
+| **Pan** | Middle mouse button drag | Move the camera parallel to the screen |
+| **Zoom** | Mouse scroll wheel | Zoom in / out |
 
 ---
 
-## Board and Component Rendering
+## How Components Are Rendered
 
-The 3D viewer builds the 3D scene:
+### With a 3D model (STEP / OBJ)
 
-### Board
+- The actual 3D mesh from the STEP or OBJ file is rendered
+- Colors and materials come from the model file
 
-- Built from board outline geometry (Edge.Cuts or zones).
-- Extruded to `boardThickness` to create a 3D slab.
-- Rendered with semi-transparent material (green-ish PCB substrate).
+### Without a 3D model
 
-### Components
-
-For each placed footprint:
-
-| Condition | Rendering |
-|---|---|
-| 3D model exists | Load mesh from STEP (via the STEP importer) or OBJ/STL (via Assimp), apply color based on component type |
-| No 3D model | Draw a simple box approximating the footprint boundary, colored by designator prefix |
-
-### Component color by type
+- A simple **colored bounding box** approximating the footprint size is drawn
+- Color is determined by the designator prefix:
 
 | Prefix | Color | Component type |
 |---|---|---|
@@ -82,61 +60,48 @@ For each placed footprint:
 | D | Green | Diode |
 | Q | Black | Transistor |
 
-### Rendering features
+---
 
-- Simple **Phong-like shading** with ambient + diffuse lighting.
-- **Alpha blending** for translucent elements (board substrate).
-- **Mesh caching** (the mesh cache) — avoids reloading the same model each frame.
+## Bottom-Side Components
+
+Footprints flipped to **B.Cu** are rendered correctly on the underside of the board. WireFrame uses a precise Z-Y-X rotation matrix pipeline to guarantee WYSIWYG accuracy between the 2D editor and the 3D view.
+
+```
+Board viewed from underneath:
+  ┌─────────────────────────┐
+  │  [R3]  [C4]  (flipped)  │  ← bottom side
+  └─────────────────────────┘
+```
 
 ---
 
-## Model Caching
-
-the 3D renderer caches uploaded meshes:
-
-| Feature | Description |
-|---|---|
-| Cache key | Model file path |
-| Cache content | One or more GPU mesh objects (uploaded to GPU) |
-| First load | Parse file → tessellate → upload to GPU (may be slow for STEP) |
-| Subsequent frames | Reuse cached GPU data (fast) |
-
-clearing the cache frees GPU memory if many different models are used.
-
-!!! tip "Performance"
-    First-time loading of STEP files can take several seconds due to mesh tessellation. Subsequent renders use the cached mesh and are fast.
-
----
-
-## Use Cases
+## Practical Use Cases
 
 | Use case | How |
 |---|---|
-| **Visual inspection** | Check component orientations, verify placement density |
-| **Mechanical clearance** | Verify that tall components don't interfere with enclosures |
-| **Presentation** | Capture screenshots for documentation or client communication |
-| **3D alignment** | Use with [Model Alignment Dialog](../libraries/footprints-library.md#3d-model-alignment) to fine-tune model positions |
+| **Verify component placement** | Orbit around the board, zoom into areas of interest |
+| **Check physical clearances** | Zoom into tall components (connectors, relays) to check they don't interfere |
+| **Inspect bottom-side components** | Orbit below the board to view B.Cu placement |
+| **Capture for documentation** | Position the view, take a screenshot |
 
-<!-- TODO: Replace with actual video
-     Record a 20-second clip:
-     1. _Open the 3D viewer from a PCB document with 8–10 placed footprints._
-     2. _The 3D board and components appear._
-     3. _Orbit the view (left-click drag) — rotate around the board to show all sides._
-     4. _Zoom in (mouse wheel) to a specific component (e.g., an IC) to show detail._
-     5. _Pan (middle-click drag) to center a connector at the board edge._
-     6. _Zoom out to show the full board._
-     Resolution: 1280×720 at 30fps.
--->
-<video controls width="100%">
-  <source src="../../img/3d/3d-viewer-demo.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+!!! tip "STEP files load slowly the first time"
+    First-time loading of STEP files may take several seconds due to mesh tessellation and GPU upload. Subsequent frames use the cached mesh and are fast.
 
+---
+
+## Assigning 3D Models to Footprints
+
+To display an accurate 3D model instead of a colored box, assign a STEP or OBJ file to the footprint:
+
+1. Open the footprint in the **Footprint Wizard / Library Editor**
+2. In the **3D Model** section, add the path to a STEP or OBJ file
+3. Use the **Model Alignment Dialog** to fine-tune offset, scale, and rotation
+
+See: [Footprint Libraries — 3D Model Alignment](../libraries/footprints-library.md)
 
 ---
 
 ## See Also
 
-- [Footprint Libraries — 3D Model Alignment](../libraries/footprints-library.md#3d-model-alignment) — position 3D models on footprints.
-- [PCB Editor](../pcb/index.md) — the 2D PCB workspace.
-- [Fabrication & Export](../pcb/fabrication-and-export.md) — export the board design after 3D verification.
+- [PCB Editor](../pcb/index.md) — the 2D PCB workspace
+- [Fabrication & Export](../pcb/fabrication-and-export.md) — export after 3D verification

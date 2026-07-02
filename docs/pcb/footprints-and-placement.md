@@ -1,58 +1,48 @@
 # Footprints and Placement
 
-Footprints are the physical packages placed on the PCB, managed by the footprint system. This page covers loading libraries, placing, moving, rotating, flipping, and managing footprints.
+Footprints are the **physical packages** placed on the PCB — pads, drill holes, silkscreen graphics, and optional 3D models. This page covers loading libraries, placing, moving, rotating, and flipping footprints.
 
 ---
 
 ## Loading Footprint Libraries
 
-From the **Library panel** while a PCB document is active:
+From the **Library panel** while a PCB tab is active:
 
 1. Click **Load Footprints…**
-2. Select one or more KiCad footprint library files (`.kicad_mod`).
-3. WireFrame parses footprint data via the KiCad footprint parser in the background.
-4. Parsed footprint names appear in the list and can be filtered.
-
-### Footprint data
+2. Select one or more KiCad footprint files (`.kicad_mod`)
+3. WireFrame parses the footprint data in the background
+4. After parsing, footprint names appear in the list and can be filtered
 
 Each loaded footprint contains:
 
 | Data | Description |
 |---|---|
-| Pads | Number, position, shape (circle/rect/oval/roundrect), drill, layers |
-| Graphics | Lines, arcs, circles, polygons, reference and value text |
-| 3D model | Optional file path (STEP/OBJ) with offset, scale, rotation |
-| Tags | Description and search tags for filtering |
+| **Pads** | Number, position, shape (circle/rect/oval), drill size, layers |
+| **Graphics** | Lines, arcs, circles, polygons, reference and value text |
+| **3D model** | Optional STEP/OBJ file path with offset, scale, and rotation |
 
-<!-- TODO: Replace with actual screenshot
-     Capture the Library panel in PCB mode:
-     - _Search box at the top with a partial filter typed (e.g., "SOT")._
-     - _A filtered list showing footprint names: "SOT-23", "SOT-23-5", "SOT-23-6"._
-     - _Status bar showing "Ready — 85 footprints loaded"._
-     - _If a preview area exists, show a small rendering of the selected footprint._
-     Suggested size: 300×450px.
--->
-![Footprint Library](../img/pcb/footprint-library.png)
-
+!!! info "Free KiCad footprint libraries"
+    Download from [https://www.kicad.org/libraries/](https://www.kicad.org/libraries/) — WireFrame is fully compatible.
 
 ---
 
 ## Placing Footprints
 
-### From the schematic conversion (available footprints)
+### Method 1: From schematic conversion (recommended)
 
-After converting a schematic to PCB, the PCB document maintains an **available footprints** list — components waiting to be placed:
+After running **Project → Convert to PCB**, an **Available Footprints** list shows all unplaced schematic components:
 
-1. Open a dialog listing unplaced schematic components and their footprints.
-2. Select an item from the list.
-3. Click on the board to place it.
-4. The footprint appears with its `id` matching the schematic component (e.g., `U1`, `R3`).
+1. Open the "Available Footprints" dialog (appears automatically after conversion)
+2. Select a component from the list
+3. Click on the board to place it
+4. The footprint appears with its ID matching the schematic component (e.g. `U1`, `R3`)
 
-### Direct placement from library
+### Method 2: Directly from the library
 
-1. In the **Library panel**, double-click a footprint name.
-2. The PCB enters **placement mode** — the footprint preview follows the mouse.
-3. **Left-click** to place the footprint at the desired board location.
+1. In the **Library panel**, double-click a footprint name
+2. The PCB enters **placement mode** — the footprint preview follows the cursor
+3. Press ++r++ to rotate before placing (if needed)
+4. **Left-click** to place at the desired position
 
 | Action | Input |
 |---|---|
@@ -60,124 +50,80 @@ After converting a schematic to PCB, the PCB document maintains an **available f
 | Rotate before placing | ++r++ |
 | Cancel placement | Right-click or ++esc++ |
 
-<!-- TODO: Replace with actual video
-     Record a 15-second clip:
-     1. _Double-click a footprint in the Library panel (e.g., "QFP-48")._
-     2. _The footprint preview appears attached to the mouse cursor._
-     3. _Press R to rotate it 90° — the preview rotates._
-     4. _Click to place it on the board._
-     5. _The footprint settles at the position with its pads and reference visible._
-     Resolution: 1280×720 at 30fps.
--->
-<video controls width="100%">
-  <source src="../../img/pcb/placing-footprint.webm" type="video/webm">
-  <source src="../../img/pcb/placing-footprint.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
-
 ---
 
 ## Moving and Rotating Footprints
 
 ### Moving
 
-1. **Select** one or more footprints.
-2. **Click and drag** to move them on the board.
-3. Connected traces and vias update their endpoints to stay attached.
+1. **Select** one or more footprints
+2. **Click and drag** to move them on the board
+3. Connected traces and vias **automatically update their endpoints** to maintain pad connections
 
-an undoable move command captures:
-
-- Old and new positions of all moved items (footprints, traces, vias, holes).
-- Fully undoable — ++ctrl+z++ restores everything.
+All move operations support full **Undo** (++ctrl+z++).
 
 ### Rotating
 
-| Action | Input | Command |
-|---|---|---|
-| Rotate 90° | ++r++ or context menu | an undoable rotation command |
+| Action | Input |
+|---|---|
+| Rotate 90° | ++r++ or context menu → Rotate |
 
-Rotation:
-
-- Updates footprint angle.
-- Recomputes all pad positions.
-- Updates connected trace endpoints to match new pad locations.
-
-<!-- TODO: Replace with actual video
-     Record a 10-second clip:
-     1. _Select 2–3 footprints with connected traces._
-     2. _Press R — all selected footprints rotate 90° together._
-     3. _Connected traces adjust their endpoints to maintain pad connections._
-     4. _Undo to restore original orientation._
-     Resolution: 1280×720 at 30fps.
--->
-
-[//]: # (<video controls width="100%">)
-
-[//]: # (  <source src="../../img/pcb/rotate-footprints.webm" type="video/webm">)
-
-[//]: # (  <source src="../../img/pcb/rotate-footprints.mp4" type="video/mp4">)
-
-[//]: # (  Your browser does not support the video tag.)
-
-[//]: # (</video>)
-
+After rotating:
+- The footprint angle is updated
+- All pad positions are recomputed
+- Connected trace endpoints adjust to the new pad locations
 
 ---
 
 ## Flipping Footprints (Front ↔ Back)
 
-To move a component to the opposite side of the board:
+To move a component to the **opposite side of the board**:
 
-1. Select one or more footprints.
-2. Press ++f++ or use **context menu → Flip**.
-3. an undoable flip command toggles the board side:
-    - Footprint layer changes (F.Cu ↔ B.Cu, F.SilkS ↔ B.SilkS, etc.).
-    - Vias, holes, and graphics are also flipped if selected.
-    - Executing the command again (undo) flips them back.
+1. Select one or more footprints
+2. Press ++f++ or **context menu → Flip**
+3. Layers are swapped:
+    - `F.Cu` → `B.Cu`, `F.SilkS` → `B.SilkS`, and so on
+
+```
+Before flip (top layer):      After flip (bottom layer):
+  ┌─[R1]─┐                      ┌─[1R]─┐   ← text mirrors
+  │ F.Cu  │                      │ B.Cu  │   ← color changes
+  └───────┘                      └───────┘
+```
 
 !!! info "Visual feedback"
-    Flipped footprints change their appearance — the reference text may mirror and the layer color changes (e.g., red → blue for F.Cu → B.Cu).
+    Flipped footprints change color (e.g. red F.Cu → blue B.Cu) and the designator text may mirror — this is the expected behavior and matches the physical reality of a bottom-side component.
 
 ---
 
-## Editing Footprint Designators
+## Adjusting Designator Text Position
 
-Each a placed footprint has a designator text:
+Each footprint has a designator label (e.g. "R1", "U3") that can be repositioned independently:
 
 | Feature | Description |
 |---|---|
-| Designator text | Visible reference on the board (e.g., "R1", "U3") |
-| Position | Can be dragged independently from the footprint body |
-| Rotation | Can be rotated separately |
-| Hit testing | Click on the text to select it specifically |
+| Position | Drag the designator text separately from the footprint body |
+| Rotation | Rotate the label independently |
+| Selection | Click directly on the text to select only the text |
 
-<!-- TODO: Replace with actual screenshot
-     Capture a footprint with its designator being edited:
-     - _A resistor footprint with its reference text "R1" selected and highlighted._
-     - _The text being dragged slightly away from the pad area to avoid overlap with traces._
-     - _The Properties panel showing the designator's position offset and font size._
-     Suggested size: 500×350px.
--->
-![Designator Editing](../img/pcb/designator-editing.png)
-
+Use this when the designator overlaps a trace or pad — drag it to a clear area nearby.
 
 ---
 
-## Unplacing and Deleting Footprints
+## Unplace vs. Delete
 
-| Action | Command | Behavior |
-|---|---|---|
-| **Unplace** | Unplace command | Removes from board, returns to "available" list. Can be re-placed later. |
-| **Delete** | Delete command / Delete command | Permanently removes footprint (and selected traces). Undoable. |
+| Operation | Result |
+|---|---|
+| **Unplace** | Removes from the board, returns it to the "Available" list — can be placed again later |
+| **Delete** | Permanently removes the footprint (and connected traces) — fully undoable |
 
-!!! tip "Unplace vs. Delete"
-    Use **Unplace** when you want the component to remain in the schematic and be placed again later. Use **Delete** when removing it from the PCB entirely.
+!!! tip "When to use Unplace"
+    Use **Unplace** if the component still exists in the schematic and you want to place it again later. Use **Delete** to remove it from the PCB entirely.
 
 ---
 
 ## See Also
 
-- [Routing](routing.md) — route traces between placed footprints.
-- [Footprint Libraries](../libraries/footprints-library.md) — creating and managing footprint libraries.
-- [3D Viewer](../advanced/3d-viewer.md) — preview footprints with 3D models.
+- [Routing](routing.md) — route traces between placed footprints
+- [Footprint Libraries](../libraries/footprints-library.md) — create and manage footprint libraries
+- [3D Viewer](../advanced/3d-viewer.md) — preview footprints with 3D models
