@@ -10,8 +10,8 @@ From the Library panel when a PCB document is active:
 
 1. Click **Load Footprints…**
 2. Select one or more KiCad `.kicad_mod` library files.
-3. WireFrame parses footprints in the background using the KiCad footprint parser.
-4. On completion, `loadFootprints` merges the results.
+3. WireFrame parses footprints immediately.
+4. On completion, results are merged into the footprint library map.
 5. Footprint names appear in the Library panel list and can be filtered.
 
 ---
