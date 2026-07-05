@@ -10,8 +10,8 @@ From the Library panel when a schematic is active:
 
 1. Click **Load Symbols…**
 2. Select one or more KiCad symbol files (`.kicad_sym`).
-3. WireFrame launches **background parsing** via the KiCad symbol parser.
-4. Once complete, `loadSymbols` merges results into the symbol library map.
+3. WireFrame parses the selected files immediately.
+4. Once complete, results are merged into the symbol library map.
 5. Available symbol names appear in a filterable list.
 
 <!-- TODO: Replace with actual screenshot
