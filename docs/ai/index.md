@@ -94,20 +94,7 @@ The AI Copilot appears as a **dockable panel** in the editor. It features:
 
 The complete AI-assisted design flow:
 
-```
-┌─────────────┐   ┌─────────────┐   ┌─────────────┐   ┌─────────────┐
-│   Prompt     │──▶│  Research    │──▶│  Clarify     │──▶│  Design      │
-│  "Build a    │   │  AI analyzes │   │  AI asks     │   │  AI generates│
-│   5V Buck    │   │  the request │   │  questions   │   │  BOM+Netlist │
-│   Converter" │   │              │   │              │   │              │
-└─────────────┘   └─────────────┘   └─────────────┘   └──────┬──────┘
-                                                              │
-┌─────────────┐   ┌─────────────┐   ┌─────────────┐          │
-│   Export     │◀──│  Route       │◀──│  Place       │◀─────────┘
-│  Gerber/BOM  │   │  Auto-route  │   │  Auto-place  │
-│              │   │  PCB traces  │   │  components  │
-└─────────────┘   └─────────────┘   └─────────────┘
-```
+![AI Copilot Pipeline](../img/ai/ai-copilot-pipeline.png)
 
 1. **Prompt** — Describe what you want in plain text.
 2. **Research** — AI analyzes your request, researches components and datasheets.
