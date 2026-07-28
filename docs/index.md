@@ -29,12 +29,7 @@ A streamlined environment for schematic capture, PCB layout, SPICE simulation,<b
 
 ## The WireFrame Workflow
 
-```
-┌─────────────┐   ┌─────────────┐   ┌─────────────┐   ┌─────────────┐   ┌─────────────┐   ┌─────────────┐
-│   Create    │──▶│   Design    │──▶│  Simulate   │──▶│   Convert   │──▶│   Route &   │──▶│   Export    │
-│   Project   │   │  Schematic  │   │   (SPICE)   │   │   to PCB    │   │   Verify    │   │   Gerbers   │
-└─────────────┘   └─────────────┘   └─────────────┘   └─────────────┘   └─────────────┘   └─────────────┘
-```
+![The WireFrame Workflow](img/home/wireframe-workflow.png)
 
 1. **Create Project** — Centralize schematics, PCBs, and libraries in a single `.prjxml` file
 2. **Design Schematic** — Place components, draw wires, assign net labels, configure properties
