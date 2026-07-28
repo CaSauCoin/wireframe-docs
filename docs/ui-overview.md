@@ -40,6 +40,7 @@ Located at the **very top** of the window. Every feature is accessible from here
 | Toggle Library | Show/hide the Library panel |
 | Toggle Layers | Show/hide the Layer panel (PCB) |
 | Toggle Properties | Show/hide the Properties panel |
+| AI Copilot | Show/hide the AI Copilot chat panel |
 | 3D Viewer… | Open the 3D PCB viewer |
 | Fit to Screen | Zoom to fit all content in view |
 
@@ -47,10 +48,13 @@ Located at the **very top** of the window. Every feature is accessible from here
 
 | Item | Action |
 |---|---|
-| Symbol Editor | Open the symbol library editor |
+| Symbol Editor | Open the symbol library editor / creator |
 | Footprint Wizard | Open the footprint generator wizard |
-| Design Rules | Configure design rule settings |
+| Design Rules | Configure design rule settings (clearance, trace width, etc.) |
+| ERC Check | Run Electrical Rules Check on the active schematic |
 | DFM Check | Run DFM/DRC checks on the active PCB |
+| Simulation | Open the Simulation Controls panel (SPICE) |
+| Board Template | Open the PCB Template Builder |
 | Gerber Viewer | Open the built-in Gerber file viewer |
 | Keymap… | Customize keyboard shortcuts |
 
@@ -73,6 +77,11 @@ Default panel positions:
 | Library | Right (top) |
 | Properties | Right (bottom) |
 | Layers *(PCB only)* | Right (middle) |
+| AI Copilot | Left (bottom) or docked alongside Project Structure |
+| ERC Panel *(Schematic only)* | Bottom or floating |
+| Simulation Controls *(Schematic)* | Bottom or floating |
+| Waveform Viewer *(after simulation)* | Bottom-center or floating |
+| DFM Panel *(PCB only)* | Bottom or floating |
 | Logger / Notifications | Bottom-right overlay |
 
 ---

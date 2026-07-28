@@ -30,6 +30,10 @@ The config file is a JSON document with the following sections:
       "/home/user/Projects/main.schxml",
       "/home/user/Projects/board.pcbxml"
     ]
+  },
+  "ai": {
+    "apiKey": "sk-or-v1-...",
+    "provider": "openrouter"
   }
 }
 ```
@@ -39,6 +43,7 @@ The config file is a JSON document with the following sections:
 | Section | Description |
 |---|---|
 | `session` | Session restoration data (open projects and documents) |
+| `ai` | AI Copilot configuration (API key, provider) |
 
 ---
 
@@ -75,6 +80,22 @@ The config is updated automatically when:
 -->
 
 [//]: # (![Config Json]&#40;../img/reference/config-json.png&#41;)
+
+---
+
+## AI Configuration
+
+The `ai` section stores settings for the AI Copilot:
+
+| Field | Type | Description |
+|---|---|---|
+| `apiKey` | String | OpenRouter API key for LLM access |
+| `provider` | String | LLM provider name (default: `"openrouter"`) |
+
+!!! info "Setting the API key"
+    You can set the API key either:
+    - Via the UI: **View → AI Copilot → ⚙ Settings → API Key**
+    - Manually in the JSON config file
 
 
 ---

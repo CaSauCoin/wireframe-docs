@@ -93,6 +93,17 @@ Bindings are stored in memory and can be persisted in future versions via the co
 
 ---
 
+## Default Shortcuts — Simulation
+
+| Action | Default shortcut | Description |
+|---|---|---|
+| Run Simulation | (configurable) | Execute the current simulation configuration |
+| Abort Simulation | (configurable) | Halt a running simulation |
+| Toggle Cursors | (configurable) | Show/hide measurement cursors in the waveform viewer |
+
+
+---
+
 ## Customization Tips
 
 !!! tip "Match your workflow"

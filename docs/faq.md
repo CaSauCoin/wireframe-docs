@@ -183,6 +183,91 @@ Common questions and solutions for WireFrame EDA issues.
 
 ---
 
+## Simulation
+
+??? question "Simulation menu is disabled / NgSpice not found"
+    WireFrame loads `libngspice` dynamically at runtime. If it's not installed:
+
+    - **Linux**: `sudo apt-get install libngspice0-dev`
+    - **macOS**: `brew install ngspice`
+    - **Windows**: NgSpice is bundled with the installer — reinstall WireFrame if missing.
+
+    Check the Logger for the message: `"NgSpice: library not found"`.
+
+??? question "Simulation fails with 'singular matrix'"
+    This usually indicates a topology problem:
+
+    - A voltage source directly across another voltage source.
+    - An inductor loop without any resistance.
+    - **Fix**: Add small series resistances (0.01Ω) or check your circuit connections.
+
+??? question "Waveform shows flat lines or no data"
+    - Verify component values are set (not empty) in the Properties panel.
+    - Check that the analysis type matches your source type (use pulse/sine sources for transient analysis).
+    - Ensure the simulation time is long enough to see the expected behavior.
+    - For oscillators: increase the simulation time — they may need time to reach steady state.
+
+??? question "How do I add custom SPICE models?"
+    1. Obtain the `.lib` or `.sub` model file from the component manufacturer.
+    2. Place it in the `Simulate/models/` directory.
+    3. The Template Provider automatically includes it during netlist generation.
+
+    See [Running a Simulation — SPICE Model Files](simulation/running-simulation.md#spice-model-files).
+
+---
+
+## AI Copilot
+
+??? question "How do I set up the AI Copilot?"
+    1. Open **View → AI Copilot** to show the panel.
+    2. Click the **⚙ Settings** icon.
+    3. Enter your [OpenRouter](https://openrouter.ai/) API key.
+    4. Click **Save**.
+
+    See [AI Copilot — Getting Started](ai/index.md#getting-started).
+
+??? question "AI Copilot is not responding / API error"
+    - Check your **internet connection** — the AI requires an active connection.
+    - Verify your **API key** is valid and has remaining credits.
+    - Check for rate limiting — wait a moment and try again.
+    - Review the Logger for detailed error messages.
+
+??? question "AI-generated design has incorrect pin assignments"
+    The AI uses datasheet knowledge but may occasionally make errors:
+
+    1. Review the **Netlist Validation** results in the Component Review window.
+    2. Use **Refine** to ask the AI to fix specific issues (e.g., "Pin 7 should be RESET, not VCC").
+    3. Click **Fix with AI** to have the AI automatically correct validation errors.
+
+??? question "Missing components in AI-generated design"
+    If the AI Library Reviewer shows ⚠ **Missing** components:
+
+    1. Click **Generate** next to the missing component.
+    2. The [AI Component Generator](ai/component-generator.md) creates the symbol and footprint.
+    3. Review and accept the generated component.
+    4. Alternatively, import the component manually from a KiCad library.
+
+---
+
+## Library Converter
+
+??? question "How do I convert Altium libraries to KiCad format?"
+    Use the Library Converter Pipeline:
+
+    ```bash
+    cd WireFrame/Tools
+    python3 run.py --local /path/to/MyLib.IntLib
+    ```
+
+    See [Library Converter](libraries/library-converter.md) for full documentation.
+
+??? question "Converted symbols are missing pin names"
+    - This may happen with `.PcbLib` files (footprints only, no symbol data).
+    - The converter uses **fallback generation** to create symbols from footprint geometry.
+    - For better results, provide both `.SchLib` and `.PcbLib` files together.
+
+---
+
 ## Still Need Help?
 
 If your issue is not listed here:
@@ -194,4 +279,5 @@ If your issue is not listed here:
     - Steps to reproduce the problem.
     - Any error messages from the Logger.
     - Screenshots if applicable.
+
 

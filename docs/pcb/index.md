@@ -101,5 +101,16 @@ Ratsnest lines are **thin dashed lines** showing connections that have not yet b
 | [Routing](routing.md) | Route traces, vias, mechanical holes |
 | [Layers & Views](layers-and-views.md) | Layer management, visibility, navigation |
 | [Zones & Planes](zones-and-planes.md) | Copper fills, ground planes, zone priority |
+| [Design Rules & Net Classes](design-rules.md) | Clearance, trace width, via size, net class configuration |
 | [DFM & DRC](dfm-and-drc.md) | Design rule and manufacturability checks |
 | [Fabrication & Export](fabrication-and-export.md) | Gerber, drill, BOM, PDF export |
+
+---
+
+## Related Sections
+
+| Section | What you'll learn |
+|---|---|
+| [3D Viewer](../advanced/3d-viewer.md) | Preview the PCB with 3D component models |
+| [AI Auto-Router](../ai/auto-placer-router.md) | Automatic A* trace routing via AI Copilot |
+
