@@ -36,12 +36,33 @@
 }
 
 /* ── Sidebar / Navigation ─────────────────────────────────── */
-.md-sidebar {
-    background-color: var(--wf-surface);
+.md-sidebar,
+.md-sidebar__inner,
+.md-sidebar__scrollwrap {
+    background-color: transparent !important;
+    mask-image: none !important;
+    -webkit-mask-image: none !important;
+}
+
+/* Remove any top shadow / dark block above sidebars */
+.md-sidebar::before,
+.md-sidebar::after,
+.md-sidebar__inner::before,
+.md-sidebar__inner::after {
+    display: none !important;
+    background: none !important;
+}
+
+.md-nav__link {
+    transition: color 0.15s ease, background-color 0.15s ease;
+    border-radius: 4px;
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
 }
 
 .md-nav__link:hover {
     color: var(--md-primary-fg-color) !important;
+    background-color: rgba(0, 229, 255, 0.05);
 }
 
 .md-nav__item--active > .md-nav__link {
@@ -52,15 +73,15 @@
 /* Top-level section titles in the sidebar — bigger & bolder */
 .md-nav--primary > .md-nav__list > .md-nav__item > .md-nav__link,
 .md-nav--primary > .md-nav__list > .md-nav__item > label.md-nav__link {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.05em;
     color: var(--md-primary-fg-color) !important;
-    margin-top: 0.6rem;
+    margin-top: 0.8rem;
     padding-top: 0.4rem;
     padding-bottom: 0.4rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 /* First section title — no top border */
@@ -70,10 +91,23 @@
     margin-top: 0;
 }
 
+/* Table of contents title (right sidebar) */
+.md-nav--secondary .md-nav__title {
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: rgba(255, 255, 255, 0.85) !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0.4rem 0;
+}
+
 /* Child page links in the sidebar — smaller & lighter */
 .md-nav--primary .md-nav--secondary .md-nav__link,
-.md-nav--primary .md-nav .md-nav .md-nav__link {
-    font-size: 0.75rem;
+.md-nav--primary .md-nav .md-nav .md-nav__link,
+.md-nav--secondary .md-nav__link {
+    font-size: 0.78rem;
     font-weight: 400;
     text-transform: none;
     letter-spacing: 0;
