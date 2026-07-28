@@ -50,7 +50,7 @@ Changes are applied **immediately** — the title block updates in real time on 
      - The border color picker showing "Cyan" selected.
      SUGGESTED SIZE: 1280×720px (full window showing both panel and canvas)
 -->
-![Title Block Settings](../img/schematic/title-block-settings.png)
+[//]: # (![Title Block Settings](../img/schematic/title-block-settings.png))
 
 ---
 
@@ -96,7 +96,7 @@ The template is automatically rendered as part of the schematic canvas and inclu
      - The border color set to cyan (default) for contrast against the dark background.
      SUGGESTED SIZE: 900×600px
 -->
-![Template Example](../img/schematic/template-example.png)
+[//]: # (![Template Example](../img/schematic/template-example.png))
 
 ---
 

@@ -135,7 +135,7 @@ Calculates the **DC steady-state** of the circuit — all node voltages and bran
      The Run button is visible and highlighted.
      SUGGESTED SIZE: 1280×720px (full window)
 -->
-![Simulation Quick Start](img/simulation/simulation-quickstart.png)
+[//]: # (![Simulation Quickstart](img/simulation/simulation-quickstart.png))
 
 ---
 

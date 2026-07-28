@@ -77,7 +77,7 @@ A preview popup shows the generated component:
      - Dark theme, clean layout.
      SUGGESTED SIZE: 800×500px
 -->
-![AI Gen Popup](../img/ai/ai-gen-popup.png)
+[//]: # (![AI Generator Popup](../img/ai/ai-gen-popup.png))
 
 ---
 

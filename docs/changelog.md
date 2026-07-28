@@ -7,6 +7,14 @@ All notable changes to WireFrame EDA are documented here. Versions follow [Seman
 ## v1.3.7 — 2026-03-15 (Latest)
 
 ### Added
+- **SPICE Simulation** — full NgSpice integration for Transient, AC, DC Sweep, and Operating Point analyses with an interactive Waveform Viewer (oscilloscope, cursors, delta measurements).
+- **AI Copilot** — conversational AI design assistant that generates complete schematics, BOMs, and netlists from text descriptions with SPICE simulation verification.
+- **AI Auto-Placer & Auto-Router** — physical component layout clustering and grid-based A* PCB trace routing.
+- **AI Component Generator** — datasheet-based automatic symbol and footprint generation for missing components.
+- **Electrical Rules Check (ERC)** — schematic validation for floating input pins, unconnected nets, driver contention, and duplicate designators.
+- **Symbol Creator** — interactive symbol editor and wizard for designing custom schematic symbols.
+- **Library Converter Pipeline** — CLI tool for converting Altium (`.IntLib`, `.SchLib`, `.PcbLib`) and KiCad libraries with fuzzy footprint matching and preview generation.
+- **Design Rules & Net Classes** — configurable manufacturing constraints (clearance, trace width, via size) per net group.
 - **Footprint Wizard** — built-in generator for common through-hole and SMD footprints with live preview.
 - **Model Alignment Dialog** — interactive 3D model positioning for footprints with real-time preview.
 - **Gerber Viewer** — built-in viewer for inspecting exported Gerber files without external software.

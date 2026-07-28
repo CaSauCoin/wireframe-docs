@@ -17,7 +17,7 @@ Go to **Tools → Design Rules** to open the Design Rules dialog.
      - Input fields with numeric values and unit labels (mm).
      SUGGESTED SIZE: 600×500px
 -->
-![Design Rules Dialog](../img/pcb/design-rules-dialog.png)
+[//]: # (![Design Rules Dialog](../img/pcb/design-rules-dialog.png))
 
 ---
 
@@ -123,7 +123,7 @@ Access via **Tools → Board Template** or when creating a new PCB.
      - Preview of the board outline with mounting holes marked.
      SUGGESTED SIZE: 600×450px
 -->
-![PCB Template Builder](../img/pcb/pcb-template-builder.png)
+[//]: # (![PCB Template Builder](../img/pcb/pcb-template-builder.png))
 
 ---
 

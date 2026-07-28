@@ -86,7 +86,7 @@ The AI Copilot appears as a **dockable panel** in the editor. It features:
      - Dark theme matching the editor.
      SUGGESTED SIZE: 350×600px (panel only) or 1280×720px (full window with panel visible)
 -->
-![AI Copilot Panel](img/ai/ai-copilot-panel.png)
+[//]: # (![AI Copilot Panel](img/ai/ai-copilot-panel.png))
 
 ---
 

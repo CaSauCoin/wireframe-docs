@@ -54,7 +54,7 @@ Click **Export** to save as a `.kicad_sym` file. The symbol is immediately avail
      - Dark theme matching the editor.
      SUGGESTED SIZE: 900×550px
 -->
-![Symbol Wizard](../img/libraries/symbol-wizard.png)
+[//]: # (![Symbol Wizard](../img/libraries/symbol-wizard.png))
 
 ---
 

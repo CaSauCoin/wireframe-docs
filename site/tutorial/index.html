@@ -1,0 +1,2871 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Complete user guide for WireFrame EDA — a lightweight schematic and PCB design environment built with ImGui, GLFW and OpenGL.">
+      
+      
+      
+        <link rel="canonical" href="https://guideline-one.vercel.app/tutorial/">
+      
+      
+        <link rel="prev" href="../changelog/">
+      
+      
+        <link rel="next" href="ai-design/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>NE555 LED Blinker - WireFrame EDA Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="cyan" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tutorial-design-simulate-an-ne555-circuit" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="WireFrame EDA Documentation" class="md-header__button md-logo" aria-label="WireFrame EDA Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 4h12v1h3v2h-3v2h3v2h-3v2h3v2h-3v2h3v2h-3v1H6v-1H3v-2h3v-2H3v-2h3v-2H3V9h3V7H3V5h3zm5 11v3h1v-3zm2 0v3h1v-3zm2 0v3h1v-3z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            WireFrame EDA Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              NE555 LED Blinker
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../installation/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../schematic/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Schematic Design
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../pcb/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  PCB Layout
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../libraries/symbols-library/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Libraries
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../simulation/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Simulation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../ai/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  AI Copilot
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../advanced/selection-and-editing/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Advanced Features
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../reference/config-and-session/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Tutorials
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="WireFrame EDA Documentation" class="md-nav__button md-logo" aria-label="WireFrame EDA Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 4h12v1h3v2h-3v2h3v2h-3v2h3v2h-3v2h3v2h-3v1H6v-1H3v-2h3v-2H3v-2h3v-2H3V9h3V7H3V5h3zm5 11v3h1v-3zm2 0v3h1v-3zm2 0v3h1v-3z"/></svg>
+
+    </a>
+    WireFrame EDA Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ui-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UI Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projects & Files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../schematic/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schematic Design
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Schematic Design
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schematic/placing-components/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Placing Components
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schematic/wiring-and-nets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wiring & Nets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schematic/properties-and-attributes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Properties & Attributes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schematic/graphics-and-annotations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Graphics & Annotations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schematic/erc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ERC (Electrical Rules Check)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schematic/templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Templates & Title Block
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../pcb/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PCB Layout
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PCB Layout
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pcb/footprints-and-placement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Footprints & Placement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pcb/routing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Routing (Tracks & Vias)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pcb/layers-and-views/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Layers & Views
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pcb/zones-and-planes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zones & Planes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pcb/design-rules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Rules & Net Classes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pcb/dfm-and-drc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DFM & DRC Check
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pcb/fabrication-and-export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fabrication & Export
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Libraries
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Libraries
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../libraries/symbols-library/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Symbols Library
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../libraries/footprints-library/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Footprints Library
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../libraries/symbol-creator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Symbol Creator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../libraries/library-converter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Library Converter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../simulation/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Simulation
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Simulation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../simulation/running-simulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Running a Simulation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../simulation/waveform-viewer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Waveform Viewer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../ai/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Copilot
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI Copilot
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai/design-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Design Agent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai/auto-placer-router/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Auto-Placer & Auto-Router
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai/component-generator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Component Generator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Features
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Advanced Features
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced/selection-and-editing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Selection & Editing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced/3d-viewer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3D Viewer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced/shortcuts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Keyboard Shortcuts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/config-and-session/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Config & Session
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/file-formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    File Formats
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ & Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="./" class="md-nav__link md-nav__link--active">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorials
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link md-nav__link--active" for="__nav_10" id="__nav_10_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tutorials
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ai-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-Assisted Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-you-will-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What You Will Learn
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-create-a-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1 — Create a Project
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-draw-the-ne555-schematic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2 — Draw the NE555 Schematic
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 2 — Draw the NE555 Schematic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-place-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Place components
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-wire-the-circuit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Wire the circuit
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-run-spice-simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3 — Run SPICE Simulation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 3 — Run SPICE Simulation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-open-simulation-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Open Simulation Controls
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-configure-transient-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Configure Transient Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-analyze-waveforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Analyze Waveforms
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-run-electrical-rules-check-erc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4 — Run Electrical Rules Check (ERC)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-convert-to-pcb-arrange-footprints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5 — Convert to PCB &amp; Arrange Footprints
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-route-traces-add-ground-plane" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6 — Route Traces &amp; Add Ground Plane
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 6 — Route Traces &amp; Add Ground Plane">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-route-copper-traces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Route Copper Traces
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-add-ground-plane-copper-zone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Add Ground Plane (Copper Zone)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-7-run-dfm-check-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7 — Run DFM Check &amp; Export
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 7 — Run DFM Check &amp; Export">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-dfm-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 DFM Verification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-fabrication-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Fabrication Export
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-deliverables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary Deliverables
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="tutorial-design-simulate-an-ne555-circuit">Tutorial: Design &amp; Simulate an NE555 Circuit<a class="headerlink" href="#tutorial-design-simulate-an-ne555-circuit" title="Permanent link">&para;</a></h1>
+<p>This step-by-step tutorial walks you through the complete WireFrame workflow — from creating a project and drawing a schematic to <strong>running a SPICE simulation</strong>, layout, routing, and exporting Gerber files — using an <strong>NE555 LED Blinker circuit</strong>.</p>
+<p><strong>What you will build:</strong> A complete NE555 astable oscillator board with an LED blinking at 1 Hz — verified with SPICE simulation and fully routed for fabrication.</p>
+<!-- TODO: Replace with actual screenshot
+     SCENARIO: Capture the finished NE555 LED Blinker PCB showing the components
+     (NE555 IC, resistors R1/R2/R3, capacitors C1/C2, LED D1, terminal J1) routed
+     with copper traces. Show both the 2D PCB view and the 3D Viewer side by side.
+     SUGGESTED SIZE: 900×400px
+-->
+<p><img alt="Final Result" src="../img/tutorial/final-result.png" /></p>
+<hr />
+<h2 id="what-you-will-learn">What You Will Learn<a class="headerlink" href="#what-you-will-learn" title="Permanent link">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Create a project and load component libraries</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Place components and wire an NE555 astable oscillator schematic</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Run a SPICE simulation</strong> and measure waveforms in the Waveform Viewer</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Run <strong>ERC (Electrical Rules Check)</strong> on the schematic</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Convert schematic to PCB layout</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Place footprints, define board outline, and route copper traces</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Run DFM checks and export Gerber &amp; BOM files</li>
+</ul>
+<hr />
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>WireFrame</strong></td>
+<td>Installed and activated (<a href="../installation/">Installation guide</a>)</td>
+</tr>
+<tr>
+<td><strong>NgSpice</strong></td>
+<td>Installed for SPICE simulation (<a href="../simulation/#prerequisites">Simulation setup</a>)</td>
+</tr>
+<tr>
+<td><strong>Libraries</strong></td>
+<td>KiCad symbol (<code>.kicad_sym</code>) and footprint (<code>.kicad_mod</code>) libraries</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="step-1-create-a-project">Step 1 — Create a Project<a class="headerlink" href="#step-1-create-a-project" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Launch WireFrame.</li>
+<li>Go to <strong>File → New Project…</strong></li>
+<li>Name your project <code>NE555_Blinker.prjxml</code>.</li>
+<li>Click <strong>Create</strong>.</li>
+</ol>
+<p>The <strong>Project Structure</strong> panel now displays your project root node.</p>
+<!-- TODO: Replace with actual screenshot
+     SCENARIO: Capture the Project Structure panel showing "NE555_Blinker.prjxml" expanded.
+     SUGGESTED SIZE: 300×200px
+-->
+<p><img alt="Step1 New Project" src="../img/tutorial/step1-new-project.png" /></p>
+<hr />
+<h2 id="step-2-draw-the-ne555-schematic">Step 2 — Draw the NE555 Schematic<a class="headerlink" href="#step-2-draw-the-ne555-schematic" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Go to <strong>File → New Schematic</strong>.</li>
+<li>Save it as <code>NE555_Blinker.schxml</code> (<span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-s">S</kbd></span>).</li>
+</ol>
+<h3 id="21-place-components">2.1 Place components<a class="headerlink" href="#21-place-components" title="Permanent link">&para;</a></h3>
+<p>Search and place the following components from the Library panel:</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Library Symbol</th>
+<th>Designator</th>
+<th>Value</th>
+<th>Footprint</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Timer IC</strong></td>
+<td><code>NE555</code></td>
+<td><code>U1</code></td>
+<td>—</td>
+<td><code>DIP-8_W7.62mm</code></td>
+</tr>
+<tr>
+<td><strong>Resistor 1</strong></td>
+<td><code>R</code></td>
+<td><code>R1</code></td>
+<td><code>6.8kΩ</code></td>
+<td><code>R_0805_2012Metric</code></td>
+</tr>
+<tr>
+<td><strong>Resistor 2</strong></td>
+<td><code>R</code></td>
+<td><code>R2</code></td>
+<td><code>6.8kΩ</code></td>
+<td><code>R_0805_2012Metric</code></td>
+</tr>
+<tr>
+<td><strong>Resistor 3</strong></td>
+<td><code>R</code></td>
+<td><code>R3</code></td>
+<td><code>330Ω</code></td>
+<td><code>R_0805_2012Metric</code></td>
+</tr>
+<tr>
+<td><strong>Capacitor 1</strong></td>
+<td><code>C_Polarized</code></td>
+<td><code>C1</code></td>
+<td><code>100µF</code></td>
+<td><code>CP_Radial_D5.0mm_P2.00mm</code></td>
+</tr>
+<tr>
+<td><strong>Capacitor 2</strong></td>
+<td><code>C</code></td>
+<td><code>C2</code></td>
+<td><code>10nF</code></td>
+<td><code>C_0805_2012Metric</code></td>
+</tr>
+<tr>
+<td><strong>LED</strong></td>
+<td><code>LED</code></td>
+<td><code>D1</code></td>
+<td><code>Red</code></td>
+<td><code>LED_0805_2012Metric</code></td>
+</tr>
+<tr>
+<td><strong>Connector</strong></td>
+<td><code>Conn_01x02</code></td>
+<td><code>J1</code></td>
+<td><code>9V Power</code></td>
+<td><code>PinHeader_1x02_P2.54mm_Vertical</code></td>
+</tr>
+<tr>
+<td><strong>Ground</strong></td>
+<td><code>GND</code></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<!-- TODO: Replace with actual video
+     SCENARIO: Record a 20-second clip showing:
+     1. Search "NE555" in Library → place U1 on canvas.
+     2. Search "R" → place R1, R2, R3.
+     3. Search "C" → place C1, C2.
+     4. Place D1 and J1. Place GND power symbols.
+     RESOLUTION: 1280×720 at 30fps
+-->
+<video controls width="100%">
+  <source src="../../img/tutorial/step3-place-components.webm" type="video/webm">
+  <source src="../../img/tutorial/step3-place-components.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+<h3 id="22-wire-the-circuit">2.2 Wire the circuit<a class="headerlink" href="#22-wire-the-circuit" title="Permanent link">&para;</a></h3>
+<p>Press <span class="keys"><kbd class="key-w">W</kbd></span> to activate the Wire tool and make the following connections:</p>
+<ol>
+<li><strong>Power &amp; Ground</strong>: Connect <code>J1 pin 1</code> to <code>U1 pin 8 (VCC)</code> and <code>U1 pin 4 (RESET)</code>. Connect <code>J1 pin 2</code> to <code>GND</code>. Connect <code>U1 pin 1 (GND)</code> to <code>GND</code>.</li>
+<li><strong>Timing Branch</strong>: Connect <code>VCC</code> → <code>R1 pin 1</code>. Connect <code>R1 pin 2</code> → <code>R2 pin 1</code> → <code>U1 pin 7 (DISCH)</code>.</li>
+<li><strong>Threshold &amp; Trigger</strong>: Connect <code>R2 pin 2</code> → <code>U1 pin 6 (THRES)</code> → <code>U1 pin 2 (TRIG)</code> → <code>C1 positive (+)</code> → <code>C1 negative (-)</code> to <code>GND</code>.</li>
+<li><strong>Control Voltage</strong>: Connect <code>U1 pin 5 (CTRL)</code> → <code>C2 pin 1</code> → <code>C2 pin 2</code> to <code>GND</code>.</li>
+<li><strong>Output</strong>: Connect <code>U1 pin 3 (OUT)</code> → <code>R3 pin 1</code> → <code>R3 pin 2</code> → <code>D1 Anode (A)</code> → <code>D1 Cathode (K)</code> to <code>GND</code>.</li>
+</ol>
+<!-- TODO: Replace with actual screenshot
+     SCENARIO: Capture the completed NE555 schematic with all wires connected,
+     designators R1, R2, R3, C1, C2, D1, U1, J1 visible, and GND symbols attached.
+     SUGGESTED SIZE: 800×500px
+-->
+<p><img alt="NE555 Schematic Complete" src="../img/tutorial/step3-complete.png" /></p>
+<hr />
+<h2 id="step-3-run-spice-simulation">Step 3 — Run SPICE Simulation<a class="headerlink" href="#step-3-run-spice-simulation" title="Permanent link">&para;</a></h2>
+<p>Before building the PCB, verify that the circuit oscillates at 1 Hz using the built-in SPICE simulator.</p>
+<h3 id="31-open-simulation-controls">3.1 Open Simulation Controls<a class="headerlink" href="#31-open-simulation-controls" title="Permanent link">&para;</a></h3>
+<p>Go to <strong>Tools → Simulation</strong> (or open the Simulation Controls panel).</p>
+<h3 id="32-configure-transient-analysis">3.2 Configure Transient Analysis<a class="headerlink" href="#32-configure-transient-analysis" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Set <strong>Analysis Type</strong>: <code>Transient (.TRAN)</code>.</li>
+<li>Set <strong>Stop Time</strong>: <code>3 s</code> (to capture 3 full 1-second cycles).</li>
+<li>Set <strong>Step Size</strong>: <code>1 ms</code>.</li>
+<li>Click <strong>Run</strong>.</li>
+</ol>
+<!-- TODO: Replace with actual screenshot
+     SCENARIO: Capture the Simulation Controls panel with Transient selected,
+     Stop Time = 3s, Step Size = 1ms, and progress bar showing 100%.
+     SUGGESTED SIZE: 400×350px
+-->
+<h3 id="33-analyze-waveforms">3.3 Analyze Waveforms<a class="headerlink" href="#33-analyze-waveforms" title="Permanent link">&para;</a></h3>
+<p>The <strong>Waveform Viewer</strong> opens automatically:</p>
+<ul>
+<li><strong>Output Signal <code>v(OUT)</code></strong>: A clear square wave switching between 0V and ~8.2V at ~1 Hz.</li>
+<li><strong>Timing Capacitor Voltage <code>v(THRES)</code></strong>: Sawtooth wave charging between 1/3 VCC (3V) and 2/3 VCC (6V).</li>
+<li><strong>Measure Frequency</strong>: Turn on <strong>Cursors</strong> (<span class="keys"><kbd class="key-c">C</kbd></span>) → place Cursor 1 on first rising edge, Cursor 2 on second rising edge → read Δt ≈ 1.0 s (Frequency = 1.0 Hz).</li>
+</ul>
+<!-- TODO: Replace with actual video
+     SCENARIO: Record a 20-second clip showing:
+     1. Click "Run" in Simulation Controls.
+     2. Progress bar moves to 100% — Waveform Viewer opens.
+     3. Toggle Cursors — drag C1 and C2 onto consecutive output pulses.
+     4. Delta readout shows Δt = 1.02s (f = 0.98 Hz).
+     RESOLUTION: 1280×720 at 30fps
+-->
+<video controls width="100%">
+  <source src="../../img/tutorial/step3-sim-waveforms.webm" type="video/webm">
+  <source src="../../img/tutorial/step3-sim-waveforms.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+<hr />
+<h2 id="step-4-run-electrical-rules-check-erc">Step 4 — Run Electrical Rules Check (ERC)<a class="headerlink" href="#step-4-run-electrical-rules-check-erc" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Go to <strong>Tools → ERC Check</strong>.</li>
+<li>The ERC panel runs checks:<ul>
+<li>Verifies no floating pins remain.</li>
+<li>Confirms all nets connect to valid endpoints.</li>
+<li>Verifies duplicate designators don't exist.</li>
+</ul>
+</li>
+<li>Ensure <strong>0 Errors, 0 Warnings</strong>.</li>
+</ol>
+<!-- TODO: Replace with actual screenshot
+     SCENARIO: Capture the ERC Panel showing "0 errors, 0 warnings" clean result.
+     SUGGESTED SIZE: 500×300px
+-->
+<hr />
+<h2 id="step-5-convert-to-pcb-arrange-footprints">Step 5 — Convert to PCB &amp; Arrange Footprints<a class="headerlink" href="#step-5-convert-to-pcb-arrange-footprints" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Go to <strong>Project → Convert to PCB</strong>.</li>
+<li>A new PCB document <code>NE555_Blinker.pcbxml</code> opens with footprints clustered together.</li>
+<li>Arrange footprints logically:<ul>
+<li><code>J1</code> near the left board edge.</li>
+<li><code>U1 (NE555)</code> in the center.</li>
+<li><code>R1</code>, <code>R2</code>, <code>C1</code> grouped on the left of U1.</li>
+<li><code>R3</code>, <code>D1</code> placed to the right of U1 output.</li>
+<li><code>C2</code> placed close to U1 pin 5.</li>
+</ul>
+</li>
+<li>Set <strong>Edge.Cuts</strong> layer → draw a rectangular board outline (approx 50 × 40 mm).</li>
+</ol>
+<!-- TODO: Replace with actual screenshot
+     SCENARIO: Capture the PCB layout with footprints arranged, yellow ratsnest lines
+     connecting pads, and a magenta board outline on Edge.Cuts.
+     SUGGESTED SIZE: 700×450px
+-->
+<hr />
+<h2 id="step-6-route-traces-add-ground-plane">Step 6 — Route Traces &amp; Add Ground Plane<a class="headerlink" href="#step-6-route-traces-add-ground-plane" title="Permanent link">&para;</a></h2>
+<h3 id="61-route-copper-traces">6.1 Route Copper Traces<a class="headerlink" href="#61-route-copper-traces" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Press <span class="keys"><kbd class="key-x">X</kbd></span> to activate the <strong>Route Trace</strong> tool.</li>
+<li>Route signal traces on <strong>F.Cu</strong> (Red):<ul>
+<li>Connect <code>U1 pin 3</code> → <code>R3</code> → <code>D1 Anode</code>.</li>
+<li>Connect <code>R1</code> → <code>R2</code> → <code>U1 pin 7</code>.</li>
+<li>Connect <code>R2</code> → <code>U1 pin 6</code> → <code>U1 pin 2</code> → <code>C1</code>.</li>
+</ul>
+</li>
+<li>Press <span class="keys"><kbd class="key-v">V</kbd></span> to place vias when switching to <strong>B.Cu</strong> (Blue) for power paths.</li>
+</ol>
+<h3 id="62-add-ground-plane-copper-zone">6.2 Add Ground Plane (Copper Zone)<a class="headerlink" href="#62-add-ground-plane-copper-zone" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Select <strong>Zone</strong> tool → set layer to <strong>B.Cu</strong> → Net <code>GND</code>.</li>
+<li>Draw a polygon around the entire board outline.</li>
+<li>Click <strong>Fill Zone</strong> — a solid ground fill generates automatically with thermal reliefs around GND pads.</li>
+</ol>
+<!-- TODO: Replace with actual video
+     SCENARIO: Record a 20-second clip showing:
+     1. Routing signal traces with Route Trace tool (X).
+     2. Selecting Zone tool → drawing GND plane polygon on B.Cu.
+     3. Click Fill Zone — copper flood fills the bottom layer.
+     4. All ratsnest lines disappear.
+     RESOLUTION: 1280×720 at 30fps
+-->
+<video controls width="100%">
+  <source src="../../img/tutorial/step7-routing.webm" type="video/webm">
+  <source src="../../img/tutorial/step7-routing.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+<hr />
+<h2 id="step-7-run-dfm-check-export">Step 7 — Run DFM Check &amp; Export<a class="headerlink" href="#step-7-run-dfm-check-export" title="Permanent link">&para;</a></h2>
+<h3 id="71-dfm-verification">7.1 DFM Verification<a class="headerlink" href="#71-dfm-verification" title="Permanent link">&para;</a></h3>
+<p>Go to <strong>Tools → DFM Check</strong> → click <strong>Run DFM</strong>. Verify 0 clearance errors and 0 trace width violations.</p>
+<h3 id="72-fabrication-export">7.2 Fabrication Export<a class="headerlink" href="#72-fabrication-export" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Gerber Files</strong>: <strong>File → Export → Gerber…</strong> → select <code>F.Cu</code>, <code>B.Cu</code>, <code>F.SilkS</code>, <code>F.Mask</code>, <code>Edge.Cuts</code> → <strong>Export</strong>.</li>
+<li><strong>BOM Export</strong>: <strong>File → Export → BOM…</strong> → save <code>NE555_Blinker_BOM.csv</code>.</li>
+<li><strong>Verify</strong>: Open <strong>Tools → Gerber Viewer</strong> → load <code>F.Cu.gbr</code> to verify trace shapes.</li>
+</ol>
+<hr />
+<h2 id="summary-deliverables">Summary Deliverables <span class="twemoji" style="color: #00E5FF"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m23 12-2.44-2.78.34-3.68-3.61-.82-1.89-3.18L12 3 8.6 1.54 6.71 4.72l-3.61.81.34 3.68L1 12l2.44 2.78-.34 3.69 3.61.82 1.89 3.18L12 21l3.4 1.46 1.89-3.18 3.61-.82-.34-3.68zm-13 5-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9z"/></svg></span><a class="headerlink" href="#summary-deliverables" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Output</th>
+<th>File</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Project File</td>
+<td><code>NE555_Blinker.prjxml</code></td>
+<td>Central project workspace</td>
+</tr>
+<tr>
+<td>Schematic</td>
+<td><code>NE555_Blinker.schxml</code></td>
+<td>Schematic diagram with SPICE properties</td>
+</tr>
+<tr>
+<td>PCB Layout</td>
+<td><code>NE555_Blinker.pcbxml</code></td>
+<td>Fully routed 2-layer PCB</td>
+</tr>
+<tr>
+<td>Simulation</td>
+<td>Waveform logs</td>
+<td>Transient simulation output</td>
+</tr>
+<tr>
+<td>Gerbers</td>
+<td><code>*.gbr</code> files</td>
+<td>Manufacturing files for PCB fabricator</td>
+</tr>
+<tr>
+<td>BOM</td>
+<td><code>NE555_Blinker_BOM.csv</code></td>
+<td>Component list for purchasing</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../simulation/">SPICE Simulation Guide</a> — advanced simulation modes (AC, DC sweep).</li>
+<li><a href="ai-design/">AI-Assisted Design Tutorial</a> — design this same circuit automatically using AI.</li>
+<li><a href="../pcb/design-rules/">Design Rules &amp; Net Classes</a> — PCB constraint management.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../changelog/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Changelog">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Changelog
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="ai-design/" class="md-footer__link md-footer__link--next" aria-label="Next: AI-Assisted Design">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                AI-Assisted Design
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 WireFrame EDA. All rights reserved.
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/CaSauCoin/WireFrame_Product" target="_blank" rel="noopener" title="WireFrame on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.expand", "navigation.indexes", "navigation.footer", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.tabs.link", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "stable", "provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
