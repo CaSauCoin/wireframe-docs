@@ -143,9 +143,72 @@ WireFrame maintains connections during drag operations:
 
 ---
 
+## Auto-Snapping
+
+While routing, WireFrame automatically **snaps the cursor** to nearby connection targets:
+
+| Target | Behavior |
+|---|---|
+| **Pad center** | Cursor snaps to the pad center when nearby — ensures perfect connection |
+| **Existing via** | Cursor snaps to via center for easy connection |
+| **Existing trace** | Cursor snaps to the nearest point on a trace segment of the same net |
+
+Auto-snapping prevents common routing errors like "almost connected" traces that look connected but fail DFM checks.
+
+---
+
+## Segment Merging
+
+When you extend an existing trace or add a segment that continues in the same direction, WireFrame **automatically merges** collinear segments into a single continuous trace:
+
+```
+Before merge:          After merge:
+  ──── ──── ────         ────────────
+  (3 segments)           (1 segment)
+```
+
+This keeps the design clean and reduces the number of trace objects in the file.
+
+---
+
+## Bus Routing (Multi-Trace)
+
+WireFrame supports routing multiple parallel traces simultaneously:
+
+- When routing from a group of pads (e.g., a data bus D0–D7), the router can create **parallel traces** with a consistent offset (Slave-Master pattern).
+- Traces maintain equal spacing and follow the same routing path shape.
+
+---
+
+## Double-Click Net Selection
+
+**Double-click** on any trace to select the **entire net** — all trace segments and vias connected to the same net are highlighted at once.
+
+This is useful for:
+
+- Reviewing a complete signal path
+- Deleting an entire net's routing
+- Checking net connectivity visually
+
+---
+
+## AI Auto-Router
+
+WireFrame includes an AI-powered automatic router that can route **all connections** on the board:
+
+- Uses **A* pathfinding** on a grid with penalty optimization
+- Minimizes via count and crossing penalties
+- Routes power nets first, then signal nets
+- See [AI Auto-Placer & Auto-Router](../ai/auto-placer-router.md) for details.
+
+---
+
 ## See Also
 
 - [Footprints & Placement](footprints-and-placement.md) — place footprints before routing
 - [Layers & Views](layers-and-views.md) — manage layers during routing
 - [Zones & Planes](zones-and-planes.md) — copper fills interact with trace clearances
+- [Design Rules & Net Classes](design-rules.md) — configure clearance and trace width rules
 - [DFM & DRC](dfm-and-drc.md) — check clearances and widths after routing
+- [AI Auto-Router](../ai/auto-placer-router.md) — automatic routing via the AI Copilot
+

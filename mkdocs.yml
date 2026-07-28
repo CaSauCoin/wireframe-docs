@@ -69,6 +69,8 @@ nav:
       - Wiring & Nets: schematic/wiring-and-nets.md
       - Properties & Attributes: schematic/properties-and-attributes.md
       - Graphics & Annotations: schematic/graphics-and-annotations.md
+      - ERC (Electrical Rules Check): schematic/erc.md
+      - Templates & Title Block: schematic/templates.md
 
   - PCB Layout:
       - pcb/index.md
@@ -76,12 +78,26 @@ nav:
       - Routing (Tracks & Vias): pcb/routing.md
       - Layers & Views: pcb/layers-and-views.md
       - Zones & Planes: pcb/zones-and-planes.md
+      - Design Rules & Net Classes: pcb/design-rules.md
       - DFM & DRC Check: pcb/dfm-and-drc.md
       - Fabrication & Export: pcb/fabrication-and-export.md
 
   - Libraries:
       - Symbols Library: libraries/symbols-library.md
       - Footprints Library: libraries/footprints-library.md
+      - Symbol Creator: libraries/symbol-creator.md
+      - Library Converter: libraries/library-converter.md
+
+  - Simulation:
+      - simulation/index.md
+      - Running a Simulation: simulation/running-simulation.md
+      - Waveform Viewer: simulation/waveform-viewer.md
+
+  - AI Copilot:
+      - ai/index.md
+      - AI Design Agent: ai/design-agent.md
+      - Auto-Placer & Auto-Router: ai/auto-placer-router.md
+      - AI Component Generator: ai/component-generator.md
 
   - Advanced Features:
       - Selection & Editing: advanced/selection-and-editing.md
@@ -94,7 +110,9 @@ nav:
       - FAQ & Troubleshooting: faq.md
       - Changelog: changelog.md
 
-  - Tutorial: tutorial/index.md
+  - Tutorials:
+      - NE555 LED Blinker: tutorial/index.md
+      - AI-Assisted Design: tutorial/ai-design.md
 
 
 # Markdown extensions

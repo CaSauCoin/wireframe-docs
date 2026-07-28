@@ -41,6 +41,8 @@ The schematic workspace consists of:
 - **Toolbar** — floating tool buttons above the canvas
 - **Library panel** — symbol list for placing components
 - **Properties panel** — edit properties of the selected item or page settings
+- **ERC panel** — electrical rules check results ([details](erc.md))
+- **Simulation panel** — configure and run SPICE simulations ([details](../simulation/index.md))
 
 ---
 
@@ -98,3 +100,15 @@ Continue to the detailed guides for each aspect of schematic design:
 | [Wiring & Nets](wiring-and-nets.md) | Draw wires, connect pins, net labels, GND/VCC |
 | [Properties & Attributes](properties-and-attributes.md) | Edit page settings, component attributes, text |
 | [Graphics & Annotations](graphics-and-annotations.md) | Draw boxes, lines, annotations |
+| [ERC (Electrical Rules Check)](erc.md) | Validate connectivity before PCB conversion |
+| [Templates & Title Block](templates.md) | Page setup, title block customization |
+
+---
+
+## Related Sections
+
+| Section | What you'll learn |
+|---|---|
+| [Simulation](../simulation/index.md) | Run SPICE simulation on your schematic |
+| [Symbol Creator](../libraries/symbol-creator.md) | Create custom schematic symbols |
+| [AI Copilot](../ai/index.md) | Generate schematics from text descriptions |
