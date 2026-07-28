@@ -115,12 +115,7 @@ Each PCB document records:
 
 The typical workflow for linking a schematic to a PCB:
 
-```
-┌─────────────┐     ┌──────────────┐     ┌─────────────┐
-│  Schematic   │────▶│  Convert to  │────▶│    PCB      │
-│  (design)    │     │  PCB action  │     │  (layout)   │
-└─────────────┘     └──────────────┘     └─────────────┘
-```
+![Project File Structure](img/home/project-file-structure.png)
 
 1. **Design the schematic** and assign footprints to all components (via symbol properties).
 2. Use **Project → Convert to PCB** (or equivalent) to:

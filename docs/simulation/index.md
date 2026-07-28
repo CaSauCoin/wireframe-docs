@@ -18,14 +18,7 @@ WireFrame integrates industry-standard **SPICE simulation** directly into the ed
 
 ## How It Works
 
-```
-┌─────────────┐     ┌──────────────┐     ┌──────────────┐     ┌──────────────┐     ┌──────────────┐
-│  Schematic   │────▶│  Preflight   │────▶│  Netlist      │────▶│   NgSpice    │────▶│  Waveform    │
-│  Design      │     │  Checks      │     │  Builder      │     │   Engine     │     │  Viewer      │
-└─────────────┘     └──────────────┘     └──────────────┘     └──────────────┘     └──────────────┘
-     Draw your           Validate            Convert              Run the             View results
-     circuit             components          to SPICE             simulation           interactively
-```
+![SPICE Simulation Flowchart](../img/simulation/spice-simulation-flowchart.png)
 
 1. **Design** your circuit in the schematic editor with components and wires.
 2. **Preflight** checks scan for errors that would prevent simulation (missing values, floating ground, etc.).
