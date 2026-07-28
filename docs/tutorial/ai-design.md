@@ -10,7 +10,7 @@ This tutorial demonstrates the **AI Copilot workflow** — design a circuit enti
      The AI Copilot Panel visible on the side with the conversation history.
      SUGGESTED SIZE: 1280×720px
 -->
-![AI Design Final Result](../img/tutorial/ai-design-final.png)
+[//]: # (![AI Design Final](../img/tutorial/ai-design-final.png))
 
 ---
 
@@ -74,7 +74,7 @@ Press **Enter** to send.
      - Thinking stages showing: "Analyzing requirements", "Researching NE555 datasheet".
      SUGGESTED SIZE: 400×500px (panel only)
 -->
-![AI Prompt Sent](../img/tutorial/ai-step2-prompt.png)
+[//]: # (![AI Step 2 Prompt](../img/tutorial/ai-step2-prompt.png))
 
 ---
 
@@ -139,7 +139,7 @@ Net "CTRL":   U1.CTRL(5) → C2.Pad1
      - The schematic preview showing the 555 timer circuit topology.
      SUGGESTED SIZE: 800×550px
 -->
-![AI BOM Review](../img/tutorial/ai-step4-review.png)
+[//]: # (![AI Step 4 Review](../img/tutorial/ai-step4-review.png))
 
 ---
 
@@ -176,7 +176,7 @@ v(THRES): /╲  /╲  /╲
      - Cursors placed on two consecutive rising edges showing Δt ≈ 1s.
      SUGGESTED SIZE: 900×450px
 -->
-![Simulation Results](../img/tutorial/ai-step5-simulation.png)
+[//]: # (![AI Step 5 Simulation](../img/tutorial/ai-step5-simulation.png))
 
 ---
 

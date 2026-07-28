@@ -1,0 +1,361 @@
+/* WireFrame EDA Documentation — Custom Stylesheet */
+/* Dark neon-cyan theme matching the ImGui application aesthetic */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+/* ── Root Variables ───────────────────────────────────────── */
+:root {
+    --md-primary-fg-color:        #00E5FF;
+    --md-primary-fg-color--light: #00b8cc;
+    --md-primary-fg-color--dark:  #00E5FF;
+    --md-accent-fg-color:         #00E5FF;
+    --md-default-bg-color:        #0a0a0a;
+    --md-default-fg-color:        #e0e0e0;
+    --md-code-font:               'JetBrains Mono', monospace;
+    --md-text-font:               'Inter', 'Roboto', sans-serif;
+    --wf-card-bg:                 #111111;
+    --wf-card-border:             #1e1e1e;
+    --wf-card-hover:              #00E5FF22;
+    --wf-surface:                 #141414;
+}
+
+/* ── Header ───────────────────────────────────────────────── */
+.md-header {
+    background-color: rgba(10, 10, 10, 0.92) !important;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #1a1a1a;
+}
+
+.md-tabs {
+    background-color: transparent !important;
+}
+
+.md-tabs__link--active,
+.md-tabs__link:hover {
+    color: var(--md-primary-fg-color) !important;
+}
+
+/* ── Sidebar / Navigation ─────────────────────────────────── */
+.md-sidebar {
+    background-color: var(--wf-surface);
+}
+
+.md-nav__link:hover {
+    color: var(--md-primary-fg-color) !important;
+}
+
+.md-nav__item--active > .md-nav__link {
+    color: var(--md-primary-fg-color) !important;
+    font-weight: 600;
+}
+
+/* Top-level section titles in the sidebar — bigger & bolder */
+.md-nav--primary > .md-nav__list > .md-nav__item > .md-nav__link,
+.md-nav--primary > .md-nav__list > .md-nav__item > label.md-nav__link {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--md-primary-fg-color) !important;
+    margin-top: 0.6rem;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* First section title — no top border */
+.md-nav--primary > .md-nav__list > .md-nav__item:first-child > .md-nav__link,
+.md-nav--primary > .md-nav__list > .md-nav__item:first-child > label.md-nav__link {
+    border-top: none;
+    margin-top: 0;
+}
+
+/* Child page links in the sidebar — smaller & lighter */
+.md-nav--primary .md-nav--secondary .md-nav__link,
+.md-nav--primary .md-nav .md-nav .md-nav__link {
+    font-size: 0.75rem;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* ── Content Area ─────────────────────────────────────────── */
+
+/* When navigation/toc are hidden (home page), the content area
+   must stretch to full width so inner centering works */
+.md-main__inner {
+    margin: 0 auto;
+}
+
+/* On pages without any sidebar, let content fill the space */
+.md-content {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Cap the readable width of the actual article text */
+.md-typeset {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ── Buttons & Links ──────────────────────────────────────── */
+a {
+    color: var(--md-primary-fg-color);
+}
+
+a:hover {
+    color: #33ebff;
+}
+
+.md-button--primary,
+a.md-content__button {
+    background: var(--md-primary-fg-color) !important;
+    color: #000 !important;
+    border-radius: 6px;
+    font-weight: 600;
+    padding: 0.6em 1.4em;
+    transition: all 0.2s ease;
+}
+
+.md-button--primary:hover,
+a.md-content__button:hover {
+    background: #33ebff !important;
+    box-shadow: 0 0 16px rgba(0, 229, 255, 0.3);
+}
+
+/* ── Feature Grid (Home Page) ─────────────────────────────── */
+.wf-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.2rem;
+    margin: 2rem 0;
+}
+
+.wf-card {
+    background: var(--wf-card-bg);
+    border: 1px solid var(--wf-card-border);
+    border-radius: 10px;
+    padding: 1.6rem;
+    transition: all 0.25s ease;
+}
+
+.wf-card:hover {
+    border-color: var(--md-primary-fg-color);
+    background: var(--wf-card-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 24px rgba(0, 229, 255, 0.08);
+}
+
+.wf-card h3 {
+    margin: 0 0 0.5rem 0;
+    color: var(--md-primary-fg-color);
+    font-size: 1.05rem;
+}
+
+.wf-card p {
+    margin: 0;
+    color: #aaa;
+    font-size: 0.92rem;
+    line-height: 1.55;
+}
+
+/* ── Hero Section ─────────────────────────────────────────── */
+.wf-hero {
+    text-align: center;
+    padding: 2rem 0 1rem;
+}
+
+.wf-hero h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #00E5FF, #00b8cc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.6rem;
+}
+
+.wf-hero .wf-subtitle {
+    color: #999;
+    font-size: 1.15rem;
+    margin-bottom: 1.5rem;
+}
+
+.wf-badge {
+    display: inline-block;
+    background: #00E5FF22;
+    color: var(--md-primary-fg-color);
+    border: 1px solid #00E5FF44;
+    border-radius: 20px;
+    padding: 0.25em 0.9em;
+    font-size: 0.82rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.wf-cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 1.5rem 0 2rem;
+}
+
+.wf-cta a {
+    display: inline-block;
+    padding: 0.7em 1.8em;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.wf-cta a.primary {
+    background: var(--md-primary-fg-color);
+    color: #000;
+}
+
+.wf-cta a.primary:hover {
+    background: #33ebff;
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.35);
+}
+
+.wf-cta a.secondary {
+    background: transparent;
+    color: var(--md-primary-fg-color);
+    border: 1px solid var(--md-primary-fg-color);
+}
+
+.wf-cta a.secondary:hover {
+    background: #00E5FF11;
+}
+
+/* ── Code Blocks ──────────────────────────────────────────── */
+.highlight pre,
+code {
+    border-radius: 6px;
+}
+
+.md-typeset code {
+    background: #1a1a1a;
+    border: 1px solid #252525;
+    padding: 0.15em 0.4em;
+    font-size: 0.85em;
+}
+
+.md-typeset pre code {
+    border: none;
+    padding: 0;
+}
+
+.highlight {
+    border: 1px solid #1e1e1e;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* ── Tables ───────────────────────────────────────────────── */
+.md-typeset table:not([class]) {
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.md-typeset table:not([class]) th {
+    background: #1a1a1a;
+    color: var(--md-primary-fg-color);
+    font-weight: 600;
+    border-bottom: 2px solid #00E5FF44;
+}
+
+.md-typeset table:not([class]) td {
+    border-bottom: 1px solid #1e1e1e;
+}
+
+.md-typeset table:not([class]) tr:nth-child(even) td {
+    background: #0f0f0f;
+}
+
+.md-typeset table:not([class]) tr:hover td {
+    background: #00E5FF08;
+}
+
+/* ── Admonitions ──────────────────────────────────────────── */
+.md-typeset .admonition,
+.md-typeset details {
+    border-radius: 8px;
+    border-left-width: 4px;
+    background: var(--wf-surface);
+}
+
+/* ── Image / Video Placeholders ───────────────────────────── */
+.md-typeset blockquote {
+    border-left: 3px solid var(--md-primary-fg-color);
+    background: #00E5FF08;
+    border-radius: 0 8px 8px 0;
+    padding: 0.8rem 1.2rem;
+    margin: 1.5rem 0;
+}
+
+/* ── Scrollbar ────────────────────────────────────────────── */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* ── Footer ───────────────────────────────────────────────── */
+.md-footer {
+    background: var(--wf-surface);
+    border-top: 1px solid #1a1a1a;
+}
+
+/* ── Media Placeholder Styling ────────────────────────────── */
+.wf-placeholder {
+    background: #111;
+    border: 2px dashed #333;
+    border-radius: 10px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    color: #666;
+    margin: 1.5rem 0;
+}
+
+.wf-placeholder .wf-placeholder-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.wf-placeholder p {
+    margin: 0.3rem 0 0;
+    font-size: 0.88rem;
+    font-style: italic;
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .wf-hero h1 {
+        font-size: 1.8rem;
+    }
+    .wf-grid {
+        grid-template-columns: 1fr;
+    }
+}

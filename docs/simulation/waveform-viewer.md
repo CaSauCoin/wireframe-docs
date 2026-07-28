@@ -143,7 +143,7 @@ Cursor Measurement Example:
      - Dark background consistent with the ImGui theme.
      SUGGESTED SIZE: 900×500px
 -->
-![Waveform Viewer With Cursors](../img/simulation/waveform-viewer-cursors.png)
+[//]: # (![Waveform Viewer Cursors](../img/simulation/waveform-viewer-cursors.png))
 
 ---
 

@@ -133,8 +133,21 @@ Eagle library files (`.lbr`) contain both symbols and footprints. When importing
 
 ---
 
+## Creating Custom Symbols
+
+Need a custom symbol not found in your libraries?
+
+- Use the interactive [Symbol Creator](symbol-creator.md) to draw custom symbols or generate IC symbols with the wizard.
+- Use the [Library Converter](library-converter.md) to bulk-convert Altium or KiCad libraries.
+- Use the [AI Component Generator](../ai/component-generator.md) to generate symbols directly from datasheets.
+
+---
+
 ## See Also
 
+- [Symbol Creator](symbol-creator.md) — create custom symbols manually or with the wizard.
+- [Library Converter](library-converter.md) — command-line converter for Altium/KiCad libraries.
+- [AI Component Generator](../ai/component-generator.md) — datasheet-based automatic symbol creation.
 - [Placing Components](../schematic/placing-components.md) — place symbols from loaded libraries.
 - [Footprint Libraries](footprints-library.md) — the PCB-side library counterpart.
 - [File Formats](../reference/file-formats.md) — KiCad `.kicad_sym` format details.

@@ -168,6 +168,8 @@ You can also export footprints from WireFrame to KiCad format:
 
 ## See Also
 
+- [Library Converter](library-converter.md) — bulk convert Altium/KiCad footprint libraries.
+- [AI Component Generator](../ai/component-generator.md) — AI-assisted footprint generation from datasheets.
 - [Footprints & Placement](../pcb/footprints-and-placement.md) — place footprints from loaded libraries.
 - [Symbol Libraries](symbols-library.md) — the schematic-side library counterpart.
 - [3D Viewer](../advanced/3d-viewer.md) — preview footprints with 3D models on the full board.

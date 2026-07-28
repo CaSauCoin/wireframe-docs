@@ -41,7 +41,7 @@ When you type a prompt (e.g., *"Design a 5V 1A buck converter with LM2596"*), th
      - Dark theme, clean modern UI.
      SUGGESTED SIZE: 400×500px (panel only)
 -->
-![Clarifying Questions](../img/ai/clarifying-questions.png)
+[//]: # (![Clarifying Questions](../img/ai/clarifying-questions.png))
 
 ### Phase 2: Design Generation
 
@@ -86,7 +86,7 @@ Lists all generated components:
      - Column headers: #, Designator, Part, Value, Footprint, Status.
      SUGGESTED SIZE: 700×400px
 -->
-![Component Review BOM](../img/ai/component-review-bom.png)
+[//]: # (![Component Review](../img/ai/component-review-bom.png))
 
 ### Netlist Tab
 

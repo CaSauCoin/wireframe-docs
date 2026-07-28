@@ -31,7 +31,7 @@ The Electrical Rules Check (ERC) scans your schematic for common connectivity an
      - The schematic canvas visible behind the panel with highlighted problem areas.
      SUGGESTED SIZE: 800×500px
 -->
-![ERC Panel Results](../img/schematic/erc-panel-results.png)
+[//]: # (![ERC Panel Results](../img/schematic/erc-panel-results.png))
 
 ---
 

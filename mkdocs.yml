@@ -119,8 +119,7 @@ nav:
 markdown_extensions:
   - admonition
   - pymdownx.details
-  - pymdownx.highlight:
-      anchor_linenums: true
+  - pymdownx.highlight
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences

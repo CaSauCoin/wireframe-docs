@@ -53,7 +53,7 @@ Before applying the placement, you can preview it in the **Placement Copilot** t
      - View mode toggle: "Block View" / "Whole Circuit" buttons visible.
      SUGGESTED SIZE: 800×500px
 -->
-![Placement Preview](../img/ai/placement-preview.png)
+[//]: # (![Placement Preview](../img/ai/placement-preview.png))
 
 ---
 

@@ -106,7 +106,7 @@ No parameters needed — calculates the single DC steady-state.
      - A progress bar at 0%.
      SUGGESTED SIZE: 400×350px
 -->
-![Simulation Controls](../img/simulation/simulation-controls.png)
+[//]: # (![Simulation Controls](../img/simulation/simulation-controls.png))
 
 ---
 
