@@ -44,6 +44,9 @@ extra:
     provider: mike
     default: stable
   social:
+    - icon: fontawesome/solid/globe
+      link: https://wireframe.com.vn
+      name: WireFrame Website (wireframe.com.vn)
     - icon: fontawesome/brands/github
       link: https://github.com/CaSauCoin/WireFrame_Product
       name: WireFrame on GitHub
