@@ -22,20 +22,7 @@ The Schematic Editor is where you **design your circuit**: place components, dra
 
 The schematic workspace consists of:
 
-```
-┌──────────────────────────────────────────────────────────────┐
-│  [Select][Wire][Label][Text][Line][Rect][Circle][GND][VCC]  │  ← Toolbar
-│ · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·  │
-│ · · ┌───────────────────────────────────────────────┐ · · · │
-│ · · │                   A4 Page                     │ · · · │
-│ · · │                                               │ · · · │
-│ · · │   R1         D1 (LED)      U1 (MCU)           │ · · · │
-│ · · │   ┤├──────────>|──────────[STM32]             │ · · · │
-│ · · │        330Ω              SDA SCL              │ · · · │
-│ · · │                                               │ · · · │
-│ · · └───────────────────────────────────────────────┘ · · · │
-└──────────────────────────────────────────────────────────────┘
-```
+![Schematic workspace](../img/schematic/workspace.png)
 
 - **Canvas** — dot grid with an A4 page outline (configurable to A3, custom). Place all components and wires here.
 - **Toolbar** — floating tool buttons above the canvas

@@ -137,35 +137,39 @@ WireFrame includes a **Gerber viewer** to inspect exported files without externa
     - Pad alignment and spacing
     - Board outline shape
 
-```
-Gerber Viewer — F.Cu preview:
+![Gerber Viewer](../img/fabrication/gerber-files.png)
 
-┌──────────────────────────────────┐
-│   ●════════════●                 │
-│   ●                 ●════════●  │
-│          ●══════●               │
-│   Pad    Trace  Pad             │
-└──────────────────────────────────┘
-  ↑ Visually confirm before sending to the manufacturer
-```
+Visually confirm trace continuity, pad flashes, apertures, and the board outline before sending the package to a manufacturer.
 
 ---
 
 ## Complete Export Workflow
 
+```mermaid
+flowchart TD
+    A[Run DFM/DRC] --> B{Zero release-blocking errors?}
+    B -->|No| C[Locate and fix violations]
+    C --> A
+    B -->|Yes| D[Generate fabrication package]
+    D --> E[Review Gerber X2 and drill outputs]
+    E --> F[Check IPC-D-356A, BOM, and manifest]
+    F --> G[Archive and send to manufacturer]
 ```
-DFM passes (0 red errors)
-       ↓
-Export Gerber → select layers → Export
-       ↓
-Export Drill → Export
-       ↓
-Export BOM → Export
-       ↓
-Open Gerber Viewer → verify F.Cu.gbr
-       ↓
-Compress to ZIP → send to manufacturer ✅
-```
+
+## Fabrication package contents
+
+The release workflow can generate a coordinated package rather than a set of unrelated exports:
+
+| Output | Purpose |
+|---|---|
+| **Gerber X2** | Copper, mask, silkscreen, and board geometry with generation metadata |
+| **PTH / NPTH drill files** | Separates plated electrical holes from unplated mechanical holes |
+| **IPC-D-356A netlist** | Electrical connectivity reference for fabrication test and CAM review |
+| **BOM CSV** | Designators, values, footprints, and placement layer |
+| **Manifest / README** | WireFrame version, generation time, and package inventory |
+
+!!! warning "Inspect the archive"
+    A successful export does not prove manufacturability. Confirm that Edge.Cuts is closed, drill classifications are correct, every expected layer is present, and the package matches the board revision being released.
 
 ---
 

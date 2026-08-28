@@ -16,15 +16,12 @@ Press ++x++ or click **Route Trace** on the PCB toolbar.
 4. **Click the destination pad** to complete the trace — the ratsnest line disappears
 5. Or **right-click** / ++esc++ to cancel
 
+```mermaid
+flowchart LR
+    A[U1 pin 3] -->|F.Cu routed trace| B[R1 pad 1]
 ```
-Example — routing U1 to R1:
 
-  [U1.Pin3]══════════════[R1.Pad1]
-               ↑
-       completed trace (red = F.Cu)
-
-  ╌╌╌╌╌╌ ratsnest line disappears once routed
-```
+The ratsnest connection disappears when the destination is electrically complete.
 
 | Action | Input |
 |---|---|
@@ -63,10 +60,10 @@ A via is a plated hole that connects **F.Cu and B.Cu**, allowing a trace to chan
 3. The active routing layer switches to **B.Cu**
 4. Continue routing on B.Cu from the via
 
-```
-  F.Cu:  [U1]══════●
-                    │  ← Via (through-hole)
-  B.Cu:             ●══════[R5]
+```mermaid
+flowchart LR
+    U[U1 on F.Cu] --> V((Through via))
+    V --> R[R5 on B.Cu]
 ```
 
 ### Manual via placement
@@ -108,6 +105,15 @@ Use the **Place Hole** tool to add **non-electrical** holes (screws, standoffs):
 | **Move an entire trace** | Select + drag |
 | **Drag a segment** | Click and drag a segment between two vertices |
 | **Delete a trace** | Select + ++delete++ (ratsnest reappears) |
+| **Move a segment** | Drag the selected segment; collision checks ignore only the segment being edited |
+| **Delete a segment** | Select the segment and delete it without removing unrelated route geometry |
+| **Align segments** | Use the alignment action to create a DRC-aware parallel offset |
+
+## Net classes and advanced rules
+
+Use **Tools → Design Rules** to assign width and clearance behavior by net class. Automatic rules can classify common power nets and serialize assignments with the board, while a manual net assignment takes precedence.
+
+For dense connections, multi-trace routing can move a group of traces with automatic node snapping and parallel polyline offsets. Always re-run DFM after an aligned or multi-trace edit.
 
 !!! info "Automatic net update"
     Deleting or modifying a trace marks the affected net as dirty → the ratsnest is automatically recomputed to show any missing connections.
@@ -122,12 +128,9 @@ After routing, WireFrame can **automatically clean up** trace geometry:
 - Simplifies short zig-zag segments
 - Makes 45° corners clean and precise
 
-```
-Before Gloss:          After Gloss:
-  ──╮                   ──╲
-    ╰──╮                   ╲──
-        ╰─                    ─
-  (redundant vertices)    (clean 45°)
+```mermaid
+flowchart LR
+    A[Route with redundant collinear vertices] -->|Gloss| B[Merged segments and clean 45° corners]
 ```
 
 Use: **context menu → Gloss** or the corresponding shortcut.

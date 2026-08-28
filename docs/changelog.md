@@ -4,7 +4,56 @@ All notable changes to WireFrame EDA are documented here. Versions follow [Seman
 
 ---
 
-## v1.3.7 — 2026-03-15 (Latest)
+## v1.5.47 — Upcoming release (2026-08-28)
+
+This release candidate expands WireFrame from capture-and-layout into an integrated design verification workflow.
+
+### Simulation and verification
+
+- Added the **Simulation Workbench** with transient, AC sweep, DC operating point, and DC sweep analyses.
+- Added the included ngspice simulator and optional support for ngspice CLI, Xyce, and LTspice.
+- Added **Blocks** selection so users can simulate one circuit section or the complete sheet.
+- Added DC, AC, Sine, Pulse, and PWL sources.
+- Added model checking, missing-model guidance, and vendor SPICE model import.
+- Added signal measurements, A/B measurement windows, waveform CSV export, simulation-log export, and schematic value overlays.
+- Added per-block or whole-sheet testbenches with loads, settling windows, assertions, and explicit **Pass / Fail / Not measured** results.
+- Added Copilot assistance for running simulations, measuring signals, and explaining failed checks.
+
+### AI Copilot and libraries
+
+- Added project-aware Copilot conversations that retain useful context between sessions.
+- Added functional-block recognition, electrical value reading, and clearer design findings.
+- Added reviewable pending schematic edits; proposed changes are shown before they are applied.
+- Added local PDF datasheet attachment for component and library research.
+- Expanded AI symbol and footprint creation with custom geometry, parametric connector/IC templates, previews, validation, and an interactive review step.
+- Improved Vietnamese language detection, localized Copilot behavior, and native macOS Vietnamese IME input.
+- Added a live progress window during KiCad project import.
+
+### PCB, DFM, and manufacturing
+
+- Improved interactive routing with obstacle avoidance, multi-trace routing, segment editing, alignment, snapping, and automatic cleanup.
+- Expanded net classes with automatic rules, advanced width/clearance settings, and manual assignments.
+- Added DFM progress reporting and improved clearance, via, and board-edge checks.
+- Added Gerber X2 metadata, separated plated/unplated drill outputs, IPC-D-356A electrical netlists, BOM improvements, and fabrication package manifests.
+- Added explicit unplated mechanical-pad support and improved annular-ring handling.
+- Improved copper-zone updates, cancellation, layer support, and teardrop handling.
+
+### Interface, platform, and 3D
+
+- Added a unified Preferences dialog for hotkeys, simulation defaults/engines, AI, PCB defaults, and 3D materials.
+- Added non-blocking notifications and more reliable panel layouts for each open document.
+- Added native macOS menu/title-bar integration and safer application shutdown handling.
+- Improved 3D board rendering with drilled holes, plated barrels, and configurable themes.
+- Improved installers and application packaging across supported platforms.
+
+### Release notes
+
+- The application title bar, About dialog, and generated manufacturing files now show a consistent version number.
+- Existing 1.3.x project files remain the baseline for compatibility testing; back up production projects before opening them in a release candidate.
+
+---
+
+## v1.3.7 — 2026-03-15
 
 ### Added
 - **SPICE Simulation** — full NgSpice integration for Transient, AC, DC Sweep, and Operating Point analyses with an interactive Waveform Viewer (oscilloscope, cursors, delta measurements).
@@ -104,4 +153,3 @@ All notable changes to WireFrame EDA are documented here. Versions follow [Seman
 - Docking layout with configurable panels.
 - File open/save infrastructure.
 - Empty editor canvas with pan and zoom.
-

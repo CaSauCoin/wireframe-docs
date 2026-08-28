@@ -10,11 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://guideline-one.vercel.app/tutorial/ai-design/">
+        <link rel="canonical" href="https://guideline-one.vercel.app/simulation/testbenches-and-measurements/">
       
       
-        <link rel="prev" href="../">
+        <link rel="prev" href="../waveform-viewer/">
       
+      
+        <link rel="next" href="../engines-and-models/">
       
       
         
@@ -25,7 +27,7 @@
     
     
       
-        <title>AI-Assisted Design - WireFrame EDA Documentation</title>
+        <title>Testbenches & Measurements - WireFrame EDA Documentation</title>
       
     
     
@@ -76,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tutorial-ai-assisted-circuit-design" class="md-skip">
+        <a href="#testbenches-and-measurements" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              AI-Assisted Design
+              Testbenches & Measurements
             
           </span>
         </div>
@@ -247,11 +249,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../simulation/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
   
@@ -379,13 +383,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../tutorial/" class="md-tabs__link">
           
   
   
@@ -908,6 +910,8 @@
       
   
   
+    
+  
   
   
     
@@ -929,22 +933,23 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../simulation/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -962,13 +967,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -988,7 +993,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../simulation/running-simulation/" class="md-nav__link">
+      <a href="../running-simulation/" class="md-nav__link">
         
   
   
@@ -1016,7 +1021,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../simulation/waveform-viewer/" class="md-nav__link">
+      <a href="../waveform-viewer/" class="md-nav__link">
         
   
   
@@ -1041,10 +1046,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../simulation/testbenches-and-measurements/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testbenches & Measurements
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1060,6 +1092,120 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a-simple-verification-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A simple verification workflow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-a-load" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add a load
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-an-acceptance-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add an acceptance check
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Add an acceptance check">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-measurements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common measurements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exclude-startup-from-a-steady-state-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exclude startup from a steady-state check
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understand-the-result" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Understand the result
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ask-copilot-for-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ask Copilot for help
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#before-moving-to-pcb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Before moving to PCB
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1072,7 +1218,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../simulation/engines-and-models/" class="md-nav__link">
+      <a href="../engines-and-models/" class="md-nav__link">
         
   
   
@@ -2105,8 +2251,6 @@
       
   
   
-    
-  
   
   
     
@@ -2122,23 +2266,22 @@
     
     
       
-        
-        
-      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../tutorial/" class="md-nav__link ">
               
   
   
@@ -2156,13 +2299,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_10" id="__nav_10_label" tabindex="">
+              <label class="md-nav__link " for="__nav_10" id="__nav_10_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2179,37 +2322,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    AI-Assisted Design
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../tutorial/ai-design/" class="md-nav__link">
         
   
   
@@ -2225,287 +2341,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#what-you-will-learn" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What You Will Learn
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Prerequisites
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-1-configure-ai-and-create-a-project" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 1 — Configure AI and Create a Project
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 1 — Configure AI and Create a Project">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#set-up-api-key" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Set up API key
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#create-a-project" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Create a project
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-2-describe-your-circuit-to-the-ai" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 2 — Describe Your Circuit to the AI
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-3-answer-clarifying-questions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 3 — Answer Clarifying Questions
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-4-review-the-generated-design" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 4 — Review the Generated Design
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 4 — Review the Generated Design">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#expected-bom" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Expected BOM
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#expected-netlist" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Expected Netlist
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-5-verify-with-simulation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 5 — Verify with Simulation
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 5 — Verify with Simulation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#expected-waveforms" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Expected waveforms
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-6-place-and-route" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 6 — Place and Route
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 6 — Place and Route">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#auto-place" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Auto-Place
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#convert-to-pcb" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Convert to PCB
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#auto-route" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Auto-Route
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-7-dfm-check-and-export" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 7 — DFM Check and Export
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 7 — DFM Check and Export">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#run-dfm" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Run DFM
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#export" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Export
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#done" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Done!
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#see-also" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        See Also
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2545,10 +2380,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-you-will-learn" class="md-nav__link">
+  <a href="#a-simple-verification-workflow" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What You Will Learn
+        A simple verification workflow
       
     </span>
   </a>
@@ -2556,10 +2391,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
+  <a href="#add-a-load" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Prerequisites
+        Add a load
       
     </span>
   </a>
@@ -2567,33 +2402,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-1-configure-ai-and-create-a-project" class="md-nav__link">
+  <a href="#add-an-acceptance-check" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1 — Configure AI and Create a Project
+        Add an acceptance check
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Step 1 — Configure AI and Create a Project">
+    <nav class="md-nav" aria-label="Add an acceptance check">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#set-up-api-key" class="md-nav__link">
+  <a href="#common-measurements" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Set up API key
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#create-a-project" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Create a project
+        Common measurements
       
     </span>
   </a>
@@ -2606,10 +2430,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2-describe-your-circuit-to-the-ai" class="md-nav__link">
+  <a href="#exclude-startup-from-a-steady-state-check" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 2 — Describe Your Circuit to the AI
+        Exclude startup from a steady-state check
       
     </span>
   </a>
@@ -2617,10 +2441,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-answer-clarifying-questions" class="md-nav__link">
+  <a href="#understand-the-result" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 3 — Answer Clarifying Questions
+        Understand the result
       
     </span>
   </a>
@@ -2628,166 +2452,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-review-the-generated-design" class="md-nav__link">
+  <a href="#ask-copilot-for-help" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 4 — Review the Generated Design
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 4 — Review the Generated Design">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#expected-bom" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Expected BOM
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#expected-netlist" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Expected Netlist
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-5-verify-with-simulation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 5 — Verify with Simulation
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 5 — Verify with Simulation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#expected-waveforms" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Expected waveforms
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-6-place-and-route" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 6 — Place and Route
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 6 — Place and Route">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#auto-place" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Auto-Place
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#convert-to-pcb" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Convert to PCB
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#auto-route" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Auto-Route
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-7-dfm-check-and-export" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 7 — DFM Check and Export
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 7 — DFM Check and Export">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#run-dfm" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Run DFM
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#export" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Export
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#done" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Done!
+        Ask Copilot for help
       
     </span>
   </a>
@@ -2795,10 +2463,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#see-also" class="md-nav__link">
+  <a href="#before-moving-to-pcb" class="md-nav__link">
     <span class="md-ellipsis">
       
-        See Also
+        Before moving to PCB
       
     </span>
   </a>
@@ -2822,340 +2490,124 @@
 
 
 
-<h1 id="tutorial-ai-assisted-circuit-design">Tutorial: AI-Assisted Circuit Design<a class="headerlink" href="#tutorial-ai-assisted-circuit-design" title="Permanent link">&para;</a></h1>
-<p>This tutorial demonstrates the <strong>AI Copilot workflow</strong> — design a circuit entirely through conversation with the AI agent. We'll create a 555 Timer LED blinker, verify it with SPICE simulation, and export manufacturing files.</p>
-<p><strong>What you will build:</strong> A complete NE555 astable oscillator with an LED blinking at approximately 1 Hz — designed, verified, placed, and routed with AI assistance.</p>
-<!-- TODO: Replace with actual screenshot
-     SCENARIO: Capture the finished design showing both the schematic (with NE555,
-     resistors, capacitor, LED) and the PCB (routed board) side by side.
-     The AI Copilot Panel visible on the side with the conversation history.
-     SUGGESTED SIZE: 1280×720px
--->
-<hr />
-<h2 id="what-you-will-learn">What You Will Learn<a class="headerlink" href="#what-you-will-learn" title="Permanent link">&para;</a></h2>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Configure the AI Copilot API key</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Describe a circuit in plain text</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Answer AI clarifying questions</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Review AI-generated BOM and netlist</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Verify the design with SPICE simulation</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Auto-place components and auto-route traces</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Export Gerber and BOM files</li>
-</ul>
-<hr />
-<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<h1 id="testbenches-and-measurements">Testbenches and Measurements<a class="headerlink" href="#testbenches-and-measurements" title="Permanent link">&para;</a></h1>
+<p>A waveform tells you what happened. A testbench lets you record what the circuit should do and asks WireFrame to check it after every run.</p>
+<h2 id="a-simple-verification-workflow">A simple verification workflow<a class="headerlink" href="#a-simple-verification-workflow" title="Permanent link">&para;</a></h2>
+<pre class="mermaid"><code>flowchart LR
+    A[Add the expected load] --&gt; B[Choose a signal]
+    B --&gt; C[Set an acceptable limit]
+    C --&gt; D[Run the simulation]
+    D --&gt; E{Result}
+    E --&gt;|Pass| F[Requirement satisfied]
+    E --&gt;|Fail| G[Inspect and correct the circuit]
+    E --&gt;|Not measured| H[Check the signal and analysis]</code></pre>
+<p>Open the Simulation Workbench and select the <strong>Testbench</strong> tab. The heading shows whether you are editing the whole-sheet testbench or one selected circuit block.</p>
+<h2 id="add-a-load">Add a load<a class="headerlink" href="#add-a-load" title="Permanent link">&para;</a></h2>
+<p>Real circuits must power something. An output with no load can look better than it will in the final product.</p>
+<ol>
+<li>Under <strong>Loads</strong>, choose the output net.</li>
+<li>Click <strong>Add</strong>.</li>
+<li>Enter the load required by your design.</li>
+<li>Run the simulation again.</li>
+</ol>
+<p>Use values taken from the product requirement, connected device, or component datasheet.</p>
+<h2 id="add-an-acceptance-check">Add an acceptance check<a class="headerlink" href="#add-an-acceptance-check" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Under <strong>Assertions</strong>, click <strong>Add</strong>.</li>
+<li>Choose the signal to check.</li>
+<li>Choose a measurement.</li>
+<li>Select <strong>Within</strong>, <strong>At most</strong>, or <strong>At least</strong>.</li>
+<li>Enter the required value and tolerance.</li>
+<li>Run the simulation.</li>
+</ol>
+<h3 id="common-measurements">Common measurements<a class="headerlink" href="#common-measurements" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>Requirement</th>
-<th>Details</th>
+<th>Measurement</th>
+<th>Example use</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>WireFrame</strong></td>
-<td>Installed and activated</td>
+<td>Minimum / Maximum</td>
+<td>Make sure a rail never leaves its safe range</td>
 </tr>
 <tr>
-<td><strong>API Key</strong></td>
-<td>An <a href="https://openrouter.ai/">OpenRouter</a> API key (free tier available)</td>
+<td>Peak-to-peak</td>
+<td>Check total ripple or signal swing</td>
 </tr>
 <tr>
-<td><strong>NgSpice</strong></td>
-<td>Installed for simulation verification (see <a href="../../simulation/engines-and-models/#connect-an-external-simulator">Simulation Engines and Models</a>)</td>
+<td>Mean</td>
+<td>Check the average DC output</td>
+</tr>
+<tr>
+<td>RMS / AC RMS</td>
+<td>Check signal level or ripple without the DC component</td>
+</tr>
+<tr>
+<td>Frequency / Period</td>
+<td>Verify an oscillator or clock</td>
+</tr>
+<tr>
+<td>Duty cycle</td>
+<td>Verify a PWM output</td>
+</tr>
+<tr>
+<td>Rise / Fall time</td>
+<td>Check switching speed</td>
+</tr>
+<tr>
+<td>Overshoot</td>
+<td>Check startup or edge quality</td>
 </tr>
 </tbody>
 </table>
-<hr />
-<h2 id="step-1-configure-ai-and-create-a-project">Step 1 — Configure AI and Create a Project<a class="headerlink" href="#step-1-configure-ai-and-create-a-project" title="Permanent link">&para;</a></h2>
-<h3 id="set-up-api-key">Set up API key<a class="headerlink" href="#set-up-api-key" title="Permanent link">&para;</a></h3>
-<ol>
-<li>Open WireFrame.</li>
-<li>Go to <strong>View → AI Copilot</strong> to open the AI panel.</li>
-<li>Click the <strong>⚙ Settings</strong> icon in the panel header.</li>
-<li>Enter your OpenRouter API key.</li>
-<li>Click <strong>Save</strong>.</li>
-</ol>
-<h3 id="create-a-project">Create a project<a class="headerlink" href="#create-a-project" title="Permanent link">&para;</a></h3>
-<ol>
-<li>Go to <strong>File → New Project…</strong></li>
-<li>Name it <code>NE555_Blinker.prjxml</code>.</li>
-<li>Click <strong>Create</strong>.</li>
-</ol>
-<hr />
-<h2 id="step-2-describe-your-circuit-to-the-ai">Step 2 — Describe Your Circuit to the AI<a class="headerlink" href="#step-2-describe-your-circuit-to-the-ai" title="Permanent link">&para;</a></h2>
-<p>In the AI Copilot chat input, type:</p>
-<div class="highlight"><pre><span></span><code>Design a 555 timer LED blinker circuit.
-The LED should blink at approximately 1 Hz.
-Power supply: 9V battery.
-Use a red LED with a current-limiting resistor.
-</code></pre></div>
-<p>Press <strong>Enter</strong> to send.</p>
-<!-- TODO: Replace with actual screenshot
-     SCENARIO: Capture the AI Copilot Panel showing:
-     - The user's message visible in the chat history.
-     - The AI responding with "Researching your request..." and a thinking animation.
-     - Thinking stages showing: "Analyzing requirements", "Researching NE555 datasheet".
-     SUGGESTED SIZE: 400×500px (panel only)
--->
-<hr />
-<h2 id="step-3-answer-clarifying-questions">Step 3 — Answer Clarifying Questions<a class="headerlink" href="#step-3-answer-clarifying-questions" title="Permanent link">&para;</a></h2>
-<p>The AI may ask clarifying questions:</p>
-<div class="highlight"><pre><span></span><code>┌─────────────────────────────────────────┐
-│ AI: Before I design, a few questions:    │
-│                                          │
-│ 1. LED color preference?                 │
-│    [● Red]  [○ Green]  [○ Blue]         │
-│                                          │
-│ 2. Duty cycle?                           │
-│    [● 50%]  [○ 30%]  [○ 70%]           │
-│                                          │
-│ 3. Include on/off switch?                │
-│    [● No]  [○ Yes]                      │
-│                                          │
-│ [Continue with selected options →]       │
-└─────────────────────────────────────────┘
-</code></pre></div>
-<p>Select your preferences and click <strong>Continue</strong>.</p>
-<hr />
-<h2 id="step-4-review-the-generated-design">Step 4 — Review the Generated Design<a class="headerlink" href="#step-4-review-the-generated-design" title="Permanent link">&para;</a></h2>
-<p>The AI generates a BOM and netlist. The <strong>Component Review</strong> window opens:</p>
-<h3 id="expected-bom">Expected BOM<a class="headerlink" href="#expected-bom" title="Permanent link">&para;</a></h3>
+<h2 id="exclude-startup-from-a-steady-state-check">Exclude startup from a steady-state check<a class="headerlink" href="#exclude-startup-from-a-steady-state-check" title="Permanent link">&para;</a></h2>
+<p>If the requirement applies only after startup, set a settled measurement window. You can also enable A/B cursors in <strong>Signals</strong> and measure only the interval between them.</p>
+<p>For example, check the average <code>VOUT</code> after the regulator has settled instead of including its initial rise from 0 V.</p>
+<h2 id="understand-the-result">Understand the result<a class="headerlink" href="#understand-the-result" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>#</th>
-<th>Designator</th>
-<th>Part</th>
-<th>Value</th>
-<th>Purpose</th>
+<th>Result</th>
+<th>Meaning</th>
+<th>What to do next</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>1</td>
-<td>U1</td>
-<td>NE555</td>
-<td>—</td>
-<td>Timer IC</td>
+<td><strong>Pass</strong></td>
+<td>The measured value meets your limit</td>
+<td>Keep the check and continue</td>
 </tr>
 <tr>
-<td>2</td>
-<td>R1</td>
-<td>Resistor</td>
-<td>6.8kΩ</td>
-<td>Timing resistor (charge path)</td>
+<td><strong>Fail</strong></td>
+<td>The measured value is outside your limit</td>
+<td>Inspect the waveform, source, load, and circuit</td>
 </tr>
 <tr>
-<td>3</td>
-<td>R2</td>
-<td>Resistor</td>
-<td>6.8kΩ</td>
-<td>Timing resistor (charge + discharge)</td>
-</tr>
-<tr>
-<td>4</td>
-<td>R3</td>
-<td>Resistor</td>
-<td>330Ω</td>
-<td>LED current limiter</td>
-</tr>
-<tr>
-<td>5</td>
-<td>C1</td>
-<td>Capacitor</td>
-<td>100µF</td>
-<td>Timing capacitor</td>
-</tr>
-<tr>
-<td>6</td>
-<td>C2</td>
-<td>Capacitor</td>
-<td>10nF</td>
-<td>Control voltage bypass</td>
-</tr>
-<tr>
-<td>7</td>
-<td>D1</td>
-<td>LED</td>
-<td>Red</td>
-<td>Visual indicator</td>
-</tr>
-<tr>
-<td>8</td>
-<td>J1</td>
-<td>Connector</td>
-<td>2-pin</td>
-<td>Battery connection</td>
+<td><strong>Not measured</strong></td>
+<td>WireFrame could not calculate the requested value</td>
+<td>Check the selected signal, analysis, and measurement window</td>
 </tr>
 </tbody>
 </table>
-<h3 id="expected-netlist">Expected Netlist<a class="headerlink" href="#expected-netlist" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>Net "VCC":    J1.Pin1 → U1.VCC(8) → U1.RESET(4) → R1.Pad1
-Net "GND":    J1.Pin2 → U1.GND(1) → C1.Pad2 → C2.Pad2 → D1.K
-Net "DISCH":  U1.DISCH(7) → R1.Pad2 → R2.Pad1
-Net "THRES":  U1.THRES(6) → U1.TRIG(2) → R2.Pad2 → C1.Pad1
-Net "OUT":    U1.OUT(3) → R3.Pad1
-Net "LED":    R3.Pad2 → D1.A
-Net "CTRL":   U1.CTRL(5) → C2.Pad1
-</code></pre></div>
-<!-- TODO: Replace with actual screenshot
-     SCENARIO: Capture the Component Review window showing:
-     - BOM tab with 8 components listed, all showing ✅ status.
-     - Netlist tab visible with connection details.
-     - The schematic preview showing the 555 timer circuit topology.
-     SUGGESTED SIZE: 800×550px
--->
-<hr />
-<h2 id="step-5-verify-with-simulation">Step 5 — Verify with Simulation<a class="headerlink" href="#step-5-verify-with-simulation" title="Permanent link">&para;</a></h2>
-<ol>
-<li>In the Component Review window, click <strong>Verify with Simulation</strong>.</li>
-<li>The AI configures a transient analysis:<ul>
-<li>Stop time: 3 seconds (to see multiple blink cycles)</li>
-<li>Step size: 1 ms</li>
-</ul>
-</li>
-<li>The simulation runs in the background.</li>
-<li>Results appear in the Waveform Viewer:<ul>
-<li><strong>v(OUT)</strong>: Square wave at ~1 Hz (the 555 output)</li>
-<li><strong>v(THRES)</strong>: Sawtooth charging/discharging of the timing capacitor</li>
-</ul>
-</li>
-</ol>
-<h3 id="expected-waveforms">Expected waveforms<a class="headerlink" href="#expected-waveforms" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>v(OUT):   ┌──┐  ┌──┐  ┌──┐
-          │  │  │  │  │  │
-     ─────┘  └──┘  └──┘  └──  ← Square wave at ~1 Hz
-
-v(THRES): /╲  /╲  /╲
-         /  ╲/  ╲/  ╲         ← Charging/discharging between 1/3 and 2/3 VCC
-</code></pre></div>
-<div class="admonition success">
-<p class="admonition-title">Simulation passes</p>
-<p>If the output frequency is approximately 1 Hz and the waveform is a clean square wave, the design is verified. The AI confirms: <em>"Simulation passed — output frequency: 1.04 Hz"</em>.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><strong>Not measured</strong> is not a pass. Also, WireFrame does not assume what a “good” value should be—you must enter the requirement you want to verify.</p>
 </div>
-<!-- TODO: Replace with actual screenshot
-     SCENARIO: Capture the Waveform Viewer showing:
-     - v(OUT) as a square wave (cyan trace).
-     - v(THRES) as a sawtooth wave (yellow trace).
-     - Time axis showing 0 to 3 seconds.
-     - Cursors placed on two consecutive rising edges showing Δt ≈ 1s.
-     SUGGESTED SIZE: 900×450px
--->
-<hr />
-<h2 id="step-6-place-and-route">Step 6 — Place and Route<a class="headerlink" href="#step-6-place-and-route" title="Permanent link">&para;</a></h2>
-<h3 id="auto-place">Auto-Place<a class="headerlink" href="#auto-place" title="Permanent link">&para;</a></h3>
-<ol>
-<li>Click <strong>Add to Project</strong> in the Component Review window.</li>
-<li>The AI auto-places components on the schematic:<ul>
-<li>U1 (NE555) in the center.</li>
-<li>Timing components (R1, R2, C1) on the left.</li>
-<li>Output components (R3, D1) on the right.</li>
-<li>Power components (J1, C2) at the edges.</li>
+<h2 id="ask-copilot-for-help">Ask Copilot for help<a class="headerlink" href="#ask-copilot-for-help" title="Permanent link">&para;</a></h2>
+<p>When Copilot is connected, select <strong>Ask why</strong> beside a failed or unmeasured result. Copilot receives the current signal, testbench, and result so it can help you investigate.</p>
+<p>Review the explanation against the waveform and datasheet before changing the circuit.</p>
+<h2 id="before-moving-to-pcb">Before moving to PCB<a class="headerlink" href="#before-moving-to-pcb" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Use the same supply voltage and load expected in the final product.</li>
+<li>Add checks for every important output.</li>
+<li>Separate startup requirements from steady-state requirements.</li>
+<li>Resolve every <strong>Fail</strong> and <strong>Not measured</strong> result.</li>
+<li>Save a CSV when you need to share verification evidence.</li>
 </ul>
-</li>
-</ol>
-<h3 id="convert-to-pcb">Convert to PCB<a class="headerlink" href="#convert-to-pcb" title="Permanent link">&para;</a></h3>
-<ol>
-<li>Go to <strong>Project → Convert to PCB</strong>.</li>
-<li>Footprints appear on the PCB with ratsnest lines.</li>
-</ol>
-<h3 id="auto-route">Auto-Route<a class="headerlink" href="#auto-route" title="Permanent link">&para;</a></h3>
-<ol>
-<li>Click <strong>Auto-Route</strong> (or use the AI panel's routing action).</li>
-<li>The A* router processes all connections.</li>
-<li>Traces appear on the board — ratsnest lines disappear.</li>
-</ol>
-<!-- TODO: Replace with actual video
-     SCENARIO: Record a 20-second clip showing:
-     1. Click "Add to Project" — schematic fills with placed components.
-     2. Click "Convert to PCB" — PCB tab opens with footprints.
-     3. Click "Auto-Route" — traces route automatically, progress bar visible.
-     4. Final board shown fully routed.
-     RESOLUTION: 1280×720 at 30fps.
--->
-<video controls width="100%">
-  <source src="../../img/tutorial/ai-step6-place-route.webm" type="video/webm">
-  <source src="../../img/tutorial/ai-step6-place-route.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
-<hr />
-<h2 id="step-7-dfm-check-and-export">Step 7 — DFM Check and Export<a class="headerlink" href="#step-7-dfm-check-and-export" title="Permanent link">&para;</a></h2>
-<h3 id="run-dfm">Run DFM<a class="headerlink" href="#run-dfm" title="Permanent link">&para;</a></h3>
-<ol>
-<li>Go to <strong>Tools → DFM Check</strong>.</li>
-<li>Click <strong>Run DFM</strong> — verify 0 errors.</li>
-</ol>
-<h3 id="export">Export<a class="headerlink" href="#export" title="Permanent link">&para;</a></h3>
-<ol>
-<li><strong>Gerber</strong>: File → Export → Gerber → select layers → Export.</li>
-<li><strong>BOM</strong>: File → Export → BOM → save as CSV.</li>
-<li><strong>Verify</strong>: Tools → Gerber Viewer → open F.Cu.gbr.</li>
-</ol>
-<hr />
-<h2 id="done">Done! <span class="twemoji" style="color: #00E5FF"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m23 12-2.44-2.78.34-3.68-3.61-.82-1.89-3.18L12 3 8.6 1.54 6.71 4.72l-3.61.81.34 3.68L1 12l2.44 2.78-.34 3.69 3.61.82 1.89 3.18L12 21l3.4 1.46 1.89-3.18 3.61-.82-.34-3.68zm-13 5-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9z"/></svg></span><a class="headerlink" href="#done" title="Permanent link">&para;</a></h2>
-<p>You've completed an AI-assisted design cycle:</p>
-<div class="highlight"><pre><span></span><code>Prompt → Research → Clarify → Design → Simulate → Place → Route → Export
-</code></pre></div>
-<table>
-<thead>
-<tr>
-<th>Deliverable</th>
-<th>File</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Project</td>
-<td><code>NE555_Blinker.prjxml</code></td>
-</tr>
-<tr>
-<td>Schematic</td>
-<td><code>NE555_Blinker.schxml</code></td>
-</tr>
-<tr>
-<td>PCB</td>
-<td><code>NE555_Blinker.pcbxml</code></td>
-</tr>
-<tr>
-<td>Gerber files</td>
-<td><code>F.Cu.gbr</code>, <code>F.SilkS.gbr</code>, <code>F.Mask.gbr</code>, <code>Edge.Cuts.gbr</code></td>
-</tr>
-<tr>
-<td>BOM</td>
-<td><code>NE555_Blinker_BOM.csv</code></td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Topic</th>
-<th>Link</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>AI Copilot full guide</td>
-<td><a href="../../ai/">AI Copilot Overview</a></td>
-</tr>
-<tr>
-<td>Manual simulation</td>
-<td><a href="../../simulation/">Simulation Guide</a></td>
-</tr>
-<tr>
-<td>Manual routing</td>
-<td><a href="../../pcb/routing/">PCB Routing</a></td>
-</tr>
-<tr>
-<td>NE555 manual tutorial</td>
-<td><a href="../">NE555 LED Blinker Tutorial</a></td>
-</tr>
-</tbody>
-</table>
 
 
 
@@ -3193,7 +2645,7 @@ v(THRES): /╲  /╲  /╲
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: NE555 LED Blinker">
+          <a href="../waveform-viewer/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Waveform Viewer">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -3203,11 +2655,27 @@ v(THRES): /╲  /╲  /╲
                 Previous
               </span>
               <div class="md-ellipsis">
-                NE555 LED Blinker
+                Waveform Viewer
               </div>
             </div>
           </a>
         
+        
+          
+          <a href="../engines-and-models/" class="md-footer__link md-footer__link--next" aria-label="Next: Engines &amp; SPICE Models">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Engines & SPICE Models
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
         
       </nav>
     

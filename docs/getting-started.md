@@ -40,20 +40,7 @@ On startup, WireFrame automatically **restores any open projects and documents**
 
 After launching, you will see the following layout:
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│  [File]  [Edit]  [View]  [Project]  [Tools]  [Help]         │  ← Menu bar
-├──────────────┬──────────────────────────┬───────────────────┤
-│              │                          │  📚 Library       │
-│  📁 Project  │    Canvas (Editor)       │    R              │
-│  Structure   │                          │    C              │
-│              │   ← Design your circuit  │    LED            │
-│  MyBoard     │     here                 │    STM32F103      │
-│  ├ main.sch  │                          ├───────────────────┤
-│  └ board.pcb │                          │  🔧 Properties    │
-│              │                          │    R1: 10kΩ       │
-└──────────────┴──────────────────────────┴───────────────────┘
-```
+![WireFrame initial layout](img/getting-started/initial-layout.png)
 
 | Area | Default position | Purpose |
 |---|---|---|
@@ -86,13 +73,7 @@ WireFrame automatically creates:
 - `MyBoard.prjxml` — stores references to all schematics and PCBs
 - A `lib/` folder for local libraries
 
-The **Project Structure** panel immediately shows your new (empty) project:
-
-```
-📁 MyBoard.prjxml
-  ├─ 📄 Schematics  (empty)
-  └─ 📄 PCBs        (empty)
-```
+The **Project Structure** panel immediately shows your new project with empty **Schematics** and **PCBs** groups.
 
 ---
 
@@ -109,18 +90,7 @@ Press **Ctrl+S** to save → name the file `.schxml`, for example: `main.schxml`
 
 The schematic canvas looks like this:
 
-```
-┌─────────────────── Schematic Canvas ────────────────────────┐
-│  [Select][Wire][Label][Text][Line][Rect][Circle][GND][VCC]  │  ← Toolbar
-│ · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·  │
-│ · · · · ┌─────────────────────────────────────────────┐ · · │
-│ · · · · │                  A4 Page                   │ · · │
-│ · · · · │                                             │ · · │
-│ · · · · │   (Place components and draw wires here)   │ · · │
-│ · · · · │                                             │ · · │
-│ · · · · └─────────────────────────────────────────────┘ · · │
-└─────────────────────────────────────────────────────────────┘
-```
+![Empty schematic canvas](img/getting-started/empty-schematic.png)
 
 ---
 
@@ -135,17 +105,7 @@ The schematic canvas looks like this:
 
 The PCB canvas looks like this:
 
-```
-┌─────────────────── PCB Canvas ──────────────────────────────┐
-│  [Select][Place][Route][Via][Hole][Line][Rect][Text][Measure]│  ← Toolbar
-│ · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·  │
-│ · ┌─────────────────────────────────────────────────┐ · · · │
-│ · │                  Board Area                     │ · · · │
-│ · │   [R1]╌╌╌╌╌╌╌[U1]╌╌╌╌╌╌╌[J1]                  │ · · · │
-│ · │    ↑ ratsnest: unrouted connection lines        │ · · · │
-│ · └─────────────────────────────────────────────────┘ · · · │
-└─────────────────────────────────────────────────────────────┘
-```
+![Empty PCB canvas](img/getting-started/empty-pcb.png)
 
 ---
 

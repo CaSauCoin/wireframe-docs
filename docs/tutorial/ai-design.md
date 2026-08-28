@@ -32,7 +32,7 @@ This tutorial demonstrates the **AI Copilot workflow** — design a circuit enti
 |---|---|
 | **WireFrame** | Installed and activated |
 | **API Key** | An [OpenRouter](https://openrouter.ai/) API key (free tier available) |
-| **NgSpice** | Installed for simulation verification (see [Simulation — Prerequisites](../simulation/index.md#prerequisites)) |
+| **NgSpice** | Installed for simulation verification (see [Simulation Engines and Models](../simulation/engines-and-models.md#connect-an-external-simulator)) |
 
 ---
 

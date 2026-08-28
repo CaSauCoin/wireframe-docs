@@ -1,28 +1,23 @@
-# Tutorial: Design & Simulate an NE555 Circuit
+# Tutorial: Design a Simple LED Circuit
 
-This step-by-step tutorial walks you through the complete WireFrame workflow — from creating a project and drawing a schematic to **running a SPICE simulation**, layout, routing, and exporting Gerber files — using an **NE555 LED Blinker circuit**.
+This step-by-step tutorial walks you through the complete WireFrame workflow — from creating a project to exporting Gerber files — using a **simple LED circuit** with a resistor and a connector.
 
-**What you will build:** A complete NE555 astable oscillator board with an LED blinking at 1 Hz — verified with SPICE simulation and fully routed for fabrication.
+**What you will build:** A basic single-layer PCB with one LED, one current-limiting resistor, and a 2-pin connector — fully routed and ready for fabrication.
 
-<!-- TODO: Replace with actual screenshot
-     SCENARIO: Capture the finished NE555 LED Blinker PCB showing the components
-     (NE555 IC, resistors R1/R2/R3, capacitors C1/C2, LED D1, terminal J1) routed
-     with copper traces. Show both the 2D PCB view and the 3D Viewer side by side.
-     SUGGESTED SIZE: 900×400px
--->
 ![Final Result](../img/tutorial/final-result.png)
+
 
 ---
 
 ## What You Will Learn
 
-- [x] Create a project and load component libraries
-- [x] Place components and wire an NE555 astable oscillator schematic
-- [x] **Run a SPICE simulation** and measure waveforms in the Waveform Viewer
-- [x] Run **ERC (Electrical Rules Check)** on the schematic
-- [x] Convert schematic to PCB layout
-- [x] Place footprints, define board outline, and route copper traces
-- [x] Run DFM checks and export Gerber & BOM files
+- [x] Create a project and load libraries
+- [x] Place components and wire them in the schematic editor
+- [x] Convert the schematic to a PCB
+- [x] Place footprints and define the board outline
+- [x] Route traces and add a ground plane
+- [x] Run DFM checks
+- [x] Export Gerber and BOM files
 
 ---
 
@@ -31,8 +26,10 @@ This step-by-step tutorial walks you through the complete WireFrame workflow —
 | Requirement | Details |
 |---|---|
 | **WireFrame** | Installed and activated ([Installation guide](../installation.md)) |
-| **NgSpice** | Installed for SPICE simulation ([Simulation setup](../simulation/index.md#prerequisites)) |
-| **Libraries** | KiCad symbol (`.kicad_sym`) and footprint (`.kicad_mod`) libraries |
+| **Libraries** | At least one KiCad symbol (`.kicad_sym`) and footprint (`.kicad_mod`) library containing R, LED, and Conn_01x02 |
+
+!!! tip "Don't have libraries?"
+    You can download free KiCad libraries from [https://www.kicad.org/libraries/](https://www.kicad.org/libraries/) — WireFrame loads them natively.
 
 ---
 
@@ -40,219 +37,268 @@ This step-by-step tutorial walks you through the complete WireFrame workflow —
 
 1. Launch WireFrame.
 2. Go to **File → New Project…**
-3. Name your project `NE555_Blinker.prjxml`.
+3. Choose a folder and name it `LED_Board.prjxml`.
 4. Click **Create**.
 
-The **Project Structure** panel now displays your project root node.
+The **Project Structure** panel now shows your empty project.
 
-<!-- TODO: Replace with actual screenshot
-     SCENARIO: Capture the Project Structure panel showing "NE555_Blinker.prjxml" expanded.
-     SUGGESTED SIZE: 300×200px
--->
 ![Step1 New Project](../img/tutorial/step1-new-project.png)
 
+
+!!! tip "Importing from other EDA tools"
+    Already have a design in KiCad, Altium, or Eagle? Use **File → Import** instead. See [Projects & Files — Importing](../projects.md#importing-projects-from-other-eda-tools) for details.
+
 ---
 
-## Step 2 — Draw the NE555 Schematic
+## Step 2 — Load Libraries
 
-1. Go to **File → New Schematic**.
-2. Save it as `NE555_Blinker.schxml` (++ctrl+s++).
+### Load symbol libraries
 
-### 2.1 Place components
+1. Go to **File → New Schematic** to create a schematic document.
+2. In the **Library** panel (right side), click **Load Symbols…**
+3. Select your `.kicad_sym` file(s) containing `R`, `LED`, and `Conn_01x02`.
+4. Wait for parsing — symbol names appear in the list.
 
-Search and place the following components from the Library panel:
+### Load footprint libraries
 
-| Component | Library Symbol | Designator | Value | Footprint |
-|---|---|---|---|---|
-| **Timer IC** | `NE555` | `U1` | — | `DIP-8_W7.62mm` |
-| **Resistor 1** | `R` | `R1` | `6.8kΩ` | `R_0805_2012Metric` |
-| **Resistor 2** | `R` | `R2` | `6.8kΩ` | `R_0805_2012Metric` |
-| **Resistor 3** | `R` | `R3` | `330Ω` | `R_0805_2012Metric` |
-| **Capacitor 1** | `C_Polarized` | `C1` | `100µF` | `CP_Radial_D5.0mm_P2.00mm` |
-| **Capacitor 2** | `C` | `C2` | `10nF` | `C_0805_2012Metric` |
-| **LED** | `LED` | `D1` | `Red` | `LED_0805_2012Metric` |
-| **Connector** | `Conn_01x02` | `J1` | `9V Power` | `PinHeader_1x02_P2.54mm_Vertical` |
-| **Ground** | `GND` | — | — | — |
+1. Go to **File → New PCB** to create a PCB document.
+2. In the **Library** panel, click **Load Footprints…**
+3. Select your `.kicad_mod` file(s) containing `R_0805`, `LED_0805`, and `PinHeader_1x02`.
+4. Footprint names appear in the list.
 
-<!-- TODO: Replace with actual video
-     SCENARIO: Record a 20-second clip showing:
-     1. Search "NE555" in Library → place U1 on canvas.
-     2. Search "R" → place R1, R2, R3.
-     3. Search "C" → place C1, C2.
-     4. Place D1 and J1. Place GND power symbols.
-     RESOLUTION: 1280×720 at 30fps
--->
+![Step2 Libraries](../img/tutorial/step2-libraries.png)
+
+
+---
+
+## Step 3 — Draw the Schematic
+
+Switch to the schematic tab (click the schematic tab at the top of the editor).
+
+### 3.1 Place the components
+
+| Component | How to find it | Designator |
+|---|---|---|
+| **Resistor** | Search `R` in Library panel → double-click | R1 |
+| **LED** | Search `LED` → double-click | D1 |
+| **Connector** | Search `Conn_01x02` → double-click | J1 |
+
+For each component:
+
+1. Double-click its name in the Library panel.
+2. Move the mouse to position it on the schematic.
+3. Press ++r++ to rotate if needed.
+4. **Left-click** to place.
+
+Arrange the symbols from left to right as **J1 → R1 → D1**, leaving enough space for orthogonal wires. The placement clip below shows the intended result.
+
 <video controls width="100%">
-  <source src="../../img/tutorial/step3-place-components.webm" type="video/webm">
-  <source src="../../img/tutorial/step3-place-components.mp4" type="video/mp4">
+  <source src="../img/tutorial/step3-place-components.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
-### 2.2 Wire the circuit
 
-Press ++w++ to activate the Wire tool and make the following connections:
+### 3.2 Edit component properties
 
-1. **Power & Ground**: Connect `J1 pin 1` to `U1 pin 8 (VCC)` and `U1 pin 4 (RESET)`. Connect `J1 pin 2` to `GND`. Connect `U1 pin 1 (GND)` to `GND`.
-2. **Timing Branch**: Connect `VCC` → `R1 pin 1`. Connect `R1 pin 2` → `R2 pin 1` → `U1 pin 7 (DISCH)`.
-3. **Threshold & Trigger**: Connect `R2 pin 2` → `U1 pin 6 (THRES)` → `U1 pin 2 (TRIG)` → `C1 positive (+)` → `C1 negative (-)` to `GND`.
-4. **Control Voltage**: Connect `U1 pin 5 (CTRL)` → `C2 pin 1` → `C2 pin 2` to `GND`.
-5. **Output**: Connect `U1 pin 3 (OUT)` → `R3 pin 1` → `R3 pin 2` → `D1 Anode (A)` → `D1 Cathode (K)` to `GND`.
+Click each component and set its properties in the **Properties** panel:
 
-<!-- TODO: Replace with actual screenshot
-     SCENARIO: Capture the completed NE555 schematic with all wires connected,
-     designators R1, R2, R3, C1, C2, D1, U1, J1 visible, and GND symbols attached.
-     SUGGESTED SIZE: 800×500px
--->
-![NE555 Schematic Complete](../img/tutorial/step3-complete.png)
+| Component | Designator | Value | Footprint |
+|---|---|---|---|
+| Resistor | `R1` | `330Ω` | `R_0805_2012Metric` |
+| LED | `D1` | `Red` | `LED_0805_2012Metric` |
+| Connector | `J1` | `Power` | `PinHeader_1x02_P2.54mm_Vertical` |
 
----
+![Step3 Properties](../img/tutorial/step3-properties.png)
 
-## Step 3 — Run SPICE Simulation
 
-Before building the PCB, verify that the circuit oscillates at 1 Hz using the built-in SPICE simulator.
+### 3.3 Wire the circuit
 
-### 3.1 Open Simulation Controls
+1. Press ++w++ to activate the **Wire** tool.
+2. **Wire 1**: Click on **J1 pin 1** → click on **R1 pin 1**. The wire connects them.
+3. **Wire 2**: Click on **R1 pin 2** → click on **D1 anode (A)**.
+4. **Wire 3**: Click on **D1 cathode (K)** → click on **J1 pin 2**. This closes the loop.
+5. Press ++esc++ to exit wire mode.
 
-Go to **Tools → Simulation** (or open the Simulation Controls panel).
-
-### 3.2 Configure Transient Analysis
-
-1. Set **Analysis Type**: `Transient (.TRAN)`.
-2. Set **Stop Time**: `3 s` (to capture 3 full 1-second cycles).
-3. Set **Step Size**: `1 ms`.
-4. Click **Run**.
-
-<!-- TODO: Replace with actual screenshot
-     SCENARIO: Capture the Simulation Controls panel with Transient selected,
-     Stop Time = 3s, Step Size = 1ms, and progress bar showing 100%.
-     SUGGESTED SIZE: 400×350px
--->
-[//]: # (![Step 3 Sim Setup](../img/tutorial/step3-sim-setup.png))
-
-### 3.3 Analyze Waveforms
-
-The **Waveform Viewer** opens automatically:
-
-- **Output Signal `v(OUT)`**: A clear square wave switching between 0V and ~8.2V at ~1 Hz.
-- **Timing Capacitor Voltage `v(THRES)`**: Sawtooth wave charging between 1/3 VCC (3V) and 2/3 VCC (6V).
-- **Measure Frequency**: Turn on **Cursors** (++c++) → place Cursor 1 on first rising edge, Cursor 2 on second rising edge → read Δt ≈ 1.0 s (Frequency = 1.0 Hz).
-
-<!-- TODO: Replace with actual video
-     SCENARIO: Record a 20-second clip showing:
-     1. Click "Run" in Simulation Controls.
-     2. Progress bar moves to 100% — Waveform Viewer opens.
-     3. Toggle Cursors — drag C1 and C2 onto consecutive output pulses.
-     4. Delta readout shows Δt = 1.02s (f = 0.98 Hz).
-     RESOLUTION: 1280×720 at 30fps
--->
 <video controls width="100%">
-  <source src="../../img/tutorial/step3-sim-waveforms.webm" type="video/webm">
-  <source src="../../img/tutorial/step3-sim-waveforms.mp4" type="video/mp4">
+  <source src="../img/tutorial/step3-wiring.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
----
 
-## Step 4 — Run Electrical Rules Check (ERC)
+### 3.4 Save the schematic
 
-1. Go to **Tools → ERC Check**.
-2. The ERC panel runs checks:
-    - Verifies no floating pins remain.
-    - Confirms all nets connect to valid endpoints.
-    - Verifies duplicate designators don't exist.
-3. Ensure **0 Errors, 0 Warnings**.
+Press ++ctrl+s++ and save as `LED_Board.schxml`.
 
-<!-- TODO: Replace with actual screenshot
-     SCENARIO: Capture the ERC Panel showing "0 errors, 0 warnings" clean result.
-     SUGGESTED SIZE: 500×300px
--->
-[//]: # (![Step 4 ERC](../img/tutorial/step4-erc.png))
+![Step3 Complete](../img/tutorial/step3-complete.png)
+
 
 ---
 
-## Step 5 — Convert to PCB & Arrange Footprints
+## Step 4 — Convert Schematic to PCB
 
-1. Go to **Project → Convert to PCB**.
-2. A new PCB document `NE555_Blinker.pcbxml` opens with footprints clustered together.
-3. Arrange footprints logically:
-    - `J1` near the left board edge.
-    - `U1 (NE555)` in the center.
-    - `R1`, `R2`, `C1` grouped on the left of U1.
-    - `R3`, `D1` placed to the right of U1 output.
-    - `C2` placed close to U1 pin 5.
-4. Set **Edge.Cuts** layer → draw a rectangular board outline (approx 50 × 40 mm).
+1. With the schematic active, go to **Project → Convert to PCB**.
+2. A new PCB document opens automatically with:
+    - All three footprints loaded (clustered together).
+    - Ratsnest lines showing the connections to route.
 
-<!-- TODO: Replace with actual screenshot
-     SCENARIO: Capture the PCB layout with footprints arranged, yellow ratsnest lines
-     connecting pads, and a magenta board outline on Edge.Cuts.
-     SUGGESTED SIZE: 700×450px
--->
-[//]: # (![Step 5 Placement](../img/tutorial/step5-placement.png))
+![Step4 Converted](../img/tutorial/step4-converted.png)
+
+
+!!! warning "Check footprint assignments"
+    If a component shows as "missing footprint", go back to the schematic and verify the Footprint field is set correctly in the Properties panel.
 
 ---
 
-## Step 6 — Route Traces & Add Ground Plane
+## Step 5 — Place Footprints
 
-### 6.1 Route Copper Traces
+Spread the footprints out on the board:
+
+1. Select the **Select** tool (default, or press ++esc++).
+2. **Click and drag** each footprint to a good position.
+3. Press ++r++ to rotate if needed.
+
+Suggested layout: keep **J1** near the board edge, with **R1** between the connector and **D1**, while preserving room for routing and silkscreen. Use the placement media below as the visual reference.
+
+| Shortcut | Action |
+|---|---|
+| Click + drag | Move footprint |
+| ++r++ | Rotate 90° |
+| ++f++ | Flip to back side |
+
+<video controls width="100%">
+  <source src="../img/tutorial/step5-placement.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+
+---
+
+## Step 6 — Define the Board Outline
+
+1. In the **Layer** panel, click **Edge.Cuts** to set it as the active layer.
+2. Select the **Draw Rectangle** tool from the toolbar.
+3. Click and drag to draw a rectangle around all three footprints.
+4. Leave some margin (~50 mil) between footprints and the edge.
+
+![Step6 Outline](../img/tutorial/step6-outline.png)
+
+
+---
+
+## Step 7 — Route Traces
 
 1. Press ++x++ to activate the **Route Trace** tool.
-2. Route signal traces on **F.Cu** (Red):
-    - Connect `U1 pin 3` → `R3` → `D1 Anode`.
-    - Connect `R1` → `R2` → `U1 pin 7`.
-    - Connect `R2` → `U1 pin 6` → `U1 pin 2` → `C1`.
-3. Press ++v++ to place vias when switching to **B.Cu** (Blue) for power paths.
+2. Click on **J1 pad 1** to start a trace → route to **R1 pad 1** → click to finish.
+3. Click on **R1 pad 2** → route to **D1 anode pad** → click to finish.
+4. Click on **D1 cathode pad** → route to **J1 pad 2** → click to finish.
 
-### 6.2 Add Ground Plane (Copper Zone)
+As you complete each trace, the corresponding ratsnest line disappears.
 
-1. Select **Zone** tool → set layer to **B.Cu** → Net `GND`.
-2. Draw a polygon around the entire board outline.
-3. Click **Fill Zone** — a solid ground fill generates automatically with thermal reliefs around GND pads.
+| Action | Input |
+|---|---|
+| Start / add vertex | Left-click |
+| Finish on pad | Left-click on target pad |
+| Cancel | Right-click or ++esc++ |
 
-<!-- TODO: Replace with actual video
-     SCENARIO: Record a 20-second clip showing:
-     1. Routing signal traces with Route Trace tool (X).
-     2. Selecting Zone tool → drawing GND plane polygon on B.Cu.
-     3. Click Fill Zone — copper flood fills the bottom layer.
-     4. All ratsnest lines disappear.
-     RESOLUTION: 1280×720 at 30fps
--->
 <video controls width="100%">
-  <source src="../../img/tutorial/step7-routing.webm" type="video/webm">
-  <source src="../../img/tutorial/step7-routing.mp4" type="video/mp4">
+  <source src="../img/tutorial/step7-routing.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
----
-
-## Step 7 — Run DFM Check & Export
-
-### 7.1 DFM Verification
-
-Go to **Tools → DFM Check** → click **Run DFM**. Verify 0 clearance errors and 0 trace width violations.
-
-### 7.2 Fabrication Export
-
-1. **Gerber Files**: **File → Export → Gerber…** → select `F.Cu`, `B.Cu`, `F.SilkS`, `F.Mask`, `Edge.Cuts` → **Export**.
-2. **BOM Export**: **File → Export → BOM…** → save `NE555_Blinker_BOM.csv`.
-3. **Verify**: Open **Tools → Gerber Viewer** → load `F.Cu.gbr` to verify trace shapes.
 
 ---
 
-## Summary Deliverables :material-check-decagram:{ style="color: #00E5FF" }
+## Step 8 — Run DFM Check
 
-| Output | File | Purpose |
-|---|---|---|
-| Project File | `NE555_Blinker.prjxml` | Central project workspace |
-| Schematic | `NE555_Blinker.schxml` | Schematic diagram with SPICE properties |
-| PCB Layout | `NE555_Blinker.pcbxml` | Fully routed 2-layer PCB |
-| Simulation | Waveform logs | Transient simulation output |
-| Gerbers | `*.gbr` files | Manufacturing files for PCB fabricator |
-| BOM | `NE555_Blinker_BOM.csv` | Component list for purchasing |
+1. Go to **Tools → DFM Check**.
+2. Click **Run DFM**.
+3. Review the results:
+    - **0 errors** = ready to export :material-check-circle:{ style="color: green" }
+    - If errors appear, double-click each one to zoom to the issue and fix it.
+
+![Step8 Dfm](../img/tutorial/step8-dfm.png)
+
 
 ---
 
-## See Also
+## Step 9 — Export Fabrication Files
 
-- [SPICE Simulation Guide](../simulation/index.md) — advanced simulation modes (AC, DC sweep).
-- [AI-Assisted Design Tutorial](ai-design.md) — design this same circuit automatically using AI.
-- [Design Rules & Net Classes](../pcb/design-rules.md) — PCB constraint management.
+### Gerber export
+
+1. Go to **File → Export → Gerber…**
+2. Select layers: **F.Cu**, **F.SilkS**, **F.Mask**, **Edge.Cuts**.
+3. Choose an output folder.
+4. Click **Export**.
+
+### BOM export
+
+1. Go to **File → Export → BOM…**
+2. Save as `LED_Board_BOM.csv`.
+
+The BOM contains:
+
+| Designator | Value | Footprint | Layer |
+|---|---|---|---|
+| R1 | 330Ω | R_0805_2012Metric | Top |
+| D1 | Red | LED_0805_2012Metric | Top |
+| J1 | Power | PinHeader_1x02_P2.54mm_Vertical | Top |
+
+### Verify with Gerber Viewer
+
+1. Go to **Tools → Gerber Viewer**.
+2. Open the generated `F.Cu.gbr` file.
+3. Verify traces and pads look correct.
+
+<video controls width="100%">
+  <source src="../img/tutorial/step9-export.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+
+---
+
+## Done! :material-check-decagram:{ style="color: #00E5FF" }
+
+You have completed a full design cycle:
+
+```
+Project → Schematic → PCB → Route → DFM → Export
+```
+
+| Deliverable | File |
+|---|---|
+| Project | `LED_Board.prjxml` |
+| Schematic | `LED_Board.schxml` |
+| PCB | `LED_Board.pcbxml` |
+| Gerber files | `F.Cu.gbr`, `F.SilkS.gbr`, `F.Mask.gbr`, `Edge.Cuts.gbr` |
+| BOM | `LED_Board_BOM.csv` |
+
+---
+
+## Quick Reference — Shortcuts Used
+
+| Action | Shortcut |
+|---|---|
+| Save | ++ctrl+s++ |
+| Undo | ++ctrl+z++ |
+| Place wire | ++w++ |
+| Route trace | ++x++ |
+| Rotate | ++r++ |
+| Flip | ++f++ |
+| Cancel / Select | ++esc++ |
+| Delete | ++delete++ |
+
+---
+
+## Next Steps
+
+Now that you know the basic workflow, explore more:
+
+| Topic | Link |
+|---|---|
+| Add net labels and power symbols | [Wiring & Nets](../schematic/wiring-and-nets.md) |
+| Multi-layer routing with vias | [Routing](../pcb/routing.md) |
+| Add a ground plane | [Zones & Planes](../pcb/zones-and-planes.md) |
+| Preview in 3D | [3D Viewer](../advanced/3d-viewer.md) |
+| Import KiCad / Altium projects | [Projects & Files](../projects.md#importing-projects-from-other-eda-tools) |
+| All keyboard shortcuts | [Shortcuts](../advanced/shortcuts.md) |

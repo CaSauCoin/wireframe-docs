@@ -61,9 +61,10 @@ After placing a component, click it to select. The **Properties panel** shows ed
 
 !!! info "Designator remapping"
     When you change a designator (e.g. `U1` → `U3`), WireFrame automatically updates:
-    - The component ID in the internal registry
-    - All wires that were connected to the old ID
-    - Any selection sets referencing the component
+    - Wires connected to that component
+    - References shown elsewhere in the active document
+
+    Review the updated designator before exporting the BOM or converting the schematic to PCB.
 
 All changes fully support **Undo** (++ctrl+z++).
 

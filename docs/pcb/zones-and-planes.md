@@ -14,22 +14,9 @@ Copper zones (fills / pours) cover a board area with copper — typically used f
 
 ## What Is a Zone?
 
-```
-Board with GND zone (top view):
+![Copper zone outline](../img/pcb/zone-outline.png)
 
-┌─────────────────────────────────────────┐
-│ ░░░░░░░[R1]░░░░░░░░░░░░░░░░░░░░░░░░░░░ │  ← GND copper fill (░)
-│ ░░░░░   ┊  ░░░░░░░   ┊  ░░░░░░░░░░░░░ │
-│ ░░░░░  [U1] ░░░░░  [C1] ░░░░░░░░░░░░░ │
-│ ░░░░░   ┊  ░░░░░░░   ┊  ░░░░░░░░░░░░░ │
-│ ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ │
-└─────────────────────────────────────────┘
-
-Legend:
-  ░ = GND copper fill
-  ┊ = clearance gap around pads on other nets
-  [R1] = footprint (GND pads connect directly to the fill)
-```
+A filled zone follows its outline while maintaining clearance around objects on other nets. Pads on the zone net connect according to the configured zone connection style.
 
 Each zone has:
 
@@ -54,13 +41,10 @@ The fastest way — use **Fill GND Plane**:
     - Computes clearance gaps around all pads and traces not on GND
     - Connects GND pads directly into the fill
 
-```
-Before Fill GND:              After Fill GND:
-  ┌────────────┐                ┌──░░░░░░░░░░░┐
-  │  [R1] [C1] │                │░░[R1]░[C1]░░│
-  │            │                │░░░░░░░░░░░░░│
-  └────────────┘                └──░░░░░░░░░░░┘
-```
+<video controls width="100%">
+  <source src="../img/pcb/fill-gnd-plane.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 ---
 
@@ -80,16 +64,11 @@ Before Fill GND:              After Fill GND:
 
 When two zones overlap, the zone with the **higher priority** wins:
 
-```
-Example — VCC island inside a GND plane:
-
-┌────────────────────────────────────────────┐
-│ ░░░░░░░░░░ GND (priority 0) ░░░░░░░░░░░░ │
-│ ░░░░ ┌──────────────────┐ ░░░░░░░░░░░░░░ │
-│ ░░░░ │ ▓▓▓ VCC (p=1) ▓▓│ ░░░░░░░░░░░░░░ │
-│ ░░░░ │   ▓▓▓▓▓▓▓▓▓▓▓   │ ░░░░░░░░░░░░░░ │
-│ ░░░░ └──────────────────┘ ░░░░░░░░░░░░░░ │
-└────────────────────────────────────────────┘
+```mermaid
+flowchart TD
+    A[GND zone · priority 0] --> B[Overlapping VCC island · priority 1]
+    B --> C[Higher-priority VCC owns the overlap]
+    A --> D[GND remains everywhere else inside its outline]
 ```
 
 !!! tip "Priority guidelines"

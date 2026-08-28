@@ -84,12 +84,10 @@ To move a component to the **opposite side of the board**:
 3. Layers are swapped:
     - `F.Cu` → `B.Cu`, `F.SilkS` → `B.SilkS`, and so on
 
-```
-Before flip (top layer):      After flip (bottom layer):
-  ┌─[R1]─┐                      ┌─[1R]─┐   ← text mirrors
-  │ F.Cu  │                      │ B.Cu  │   ← color changes
-  └───────┘                      └───────┘
-```
+| Before flip | After flip |
+|---|---|
+| Copper and silkscreen use the front-layer set | Copper and silkscreen remap to the back-layer set |
+| Designator reads normally from the top view | Designator is mirrored for physical bottom-side placement |
 
 !!! info "Visual feedback"
     Flipped footprints change color (e.g. red F.Cu → blue B.Cu) and the designator text may mirror — this is the expected behavior and matches the physical reality of a bottom-side component.

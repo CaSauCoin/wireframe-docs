@@ -17,14 +17,7 @@ Press ++w++ or click the **Wire** button on the toolbar.
 3. **Left-click** to add each corner vertex
 4. **Right-click** or press ++esc++ to end the wire
 
-```
-Example — wiring R1 to C1:
-
-  R1             C1
-  ─┤├──────────+─|─
-    Pin 2       |
-                (corner vertex if needed)
-```
+![Wire attached to component pins](../img/schematic/wire-attachment.png)
 
 | Action | Input |
 |---|---|
@@ -50,16 +43,7 @@ Example — wiring R1 to C1:
 - The new wire shares the meeting point with the existing wire
 - WireFrame merges them into a **single net**
 
-```
-Example — GND bus connecting 3 points:
-
-  C1    C2    R1
-  ─|─   ─|─   ─┤├─
-   │     │        │
-   └─────┴────────┘
-              │
-             GND ⏚
-```
+Use the shared GND net label or power symbol at the intended connection points. WireFrame merges connected wire segments and matching global power labels into the same net.
 
 ---
 
