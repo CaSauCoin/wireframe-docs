@@ -1,158 +1,66 @@
-# Footprint Libraries (PCB)
+# Footprint Libraries
 
-Footprint libraries define physical packages for PCB components. This page covers loading, footprint structure, the built-in footprint generator, and 3D model alignment.
+Footprints define the physical pads, drills, component outline, and optional 3D model used on the PCB. Select the exact manufacturer package and recommended land pattern, not only a similarly named footprint.
 
----
+## Add a footprint source
 
-## Loading Footprint Libraries
+1. Open **View → Local Library Manager**.
+2. Add the containing folder or KiCad footprint source.
+3. Confirm that the source is active and the footprint appears in inventory.
+4. Activate a PCB and search its Component Library.
 
-From the Library panel when a PCB document is active:
+Keep custom footprints and their 3D models in a controlled project or team location so another machine can resolve them.
 
-1. Click **Load Footprints…**
-2. Select one or more KiCad `.kicad_mod` library files.
-3. WireFrame parses footprints immediately.
-4. On completion, results are merged into the footprint library map.
-5. Footprint names appear in the Library panel list and can be filtered.
+### Image — Footprint source and active inventory
 
----
+!!! note "Image needed"
+    Capture Local Library Manager in v1.5.47 with a KiCad footprint source and several active inventory items visible. Hide private paths.
 
-## Footprint Data
+## Review a footprint
 
-Each footprint data contains:
+Compare the footprint with the exact datasheet land pattern:
 
-| Data | Description |
-|---|---|
-| **Name** | Footprint identifier (e.g., "SOT-23", "R_0603_1608Metric") |
-| **Library name** | Source library filename |
-| **Description** | Human-readable description and tags |
-| **Pads** | See pad properties table below |
-| **Graphics** | Lines, circles, arcs, polygons, reference/value text |
-| **3D model** | File path (STEP/OBJ) + offset, scale, rotation |
+- package name and body dimensions;
+- pad count, numbering, shape, size, and pitch;
+- plated or non-plated drill geometry;
+- pin-1 or polarity marker;
+- solder-mask and paste behavior;
+- courtyard, silkscreen, and fabrication outlines;
+- component origin and board-side orientation;
+- symbol-pin to footprint-pad mapping.
 
-### Pad properties
+Print or measure at 1:1 scale when dimensions are safety-critical. A 3D model is useful for review but does not prove that the pads are correct.
 
-| Property | Description | Example |
-|---|---|---|
-| Number | Pad number/name | `1`, `2`, `A1` |
-| Position | X, Y in mm (converted to mils internally) | (0.0, 0.75) |
-| Size | Pad width × height | 1.0 × 0.6 mm |
-| Shape | Circle, Rect, Oval, RoundRect, Trapezoid, Custom | `rect` |
-| Drill | Hole diameter and shape (for through-hole) | 0.8 mm circular |
-| Layers | Copper and mask layers the pad belongs to | F.Cu, F.Mask, F.Paste |
-| Net name | Assigned net (when imported with netlist) | `GND` |
+## Create or edit a footprint
 
-These are converted into placed footprint instances when added to the PCB.
+Open **Tools → PCB Footprint Editor**. Configure the package and pads, review the live result, then save it as a KiCad-compatible `.kicad_mod` in the intended local library.
 
----
+### Image — PCB Footprint Editor
 
-## Footprint Generator (Footprint Wizard)
+!!! note "Image review needed"
+    Capture the current editor with package controls, pad numbering, dimensions, and preview visible. Replace older “Footprint Wizard” media if its window title or controls differ from v1.5.47.
 
-The footprint wizard is a built-in footprint generator for common package types. Open it from **Tools → Footprint Wizard**.
+Before release, place the footprint on a test board and inspect pad geometry, courtyard, silkscreen, origin, and orientation.
 
-### Supported layouts
+## Align a 3D model
 
-| Layout | Description | Example |
-|---|---|---|
-| **Single row** | Pads in one line | SIP headers |
-| **Dual row** | Two parallel rows | DIP, SOIC, SOT-23 |
-| **Grid** | Rectangular array | BGA, LGA |
-| **Quad** | Pads on all four sides | QFP, QFN |
+Select the footprint and open the available 3D-model editing action. Choose the approved STEP or OBJ file, then adjust offset, scale, and rotation until pin 1, body position, and board side match the 2D footprint.
 
-### Configurable settings (footprint settings)
+### Short video — Align a footprint model
 
-| Setting | Description |
-|---|---|
-| Pin count | Total number of pads |
-| Layout type | Single, dual, grid, quad |
-| Pad size | Width × height |
-| Hole size | Drill diameter (for through-hole) |
-| Horizontal pitch | Spacing between pads horizontally |
-| Vertical pitch | Spacing between pads/rows vertically |
-| Body margin | Clearance for the courtyard outline |
+!!! note "Video review needed"
+    Record 15–20 seconds showing a public sample model aligned with the 2D pads and checked from top and underside views. Hide private paths.
 
-### Workflow
+## Import an Altium footprint library
 
-1. Configure pins, pitch, and pad size in the wizard controls.
-2. The **preview canvas** shows the generated footprint in real time:
-    - Pads on a green background.
-    - Grid and axis lines.
-    - Pin numbers and body outline.
-3. Click **Export** to save as a KiCad `.kicad_mod` file via the KiCad export function.
-4. Load the exported file into your footprint library.
+In **Local Library Manager**, choose the Altium importer and select a supported `.PcbLib`, `.IntLib`, or `.LibPkg` file. Review all converted pads and dimensions; update external 3D model paths when needed.
 
-![Footprint Wizard](../img/libraries/footprint-wizard.png)
+Eagle footprint import is not exposed in the current release UI and is intentionally omitted.
 
+## Related guidelines
 
----
-
-## 3D Model Alignment
-
-3D model parameters for footprints are edited via the Model Alignment Dialog:
-
-1. Select a footprint on the PCB.
-2. Open the model alignment dialog from **PCB Properties** or **context menu → Edit 3D Model**.
-3. The dialog shows:
-
-| Control | Description |
-|---|---|
-| Model file path | Path to the STEP/OBJ model file |
-| 3D preview | Live rendering via the 3D renderer |
-| Offset (X, Y, Z) | Position adjustment |
-| Scale (X, Y, Z) | Size adjustment |
-| Rotation (X, Y, Z) | Orientation adjustment |
-
-4. Adjust values and see the model update in the preview.
-5. Save changes — WireFrame writes updated parameters back to the `.kicad_mod` file.
-
-<video controls width="100%">
-  <source src="../img/libraries/3d-model-alignment.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
-
----
-
-## Importing Footprint Libraries from Other EDA Tools
-
-### Importing Altium footprint libraries
-
-WireFrame can convert Altium PCB libraries:
-
-1. Go to **File → Import → Altium Library…**
-2. Select an Altium footprint library file (`.PcbLib`).
-3. WireFrame converts the footprints (pads, graphics, 3D models references) and adds them to your library.
-
-| Altium format | Conversion details |
-|---|---|
-| `.PcbLib` | Pads, copper graphics, silkscreen, courtyard, 3D model paths |
-| `.IntLib` | Both symbols and footprints extracted |
-
-!!! warning "3D model paths"
-    Altium 3D model references (`.step`, `.stp`) are imported but the file paths may need to be updated to match your local model directory. Use the [Model Alignment Dialog](#3d-model-alignment) to verify and adjust.
-
-### Importing Eagle footprint libraries
-
-Eagle library files (`.lbr`) contain footprints alongside symbols:
-
-1. Go to **File → Import → Eagle Library…**
-2. Select an Eagle `.lbr` file.
-3. WireFrame extracts footprints with pads, graphics, and drill information.
-4. Footprints appear in the Library panel when a PCB is active.
-
-### Converting between formats
-
-You can also export footprints from WireFrame to KiCad format:
-
-1. Use the **Footprint Wizard** to create a footprint.
-2. Click **Export** to save as a `.kicad_mod` file.
-3. This file can be shared with KiCad users or imported into other KiCad-compatible tools.
-
----
-
-## See Also
-
-- [Library Converter](library-converter.md) — bulk convert Altium/KiCad footprint libraries.
-- [AI Component Generator](../ai/component-generator.md) — AI-assisted footprint generation from datasheets.
-- [Footprints & Placement](../pcb/footprints-and-placement.md) — place footprints from loaded libraries.
-- [Symbol Libraries](symbols-library.md) — the schematic-side library counterpart.
-- [3D Viewer](../advanced/3d-viewer.md) — preview footprints with 3D models on the full board.
+- [Symbol Libraries](symbols-library.md)
+- [Library Import and Management](library-converter.md)
+- [AI Component Generator](../ai/component-generator.md)
+- [Footprints and Placement](../pcb/footprints-and-placement.md)
+- [3D Viewer](../advanced/3d-viewer.md)

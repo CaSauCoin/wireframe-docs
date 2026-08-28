@@ -6,7 +6,7 @@ Footprints are the **physical packages** placed on the PCB — pads, drill holes
 
 ## Loading Footprint Libraries
 
-From the **Library panel** while a PCB tab is active:
+Open **View → Local Library Manager** and add the folder or KiCad footprint source. With a PCB active, approved footprints appear in its library panel.
 
 1. Click **Load Footprints…**
 2. Select one or more KiCad footprint files (`.kicad_mod`)
@@ -30,7 +30,7 @@ Each loaded footprint contains:
 
 ### Method 1: From schematic conversion (recommended)
 
-After running **Project → Convert to PCB**, an **Available Footprints** list shows all unplaced schematic components:
+After running **Tools → Update Schematic to PCB**, an **Available Footprints** list shows all unplaced schematic components:
 
 1. Open the "Available Footprints" dialog (appears automatically after conversion)
 2. Select a component from the list

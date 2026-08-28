@@ -1,261 +1,97 @@
 # Tutorial: AI-Assisted Circuit Design
 
-This tutorial demonstrates the **AI Copilot workflow** — design a circuit entirely through conversation with the AI agent. We'll create a 555 Timer LED blinker, verify it with SPICE simulation, and export manufacturing files.
+This tutorial uses AI Copilot to prepare a small NE555 LED blinker, review its proposed design, resolve missing library assets, and verify measurable behavior. AI output remains a proposal until you review and validate it.
 
-**What you will build:** A complete NE555 astable oscillator with an LED blinking at approximately 1 Hz — designed, verified, placed, and routed with AI assistance.
+### Image — Finished AI-assisted example
 
-<!-- TODO: Replace with actual screenshot
-     SCENARIO: Capture the finished design showing both the schematic (with NE555,
-     resistors, capacitor, LED) and the PCB (routed board) side by side.
-     The AI Copilot Panel visible on the side with the conversation history.
-     SUGGESTED SIZE: 1280×720px
--->
-[//]: # (![AI Design Final](../img/tutorial/ai-design-final.png))
+!!! note "Image needed"
+    Capture the final schematic, routed PCB, and AI Copilot panel in one v1.5.47 workspace. Use a sample project and ensure no API key or private path is visible.
 
----
+## Before you start
 
-## What You Will Learn
+You need a new project, an OpenRouter API key configured from **View → AI Copilot Chat**, suitable component libraries, and at least one usable simulation engine. Save the project before starting the request.
 
-- [x] Configure the AI Copilot API key
-- [x] Describe a circuit in plain text
-- [x] Answer AI clarifying questions
-- [x] Review AI-generated BOM and netlist
-- [x] Verify the design with SPICE simulation
-- [x] Auto-place components and auto-route traces
-- [x] Export Gerber and BOM files
+## 1. State measurable requirements
 
----
+Send a prompt such as:
 
-## Prerequisites
+> Design a 9 V NE555 astable LED blinker. Target 1 Hz, use a red LED, include current limiting and supply decoupling, and identify every assumption that needs my confirmation.
 
-| Requirement | Details |
-|---|---|
-| **WireFrame** | Installed and activated |
-| **API Key** | An [OpenRouter](https://openrouter.ai/) API key (free tier available) |
-| **NgSpice** | Installed for simulation verification (see [Simulation Engines and Models](../simulation/engines-and-models.md#connect-an-external-simulator)) |
-
----
-
-## Step 1 — Configure AI and Create a Project
-
-### Set up API key
-
-1. Open WireFrame.
-2. Go to **View → AI Copilot** to open the AI panel.
-3. Click the **⚙ Settings** icon in the panel header.
-4. Enter your OpenRouter API key.
-5. Click **Save**.
-
-### Create a project
-
-1. Go to **File → New Project…**
-2. Name it `NE555_Blinker.prjxml`.
-3. Click **Create**.
-
----
-
-## Step 2 — Describe Your Circuit to the AI
-
-In the AI Copilot chat input, type:
-
-```
-Design a 555 timer LED blinker circuit.
-The LED should blink at approximately 1 Hz.
-Power supply: 9V battery.
-Use a red LED with a current-limiting resistor.
-```
-
-Press **Enter** to send.
-
-<!-- TODO: Replace with actual screenshot
-     SCENARIO: Capture the AI Copilot Panel showing:
-     - The user's message visible in the chat history.
-     - The AI responding with "Researching your request..." and a thinking animation.
-     - Thinking stages showing: "Analyzing requirements", "Researching NE555 datasheet".
-     SUGGESTED SIZE: 400×500px (panel only)
--->
-[//]: # (![AI Step 2 Prompt](../img/tutorial/ai-step2-prompt.png))
-
----
-
-## Step 3 — Answer Clarifying Questions
-
-The AI may ask clarifying questions:
-
-```
-┌─────────────────────────────────────────┐
-│ AI: Before I design, a few questions:    │
-│                                          │
-│ 1. LED color preference?                 │
-│    [● Red]  [○ Green]  [○ Blue]         │
-│                                          │
-│ 2. Duty cycle?                           │
-│    [● 50%]  [○ 30%]  [○ 70%]           │
-│                                          │
-│ 3. Include on/off switch?                │
-│    [● No]  [○ Yes]                      │
-│                                          │
-│ [Continue with selected options →]       │
-└─────────────────────────────────────────┘
-```
-
-Select your preferences and click **Continue**.
-
----
-
-## Step 4 — Review the Generated Design
-
-The AI generates a BOM and netlist. The **Component Review** window opens:
-
-### Expected BOM
-
-| # | Designator | Part | Value | Purpose |
-|---|---|---|---|---|
-| 1 | U1 | NE555 | — | Timer IC |
-| 2 | R1 | Resistor | 6.8kΩ | Timing resistor (charge path) |
-| 3 | R2 | Resistor | 6.8kΩ | Timing resistor (charge + discharge) |
-| 4 | R3 | Resistor | 330Ω | LED current limiter |
-| 5 | C1 | Capacitor | 100µF | Timing capacitor |
-| 6 | C2 | Capacitor | 10nF | Control voltage bypass |
-| 7 | D1 | LED | Red | Visual indicator |
-| 8 | J1 | Connector | 2-pin | Battery connection |
-
-### Expected Netlist
-
-```
-Net "VCC":    J1.Pin1 → U1.VCC(8) → U1.RESET(4) → R1.Pad1
-Net "GND":    J1.Pin2 → U1.GND(1) → C1.Pad2 → C2.Pad2 → D1.K
-Net "DISCH":  U1.DISCH(7) → R1.Pad2 → R2.Pad1
-Net "THRES":  U1.THRES(6) → U1.TRIG(2) → R2.Pad2 → C1.Pad1
-Net "OUT":    U1.OUT(3) → R3.Pad1
-Net "LED":    R3.Pad2 → D1.A
-Net "CTRL":   U1.CTRL(5) → C2.Pad1
-```
-
-<!-- TODO: Replace with actual screenshot
-     SCENARIO: Capture the Component Review window showing:
-     - BOM tab with 8 components listed, all showing ✅ status.
-     - Netlist tab visible with connection details.
-     - The schematic preview showing the 555 timer circuit topology.
-     SUGGESTED SIZE: 800×550px
--->
-[//]: # (![AI Step 4 Review](../img/tutorial/ai-step4-review.png))
+Include voltage, frequency, tolerances, package preferences, connector requirements, and board constraints when known. If Copilot asks a question, answer it before accepting a BOM; unanswered choices become risky assumptions.
 
----
+### Image — Prompt and clarification
 
-## Step 5 — Verify with Simulation
+!!! note "Image needed"
+    Capture the initial requirement and one clarification exchange in AI Copilot. The prompt must include supply voltage and target frequency.
 
-1. In the Component Review window, click **Verify with Simulation**.
-2. The AI configures a transient analysis:
-    - Stop time: 3 seconds (to see multiple blink cycles)
-    - Step size: 1 ms
-3. The simulation runs in the background.
-4. Results appear in the Waveform Viewer:
-    - **v(OUT)**: Square wave at ~1 Hz (the 555 output)
-    - **v(THRES)**: Sawtooth charging/discharging of the timing capacitor
+## 2. Review the proposed design
 
-### Expected waveforms
+Use the **Component Review** tabs in order:
 
-```
-v(OUT):   ┌──┐  ┌──┐  ┌──┐
-          │  │  │  │  │  │
-     ─────┘  └──┘  └──┘  └──  ← Square wave at ~1 Hz
-
-v(THRES): /╲  /╲  /╲
-         /  ╲/  ╲/  ╲         ← Charging/discharging between 1/3 and 2/3 VCC
-```
-
-!!! success "Simulation passes"
-    If the output frequency is approximately 1 Hz and the waveform is a clean square wave, the design is verified. The AI confirms: *"Simulation passed — output frequency: 1.04 Hz"*.
-
-<!-- TODO: Replace with actual screenshot
-     SCENARIO: Capture the Waveform Viewer showing:
-     - v(OUT) as a square wave (cyan trace).
-     - v(THRES) as a sawtooth wave (yellow trace).
-     - Time axis showing 0 to 3 seconds.
-     - Cursors placed on two consecutive rising edges showing Δt ≈ 1s.
-     SUGGESTED SIZE: 900×450px
--->
-[//]: # (![AI Step 5 Simulation](../img/tutorial/ai-step5-simulation.png))
-
----
-
-## Step 6 — Place and Route
-
-### Auto-Place
-
-1. Click **Add to Project** in the Component Review window.
-2. The AI auto-places components on the schematic:
-    - U1 (NE555) in the center.
-    - Timing components (R1, R2, C1) on the left.
-    - Output components (R3, D1) on the right.
-    - Power components (J1, C2) at the edges.
-
-### Convert to PCB
-
-1. Go to **Project → Convert to PCB**.
-2. Footprints appear on the PCB with ratsnest lines.
-
-### Auto-Route
-
-1. Click **Auto-Route** (or use the AI panel's routing action).
-2. The A* router processes all connections.
-3. Traces appear on the board — ratsnest lines disappear.
-
-<!-- TODO: Replace with actual video
-     SCENARIO: Record a 20-second clip showing:
-     1. Click "Add to Project" — schematic fills with placed components.
-     2. Click "Convert to PCB" — PCB tab opens with footprints.
-     3. Click "Auto-Route" — traces route automatically, progress bar visible.
-     4. Final board shown fully routed.
-     RESOLUTION: 1280×720 at 30fps.
--->
-<video controls width="100%">
-  <source src="../../img/tutorial/ai-step6-place-route.webm" type="video/webm">
-  <source src="../../img/tutorial/ai-step6-place-route.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
----
-
-## Step 7 — DFM Check and Export
-
-### Run DFM
-
-1. Go to **Tools → DFM Check**.
-2. Click **Run DFM** — verify 0 errors.
-
-### Export
-
-1. **Gerber**: File → Export → Gerber → select layers → Export.
-2. **BOM**: File → Export → BOM → save as CSV.
-3. **Verify**: Tools → Gerber Viewer → open F.Cu.gbr.
-
----
-
-## Done! :material-check-decagram:{ style="color: #00E5FF" }
-
-You've completed an AI-assisted design cycle:
-
-```
-Prompt → Research → Clarify → Design → Simulate → Place → Route → Export
-```
-
-| Deliverable | File |
-|---|---|
-| Project | `NE555_Blinker.prjxml` |
-| Schematic | `NE555_Blinker.schxml` |
-| PCB | `NE555_Blinker.pcbxml` |
-| Gerber files | `F.Cu.gbr`, `F.SilkS.gbr`, `F.Mask.gbr`, `Edge.Cuts.gbr` |
-| BOM | `NE555_Blinker_BOM.csv` |
-
----
-
-## See Also
-
-| Topic | Link |
-|---|---|
-| AI Copilot full guide | [AI Copilot Overview](../ai/index.md) |
-| Manual simulation | [Simulation Guide](../simulation/index.md) |
-| Manual routing | [PCB Routing](../pcb/routing.md) |
-| NE555 manual tutorial | [NE555 LED Blinker Tutorial](index.md) |
+1. **BOM Components** — verify part identity, value, rating, package, and availability.
+2. **Connections Netlist** — compare every NE555 pin and LED polarity with the datasheet.
+3. **Blocks** — confirm that timing, output, power, and decoupling functions are present.
+4. **Local Pool Settings** — decide which approved local assets may be reused.
+5. **Simulate & Verify** — prepare measurable checks.
+6. **Design Analysis** and **Netlist Check** — resolve warnings before applying changes.
+
+Do not approve a component merely because its name matches. Package, pin numbering, ratings, and model pin order must also match.
+
+### Image — Component Review tabs
+
+!!! note "Image needed"
+    Capture the complete review window with all seven tabs visible and one BOM item selected. Do not fabricate a separate schematic preview if the release UI does not show one.
+
+## 3. Generate a missing component when required
+
+Select **AI Gen** for an unresolved item. Choose **From Template** for a clear standard part, or **From Datasheet** when an exact symbol and package must be derived from manufacturer material.
+
+Before continuing, check pin count, pin names, electrical types, pad numbering, dimensions, pitch, orientation marker, and symbol-to-footprint mapping. Follow the [AI Component Generator guideline](../ai/component-generator.md) for the complete acceptance checklist.
+
+### Short video — Resolve a missing component
+
+!!! note "Video needed"
+    Record a 25–35 second clip from **AI Gen** through generation and review. Show the final pin/pad comparison, but do not expose the API key or a proprietary datasheet.
+
+## 4. Add explicit simulation requirements
+
+Open **Simulate & Verify** or the Simulation Workbench and define a transient run long enough to show several cycles. Add signals for the output and timing capacitor, then create assertions for the acceptable frequency range and output behavior.
+
+A visual waveform that “looks right” is not a pass criterion. Use the A/B cursors or a measurement to confirm the period, and keep the engine, model revision, sources, loads, and assertion results with the review.
+
+### Image — Measured transient result
+
+!!! note "Image needed"
+    Capture output and timing-capacitor traces with A/B cursors spanning one period. Show the assertion result and engine used in the same release example where possible.
+
+## 5. Apply, place, and route
+
+Apply only the reviewed proposal. Run ERC on the generated schematic, then update the PCB from the active schematic using the current project tool. Review footprint orientation and board constraints before using placement or routing assistance.
+
+After any assisted placement or routing:
+
+- Confirm connectors, controls, indicators, mounting holes, and keepouts are practical.
+- Check that every ratsnest connection is resolved intentionally.
+- Inspect vias, layer changes, clearances, and return paths.
+- Run DFM/DRC and correct every release-blocking violation.
+
+See [Placement and Routing Assistant](../ai/auto-placer-router.md).
+
+### Short video — Review an assisted PCB result
+
+!!! note "Video needed"
+    Record a 25–35 second clip showing the proposal, a manual adjustment, remaining ratsnest review, and a clean DFM/DRC rerun. Do not show a one-click “fully approved” result.
+
+## 6. Prepare release output
+
+Save the verified revision, generate the fabrication package, and inspect representative Gerber and drill outputs. Check the BOM, IPC-D-356A, and manifest before archiving the package.
+
+The tutorial is complete only when the schematic, generated library assets, simulation evidence, PCB checks, and fabrication archive all refer to the same saved revision.
+
+## Related guidelines
+
+- [AI Copilot](../ai/index.md)
+- [AI Design Agent](../ai/design-agent.md)
+- [Running a Simulation](../simulation/running-simulation.md)
+- [DFM and DRC](../pcb/dfm-and-drc.md)
+- [Fabrication and Export](../pcb/fabrication-and-export.md)

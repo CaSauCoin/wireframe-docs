@@ -14,8 +14,8 @@ The PCB Editor handles board layout — from component placement to trace routin
 | Add mechanical holes (screws, standoffs) | Place Hole tool |
 | Define the board outline | Edge.Cuts layer + drawing tools |
 | Fill copper zones (ground planes) | Zone / Fill GND Plane |
-| Run DFM / DRC checks | Tools → DFM Check |
-| Export Gerber, drill, BOM, PDF | File → Export or Fabrication dialog |
+| Run DFM / DRC checks | Tools → DFM & DRC Check Panel |
+| Export Gerber, drill, BOM, PDF | File → Export → Fabrication Outputs / Tools → Fabrication Output |
 | Preview the board in 3D | View → 3D Viewer |
 
 ---
@@ -67,10 +67,10 @@ Every PCB needs a board outline that defines its **physical shape**:
 
 Ratsnest lines are **thin dashed lines** showing connections that have not yet been routed:
 
-<video controls width="100%">
-  <source src="../img/pcb/ratsnest-demo.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+### Short video — Ratsnest cleared by routing
+
+!!! note "Video needed"
+    Record 10–15 seconds showing one ratsnest connection before routing, the completed track, and the ratsnest update. The existing video file is empty and must be replaced.
 
 - Ratsnest lines **automatically update** after every edit
 - When you **route a trace**, the corresponding ratsnest line **disappears**
@@ -97,5 +97,4 @@ Ratsnest lines are **thin dashed lines** showing connections that have not yet b
 | Section | What you'll learn |
 |---|---|
 | [3D Viewer](../advanced/3d-viewer.md) | Preview the PCB with 3D component models |
-| [AI Auto-Router](../ai/auto-placer-router.md) | Automatic A* trace routing via AI Copilot |
-
+| [Placement and Routing Assistant](../ai/auto-placer-router.md) | Review AI-assisted placement and routing proposals |

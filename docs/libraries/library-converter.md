@@ -1,191 +1,94 @@
-# Library Converter Pipeline
+# Library Import and Management
 
-WireFrame includes a powerful **command-line library converter** that transforms Altium and KiCad libraries into standardized WireFrame-compatible component packages. It automates symbol/footprint conversion, preview generation, and distribution packaging.
+Use **Local Library Manager** to add KiCad libraries, import Altium libraries, inspect active inventory, and remove sources you no longer need. This page replaces the old command-line converter documentation, which described developer tooling rather than the released user interface.
 
----
+## Open Local Library Manager
 
-## What It Does
+Select **View → Local Library Manager**.
 
-| Step | Description |
-|---|---|
-| **Parse** | Reads Altium (`.IntLib`, `.SchLib`, `.PcbLib`) and KiCad (`.kicad_sym`, `.kicad_mod`) files |
-| **Convert** | Transforms components into standardized `.kicad_sym` + `.kicad_mod` format |
-| **Match** | Fuzzy-matches footprints to symbols using pin analysis and naming heuristics |
-| **Preview** | Generates PNG thumbnail images for each symbol and footprint (via Matplotlib) |
-| **Package** | Compresses each component into a `.zip` archive for distribution |
-| **Index** | Maintains a `lib_index.json` catalog of all converted components |
+The window has two main areas:
 
----
+- **Add & Import Options** for adding a folder, KiCad symbol files, or an Altium library;
+- **Loaded Library Inventory** for inspecting and managing active sources.
 
-## Installation
+### Image — Local Library Manager overview
 
-```bash
-cd WireFrame/Tools
-pip install -r requirements.txt
-```
+!!! note "Image needed"
+    Capture the complete **Local Library Manager** window. Include both column headers, the three source cards, and part of the active inventory. Use a clean project and hide personal filesystem paths. Suggested size: **1400 × 900 px**.
 
-### Dependencies
+## Add a KiCad library folder
 
-| Package | Purpose |
-|---|---|
-| `olefile` | Parsing Altium OLE compound formats |
-| `sexpdata` | KiCad S-expression parsing |
-| `matplotlib` | PNG preview generation |
-| `gitpython` | Cloning GitHub repositories |
-| `tqdm` | Progress visualization |
+1. Open **Local Library Manager**.
+2. Under **Library Folder**, select **Select Folder**.
+3. Choose a directory containing `.kicad_sym`, `.kicad_mod`, or `.pretty` footprint content.
+4. Wait for the folder to appear under **Loaded Folders**.
+5. Open a schematic or PCB and confirm that the expected items appear in the Component Library.
 
----
+Use a folder when a library contains multiple related symbol and footprint files. Keep the folder available at the same path after loading it.
 
-## Quick Start
+## Add KiCad symbol files
 
-### Convert from a GitHub URL
+1. Under **KiCad Symbol File**, select **Select File(s)**.
+2. Choose one or more `.kicad_sym` files.
+3. Confirm the files appear in the inventory.
+4. Search for a known symbol in the Component Library.
 
-```bash
-# Clone a GitHub repo and convert all libraries found
-python3 run.py https://github.com/user/altium-library
+For individual footprints, use the footprint-loading action in the PCB library panel or add the containing folder.
 
-# Specify KiCad target version
-python3 run.py https://github.com/user/altium-library --kicad-version 7
+## Import an Altium library
 
-# Custom output directory
-python3 run.py https://github.com/user/altium-lib --output ~/my_kicad_libs
-```
+The current importer accepts:
 
-### Convert from local files
+- `.SchLib`;
+- `.PcbLib`;
+- `.IntLib`;
+- `.LibPkg`.
 
-```bash
-# Convert a local folder (auto-detects Altium/KiCad files)
-python3 run.py --local /path/to/library
+To import:
 
-# Convert specific Altium integrated library
-python3 run.py --local /path/to/MyLib.IntLib
+1. Under **Altium Library Importer**, select **Select Altium File**.
+2. Choose the source library.
+3. Wait for **Converting Altium** to finish.
+4. Find the result under **Imported / Converted Libraries**.
+5. Inspect representative symbols, footprints, pad numbering, and 3D model references.
 
-# Convert Altium schematic library
-python3 run.py --local /path/to/MyLib.SchLib
-```
+### Short video — Import an Altium library
 
----
+!!! note "Video needed"
+    Record **12–18 seconds** showing **View → Local Library Manager**, selection of a public `.IntLib` or paired library, conversion status, and the new entry under **Imported / Converted Libraries**. Do not expose private paths. 1080p.
 
-## Supported Input Formats
+!!! warning "Review converted content"
+    Library conversion is not manufacturing approval. Check the exact part variant, pin mapping, pad dimensions, footprint orientation, and model paths before using an imported component.
 
-| Format | Extension | Description |
-|---|---|---|
-| **Altium IntLib** | `.IntLib` | Integrated Library (combined symbols + footprints) |
-| **Altium SchLib** | `.SchLib` | Standalone schematic symbols |
-| **Altium PcbLib** | `.PcbLib` | Standalone PCB footprints |
-| **KiCad Symbol** | `.kicad_sym` | KiCad v6/v7/v8 symbols |
-| **KiCad Footprint** | `.kicad_mod` | KiCad footprint files |
-| **GitHub URL** | — | Any repo containing the above formats |
+## Inspect or remove a source
 
----
+Select a loaded folder or imported library in the inventory to review its symbols and footprints. Remove a source only when no active project depends on it.
 
-## Output Structure
+Removing a source from the manager does not repair placed components whose definitions can no longer be resolved. Archive required project libraries with the project before moving it to another machine.
 
-Each component gets its own folder with all assets:
+## What is not currently supported in the UI
 
-```
-output/
-├── STM32F103C8T6/
-│   ├── STM32F103C8T6.kicad_sym    ← Schematic Symbol
-│   ├── STM32F103C8T6.kicad_mod    ← PCB Footprint
-│   ├── STM32F103C8T6.step         ← 3D Model (if available)
-│   ├── STM32F103C8T6_sym.png      ← Symbol preview image
-│   └── STM32F103C8T6_fp.png       ← Footprint preview image
-│
-├── RELAY_G6S-2/
-│   ├── RELAY_G6S-2.kicad_sym
-│   ├── RELAY_G6S-2.kicad_mod
-│   └── RELAY_G6S-2.step
-│
-├── Dist_Repo/
-│   ├── STM32F103C8T6.zip          ← Distribution package
-│   ├── RELAY_G6S-2.zip
-│   └── lib_index.json             ← Component catalog
-```
+The released interface does not expose:
 
----
+- importing an entire Altium project;
+- importing Eagle `.lbr`, `.sch`, or `.brd` files;
+- cloning and converting arbitrary GitHub repositories;
+- the old `python3 run.py` converter workflow.
 
-## Command-Line Options
+Those items have been removed from the user guideline. Do not add them back until they are available and verified in the application UI.
 
-```
-python3 run.py [GITHUB_URL] [options]
+## After any import
 
-Positional:
-  GITHUB_URL              GitHub repo URL containing libraries
+- confirm symbols appear in a schematic;
+- confirm footprints appear in a PCB;
+- link the intended footprint to each symbol;
+- check pin and pad counts;
+- inspect 3D model paths;
+- run ERC, DRC, and DFM on a test project before production use.
 
-Options:
-  --local PATH            Convert local path instead of cloning
-  --output, -o DIR        Output directory [default: ./output]
-  --dist-dir DIR          Distribution directory for zips and index
-  --format FMT            Input format: altium, kicad, auto [default: auto]
-  --kicad-version, -k N   Target KiCad version: 6 or 7 [default: 6]
-  --branch BRANCH         Git branch to clone [default: repo default]
-  --keep-clone            Keep the cloned repository after conversion
-  --no-preview            Skip PNG preview generation
-  --no-package            Skip zip packaging and index update
-  --action ACTION         'all', 'convert', or 'package'
-```
+## See also
 
----
-
-## Smart Matching
-
-The converter includes sophisticated matching logic:
-
-### Symbol-to-Footprint Matching
-
-1. **Direct match**: Component names in `.SchLib` and `.PcbLib` match exactly.
-2. **Fuzzy match**: Uses string similarity to match variations (e.g., `STM32F103` vs `STM32F103C8T6`).
-3. **Package-based match**: Standard packages (SOT-23, SOIC-8, etc.) are matched to symbols by pin count.
-4. **Fallback generation**: If no symbol is found, a generic one is auto-generated from the footprint pin layout.
-
-### KiCad Inheritance Resolution
-
-For KiCad symbols using `extends` inheritance:
-
-- The converter resolves the full inheritance chain across multiple library files.
-- Child symbols inherit graphics and pins from parents, then apply their overrides.
-- No manual resolution needed — it's fully automatic.
-
----
-
-## Python API
-
-You can integrate the converter into your Python scripts:
-
-```python
-from run import convert_library
-
-result = convert_library(
-    input_path='/path/to/altium-library',
-    output_base='/path/to/output',
-    kicad_version=6,
-)
-
-print(f"Components converted: {len(result['components'])}")
-```
-
----
-
-## Using Converted Libraries
-
-After conversion:
-
-1. Open WireFrame.
-2. Load the converted `.kicad_sym` files via the Library panel (**Load Symbols…**).
-3. Load the converted `.kicad_mod` files via the Library panel (**Load Footprints…**).
-4. Components are ready to use in your designs.
-
-!!! tip "Batch conversion"
-    Use the `build_all_libs.sh` script to convert all libraries in a directory at once:
-    ```bash
-    bash build_all_libs.sh /path/to/libraries /path/to/output
-    ```
-
----
-
-## See Also
-
-- [Symbol Libraries](symbols-library.md) — loading and using symbol libraries.
-- [Footprint Libraries](footprints-library.md) — loading and using footprint libraries.
-- [Projects & Files — Importing](../projects.md#importing-projects-from-other-eda-tools) — importing entire projects (not just libraries).
+- [Symbol Libraries](symbols-library.md)
+- [Footprint Libraries](footprints-library.md)
+- [AI Component Generator](../ai/component-generator.md)
+- [Projects and Files](../projects.md)

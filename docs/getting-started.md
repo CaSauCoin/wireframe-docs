@@ -64,7 +64,7 @@ After launching, you will see the following layout:
 
 **Steps:**
 
-1. Go to **File → New Project…**
+1. Go to **File → New → New Project (.prjxml)**
 2. Choose a folder and enter a filename, for example: `MyBoard.prjxml`
 3. Click **Create** (or **Save**)
 
@@ -79,7 +79,7 @@ The **Project Structure** panel immediately shows your new project with empty **
 
 ## 4. Adding a Schematic File
 
-1. Go to **File → New Schematic**
+1. Go to **File → New** and choose a new schematic
 2. A new tab opens in the editor: `Untitled-SCH-1`
 3. The canvas shows:
     - A dot grid on a dark background
@@ -96,12 +96,12 @@ The schematic canvas looks like this:
 
 ## 5. Adding a PCB File
 
-1. Go to **File → New PCB**
+1. Go to **File → New** and choose a new PCB
 2. A new tab opens: `Untitled-PCB-1`
 3. The canvas shows a grid and the PCB floating toolbar
 
 !!! tip "Convert from schematic instead"
-    Rather than creating a PCB manually, complete your schematic first and use **Project → Convert to PCB** — WireFrame automatically imports all footprints and the netlist.
+    Rather than creating a PCB manually, complete your schematic first and use **Tools → Update Schematic to PCB**. Review the target board, imported footprints, and ratsnest before routing.
 
 The PCB canvas looks like this:
 
@@ -113,14 +113,14 @@ The PCB canvas looks like this:
 
 ### Opening a project (`.prjxml`)
 
-1. **File → Open Project…**
+1. **File → Open Project (.prjxml)**
 2. Select the `.prjxml` file
 3. The **Project Structure** panel populates with all linked schematics and PCBs
 4. Click any entry to open it in the editor
 
 ### Opening a standalone file
 
-1. **File → Open…** (or ++ctrl+o++)
+1. **File → Open File** (or ++ctrl+o++)
 2. Select a `.schxml` (schematic) or `.pcbxml` (PCB) file
 3. The file opens as a tab in the editor — no project required
 

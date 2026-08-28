@@ -1,304 +1,104 @@
-# Tutorial: Design a Simple LED Circuit
+# Tutorial: A Simple LED Board
 
-This step-by-step tutorial walks you through the complete WireFrame workflow — from creating a project to exporting Gerber files — using a **simple LED circuit** with a resistor and a connector.
+This tutorial covers the complete user workflow with a small connector–resistor–LED circuit. The goal is to practice project organization, library use, schematic checks, PCB update, routing, DFM/DRC, and release output.
 
-**What you will build:** A basic single-layer PCB with one LED, one current-limiting resistor, and a 2-pin connector — fully routed and ready for fabrication.
+### Image — Finished tutorial project
 
-![Final Result](../img/tutorial/final-result.png)
+!!! note "Image needed"
+    Capture the final v1.5.47 schematic and PCB side by side, with the project tree visible. The previous tutorial image was a 1×1 placeholder.
 
+## Before you start
 
----
+Prepare an approved symbol and footprint for a resistor, LED, and two-pin connector. Open **View → Local Library Manager** and confirm all six assets in the active inventory.
 
-## What You Will Learn
+Create a project from **File → New → New Project (.prjxml)** and keep it in a dedicated folder.
 
-- [x] Create a project and load libraries
-- [x] Place components and wire them in the schematic editor
-- [x] Convert the schematic to a PCB
-- [x] Place footprints and define the board outline
-- [x] Route traces and add a ground plane
-- [x] Run DFM checks
-- [x] Export Gerber and BOM files
+### Short video — Create the tutorial project
 
----
+!!! note "Video needed"
+    Record 10–15 seconds showing the current New Project command, folder choice, project name, and result in Project Structure. The older media files were empty placeholders.
 
-## Prerequisites
+## 1. Create the schematic
 
-| Requirement | Details |
-|---|---|
-| **WireFrame** | Installed and activated ([Installation guide](../installation.md)) |
-| **Libraries** | At least one KiCad symbol (`.kicad_sym`) and footprint (`.kicad_mod`) library containing R, LED, and Conn_01x02 |
+1. Add a new schematic to the project and save it.
+2. Place the connector, resistor, and LED.
+3. Arrange them so signal flow is easy to read.
+4. Set unique designators, values, and footprint assignments.
+5. Wire the supply path through the resistor and LED, then return to the connector.
 
-!!! tip "Don't have libraries?"
-    You can download free KiCad libraries from [https://www.kicad.org/libraries/](https://www.kicad.org/libraries/) — WireFrame loads them natively.
+Choose the resistor from the actual supply voltage, LED forward voltage, and target current. The example value is not a universal engineering recommendation.
 
----
+### Image — Completed LED schematic
 
-## Step 1 — Create a Project
+!!! note "Image needed"
+    Capture the three placed symbols, readable values/designators, exact pin connections, and assigned footprint field in v1.5.47.
 
-1. Launch WireFrame.
-2. Go to **File → New Project…**
-3. Choose a folder and name it `LED_Board.prjxml`.
-4. Click **Create**.
+## 2. Check the schematic
 
-The **Project Structure** panel now shows your empty project.
+Run **Electrical Rules Check**. Resolve incorrect pin connections, missing values, duplicate designators, and any blocking connectivity issue. Review LED polarity and connector pin numbering against their datasheets.
 
-![Step1 New Project](../img/tutorial/step1-new-project.png)
+Do not continue merely because the drawing looks connected; the electrical check and footprint mapping are separate requirements.
 
+### Short video — Fix one ERC issue
 
-!!! tip "Importing from other EDA tools"
-    Already have a design in KiCad, Altium, or Eagle? Use **File → Import** instead. See [Projects & Files — Importing](../projects.md#importing-projects-from-other-eda-tools) for details.
+!!! note "Video needed"
+    Record 15–20 seconds showing one selected ERC issue, its correction, and a clean rerun.
 
----
+## 3. Update the PCB
 
-## Step 2 — Load Libraries
+With the schematic active, select **Tools → Update Schematic to PCB**. Choose the intended target board, review the imported footprints, and confirm that their designators and ratsnest connections match the schematic.
 
-### Load symbol libraries
+Draw a closed outline on **Edge.Cuts**, then place the connector near an accessible edge and leave practical space around the LED and resistor.
 
-1. Go to **File → New Schematic** to create a schematic document.
-2. In the **Library** panel (right side), click **Load Symbols…**
-3. Select your `.kicad_sym` file(s) containing `R`, `LED`, and `Conn_01x02`.
-4. Wait for parsing — symbol names appear in the list.
+### Image — PCB after schematic update
 
-### Load footprint libraries
+!!! note "Image needed"
+    Capture the board outline, three footprints, and unrouted ratsnest immediately after update. Show the active Edge.Cuts layer or Layers panel.
 
-1. Go to **File → New PCB** to create a PCB document.
-2. In the **Library** panel, click **Load Footprints…**
-3. Select your `.kicad_mod` file(s) containing `R_0805`, `LED_0805`, and `PinHeader_1x02`.
-4. Footprint names appear in the list.
+## 4. Route and inspect
 
-![Step2 Libraries](../img/tutorial/step2-libraries.png)
+Use the Route Trace tool to complete each connection. As each electrical path becomes complete, confirm that its ratsnest line clears. Keep copper away from the board edge and follow the active net-class width and clearance.
 
+After routing, inspect LED and connector orientation, silkscreen readability, pad-to-track endpoints, and any layer changes.
 
----
+### Short video — Route the LED board
 
-## Step 3 — Draw the Schematic
+!!! note "Video needed"
+    Record 15–20 seconds showing one route started from a pad, completed at its target, and the corresponding ratsnest line disappearing.
 
-Switch to the schematic tab (click the schematic tab at the top of the editor).
+## 5. Run DFM/DRC
 
-### 3.1 Place the components
+Open **DFM & DRC Check**, run the full check, and resolve every release-blocking error. Review warnings one by one; record why a warning is acceptable rather than hiding it.
 
-| Component | How to find it | Designator |
-|---|---|---|
-| **Resistor** | Search `R` in Library panel → double-click | R1 |
-| **LED** | Search `LED` → double-click | D1 |
-| **Connector** | Search `Conn_01x02` → double-click | J1 |
+### Image — Clean DFM/DRC result
 
-For each component:
+!!! note "Image needed"
+    Capture the final routed sample board with the clean DFM/DRC summary visible. The previous tutorial result image was a 1×1 placeholder.
 
-1. Double-click its name in the Library panel.
-2. Move the mouse to position it on the schematic.
-3. Press ++r++ to rotate if needed.
-4. **Left-click** to place.
+## 6. Generate release output
 
-Arrange the symbols from left to right as **J1 → R1 → D1**, leaving enough space for orthogonal wires. The placement clip below shows the intended result.
+Open **File → Export → Fabrication Outputs (Gerber/Drill/BOM)** or **Tools → Fabrication Output**. Include the required Gerber, drill, BOM, connectivity, and manifest outputs for the selected manufacturer.
 
-<video controls width="100%">
-  <source src="../img/tutorial/step3-place-components.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+Inspect representative copper, mask, silkscreen, drill, and board-outline data in the available preview or a trusted viewer. Confirm that every output belongs to the same saved board revision.
 
+### Short video — Verify the fabrication package
 
-### 3.2 Edit component properties
+!!! note "Video needed"
+    Record 20–30 seconds showing package generation, output inventory, and visual review of representative layers. The previous export video was an empty file.
 
-Click each component and set its properties in the **Properties** panel:
+## Completion checklist
 
-| Component | Designator | Value | Footprint |
-|---|---|---|---|
-| Resistor | `R1` | `330Ω` | `R_0805_2012Metric` |
-| LED | `D1` | `Red` | `LED_0805_2012Metric` |
-| Connector | `J1` | `Power` | `PinHeader_1x02_P2.54mm_Vertical` |
+- Project, schematic, and PCB are saved in the intended folder.
+- Symbols, footprints, pin numbers, and polarity are verified.
+- ERC and DFM/DRC have no unresolved blocking errors.
+- No unintended ratsnest connection remains.
+- Board outline, drills, masks, and BOM are present in the release package.
+- The archived package identifies the correct board revision.
 
-![Step3 Properties](../img/tutorial/step3-properties.png)
+## Continue learning
 
-
-### 3.3 Wire the circuit
-
-1. Press ++w++ to activate the **Wire** tool.
-2. **Wire 1**: Click on **J1 pin 1** → click on **R1 pin 1**. The wire connects them.
-3. **Wire 2**: Click on **R1 pin 2** → click on **D1 anode (A)**.
-4. **Wire 3**: Click on **D1 cathode (K)** → click on **J1 pin 2**. This closes the loop.
-5. Press ++esc++ to exit wire mode.
-
-<video controls width="100%">
-  <source src="../img/tutorial/step3-wiring.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
-
-### 3.4 Save the schematic
-
-Press ++ctrl+s++ and save as `LED_Board.schxml`.
-
-![Step3 Complete](../img/tutorial/step3-complete.png)
-
-
----
-
-## Step 4 — Convert Schematic to PCB
-
-1. With the schematic active, go to **Project → Convert to PCB**.
-2. A new PCB document opens automatically with:
-    - All three footprints loaded (clustered together).
-    - Ratsnest lines showing the connections to route.
-
-![Step4 Converted](../img/tutorial/step4-converted.png)
-
-
-!!! warning "Check footprint assignments"
-    If a component shows as "missing footprint", go back to the schematic and verify the Footprint field is set correctly in the Properties panel.
-
----
-
-## Step 5 — Place Footprints
-
-Spread the footprints out on the board:
-
-1. Select the **Select** tool (default, or press ++esc++).
-2. **Click and drag** each footprint to a good position.
-3. Press ++r++ to rotate if needed.
-
-Suggested layout: keep **J1** near the board edge, with **R1** between the connector and **D1**, while preserving room for routing and silkscreen. Use the placement media below as the visual reference.
-
-| Shortcut | Action |
-|---|---|
-| Click + drag | Move footprint |
-| ++r++ | Rotate 90° |
-| ++f++ | Flip to back side |
-
-<video controls width="100%">
-  <source src="../img/tutorial/step5-placement.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
-
----
-
-## Step 6 — Define the Board Outline
-
-1. In the **Layer** panel, click **Edge.Cuts** to set it as the active layer.
-2. Select the **Draw Rectangle** tool from the toolbar.
-3. Click and drag to draw a rectangle around all three footprints.
-4. Leave some margin (~50 mil) between footprints and the edge.
-
-![Step6 Outline](../img/tutorial/step6-outline.png)
-
-
----
-
-## Step 7 — Route Traces
-
-1. Press ++x++ to activate the **Route Trace** tool.
-2. Click on **J1 pad 1** to start a trace → route to **R1 pad 1** → click to finish.
-3. Click on **R1 pad 2** → route to **D1 anode pad** → click to finish.
-4. Click on **D1 cathode pad** → route to **J1 pad 2** → click to finish.
-
-As you complete each trace, the corresponding ratsnest line disappears.
-
-| Action | Input |
-|---|---|
-| Start / add vertex | Left-click |
-| Finish on pad | Left-click on target pad |
-| Cancel | Right-click or ++esc++ |
-
-<video controls width="100%">
-  <source src="../img/tutorial/step7-routing.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
-
----
-
-## Step 8 — Run DFM Check
-
-1. Go to **Tools → DFM Check**.
-2. Click **Run DFM**.
-3. Review the results:
-    - **0 errors** = ready to export :material-check-circle:{ style="color: green" }
-    - If errors appear, double-click each one to zoom to the issue and fix it.
-
-![Step8 Dfm](../img/tutorial/step8-dfm.png)
-
-
----
-
-## Step 9 — Export Fabrication Files
-
-### Gerber export
-
-1. Go to **File → Export → Gerber…**
-2. Select layers: **F.Cu**, **F.SilkS**, **F.Mask**, **Edge.Cuts**.
-3. Choose an output folder.
-4. Click **Export**.
-
-### BOM export
-
-1. Go to **File → Export → BOM…**
-2. Save as `LED_Board_BOM.csv`.
-
-The BOM contains:
-
-| Designator | Value | Footprint | Layer |
-|---|---|---|---|
-| R1 | 330Ω | R_0805_2012Metric | Top |
-| D1 | Red | LED_0805_2012Metric | Top |
-| J1 | Power | PinHeader_1x02_P2.54mm_Vertical | Top |
-
-### Verify with Gerber Viewer
-
-1. Go to **Tools → Gerber Viewer**.
-2. Open the generated `F.Cu.gbr` file.
-3. Verify traces and pads look correct.
-
-<video controls width="100%">
-  <source src="../img/tutorial/step9-export.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
-
----
-
-## Done! :material-check-decagram:{ style="color: #00E5FF" }
-
-You have completed a full design cycle:
-
-```
-Project → Schematic → PCB → Route → DFM → Export
-```
-
-| Deliverable | File |
-|---|---|
-| Project | `LED_Board.prjxml` |
-| Schematic | `LED_Board.schxml` |
-| PCB | `LED_Board.pcbxml` |
-| Gerber files | `F.Cu.gbr`, `F.SilkS.gbr`, `F.Mask.gbr`, `Edge.Cuts.gbr` |
-| BOM | `LED_Board_BOM.csv` |
-
----
-
-## Quick Reference — Shortcuts Used
-
-| Action | Shortcut |
-|---|---|
-| Save | ++ctrl+s++ |
-| Undo | ++ctrl+z++ |
-| Place wire | ++w++ |
-| Route trace | ++x++ |
-| Rotate | ++r++ |
-| Flip | ++f++ |
-| Cancel / Select | ++esc++ |
-| Delete | ++delete++ |
-
----
-
-## Next Steps
-
-Now that you know the basic workflow, explore more:
-
-| Topic | Link |
-|---|---|
-| Add net labels and power symbols | [Wiring & Nets](../schematic/wiring-and-nets.md) |
-| Multi-layer routing with vias | [Routing](../pcb/routing.md) |
-| Add a ground plane | [Zones & Planes](../pcb/zones-and-planes.md) |
-| Preview in 3D | [3D Viewer](../advanced/3d-viewer.md) |
-| Import KiCad / Altium projects | [Projects & Files](../projects.md#importing-projects-from-other-eda-tools) |
-| All keyboard shortcuts | [Shortcuts](../advanced/shortcuts.md) |
+- [Projects and Files](../projects.md)
+- [Wiring and Nets](../schematic/wiring-and-nets.md)
+- [Routing](../pcb/routing.md)
+- [Fabrication and Export](../pcb/fabrication-and-export.md)
+- [AI-Assisted Design](ai-design.md)

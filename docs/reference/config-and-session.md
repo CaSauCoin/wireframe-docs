@@ -1,139 +1,88 @@
-# Configuration and Session Storage
+# Configuration and Session
 
-WireFrame stores user configuration and session data in a JSON file via the configuration system. This page documents file locations, session behavior, and how to reset configuration.
+WireFrame saves workspace preferences and enough session information to reopen recent projects and documents. Use the application settings for normal changes; manual file editing is a recovery procedure.
 
----
+## What WireFrame remembers
 
-## Config File Location
+Depending on the feature used, the local configuration can include:
 
-| OS | Path |
+- Open projects, open documents, and standalone files.
+- Recent open, save, import, export, and project folders.
+- Window position, size, docking slots, and multi-monitor behavior.
+- Units, grid and snap settings, rotation step, and default trace width.
+- Autosave preferences.
+- Simulation defaults.
+- Layer visibility and lock state.
+- Custom keyboard shortcuts.
+- Sign-in/device session data and AI provider settings.
+
+!!! warning "Contains private data"
+    The configuration can contain an authentication token and an AI API key. Never attach the complete file to an issue report or place it in source control.
+
+## Change preferences safely
+
+Open **Preferences** and use the relevant category:
+
+| Category | Typical settings |
 |---|---|
-| **Linux** | `~/.config/wireframe/user_config.json` |
-| **Windows** | `%APPDATA%\WireFrame\user_config.json` |
-| **macOS** | `~/Library/Application Support/WireFrame/user_config.json` |
+| Appearance | Theme, units, autosave |
+| Panels or workspace | Docking, panel behavior, multi-monitor options |
+| Grid and editing | Grid visibility, snapping, rotation, PCB defaults |
+| Simulation | Engine executables, analysis, transient defaults |
+| AI | OpenRouter key and model |
+| Version and account | Tier, version, and update information |
 
-WireFrame ensures the directory exists and creates the file if it doesn't already exist.
+Close Preferences after confirming the new value. For an important project, restart WireFrame once and verify that the setting persists.
 
----
+## Session restoration
 
-## Config File Structure
+WireFrame records the currently open project and document paths during normal use and shutdown. At the next launch it attempts to restore files that are still available.
 
-The config file is a JSON document with the following sections:
+If an item is not restored:
 
-```json
-{
-  "session": {
-    "openProjects": [
-      "/home/user/Projects/MyBoard.prjxml"
-    ],
-    "openDocs": [
-      "/home/user/Projects/main.schxml",
-      "/home/user/Projects/board.pcbxml"
-    ],
-    "simAnalysisType": 0,
-    "simStopTime": 5.0,
-    "simStopTimeUnit": 1,
-    "simTimeStep": 10.0,
-    "simTimeStepUnit": 2,
-    "simEngineNgspiceCliPath": "",
-    "simEngineXycePath": "",
-    "simEngineLTspicePath": ""
-  },
-  "ai": {
-    "apiKey": "",
-    "provider": "openrouter"
-  }
-}
-```
+1. Confirm that the file or drive still exists at the saved location.
+2. Open the project manually from **File → Open Project (.prjxml)** or **Open File**.
+3. Close WireFrame normally so the refreshed session is saved.
 
-### Sections
+Unsaved design edits are not a substitute for autosave or a deliberate **Save** operation. Save before simulation, export, or application update.
 
-| Section | Description |
+## Local configuration location
+
+Current builds use `user_config.json` in the WireFrame configuration directory:
+
+| Platform | Current location |
 |---|---|
-| `session` | Session restoration data (open projects and documents) |
-| `ai` | AI Copilot configuration (API key, provider) |
+| Windows | `%APPDATA%\WireFrame\user_config.json` |
+| Linux | `~/.config/wireframe/user_config.json` |
+| macOS | `~/.config/wireframe/user_config.json` |
 
----
+The file is created automatically. Its internal fields are implementation details and may change between releases, so examples of the raw JSON are intentionally omitted from this guideline.
 
-## Session Data
+## Reset WireFrame preferences
 
-Session data tracks:
+Use this only when startup or workspace state remains broken after a normal restart.
 
-| Field | Type | Description |
-|---|---|---|
-| `openProjects` | Array of strings | Paths to project files (`.prjxml`) open during last session |
-| `openDocuments` | Array of strings | Paths to schematic/PCB files (`.schxml`, `.pcbxml`) open during last session |
-| `simAnalysisType` | Integer | Default simulation analysis: transient, AC, DC sweep, or operating point |
-| `simStopTime` / `simStopTimeUnit` | Number / integer | Default transient duration and its unit |
-| `simTimeStep` / `simTimeStepUnit` | Number / integer | Default transient step and its unit |
-| `simEngine*Path` | String | Optional executable location for an external simulator |
+1. Close WireFrame.
+2. Make a private backup copy of `user_config.json`.
+3. Rename the original file, for example to `user_config.backup.json`.
+4. Start WireFrame and verify the clean defaults.
+5. Re-enter preferences manually. Do not copy authentication or AI-key fields into a support ticket.
 
-### Startup behavior
+Renaming is preferable to immediate deletion because the previous settings remain recoverable. The reset clears saved session, layout-related preferences, custom shortcuts, sign-in state, and AI settings; it does not delete project files.
 
-1. WireFrame reads the config file.
-2. WireFrame reopens listed projects (if files still exist on disk).
-3. the document manager reopens listed documents.
-4. The **Project Structure** and **Editor** tabs are re-populated.
+### Image — Preferences categories
 
-### Automatic saving
+!!! note "Image needed"
+    Capture the complete Preferences window in v1.5.47 with the category list visible. Use a test account, hide all credentials, and show no local user path.
 
-The config is updated automatically when:
+### Short video — Recover a damaged workspace configuration
 
-- You **open or close** a project or document.
-- The app is **closed normally** (session snapshot).
-- You change defaults or engine paths in **Preferences → Simulation**.
+!!! note "Video needed"
+    Record a 20–30 second clip: close WireFrame, rename the config file, relaunch, and show the restored default workspace. Blur the operating-system username and all private paths.
 
----
+## Related guidelines
 
-## Editing preferences safely
-
-Use the in-app **Preferences** pages for normal changes. In particular, use **Preferences → Simulation** to set analysis defaults and optional simulator executables.
-
-Edit `user_config.json` by hand only while WireFrame is closed. Unknown or invalid values may be replaced by defaults at startup.
-
-### AI configuration
-
-The `ai` section stores Copilot settings:
-
-| Field | Type | Description |
-|---|---|---|
-| `apiKey` | String | OpenRouter API key for LLM access |
-| `provider` | String | LLM provider name (default: `"openrouter"`) |
-
-!!! info "Setting the API key"
-    Open **View → AI Copilot → Settings**, then enter the API key in the application. Avoid placing real credentials in screenshots, example projects, or issue reports.
-
----
-
-## Resetting Configuration
-
-### Reset layout and session
-
-| Method | Steps |
-|---|---|
-| **Delete config** | Remove `user_config.json` — the app recreates it with defaults on next launch |
-| **Delete ImGui config** | Remove `imgui.ini` in the working directory to reset panel layout |
-
-### Reset everything
-
-```bash
-# Linux
-rm ~/.config/wireframe/user_config.json
-rm imgui.ini  # if present in the app directory
-
-# Windows (PowerShell)
-Remove-Item "$env:APPDATA\WireFrame\user_config.json"
-Remove-Item imgui.ini
-```
-
-!!! warning "Data loss"
-    Deleting the config file removes all saved session data. You will need to reopen your projects.
-
----
-
-## See Also
-
-- [Installation](../installation.md)
-- [Projects & Files](../projects.md) — project and document management.
-- [Simulation Engines](../simulation/engines-and-models.md) — configure and troubleshoot optional simulators.
-- [FAQ & Troubleshooting](../faq.md) — common config-related issues.
+- [Projects and Files](../projects.md)
+- [Simulation Engines and Models](../simulation/engines-and-models.md)
+- [AI Copilot](../ai/index.md)
+- [FAQ and Troubleshooting](../faq.md)

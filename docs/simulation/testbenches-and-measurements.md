@@ -4,16 +4,12 @@ A waveform tells you what happened. A testbench lets you record what the circuit
 
 ## A simple verification workflow
 
-```mermaid
-flowchart LR
-    A[Add the expected load] --> B[Choose a signal]
-    B --> C[Set an acceptable limit]
-    C --> D[Run the simulation]
-    D --> E{Result}
-    E -->|Pass| F[Requirement satisfied]
-    E -->|Fail| G[Inspect and correct the circuit]
-    E -->|Not measured| H[Check the signal and analysis]
-```
+Add the expected load, choose a signal, define an acceptable limit, and run the simulation. Treat **Pass** as evidence for that requirement, **Fail** as a circuit or setup issue to investigate, and **Not measured** as an incomplete check.
+
+### Image — Testbench with load and assertion
+
+!!! note "Image needed"
+    Capture the current **Testbench** tab with one load and one assertion, plus a visible Last run result. Do not use a generated flowchart in place of the real UI. Suggested size: **1100 × 760 px**.
 
 Open the Simulation Workbench and select the **Testbench** tab. The heading shows whether you are editing the whole-sheet testbench or one selected circuit block.
 

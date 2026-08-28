@@ -97,5 +97,5 @@ Continue to the detailed guides for each aspect of schematic design:
 | Section | What you'll learn |
 |---|---|
 | [Simulation](../simulation/index.md) | Run SPICE simulation on your schematic |
-| [Symbol Creator](../libraries/symbol-creator.md) | Create custom schematic symbols |
+| [Symbol Library Editor](../libraries/symbol-creator.md) | Create or correct custom schematic symbols |
 | [AI Copilot](../ai/index.md) | Generate schematics from text descriptions |

@@ -1,154 +1,79 @@
-# Auto-Placer & Auto-Router
+# Placement and Routing Assistant
 
-After the AI Design Agent generates a BOM and netlist, the **Auto-Placer** and **Auto-Router** handle the physical implementation — positioning components on the board and routing copper traces between them.
+Use WireFrame's placement and routing assistance after component identities, footprints, pin counts, and connections have been reviewed. Automatic output is a proposed starting point, not a finished board.
 
----
+## Before placement
 
-## AI Auto-Placer
+- resolve every missing physical component;
+- confirm symbol pins match footprint pads;
+- review functional blocks;
+- run Netlist Check and ERC;
+- confirm the target schematic or PCB is active;
+- save the project.
 
-The Auto-Placer takes the AI-generated component list and arranges them intelligently on the schematic and PCB.
+## Place functional blocks on a schematic
 
-### Placement Strategy
+When Copilot presents a block card that can be placed:
 
-Components are organized using **logical grouping**:
+1. Review its components and connections.
+2. Add or drag the block to the schematic.
+3. Inspect the placement and wire proposal.
+4. Apply it only when it targets the intended sheet.
+5. Move crowded items and re-run ERC.
 
-| Group | Strategy | Example |
-|---|---|---|
-| **Power section** | Clustered together, input near edge connector | Voltage regulators, inductors, bulk capacitors |
-| **MCU section** | Central position | Microcontroller with nearby decoupling caps |
-| **Interface section** | Near board edges | Connectors, headers, USB ports |
-| **Analog section** | Separated from digital | Op-amps, ADC reference circuits |
-| **Decoupling** | Adjacent to IC power pins | 100nF capacitors placed as close as possible |
+### Short video — Place a Copilot block
 
-### Block-Based Decomposition
+!!! note "Video needed"
+    Record **10–15 seconds** showing one generated block card, adding it to a schematic, the proposed layout, and the placed result. Do not use the former ASCII block diagram. 1080p.
 
-For complex designs, the AI breaks the circuit into **functional blocks**:
+## Run schematic auto-routing
 
-```
-┌──────────────┐  ┌──────────────┐  ┌──────────────┐
-│   Power      │  │     MCU      │  │  Interface   │
-│              │  │              │  │              │
-│  LM2596      │  │  STM32F103   │  │  USB-C       │
-│  L1, D1      │  │  C3, C4, C5  │  │  J1          │
-│  C1, C2      │  │  R3 (pull-up)│  │  ESD prot.   │
-└──────────────┘  └──────────────┘  └──────────────┘
-```
+From **Simulate & Verify**, use **Run Schematic Auto-Router** only after library and netlist checks pass. Inspect:
 
-Each block is placed as a unit, then blocks are arranged relative to each other based on signal flow.
+- whether wires terminate on the correct pins;
+- whether labels and junctions remain readable;
+- whether power and ground nets are clear;
+- whether generated paths cross symbols or hide annotations.
 
-### Placement Preview
+Use Undo or **Revise Design** when the result is not acceptable.
 
-Before applying the placement, you can preview it in the **Placement Copilot** tab of the Component Review window:
+## Update and place the PCB
 
-- **Block View**: Shows each functional block separately with component positions.
-- **Whole Circuit View**: Shows the complete layout with all blocks arranged.
-- Supports **zoom and pan** (same controls as the schematic canvas).
+After the schematic is approved, use **Tools → Update Schematic to PCB**. Arrange footprints by function, then verify:
 
-<!-- TODO: Replace with actual screenshot
-     SCENARIO: Capture the Placement Preview canvas showing:
-     - 3-4 functional blocks arranged on a dark canvas.
-     - Each block labeled (e.g., "Power", "MCU", "Sensors").
-     - Components visible within each block with designators.
-     - Connection lines between blocks showing signal flow.
-     - View mode toggle: "Block View" / "Whole Circuit" buttons visible.
-     SUGGESTED SIZE: 800×500px
--->
-[//]: # (![Placement Preview](../img/ai/placement-preview.png))
+- connectors and controls are reachable;
+- decoupling parts are close to the intended pins;
+- power paths are short and wide enough;
+- noisy and sensitive blocks are separated;
+- board-edge and mechanical clearances are respected.
 
----
+## Run PCB auto-routing
 
-## AI Auto-Router
+If using an automatic PCB route:
 
-The Auto-Router uses a **sequential A* pathfinding algorithm** on a grid to route all PCB traces automatically.
+1. Finalize board outline and placement first.
+2. Confirm net classes and design rules.
+3. Run the router.
+4. Inspect every via, layer transition, clearance, and unrouted net.
+5. Manually repair critical power, high-speed, RF, differential, and sensitive analog paths.
+6. Run DRC and DFM.
 
-### Algorithm Overview
+### Short video — Review an automatic route
 
-```
-For each unrouted connection (ratsnest line):
-  1. Create a grid representation of the board
-  2. Mark obstacles (existing traces, pads, vias, board edge)
-  3. Apply penalty weights:
-     - Via cost (discourage unnecessary layer changes)
-     - Crossing penalty (avoid parallel runs on same layer)
-     - Corner penalty (prefer smooth routing)
-  4. Run A* from source pad to destination pad
-  5. Convert the grid path to trace segments
-  6. Update the grid with the new trace
-```
+!!! note "Video needed"
+    Record **12–18 seconds** showing a small routed PCB, unrouted/ratsnest count before and after, one layer transition, and the DRC/DFM re-check. Do not present progress animation alone as proof of a valid route. 1080p.
 
-### Route Order
+## Manual override is expected
 
-The router processes nets in a strategic order:
+Automatic placement and routing cannot decide product-specific mechanical, thermal, EMC, creepage, or signal-integrity requirements. Lock or manually position critical components and route critical nets deliberately.
 
-1. **Power nets** (GND, VCC) — routed first for lowest impedance paths.
-2. **Short connections** — easy routes that reduce congestion early.
-3. **Long connections** — complex routes that need the most flexibility.
+## Removed legacy content
 
-### Via Management
+The previous page documented clustering algorithms, A* internals, route-order implementation, and experimental GNN training. Those details were removed because this site is a user guideline, not developer architecture documentation.
 
-When a trace cannot reach its destination on the current layer:
+## See also
 
-- The router automatically inserts a **via** to switch layers.
-- Via placement is optimized to minimize total via count.
-- Annular ring and drill sizes follow the design rules.
-
-### Progress Visualization
-
-During auto-routing, you can see:
-
-- A **progress bar** showing percentage of connections routed.
-- Traces appearing on the PCB canvas in real time.
-- Status messages: `"Routing net GND (15/42)"`.
-
-<!-- TODO: Replace with actual video
-     SCENARIO: Record a 15-second clip showing:
-     1. A PCB with 10-15 footprints placed, ratsnest lines visible.
-     2. Click "Auto-Route" — the progress bar starts.
-     3. Traces appear on the board one by one, routing between pads.
-     4. Vias appear when traces switch layers (red F.Cu → blue B.Cu).
-     5. Progress bar reaches 100% — all ratsnest lines gone.
-     RESOLUTION: 1280×720 at 30fps.
--->
-<video controls width="100%">
-  <source src="../../img/ai/auto-routing.webm" type="video/webm">
-  <source src="../../img/ai/auto-routing.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
----
-
-## Manual Overrides
-
-After auto-placement and auto-routing, you retain **full manual control**:
-
-| Action | How |
-|---|---|
-| **Move a component** | Select + drag — traces auto-adjust |
-| **Re-route a trace** | Delete the trace, manually route with ++x++ |
-| **Adjust placement** | Drag footprints to preferred positions |
-| **Add manual vias** | Press ++v++ to place vias where needed |
-
-!!! tip "AI preserves your edits"
-    The AI system uses **coordinate locking** — if you manually move a component, subsequent AI regenerations will preserve your position. This enables non-destructive iterative design.
-
----
-
-## GNN-Based Placement (Advanced)
-
-WireFrame includes an experimental **Graph Neural Network (GNN)** model for intelligent component placement:
-
-- **Technology**: Graph Attention Network (GAT) for functional clustering.
-- **Training data**: Parsed from real KiCad and Altium projects.
-- **Inference**: Runs locally via ONNX runtime — low latency, no server required.
-- **Purpose**: Groups components into functional clusters (power, digital, analog) for optimal board-level placement.
-
-!!! note "Experimental feature"
-    GNN placement is under active development. It works alongside the heuristic-based placer and may be activated in future releases.
-
----
-
-## See Also
-
-- [AI Design Agent](design-agent.md) — generates the BOM and netlist that feed the placer/router.
-- [PCB Routing](../pcb/routing.md) — manual routing workflow.
-- [Design Rules](../pcb/design-rules.md) — rules that constrain auto-routing.
+- [AI Design Agent](design-agent.md)
+- [PCB Footprints and Placement](../pcb/footprints-and-placement.md)
+- [Routing Traces](../pcb/routing.md)
+- [DFM and DRC](../pcb/dfm-and-drc.md)

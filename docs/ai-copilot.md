@@ -4,16 +4,12 @@ Use Copilot to review a design, investigate a circuit block, prepare schematic c
 
 ## Review before applying
 
-```mermaid
-flowchart LR
-    A[Ask Copilot] --> B[Review findings]
-    B --> C[Inspect the proposed changes]
-    C --> D{Your decision}
-    D -->|Apply| E[Update the schematic]
-    D -->|Revise| C
-    D -->|Reject| F[Keep the design unchanged]
-    E --> G[Run ERC, DFM, or simulation]
-```
+Ask Copilot, review its findings, inspect every proposed change, and then choose whether to apply, revise, or discard it. After applying a change, run the relevant deterministic check again.
+
+### Image — Review and apply a Copilot proposal
+
+!!! note "Image needed"
+    Capture a real proposal with **Apply** and **Discard** visible beside the affected board or schematic context. The image should make clear that nothing changes before the user approves it. Suggested size: **1300 × 760 px**.
 
 ## Ask a focused question
 
@@ -44,7 +40,7 @@ When a proposed block can be placed on the canvas:
 
 ## Create a symbol or footprint from a datasheet
 
-Attach the component's PDF datasheet when its pins, package, or simulation model are not already available.
+When Component Review reports **Not in Pool**, use **AI Gen** to create a symbol and footprint from a standard template or a manufacturer datasheet. Follow the complete [AI Component Generator guideline](ai/component-generator.md) before using the result in a board.
 
 Before accepting the generated library item, verify:
 
@@ -54,7 +50,7 @@ Before accepting the generated library item, verify:
 - footprint pitch, pad dimensions, drill sizes, and orientation;
 - the assigned simulation model, when required.
 
-Use the preview and review screen to correct any extracted value before saving or placing the part.
+Use **Manage** on the component card to inspect and correct the generated symbol and footprint before placement.
 
 !!! warning
     Always compare generated library data with the manufacturer's recommended land pattern and pin table. A visually correct symbol does not guarantee a correct footprint or pin mapping.

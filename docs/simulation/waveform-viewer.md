@@ -1,213 +1,78 @@
 # Waveform Viewer
 
-The Waveform Viewer is an **interactive oscilloscope** built into WireFrame. After a simulation completes, it displays voltage, current, and phase waveforms with zoom, pan, cursors, and measurement capabilities.
+The waveform area displays results from the latest completed simulation. Use it to compare selected signals, inspect timing and amplitude, and support testbench decisions.
 
----
+## Select traces
 
-## Opening the Waveform Viewer
+Open **Signals** in the Simulation Workbench and select the nets to display. The plot updates from the available result data.
 
-The Waveform Viewer opens **automatically** after a successful simulation. It appears as a panel or tab within the editor workspace.
+Use:
 
----
+- **Named nets** for important labeled signals;
+- **All** for broad debugging;
+- **None** before building a focused comparison.
 
-## Viewer Layout
+### Image — Waveform Viewer with two signals
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│  ⚙ Auto Scale  │  📐 Grid  │  📋 Legend  │  ✂ Cursors          │  ← Controls
-├─────────────────────────────────────────────────────────────────┤
-│  V (volts)                                                      │
-│  5.0 ┤                     ┌──────────────┐                     │
-│      │                    ╱│              │╲                     │
-│  2.5 ┤                   ╱ │              │ ╲                    │
-│      │                  ╱  │              │  ╲                   │
-│  0.0 ┤─────────────────╱───┤──────────────┤───╲──────────       │
-│      │                C1   │              │   C2                 │
-│      └────────┼────────┼───┼──────────┼───┼──────────── t (ms) │
-│               0        2   │          6   │       10             │
-│                            │  Δt = 4ms    │                     │
-│                            │  ΔV = 2.5V   │                     │
-│                            │  f = 250 Hz  │                     │
-├─────────────────────────────────────────────────────────────────┤
-│  Legend: ── v(out)  ── v(in)  ── i(R1)                         │
-└─────────────────────────────────────────────────────────────────┘
-```
+!!! note "Image needed"
+    Capture a real transient result with two clearly named signals, grid and legend enabled, and readable axes. Remove the former ASCII waveform mockup. Suggested size: **1400 × 760 px**.
 
----
+## View controls
 
-## Waveform Display
-
-### Traces
-
-Each simulation output vector is plotted as a colored trace:
-
-| Trace type | Description | Example |
-|---|---|---|
-| **Voltage** | Node voltage (referenced to GND) | `v(out)`, `v(VCC)` |
-| **Current** | Branch current through a component | `i(R1)`, `i(V1)` |
-| **Phase** | Phase angle (AC analysis only) | Phase of `v(out)` |
-
-Multiple traces can be displayed simultaneously with different colors.
-
-### Transient results
-
-- X-axis: **Time** (seconds, ms, µs)
-- Y-axis: **Voltage** (V) or **Current** (A)
-
-### AC results
-
-- X-axis: **Frequency** (Hz, kHz, MHz) — logarithmic scale
-- Y-axis: **Magnitude** (dB) and/or **Phase** (degrees)
-
-### Operating Point results
-
-Displayed as a **table** rather than a waveform:
-
-| Node / Branch | Value |
+| Control | Purpose |
 |---|---|
-| `v(out)` | 2.483 V |
-| `v(VCC)` | 5.000 V |
-| `i(R1)` | 0.248 mA |
-| `i(V1)` | -1.25 mA |
+| **Auto-scale results** | Fit available traces to the current plot |
+| **Grid** | Show measurement reference lines |
+| **Legend** | Identify displayed traces |
+| **A/B cursors** | Compare two points on a trace |
 
----
+Disable auto-scale when you need a stable visual range across repeated runs. Re-enable it when new data falls outside the current view.
 
-## Controls
+## Use A/B cursors
 
-### Auto Scale
+1. Enable **A/B cursors**.
+2. Place cursor A at the first event.
+3. Place cursor B at the second event.
+4. Read the displayed time and amplitude differences.
+5. Record the measurement or add an equivalent testbench assertion when it must be checked repeatedly.
 
-- **Auto Scale ON** (default): Y-axis range automatically fits all visible data.
-- **Auto Scale OFF**: Manually set Y-axis min/max for precise comparison.
+### Short video — Measure a waveform with A/B cursors
 
-| Control | Description |
-|---|---|
-| Auto Scale toggle | Automatically fit Y-axis range to data |
-| Min Y / Max Y | Manual Y-axis range (when auto scale is off) |
-| Min X / Max X | Manual X-axis range |
+!!! note "Video needed"
+    Record **10–15 seconds** enabling **A/B cursors**, positioning both cursors around one period or transition, and showing the resulting delta. Use a clean waveform and visible pointer. 1080p.
 
-### Grid
+## Interpret common analyses
 
-Toggle a reference grid overlay on the plot:
+### Transient
 
-- Grid lines help estimate values visually.
-- Click **Grid** to show/hide.
+Check startup, delay, rise/fall time, overshoot, ripple, duty cycle, and settling behavior over time.
 
-### Legend
+### AC
 
-Toggle the legend display showing trace names and colors:
+Check gain and phase across frequency. Confirm that the selected engine and model support the intended AC behavior.
 
-- Each trace is listed with its color and name.
-- Click **Legend** to show/hide.
+### DC sweep
 
----
+Check how an output or operating point changes with a swept source or parameter.
 
-## Cursor Measurements
+### Operating point
 
-The waveform viewer supports **two measurement cursors** (C1 and C2) for precise readings:
+Check steady node voltages and branch currents without interpreting them as time-domain traces.
 
-### Placing cursors
+## Compare results safely
 
-1. Click the **Cursors** toggle to enable cursors.
-2. Click on the plot area to place **Cursor 1** (C1).
-3. Click again to place **Cursor 2** (C2).
-4. Drag cursors left/right to reposition them.
+- keep source, load, model version, scope, and analysis settings identical;
+- do not compare traces from different runs unless the settings are recorded;
+- use assertions for release criteria instead of judging only by visual shape;
+- exclude startup from steady-state measurements when appropriate;
+- export data when another reviewer needs evidence.
 
-### Reading measurements
+## Ask Copilot
 
-When both cursors are placed, the viewer displays:
+Use the robot action beside a signal or open the **AI** tab and select **Explain waveform results**. State the expected behavior and the relevant time window. Verify the response against the plotted data and testbench limits.
 
-| Measurement | Description | Example |
-|---|---|---|
-| **Δt** (Delta time) | Time difference between C1 and C2 | 4.0 ms |
-| **ΔV** (Delta voltage) | Voltage difference at C1 and C2 | 2.5 V |
-| **Frequency** | 1 / Δt — the frequency if measuring one period | 250 Hz |
+## See also
 
-```
-Cursor Measurement Example:
-
-  C1 at t = 2.0 ms, v = 0.0 V
-  C2 at t = 6.0 ms, v = 2.5 V
-
-  Δt = 4.0 ms
-  ΔV = 2.5 V
-  f  = 1 / 4.0ms = 250 Hz
-```
-
-<!-- TODO: Replace with actual screenshot
-     SCENARIO: Capture the Waveform Viewer showing:
-     - A transient simulation result with 2 traces: v(out) in cyan and v(in) in yellow.
-     - v(out) showing a square wave or RC charging curve.
-     - Two vertical cursor lines (C1 and C2) positioned on the waveform.
-     - Measurement readout showing Δt, ΔV, and frequency values.
-     - Grid visible, legend showing trace names.
-     - Dark background consistent with the ImGui theme.
-     SUGGESTED SIZE: 900×500px
--->
-[//]: # (![Waveform Viewer Cursors](../img/simulation/waveform-viewer-cursors.png))
-
----
-
-## Interacting with the Plot
-
-| Action | Input | Effect |
-|---|---|---|
-| **Zoom in/out** | Scroll wheel | Zoom the time axis (X) |
-| **Pan** | Click and drag | Move the view left/right and up/down |
-| **Reset view** | Double-click | Reset to auto-scale view |
-| **Move cursor** | Drag cursor line | Reposition C1 or C2 |
-
----
-
-## Auto-Run Timer
-
-The simulation viewer supports an **auto-run timer** for iterative testing:
-
-- Useful when tweaking component values — the simulation re-runs automatically after changes.
-- The timer countdown is visible in the controls area.
-
----
-
-## Practical Examples
-
-### Example 1: RC Time Constant
-
-Simulate an RC circuit (R = 10kΩ, C = 100nF) with a 5V step input:
-
-- **Expected**: Exponential charging curve with τ = R×C = 1ms.
-- **Verify**: Place C1 at t=0, C2 at t=1ms → v(out) should be ~3.16V (63% of 5V).
-
-### Example 2: 555 Timer Oscillator
-
-Simulate a 555 timer in astable mode:
-
-- **Expected**: Square wave output.
-- **Verify**: Place cursors on consecutive rising edges → Δt gives the period, 1/Δt gives frequency.
-
-### Example 3: Filter Frequency Response
-
-Run AC analysis on an RC low-pass filter:
-
-- **Expected**: Flat response below cutoff, -20dB/decade rolloff above.
-- **Verify**: Find the -3dB point on the magnitude plot.
-
-<!-- TODO: Replace with actual video
-     SCENARIO: Record a 20-second clip showing:
-     1. A completed RC circuit simulation result in the Waveform Viewer.
-     2. Enable cursors — place C1 at t=0, C2 at the 63% voltage point.
-     3. The measurement readout shows Δt ≈ 1ms (matching RC time constant).
-     4. Zoom in to verify the exact voltage at C2.
-     RESOLUTION: 1280×720 at 30fps.
--->
-<video controls width="100%">
-  <source src="../../img/simulation/waveform-measurement.webm" type="video/webm">
-  <source src="../../img/simulation/waveform-measurement.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
----
-
-## See Also
-
-- [Running a Simulation](running-simulation.md) — configure and execute simulations.
-- [Simulation Overview](index.md) — supported analysis types.
-- [Tutorial: NE555 LED Blinker](../tutorial/index.md) — includes hands-on simulation.
+- [Running a Simulation](running-simulation.md)
+- [Testbenches and Measurements](testbenches-and-measurements.md)
+- [Simulation Engines and Models](engines-and-models.md)

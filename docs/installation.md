@@ -1,191 +1,89 @@
 # Installation
 
-This page explains how to **download, install, and launch** WireFrame EDA on all supported platforms.
+Install WireFrame only from the official release channel and choose the package that matches your operating system and CPU architecture. This guideline covers pre-built end-user packages, not source builds.
 
-| Platform | Package format | Architecture |
-|---|---|---|
-| **Windows** | Installer `.exe` | 64-bit (x86_64) |
-| **macOS** | Disk image `.dmg` | Apple Silicon (arm64) |
-| **Linux** | Debian package `.deb` | 64-bit (x86_64) |
+## Before downloading
 
-!!! info "End-user guide"
-    This page covers **pre-built packages** only. For building from source, see the developer documentation in the repository.
+Download from the [official WireFrame download page](https://wireframe.com.vn/download).
 
-![Installation Overview](img/installation/installation-overview.png)
+1. Confirm whether you need the stable release or the v1.5.47 release candidate.
+2. Read the release notes and back up active production projects before testing a release candidate.
+3. Verify the downloaded filename, version, platform, and architecture.
+4. Keep operating-system security protections enabled.
 
+### Image — Official release download page
 
----
+!!! note "Image review needed"
+    Capture the final v1.5.47 download page with version, platform, architecture, file size, and checksum visible. Replace the current image if any filename or product branding differs.
 
-## 1. Downloading WireFrame
+## Windows
 
-Go to the official download page:
+1. Download the official 64-bit Windows installer.
+2. Open the installer and review the publisher and filename shown by Windows.
+3. Follow the installer steps and launch WireFrame from the Start menu.
+4. If SmartScreen appears, continue only after confirming that the package came from the official release channel and its checksum matches the published value.
 
-:material-download: **Download:** `https://wireframe.com.vn/download`
+Do not disable SmartScreen globally. If the publisher, filename, or checksum is unexpected, cancel the installation and obtain a fresh package.
 
-On that page:
+### Image — Windows installer
 
-1. Choose the latest published stable version. For pre-release validation, choose the **v1.5.47 release candidate** only when you accept preview software.
-2. Select the package that matches your operating system and architecture.
+!!! note "Image needed"
+    Capture the signed v1.5.47 installer or its first setup page with the exact product version visible. The previous image file was a 1×1 placeholder and must be replaced.
 
-![Download Page](img/installation/download-page.png)
+## macOS
 
+1. Download the package built for your Mac architecture.
+2. Open the disk image and drag WireFrame to **Applications**.
+3. Eject the disk image.
+4. Launch WireFrame from **Applications**.
 
----
+If macOS blocks the first launch, use **System Settings → Privacy & Security → Open Anyway** only after confirming the package source. Do not routinely remove quarantine attributes with a privileged Terminal command; that bypass should be reserved for a verified support procedure.
 
-## 2. Windows Installation
+### Image — macOS installation and first launch
 
-### 2.1 Download the installer
+!!! note "Image needed"
+    Capture the final disk-image layout and the legitimate Privacy & Security approval state for v1.5.47. The previous DMG and Gatekeeper image files were 1×1 placeholders.
 
-1. On the download page, click the Windows installer link:
-    - Release-candidate filename: `WireFrame-1.5.47-Windows.exe`
-2. Save the file to a convenient location (e.g., your `Downloads` folder).
+## Linux
 
-### 2.2 Run the installer
+For a Debian package, open it with the system package installer or install the exact downloaded file from a terminal. If the package manager reports missing dependencies, use the distribution's normal dependency-repair workflow, then retry the launch from the application menu.
 
-1. Double-click the downloaded `.exe` file.
-2. If Windows **SmartScreen** shows a warning:
-    - Click **More info** → **Run anyway**.
+Before reporting a launch issue, record the distribution, release, desktop session, CPU architecture, WireFrame package version, and exact terminal output.
 
-    !!! warning "SmartScreen warning"
-        This dialog appears because the installer may not yet be code-signed with an EV certificate. The software is safe to install if you downloaded it from the official source.
+### Image — Linux package installation
 
-3. Follow the setup wizard:
-    - **Accept** the license agreement.
-    - **Choose** the installation folder (default `C:\Program Files\WireFrame\` is recommended).
-    - **Optionally** create a desktop shortcut and Start Menu entry.
-4. Click **Install** and wait for the process to finish.
-5. Click **Finish** to close the installer.
+!!! note "Image needed"
+    Capture the supported v1.5.47 package in a current Debian-based graphical installer, including version and architecture but no local username.
 
-![Windows Installer](img/installation/windows-installer.png)
+## First launch and sign-in
 
+On first launch, complete the visible account or activation flow, then open **Preferences** and confirm:
 
-### 2.3 Launch the application
+- application version and tier;
+- theme and units;
+- autosave;
+- simulation engine status;
+- AI settings only when you intend to use Copilot.
 
-Two ways to start WireFrame on Windows:
+Never show activation tokens or AI API keys in screenshots or support reports.
 
-- **Start Menu**: Open Start → search for "WireFrame" → press ++enter++.
-- **Desktop shortcut**: Double-click the WireFrame icon on your desktop.
+### Short video — First-run verification
 
----
+!!! note "Video needed"
+    Record 20–30 seconds showing launch, version confirmation, Preferences, and a new empty project. Use a test account and hide all credentials.
 
-## 3. macOS Installation
+## Upgrade checklist
 
-### 3.1 Download the disk image
+1. Save and back up important projects.
+2. Close WireFrame normally.
+3. Install the new package using the platform's standard process.
+4. Confirm the displayed version.
+5. Open a copy of a representative project.
+6. Verify libraries, simulation engines, AI settings, ERC/DFM behavior, and one fabrication preview before using the build for release work.
 
-1. On the download page, click the macOS link:
-    - Release-candidate filename: `WireFrame-1.5.47-Darwin.dmg`
-2. Save the file (usually to `~/Downloads`).
+## Related guidelines
 
-### 3.2 Install the application
-
-1. Double-click the downloaded `.dmg` to mount it.
-2. A Finder window appears showing:
-    - The **WireFrame** application icon.
-    - A shortcut to the **Applications** folder.
-3. **Drag** the WireFrame icon onto the Applications folder.
-
-![Macos Dmg](img/installation/macos-dmg.png)
-
-
-4. Once copied, eject the DMG:
-    - Right-click on "WireFrame" in the Finder sidebar → **Eject**.
-
-### 3.3 Clear quarantine attributes (required)
-
-macOS applies quarantine flags to apps downloaded from the internet. You **must** remove them before the first launch:
-
-1. Open **Terminal** (press ++cmd+space++, type "Terminal", press ++enter++).
-2. Run:
-
-```bash
-sudo xattr -cr /Applications/WireFrame.app
-```
-
-3. Enter your macOS password when prompted.
-
-!!! danger "Do not skip this step"
-    Without clearing the quarantine attribute, macOS may prevent the application from opening or silently block certain features.
-
-### 3.4 First launch (Gatekeeper)
-
-1. Open **Launchpad** or the **Applications** folder.
-2. Find **WireFrame** and click to launch.
-
-If macOS shows a Gatekeeper warning:
-
-> *"WireFrame" cannot be opened because it is from an unidentified developer.*
-
-Resolve it:
-
-1. Open **System Settings → Privacy & Security**.
-2. Scroll down and click **Open Anyway** next to the WireFrame entry.
-3. Launch WireFrame again and confirm.
-
-![Macos Gatekeeper](img/installation/macos-gatekeeper.png)
-
-
----
-
-## 4. Linux Installation
-
-### 4.1 Install the `.deb` package
-
-1. Download `WireFrame-1.5.47-Linux.deb` from the release-candidate page.
-2. Install via terminal:
-
-```bash
-cd ~/Downloads
-sudo dpkg -i ./WireFrame-1.5.47-Linux.deb
-```
-
-If there are missing dependencies:
-
-```bash
-sudo apt-get install -f
-```
-
-3. Launch WireFrame:
-    - From the **application menu** → search for "WireFrame".
-    - Or from terminal: `wireframe`
-
-### 4.2 Runtime requirements
-
-The pre-built binary requires:
-
-| Requirement | Details |
-|---|---|
-| Architecture | 64-bit x86_64 |
-| OpenGL | 3.3+ with hardware acceleration |
-| Desktop environment | GTK / Qt runtime libraries (usually pre-installed) |
-| Distros tested | Ubuntu 22.04+, Fedora 38+, Debian 12+ |
-
-!!! tip "Wayland users"
-    If you experience rendering issues under Wayland, try launching with the X11 backend: `GDK_BACKEND=x11 wireframe`
-
----
-
-## 5. Verifying the Installation
-
-After launching, verify that everything works:
-
-- [x] The main window opens with the dark ImGui theme.
-- [x] The **menu bar** is visible at the top (File, Edit, View, Project, Tools, Help).
-- [x] You can open **File → New Schematic** and see an empty schematic canvas.
-- [x] You can open **File → New PCB** and see an empty PCB canvas.
-- [x] The **Library panel** is visible on the right side.
-- [x] **Simulation → SPICE Simulation Panel** opens for a schematic and shows the bundled ngspice status.
-- [x] **Preferences → Simulation** displays engine paths and saved analysis defaults.
-
-If any of these fail, check the [FAQ & Troubleshooting](faq.md) page.
-
----
-
-## 6. Next Steps
-
-You're ready to start designing! Continue with:
-
-| Next page | Description |
-|---|---|
-| [Getting Started](getting-started.md) | Learn the basic workflow and UI layout |
-| [UI Overview](ui-overview.md) | Detailed tour of every panel and toolbar |
-| [Full Tutorial](tutorial/index.md) | End-to-end project from install to Gerber export |
+- [Getting Started](getting-started.md)
+- [Configuration and Session](reference/config-and-session.md)
+- [Release Notes](changelog.md)
+- [FAQ and Troubleshooting](faq.md)

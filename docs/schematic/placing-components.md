@@ -1,126 +1,60 @@
-# Placing Components (Symbols)
+# Placing Components
 
-Components in the schematic are **symbol instances** from loaded libraries. This page covers loading libraries, finding symbols, placing them, and editing their properties.
+Place schematic symbols from approved local libraries and assign the exact value and PCB footprint required by the selected physical part.
 
----
+## Prepare the library
 
-## Loading Symbol Libraries
+1. Open **View → Local Library Manager**.
+2. Add the KiCad symbol file or containing library folder.
+3. Confirm the source and symbol in the active inventory.
+4. Activate the target schematic and search its Component Library.
 
-Before placing components, load at least one symbol library:
+If the exact part is missing, import an approved library, create it in Symbol Library Editor, or use the [AI Component Generator](../ai/component-generator.md) with full datasheet review.
 
-1. Make sure a **Schematic** tab is active (the Library panel shows symbols)
-2. In the **Library panel**, click **Load Symbols…**
-3. Select one or more KiCad symbol files (`.kicad_sym`)
-4. WireFrame parses the library in the background
-5. Once complete, symbol names appear in the list
+## Place a symbol
 
-While loading:
-- The panel shows a status line: `Loading: Parsing symbols…`
-- Any parsing errors are shown in the **Logger** after completion
+1. Search by exact part family or symbol name.
+2. Select or double-click the intended symbol to enter placement mode.
+3. Move the preview to a clear grid location.
+4. Rotate if needed and click to place.
+5. Press ++esc++ to return to selection.
 
-!!! tip "Quick search"
-    Type in the filter box at the top of the Library panel. For example: type `STM32` to filter MCUs, `R_06` for 0603 resistors, `LED` for LEDs.
+### Short video — Find and place a symbol
 
-!!! info "Free KiCad libraries"
-    Download from [https://www.kicad.org/libraries/](https://www.kicad.org/libraries/) — WireFrame is fully compatible.
+!!! note "Video review needed"
+    Capture 10–15 seconds showing an approved library source, symbol search, grid-snapped placement, and exit from placement mode. Replace older media if the library UI differs.
 
----
+## Complete component properties
 
-## Placing a Symbol
+Select the component and verify:
 
-**Workflow:**
+| Field | Review |
+|---|---|
+| Designator | Unique and appropriate prefix |
+| Value | Electrical value or exact orderable part number |
+| Footprint | Exact package variant and pad count |
+| Comment | Useful design or sourcing note, when required |
 
-1. Type in the filter box to narrow the list (e.g. `R_0603`)
-2. **Double-click** the symbol name (e.g. `R_0603`, `MCU_STM32`, `C_0805`)
-3. The canvas enters **placement mode**:
-    - The symbol preview follows the cursor, semi-transparent
-    - Snaps automatically to the grid
-4. **Left-click** to place the symbol at the current position
-5. The component is placed and you return to **Select** mode
+Changing a designator can affect connected references. Review the updated item and run ERC before PCB update.
 
-Each placed component has:
+## Move, rotate, copy, or delete
 
-| Property | Example | Description |
-|---|---|---|
-| **Designator** | `R1`, `U3` | Unique identifier — auto-incremented or editable |
-| **Value** | `10kΩ`, `100nF` | Electrical value |
-| **Footprint** | `R_0603_1608Metric` | Associated PCB footprint package |
+Use drag to move, ++r++ to rotate, standard clipboard shortcuts to duplicate, and ++delete++ to remove. After moving or rotating a connected component, inspect each wire endpoint at the pin tip.
 
----
+Pasted components receive new identities to avoid duplicates, but you must still review their values, footprint assignments, and connections.
 
-## Editing Designators and Values
+## Pre-ERC checklist
 
-After placing a component, click it to select. The **Properties panel** shows editable fields:
+- Exact device and package variant are known.
+- Designator is unique.
+- Value and rating are correct.
+- Footprint pad numbering matches symbol pins.
+- Polarity and orientation are clear.
+- Every used pin is connected intentionally; unused pins are handled explicitly.
 
-| Field | Description | Note |
-|---|---|---|
-| **Designator** | Unique identifier (e.g. R1 → R2) | Updating this remaps all connected wires |
-| **Value** | Electrical value (e.g. 10kΩ, 100nF) | Appears on the schematic and in the BOM |
-| **Comment** | Optional note | Free-form text |
-| **Footprint** | PCB package name | Required for PCB conversion |
+## Related guidelines
 
-!!! info "Designator remapping"
-    When you change a designator (e.g. `U1` → `U3`), WireFrame automatically updates:
-    - Wires connected to that component
-    - References shown elsewhere in the active document
-
-    Review the updated designator before exporting the BOM or converting the schematic to PCB.
-
-All changes fully support **Undo** (++ctrl+z++).
-
----
-
-## Rotating Components
-
-With one or more components selected:
-
-- Press ++r++ (or **context menu → Rotate**)
-- The component rotates **90° per keypress**
-- **Connected wires automatically adjust** to the new pin positions
-
-Rotation is fully undoable and redoable.
-
----
-
-## Moving Components
-
-1. **Select** one or more components (click or drag a selection box)
-2. **Click and drag** to move them on the canvas
-3. Connected wires **update in real time** to follow the pin positions
-
-On mouse release:
-- A move command is recorded, storing both old and new positions
-- **Undo** (++ctrl+z++) restores everything — components and wires — to their previous state
-
----
-
-## Deleting Components
-
-1. Select the component(s)
-2. Press ++delete++ or **context menu → Delete**
-3. The component and all its connected wires are removed
-
-**Undo** (++ctrl+z++) restores the deleted components and wires.
-
----
-
-## Copy, Cut, Paste
-
-| Operation | Shortcut | Behavior |
-|---|---|---|
-| **Copy** | ++ctrl+c++ | Copies components and wires with relative positions |
-| **Cut** | ++ctrl+x++ | Copies then removes the selection |
-| **Paste** | ++ctrl+v++ | Places copies at the cursor, assigns new IDs to avoid conflicts |
-
-During paste:
-- New component IDs are generated (e.g. R1 → R5) to avoid duplicates
-- Wire pin attachments are remapped to the new IDs
-- The pasted group follows the cursor until you click to place
-
----
-
-## See Also
-
-- [Wiring & Nets](wiring-and-nets.md) — connect your placed components
-- [Properties & Attributes](properties-and-attributes.md) — edit component and page settings
-- [Symbol Libraries](../libraries/symbols-library.md) — manage and create symbol libraries
+- [Symbol Libraries](../libraries/symbols-library.md)
+- [Wiring and Nets](wiring-and-nets.md)
+- [Properties and Attributes](properties-and-attributes.md)
+- [ERC](erc.md)

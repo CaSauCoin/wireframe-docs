@@ -27,19 +27,12 @@ PCB layers control which drawing plane is active — copper, silkscreen, solder 
 
 ## The Layer Panel
 
-Open via **View → Toggle Layers** or from the sidebar when a PCB is active:
+Open **View → PCB Layers** or use the companion panel shown with an active PCB:
 
-```
-Layer Panel
-────────────────────────────
-👁  🟥  F.Cu        ← Active layer (highlighted background)
-👁  🟦  B.Cu
-👁  🟡  F.SilkS
-    🟣  B.SilkS     ← Hidden (eye icon off)
-👁  🟪  F.Mask
-👁  🟢  B.Mask
-👁  🟫  Edge.Cuts
-```
+### Image — PCB Layers panel
+
+!!! note "Image needed"
+    Capture the Layers panel with F.Cu active, one hidden layer, and several visible copper and technical layers. Keep the eye icons, color swatches, and active highlight readable.
 
 | Column | Interaction |
 |---|---|
@@ -106,7 +99,7 @@ Default colors are chosen for easy visual distinction (red/blue for copper). You
 |---|---|
 | **Pan** | Hold middle mouse button and drag |
 | **Zoom in / out** | Scroll wheel (centered on cursor position) |
-| **Fit to board** | Press ++f++ or View → Fit to Screen |
+| **Fit to board** | Use the configured Fit to Screen shortcut or canvas action |
 | **Zoom to selection** | Press ++shift+f++ |
 | **100% zoom** | Press ++1++ |
 

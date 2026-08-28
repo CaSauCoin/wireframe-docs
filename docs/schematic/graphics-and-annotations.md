@@ -1,128 +1,51 @@
 # Graphics and Annotations
 
-Beyond components and wires, the schematic editor supports drawing primitives, text, and dimension annotations. Use these to document your design, add visual grouping, or include notes.
+Use schematic graphics and text to explain circuit intent, group related sections, and record design constraints. They support documentation but do not create an electrical connection unless the selected tool is explicitly electrical.
 
----
+## Choose the correct tool
 
-## Drawing Primitives
-
-Available tools from the schematic toolbar:
-
-| Tool | Shortcut | How to draw | Result |
-|---|---|---|---|
-| **Line** | — | Click start → drag → release | Line object |
-| **Rectangle** | — | Click corner → drag to opposite corner | Rectangle object |
-| **Circle** | — | Click center → drag to set radius | Circle object |
-| **Arc** | — | Click to define arc endpoints and midpoint | Arc object |
-| **Polygon** | — | Click vertices → right-click to close | Polygon object |
-| **Harness** | — | Click points → right-click to finish | Special polyline style |
-| **Junction** | — | Click to place a dot | Manual junction marker |
-
-
-
-### Primitive properties
-
-All graphic objects share:
-
-| Property | Description |
+| Tool | Use it for |
 |---|---|
-| `id` | Unique identifier per object |
-| `layerId` | Drawing layer (for multi-layer use; mainly relevant on PCB) |
-| Color | Stroke/outline color |
-| Line thickness | Stroke width |
-| Fill color | Optional fill (rectangles, circles, polygons) |
+| Line, rectangle, circle, arc, polygon | Visual grouping or explanatory shapes |
+| Text | Notes, limits, test points, and design intent |
+| Harness | Supported grouped connection notation |
+| Junction | Explicit electrical meeting point |
 
-<video controls width="100%">
-  <source src="../img/schematic/drawing-primitives.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+Do not use a graphic line as a wire. If two pins must be electrically connected, use the Wire tool and verify the result with net highlighting or ERC.
 
----
+## Create and edit an annotation
 
-## Text Annotations
+1. Select the graphic or text tool.
+2. Place its points or bounds on the sheet.
+3. Press ++esc++ when the shape is complete.
+4. Select it and use Properties to set content, color, line width, fill, position, or size when available.
+5. Save and inspect the PDF result if the annotation is part of release documentation.
 
-Text annotation supports free-form text annotations on the schematic:
+### Short video — Add a circuit note and grouping box
 
-| Property | Description |
-|---|---|
-| Position | World coordinates on the canvas |
-| Content | The displayed text string |
-| Font size | Adjustable text size |
-| Color | Text color |
+!!! note "Video review needed"
+    Record 15–20 seconds in v1.5.47 showing a text note and rectangle added, edited through Properties, then selected as ordinary graphic objects. Replace older media if tools or handles differ.
 
-### Creating text
+## Annotation guidelines
 
-1. Select the **Text** tool from the toolbar (or press ++t++ if configured).
-2. Click at the desired location on the canvas.
-3. Type the text into a popup field or the Properties panel.
-4. The text object is placed and can be selected, moved, and edited later.
+- State measurable constraints, not vague comments.
+- Keep notes outside symbol pins and wires.
+- Use consistent font size and restrained color.
+- Include voltage, current, tolerance, or test conditions when relevant.
+- Avoid duplicating information that is already controlled by a component property.
+- Confirm that release-critical notes remain readable in exported PDF.
 
-!!! tip "Use text for documentation"
-    Add notes explaining circuit behavior, voltage levels, or design constraints directly on the schematic sheet. This keeps important information visible alongside the circuit.
+## Dimensions
 
----
+Do not rely on a schematic dimension tool unless it is visible and verified in the release build. Record required distances as clear text or in the relevant PCB/mechanical workflow instead of documenting experimental or programmatic features.
 
-## Selection and Editing
+### Image — Documented schematic block
 
-Graphics are part of the general selection system:
+!!! note "Image needed"
+    Capture one functional block with a clean grouping shape and a concise constraint note. Keep electrical wires visually distinct from annotations.
 
-- **Click** to select a single graphic object.
-- **Drag** a selection box to select multiple objects.
-- Selected graphics show **highlight outlines** and **resize handles**.
+## Related guidelines
 
-### Editing operations
-
-| Operation | How | Command |
-|---|---|---|
-| **Move** | Drag selected objects | Undo-supported command |
-| **Resize** | Drag corner/edge handles | Resize command (geometry update) |
-| **Delete** | ++delete++ or context menu | Undo-supported command |
-| **Change color** | Properties panel | Direct property edit |
-| **Change layer** | Properties panel or context menu | Layer assignment |
-
-!!! info "Resize handles"
-    When a graphic is selected, small squares appear at corners and midpoints. Hovering over them changes the cursor to a resize arrow. Drag to change the object's dimensions.
-
-
----
-
-## Dimensions (Experimental)
-
-WireFrame has preliminary support for Dimension annotation objects — measurement annotations:
-
-| Property | Description |
-|---|---|
-| Start point | First measurement endpoint |
-| End point | Second measurement endpoint |
-| Offset | Distance of the dimension line from the measured line |
-| Text label | Displayed measurement value or custom annotation |
-
-A dimension draws:
-
-- Two witness lines from the measurement points.
-- A dimension line with arrows between them.
-- A centered text label showing the distance.
-
-!!! note "Experimental feature"
-    Dimension tools may not be fully implemented in the current toolbar. They can be created programmatically or may appear in future releases.
-
----
-
-## Layers for Graphics
-
-While layers are most meaningful on PCB, schematic graphics also carry a `layerId`:
-
-- Colors derive from layer settings if a the layer system is provided.
-- Potential future uses:
-    - **Documentation overlays** — separate annotations from the circuit.
-    - **Printed vs. non-printed layers** — control what appears in PDF exports.
-
-Currently, the main visible effect is **per-layer coloring** applied by the rendering engine.
-
----
-
-## See Also
-
-- [Placing Components](placing-components.md) — the main schematic elements.
-- [Properties & Attributes](properties-and-attributes.md) — edit graphic properties in the Properties panel.
-- [PCB Editor — Layers](../pcb/layers-and-views.md) — layers are more critical on the PCB side.
+- [Wiring and Nets](wiring-and-nets.md)
+- [Properties and Attributes](properties-and-attributes.md)
+- [Templates and Title Block](templates.md)

@@ -34,7 +34,7 @@ Each zone has:
 
 The fastest way — use **Fill GND Plane**:
 
-1. Go to **Tools → Fill GND Plane**
+1. Use **Fill GND Plane** from the active PCB's zone or toolbar controls.
 2. WireFrame automatically:
     - Reads the board outline from Edge.Cuts
     - Creates a GND zone covering the entire board interior
@@ -64,12 +64,12 @@ The fastest way — use **Fill GND Plane**:
 
 When two zones overlap, the zone with the **higher priority** wins:
 
-```mermaid
-flowchart TD
-    A[GND zone · priority 0] --> B[Overlapping VCC island · priority 1]
-    B --> C[Higher-priority VCC owns the overlap]
-    A --> D[GND remains everywhere else inside its outline]
-```
+The higher-priority zone owns the overlapping copper area; the lower-priority zone remains in the rest of its valid outline.
+
+### Image — Overlapping zones with different priorities
+
+!!! note "Image needed"
+    Capture a GND zone at priority 0 and a smaller VCC island at priority 1. Show the zone outlines, net labels, and resulting filled overlap.
 
 !!! tip "Priority guidelines"
     - Ground plane → priority **0** (lowest)

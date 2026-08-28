@@ -17,7 +17,10 @@ Press ++w++ or click the **Wire** button on the toolbar.
 3. **Left-click** to add each corner vertex
 4. **Right-click** or press ++esc++ to end the wire
 
-![Wire attached to component pins](../img/schematic/wire-attachment.png)
+### Image — Wire attached to two component pins
+
+!!! note "Image needed"
+    Capture a close-up from v1.5.47 showing both wire endpoints snapped exactly to pin connection points. The existing placeholder file is empty and must be replaced.
 
 | Action | Input |
 |---|---|
@@ -51,11 +54,10 @@ Use the shared GND net label or power symbol at the intended connection points. 
 
 A **junction dot** appears when three or more wires meet at a single point:
 
-```
-  With junction:           Without junction (wires cross, not connected):
-  ───●───                  ───┼───
-     │                        │ (not connected)
-```
+### Image — Junction compared with a wire crossing
+
+!!! note "Image needed"
+    Capture two close-up examples: three wires joined by a visible junction dot, and two crossing wires that are not connected. Add concise image labels outside the schematic canvas.
 
 - Junction dots are **placed automatically** when three or more connections share a point
 - You can also place them manually with the **Junction** tool
@@ -87,16 +89,7 @@ Net labels allow you to **connect two points electrically without drawing a wire
 3. Edit the **Value** in the Properties panel (e.g. `SDA`, `SCL`, `+3V3`, `RESET`)
 4. All wires connected to that label share the **same net name**
 
-```
-Example — connecting without a direct wire:
-
-  MCU U1                Sensor U2
-  ──[SDA]               ──[SDA]
-  ──[SCL]               ──[SCL]
-
-  → SDA and SCL are automatically connected
-    even though no wire runs between them
-```
+For example, matching `SDA` labels at the controller and sensor place both endpoints on the same named net even when no wire spans the page between them.
 
 !!! tip "Use consistent names"
     All labels with the same name (e.g. `+3V3`) merge into a single net — even on different parts of the sheet. This is the cleanest way to distribute power to multiple components.
@@ -112,16 +105,10 @@ Example — connecting without a direct wire:
 
 Power symbols are single-pin components that automatically assign a net name to any wire connected to them.
 
-```
-Example power connections:
+### Image — Power symbols on a decoupling capacitor
 
-   +5V
-    ↑ VCC
-    │
-   [C1] 100nF
-    │
-   ─┴─ GND ⏚
-```
+!!! note "Image needed"
+    Capture a small decoupling example with the supply and GND symbols connected to a capacitor. Keep the capacitor value and both net names readable.
 
 ---
 
