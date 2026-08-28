@@ -1,136 +1,86 @@
-# AI Copilot — Overview
+# AI Copilot
 
-WireFrame includes a built-in **AI Copilot** — a conversational design assistant that can generate complete electronic circuits from plain-text descriptions. It handles component selection, netlist generation, simulation verification, automatic placement, and routing — all from within the editor.
+AI Copilot helps turn a circuit request into a reviewable design, inspect an existing schematic or PCB, organize functional blocks, generate missing library items, and explain simulation results. It assists the workflow; it does not replace datasheet review, ERC, DRC, DFM, or engineering approval.
 
----
+## Configure AI access
 
-## What the AI Copilot Can Do
+1. Open **Preferences → AI**, or open the Copilot menu and select **AI settings**.
+2. Enter your OpenRouter API key.
+3. Select an allowed model.
+4. Save the settings.
+5. Open **View → AI Copilot Chat**.
 
-| Capability | Description |
+The current release uses a locally configured, user-provided OpenRouter key. Do not place that key in screenshots, project files, bug reports, or shared configuration examples.
+
+### Image — AI settings
+
+!!! note "Image needed"
+    Capture the current AI provider settings with the key value hidden. Show the provider/model controls and save action. Do not use the older screenshot placeholder that shows a different header or input text. Suggested size: **900 × 620 px**.
+
+## Start a focused session
+
+Use the **+** control to create a session and the history control to reopen earlier project sessions. Describe one goal at a time and include measurable requirements where possible.
+
+Good starting requests include:
+
+- “Design a 12 V to 5 V buck supply for a 1 A load.”
+- “Review the USB-C power input and protection block on this schematic.”
+- “Explain the failed `VOUT` ripple assertion from the latest simulation.”
+- “Group this sheet into power, control, and interface blocks.”
+
+Long sessions are summarized and relevant project facts can be recalled later. Still restate safety-critical values before asking Copilot to modify or verify a design.
+
+### Short video — Start and reopen a Copilot session
+
+!!! note "Video needed"
+    Record **10–15 seconds** showing **View → AI Copilot Chat**, creation of a new session, one short request, opening History, and returning to the session. Do not expose an API key or private project data. 1080p.
+
+## Design workflow
+
+### Diagram — AI design review workflow
+
+!!! note "Diagram replacement needed"
+    Create a polished release diagram showing: requirement and constraints → clarification → component and connection review → missing-item generation when needed → deterministic verification → user-approved apply. The older four-step image omitted review and simulation gates and must not be reused.
+
+1. Describe the circuit and constraints.
+2. Review the research summary.
+3. Answer clarifying questions or select **Skip (Use Defaults)** only when the defaults are acceptable.
+4. Review BOM components, connections, and functional blocks.
+5. Resolve missing symbols, footprints, and pin-count mismatches.
+6. Run **Netlist Check**, simulation, and design analysis.
+7. Add approved blocks or create the AI project.
+8. Inspect the schematic before updating a PCB.
+
+## Component Review tabs
+
+| Tab | Use it for |
 |---|---|
-| **Design from text** | Describe a circuit in plain English → AI generates a complete schematic |
-| **Component selection** | AI researches and selects real components with correct pin assignments |
-| **Netlist generation** | Produces a wiring netlist matching physical datasheets |
-| **Library verification** | Checks generated components against your local library pool |
-| **SPICE verification** | Automatically simulates the design and validates waveforms |
-| **Auto-placement** | Places components on the schematic with logical grouping |
-| **Auto-routing** | Routes PCB traces using A* pathfinding |
-| **Component generation** | If a component is missing from the library, AI creates the symbol and footprint |
-| **Iterative refinement** | Refine the design through follow-up conversation |
+| **BOM Components** | Check part number, value, package, origin, and library status |
+| **Connections Netlist** | Review named connections and pin references |
+| **Blocks** | Generate and review functional circuit groups |
+| **Local Pool Settings** | Add library sources and review generated contracts |
+| **Simulate & Verify** | Run simulation checks for the proposed design |
+| **Design Analysis** | Review design-level findings |
+| **Netlist Check** | Find pin, connectivity, and consistency problems |
 
----
+### Image — Current Component Review tabs
 
-## Architecture
+!!! note "Image needed"
+    Capture the full Component Review tab row from the current build, with **BOM Components** selected and at least one component card visible. This replaces older media showing only BOM, Netlist, and Placement Preview. Suggested size: **1400 × 820 px**.
 
-```
-┌──────────────────────────────────────────────────────────────────────┐
-│                        WireFrame Editor (C++)                        │
-│                                                                      │
-│   ┌──────────────┐    ┌──────────────┐    ┌──────────────────────┐  │
-│   │ AI Copilot   │───▶│ AI Manager   │───▶│ LLM API (HTTP)       │  │
-│   │ Panel (Chat) │    │ (HTTP Bridge)│    │ (OpenRouter / Gemini) │  │
-│   └──────────────┘    └──────────────┘    └──────────────────────┘  │
-│         │                                                            │
-│         ▼                                                            │
-│   ┌──────────────┐    ┌──────────────┐    ┌──────────────────────┐  │
-│   │ Design Agent │───▶│ Library      │───▶│ Simulation           │  │
-│   │ (BOM+Netlist)│    │ Reviewer     │    │ Verifier             │  │
-│   └──────────────┘    └──────────────┘    └──────────────────────┘  │
-│         │                                                            │
-│         ▼                                                            │
-│   ┌──────────────┐    ┌──────────────┐                              │
-│   │ Auto-Placer  │───▶│ Auto-Router  │                              │
-│   │ (Clustering) │    │ (A* Grid)    │                              │
-│   └──────────────┘    └──────────────┘                              │
-└──────────────────────────────────────────────────────────────────────┘
-```
+## Safety and privacy
 
-- **AI Copilot Panel**: The chat interface where you interact with the agent.
-- **AI Manager**: HTTP bridge to LLM providers (OpenRouter, Gemini, etc.).
-- **Design Agent**: Autonomous planner that generates BOM and netlist JSON.
-- **Library Reviewer**: Checks generated components against your local library.
-- **Simulation Verifier**: Runs SPICE simulation to validate the design.
-- **Auto-Placer / Auto-Router**: Handles physical placement and trace routing.
+- AI requests and attached datasheet content are sent to the configured provider.
+- Review every proposed change before applying it.
+- Treat generated symbols and footprints as unverified until checked against the datasheet.
+- Limit each request to the relevant sheet, block, or signal.
+- Re-run deterministic checks after every accepted change.
+- Stop and review when part numbers, package variants, ratings, or pinouts are ambiguous.
 
----
+## Continue learning
 
-## Getting Started
-
-### 1. Configure API Key
-
-The AI Copilot requires an API key for LLM access:
-
-1. Open the AI Copilot Panel (**View → AI Copilot** or the sidebar icon).
-2. Click the **Account/Settings** icon (⚙) in the panel header.
-3. Enter your **OpenRouter API key**.
-4. Click **Save**.
-
-!!! info "API key providers"
-    WireFrame uses [OpenRouter](https://openrouter.ai/) as the default LLM gateway, which provides access to multiple AI models (Gemini, Claude, GPT, etc.). You can obtain a free API key from their website.
-
-### 2. Open the AI Copilot Panel
-
-The AI Copilot appears as a **dockable panel** in the editor. It features:
-
-- A **chat input** at the bottom for typing prompts.
-- A **message history** showing the conversation.
-- **Progress bars** for background tasks (simulation, routing).
-- **Action buttons** for review, placement, and routing steps.
-
-<!-- TODO: Replace with actual screenshot
-     SCENARIO: Capture the AI Copilot Panel in its default state:
-     - Chat history area showing a welcome message.
-     - An input field at the bottom with placeholder "Type your circuit request..."
-     - The panel docked on the left or right side of the editor.
-     - A small settings/account icon in the header.
-     - Dark theme matching the editor.
-     SUGGESTED SIZE: 350×600px (panel only) or 1280×720px (full window with panel visible)
--->
-[//]: # (![AI Copilot Panel](img/ai/ai-copilot-panel.png))
-
----
-
-## AI Design Workflow
-
-The complete AI-assisted design flow:
-
-![AI Copilot Pipeline](../img/ai/ai-copilot-pipeline.png)
-
-1. **Prompt** — Describe what you want in plain text.
-2. **Research** — AI analyzes your request, researches components and datasheets.
-3. **Clarify** — AI asks follow-up questions if requirements are ambiguous.
-4. **Design** — AI generates the complete BOM and netlist.
-5. **Review** — You review and approve the generated design.
-6. **Verify** — AI runs SPICE simulation to validate the design.
-7. **Place** — Auto-placer positions components on the schematic/PCB.
-8. **Route** — Auto-router connects all traces on the PCB.
-9. **Export** — Generate Gerber and BOM files.
-
----
-
-## Session Management
-
-The AI Copilot supports **multiple conversation sessions**:
-
-- Click **New Session** to start a fresh design conversation.
-- Previous sessions are saved and can be reopened from the **History Sidebar**.
-- Each session tracks its own design state, BOM, netlist, and simulation results.
-- Sessions are persisted per-project — reopening the project restores the AI conversations.
-
----
-
-## Section Pages
-
-| Page | What you'll learn |
-|---|---|
-| [AI Design Agent](design-agent.md) | Research → clarify → design workflow in detail |
-| [Auto-Placer & Auto-Router](auto-placer-router.md) | Physical placement and routing algorithms |
-| [AI Component Generator](component-generator.md) | Automatic symbol/footprint generation from datasheets |
-
----
-
-## See Also
-
-- [Tutorial: AI-Assisted Design](../tutorial/ai-design.md) — hands-on AI design walkthrough.
-- [Simulation](../simulation/index.md) — AI uses simulation for design verification.
-- [Libraries](../libraries/symbols-library.md) — AI checks components against loaded libraries.
+- [AI Design Agent](design-agent.md)
+- [AI Component Generator](component-generator.md)
+- [Placement and Routing Assistant](auto-placer-router.md)
+- [Review and Simulation Guide](../ai-copilot.md)
+- [AI-Assisted Design Tutorial](../tutorial/ai-design.md)

@@ -23,7 +23,7 @@ Exports your schematic as a vector PDF for printing or sharing.
 **Steps:**
 
 1. Open the **Schematic** tab you want to export
-2. Go to **File → Export → Schematic PDF…**
+2. Select **File → Export → Export Schematic to PDF**
 3. Choose a filename and directory
 4. Click **Export**
 
@@ -47,7 +47,7 @@ Gerber is the **industry-standard format** sent to PCB manufacturers. Each layer
 **Steps:**
 
 1. Open the **PCB** tab
-2. Go to **File → Export → Gerber…** (or open the **Fabrication dialog**)
+2. Select **File → Export → Fabrication Outputs (Gerber/Drill/BOM)** or **Tools → Fabrication Output**
 3. Select the layers to export:
 
 | Layer | Example filename | Purpose |
@@ -87,8 +87,8 @@ The BOM is a **parts list** used to order components for assembly.
 
 **Steps:**
 
-1. Go to **File → Export → BOM…** (or from the Fabrication dialog)
-2. Choose a `.csv` filename
+1. Open the fabrication output workflow.
+2. Include the BOM CSV in the coordinated package.
 3. Open in Excel, LibreOffice Calc, or Google Sheets
 
 **BOM file columns:**
@@ -130,8 +130,8 @@ WireFrame includes a **Gerber viewer** to inspect exported files without externa
 
 **How to use:**
 
-1. Go to **Tools → Gerber Viewer**
-2. Open a generated `.gbr` file
+1. Select **Tools → Gerber Viewer** and open a generated `.gbr` file, or use another trusted Gerber viewer.
+2. Select representative copper, mask, silkscreen, and outline outputs.
 3. Pan and zoom to verify:
     - Trace continuity
     - Pad alignment and spacing
@@ -145,16 +145,16 @@ Visually confirm trace continuity, pad flashes, apertures, and the board outline
 
 ## Complete Export Workflow
 
-```mermaid
-flowchart TD
-    A[Run DFM/DRC] --> B{Zero release-blocking errors?}
-    B -->|No| C[Locate and fix violations]
-    C --> A
-    B -->|Yes| D[Generate fabrication package]
-    D --> E[Review Gerber X2 and drill outputs]
-    E --> F[Check IPC-D-356A, BOM, and manifest]
-    F --> G[Archive and send to manufacturer]
-```
+1. Run DFM/DRC and resolve every release-blocking error.
+2. Generate the coordinated fabrication package.
+3. Review representative Gerber X2 layers and both drill outputs.
+4. Check IPC-D-356A, BOM, and the package manifest.
+5. Archive only the verified board revision and send that archive to the manufacturer.
+
+### Image — Verified fabrication package
+
+!!! note "Image needed"
+    Capture the fabrication output dialog beside the generated package contents. Show the board revision and filenames, but no private customer path.
 
 ## Fabrication package contents
 

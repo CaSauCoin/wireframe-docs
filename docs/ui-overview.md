@@ -1,316 +1,134 @@
 # User Interface Overview
 
-This page provides a detailed tour of every part of the WireFrame interface. Understanding the layout helps you work efficiently across schematics and PCBs.
+WireFrame uses dockable panels around the active schematic or PCB editor. Available tools and panels change with the active document type.
 
----
+![WireFrame layout](img/home/layout-annotated.png)
 
-## Menu Bar
+## Main menus
 
-Located at the **very top** of the window. Every feature is accessible from here.
+### File
 
-### File Menu
+Use **File** to:
 
-| Item | Shortcut | Action |
-|---|---|---|
-| New Project… | — | Create a new `.prjxml` project |
-| Open Project… | — | Open an existing project |
-| Open… | ++ctrl+o++ | Open a schematic or PCB file |
-| New Schematic | ++ctrl+n++ | Create a new schematic document tab |
-| New PCB | — | Create a new PCB document tab |
-| Save | ++ctrl+s++ | Save the active document |
-| Save As… | ++ctrl+shift+s++ | Save with a new filename |
-| Close Project | — | Close the active project |
-| Export → | — | Sub-menu: PDF, Gerber, BOM export |
+- create a project, schematic, or PCB;
+- open a WireFrame file or project;
+- import a KiCad project or SVG board outline;
+- save the active document;
+- export schematic PDF, PCB PDF, or fabrication outputs;
+- edit schematic page settings;
+- close the document or project.
 
-### Edit Menu
+Commands that do not apply to the active document are disabled.
 
-| Item | Shortcut | Action |
-|---|---|---|
-| Undo | ++ctrl+z++ | Undo the last action |
-| Redo | ++ctrl+y++ | Redo the last undone action |
-| Cut | ++ctrl+x++ | Cut selected items to clipboard |
-| Copy | ++ctrl+c++ | Copy selected items |
-| Paste | ++ctrl+v++ | Paste from clipboard |
-| Delete | ++delete++ | Delete selected items |
+### Edit
 
-### View Menu
+Use **Edit** for undo, redo, clipboard actions, selection operations, and other edits supported by the active editor. Prefer the displayed shortcut because key bindings can be customized.
 
-| Item | Action |
-|---|---|
-| Toggle Library | Show/hide the Library panel |
-| Toggle Layers | Show/hide the Layer panel (PCB) |
-| Toggle Properties | Show/hide the Properties panel |
-| AI Copilot | Show/hide the AI Copilot chat panel |
-| 3D Viewer… | Open the 3D PCB viewer |
-| Fit to Screen | Zoom to fit all content in view |
+### View
 
-### Tools Menu
+Use **View** to show or hide:
 
-| Item | Action |
-|---|---|
-| Symbol Editor | Open the symbol library editor / creator |
-| Footprint Wizard | Open the footprint generator wizard |
-| Design Rules | Configure design rule settings (clearance, trace width, etc.) |
-| ERC Check | Run Electrical Rules Check on the active schematic |
-| DFM Check | Run DFM/DRC checks on the active PCB |
-| Simulation | Open the Simulation Controls panel (SPICE) |
-| Board Template | Open the PCB Template Builder |
-| Gerber Viewer | Open the built-in Gerber file viewer |
-| Keymap… | Customize keyboard shortcuts |
+- Project Structure;
+- Editor Panel;
+- Component Library;
+- Properties;
+- Local Library Manager;
+- AI Copilot Chat;
+- PCB Layers;
+- Zone Manager;
+- Design Rules.
 
-### Simulation Menu
+### Tools
 
-| Item | Shortcut | Action |
-|---|---|---|
-| SPICE Simulation Panel | ++f5++ | Open the Simulation Workbench for the active schematic |
-| Preflight Check | — | Open the workbench and run component/model readiness checks |
-| Model Editor | — | Open model validation and assignment tools |
+Use **Tools** for the Symbol Library Editor, PCB Footprint Editor, schematic wiring assistance, **Update Schematic to PCB**, ERC, DFM/DRC, Fabrication Output, and Gerber Viewer. Availability depends on the active document.
+
+### Simulation
+
+Use **Simulation** for the **SPICE Simulation Panel**, **Pre-flight Validation Checklist**, and **SPICE Model Editor**.
 
 ### Preferences
 
-The unified Preferences dialog includes appearance, hotkeys, PCB defaults, 3D materials, AI settings, and **Simulation** defaults. External ngspice CLI, Xyce, and LTspice executable paths are configured on the Simulation page.
+Open the Preferences dialog to configure application, panel, grid, simulation, AI, and update settings. Use **Reset to Default Layout** only when you intend to discard the saved docking layout.
 
----
+### Help and account
 
-## Docking Layout
+Use the Help menu for documentation, downloads, feedback, updates, and About. The account area shows sign-in or subscription state and provides saved-login controls.
 
-WireFrame uses a **docking layout** — you have full control over panel arrangement:
+## Docking layout
 
-- **Drag a panel tab** to any edge or corner to reposition it
-- **Float a panel** by dragging it outside the docking area — it becomes an independent window
-- **Layout is saved automatically** and restored on next launch
+Drag a panel by its title to dock it to another edge or tab group. Preferences can enable detachable multi-monitor panels and companion-panel behavior.
 
-Default panel positions:
+### Short video — Rearrange and restore panels
 
-| Panel | Default position |
+!!! note "Video review needed"
+    Replace the current clip if its View or Preferences labels are old. Show docking one panel, enabling or demonstrating a detachable panel, and restoring a saved/default layout. Duration: **12–18 seconds**, 1080p.
+
+## Project Structure
+
+The Project Structure panel lists the active project and linked schematics and PCBs. Use it to open documents and manage project membership. Standalone files appear separately from project-owned documents.
+
+### Image — Current Project Structure
+
+!!! note "Image review needed"
+    Capture a current project tree with multiple schematics and one PCB. Replace older images if icons or group labels differ. Suggested size: **420 × 720 px**.
+
+## Editor panel
+
+The center editor displays the active schematic or PCB. Common actions include:
+
+- mouse wheel to zoom;
+- middle-drag or the configured pan action to move the view;
+- click or box selection;
+- context menu for object-specific actions;
+- shortcuts shown in the active key map.
+
+Toolbars change when switching between schematic and PCB documents.
+
+## Component Library
+
+With a schematic active, the library lists symbols. With a PCB active, it lists footprints. Search before placing an item and check that the selected library item is the intended part or package.
+
+Use **View → Local Library Manager** to add or remove persistent library sources.
+
+## Properties
+
+Properties follow the current selection:
+
+- schematic components expose value, footprint, and text attributes;
+- wires and labels expose connectivity-related properties;
+- PCB footprints expose placement, layer, designator, and model-related properties;
+- traces, vias, zones, and graphics expose type-specific settings.
+
+When multiple objects are selected, only shared or supported batch properties may be available.
+
+## PCB Layers
+
+The PCB Layers panel controls active layer, visibility, and color. Hiding a layer changes the view, not the board data. Confirm the active copper layer before routing or adding vias.
+
+## Notifications and logs
+
+Status messages and notification overlays report saves, imports, checks, and failures. Read the full message before repeating an action. For simulation, also inspect **Last run** and the simulation log.
+
+### Short video — Notification and status feedback
+
+!!! note "Video review needed"
+    Capture one successful save/import notification and one non-destructive warning. Replace the existing clip if its overlay design is outdated. Duration: **8–12 seconds**, 1080p.
+
+## Current Preferences categories
+
+| Category | Includes |
 |---|---|
-| Project Structure | Left |
-| Editor (canvas) | Center |
-| Library | Right (top) |
-| Properties | Right (bottom) |
-| Layers *(PCB only)* | Right (middle) |
-| AI Copilot | Left (bottom) or docked alongside Project Structure |
-| ERC Panel *(Schematic only)* | Bottom or floating |
-| Simulation Controls *(Schematic)* | Bottom or floating |
-| Waveform Viewer *(after simulation)* | Bottom-center or floating |
-| DFM Panel *(PCB only)* | Bottom or floating |
-| Logger / Notifications | Bottom-right overlay |
-| Simulation Workbench *(schematic only)* | Docked editor companion panel |
+| Application | Theme, units, autosave |
+| Panels | Detachable panels, follow behavior, layouts and presets |
+| Grid | Visibility, crosshair, snap, step, rotation, PCB defaults |
+| Simulation | Engine paths, default analysis, transient defaults |
+| AI | Provider key and model settings |
+| About / Updates | Version, tier, update check |
 
----
+Select **OK** to keep changes or **Cancel** to discard pending dialog changes.
 
-## Project Structure Panel
+## See also
 
-Shows the **project file tree** on the left side:
-
-```mermaid
-flowchart TD
-    P[MyBoard.prjxml] --> S[Schematics]
-    P --> B[PCBs]
-    S --> M[main.schxml]
-    S --> W[power.schxml]
-    B --> PCB[MyBoard.pcbxml]
-```
-
-**Interactions:**
-
-| Action | How |
-|---|---|
-| Open a document | Click a schematic or PCB entry |
-| Add a new file | Right-click on the project → Add New… |
-| Rename a file | Right-click → Rename |
-| Remove from project | Right-click → Remove |
-| Delete from disk | Right-click → Delete (requires confirmation) |
-
-!!! info "Standalone mode"
-    You can open `.schxml` or `.pcbxml` files without a project. They appear as standalone tabs in the editor but are not shown in the Project Structure tree.
-
----
-
-## Editor Panel (Canvas)
-
-The **central area** where you design. Each open file is a separate **tab**.
-
-- Tab label = filename (or `Untitled-SCH-1` / `Untitled-PCB-1` for new files)
-- A `*` next to the tab name indicates unsaved changes
-- Right-click a tab → Close / Close Others / Close All
-
-### Canvas navigation (common to Schematic and PCB)
-
-| Action | Input |
-|---|---|
-| Pan (move the view) | Hold middle mouse button and drag |
-| Zoom in / out | Scroll wheel (zoom centered on cursor) |
-| Fit to screen | Press ++f++ |
-| Zoom to selection | Press ++shift+f++ |
-
----
-
-## Library Panel
-
-The Library panel **changes content** based on the active document type:
-
-### When a Schematic is active
-
-Displays **symbol libraries** loaded for the current session.
-
-```
-🔍 [filter: "STM32"     ]      ← Type to filter quickly
-
-  STM32F103C8               ← Double-click to place on schematic
-  STM32F103RB
-  STM32F407VG
-  STM32F411CE
-
-  Status: Ready — 150 symbols
-```
-
-| Action | How |
-|---|---|
-| Load a library | Click **Load Symbols…** → select `.kicad_sym` |
-| Search | Type a partial name (e.g. `R_06`, `LED`, `STM32`) |
-| Place on schematic | **Double-click** the symbol name |
-| Other options | Right-click → Unload / Reload / Link Footprint |
-
-### When a PCB is active
-
-Displays **footprint libraries** loaded for the current session.
-
-```
-🔍 [filter: "SOT"       ]
-
-  SOT-23
-  SOT-23-5
-  SOT-223
-
-  Status: Ready — 85 footprints
-```
-
-| Action | How |
-|---|---|
-| Load a library | Click **Load Footprints…** → select `.kicad_mod` |
-| Place on PCB | **Double-click** the footprint name |
-
----
-
-## Properties Panel
-
-Displays and allows editing of **properties** for the currently selected object.
-
-### In the Schematic editor
-
-| Selection | Properties shown |
-|---|---|
-| **Component** | Designator (R1), Value (10kΩ), Comment, Footprint, Rotation, Position |
-| **Net label** | Net name, Position, Font size, Visibility |
-| **Wire** | Net name, List of connected pins |
-| **Graphic object** | Position, Size, Color, Layer, Line width |
-| **Nothing selected** | Page settings (paper size, title, company, revision, date) |
-
-### In the PCB editor
-
-| Selection | Properties shown |
-|---|---|
-| **Footprint** | Designator, Value, Layer, Position, Rotation, 3D model |
-| **Trace** | Net name, Layer, Width, Length |
-| **Via** | Net name, Position, Diameter, Drill size |
-| **Pad** | Pad number, Net, Shape, Size, Drill, Layers |
-| **Zone** | Net name, Layer, Priority, Clearance |
-| **Nothing selected** | Board boundary, Design rules summary |
-
-!!! tip "All edits support Undo"
-    Every change made in the Properties panel is fully undoable with ++ctrl+z++.
-
----
-
-## Schematic Toolbar
-
-A floating toolbar at the **top of the schematic canvas**:
-
-```
-[▷ Select] [─ Wire] [🏷 Label] [T Text] [╱ Line] [□ Rect] [○ Circle] [⌒ Arc] [⬠ Poly] [• Junction] [⏚ GND] [↑ VCC]
-```
-
-| Tool | Shortcut | Function |
-|---|---|---|
-| **Select** | ++esc++ | Select and move objects |
-| **Wire** | ++w++ | Draw wires connecting component pins |
-| **Label** | ++l++ | Place a net label (SDA, SCL, GND…) |
-| **Text** | — | Place text annotation |
-| **Line** | — | Draw a straight line (decorative) |
-| **Rectangle** | — | Draw a rectangle |
-| **Circle** | — | Draw a circle |
-| **Arc** | — | Draw an arc |
-| **Polygon** | — | Draw a polygon (click vertices, right-click to finish) |
-| **Junction** | — | Place a junction dot manually |
-| **GND** | ++g++ | Place a GND power symbol |
-| **VCC** | — | Place a VCC power symbol |
-
-The active tool is **highlighted with a cyan background**. Press ++esc++ to return to Select mode.
-
----
-
-## PCB Toolbar
-
-A floating toolbar at the **top of the PCB canvas**:
-
-```
-[▷ Select] [📦 Place] [─ Route] [● Via] [○ Hole] [╱][□][○][⌒][⬠] [T Text] [📏 Measure]
-```
-
-| Tool | Shortcut | Function |
-|---|---|---|
-| **Select** | ++esc++ | Select and move objects |
-| **Place Footprint** | — | Place a footprint from the library |
-| **Route Trace** | ++x++ | Route copper traces between pads |
-| **Draw Via** | ++v++ | Place a via manually |
-| **Place Hole** | — | Place a mechanical hole (screw, standoff) |
-| **Draw Line/Rect/Circle/Arc/Polygon** | — | Draw graphic shapes on any layer |
-| **Draw Text** | — | Place text on silkscreen or fab layers |
-| **Measure** | — | Measure distances on the board |
-
----
-
-## Layer Panel (PCB only)
-
-Visible when a PCB document is active. Lists all board layers:
-
-```
-👁  🟥  F.Cu       ← Active layer (highlighted)
-👁  🟦  B.Cu
-👁  🟡  F.SilkS
-    🟣  B.SilkS    ← Hidden (eye icon off)
-👁  🟪  F.Mask
-👁  🟢  B.Mask
-👁  🟫  Edge.Cuts
-```
-
-| Column | Interaction |
-|---|---|
-| **👁 Eye icon** | Click to **show / hide** that layer |
-| **Color swatch** | Click to **change the layer color** |
-| **Layer name** | Click to set as the **active routing/drawing layer** |
-
-The active layer is **highlighted** with a brighter background.
-
----
-
-## Logger (Notification Overlay)
-
-Appears in the bottom-right corner of the canvas. Messages appear briefly then fade.
-
-| Type | Color | Example |
-|---|---|---|
-| Info | Blue | "Project loaded successfully" |
-| Success | Green | "File saved: main.schxml" |
-| Warning | Yellow | "Library: 2 symbols skipped" |
-| Error | Red | "Cannot save: permission denied" |
-
----
-
-## See Also
-
-- [Getting Started](getting-started.md) — quick-start guide
-- [Schematic Editor](schematic/index.md) — schematic design guide
-- [PCB Editor](pcb/index.md) — PCB layout guide
-- [Keyboard Shortcuts](advanced/shortcuts.md) — full shortcut reference
+- [Getting Started](getting-started.md)
+- [Keyboard Shortcuts](advanced/shortcuts.md)
+- [Configuration and Session Storage](reference/config-and-session.md)

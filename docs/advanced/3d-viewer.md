@@ -8,7 +8,7 @@ The 3D Viewer renders a three-dimensional representation of your PCB — showing
 
 From an open PCB document:
 
-1. Go to **View → 3D Viewer…**
+1. Go to **View → 3D Viewer**
 2. The 3D viewer opens as a separate window
 3. It renders:
     - The **board** as a 3D extruded shape derived from the Edge.Cuts outline
@@ -78,7 +78,7 @@ Use the underside camera view to confirm that flipped models, silkscreen, pad pl
 
 To display an accurate 3D model instead of a colored box, assign a STEP or OBJ file to the footprint:
 
-1. Open the footprint in the **Footprint Wizard / Library Editor**
+1. Open the footprint in **PCB Footprint Editor**
 2. In the **3D Model** section, add the path to a STEP or OBJ file
 3. Use the **Model Alignment Dialog** to fine-tune offset, scale, and rotation
 

@@ -1,8 +1,8 @@
 site_name: WireFrame EDA Documentation
 site_url: https://guideline-one.vercel.app/
 site_description: >-
-  Complete user guide for WireFrame EDA — a lightweight schematic and PCB design
-  environment built with ImGui, GLFW and OpenGL.
+  Release-ready user guidelines for schematic capture, PCB layout, simulation,
+  AI-assisted design, libraries, validation, and manufacturing output.
 copyright: '© 2026 WireFrame EDA. All rights reserved.'
 
 # Theme configuration (Material dark mode)
@@ -82,7 +82,7 @@ nav:
   - AI Copilot:
       - AI Overview: ai/index.md
       - AI Design Agent: ai/design-agent.md
-      - Auto-Placer & Auto-Router: ai/auto-placer-router.md
+      - Placement & Routing Assistant: ai/auto-placer-router.md
       - AI Component Generator: ai/component-generator.md
       - Review & Simulation Guide: ai-copilot.md
 
@@ -99,8 +99,8 @@ nav:
   - Libraries:
       - Symbols Library: libraries/symbols-library.md
       - Footprints Library: libraries/footprints-library.md
-      - Symbol Creator: libraries/symbol-creator.md
-      - Library Converter: libraries/library-converter.md
+      - Symbol Library Editor: libraries/symbol-creator.md
+      - Library Import & Management: libraries/library-converter.md
 
   - Advanced Features:
       - Selection & Editing: advanced/selection-and-editing.md

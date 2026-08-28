@@ -1,6 +1,6 @@
 # Keyboard Shortcuts and Key Map
 
-WireFrame uses a fully customizable key map managed by the key map system. Every action can be rebound to your preferred shortcut.
+WireFrame lets you customize shortcuts for the actions available in the current build.
 
 ---
 

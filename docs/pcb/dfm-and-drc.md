@@ -9,21 +9,15 @@ Before exporting Gerber files, run **DFM/DRC** to detect and fix design errors. 
 
 ## Running DFM Checks
 
-1. Go to **Tools → DFM Check** (or from the Design Rules panel)
+1. Open **DFM & DRC Check** for the active PCB
 2. Click **Run DFM**
 3. WireFrame executes all check routines
 4. Results populate in the DFM panel
 
-```
-DFM Results Panel:
-──────────────────────────────────────────────────────
-🔴 E01 | Unconnected net: GND (3 pins)         [Zoom]
-🔴 E03 | Clearance violation at (45.2, 12.8)   [Zoom]
-🟡 W01 | Trace width close to minimum: R3      [Zoom]
-🟡 W02 | Component near board edge: J1         [Zoom]
-──────────────────────────────────────────────────────
-  3 errors, 2 warnings
-```
+### Image — DFM and DRC results
+
+!!! note "Image needed"
+    Capture the v1.5.47 **DFM & DRC Check** panel with at least one error and one warning. Keep the selected violation and its highlighted canvas location visible.
 
 ---
 
@@ -114,14 +108,12 @@ No board outline found (Edge.Cuts is empty), or the outline is malformed (self-i
 
 Click **Run DFM** again to confirm the issue is resolved.
 
-```mermaid
-flowchart TD
-    A[Run DFM] --> B{Any release-blocking errors?}
-    B -->|Yes| C[Double-click a violation]
-    C --> D[Fix geometry or design rules]
-    D --> A
-    B -->|No| E[Ready for fabrication export]
-```
+Repeat the check–locate–fix cycle until there are no release-blocking errors. Review every remaining warning and document why it is acceptable before fabrication export.
+
+### Short video — Resolve and recheck a violation
+
+!!! note "Video needed"
+    Record a 20–30 second clip showing one violation selected, corrected on the PCB, and cleared by the next DFM/DRC run.
 
 ---
 

@@ -1,187 +1,74 @@
-# File Formats
+# Supported File Formats
 
-WireFrame uses several custom XML-based file formats alongside standard industry formats. This page documents all file types and their structure.
+This page separates formats that WireFrame opens directly, formats imported through a specific workflow, and release outputs. Support is determined by the command available in the current application—not by a converter script or an older roadmap.
 
----
+## WireFrame project files
 
-## Overview
-
-| Format | Extension | Purpose |
-|---|---|---|
-| Project | `.prjxml` | Links schematics, PCBs, and libraries |
-| Schematic | `.schxml` | Circuit design with components, wires, graphics |
-| PCB | `.pcbxml` | Board layout with footprints, traces, zones |
-| Symbol library | `.kicad_sym` | KiCad symbol definitions (native support) |
-| Footprint library | `.kicad_mod` | KiCad footprint definitions (native support) |
-| Gerber | `.gbr` | PCB fabrication layers (export) |
-| Drill | `.drl` | Via and hole data (export) |
-| BOM | `.csv` | Bill of Materials (export) |
-| PDF | `.pdf` | Schematic documentation (export) |
-
-### Importable formats from other EDA tools
-
-| Format | Extension | Source |
-|---|---|---|
-| KiCad project | `.kicad_pro`, `.pro` | KiCad 5/6/7/8 |
-| KiCad schematic | `.kicad_sch` | KiCad 6/7/8 |
-| KiCad PCB | `.kicad_pcb` | KiCad 6/7/8 |
-| Altium project | `.PrjPcb` | Altium Designer |
-| Altium schematic | `.SchDoc` | Altium Designer |
-| Altium PCB | `.PcbDoc` | Altium Designer |
-| Altium symbol library | `.SchLib`, `.IntLib` | Altium Designer |
-| Altium footprint library | `.PcbLib` | Altium Designer |
-| Eagle schematic | `.sch` | Eagle / Autodesk (XML, v6+) |
-| Eagle board | `.brd` | Eagle / Autodesk (XML, v6+) |
-| Eagle library | `.lbr` | Eagle / Autodesk (XML, v6+) |
-
----
-
-## Project Files (`.prjxml`)
-
-XML structure:
-
-```xml
-<WireFrameProject>
-  <Settings>
-    <LibFolder>lib</LibFolder>
-    <!-- additional project-wide settings -->
-  </Settings>
-  <Schematics>
-    <File>relative/path/to/schematic1.schxml</File>
-    <File>relative/path/to/schematic2.schxml</File>
-  </Schematics>
-  <PCBs>
-    <File>relative/path/to/board1.pcbxml</File>
-  </PCBs>
-  <Libraries>
-    <Library>path/to/symbol-lib.kicad_sym</Library>
-    <Library>path/to/footprint-lib.kicad_mod</Library>
-  </Libraries>
-</WireFrameProject>
-```
-
-| Element | Description |
+| Extension | Purpose |
 |---|---|
-| `<Settings>` | Project-wide configuration (library folder, etc.) |
-| `<Schematics>` | List of schematic file paths (relative to project root) |
-| `<PCBs>` | List of PCB file paths (relative to project root) |
-| `<Libraries>` | Library file paths used by the project |
+| `.prjxml` | WireFrame project and its document references |
+| `.schxml` | WireFrame schematic document |
+| `.pcbxml` | WireFrame PCB document |
 
-!!! info "Path convention"
-    Paths are typically **relative** to the project root directory (parent of the `.prjxml` file). This keeps projects portable.
+Keep the project and referenced files together when moving or archiving a design. Their internal schema may evolve, so edit them through WireFrame rather than by hand.
 
----
+## Project import
 
-## Schematic Files (`.schxml`)
+Use **File → Import → KiCad Project** for:
 
-the schematic save function handle:
-
-| Content | Elements |
+| Extension | Source |
 |---|---|
-| **Components** | placed component entries with ID, symbol reference, position, rotation, pin positions, attributes |
-| **Wires** | `Wire` lists with `points` (vertices) and `pinAttachments` (component pin references) |
-| **Graphics** | Lines, rectangles, circles, arcs, polygons, junctions, harnesses |
-| **Page settings** | Paper size, title block (title, company, revision, date, author), border colors |
+| `.kicad_pro` | Current KiCad project |
+| `.pro` | Legacy KiCad project |
 
-!!! warning "Hand-editing"
-    The XML schema is internal and may evolve between versions. Avoid manual editing unless necessary — use the application UI instead.
+The importer reads the documents available from the selected KiCad project. Review imported symbols, footprints, nets, layers, and board outline before continuing.
 
----
+!!! note "Removed legacy guidance"
+    Altium `.PrjPcb` and Eagle project import are not exposed by the current File menu. Older claims that these projects could be imported directly have been removed.
 
-## PCB Files (`.pcbxml`)
+## Library sources
 
-the PCB save function handle:
+Open **View → Local Library Manager** for supported library workflows:
 
-| Content | Elements |
+| Format | Use |
 |---|---|
-| **Footprints** | Positions, rotations, layers, pad definitions, graphics, 3D model params |
-| **Traces** | Geometry (polyline points), net names, layers, widths |
-| **Vias** | Position, net, diameter, drill |
-| **Holes** | Position, diameter, plated flag, net |
-| **Layers** | Definitions with visibility and color settings |
-| **Netlist** | Net names and their pin sets |
-| **Zones** | Outlines, cutouts, computed islands |
-| **Design rules** | Net class definitions and assignments |
-| **Graphics** | Board outline, dimensions, silkscreen, fab layer content |
+| `.kicad_sym` | KiCad symbol library |
+| `.kicad_mod` | KiCad footprint |
+| `.SchLib` | Altium symbol library import |
+| `.PcbLib` | Altium footprint library import |
+| `.IntLib` | Altium integrated library import |
+| `.LibPkg` | Altium library package import |
 
-PCB XML may also embed references to library files for footprints and 3D models.
+Imported library data must be reviewed against the source datasheet before use. Eagle `.lbr`, `.sch`, and `.brd` import are not part of the current library manager.
 
----
+## PCB outline import
 
-## Library Files
+With a PCB active, use **File → Import → CAD Outline** for an SVG outline (`.svg`). Verify its scale, closed geometry, and placement on the intended board-outline layer.
 
-### Symbol libraries (`.kicad_sym`)
+DXF is not listed as supported in the current picker and is intentionally omitted from this release guideline.
 
-WireFrame reads KiCad v6/v7/v8 format symbol files:
+## Fabrication and documentation outputs
 
-- S-expression based format.
-- Parsed by the KiCad symbol parser.
-- Contains symbol definitions with pins, graphics, texts, and properties.
+Depending on the selected export workflow, WireFrame can produce:
 
-### Footprint libraries (`.kicad_mod`)
-
-WireFrame reads and writes KiCad footprint files:
-
-- S-expression based format.
-- Parsed by the KiCad footprint parser.
-- Contains pad definitions, graphics, reference text, and 3D model references.
-- `saveToKicadMod` exports generated footprints back to this format.
-
-!!! tip "KiCad compatibility"
-    WireFrame maintains compatibility with KiCad structures to enable easy reuse of existing libraries and smoother data interchange.
-
----
-
-## Manufacturing Files
-
-### Gerber (`.gbr`)
-
-| Property | Value |
+| Format | Purpose |
 |---|---|
-| Format | RS-274X |
-| Units | Millimeters |
-| Coordinate format | 4.4 (integer.decimal) |
-| One file per layer | F.Cu, B.Cu, F.SilkS, F.Mask, B.Mask, Edge.Cuts, etc. |
+| Gerber / Gerber X2 | Copper, mask, silkscreen, and board geometry |
+| Excellon drill | Plated and non-plated drilling data |
+| IPC-D-356A | Electrical connectivity reference |
+| CSV | Bill of materials |
+| PDF | Schematic documentation or supported plot output |
+| Manifest / README | Fabrication-package inventory and generation context |
 
-Generated by the Gerber export engine.
+An exported file is not self-validating. Inspect the package, confirm the saved board revision, and follow the [Fabrication and Export](../pcb/fabrication-and-export.md) checklist.
 
-### Drill (`.drl`)
+### Image — Supported import commands
 
-| Property | Value |
-|---|---|
-| Format | Excellon NC |
-| Content | Via and hole coordinates with drill diameters |
-| Separation | Plated and non-plated holes in separate files (or sections) |
+!!! note "Image needed"
+    Capture the v1.5.47 **File → Import** submenu with KiCad Project and CAD Outline visible. Use a second inset of Local Library Manager showing the Altium library importer.
 
-### BOM (`.csv`)
+## Related guidelines
 
-| Column | Description |
-|---|---|
-| Designator | Component reference (R1, C1, U1) |
-| Value | Electrical value (10kΩ, 100nF) |
-| Footprint | Package name (R_0603, LQFP-48) |
-| Layer | Board side (Top / Bottom) |
-
-Simple comma-separated format. Generated by the BOM export engine.
-
----
-
-## PDF Export
-
-| Property | Value |
-|---|---|
-| Content | Schematic pages with components, wires, graphics, title block |
-| Format | Vector-based PDF |
-| Colors | Converted to black/grey for printing |
-| Units | Schematic world units → PDF points (mm → pt) |
-| Pages | Single or multi-page depending on design |
-
-Generated by the PDF export engine.
-
----
-
-## See Also
-
-- [Projects & Files](../projects.md) — how projects organize documents.
-- [Fabrication & Export](../pcb/fabrication-and-export.md) — export workflows for Gerber, drill, BOM.
-- [Config & Session](config-and-session.md) — user configuration file format.
+- [Projects and Files](../projects.md)
+- [Library Import and Management](../libraries/library-converter.md)
+- [Fabrication and Export](../pcb/fabrication-and-export.md)

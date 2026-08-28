@@ -16,12 +16,12 @@ Press ++x++ or click **Route Trace** on the PCB toolbar.
 4. **Click the destination pad** to complete the trace — the ratsnest line disappears
 5. Or **right-click** / ++esc++ to cancel
 
-```mermaid
-flowchart LR
-    A[U1 pin 3] -->|F.Cu routed trace| B[R1 pad 1]
-```
-
 The ratsnest connection disappears when the destination is electrically complete.
+
+### Image — Completed pad-to-pad route
+
+!!! note "Image needed"
+    Capture one short F.Cu route between two pads, with the completed track selected and the corresponding ratsnest connection cleared.
 
 | Action | Input |
 |---|---|
@@ -60,11 +60,10 @@ A via is a plated hole that connects **F.Cu and B.Cu**, allowing a trace to chan
 3. The active routing layer switches to **B.Cu**
 4. Continue routing on B.Cu from the via
 
-```mermaid
-flowchart LR
-    U[U1 on F.Cu] --> V((Through via))
-    V --> R[R5 on B.Cu]
-```
+### Image — Route changing layer through a via
+
+!!! note "Image needed"
+    Capture a selected route that begins on F.Cu, changes layer through a via, and continues on B.Cu. Keep both layer colors visible.
 
 ### Manual via placement
 
@@ -111,7 +110,7 @@ Use the **Place Hole** tool to add **non-electrical** holes (screws, standoffs):
 
 ## Net classes and advanced rules
 
-Use **Tools → Design Rules** to assign width and clearance behavior by net class. Automatic rules can classify common power nets and serialize assignments with the board, while a manual net assignment takes precedence.
+Open **Design Rules Manager** to assign width and clearance behavior by net class. Automatic rules can classify common power nets and serialize assignments with the board, while a manual net assignment takes precedence.
 
 For dense connections, multi-trace routing can move a group of traces with automatic node snapping and parallel polyline offsets. Always re-run DFM after an aligned or multi-trace edit.
 
@@ -128,10 +127,10 @@ After routing, WireFrame can **automatically clean up** trace geometry:
 - Simplifies short zig-zag segments
 - Makes 45° corners clean and precise
 
-```mermaid
-flowchart LR
-    A[Route with redundant collinear vertices] -->|Gloss| B[Merged segments and clean 45° corners]
-```
+### Image — Route before and after Gloss
+
+!!! note "Image needed"
+    Use a two-panel image of the same route before and after **Gloss**, clearly showing removed redundant vertices and cleaner 45° corners.
 
 Use: **context menu → Gloss** or the corresponding shortcut.
 
@@ -164,11 +163,7 @@ Auto-snapping prevents common routing errors like "almost connected" traces that
 
 When you extend an existing trace or add a segment that continues in the same direction, WireFrame **automatically merges** collinear segments into a single continuous trace:
 
-```
-Before merge:          After merge:
-  ──── ──── ────         ────────────
-  (3 segments)           (1 segment)
-```
+After merging, consecutive collinear pieces behave as one continuous segment. Verify the result by selecting the route and checking that no unintended corner remains.
 
 This keeps the design clean and reduces the number of trace objects in the file.
 
@@ -199,10 +194,9 @@ This is useful for:
 
 WireFrame includes an AI-powered automatic router that can route **all connections** on the board:
 
-- Uses **A* pathfinding** on a grid with penalty optimization
-- Minimizes via count and crossing penalties
-- Routes power nets first, then signal nets
-- See [AI Auto-Placer & Auto-Router](../ai/auto-placer-router.md) for details.
+- Proposes routing based on the current board and constraints.
+- Requires review of layers, clearances, vias, and remaining ratsnest connections.
+- See [Placement and Routing Assistant](../ai/auto-placer-router.md) for the complete guideline.
 
 ---
 
@@ -213,5 +207,4 @@ WireFrame includes an AI-powered automatic router that can route **all connectio
 - [Zones & Planes](zones-and-planes.md) — copper fills interact with trace clearances
 - [Design Rules & Net Classes](design-rules.md) — configure clearance and trace width rules
 - [DFM & DRC](dfm-and-drc.md) — check clearances and widths after routing
-- [AI Auto-Router](../ai/auto-placer-router.md) — automatic routing via the AI Copilot
-
+- [Placement and Routing Assistant](../ai/auto-placer-router.md) — AI-assisted placement and routing review

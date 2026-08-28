@@ -53,15 +53,12 @@ Some components—especially integrated circuits and transistors—need a simula
 
 ## Before running
 
-```mermaid
-flowchart LR
-    A[Choose the circuit block] --> B[Run Preflight]
-    B --> C{All models available?}
-    C -->|No| D[Import or assign the correct model]
-    D --> B
-    C -->|Yes| E[Choose the simulator]
-    E --> F[Run and review results]
-```
+Choose the circuit scope, run preflight, resolve every missing or incompatible model, select the intended simulator, and then run. Repeat preflight whenever you change a model or engine.
+
+### Image — Engine and model readiness
+
+!!! note "Image needed"
+    Capture **Setup → Engine** beside **Models → SPICE model library** in a two-panel composite. Show one selected engine and model readiness without revealing personal executable paths. Suggested size: **1400 × 760 px**.
 
 ## Troubleshooting
 

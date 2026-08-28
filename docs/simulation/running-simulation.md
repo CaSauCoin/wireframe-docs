@@ -1,201 +1,112 @@
 # Running a Simulation
 
-This page covers the complete simulation workflow — from preflight validation to configuring analysis parameters and executing the simulation.
+Use the Simulation Workbench to select a supported circuit scope, configure the engine and analysis, prepare sources and loads, run preflight, and inspect results.
 
----
+## Open the workbench
 
-## Step 1: Simulation Preflight
+With a schematic active, select **Simulation → SPICE Simulation Panel** or press **F5**.
 
-Before any simulation can run, WireFrame performs a **Preflight Check** — a strict gateway that catches fatal errors early:
+The current sidebar contains:
 
-| Check | Description | Severity |
-|---|---|---|
-| **Missing ground** | No GND symbol in the circuit — SPICE requires a reference node | 🔴 Fatal |
-| **Floating nodes** | Nodes with no DC path to ground | 🔴 Fatal |
-| **Missing component values** | Resistors, capacitors without numeric values (e.g., empty Value field) | 🔴 Fatal |
-| **Missing SPICE models** | ICs or transistors without `.subckt` model definitions | 🟡 Warning |
-| **Unconnected pins** | Component pins not wired to the circuit | 🟡 Warning |
+- **Setup**;
+- **Blocks**;
+- **Testbench**;
+- **Signals**;
+- **Models**;
+- **AI**.
 
-If **fatal errors** are detected, the simulation is blocked and error messages appear in the Logger.
+Older documentation referring to a separate Analysis tab or a different sidebar layout has been removed.
 
-!!! warning "Fix all red errors before simulating"
-    A circuit without a ground reference or with floating components will produce either no results or nonsensical data.
+### Image — Current Simulation Workbench
 
----
+!!! note "Image needed"
+    Capture the complete workbench with the current six sidebar tabs, the waveform area, and run controls visible. Use a small circuit with at least one selectable block and signal. Suggested size: **1600 × 900 px**.
 
-## Step 2: Netlist Generation
+## 1. Select an engine and analysis
 
-WireFrame automatically converts your schematic into a SPICE netlist using the **Netlist Builder**:
+In **Setup**:
 
-### What happens internally
+1. Select an available simulation engine.
+2. Choose the analysis type.
+3. Set its values, such as transient stop time and step.
+4. Add any required SPICE directives.
 
-1. The builder traverses all placed components and wires.
-2. Each component is translated to its SPICE equivalent:
+Configure external engine paths in **Preferences → Simulation**. A release build normally includes or locates Ngspice; alternative engines must be installed and selected explicitly.
 
-| Schematic Component | SPICE Element | Example |
-|---|---|---|
-| Resistor `R1 = 10kΩ` | `R1 net1 net2 10k` | Standard resistor |
-| Capacitor `C1 = 100nF` | `C1 net1 net2 100n` | Standard capacitor |
-| LED `D1` | `D1 net1 net2 LED_model` | Diode with model |
-| Voltage source | `V1 net1 0 DC 5` | DC supply |
-| Op-Amp | `.subckt` block | External model file |
+## 2. Choose the circuit scope
 
-3. The **Prefix Mapper** ensures SPICE naming conventions are followed:
-    - Resistors → `R` prefix
-    - Capacitors → `C` prefix
-    - Voltage sources → `V` prefix
-    - Inductors → `L` prefix
+Open **Blocks** and select:
 
-4. External SPICE model files (`.subckt` definitions) are injected automatically by the **Template Provider** for supported ICs (op-amps, timers, regulators).
+- **Entire schematic**; or
+- one or more recognized functional blocks.
 
-### Viewing the netlist
+Use **Only runnable** to select blocks with enough models and connectivity for simulation. Read the reason shown for any block that is not runnable.
 
-The generated netlist is visible in the simulation log. Example:
+### Short video — Select runnable simulation blocks
 
-```spice
-* WireFrame EDA — Generated SPICE Netlist
-V1 VCC 0 DC 5
-R1 VCC out 1k
-C1 out 0 100n
-.tran 10u 10m
-.end
-```
+!!! note "Video needed"
+    Record **10–15 seconds** showing **Re-scan**, **Only runnable**, selection of two blocks, and the scope summary changing. Use a schematic containing at least one unsupported block so the reason is visible. 1080p.
 
----
+## 3. Add sources and loads
 
-## Step 3: Configure Analysis
+In **Setup**, add sources to the intended nets. In **Testbench**, add loads and assertions.
 
-Open the **Simulation Controls** panel from **Tools → Simulation**.
+Check source polarity, units, waveform parameters, and reference ground. A source added to the wrong net can produce a plausible but irrelevant waveform.
 
-### Transient Analysis
+## 4. Run preflight
 
-| Parameter | Description | Default |
-|---|---|---|
-| **Stop Time** | Total simulation duration | 10 ms |
-| **Step Size** | Time resolution (smaller = more detail, slower) | 10 µs |
-| **Start Time** | When to begin recording results (skip initial transient) | 0 |
+Select **Simulation → Pre-flight Validation Checklist** before running.
 
-### AC Analysis
+Resolve blockers such as:
 
-| Parameter | Description | Default |
-|---|---|---|
-| **Start Frequency** | Lower bound of frequency sweep | 1 Hz |
-| **Stop Frequency** | Upper bound | 1 MHz |
-| **Points per Decade** | Number of frequency points per decade | 100 |
-| **Sweep Type** | Linear or logarithmic (decade) | Decade |
+- missing ground;
+- missing or incompatible SPICE models;
+- invalid source or analysis values;
+- disconnected required pins;
+- unsupported selected blocks;
+- engine not found.
 
-### DC Sweep
+Warnings require review even when the Run action remains available.
 
-| Parameter | Description | Default |
-|---|---|---|
-| **Source** | Which voltage/current source to sweep | V1 |
-| **Start Value** | Beginning of sweep range | 0 V |
-| **Stop Value** | End of sweep range | 5 V |
-| **Step** | Increment per point | 0.1 V |
+## 5. Select signals
 
-### Operating Point
+Open **Signals** and select the nets to plot. Use **Named nets** for a concise view or **All** when investigating an unknown issue. Too many traces can make the plot difficult to read.
 
-No parameters needed — calculates the single DC steady-state.
+## 6. Run and inspect
 
-<!-- TODO: Replace with actual screenshot
-     SCENARIO: Capture the Simulation Controls panel showing:
-     - A dropdown for "Analysis Type" with "Transient" selected.
-     - Input fields: Stop Time = 10ms, Step Size = 10µs.
-     - A "Run" button (green/cyan colored).
-     - An "Abort" button (red, disabled since no sim is running).
-     - A progress bar at 0%.
-     SUGGESTED SIZE: 400×350px
--->
-[//]: # (![Simulation Controls](../img/simulation/simulation-controls.png))
+Start the simulation and wait for **Last run** to update. Review:
 
----
+- completion status;
+- assertion results;
+- simulation log;
+- selected waveform traces;
+- cursor measurements when required.
 
-## Step 4: Run the Simulation
+If the run fails, open **AI** and use **Why did the last run fail?** or **Review preflight blockers**, then verify the explanation against the log and circuit.
 
-1. Click **Run** in the Simulation Controls panel.
-2. The simulation starts on a **background thread** — the editor remains responsive.
-3. A **progress bar** shows the simulation progress (percentage).
-4. The **status line** shows the current simulation time (e.g., `tran: 5.2ms`).
-5. When complete, results automatically populate the [Waveform Viewer](waveform-viewer.md).
+### Short video — Preflight, run, and inspect
 
-### Aborting a simulation
+!!! note "Video needed"
+    Record **15–20 seconds** showing a successful preflight, selecting two signals, running the simulation, and the waveform plus Last run result appearing. Replace older clips that show obsolete controls. 1080p.
 
-If the simulation takes too long or you realize there's an error:
+## Stop or repeat a run
 
-- Click the **Abort** button.
-- The simulation halts immediately and partial results (if any) are discarded.
+Stop an active run only when required. After changing component values, source settings, models, scope, or analysis parameters, run preflight again before comparing results.
 
-<!-- TODO: Replace with actual video
-     SCENARIO: Record a 15-second clip showing:
-     1. The Simulation Controls panel with Transient selected, Stop Time = 10ms.
-     2. Click "Run" — the progress bar starts moving.
-     3. Status shows "tran: 1.0ms", "tran: 5.0ms", "tran: 9.8ms".
-     4. Progress reaches 100% — "Simulation complete" message.
-     5. The Waveform Viewer tab opens with voltage traces.
-     RESOLUTION: 1280×720 at 30fps.
--->
-<video controls width="100%">
-  <source src="../../img/simulation/run-simulation.webm" type="video/webm">
-  <source src="../../img/simulation/run-simulation.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+## Common failures
 
----
-
-## SPICE Model Files
-
-### Built-in models
-
-WireFrame includes SPICE models for common components via the **Template Provider**:
-
-| Component Type | Model Source |
+| Result | Check |
 |---|---|
-| Standard diodes | Built-in `.model` definitions |
-| LEDs | Built-in `.model` definitions |
-| Common op-amps (LM741, LM358) | Built-in `.subckt` files |
-| 555 Timer (NE555) | Built-in `.subckt` file |
-| Standard transistors (2N2222, BC547) | Built-in `.model` definitions |
+| Engine unavailable | **Preferences → Simulation** engine path and executable |
+| No runnable blocks | Models, ground, connectivity, and block reasons |
+| Empty waveform | Selected signals and completed analysis |
+| Flat output | Source waveform, ground reference, operating point, and load |
+| Assertion not measured | Signal selection, analysis window, and assertion metric |
+| Different engines disagree | Dialect, model version, sources, load, and analysis settings |
 
-### External models
+## See also
 
-For components not in the built-in library:
-
-1. Obtain the SPICE model file from the manufacturer's website.
-2. Place the `.lib` or `.sub` model file in the `Simulate/models/` directory.
-3. The Template Provider will find and include it during netlist generation.
-
----
-
-## Simulation Log
-
-During and after simulation, log messages are available:
-
-| Log Level | Color | Example |
-|---|---|---|
-| **Info** | Blue | `"Netlist generated: 12 components, 8 nets"` |
-| **Progress** | Grey | `"tran: 5.0ms of 10.0ms"` |
-| **Warning** | Yellow | `"Model not found for Q3 — using default NPN"` |
-| **Error** | Red | `"Simulation failed: singular matrix at time 2.1ms"` |
-
----
-
-## Common Issues
-
-??? question "Simulation fails with 'singular matrix'"
-    This usually means there's an issue with the circuit topology:
-    - A voltage source directly across another voltage source (short circuit).
-    - An inductor loop without any resistance.
-    - **Fix**: Add small series resistances (0.01Ω) or ensure proper circuit topology.
-
-??? question "Simulation runs but produces flat lines"
-    - Check that your source has the correct value and type (AC source for AC analysis, pulse for transient).
-    - Verify the simulation time is long enough to see the expected behavior.
-    - For oscillators: the simulation may need more time to reach steady state.
-
----
-
-## See Also
-
-- [Simulation Overview](index.md) — analysis types and prerequisites.
-- [Waveform Viewer](waveform-viewer.md) — interpret and measure results.
-- [ERC](../schematic/erc.md) — validate the schematic before simulating.
+- [Simulation Workbench](index.md)
+- [Testbenches and Measurements](testbenches-and-measurements.md)
+- [Simulation Engines and Models](engines-and-models.md)
+- [Waveform Viewer](waveform-viewer.md)
