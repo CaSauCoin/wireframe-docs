@@ -6,23 +6,11 @@ This directory houses the WireFrame official user manual, quickstart tutorials, 
 
 Documentation source markdown files are hosted under `/docs` and compiled into a highly responsive, modern static website.
 
-```
-       ┌────────────────────────┐
-       │   Markdown Guides      │
-       │    (`/docs/*.md`)      │
-       └───────────┬────────────┘
-                   │
-                   ▼ [MkDocs Build / mkdocs.yml]
-       ┌────────────────────────┐
-       │   Static HTML Site     │
-       │    (`/site/*`)         │
-       └───────────┬────────────┘
-                   │
-                   ▼ [Local Server / Vercel Cloud]
-       ┌────────────────────────┐
-       │     Doc Portal Web     │
-       │  (http://127.0.0.1:8001)│
-       └────────────────────────┘
+```mermaid
+flowchart TD
+    A[Markdown guides in docs/] -->|MkDocs build| B[Static HTML in site/]
+    B --> C[Local preview]
+    B --> D[Vercel deployment]
 ```
 
 ---

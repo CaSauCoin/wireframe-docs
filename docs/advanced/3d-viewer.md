@@ -15,17 +15,7 @@ From an open PCB document:
     - **Footprints** with 3D models (STEP/OBJ) if available
     - **Simple colored boxes** for footprints without 3D models
 
-```text
-3D Viewer (isometric view)
-
-[Capacitor C1]         [IC U1]
-     │                    │
-┌────┴────────────────────┴──┐  ← PCB board (green)
-│ ■ [R1]            [J1] ■   │
-│ □           □          □   │
-└────────────────────────────┘
-     ↑ Board outline (Edge.Cuts)
-```
+![3D Viewer isometric board preview](../img/3d/3d-viewer.png)
 
 ---
 
@@ -64,14 +54,9 @@ From an open PCB document:
 
 ## Bottom-Side Components
 
-Footprints flipped to **B.Cu** are rendered correctly on the underside of the board. WireFrame uses a precise Z-Y-X rotation matrix pipeline to guarantee WYSIWYG accuracy between the 2D editor and the 3D view.
+Footprints flipped to **B.Cu** are rendered on the underside of the board with the same orientation shown in the 2D editor.
 
-```text
-Board viewed from underneath:
-  ┌─────────────────────────┐
-  │  [R3]  [C4]  (flipped)  │  ← bottom side
-  └─────────────────────────┘
-```
+Use the underside camera view to confirm that flipped models, silkscreen, pad plating, and board clearances match the 2D layout.
 
 ---
 

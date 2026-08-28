@@ -40,9 +40,6 @@ extra_css:
 
 # Extra configuration
 extra:
-  version:
-    provider: mike
-    default: stable
   social:
     - icon: fontawesome/solid/globe
       link: https://wireframe.com.vn
@@ -75,6 +72,20 @@ nav:
       - ERC (Electrical Rules Check): schematic/erc.md
       - Templates & Title Block: schematic/templates.md
 
+  - Simulation:
+      - Simulation Workbench: simulation/index.md
+      - Running a Simulation: simulation/running-simulation.md
+      - Waveform Viewer: simulation/waveform-viewer.md
+      - Testbenches & Measurements: simulation/testbenches-and-measurements.md
+      - Engines & SPICE Models: simulation/engines-and-models.md
+
+  - AI Copilot:
+      - AI Overview: ai/index.md
+      - AI Design Agent: ai/design-agent.md
+      - Auto-Placer & Auto-Router: ai/auto-placer-router.md
+      - AI Component Generator: ai/component-generator.md
+      - Review & Simulation Guide: ai-copilot.md
+
   - PCB Layout:
       - pcb/index.md
       - Footprints & Placement: pcb/footprints-and-placement.md
@@ -90,17 +101,6 @@ nav:
       - Footprints Library: libraries/footprints-library.md
       - Symbol Creator: libraries/symbol-creator.md
       - Library Converter: libraries/library-converter.md
-
-  - Simulation:
-      - simulation/index.md
-      - Running a Simulation: simulation/running-simulation.md
-      - Waveform Viewer: simulation/waveform-viewer.md
-
-  - AI Copilot:
-      - ai/index.md
-      - AI Design Agent: ai/design-agent.md
-      - Auto-Placer & Auto-Router: ai/auto-placer-router.md
-      - AI Component Generator: ai/component-generator.md
 
   - Advanced Features:
       - Selection & Editing: advanced/selection-and-editing.md
@@ -125,7 +125,11 @@ markdown_extensions:
   - pymdownx.highlight
   - pymdownx.inlinehilite
   - pymdownx.snippets
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.tasklist:

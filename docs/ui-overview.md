@@ -58,6 +58,18 @@ Located at the **very top** of the window. Every feature is accessible from here
 | Gerber Viewer | Open the built-in Gerber file viewer |
 | Keymap… | Customize keyboard shortcuts |
 
+### Simulation Menu
+
+| Item | Shortcut | Action |
+|---|---|---|
+| SPICE Simulation Panel | ++f5++ | Open the Simulation Workbench for the active schematic |
+| Preflight Check | — | Open the workbench and run component/model readiness checks |
+| Model Editor | — | Open model validation and assignment tools |
+
+### Preferences
+
+The unified Preferences dialog includes appearance, hotkeys, PCB defaults, 3D materials, AI settings, and **Simulation** defaults. External ngspice CLI, Xyce, and LTspice executable paths are configured on the Simulation page.
+
 ---
 
 ## Docking Layout
@@ -83,6 +95,7 @@ Default panel positions:
 | Waveform Viewer *(after simulation)* | Bottom-center or floating |
 | DFM Panel *(PCB only)* | Bottom or floating |
 | Logger / Notifications | Bottom-right overlay |
+| Simulation Workbench *(schematic only)* | Docked editor companion panel |
 
 ---
 
@@ -90,13 +103,13 @@ Default panel positions:
 
 Shows the **project file tree** on the left side:
 
-```
-📁 MyBoard.prjxml           ← Project root node
-   ├─ 📄 Schematics
-   │    ├─ main.schxml      ← Click to open
-   │    └─ power.schxml
-   └─ 📄 PCBs
-        └─ MyBoard.pcbxml   ← Click to open
+```mermaid
+flowchart TD
+    P[MyBoard.prjxml] --> S[Schematics]
+    P --> B[PCBs]
+    S --> M[main.schxml]
+    S --> W[power.schxml]
+    B --> PCB[MyBoard.pcbxml]
 ```
 
 **Interactions:**

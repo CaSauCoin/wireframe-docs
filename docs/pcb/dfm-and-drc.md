@@ -114,14 +114,13 @@ No board outline found (Edge.Cuts is empty), or the outline is malformed (self-i
 
 Click **Run DFM** again to confirm the issue is resolved.
 
-```
-DFM Workflow:
-
-  Run DFM
-     ↓
-  Any red errors?
-  ├─ Yes → Double-click error → Fix → Run DFM again
-  └─ No  → Ready to export Gerbers ✅
+```mermaid
+flowchart TD
+    A[Run DFM] --> B{Any release-blocking errors?}
+    B -->|Yes| C[Double-click a violation]
+    C --> D[Fix geometry or design rules]
+    D --> A
+    B -->|No| E[Ready for fabrication export]
 ```
 
 ---

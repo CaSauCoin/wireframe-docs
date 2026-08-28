@@ -80,13 +80,6 @@ The footprint wizard is a built-in footprint generator for common package types.
 3. Click **Export** to save as a KiCad `.kicad_mod` file via the KiCad export function.
 4. Load the exported file into your footprint library.
 
-<!-- TODO: Replace with actual screenshot
-     Capture the Footprint Wizard dialog:
-     - _**Left side**: Controls for pin count (e.g., 8), layout type (dropdown: "Dual Row"), pad size fields (0.6 × 1.0 mm), pitch fields (1.27 mm), hole size (0.4 mm)._
-     - _**Right side**: A live preview canvas showing the generated footprint — 8 pads in two rows of 4, with pin numbers labeled (1–8), a body outline rectangle, and axis crosshairs._
-     - _An "Export to .kicad_mod" button at the bottom._
-     Suggested size: 800×500px.
--->
 ![Footprint Wizard](../img/libraries/footprint-wizard.png)
 
 
@@ -111,18 +104,8 @@ The footprint wizard is a built-in footprint generator for common package types.
 4. Adjust values and see the model update in the preview.
 5. Save changes — WireFrame writes updated parameters back to the `.kicad_mod` file.
 
-<!-- TODO: Replace with actual video
-     Record a 15-second clip:
-     1. _Open the Model Alignment Dialog for a footprint (e.g., an SOT-23 transistor)._
-     2. _The 3D preview shows the footprint pads with a 3D model positioned on top._
-     3. _Adjust the Y offset — the model slides forward/backward in the preview._
-     4. _Adjust the Z rotation — the model rotates to align with the pads._
-     5. _The model now sits correctly on the footprint._
-     Resolution: 1280×720 at 30fps.
--->
 <video controls width="100%">
-  <source src="../../img/libraries/3d-model-alignment.webm" type="video/webm">
-  <source src="../../img/libraries/3d-model-alignment.mp4" type="video/mp4">
+  <source src="../img/libraries/3d-model-alignment.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 

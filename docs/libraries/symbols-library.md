@@ -14,13 +14,6 @@ From the Library panel when a schematic is active:
 4. Once complete, results are merged into the symbol library map.
 5. Available symbol names appear in a filterable list.
 
-<!-- TODO: Replace with actual screenshot
-     Capture the Library panel showing loaded symbols:
-     - _A search box at the top (empty or with a partial filter)._
-     - _A list of 10–15 symbol names (e.g., "R", "C", "LED", "STM32F103", "LM7805", "Conn_01x04")._
-     - _A status line at the bottom: "Ready — 150 symbols loaded from 3 libraries"._
-     Suggested size: 280×400px.
--->
 ![Symbol Loading](../img/libraries/symbol-loading.png)
 
 
@@ -86,14 +79,6 @@ the footprint linking feature associates a default footprint with a symbol in th
 - Future instances of that symbol automatically get the linked footprint in their properties.
 - Existing placed components are **not retroactively updated** — edit them individually if needed.
 
-<!-- TODO: Replace with actual screenshot
-     Capture the footprint linking UI:
-     - _A symbol selected in the Library panel (e.g., "R" highlighted)._
-     - _A dialog or dropdown showing available footprints (e.g., "R_0402_1005Metric", "R_0603_1608Metric", "R_0805_2012Metric")._
-     - _A "Link" or "Assign" button._
-     - _After linking: the symbol's Properties showing "Footprint: R_0603_1608Metric"._
-     Suggested size: 500×400px.
--->
 <video controls width="100%">
   <source src="../img/libraries/symbol-footprint-link.mp4" type="video/mp4">
   Your browser does not support the video tag.

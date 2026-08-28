@@ -29,10 +29,18 @@ The config file is a JSON document with the following sections:
     "openDocs": [
       "/home/user/Projects/main.schxml",
       "/home/user/Projects/board.pcbxml"
-    ]
+    ],
+    "simAnalysisType": 0,
+    "simStopTime": 5.0,
+    "simStopTimeUnit": 1,
+    "simTimeStep": 10.0,
+    "simTimeStepUnit": 2,
+    "simEngineNgspiceCliPath": "",
+    "simEngineXycePath": "",
+    "simEngineLTspicePath": ""
   },
   "ai": {
-    "apiKey": "sk-or-v1-...",
+    "apiKey": "",
     "provider": "openrouter"
   }
 }
@@ -55,6 +63,10 @@ Session data tracks:
 |---|---|---|
 | `openProjects` | Array of strings | Paths to project files (`.prjxml`) open during last session |
 | `openDocuments` | Array of strings | Paths to schematic/PCB files (`.schxml`, `.pcbxml`) open during last session |
+| `simAnalysisType` | Integer | Default simulation analysis: transient, AC, DC sweep, or operating point |
+| `simStopTime` / `simStopTimeUnit` | Number / integer | Default transient duration and its unit |
+| `simTimeStep` / `simTimeStepUnit` | Number / integer | Default transient step and its unit |
+| `simEngine*Path` | String | Optional executable location for an external simulator |
 
 ### Startup behavior
 
@@ -69,23 +81,19 @@ The config is updated automatically when:
 
 - You **open or close** a project or document.
 - The app is **closed normally** (session snapshot).
-
-<!-- TODO: Replace with actual screenshot
-     Capture the config file opened in a text editor (VS Code, Sublime, or terminal `cat` output):
-     - _The JSON content with `session` section visible._
-     - _The `openProjects` array showing 1–2 project paths._
-     - _The `openDocs` array showing 2–3 document paths._
-     - _Syntax highlighting for JSON._
-     Suggested size: 600×400px.
--->
-
-[//]: # (![Config Json]&#40;../img/reference/config-json.png&#41;)
+- You change defaults or engine paths in **Preferences → Simulation**.
 
 ---
 
-## AI Configuration
+## Editing preferences safely
 
-The `ai` section stores settings for the AI Copilot:
+Use the in-app **Preferences** pages for normal changes. In particular, use **Preferences → Simulation** to set analysis defaults and optional simulator executables.
+
+Edit `user_config.json` by hand only while WireFrame is closed. Unknown or invalid values may be replaced by defaults at startup.
+
+### AI configuration
+
+The `ai` section stores Copilot settings:
 
 | Field | Type | Description |
 |---|---|---|
@@ -93,10 +101,7 @@ The `ai` section stores settings for the AI Copilot:
 | `provider` | String | LLM provider name (default: `"openrouter"`) |
 
 !!! info "Setting the API key"
-    You can set the API key either:
-    - Via the UI: **View → AI Copilot → ⚙ Settings → API Key**
-    - Manually in the JSON config file
-
+    Open **View → AI Copilot → Settings**, then enter the API key in the application. Avoid placing real credentials in screenshots, example projects, or issue reports.
 
 ---
 
@@ -130,4 +135,5 @@ Remove-Item imgui.ini
 
 - [Installation](../installation.md)
 - [Projects & Files](../projects.md) — project and document management.
+- [Simulation Engines](../simulation/engines-and-models.md) — configure and troubleshoot optional simulators.
 - [FAQ & Troubleshooting](../faq.md) — common config-related issues.

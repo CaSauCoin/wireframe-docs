@@ -22,14 +22,6 @@ When **nothing is selected**, the Properties panel shows page-level settings for
 
 These fields are editable directly in the Properties panel. Changes are reflected immediately on the schematic canvas (title block and page border).
 
-<!-- TODO: Replace with actual screenshot
-     Capture the Properties panel showing page settings:
-     - _All fields listed above visible in the panel — Title, Company, Revision, Date, Drawn by, Sheet number._
-     - _A "Paper Size" dropdown showing "A4" selected._
-     - _The schematic canvas visible in the background showing the **title block** in the bottom-right corner of the page, filled with the values from the properties._
-     - _Border color picker or color swatch visible._
-     Suggested size: 400×500px (panel) or 1280×720px (full window with canvas showing title block).
--->
 ![Page Properties](../img/schematic/page-properties.png)
 
 
@@ -70,16 +62,8 @@ Each text attribute stores:
 
 Editing these uses an undoable command (for content/position/size) and an undoable command (for rotation).
 
-<!-- TODO: Replace with actual screenshot
-     Capture a component with its text attributes visible and the Properties panel open:
-     - _A resistor selected on the canvas, with "R1" (designator) displayed above and "10kΩ" (value) displayed below._
-     - _The Properties panel showing all fields: Designator, Value, Comment, Footprint._
-     - _Below the fields: text attribute controls — a "Designator visible" checkbox (checked), a font size slider, a rotation field._
-     - _Similar controls for the Value text attribute._
-     Suggested size: 800×500px (showing both canvas and panel).
--->
 <video controls width="100%">
-  <source src="../../img/schematic/component-attributes.mp4" type="video/mp4">
+  <source src="../img/schematic/component-attributes.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -103,13 +87,6 @@ From the UI:
 - Use context menu commands like **"Align Text Horizontally"** / **"Align Text Vertically"**.
 - Or use keyboard shortcuts if configured (see [Shortcuts](../advanced/shortcuts.md)).
 
-<!-- TODO: Replace with actual screenshot
-     Capture a group of 4–5 resistors arranged vertically:
-     - _**Before alignment**: Designators (R1, R2, R3, R4, R5) at slightly different horizontal positions._
-     - _**After alignment**: All designators perfectly aligned in a column, all values aligned in another column._
-     - _Show both states side by side or as a before/after comparison._
-     Suggested size: 600×350px.
--->
 
 ![Aligned Attributes](../img/schematic/aligned-attributes.png)
 
@@ -147,18 +124,8 @@ The Properties panel dynamically switches its content based on what is selected:
 | **Wire** | Net name, connected pins list |
 | **Graphic object** | Position, size, color, line width, layer |
 
-<!-- TODO: Replace with actual video
-     Record a 20-second screen capture showing:
-     1. _Click on the schematic background (no selection) — Properties panel shows page settings._
-     2. _Click on a resistor — panel switches to show Designator, Value, Comment, Footprint fields._
-     3. _Click on a net label — panel switches to show net name field._
-     4. _Click on a graphic rectangle — panel switches to show position, size, color, line width._
-     5. _Each transition should be clearly visible with the panel content changing smoothly._
-     Resolution: 1280×720 at 30fps.
--->
 <video controls width="100%">
-  <source src="../../img/schematic/properties-switching.webm" type="video/webm">
-  <source src="../../img/schematic/properties-switching.mp4" type="video/mp4">
+  <source src="../img/schematic/properties-switching.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 

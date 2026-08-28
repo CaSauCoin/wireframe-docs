@@ -1,147 +1,88 @@
-# SPICE Simulation — Overview
+# Simulation Workbench
 
-WireFrame integrates industry-standard **SPICE simulation** directly into the editor. Design your circuit in the schematic editor, then simulate it without leaving the application — view voltages, currents, and frequency responses in an interactive waveform viewer.
+Use the Simulation Workbench to check how a schematic behaves before you move on to PCB layout. You can view voltage waveforms, measure signals, and verify that important outputs stay within your chosen limits.
 
----
+Open a schematic, then select **Simulation → SPICE Simulation Panel** or press ++f5++.
 
-## What You Can Do
+!!! note "Available in the upcoming release"
+    This guide describes WireFrame 1.5.47. The simulator included with WireFrame is ready to use after installation.
 
-| Capability | Description |
-|---|---|
-| **Transient Analysis** (.TRAN) | Time-domain simulation — see how signals change over time |
-| **AC Analysis** (.AC) | Frequency-domain sweep — plot gain and phase (Bode plots) |
-| **DC Sweep** (.DC) | Sweep a voltage/current source and plot the response |
-| **Operating Point** (.OP) | Calculate DC bias voltages and currents at steady state |
-| **Waveform Viewer** | Interactive oscilloscope with cursors for measurement |
+## Quick start
 
----
+![SPICE simulation workflow](../img/simulation/spice-simulation-flowchart.png)
 
-## How It Works
-
-![SPICE Simulation Flowchart](../img/simulation/spice-simulation-flowchart.png)
-
-1. **Design** your circuit in the schematic editor with components and wires.
-2. **Preflight** checks scan for errors that would prevent simulation (missing values, floating ground, etc.).
-3. The **Netlist Builder** converts the schematic into a SPICE-compatible text netlist.
-4. The **NgSpice Engine** runs the simulation in a background thread.
-5. Results are displayed in the **Waveform Viewer** — an interactive oscilloscope.
-
----
-
-## Prerequisites
-
-### NgSpice Runtime
-
-WireFrame loads `libngspice` **dynamically at runtime**. If NgSpice is not installed on your system, the simulation feature is gracefully disabled — the rest of the application works normally.
-
-=== "Linux"
-
-    ```bash
-    # Ubuntu / Debian
-    sudo apt-get install libngspice0-dev
-
-    # Fedora
-    sudo dnf install ngspice-devel
-    ```
-
-=== "Windows"
-
-    NgSpice is bundled with the WireFrame Windows installer — no additional installation needed.
-
-=== "macOS"
-
-    ```bash
-    brew install ngspice
-    ```
-
-!!! info "Checking if NgSpice is available"
-    When WireFrame starts, it attempts to load `libngspice`. If successful, the simulation menu items are enabled. If not, a message appears in the Logger: `"NgSpice: library not found — simulation disabled."`
-
----
-
-## Supported Analysis Types
-
-### Transient Analysis (.TRAN)
-
-Simulates circuit behavior **over time**. Best for:
-
-- Oscillator circuits (555 timer, RC oscillators)
-- Power supply startup behavior
-- Digital signal timing
-
-| Parameter | Description | Example |
-|---|---|---|
-| Stop time | Total simulation duration | 10 ms |
-| Step size | Time resolution | 10 µs |
-
-### AC Analysis (.AC)
-
-Sweeps frequency and plots **gain and phase**. Best for:
-
-- Filter frequency response
-- Amplifier bandwidth analysis
-- Impedance vs. frequency
-
-| Parameter | Description | Example |
-|---|---|---|
-| Start frequency | Sweep start | 1 Hz |
-| Stop frequency | Sweep end | 1 MHz |
-| Points per decade | Resolution | 100 |
-
-### DC Sweep (.DC)
-
-Sweeps a **source voltage or current** and plots the DC response. Best for:
-
-- Diode I-V curves
-- Transfer characteristics
-- Bias point analysis
-
-| Parameter | Description | Example |
-|---|---|---|
-| Source name | Which source to sweep | V1 |
-| Start value | Sweep start | 0 V |
-| Stop value | Sweep end | 5 V |
-| Step size | Increment | 0.1 V |
-
-### Operating Point (.OP)
-
-Calculates the **DC steady-state** of the circuit — all node voltages and branch currents at a single point.
-
-- Results displayed in a **table format** rather than waveforms.
-- Useful for verifying bias conditions before running transient or AC analysis.
-
----
-
-## Quick Start
-
-1. Complete your schematic (components, wires, values assigned).
-2. Go to **Tools → Simulation** or the Simulation panel.
-3. Select analysis type (e.g., Transient).
-4. Configure parameters (stop time, step size).
+1. Open a schematic that contains a GND connection and named signal nets.
+2. Click **Preflight**.
+3. Resolve any item marked as blocking.
+4. Choose the type of analysis you need.
 5. Click **Run**.
-6. View results in the Waveform Viewer.
+6. Open **Signals** and enable the nets you want to view.
 
-<!-- TODO: Replace with actual screenshot
-     SCENARIO: Capture the simulation workflow — a schematic of a simple RC circuit
-     (resistor + capacitor + voltage source) with the Simulation Controls panel open,
-     showing "Transient Analysis" selected, stop time = 10ms, step = 10µs.
-     The Run button is visible and highlighted.
-     SUGGESTED SIZE: 1280×720px (full window)
--->
-[//]: # (![Simulation Quickstart](img/simulation/simulation-quickstart.png))
+## Workbench tabs
 
----
-
-## Section Pages
-
-| Page | What you'll learn |
+| Tab | What you do there |
 |---|---|
-| [Running a Simulation](running-simulation.md) | Preflight checks, configuration, running, SPICE models |
-| [Waveform Viewer](waveform-viewer.md) | Interactive plotting, cursors, measurements |
+| **Setup** | Check readiness, choose a simulator, add sources, and adjust the graph display |
+| **Blocks** | Run the whole schematic or only the circuit section you are working on |
+| **Testbench** | Add loads and define the results that count as acceptable |
+| **Signals** | Show, hide, and measure voltage waveforms |
+| **Models** | Find components that need a simulation model |
+| **AI** | Ask Copilot to explain a signal or failed check |
 
----
+## Choose an analysis
 
-## See Also
+| Analysis | Choose it when you want to check |
+|---|---|
+| **Transient** | Startup, switching, timing, oscillation, or ripple over time |
+| **AC Sweep** | Gain and phase across a frequency range |
+| **DC Bias** | Steady DC voltage at each node |
+| **DC Sweep** | How an output changes while an input voltage is varied |
 
-- [Tutorial: NE555 LED Blinker](../tutorial/index.md) — includes a complete simulation walkthrough.
-- [Schematic Editor](../schematic/index.md) — design the circuit to simulate.
+The controls below the toolbar change with the selected analysis. Hover a disabled option to see why it is unavailable for the current circuit.
+
+## Add power and input signals
+
+Open **Setup**, choose a named net, and click **Add** under **Sources**. Select the source type that matches your circuit:
+
+- **DC** for a fixed supply or input;
+- **AC** for small-signal frequency analysis;
+- **Sine** for a repeating analog input;
+- **Pulse** for clocks and switching inputs;
+- **PWL** for a custom sequence of time and voltage points.
+
+!!! tip
+    Give important nets clear names such as `VIN`, `VOUT`, `SDA`, or `CLK`. Named nets are easier to select and understand in the results.
+
+## Run Preflight
+
+Preflight checks whether the selected circuit is ready to simulate. Common issues include:
+
+- the circuit has no GND reference;
+- components are not connected;
+- a resistor, capacitor, or source has no usable value;
+- a component needs a simulation model;
+- the selected simulator is unavailable.
+
+Double-check the indicated component, correct the issue, then run **Preflight** again.
+
+If an unrelated section is not ready, open **Blocks** and select only the section you want to test.
+
+## Read the waveform
+
+In **Signals**, enable the nets you want to plot. Use the graph controls to:
+
+- zoom and pan;
+- fit all active signals automatically;
+- show or hide the grid and legend;
+- enable A/B cursors for interval measurements;
+- display the latest simulated values on the schematic.
+
+Use **More → Export waveform CSV** to save the plotted data. If a run fails, use **More → Export simulation log** when reporting the problem.
+
+## Continue learning
+
+- [Running a Simulation](running-simulation.md)
+- [Waveform Viewer](waveform-viewer.md)
+- [Testbenches & Measurements](testbenches-and-measurements.md)
+- [Simulation Engines & Models](engines-and-models.md)
+- [AI Copilot](../ai-copilot.md)

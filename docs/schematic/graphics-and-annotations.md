@@ -32,18 +32,8 @@ All graphic objects share:
 | Line thickness | Stroke width |
 | Fill color | Optional fill (rectangles, circles, polygons) |
 
-<!-- TODO: Replace with actual screenshot
-     Capture a schematic area with several drawing primitives:
-     - _A dashed **rectangle** used as a section border around a group of components, labeled "Power Section"._
-     - _A **line** used as a separator between sections._
-     - _A **circle** highlighting a test point._
-     - _A **polygon** used as a custom shape or arrow._
-     - _Different colors and line widths visible across the primitives._
-     Suggested size: 700×450px.
--->
 <video controls width="100%">
-  <source src="../../img/schematic/drawing-primitives.webm" type="video/webm">
-  <source src="../../img/schematic/drawing-primitives.mp4" type="video/mp4">
+  <source src="../img/schematic/drawing-primitives.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -92,17 +82,6 @@ Graphics are part of the general selection system:
 
 !!! info "Resize handles"
     When a graphic is selected, small squares appear at corners and midpoints. Hovering over them changes the cursor to a resize arrow. Drag to change the object's dimensions.
-
-<!-- TODO: Replace with actual screenshot
-     Capture a selected rectangle graphic with editing UI visible:
-     - _The rectangle highlighted with a cyan selection outline._
-     - _**Resize handles** (small squares) at all four corners and midpoints of each edge._
-     - _A right-click **context menu** open next to the rectangle showing options: Delete, Change Color, Change Layer, Send to Back._
-     - _The Properties panel on the right showing the rectangle's position, width, height, color, and line width._
-     Suggested size: 600×400px.
--->
-
-[//]: # (![Graphics Handles]&#40;../img/schematic/graphics-handles.png&#41;)
 
 
 ---

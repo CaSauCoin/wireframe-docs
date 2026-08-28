@@ -101,18 +101,8 @@ During PCB paste:
 - New IDs are generated for all pasted items.
 - The pasted group follows the mouse until you click to place.
 
-<!-- TODO: Replace with actual video
-     Record a 15-second clip:
-     1. _Select a group of schematic components and wires using box select._
-     2. _Press Ctrl+C to copy._
-     3. _Click elsewhere on the canvas._
-     4. _Press Ctrl+V — a cloned group appears attached to the mouse._
-     5. _Click to place the pasted group._
-     6. _The new components have different IDs (R3, R4 instead of R1, R2)._
-     Resolution: 1280×720 at 30fps.
--->
 <video controls width="100%">
-  <source src="../../img/advanced/copy-paste-demo.mp4" type="video/mp4">
+  <source src="../img/advanced/copy-paste-demo.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 

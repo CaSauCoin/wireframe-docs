@@ -6,13 +6,13 @@ hide:
 
 <div class="wf-hero" markdown>
 
-<span class="wf-badge">v1.3.7 — Stable Release</span>
+<span class="wf-badge">v1.5.47 — Upcoming Release</span>
 
 # WireFrame EDA
 
 <p class="wf-subtitle">
-A streamlined environment for schematic capture, PCB layout, SPICE simulation,<br>
-3D visualization, AI-assisted design, and manufacturing export — built for speed, precision, and KiCad compatibility.
+A streamlined environment for schematic capture, SPICE verification, AI-assisted<br>
+design, PCB layout, 3D visualization, and manufacturing export.
 </p>
 
 <div class="wf-cta">
@@ -33,19 +33,35 @@ A streamlined environment for schematic capture, PCB layout, SPICE simulation,<b
 
 1. **Create Project** — Centralize schematics, PCBs, and libraries in a single `.prjxml` file
 2. **Design Schematic** — Place components, draw wires, assign net labels, configure properties
-3. **Simulate** — Run SPICE simulation to verify circuit behavior before layout
+3. **Verify** — Run preflight, simulate one circuit block or the complete sheet, and check your acceptance limits
 4. **Convert to PCB** — Automatically import netlist and footprints into the PCB editor
 5. **Layout & Route** — Place footprints, route traces, fill copper zones, run DFM/DRC
-6. **Export** — Generate Gerber, drill, BOM — ready for your manufacturer
+6. **Release** — Generate the Gerber, drill, BOM, netlist, and fabrication manifest
 
 !!! tip "AI-assisted design"
-    Skip steps 2–5 entirely! The [AI Copilot](ai/index.md) can design, simulate, place, and route a circuit from a single text prompt.
+    [AI Copilot](ai/index.md) can help create and review parts of this workflow. Inspect every proposed change and run the relevant verification before continuing.
 
 ---
 
 ## Core Capabilities
 
 <div class="wf-grid" markdown>
+
+<div class="wf-card" markdown>
+
+### :material-chart-line: Simulation Workbench
+
+Run transient, AC, DC operating-point, and DC sweep analysis without leaving the schematic. Use the included simulator, inspect signals and measurements, and check important outputs against your own pass/fail limits.
+
+</div>
+
+<div class="wf-card" markdown>
+
+### :material-robot: AI Copilot
+
+Analyze electrical intent, recognize functional blocks, review design findings, and prepare proposed edits before anything changes on the canvas. Copilot can also inspect simulation context and help explain failed testbench criteria.
+
+</div>
 
 <div class="wf-card" markdown>
 
@@ -59,7 +75,7 @@ Draft robust circuits with an intuitive schematic engine. Place components from 
 
 ### :material-developer-board: PCB Layout
 
-Translate schematics into physical boards with precision. WireFrame offers 45° routing guidance, multi-layer management, intelligent copper zone generation with priority sorting, and an advanced DFM clearance engine that correctly handles board-edge geometries and castellated holes.
+Translate schematics into physical boards with precision. WireFrame offers 45° routing guidance, multi-layer management, prioritized copper zones, and DFM checks for clearances, board edges, holes, and component placement.
 
 </div>
 
@@ -75,7 +91,7 @@ Load KiCad `.kicad_sym` and `.kicad_mod` libraries natively. Create new footprin
 
 ### :material-rotate-3d: 3D Visualization
 
-Validate your design before fabrication. Render high-fidelity 3D previews with STEP and OBJ models. WYSIWYG accuracy is guaranteed by a precise Z-Y-X rotation pipeline with correct bottom-layer flip orientation.
+Validate your design before fabrication with STEP and OBJ models. Inspect components from above and below, including correctly flipped bottom-side footprints.
 
 </div>
 
@@ -83,7 +99,7 @@ Validate your design before fabrication. Render high-fidelity 3D previews with S
 
 ### :material-keyboard: Keyboard-Driven Workflow
 
-++w++ wire · ++x++ route · ++r++ rotate · ++f++ flip · ++v++ via · ++g++ GND. Every action is one keystroke away. The full keymap is customizable via **Tools → Keymap**.
+++w++ wire · ++x++ route · ++r++ rotate · ++f++ flip · ++v++ via · ++g++ GND. Every action is one keystroke away. Customize bindings in **Preferences → Hotkeys**.
 
 </div>
 
@@ -138,7 +154,7 @@ Create custom schematic symbols with the interactive editor or wizard. Generate 
 | **Electronics Hobbyists** | Clean interface, Toner Transfer PDF for DIY board making, easy KiCad library import |
 | **Students & Academia** | Lightweight installation, SPICE simulation, transparent workflow from schematic to Gerber |
 | **Professional Engineers** | AI-assisted design, keyboard-driven efficiency, full KiCad ecosystem compatibility, robust DFM/DRC engine |
-| **Open-Source Developers** | Built on C++17 and ImGui — performant, extensible architecture |
+| **Open-Source Developers** | A responsive EDA workflow with documented project and file formats |
 
 ---
 
@@ -147,16 +163,17 @@ Create custom schematic symbols with the interactive editor or wizard. Generate 
 | Section | Content |
 |---|---|
 | [Getting Started](getting-started.md) | Launch, main UI, create your first project |
-| [Tutorials](tutorial/index.md) | NE555 LED blinker walkthrough + AI-assisted design tutorial |
+| [Tutorials](tutorial/index.md) | End-to-end PCB walkthrough and AI-assisted design tutorial |
 | [Schematic Editor](schematic/index.md) | Place components, draw wires, manage nets, run ERC |
-| [PCB Editor](pcb/index.md) | Footprints, routing, zones, design rules, DFM, Gerber export |
-| [Libraries](libraries/symbols-library.md) | Symbols, footprints, Symbol Creator, Library Converter |
-| [Simulation](simulation/index.md) | SPICE simulation — transient, AC, DC, waveform viewer |
-| [AI Copilot](ai/index.md) | AI-assisted design, auto-placer, auto-router, component generator |
+| [Simulation](simulation/index.md) | Preflight, analyses, waveforms, block scope, engines, and models |
+| [AI Copilot](ai/index.md) | Design assistance, placement, routing, and component generation |
+| [Copilot Review Guide](ai-copilot.md) | Review proposed edits and investigate simulation results safely |
+| [PCB Editor](pcb/index.md) | Footprints, routing, zones, DFM, and fabrication packages |
+| [Libraries](libraries/symbols-library.md) | Symbols, footprints, Symbol Creator, and Library Converter |
 | [Advanced Features](advanced/selection-and-editing.md) | Advanced selection, 3D viewer, keymap customization |
 | [Reference](reference/file-formats.md) | File formats, configuration, FAQ, changelog |
 
 ---
 
 !!! tip "New to WireFrame?"
-    Start with [Getting Started](getting-started.md) to learn the interface, or jump straight into the [NE555 Tutorial](tutorial/index.md) to experience the full workflow hands-on. Want to see the AI in action? Try the [AI-Assisted Design Tutorial](tutorial/ai-design.md).
+    Start with [Getting Started](getting-started.md) to learn the interface, or jump straight into the [Tutorial](tutorial/index.md) to experience the full workflow hands-on. Want to see the AI in action? Try the [AI-Assisted Design Tutorial](tutorial/ai-design.md).

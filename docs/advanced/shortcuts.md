@@ -6,7 +6,7 @@ WireFrame uses a fully customizable key map managed by the key map system. Every
 
 ## Key Map Editor
 
-Accessible from **Edit → Keymap…** in the main menu:
+Accessible from **Preferences → Hotkeys** in the main menu:
 
 1. A list of all actions is displayed with:
     - **Action name** (e.g., "Place Wire", "Rotate", "Undo").
@@ -16,16 +16,8 @@ Accessible from **Edit → Keymap…** in the main menu:
 4. The binding updates immediately.
 5. Press ++esc++ to cancel recording.
 
-Bindings are stored in memory and can be persisted in future versions via the config file.
+Bindings are saved in the user configuration and restored on the next launch.
 
-<!-- TODO: Replace with actual screenshot
-     Capture the Keymap Editor dialog:
-     - _A table with two columns: **Action** and **Shortcut**._
-     - _10–15 actions visible (e.g., "Place Wire: W", "Rotate: R", "Undo: Ctrl+Z", "Delete: Delete")._
-     - _One row in "recording" state — the shortcut cell showing "Press a key…" or highlighted in cyan._
-     - _A scrollbar on the right if the list is long._
-     Suggested size: 500×400px.
--->
 ![Keymap Editor](../img/advanced/keymap-editor.png)
 
 
@@ -46,6 +38,7 @@ Bindings are stored in memory and can be persisted in future versions via the co
 | Paste | ++ctrl+v++ | Paste from clipboard |
 | Delete | ++delete++ | Delete selected items |
 | Select All | ++ctrl+a++ | Select all items on canvas |
+| Open Simulation Workbench | ++f5++ | Open the simulation panel for the active schematic |
 
 ---
 
@@ -107,7 +100,7 @@ Bindings are stored in memory and can be persisted in future versions via the co
 ## Customization Tips
 
 !!! tip "Match your workflow"
-    If you're coming from another EDA tool (KiCad, Altium, Eagle), you can rebind WireFrame's shortcuts to match. Open **Edit → Keymap…** and set your preferred bindings.
+    If you're coming from another EDA tool (KiCad, Altium, Eagle), you can rebind WireFrame's shortcuts to match. Open **Preferences → Hotkeys** and set your preferred bindings.
 
 !!! info "Conflict detection"
     If you assign a shortcut that's already used by another action, the editor will notify you and remove the old binding.

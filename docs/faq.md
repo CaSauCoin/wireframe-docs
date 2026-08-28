@@ -163,6 +163,38 @@ Common questions and solutions for WireFrame EDA issues.
     - PDF export converts colors to black/grey for printing. This is by design.
     - If elements are missing, ensure they are on **visible layers** before exporting.
 
+??? question "What should be in the manufacturing archive?"
+    For the 1.5.47 release workflow, prefer the coordinated fabrication package. Check for Gerber X2 layers, separate plated and unplated drill files, IPC-D-356A, BOM, and the package manifest. Open representative Gerbers in the built-in viewer and confirm the board revision before sending the archive.
+
+---
+
+## Simulation
+
+??? question "The Run button is disabled"
+    Check the readiness card and hover the disabled analysis or engine. **Run** requires a usable selected engine, connected nets in the selected scope, no blocking model issues, a supported analysis, and no simulation already in progress. Run **Preflight** after correcting the circuit or model library.
+
+??? question "An external engine is installed but WireFrame cannot find it"
+    Open **Preferences → Simulation**. Leave its path empty only when the executable is available on your system `PATH`; otherwise click **Browse…** and select it directly. Return to **Setup → Engine** and confirm the status is usable.
+
+??? question "Preflight reports a missing model"
+    Open the workbench **Models** tab and note the requested model and component designator. Import the correct vendor SPICE model, confirm that its pin order matches the datasheet, then run Preflight again. You can also simulate an independent block that does not contain the unresolved component.
+
+??? question "Why is an assertion Not measured instead of Failed?"
+    The selected run did not produce the signal or metric required for comparison. Check the signal name, analysis type, circuit scope, cursor/settling window, and engine log. **Not measured** intentionally never counts as a pass.
+
+??? question "Different simulators produce different results"
+    Confirm that both runs use the same analysis, startup settings, sources, loads, model version, and measurement window. Export both simulation logs when you need to compare the runs or report the difference.
+
+---
+
+## AI Copilot
+
+??? question "Does Copilot edit the schematic automatically?"
+    Design changes are presented as pending edits for review. Inspect the affected components, nets, and rationale before approving. After applying a proposal, run ERC, DFM, or simulation as appropriate.
+
+??? question "Copilot says a signal passes, but I did not define a requirement"
+    A pass/fail claim needs an explicit criterion. Add a testbench assertion derived from your product requirement or datasheet, then rerun the simulation. Copilot should report that no criterion exists rather than inventing a typical threshold.
+
 ---
 
 ## Performance
@@ -279,5 +311,3 @@ If your issue is not listed here:
     - Steps to reproduce the problem.
     - Any error messages from the Logger.
     - Screenshots if applicable.
-
-

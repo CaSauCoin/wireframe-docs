@@ -22,20 +22,7 @@ The PCB Editor handles board layout — from component placement to trace routin
 
 ## Workspace
 
-```
-┌─────────────────────────── PCB Canvas ──────────────────────────────┐
-│  [▷][📦 Place][── Route][● Via][○ Hole][□][○][T][📏]               │  ← Toolbar
-│                                                    ┌──────────────┐  │
-│ · · ┌─────────────────────────────────────────┐   │ Layer Panel  │  │
-│ · · │              Board Area                 │   │ 👁 🟥 F.Cu  │  │
-│ · · │                                         │   │ 👁 🟦 B.Cu  │  │
-│ · · │  [R1]═══trace═══════════[U1]            │   │ 👁 🟡 Silk  │  │
-│ · · │       ╌╌╌ratsnest╌╌╌╌╌  [J1]           │   │   🟣 Mask   │  │
-│ · · │                                         │   │ 👁 🟫 Edge │  │
-│ · · │  ══════ via ══════ trace ══════          │   └──────────────┘  │
-│ · · └─────────────────────────────────────────┘                      │
-└──────────────────────────────────────────────────────────────────────┘
-```
+![PCB workspace](../img/pcb/workspace.png)
 
 - **Canvas** — the board area with grid, footprints, traces, zones, and **ratsnest** lines (unrouted connections)
 - **Toolbar** — floating tool buttons above the canvas
@@ -80,12 +67,10 @@ Every PCB needs a board outline that defines its **physical shape**:
 
 Ratsnest lines are **thin dashed lines** showing connections that have not yet been routed:
 
-```
-     [R1]                [U1]
-      ┤├╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌[Pin]
-            ratsnest line
-         (connection not yet routed)
-```
+<video controls width="100%">
+  <source src="../img/pcb/ratsnest-demo.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 - Ratsnest lines **automatically update** after every edit
 - When you **route a trace**, the corresponding ratsnest line **disappears**
