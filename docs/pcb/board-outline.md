@@ -34,7 +34,9 @@ The verdict updates as you change the scale, so a wrong unit shows up as a wrong
 
 ### What the DXF reader understands
 
-ASCII DXF, section `ENTITIES`: `LINE`, `LWPOLYLINE` (including bulges, i.e. rounded corners), `POLYLINE`/`VERTEX`, `CIRCLE`, and `ARC`. Blocks, splines, and binary DXF are not read. Anything skipped is **named in the verdict** — an outline drawn with splines produces a warning, not a silent empty board. Redraw those parts as lines, arcs, or a polyline.
+ASCII DXF, section `ENTITIES`: `LINE`, `LWPOLYLINE` (including bulges, i.e. rounded corners), `POLYLINE`/`VERTEX`, `CIRCLE`, `ARC`, and `SPLINE` (fit points or control points). Blocks (`INSERT`) and binary DXF are not read. Anything skipped is **named in the verdict** — an outline placed as a block produces a warning, not a silent empty board. Explode the block in your CAD tool, or redraw it as lines, arcs, or a polyline.
+
+Circles inside the outline become holes through the board.
 
 Open strokes are joined end to end into closed outlines. A chain that does not close is reported with the gap, for example *"ends finish 0.30 mm apart"*, so you know what to fix in the drawing.
 

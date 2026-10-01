@@ -48,7 +48,7 @@ With a PCB active, use **File → Import → CAD Outline (.svg / .dxf)...**.
 | Format | Read as |
 |---|---|
 | `.svg` | Board outline, or graphics on Edge.Cuts / Top Silk / Top Cu; size from the **Scale** field |
-| `.dxf` (ASCII) | Board outline only (**Import as BOARD OUTLINE**); size from `$INSUNITS`. `LINE`, `LWPOLYLINE`, `POLYLINE`, `CIRCLE`, `ARC` are read; blocks, splines, and binary DXF are not, and are named in the verdict |
+| `.dxf` (ASCII) | Board outline only (**Import as BOARD OUTLINE**); size from `$INSUNITS`. `LINE`, `LWPOLYLINE`, `POLYLINE`, `CIRCLE`, `ARC`, `SPLINE` are read; blocks (`INSERT`) and binary DXF are not, and are named in the verdict |
 
 The board shape is saved in the `.pcbxml`. See [Board Shape and Outline](../pcb/board-outline.md).
 

@@ -1,0 +1,125 @@
+# doc_builder — cách lab đọc repo này và dựng từng cảnh chụp/quay.
+# Chạy từ repo WireFrame:   python3 -m doc_builder docs-scan ../wireframe-docs
+#                          python3 -m doc_builder docs-fill ../wireframe-docs
+# Mẫu đầy đủ các khoá: WireFrame/doc_builder/templates/wf-docs.example.yaml
+
+docs_dir: docs
+assets_dir: docs/assets/wf
+
+# Project mở trước mỗi cảnh (được CHÉP vào thư mục run, bản gốc không bị đụng).
+project: wireframe:tests/data/7805_voltage_regulator/wireframe/7805_regulator.prjxml
+
+# Brief video yêu cầu 1080p.
+window: [1920, 1080]
+video_format: mp4
+
+# Ảnh cũ trong img/ là ảnh minh hoạ hiện có, không phải chỗ trống cần chụp.
+missing_images: true
+
+# File AI được phép mở bằng hộp thoại (open_file). Tất cả là dữ liệu mẫu:
+# - samples/ của repo này: HƯ CẤU, sinh bằng samples/generate.py
+# - wireframe: dữ liệu test của repo WireFrame (không chép sang repo công khai này)
+samples:
+  - samples/outlines/demo-board.dxf
+  - samples/outlines/demo-board.svg
+  - samples/datasheets/wf-demo8.pdf
+  - samples/datasheets/wf-demo8-pinout.png
+  - wireframe:tests/data/7805_voltage_regulator/kicad/7805_regulator.kicad_pro
+  - wireframe:tests/data/altium_libraries/Schlib1.SchLib
+  - wireframe:tests/data/altium_libraries/PcbLib1.PcbLib
+
+# Cảnh riêng. Khoá = mẫu fnmatch trên "trang.md#id" hoặc id.
+#   project  project khác mặc định       samples  file mở thêm cho cảnh này
+#   prepare  lệnh sinh dữ liệu trước khi mở app ($LAB/<lab>, $OUT)
+#   hint     ghi chú cho AI khi lập bước (không ghi vào trang)
+#   skip     cảnh không chụp được từ app — lý do
+scenes:
+
+  # ── Không chụp được từ trong app ─────────────────────────────────────────
+  "docs/installation.md#first-run-verification":
+    skip: the installer and first launch happen before a scripted WireFrame session exists
+  "docs/reference/config-and-session.md#recover-a-damaged-workspace-configuration":
+    skip: backing up and opening the config folder happens in the OS file manager, outside the app
+  "docs/tutorial/index.md#*":
+    skip: needs the NE555 tutorial project, which is not in samples/ yet — add it to enable these scenes
+
+  # ── Cần file đầu vào ──────────────────────────────────────────────────────
+  "*cad-outline-import-verdict":
+    hint: >-
+      Make the PCB the active document (ensure_pcb). Queue open_file with
+      samples/outlines/demo-board.dxf, then File > Import > CAD Outline (.svg / .dxf)...
+      Tick "Import as BOARD OUTLINE" in the Import CAD File dialog and capture the
+      dialog with the verdict showing (80 x 60 mm, 5 cutouts). Do not press Import.
+
+  "*create-a-component-from-a-datasheet":
+    hint: >-
+      Use the fictional part WF-DEMO8 and its datasheet samples/datasheets/wf-demo8.pdf
+      (8 pins, SOIC-8). Queue open_file with that PDF before pressing Browse File.
+
+  "*resolve-a-missing-component":
+    hint: Use WF-DEMO8 and samples/datasheets/wf-demo8.pdf as the eight-pin public component.
+
+  "*ocr-pins-and-verify-one-correction":
+    hint: >-
+      The clear pin-table image is samples/datasheets/wf-demo8-pinout.png. Queue
+      open_file with it before the image picker opens.
+
+  "*repair-a-part-with-fix":
+    hint: >-
+      The datasheet is samples/datasheets/wf-demo8.pdf. If no part in the sample has
+      blank pin names, give up and say so rather than staging a different repair.
+
+  "*import-a-kicad-project":
+    hint: >-
+      Queue open_file with the 7805_regulator.kicad_pro sample, then
+      File > Import > KiCad Project (.kicad_pro, .pro)... The import writes its
+      workspace next to that (copied) file.
+
+  "*import-an-altium-library":
+    hint: Use the Altium sample libraries Schlib1.SchLib / PcbLib1.PcbLib from FILES.
+  "*inspect-and-correct-an-imported-component":
+    hint: Import Schlib1.SchLib from FILES first, then inspect one of its components.
+
+  "*create-a-new-project":
+    hint: >-
+      File > New > New Project (.prjxml)... opens a FOLDER dialog: queue
+      pick_folder "demo-project" first, then type the project name "Demo Blinker"
+      in the Create New Project popup.
+
+  # ── Dữ liệu do chính WireFrame sinh (lab --make-demo) ─────────────────────
+  "*board-fit-with-a-case-and-lid":
+    prepare:
+      - $LAB/wf-enclosure-lab --make-demo $OUT/prepared/case
+    samples:
+      - $OUT/prepared/case/led_matrix_case.step
+      - $OUT/prepared/case/led_matrix_lid.step
+    hint: >-
+      On the Board Fit tab use "Add 3D files…" twice: led_matrix_case.step as the
+      case and led_matrix_lid.step as the lid (queue open_file before each).
+
+  "*connect-two-boards-in-an-assembly":
+    prepare:
+      - $LAB/wf-assembly-lab --make-demo $OUT/prepared/drone
+    samples:
+      - $OUT/prepared/drone/drone.asmxml
+    hint: >-
+      On the System tab press "Open assembly…" with open_file
+      $OUT/prepared/drone/drone.asmxml queued. It already has an ESC and a flight
+      controller; connect them if the connection is not there yet.
+
+  # ── Trạng thái cố ý, tạo NGAY TRONG APP ở phần setup (không sửa file tay) ─
+  "*fix-and-re-run-erc":
+    hint: >-
+      During setup, before recording: on the sample schematic delete one wire so
+      one pin is left unconnected. Record: run ERC, show the issue, press Ctrl+Z to
+      restore the wire, run ERC again.
+
+  "*resolve-and-recheck-a-violation":
+    hint: >-
+      During setup, before recording: on the sample PCB drag one footprint or track
+      so it violates clearance. Record: run DFM & DRC Check, show the violation,
+      Ctrl+Z, run the check again.
+
+  # ── Project khác mặc định ─────────────────────────────────────────────────
+  "*generate-and-review-functional-blocks":
+    project: wireframe:tests/data/mcu_datalogger/wireframe/MCU Datalogger.prjxml
