@@ -4,19 +4,43 @@ AI Copilot helps turn a circuit request into a reviewable design, inspect an exi
 
 ## Configure AI access
 
-1. Open **Preferences → AI**, or open the Copilot menu and select **AI settings**.
-2. Enter your OpenRouter API key.
-3. Select an allowed model.
-4. Save the settings.
+Open **Preferences → AI Assistant**, or open the Copilot menu and select **AI settings...**. WireFrame speaks one protocol to every provider (an OpenAI-style `/chat/completions` endpoint), so the setup is an endpoint, the model ids it serves, and a key when the endpoint bills per token.
+
+1. Under **API Endpoint**, pick a preset or type an endpoint URL.
+2. If the endpoint is a hosted provider, paste its key under **API Key**. Local endpoints have no key field.
+3. Fill **Design model** and **Fast model**. Use **List** beside each field to ask the endpoint which ids it serves.
+4. Select **Test** (hosted) or **Check server** (local) and wait for the status line.
 5. Open **View → AI Copilot Chat**.
 
-The current release uses a locally configured, user-provided OpenRouter key. Do not place that key in screenshots, project files, bug reports, or shared configuration examples.
+| Preset | What it configures | Key |
+|---|---|---|
+| **OpenRouter** | `https://openrouter.ai/api/v1` with `google/gemini-2.5-pro` (design) and `google/gemini-2.5-flash` (fast) | Required |
+| **agyserve** | A local bridge to the Antigravity CLI on port 8799, so calls are covered by that subscription instead of per token | None |
+
+A preset sets the endpoint **and** its model ids together. Model ids are not portable between providers: `google/gemini-2.5-flash` on OpenRouter is not a valid id on a local server. If you switch endpoints by hand, press **List** and pick ids from the new endpoint; WireFrame warns when a hosted-provider id (one containing `/`) is paired with a local endpoint.
+
+### Two model tiers
+
+| Field | Used for |
+|---|---|
+| **Design model** | Planning the BOM and netlist, repairing findings, generating library parts, reviewing a board — the model that decides circuits |
+| **Fast model** | Request routing, project naming, requirement research, board questions — classification and summaries. Leave it empty to use the design model |
+
+The fast tier can also use its own endpoint (**Fast tier endpoint**). A common split is the design tier on one provider and the fast tier on another, for example routine calls on **agyserve** while design calls stay on a hosted model.
+
+### Local endpoints and agyserve
+
+The line **Requests go to …** under the fields shows where requests are sent and whether they are billed per token or stay on this machine.
+
+For **agyserve**, WireFrame starts the bridge in the background on the first request when port 8799 is offline. If **Check server** still fails, start it yourself from a WireFrame source checkout with `python3 Tools/agyserve/server.py`, then check again. Expect 20–30 seconds per request — slower than a hosted provider.
+
+Keys are stored in the local WireFrame configuration. Do not place a key in screenshots, project files, bug reports, or shared configuration examples.
 
 ### Image — AI settings
 
 !!! note "Image capture brief"
     1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
-    2. **Build the frame:** Capture the current AI provider settings with the key value hidden. Show the provider/model controls and save action. Do not use the older screenshot placeholder that shows a different header or input text. Suggested size: **900 × 620 px**.
+    2. **Build the frame:** Capture **Preferences → AI Assistant** with the key value hidden. Show the endpoint presets, the **Design model** and **Fast model** fields, and the **Requests go to** status line. Do not use the older screenshot placeholder that shows a different header or input text. Suggested size: **900 × 620 px**.
     3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
@@ -74,6 +98,8 @@ Long sessions are summarized and relevant project facts can be recalled later. S
 | **Simulate & Verify** | Run simulation checks for the proposed design |
 | **Design Analysis** | Review design-level findings |
 | **Netlist Check** | Find pin, connectivity, and consistency problems |
+| **Board Fit** | Board shape, enclosure, stacks, and whether the BOM fits — see [Enclosure Fit and Multi-Board Products](../advanced/enclosure-and-assembly.md) |
+| **System** | Products made of several boards (`.asmxml`): stacking and board-to-board wiring checks |
 
 ### Image — Current Component Review tabs
 
@@ -86,7 +112,7 @@ Long sessions are summarized and relevant project facts can be recalled later. S
 
 ## Safety and privacy
 
-- AI requests and attached datasheet content are sent to the configured provider.
+- AI requests and attached datasheet content are sent to the configured endpoint. With a hosted provider that means a third-party service; with a local endpoint such as agyserve, to the service that endpoint forwards to.
 - Review every proposed change before applying it.
 - Treat generated symbols and footprints as unverified until checked against the datasheet.
 - Limit each request to the relevant sheet, block, or signal.
@@ -95,6 +121,8 @@ Long sessions are summarized and relevant project facts can be recalled later. S
 
 ## Continue learning
 
+- [Copilot Commands](commands.md)
+- [Datasheets, Repairs and Project Memory](datasheets-and-memory.md)
 - [AI Design Agent](design-agent.md)
 - [AI Component Generator](component-generator.md)
 - [Placement and Routing Assistant](auto-placer-router.md)

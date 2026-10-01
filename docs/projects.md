@@ -43,6 +43,8 @@ Opening a `.prjxml` restores its linked documents and project structure. Opening
 
 Use the **Project Structure** panel to add a new or existing schematic or PCB to the active project. Save a newly created document before relying on it as a project member.
 
+**File → New → New Schematic (.schxml)** and **New PCB (.pcbxml)** create a document directly. **File → Close Document** closes the active document; **File → Close Project** closes the project without deleting any of its files.
+
 | Document | Extension | Contains |
 |---|---|---|
 | Project | `.prjxml` | Linked schematics, PCBs, and library references |
@@ -110,10 +112,10 @@ Altium library files remain supported through **View → Local Library Manager**
 
 ## Import a PCB outline
 
-With a PCB active, select **File → Import → CAD Outline (.svg)**. Review scale, placement, and whether the imported geometry belongs on the intended board-outline layer before routing or fabrication.
+With a PCB active, select **File → Import → CAD Outline (.svg / .dxf)...** and tick **Import as BOARD OUTLINE** to make the drawing the board's shape — outline, cutouts, and mounting holes. The dialog shows the board size and any problems before you import. See [Board Shape and Outline](pcb/board-outline.md).
 
 !!! note
-    The current file picker accepts SVG for this command. Do not document DXF as supported until it is selectable and verified in a release build.
+    DXF files are read only with **Import as BOARD OUTLINE** ticked. Plain graphics import (Edge.Cuts, silk, copper) reads SVG.
 
 ## Session restoration
 

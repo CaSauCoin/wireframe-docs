@@ -81,13 +81,16 @@ nav:
 
   - AI Copilot:
       - AI Overview: ai/index.md
+      - Copilot Commands: ai/commands.md
       - AI Design Agent: ai/design-agent.md
       - Placement & Routing Assistant: ai/auto-placer-router.md
       - AI Component Generator: ai/component-generator.md
+      - Datasheets, Repairs & Memory: ai/datasheets-and-memory.md
       - Review & Simulation Guide: ai-copilot.md
 
   - PCB Layout:
       - pcb/index.md
+      - Board Shape & Outline: pcb/board-outline.md
       - Footprints & Placement: pcb/footprints-and-placement.md
       - Routing (Tracks & Vias): pcb/routing.md
       - Layers & Views: pcb/layers-and-views.md
@@ -105,6 +108,7 @@ nav:
   - Advanced Features:
       - Selection, Context Menus & Popups: advanced/selection-and-editing.md
       - 3D Viewer: advanced/3d-viewer.md
+      - Enclosure Fit & Multi-Board: advanced/enclosure-and-assembly.md
       - Keyboard Shortcuts: advanced/shortcuts.md
 
   - Reference:

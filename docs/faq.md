@@ -69,7 +69,7 @@ Use this page to diagnose common release issues. Start with the check that match
 ## AI Copilot
 
 ??? question "How do I configure AI Copilot?"
-    Open **View → AI Copilot Chat**, open its settings, enter your own OpenRouter API key, select an available model, and save. Never include the key in screenshots, shared projects, or support reports.
+    Open **Preferences → AI Assistant** (or **AI settings...** in the Copilot menu), pick the **OpenRouter** preset and enter your own key — or pick **agyserve** to use a local endpoint with no key — then press **Test** or **Check server**. If requests fail with HTTP 400/404, press **List** and choose model ids the endpoint actually serves. Never include the key in screenshots, shared projects, or support reports.
 
 ??? question "AI Copilot is not responding"
     Check the network connection, API-key validity, provider credit or rate limit, and the visible error message. Retry only after the current request has clearly stopped; repeated clicks can create duplicate provider charges.
