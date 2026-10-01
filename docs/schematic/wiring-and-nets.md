@@ -134,6 +134,18 @@ Click on empty canvas to clear the highlight.
 
 ---
 
+## Auto Wire
+
+**Tools → Auto Wire** draws wires for the connections the active schematic's netlist already contains, using an orthogonal router that runs locally (no AI request is sent). Use it to tidy a sheet whose connectivity is right but whose wiring is missing or messy, then inspect:
+
+- that every wire ends on the intended pin;
+- that labels and junctions are still readable;
+- that no wire crosses a symbol or hides an annotation.
+
+A whole auto-wire run is one step in the undo history — **Ctrl+Z** takes it back.
+
+---
+
 ## How the Netlist is Built
 
 WireFrame automatically constructs the netlist from all wires, pins, and labels:

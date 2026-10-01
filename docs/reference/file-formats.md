@@ -43,9 +43,18 @@ Imported library data must be reviewed against the source datasheet before use. 
 
 ## PCB outline import
 
-With a PCB active, use **File → Import → CAD Outline** for an SVG outline (`.svg`). Verify its scale, closed geometry, and placement on the intended board-outline layer.
+With a PCB active, use **File → Import → CAD Outline (.svg / .dxf)...**.
 
-DXF is not listed as supported in the current picker and is intentionally omitted from this release guideline.
+| Format | Read as |
+|---|---|
+| `.svg` | Board outline, or graphics on Edge.Cuts / Top Silk / Top Cu; size from the **Scale** field |
+| `.dxf` (ASCII) | Board outline only (**Import as BOARD OUTLINE**); size from `$INSUNITS`. `LINE`, `LWPOLYLINE`, `POLYLINE`, `CIRCLE`, `ARC` are read; blocks, splines, and binary DXF are not, and are named in the verdict |
+
+The board shape is saved in the `.pcbxml`. See [Board Shape and Outline](../pcb/board-outline.md).
+
+| Assembly | Extension | Contains |
+|---|---|---|
+| Multi-board assembly | `.asmxml` | Which board projects make up a product, where each sits in the stack, and how they are wired to each other — see [Enclosure Fit and Multi-Board Products](../advanced/enclosure-and-assembly.md) |
 
 ## Fabrication and documentation outputs
 

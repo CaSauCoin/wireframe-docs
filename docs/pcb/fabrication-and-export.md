@@ -12,7 +12,7 @@ Once your design is complete and DFM passes cleanly, export manufacturing files 
 | **Drill** | Excellon `.drl` | Via and hole positions for CNC drilling |
 | **BOM** | CSV `.csv` | Bill of Materials for component ordering |
 | **Schematic PDF** | PDF `.pdf` | Printable schematic documentation |
-| **Toner Transfer PDF** | PDF `.pdf` | **Hobbyist** — per-layer PDFs for manual PCB making |
+| **Print PCB to PDF (1:1)** | PDF `.pdf` | **Hobbyist** — one 1:1 PDF per layer for toner transfer / UV film |
 
 ---
 
@@ -105,24 +105,19 @@ The BOM is a **parts list** used to order components for assembly.
 
 ---
 
-## Toner Transfer PDF (Hobbyist)
+## Print PCB to PDF (1:1) — toner transfer and UV film
 
-**Toner Transfer PDF** is a WireFrame feature designed for makers and hobbyists who produce PCBs manually using toner transfer or UV film methods.
+For makers who produce boards by toner transfer or UV film, WireFrame prints PCB layers at **true 1:1 scale**.
 
-- Generates **each selected layer as a separate PDF page**
-- Output is **true 1:1 scale** — no page scaling
-- **Automatically mirrors** layers that need to be printed reversed (e.g. F.Cu)
-- WYSIWYG silkscreen — text renders exactly as it appears on the physical board
-
-**Steps:**
-
-1. Open the **Fabrication dialog**
-2. Select **Toner Transfer PDF** as the export type
-3. Choose the layers to include (e.g. F.Cu, B.Cu)
-4. Click **Export** — each layer becomes a separate page in the PDF
-5. Print on glossy paper at **100% scale (no fit-to-page)**
-
----
+1. Open the PCB.
+2. Select **File → Export → Print PCB to PDF (1:1)...**.
+3. Tick the layers to print — **each selected layer becomes its own PDF file**.
+4. Set the options:
+    - **Mirror X (Required for Bottom Layer Toner Transfer)** — tick it for layers that must be printed reversed;
+    - **Print in Black & White (Best for UV)**;
+    - **Draw Holes with Center Guide (Pad/Via/Mech)** — marks drill centres for hand drilling.
+5. Select **Export PDFs...** and choose a folder. The files are written to `<project>_PDFs/<project>_<layer>.pdf`.
+6. Print at **100% scale** — never fit-to-page — and measure a known dimension on the printout before transferring.
 
 ## Built-in Gerber Viewer
 

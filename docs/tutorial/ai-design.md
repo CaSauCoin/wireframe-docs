@@ -13,7 +13,7 @@ This tutorial uses AI Copilot to prepare a small NE555 LED blinker, review its p
 
 ## Before you start
 
-You need a new project, an OpenRouter API key configured from **View → AI Copilot Chat**, suitable component libraries, and at least one usable simulation engine. Save the project before starting the request.
+You need a new project, an AI endpoint configured in **Preferences → AI Assistant** (an OpenRouter key, or the local agyserve preset), suitable component libraries, and at least one usable simulation engine. Save the project before starting the request.
 
 ## 1. State measurable requirements
 
