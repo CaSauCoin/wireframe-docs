@@ -72,13 +72,21 @@ Renaming is preferable to immediate deletion because the previous settings remai
 
 ### Image — Preferences categories
 
-!!! note "Image needed"
-    Capture the complete Preferences window in v1.5.47 with the category list visible. Use a test account, hide all credentials, and show no local user path.
+!!! note "Image capture brief"
+    1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
+    2. **Build the frame:** Capture the complete Preferences window in v1.5.47 with the category list visible. Use a test account, hide all credentials, and show no local user path.
+    3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
+    4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
+    5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 ### Short video — Recover a damaged workspace configuration
 
-!!! note "Video needed"
-    Record a 20–30 second clip: close WireFrame, rename the config file, relaunch, and show the restored default workspace. Blur the operating-system username and all private paths.
+!!! note "Video production brief"
+    1. **Prepare:** Back up the demo configuration and open its folder at a neutral, masked path.
+    2. **Opening shot (2 s):** Show WireFrame's intentionally altered demo layout, then close the app normally.
+    3. **Action shot (10–16 s):** Rename only the demo config file, relaunch WireFrame, and wait for the default configuration to be recreated.
+    4. **Result shot (4–6 s):** Hold on the restored default workspace and confirm the recreated config without exposing its full private path.
+    5. **Deliver:** Export a **20–30 second** 1080p MP4; blur the operating-system username and retain the backup until review is complete.
 
 ## Related guidelines
 

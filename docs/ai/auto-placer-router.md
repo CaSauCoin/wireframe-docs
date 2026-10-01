@@ -23,8 +23,12 @@ When Copilot presents a block card that can be placed:
 
 ### Short video — Place a Copilot block
 
-!!! note "Video needed"
-    Record **10–15 seconds** showing one generated block card, adding it to a schematic, the proposed layout, and the placed result. Do not use the former ASCII block diagram. 1080p.
+!!! note "Video production brief"
+    1. **Prepare:** Generate one small approved functional block and leave its card visible beside an empty schematic area.
+    2. **Opening shot (1–2 s):** Hold on the block card with its title and component list readable.
+    3. **Action shot (5–8 s):** Drag the card to the schematic, pause on the proposed layout, then confirm placement.
+    4. **Result shot (2–3 s):** Hold on the placed block with symbols and interface nets visible.
+    5. **Deliver:** Export a **10–15 second** 1080p MP4; use real UI only and no ASCII substitute.
 
 ## Run schematic auto-routing
 
@@ -60,8 +64,12 @@ If using an automatic PCB route:
 
 ### Short video — Review an automatic route
 
-!!! note "Video needed"
-    Record **12–18 seconds** showing a small routed PCB, unrouted/ratsnest count before and after, one layer transition, and the DRC/DFM re-check. Do not present progress animation alone as proof of a valid route. 1080p.
+!!! note "Video production brief"
+    1. **Prepare:** Use a small demo PCB with a known ratsnest count and a reviewed automatic-route proposal containing one via.
+    2. **Opening shot (2 s):** Show the unrouted count and the relevant board area before applying the proposal.
+    3. **Action shot (6–10 s):** Apply the route, show the F.Cu-to-B.Cu transition at the via, then open and run **DFM & DRC Check**. Cut only inactive processing time.
+    4. **Result shot (3–4 s):** Hold on the reduced ratsnest count and the actual check summary; do not stop on a progress animation.
+    5. **Deliver:** Export a **12–18 second** 1080p MP4 and retain enough resolution to inspect both layer colors.
 
 ## Manual override is expected
 

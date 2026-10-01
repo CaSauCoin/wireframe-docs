@@ -10,8 +10,12 @@ Every schematic sheet has a **title block** in the lower-right corner. It displa
 
 ### Image — Completed schematic title block
 
-!!! note "Image needed"
-    Capture an entire schematic page with its lower-right title block readable. Use sample project metadata rather than a customer or unreleased product name.
+!!! note "Image capture brief"
+    1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
+    2. **Build the frame:** Capture an entire schematic page with its lower-right title block readable. Use sample project metadata rather than a customer or unreleased product name.
+    3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
+    4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
+    5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 ### Editing the title block
 
@@ -33,12 +37,27 @@ Changes are applied **immediately** — the title block updates in real time on 
 
 ### Image — Title-block properties
 
-!!! note "Image needed"
-    Capture the page-level Properties panel beside the title block it updates. Make the title, revision, date, author, and sheet number readable.
+!!! note "Image capture brief"
+    1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
+    2. **Build the frame:** Capture the page-level Properties panel beside the title block it updates. Make the title, revision, date, author, and sheet number readable.
+    3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
+    4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
+    5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 ---
 
 ## Page Setup
+
+The **Page Settings** modal provides page metadata, border styling, and logo controls. Select **Import Logo** for PNG, JPG, JPEG, or BMP artwork; use **Clear Logo** to remove the current image. Select **OK** to apply and save the page settings, or **Cancel** to close without completing the update.
+
+### Image — Page Settings modal
+
+!!! note "Image capture brief"
+    1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
+    2. **Build the frame:** Capture the complete **Page Settings** modal for a schematic. Include paper size, title-block metadata, border-color presets, **Import Logo**, **Clear Logo** when available, and the **OK**/**Cancel** footer. Use fictional company data. Suggested size: **1000 × 900 px**.
+    3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
+    4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
+    5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 ### Paper size
 

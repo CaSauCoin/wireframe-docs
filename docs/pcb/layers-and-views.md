@@ -31,8 +31,12 @@ Open **View → PCB Layers** or use the companion panel shown with an active PCB
 
 ### Image — PCB Layers panel
 
-!!! note "Image needed"
-    Capture the Layers panel with F.Cu active, one hidden layer, and several visible copper and technical layers. Keep the eye icons, color swatches, and active highlight readable.
+!!! note "Image capture brief"
+    1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
+    2. **Build the frame:** Capture the Layers panel with F.Cu active, one hidden layer, and several visible copper and technical layers. Keep the eye icons, color swatches, and active highlight readable.
+    3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
+    4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
+    5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 | Column | Interaction |
 |---|---|

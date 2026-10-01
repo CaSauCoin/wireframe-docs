@@ -14,8 +14,12 @@ Use:
 
 ### Image — Waveform Viewer with two signals
 
-!!! note "Image needed"
-    Capture a real transient result with two clearly named signals, grid and legend enabled, and readable axes. Remove the former ASCII waveform mockup. Suggested size: **1400 × 760 px**.
+!!! note "Image capture brief"
+    1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
+    2. **Build the frame:** Capture a real transient result with two clearly named signals, grid and legend enabled, and readable axes. Remove the former ASCII waveform mockup. Suggested size: **1400 × 760 px**.
+    3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
+    4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
+    5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 ## View controls
 
@@ -38,8 +42,12 @@ Disable auto-scale when you need a stable visual range across repeated runs. Re-
 
 ### Short video — Measure a waveform with A/B cursors
 
-!!! note "Video needed"
-    Record **10–15 seconds** enabling **A/B cursors**, positioning both cursors around one period or transition, and showing the resulting delta. Use a clean waveform and visible pointer. 1080p.
+!!! note "Video production brief"
+    1. **Prepare:** Load a clean transient result with one stable periodic signal and readable axes.
+    2. **Opening shot (1–2 s):** Hold on the waveform with cursors disabled and one period centered.
+    3. **Action shot (5–8 s):** Enable **A/B cursors**, place A on the first equivalent edge, and place B on the next equivalent edge.
+    4. **Result shot (2–3 s):** Hold on both cursors and the readable time delta.
+    5. **Deliver:** Export a **10–15 second** 1080p MP4 with a visible pointer and no unnecessary zoom animation.
 
 ## Interpret common analyses
 

@@ -8,8 +8,12 @@ With a PCB active, select **View → Design Rules**. Confirm the board and unit 
 
 ### Image — Design Rules Manager
 
-!!! note "Image needed"
-    Capture the v1.5.47 manager with global limits and at least two net classes visible. Use clearly fictional example values and show the active unit.
+!!! note "Image capture brief"
+    1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
+    2. **Build the frame:** Capture the v1.5.47 manager with global limits and at least two net classes visible. Use clearly fictional example values and show the active unit.
+    3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
+    4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
+    5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 ## Set global limits
 
@@ -43,8 +47,12 @@ During routing, confirm that a new track uses the expected class width. After ch
 
 ### Short video — Assign and verify a net class
 
-!!! note "Video needed"
-    Record a 20–30 second clip showing one supply net assigned to a class, a route using its width, and the resulting DFM/DRC check.
+!!! note "Video production brief"
+    1. **Prepare:** Create a fictional supply net and a clearly wider demo power net class with valid rule values.
+    2. **Opening shot (2–3 s):** Show the unassigned supply net and both net classes in Design Rules Manager.
+    3. **Action shot (10–15 s):** Assign the supply net, apply the rules, route a short connection, and show the route adopting the class width.
+    4. **Verification shot (5–7 s):** Run DFM/DRC and hold on the result plus the selected wide route.
+    5. **Deliver:** Export a **20–30 second** 1080p MP4 with the active unit and width readable.
 
 ## Release checklist
 

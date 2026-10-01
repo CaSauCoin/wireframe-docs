@@ -153,8 +153,12 @@ Visually confirm trace continuity, pad flashes, apertures, and the board outline
 
 ### Image — Verified fabrication package
 
-!!! note "Image needed"
-    Capture the fabrication output dialog beside the generated package contents. Show the board revision and filenames, but no private customer path.
+!!! note "Image capture brief"
+    1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
+    2. **Build the frame:** Capture the fabrication output dialog beside the generated package contents. Show the board revision and filenames, but no private customer path.
+    3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
+    4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
+    5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 ## Fabrication package contents
 

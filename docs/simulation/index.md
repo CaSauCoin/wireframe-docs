@@ -11,8 +11,12 @@ Open a schematic, then select **Simulation → SPICE Simulation Panel** or press
 
 ### Diagram — Multi-engine simulation workflow
 
-!!! note "Diagram replacement needed"
-    Create a polished release diagram showing: schematic/block scope → preflight → selected simulation engine → analysis run → signals and measurements → assertions and review. The previous ngspice-only pipeline does not represent the current multi-engine workbench.
+!!! note "Diagram production brief"
+    1. **Prepare:** Copy the exact workflow stages and review gates from this page into a vector design file.
+    2. **Build the content:** Create a polished release diagram showing: schematic/block scope → preflight → selected simulation engine → analysis run → signals and measurements → assertions and review. The previous ngspice-only pipeline does not represent the current multi-engine workbench.
+    3. **Compose:** Arrange the stages left to right, use one consistent shape system, and make review or correction loops visually distinct.
+    4. **Finish:** Verify every label manually; do not use ASCII art, a Mermaid screenshot, or AI-generated text inside the graphic.
+    5. **Deliver and approve:** Export SVG plus a 2× PNG fallback, then confirm readability at the documentation embed width.
 
 1. Open a schematic that contains a GND connection and named signal nets.
 2. Click **Preflight**.

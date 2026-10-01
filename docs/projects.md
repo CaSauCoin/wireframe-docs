@@ -13,8 +13,12 @@ Keep the project and its documents in a dedicated folder. This makes relative li
 
 ### Short video — Create a new project
 
-!!! note "Video review needed"
-    Replace or re-record the existing clip if its menu labels differ from **File → New → New Project (.prjxml)**. Show folder selection, project naming, creation, and the new project in **Project Structure**. Duration: **10–15 seconds**, 1080p.
+!!! note "Video production brief"
+    1. **Prepare:** Create an empty neutral destination folder and choose a fictional project name.
+    2. **Opening shot (1–2 s):** Start on the workspace with **File** closed and **Project Structure** visible.
+    3. **Action shot (5–8 s):** Open **File → New → New Project (.prjxml)**, choose the folder, enter the name, and confirm creation.
+    4. **Result shot (2–3 s):** Hold on the new project in **Project Structure** with its name readable.
+    5. **Deliver:** Export a **10–15 second** 1080p MP4; replace any clip using older menu labels.
 
 ## Open a project or document
 
@@ -28,8 +32,12 @@ Opening a `.prjxml` restores its linked documents and project structure. Opening
 
 ### Image — Project Structure with multiple documents
 
-!!! note "Image review needed"
-    Capture the current **Project Structure** panel with one project, at least two schematics, and one PCB. Replace the existing image if the icons, tree labels, or panel styling are from an older build. Suggested size: **420 × 720 px**.
+!!! note "Image capture brief"
+    1. **Prepare:** Compare the existing asset with the current release UI and list every changed label or control before recapturing.
+    2. **Build the frame:** Capture the current **Project Structure** panel with one project, at least two schematics, and one PCB. Replace the existing image if the icons, tree labels, or panel styling are from an older build. Suggested size: **420 × 720 px**.
+    3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
+    4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
+    5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 ## Add and organize documents
 
@@ -61,8 +69,12 @@ Before updating a PCB:
 
 ### Short video — Update schematic to PCB
 
-!!! note "Video review needed"
-    Re-record the existing conversion clip because the current command is **Tools → Update Schematic to PCB**, not “Project → Convert to PCB.” Show target selection, the PCB opening, footprints, and ratsnest. Duration: **15–20 seconds**, 1080p.
+!!! note "Video production brief"
+    1. **Prepare:** Use a saved schematic whose symbols already have approved footprint assignments and an empty target PCB.
+    2. **Opening shot (2 s):** Show the completed schematic and **Tools** menu entry.
+    3. **Action shot (7–10 s):** Select **Tools → Update Schematic to PCB**, choose the target when prompted, and confirm the update.
+    4. **Result shot (4–5 s):** Hold on the opened PCB with transferred footprints and ratsnest visible.
+    5. **Deliver:** Export a **15–20 second** 1080p MP4; do not call the command “Convert to PCB.”
 
 ## Import a KiCad project
 
@@ -83,8 +95,12 @@ After import, check:
 
 ### Short video — Import a KiCad project
 
-!!! note "Video review needed"
-    Replace the current clip if it does not show the asynchronous progress overlay. Capture file selection, at least two progress stages, the imported Project Structure, and one opened document. Duration: **15–25 seconds**, 1080p.
+!!! note "Video production brief"
+    1. **Prepare:** Use a small public KiCad project from a neutral path and close unrelated projects.
+    2. **Opening shot (1–2 s):** Start with **File → Import → KiCad Project** visible.
+    3. **Action shot (8–14 s):** Choose the project, show at least two genuine asynchronous progress stages, and cut only the inactive portion of the import.
+    4. **Result shot (4–6 s):** Hold on the imported **Project Structure**, then open one schematic or PCB document.
+    5. **Deliver:** Export a **15–25 second** 1080p MP4; replace any clip that omits the progress overlay.
 
 ## Import scope and removed legacy guidance
 

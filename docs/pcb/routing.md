@@ -20,8 +20,12 @@ The ratsnest connection disappears when the destination is electrically complete
 
 ### Image — Completed pad-to-pad route
 
-!!! note "Image needed"
-    Capture one short F.Cu route between two pads, with the completed track selected and the corresponding ratsnest connection cleared.
+!!! note "Image capture brief"
+    1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
+    2. **Build the frame:** Capture one short F.Cu route between two pads, with the completed track selected and the corresponding ratsnest connection cleared.
+    3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
+    4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
+    5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 | Action | Input |
 |---|---|
@@ -62,8 +66,12 @@ A via is a plated hole that connects **F.Cu and B.Cu**, allowing a trace to chan
 
 ### Image — Route changing layer through a via
 
-!!! note "Image needed"
-    Capture a selected route that begins on F.Cu, changes layer through a via, and continues on B.Cu. Keep both layer colors visible.
+!!! note "Image capture brief"
+    1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
+    2. **Build the frame:** Capture a selected route that begins on F.Cu, changes layer through a via, and continues on B.Cu. Keep both layer colors visible.
+    3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
+    4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
+    5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 ### Manual via placement
 
@@ -119,20 +127,37 @@ For dense connections, multi-trace routing can move a group of traces with autom
 
 ---
 
-## Gloss Trace — Cleaning Up
+## Consolidate Collinear Trace Segments
 
-After routing, WireFrame can **automatically clean up** trace geometry:
+After routing, use **Trace Consolidation → Merge Collinear Segments** on selected trace segments to remove redundant boundaries between pieces that continue along the same line.
 
-- Removes **redundant vertices** (collinear points)
-- Simplifies short zig-zag segments
-- Makes 45° corners clean and precise
+1. Select the collinear trace segments you want to consolidate.
+2. Right-click one of the selected segments.
+3. Open **Trace Consolidation**.
+4. Select **Merge Collinear Segments**.
+5. Inspect the result and re-run DFM/DRC.
 
-### Image — Route before and after Gloss
+This action does not promise to simplify arbitrary zig-zags or redesign the route. Use **Arc Mitering → Apply Arc to Selection** when the intended operation is corner rounding instead.
 
-!!! note "Image needed"
-    Use a two-panel image of the same route before and after **Gloss**, clearly showing removed redundant vertices and cleaner 45° corners.
+### Image — Route before and after trace consolidation
 
-Use: **context menu → Gloss** or the corresponding shortcut.
+!!! note "Image capture brief"
+    1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
+    2. **Build the frame:** Use a two-panel image of the same selected route before and after **Merge Collinear Segments**. Keep the geometry identical except for the removed collinear boundaries, and include a small inset of **Trace Consolidation**. Do not label the action **Gloss**. Suggested size: **1400 × 760 px**.
+    3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
+    4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
+    5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
+
+## Align and round selected segments
+
+With two or more trace segments selected, right-click to open the trace context menu:
+
+- **Segment Alignment → Distribute Spacing** evens the spacing across the selection.
+- **Segment Alignment → Pack to Anchor (Top/Left)** packs the group toward its top or left anchor.
+- Enter an **Arc Mitering** radius, then choose **Apply Arc to Selection** to round eligible corners.
+- **Delete Selected Traces** removes the selected segments only.
+
+Review clearance after every group operation. The available actions depend on a compatible multi-selection.
 
 ---
 

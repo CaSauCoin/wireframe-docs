@@ -60,8 +60,12 @@ Drag a panel by its title to dock it to another edge or tab group. Preferences c
 
 ### Short video — Rearrange and restore panels
 
-!!! note "Video review needed"
-    Replace the current clip if its View or Preferences labels are old. Show docking one panel, enabling or demonstrating a detachable panel, and restoring a saved/default layout. Duration: **12–18 seconds**, 1080p.
+!!! note "Video production brief"
+    1. **Prepare:** Reset to a known layout and choose one panel that can be moved without covering the design.
+    2. **Opening shot (1–2 s):** Hold on the original docked layout with panel titles readable.
+    3. **Action shot (6–10 s):** Move and dock the panel, demonstrate the detachable state when available, then invoke the current saved/default layout restore action.
+    4. **Result shot (3–4 s):** Hold on the restored layout matching the opening state.
+    5. **Deliver:** Export a **12–18 second** 1080p MP4 and replace media with obsolete **View** or **Preferences** labels.
 
 ## Project Structure
 
@@ -69,8 +73,12 @@ The Project Structure panel lists the active project and linked schematics and P
 
 ### Image — Current Project Structure
 
-!!! note "Image review needed"
-    Capture a current project tree with multiple schematics and one PCB. Replace older images if icons or group labels differ. Suggested size: **420 × 720 px**.
+!!! note "Image capture brief"
+    1. **Prepare:** Compare the existing asset with the current release UI and list every changed label or control before recapturing.
+    2. **Build the frame:** Capture a current project tree with multiple schematics and one PCB. Replace older images if icons or group labels differ. Suggested size: **420 × 720 px**.
+    3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
+    4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
+    5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 ## Editor panel
 
@@ -111,8 +119,12 @@ Status messages and notification overlays report saves, imports, checks, and fai
 
 ### Short video — Notification and status feedback
 
-!!! note "Video review needed"
-    Capture one successful save/import notification and one non-destructive warning. Replace the existing clip if its overlay design is outdated. Duration: **8–12 seconds**, 1080p.
+!!! note "Video production brief"
+    1. **Prepare:** Choose a safe save/import action and a reproducible warning that does not modify or delete user data.
+    2. **Opening shot (1 s):** Start on a clean workspace with no notification visible.
+    3. **Action shot (4–6 s):** Trigger the successful action and hold its notification, then trigger the non-destructive warning after the first overlay clears.
+    4. **Result shot (2–3 s):** Hold on the warning long enough to read its message and severity styling.
+    5. **Deliver:** Export an **8–12 second** 1080p MP4; replace the clip if the current overlay design differs.
 
 ## Current Preferences categories
 

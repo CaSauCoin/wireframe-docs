@@ -13,8 +13,12 @@ Keep custom footprints and their 3D models in a controlled project or team locat
 
 ### Image — Footprint source and active inventory
 
-!!! note "Image needed"
-    Capture Local Library Manager in v1.5.47 with a KiCad footprint source and several active inventory items visible. Hide private paths.
+!!! note "Image capture brief"
+    1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
+    2. **Build the frame:** Capture Local Library Manager in v1.5.47 with a KiCad footprint source and several active inventory items visible. Hide private paths.
+    3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
+    4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
+    5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 ## Review a footprint
 
@@ -37,8 +41,12 @@ Open **Tools → PCB Footprint Editor**. Configure the package and pads, review 
 
 ### Image — PCB Footprint Editor
 
-!!! note "Image review needed"
-    Capture the current editor with package controls, pad numbering, dimensions, and preview visible. Replace older “Footprint Wizard” media if its window title or controls differ from v1.5.47.
+!!! note "Image capture brief"
+    1. **Prepare:** Compare the existing asset with the current release UI and list every changed label or control before recapturing.
+    2. **Build the frame:** Capture the current editor with package controls, pad numbering, dimensions, and preview visible. Replace older “Footprint Wizard” media if its window title or controls differ from v1.5.47.
+    3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
+    4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
+    5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 Before release, place the footprint on a test board and inspect pad geometry, courtyard, silkscreen, origin, and orientation.
 
@@ -48,8 +56,12 @@ Select the footprint and open the available 3D-model editing action. Choose the 
 
 ### Short video — Align a footprint model
 
-!!! note "Video review needed"
-    Record 15–20 seconds showing a public sample model aligned with the 2D pads and checked from top and underside views. Hide private paths.
+!!! note "Video production brief"
+    1. **Prepare:** Load a public footprint and matching 3D model with a small intentional alignment offset.
+    2. **Opening shot (2 s):** Show the offset model over the 2D pads in the alignment editor.
+    3. **Action shot (7–10 s):** Correct the offset and rotation, then switch between top and underside views.
+    4. **Result shot (3–4 s):** Hold on the aligned model with pin 1 and pad centers visibly consistent.
+    5. **Deliver:** Export a **15–20 second** 1080p MP4 and hide every private model path.
 
 ## Import an Altium footprint library
 

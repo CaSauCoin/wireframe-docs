@@ -21,8 +21,12 @@ If the exact part is missing, import an approved library, create it in Symbol Li
 
 ### Short video — Find and place a symbol
 
-!!! note "Video review needed"
-    Capture 10–15 seconds showing an approved library source, symbol search, grid-snapped placement, and exit from placement mode. Replace older media if the library UI differs.
+!!! note "Video production brief"
+    1. **Prepare:** Load one approved public symbol and open an empty, grid-visible schematic area.
+    2. **Opening shot (1–2 s):** Show the approved source in **Component Library** and an empty search field.
+    3. **Action shot (5–8 s):** Search for the symbol, double-click or drag it into placement mode, move to the canvas, and left-click on a grid point.
+    4. **Result shot (2–3 s):** Exit placement mode with ++esc++ and hold on the selected placed symbol.
+    5. **Deliver:** Export a **10–15 second** 1080p MP4; replace older media if the library UI differs.
 
 ## Complete component properties
 

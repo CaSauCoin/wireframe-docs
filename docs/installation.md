@@ -13,8 +13,12 @@ Download from the [official WireFrame download page](https://wireframe.com.vn/do
 
 ### Image — Official release download page
 
-!!! note "Image review needed"
-    Capture the final v1.5.47 download page with version, platform, architecture, file size, and checksum visible. Replace the current image if any filename or product branding differs.
+!!! note "Image capture brief"
+    1. **Prepare:** Compare the existing asset with the current release UI and list every changed label or control before recapturing.
+    2. **Build the frame:** Capture the final v1.5.47 download page with version, platform, architecture, file size, and checksum visible. Replace the current image if any filename or product branding differs.
+    3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
+    4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
+    5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 ## Windows
 
@@ -27,8 +31,12 @@ Do not disable SmartScreen globally. If the publisher, filename, or checksum is 
 
 ### Image — Windows installer
 
-!!! note "Image needed"
-    Capture the signed v1.5.47 installer or its first setup page with the exact product version visible. The previous image file was a 1×1 placeholder and must be replaced.
+!!! note "Image capture brief"
+    1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
+    2. **Build the frame:** Capture the signed v1.5.47 installer or its first setup page with the exact product version visible. The previous image file was a 1×1 placeholder and must be replaced.
+    3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
+    4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
+    5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 ## macOS
 
@@ -41,8 +49,12 @@ If macOS blocks the first launch, use **System Settings → Privacy & Security �
 
 ### Image — macOS installation and first launch
 
-!!! note "Image needed"
-    Capture the final disk-image layout and the legitimate Privacy & Security approval state for v1.5.47. The previous DMG and Gatekeeper image files were 1×1 placeholders.
+!!! note "Image capture brief"
+    1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
+    2. **Build the frame:** Capture the final disk-image layout and the legitimate Privacy & Security approval state for v1.5.47. The previous DMG and Gatekeeper image files were 1×1 placeholders.
+    3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
+    4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
+    5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 ## Linux
 
@@ -52,8 +64,12 @@ Before reporting a launch issue, record the distribution, release, desktop sessi
 
 ### Image — Linux package installation
 
-!!! note "Image needed"
-    Capture the supported v1.5.47 package in a current Debian-based graphical installer, including version and architecture but no local username.
+!!! note "Image capture brief"
+    1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
+    2. **Build the frame:** Capture the supported v1.5.47 package in a current Debian-based graphical installer, including version and architecture but no local username.
+    3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
+    4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
+    5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 ## First launch and sign-in
 
@@ -69,8 +85,12 @@ Never show activation tokens or AI API keys in screenshots or support reports.
 
 ### Short video — First-run verification
 
-!!! note "Video needed"
-    Record 20–30 seconds showing launch, version confirmation, Preferences, and a new empty project. Use a test account and hide all credentials.
+!!! note "Video production brief"
+    1. **Prepare:** Complete installation, use a test account, and remove credentials and private paths from every visible field.
+    2. **Opening shot (2 s):** Start immediately before first launch with the installed WireFrame app visible.
+    3. **Action shot (10–16 s):** Launch WireFrame, open the version/about view, open **Preferences**, then create a new empty project with a fictional name.
+    4. **Result shot (4–6 s):** Hold on the empty project workspace and its **Project Structure** entry.
+    5. **Deliver:** Export a **20–30 second** 1080p MP4; cut loading time and show no credentials.
 
 ## Upgrade checklist
 

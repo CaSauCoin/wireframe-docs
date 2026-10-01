@@ -4,8 +4,12 @@ This tutorial covers the complete user workflow with a small connector–resisto
 
 ### Image — Finished tutorial project
 
-!!! note "Image needed"
-    Capture the final v1.5.47 schematic and PCB side by side, with the project tree visible. The previous tutorial image was a 1×1 placeholder.
+!!! note "Image capture brief"
+    1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
+    2. **Build the frame:** Capture the final v1.5.47 schematic and PCB side by side, with the project tree visible. The previous tutorial image was a 1×1 placeholder.
+    3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
+    4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
+    5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 ## Before you start
 
@@ -15,8 +19,12 @@ Create a project from **File → New → New Project (.prjxml)** and keep it in 
 
 ### Short video — Create the tutorial project
 
-!!! note "Video needed"
-    Record 10–15 seconds showing the current New Project command, folder choice, project name, and result in Project Structure. The older media files were empty placeholders.
+!!! note "Video production brief"
+    1. **Prepare:** Create a neutral tutorial folder and choose the exact fictional project name used throughout this tutorial.
+    2. **Opening shot (1–2 s):** Start on **File → New → New Project (.prjxml)**.
+    3. **Action shot (5–8 s):** Choose the folder, enter the project name, and confirm creation.
+    4. **Result shot (2–3 s):** Hold on the new tutorial project in **Project Structure**.
+    5. **Deliver:** Export a **10–15 second** 1080p MP4 and replace the older empty media.
 
 ## 1. Create the schematic
 
@@ -30,8 +38,12 @@ Choose the resistor from the actual supply voltage, LED forward voltage, and tar
 
 ### Image — Completed LED schematic
 
-!!! note "Image needed"
-    Capture the three placed symbols, readable values/designators, exact pin connections, and assigned footprint field in v1.5.47.
+!!! note "Image capture brief"
+    1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
+    2. **Build the frame:** Capture the three placed symbols, readable values/designators, exact pin connections, and assigned footprint field in v1.5.47.
+    3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
+    4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
+    5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 ## 2. Check the schematic
 
@@ -41,8 +53,12 @@ Do not continue merely because the drawing looks connected; the electrical check
 
 ### Short video — Fix one ERC issue
 
-!!! note "Video needed"
-    Record 15–20 seconds showing one selected ERC issue, its correction, and a clean rerun.
+!!! note "Video production brief"
+    1. **Prepare:** Leave one deliberate ERC issue in the tutorial schematic and resolve every unrelated issue beforehand.
+    2. **Opening shot (2 s):** Show the selected ERC row and highlighted schematic location.
+    3. **Action shot (7–10 s):** Navigate to the issue, apply the documented correction, and run ERC again.
+    4. **Result shot (3–4 s):** Hold on the clean rerun and corrected connection.
+    5. **Deliver:** Export a **15–20 second** 1080p MP4 with the error text readable before correction.
 
 ## 3. Update the PCB
 
@@ -52,8 +68,12 @@ Draw a closed outline on **Edge.Cuts**, then place the connector near an accessi
 
 ### Image — PCB after schematic update
 
-!!! note "Image needed"
-    Capture the board outline, three footprints, and unrouted ratsnest immediately after update. Show the active Edge.Cuts layer or Layers panel.
+!!! note "Image capture brief"
+    1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
+    2. **Build the frame:** Capture the board outline, three footprints, and unrouted ratsnest immediately after update. Show the active Edge.Cuts layer or Layers panel.
+    3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
+    4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
+    5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 ## 4. Route and inspect
 
@@ -63,8 +83,12 @@ After routing, inspect LED and connector orientation, silkscreen readability, pa
 
 ### Short video — Route the LED board
 
-!!! note "Video needed"
-    Record 15–20 seconds showing one route started from a pad, completed at its target, and the corresponding ratsnest line disappearing.
+!!! note "Video production brief"
+    1. **Prepare:** Arrange the tutorial footprints so one short unrouted connection is centered and unobstructed.
+    2. **Opening shot (2 s):** Hold on the source pad, destination pad, and ratsnest line.
+    3. **Action shot (7–10 s):** Start routing at the source pad, place clean corners, and finish on the target pad.
+    4. **Result shot (3–4 s):** Hold on the selected completed route with the corresponding ratsnest line gone.
+    5. **Deliver:** Export a **15–20 second** 1080p MP4 and keep route geometry readable.
 
 ## 5. Run DFM/DRC
 
@@ -72,8 +96,12 @@ Open **DFM & DRC Check**, run the full check, and resolve every release-blocking
 
 ### Image — Clean DFM/DRC result
 
-!!! note "Image needed"
-    Capture the final routed sample board with the clean DFM/DRC summary visible. The previous tutorial result image was a 1×1 placeholder.
+!!! note "Image capture brief"
+    1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
+    2. **Build the frame:** Capture the final routed sample board with the clean DFM/DRC summary visible. The previous tutorial result image was a 1×1 placeholder.
+    3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
+    4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
+    5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 ## 6. Generate release output
 
@@ -83,8 +111,12 @@ Inspect representative copper, mask, silkscreen, drill, and board-outline data i
 
 ### Short video — Verify the fabrication package
 
-!!! note "Video needed"
-    Record 20–30 seconds showing package generation, output inventory, and visual review of representative layers. The previous export video was an empty file.
+!!! note "Video production brief"
+    1. **Prepare:** Use the finished tutorial PCB with revision metadata and a clean, neutral output folder.
+    2. **Opening shot (2–3 s):** Show the fabrication output controls and board revision before generation.
+    3. **Action shot (10–15 s):** Generate the package, open its inventory, then open representative copper, solder-mask, silkscreen, outline, and drill outputs in the viewer.
+    4. **Result shot (4–6 s):** Hold on a readable layer view and the complete expected file inventory.
+    5. **Deliver:** Export a **20–30 second** 1080p MP4 and replace the previous empty file.
 
 ## Completion checklist
 

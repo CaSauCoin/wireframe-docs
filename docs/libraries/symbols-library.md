@@ -13,8 +13,12 @@ For project portability, keep required custom libraries with the project or in a
 
 ### Image — KiCad symbol source and inventory
 
-!!! note "Image needed"
-    Capture Local Library Manager in v1.5.47 with a KiCad symbol source selected and part of its active inventory visible. Hide personal filesystem paths.
+!!! note "Image capture brief"
+    1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
+    2. **Build the frame:** Capture Local Library Manager in v1.5.47 with a KiCad symbol source selected and part of its active inventory visible. Hide personal filesystem paths.
+    3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
+    4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
+    5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 ## Review a symbol
 
@@ -38,8 +42,12 @@ Existing placed instances may not inherit a later library change. Review them in
 
 ### Short video — Assign and verify a footprint
 
-!!! note "Video review needed"
-    Record 15–20 seconds showing the current footprint-assignment action, selection of a matching package, and verification of pin-to-pad numbering. Replace older media if the UI differs.
+!!! note "Video production brief"
+    1. **Prepare:** Select a public symbol with a known matching footprint and readable pin/pad numbering.
+    2. **Opening shot (2 s):** Show the symbol and its current empty or incorrect footprint assignment.
+    3. **Action shot (7–10 s):** Open the current assignment control, choose the correct package, save or apply, and open its footprint preview.
+    4. **Result shot (3–4 s):** Compare at least three readable symbol pins with corresponding footprint pads.
+    5. **Deliver:** Export a **15–20 second** 1080p MP4; replace older media whenever labels or controls differ.
 
 ## Import an Altium symbol library
 

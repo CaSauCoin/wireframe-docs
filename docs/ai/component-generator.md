@@ -27,13 +27,21 @@ To create straightforward missing parts in one pass, select **AI Gen Missing** b
 
 ### Image — Missing component card and AI Gen action
 
-!!! note "Image needed"
-    Capture **Component Review** with one component card marked **Not in Pool**. Include the component name, **Value**, **Footprint Package**, **AI Gen**, **Create**, and **Import** controls. Crop tightly enough that the warning and the action buttons remain readable. Suggested size: **1200 × 700 px**.
+!!! note "Image capture brief"
+    1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
+    2. **Build the frame:** Capture **Component Review** with one component card marked **Not in Pool**. Include the component name, **Value**, **Footprint Package**, **AI Gen**, **Create**, and **Import** controls. Crop tightly enough that the warning and the action buttons remain readable. Suggested size: **1200 × 700 px**.
+    3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
+    4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
+    5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 ### Short video — Generate all missing components
 
-!!! note "Short video needed"
-    Record **8–12 seconds** showing two or more missing component cards, selecting **AI Gen Missing**, the generation status, and the cards changing to **Found in Pool**. Keep the pointer visible and avoid opening unrelated panels. Suggested format: **MP4 or WebM**, 16:9, 1080p.
+!!! note "Video production brief"
+    1. **Prepare:** Use a public demo design with two unambiguous components marked **Not in Pool**; preconfigure the AI connection and hide keys.
+    2. **Opening shot (1–2 s):** Hold on both missing cards and the enabled **AI Gen Missing** button.
+    3. **Action shot (3–5 s):** Move once to **AI Gen Missing**, click, and show the first visible generation status. Cut out only inactive waiting time; do not accelerate or fabricate progress.
+    4. **Result shot (2–3 s):** Hold on the refreshed cards showing **Found in Pool** and readable pin counts.
+    5. **Deliver:** Export an **8–12 second**, 16:9, 1080p MP4; keep the pointer visible and exclude unrelated panels.
 
 ## Choose a generation method
 
@@ -61,13 +69,21 @@ WireFrame prefers a matching verified library footprint when one is available. O
 
 ### Image — Review the template recommendation
 
-!!! note "Image needed"
-    Capture the **AI Component Generator → From Template** tab after research has completed. Show the target component, recommendation summary, **PCB Template**, **SCH Template**, **Pin Count**, **Generate from Template**, and **Retry Research**. If possible, use an example with a confident recommendation. Suggested size: **1000 × 740 px**.
+!!! note "Image capture brief"
+    1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
+    2. **Build the frame:** Capture the **AI Component Generator → From Template** tab after research has completed. Show the target component, recommendation summary, **PCB Template**, **SCH Template**, **Pin Count**, **Generate from Template**, and **Retry Research**. If possible, use an example with a confident recommendation. Suggested size: **1000 × 740 px**.
+    3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
+    4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
+    5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 ### Image — Low-confidence pinout warning
 
-!!! note "Image needed"
-    Capture the amber **AI not confident about the pinout** state with a generic symbol recommendation. The image must also show the guidance to use **From Datasheet** or retry research. Suggested size: **1000 × 500 px**.
+!!! note "Image capture brief"
+    1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
+    2. **Build the frame:** Capture the amber **AI not confident about the pinout** state with a generic symbol recommendation. The image must also show the guidance to use **From Datasheet** or retry research. Suggested size: **1000 × 500 px**.
+    3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
+    4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
+    5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 ## Generate from a datasheet
 
@@ -81,6 +97,8 @@ Use this method when pin numbers or mechanical dimensions cannot be safely infer
 6. Select **Generate from Datasheet**.
 7. Wait for extraction and generation to finish. You may select **Close (keeps running)** without cancelling the active request.
 
+The window is modal while visible: other app controls remain inactive until you close it. During research or generation, **Close (keeps running)** dismisses only the window. When idle, the same footer action is **Cancel**. Successful generation closes the modal automatically; a failure remains visible in the modal so you can correct the input.
+
 For a PDF, WireFrame looks for pinout and mechanical sections and uses the relevant text and drawing pages. A clean manufacturer PDF normally produces a more reliable result than a distributor screenshot or a scanned document.
 
 !!! info "Datasheet privacy"
@@ -88,8 +106,12 @@ For a PDF, WireFrame looks for pinout and mechanical sections and uses the relev
 
 ### Short video — Create a component from a datasheet
 
-!!! note "Short video needed"
-    Record **12–18 seconds** showing the **From Datasheet** tab, attaching a public manufacturer PDF, selecting **Generate from Datasheet**, and the visible progress states. End when generation completes and Component Review refreshes. Do not expose local usernames, private file paths, API keys, or confidential documents. Suggested format: **MP4 or WebM**, 16:9, 1080p.
+!!! note "Video production brief"
+    1. **Prepare:** Download a public manufacturer PDF to a neutral demo path and open the target component's **From Datasheet** tab.
+    2. **Opening shot (1–2 s):** Show the empty attachment state, target part number, and **Browse File**.
+    3. **Action shot (6–9 s):** Click **Browse File**, choose the prepared PDF, confirm its filename, then select **Generate from Datasheet**. Use a hard cut across long processing while retaining one honest progress state.
+    4. **Result shot (3–4 s):** End on the refreshed Component Review card, then briefly show matching generated symbol pins and footprint pads.
+    5. **Deliver:** Export a **12–18 second**, 16:9, 1080p MP4. Hide usernames, private paths, keys, and confidential documents.
 
 ## Review the generated component
 
@@ -119,8 +141,12 @@ Select **Manage** on the component card to inspect or correct the generated symb
 
 ### Image — Inspect the generated symbol and footprint
 
-!!! note "Image needed"
-    Use a two-panel composite or two clearly labeled screenshots: **Generated symbol review** and **Generated footprint review**. Show matching pin/pad numbers, the pin-1 marker, package outline, and editor properties. Use a real example with at least eight pins. Suggested combined size: **1400 × 800 px**.
+!!! note "Image capture brief"
+    1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
+    2. **Build the frame:** Use a two-panel composite or two clearly labeled screenshots: **Generated symbol review** and **Generated footprint review**. Show matching pin/pad numbers, the pin-1 marker, package outline, and editor properties. Use a real example with at least eight pins. Suggested combined size: **1400 × 800 px**.
+    3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
+    4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
+    5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 ## Confirm generated library knowledge
 
@@ -130,8 +156,12 @@ Do not confirm a record merely because the symbol looks correct. Confirmation me
 
 ### Image — Confirm an AI-generated library contract
 
-!!! note "Image needed"
-    Capture **Library Pool Settings → Locally written contracts** with one unverified generated part expanded. Include the source/status text and the **Confirm**, **Revoke**, and **Forget** actions. Do not show private library paths. Suggested size: **1100 × 650 px**.
+!!! note "Image capture brief"
+    1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
+    2. **Build the frame:** Capture **Library Pool Settings → Locally written contracts** with one unverified generated part expanded. Include the source/status text and the **Confirm**, **Revoke**, and **Forget** actions. Do not show private library paths. Suggested size: **1100 × 650 px**.
+    3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
+    4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
+    5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 ## Troubleshooting
 
@@ -141,6 +171,8 @@ Do not confirm a record merely because the symbol looks correct. Confirmation me
 | **No file attached** | Add a PDF, PNG, or JPG in **From Datasheet** |
 | **No writable project library directory** | Save or open the project and configure a writable project library location |
 | **Another AI generation request is already running** | Wait for the active component to finish before starting another |
+| The rest of the app does not respond | The generator is a modal. Close it with its title-bar close control, **Cancel**, or **Close (keeps running)** |
+| The popup closed while generation was active | The request continues in the background; return to Component Review and wait for the card to refresh |
 | Wrong package or pad count | Correct the package and pin count, then retry; do not resize the result by eye |
 | Generation request failed | Check the AI connection and account allowance, then retry with a smaller or clearer input |
 | Generated part is found but still shows a mismatch | Open **Manage**, compare symbol pins with footprint pads, save corrections, and re-check the library pool |

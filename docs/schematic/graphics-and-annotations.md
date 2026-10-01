@@ -23,8 +23,12 @@ Do not use a graphic line as a wire. If two pins must be electrically connected,
 
 ### Short video — Add a circuit note and grouping box
 
-!!! note "Video review needed"
-    Record 15–20 seconds in v1.5.47 showing a text note and rectangle added, edited through Properties, then selected as ordinary graphic objects. Replace older media if tools or handles differ.
+!!! note "Video production brief"
+    1. **Prepare:** Open a clean schematic block with space for one short constraint note and grouping rectangle.
+    2. **Opening shot (2 s):** Hold on the unannotated block and relevant drawing tools.
+    3. **Action shot (8–11 s):** Add the text note, draw the rectangle, then edit one property of each through **Properties**.
+    4. **Result shot (3–4 s):** Select each object normally so current handles and selection styling are visible.
+    5. **Deliver:** Export a **15–20 second** 1080p MP4 and replace older media if tools or handles differ.
 
 ## Annotation guidelines
 
@@ -41,8 +45,12 @@ Do not rely on a schematic dimension tool unless it is visible and verified in t
 
 ### Image — Documented schematic block
 
-!!! note "Image needed"
-    Capture one functional block with a clean grouping shape and a concise constraint note. Keep electrical wires visually distinct from annotations.
+!!! note "Image capture brief"
+    1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
+    2. **Build the frame:** Capture one functional block with a clean grouping shape and a concise constraint note. Keep electrical wires visually distinct from annotations.
+    3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
+    4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
+    5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 ## Related guidelines
 
