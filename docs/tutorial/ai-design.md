@@ -4,8 +4,12 @@ This tutorial uses AI Copilot to prepare a small NE555 LED blinker, review its p
 
 ### Image — Finished AI-assisted example
 
-!!! note "Image needed"
-    Capture the final schematic, routed PCB, and AI Copilot panel in one v1.5.47 workspace. Use a sample project and ensure no API key or private path is visible.
+!!! note "Image capture brief"
+    1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
+    2. **Build the frame:** Capture the final schematic, routed PCB, and AI Copilot panel in one v1.5.47 workspace. Use a sample project and ensure no API key or private path is visible.
+    3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
+    4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
+    5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 ## Before you start
 
@@ -21,8 +25,12 @@ Include voltage, frequency, tolerances, package preferences, connector requireme
 
 ### Image — Prompt and clarification
 
-!!! note "Image needed"
-    Capture the initial requirement and one clarification exchange in AI Copilot. The prompt must include supply voltage and target frequency.
+!!! note "Image capture brief"
+    1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
+    2. **Build the frame:** Capture the initial requirement and one clarification exchange in AI Copilot. The prompt must include supply voltage and target frequency.
+    3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
+    4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
+    5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 ## 2. Review the proposed design
 
@@ -39,8 +47,12 @@ Do not approve a component merely because its name matches. Package, pin numberi
 
 ### Image — Component Review tabs
 
-!!! note "Image needed"
-    Capture the complete review window with all seven tabs visible and one BOM item selected. Do not fabricate a separate schematic preview if the release UI does not show one.
+!!! note "Image capture brief"
+    1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
+    2. **Build the frame:** Capture the complete review window with all seven tabs visible and one BOM item selected. Do not fabricate a separate schematic preview if the release UI does not show one.
+    3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
+    4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
+    5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 ## 3. Generate a missing component when required
 
@@ -50,8 +62,12 @@ Before continuing, check pin count, pin names, electrical types, pad numbering, 
 
 ### Short video — Resolve a missing component
 
-!!! note "Video needed"
-    Record a 25–35 second clip from **AI Gen** through generation and review. Show the final pin/pad comparison, but do not expose the API key or a proprietary datasheet.
+!!! note "Video production brief"
+    1. **Prepare:** Use a public eight-pin component, an approved public datasheet, and a card marked **Not in Pool**.
+    2. **Opening shot (2–3 s):** Hold on the missing card and its **AI Gen** action.
+    3. **Action shot (12–18 s):** Open the generator, attach or select the prepared source, start generation, show one real progress state, then cut across the wait.
+    4. **Review shot (8–10 s):** Open the generated symbol and footprint, compare pin 1 and at least three readable pin-to-pad numbers, then return to the refreshed card.
+    5. **Deliver:** Export a **25–35 second** 1080p MP4; hide the API key, local paths, and any proprietary datasheet content.
 
 ## 4. Add explicit simulation requirements
 
@@ -61,8 +77,12 @@ A visual waveform that “looks right” is not a pass criterion. Use the A/B cu
 
 ### Image — Measured transient result
 
-!!! note "Image needed"
-    Capture output and timing-capacitor traces with A/B cursors spanning one period. Show the assertion result and engine used in the same release example where possible.
+!!! note "Image capture brief"
+    1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
+    2. **Build the frame:** Capture output and timing-capacitor traces with A/B cursors spanning one period. Show the assertion result and engine used in the same release example where possible.
+    3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
+    4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
+    5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 ## 5. Apply, place, and route
 
@@ -79,8 +99,12 @@ See [Placement and Routing Assistant](../ai/auto-placer-router.md).
 
 ### Short video — Review an assisted PCB result
 
-!!! note "Video needed"
-    Record a 25–35 second clip showing the proposal, a manual adjustment, remaining ratsnest review, and a clean DFM/DRC rerun. Do not show a one-click “fully approved” result.
+!!! note "Video production brief"
+    1. **Prepare:** Keep one assisted PCB proposal ready with a visible, safe manual adjustment still required.
+    2. **Opening shot (2–3 s):** Show the proposal and current ratsnest count before approval.
+    3. **Action shot (12–18 s):** Apply the proposal, move the chosen footprint or route segment manually, and inspect the remaining ratsnest connections.
+    4. **Verification shot (6–9 s):** Run DFM/DRC and hold on the genuine clean summary or clearly explain any remaining issue in-frame.
+    5. **Deliver:** Export a **25–35 second** 1080p MP4; the story must show review and correction, never a one-click “fully approved” claim.
 
 ## 6. Prepare release output
 

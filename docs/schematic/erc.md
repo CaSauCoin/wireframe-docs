@@ -24,8 +24,12 @@ The Electrical Rules Check (ERC) scans your schematic for common connectivity an
 
 ### Image — ERC results and highlighted issue
 
-!!! note "Image needed"
-    Capture the v1.5.47 ERC panel with a small mix of errors and warnings. Keep one result selected and its affected pin or net visible on the canvas.
+!!! note "Image capture brief"
+    1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
+    2. **Build the frame:** Capture the v1.5.47 ERC panel with a small mix of errors and warnings. Keep one result selected and its affected pin or net visible on the canvas.
+    3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
+    4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
+    5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 ---
 
@@ -88,8 +92,12 @@ Repeat **Run ERC → locate issue → correct design → Run ERC** until no bloc
 
 ### Short video — Fix and re-run ERC
 
-!!! note "Video needed"
-    Record a 20-second clip showing an ERC issue selected, corrected on the schematic, and removed by the next ERC run. Use a non-proprietary example project.
+!!! note "Video production brief"
+    1. **Prepare:** Use a public schematic with one deliberate, safe ERC issue and no unrelated errors.
+    2. **Opening shot (2–3 s):** Show the ERC result selected and its affected pin or net highlighted.
+    3. **Action shot (8–10 s):** Navigate to the issue, make the single correction, and run ERC again.
+    4. **Result shot (4–5 s):** Hold on the refreshed results with that violation removed.
+    5. **Deliver:** Export an approximately **20-second** 1080p MP4 and retain the demo project for reproducibility.
 
 ---
 

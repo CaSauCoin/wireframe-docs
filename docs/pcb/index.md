@@ -69,8 +69,12 @@ Ratsnest lines are **thin dashed lines** showing connections that have not yet b
 
 ### Short video — Ratsnest cleared by routing
 
-!!! note "Video needed"
-    Record 10–15 seconds showing one ratsnest connection before routing, the completed track, and the ratsnest update. The existing video file is empty and must be replaced.
+!!! note "Video production brief"
+    1. **Prepare:** Use two nearby pads on the same net with exactly one visible ratsnest connection.
+    2. **Opening shot (1–2 s):** Hold on both pads and the unrouted ratsnest line.
+    3. **Action shot (5–8 s):** Start the route on the first pad, place any required corner, and finish on the destination pad.
+    4. **Result shot (2–3 s):** Hold on the completed selected track and the cleared ratsnest connection.
+    5. **Deliver:** Export a **10–15 second** 1080p MP4 and replace the existing empty file.
 
 - Ratsnest lines **automatically update** after every edit
 - When you **route a trace**, the corresponding ratsnest line **disappears**

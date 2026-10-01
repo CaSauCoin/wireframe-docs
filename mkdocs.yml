@@ -103,13 +103,14 @@ nav:
       - Library Import & Management: libraries/library-converter.md
 
   - Advanced Features:
-      - Selection & Editing: advanced/selection-and-editing.md
+      - Selection, Context Menus & Popups: advanced/selection-and-editing.md
       - 3D Viewer: advanced/3d-viewer.md
       - Keyboard Shortcuts: advanced/shortcuts.md
 
   - Reference:
       - Config & Session: reference/config-and-session.md
       - File Formats: reference/file-formats.md
+      - Release Media Production: reference/media-production.md
       - FAQ & Troubleshooting: faq.md
       - Changelog: changelog.md
 

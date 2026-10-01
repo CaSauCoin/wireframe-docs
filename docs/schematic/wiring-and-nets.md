@@ -19,8 +19,12 @@ Press ++w++ or click the **Wire** button on the toolbar.
 
 ### Image — Wire attached to two component pins
 
-!!! note "Image needed"
-    Capture a close-up from v1.5.47 showing both wire endpoints snapped exactly to pin connection points. The existing placeholder file is empty and must be replaced.
+!!! note "Image capture brief"
+    1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
+    2. **Build the frame:** Capture a close-up from v1.5.47 showing both wire endpoints snapped exactly to pin connection points. The existing placeholder file is empty and must be replaced.
+    3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
+    4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
+    5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 | Action | Input |
 |---|---|
@@ -56,8 +60,12 @@ A **junction dot** appears when three or more wires meet at a single point:
 
 ### Image — Junction compared with a wire crossing
 
-!!! note "Image needed"
-    Capture two close-up examples: three wires joined by a visible junction dot, and two crossing wires that are not connected. Add concise image labels outside the schematic canvas.
+!!! note "Image capture brief"
+    1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
+    2. **Build the frame:** Capture two close-up examples: three wires joined by a visible junction dot, and two crossing wires that are not connected. Add concise image labels outside the schematic canvas.
+    3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
+    4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
+    5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 - Junction dots are **placed automatically** when three or more connections share a point
 - You can also place them manually with the **Junction** tool
@@ -107,8 +115,12 @@ Power symbols are single-pin components that automatically assign a net name to 
 
 ### Image — Power symbols on a decoupling capacitor
 
-!!! note "Image needed"
-    Capture a small decoupling example with the supply and GND symbols connected to a capacitor. Keep the capacitor value and both net names readable.
+!!! note "Image capture brief"
+    1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
+    2. **Build the frame:** Capture a small decoupling example with the supply and GND symbols connected to a capacitor. Keep the capacitor value and both net names readable.
+    3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
+    4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
+    5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 ---
 

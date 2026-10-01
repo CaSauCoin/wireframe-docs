@@ -14,8 +14,12 @@ The current release uses a locally configured, user-provided OpenRouter key. Do 
 
 ### Image — AI settings
 
-!!! note "Image needed"
-    Capture the current AI provider settings with the key value hidden. Show the provider/model controls and save action. Do not use the older screenshot placeholder that shows a different header or input text. Suggested size: **900 × 620 px**.
+!!! note "Image capture brief"
+    1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
+    2. **Build the frame:** Capture the current AI provider settings with the key value hidden. Show the provider/model controls and save action. Do not use the older screenshot placeholder that shows a different header or input text. Suggested size: **900 × 620 px**.
+    3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
+    4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
+    5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 ## Start a focused session
 
@@ -32,15 +36,23 @@ Long sessions are summarized and relevant project facts can be recalled later. S
 
 ### Short video — Start and reopen a Copilot session
 
-!!! note "Video needed"
-    Record **10–15 seconds** showing **View → AI Copilot Chat**, creation of a new session, one short request, opening History, and returning to the session. Do not expose an API key or private project data. 1080p.
+!!! note "Video production brief"
+    1. **Prepare:** Open a fictional sample project and prewrite a short non-sensitive prompt for pasting.
+    2. **Opening shot (1–2 s):** Start on the workspace with the **View** menu closed.
+    3. **Action shot (6–9 s):** Open **View → AI Copilot Chat**, create a session, paste and submit the request, then open **History** and select the same session.
+    4. **Result shot (2–3 s):** Hold on the reopened conversation with its session identity and request visible.
+    5. **Deliver:** Export a **10–15 second** 1080p MP4; remove waiting time and reveal no API key or private project data.
 
 ## Design workflow
 
 ### Diagram — AI design review workflow
 
-!!! note "Diagram replacement needed"
-    Create a polished release diagram showing: requirement and constraints → clarification → component and connection review → missing-item generation when needed → deterministic verification → user-approved apply. The older four-step image omitted review and simulation gates and must not be reused.
+!!! note "Diagram production brief"
+    1. **Prepare:** Copy the exact workflow stages and review gates from this page into a vector design file.
+    2. **Build the content:** Create a polished release diagram showing: requirement and constraints → clarification → component and connection review → missing-item generation when needed → deterministic verification → user-approved apply. The older four-step image omitted review and simulation gates and must not be reused.
+    3. **Compose:** Arrange the stages left to right, use one consistent shape system, and make review or correction loops visually distinct.
+    4. **Finish:** Verify every label manually; do not use ASCII art, a Mermaid screenshot, or AI-generated text inside the graphic.
+    5. **Deliver and approve:** Export SVG plus a 2× PNG fallback, then confirm readability at the documentation embed width.
 
 1. Describe the circuit and constraints.
 2. Review the research summary.
@@ -65,8 +77,12 @@ Long sessions are summarized and relevant project facts can be recalled later. S
 
 ### Image — Current Component Review tabs
 
-!!! note "Image needed"
-    Capture the full Component Review tab row from the current build, with **BOM Components** selected and at least one component card visible. This replaces older media showing only BOM, Netlist, and Placement Preview. Suggested size: **1400 × 820 px**.
+!!! note "Image capture brief"
+    1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
+    2. **Build the frame:** Capture the full Component Review tab row from the current build, with **BOM Components** selected and at least one component card visible. This replaces older media showing only BOM, Netlist, and Placement Preview. Suggested size: **1400 × 820 px**.
+    3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
+    4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
+    5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 ## Safety and privacy
 

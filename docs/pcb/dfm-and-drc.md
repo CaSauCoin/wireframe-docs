@@ -16,8 +16,12 @@ Before exporting Gerber files, run **DFM/DRC** to detect and fix design errors. 
 
 ### Image — DFM and DRC results
 
-!!! note "Image needed"
-    Capture the v1.5.47 **DFM & DRC Check** panel with at least one error and one warning. Keep the selected violation and its highlighted canvas location visible.
+!!! note "Image capture brief"
+    1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
+    2. **Build the frame:** Capture the v1.5.47 **DFM & DRC Check** panel with at least one error and one warning. Keep the selected violation and its highlighted canvas location visible.
+    3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
+    4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
+    5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 ---
 
@@ -112,8 +116,12 @@ Repeat the check–locate–fix cycle until there are no release-blocking errors
 
 ### Short video — Resolve and recheck a violation
 
-!!! note "Video needed"
-    Record a 20–30 second clip showing one violation selected, corrected on the PCB, and cleared by the next DFM/DRC run.
+!!! note "Video production brief"
+    1. **Prepare:** Use a public demo PCB with one deliberate clearance or width violation and no distracting critical issues.
+    2. **Opening shot (2–3 s):** Select the violation in **DFM & DRC Check** and show its highlighted board location.
+    3. **Action shot (10–15 s):** Navigate to the object, correct its geometry or rule-compliant value, then run the check again.
+    4. **Result shot (4–6 s):** Hold on the refreshed summary with that violation cleared and the corrected object visible.
+    5. **Deliver:** Export a **20–30 second** 1080p MP4; do not hide remaining violations outside the stated example.
 
 ---
 

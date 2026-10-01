@@ -58,4 +58,4 @@ The v1.5.47 guideline covers:
 
 ## Media status
 
-Some pages intentionally show **Image needed**, **Video needed**, or **Image review needed** notes. These titles mark media that must be captured from the current release build; they replace fabricated ASCII diagrams and outdated UI mockups.
+Some pages intentionally show **Image needed**, **Video needed**, or **Image review needed** notes. These titles mark media that must be captured from the current release build; they replace fabricated ASCII diagrams and outdated UI mockups. Produce every asset with the [Release Media Production](reference/media-production.md) standard, then follow the subject-specific direction in its local note.

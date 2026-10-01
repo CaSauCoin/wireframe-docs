@@ -20,10 +20,16 @@ Avoid requests such as “make a power supply” without ratings. Copilot can as
 
 After receiving the request, review the research summary and answer the displayed clarification questions. Select **Proceed to Design** when the answers are correct. Use **Skip (Use Defaults)** only for exploratory work.
 
+Each question offers one or more choices plus a **Custom** answer field. Selecting **Proceed to Design** submits the visible choices. **Skip (Use Defaults)** replaces the unanswered decisions with WireFrame's defaults; it is not an approval of production requirements.
+
 ### Image — Clarifying questions
 
-!!! note "Image needed"
-    Capture the actual clarification UI with two or three questions and the current **Proceed to Design** and **Skip (Use Defaults)** buttons. Remove the former ASCII mockup. Suggested size: **1000 × 700 px**.
+!!! note "Image capture brief"
+    1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
+    2. **Build the frame:** Capture the actual clarification UI with two or three questions and the current **Proceed to Design** and **Skip (Use Defaults)** buttons. Remove the former ASCII mockup. Suggested size: **1000 × 700 px**.
+    3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
+    4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
+    5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 ## Review BOM components
 
@@ -35,12 +41,25 @@ For each physical component:
 4. Resolve **Not in Pool**, partial matches, and pin-count mismatches.
 5. Use **AI Gen**, **Create**, **Import**, or **Manage** as appropriate.
 
+Left-click a component card, its type tag, or one of its actions to make that item the active preview. The action row changes with library state:
+
+| Component state | Actions | Result |
+|---|---|---|
+| Found in Pool | **AI Gen**, **Manage**, **Import** | Regenerate, open the matched library editors, or replace the assignment from a KiCad symbol file |
+| Not in Pool | **AI Gen**, **Create**, **Import** | Generate with AI, start a new symbol in Symbol Library Editor, or load a `.kicad_sym` file |
+
+Editing **Value** or **Footprint Package** invalidates derived validation, simulation, and placement results. Let the pool re-check finish, then repeat the relevant review tabs.
+
 An item marked **auto** was added by WireFrame support rules. Keep it only when the design actually needs it.
 
 ### Image — BOM component review
 
-!!! note "Image needed"
-    Capture several current component cards, including one **Found in Pool**, one missing item, and one support-rule item marked **auto**. Show Value, Footprint Package, and contextual actions. Suggested size: **1400 × 900 px**.
+!!! note "Image capture brief"
+    1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
+    2. **Build the frame:** Capture several current component cards, including one **Found in Pool**, one missing item, and one support-rule item marked **auto**. Show Value, Footprint Package, and contextual actions. Suggested size: **1400 × 900 px**.
+    3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
+    4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
+    5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 ## Review connections and netlist checks
 
@@ -56,14 +75,20 @@ Pay particular attention to:
 
 Use **Fix with AI** only after reading the proposed correction. Re-run the check afterward.
 
+**Fix with AI** appears when critical deterministic findings remain and is limited to three attempts for that review cycle. It sends the listed critical issues back for regeneration; it does not replace ERC.
+
 ## Generate functional blocks
 
 Open **Blocks** and select **Generate Blocks**. Review the membership and purpose of each power, protection, control, interface, oscillator, or load block. Use **Send Blocks to Chat** when you want Copilot to discuss or refine them.
 
 ### Short video — Generate and review functional blocks
 
-!!! note "Video needed"
-    Record **12–18 seconds** showing **Blocks**, **Generate Blocks**, the resulting block cards, and **Send Blocks to Chat**. Use a medium-size circuit so at least three blocks appear. 1080p.
+!!! note "Video production brief"
+    1. **Prepare:** Load a reviewed medium-size design that can produce at least three functional blocks.
+    2. **Opening shot (1–2 s):** Open **Blocks** and hold on the empty or previous-result state with **Generate Blocks** visible.
+    3. **Action shot (6–9 s):** Click **Generate Blocks**, keep one genuine running state, then cut to the completed cards and scan their titles and memberships.
+    4. **Result shot (3–4 s):** Click **Send Blocks to Chat** and hold on the confirmation plus the resulting chat cards.
+    5. **Deliver:** Export a **12–18 second** 1080p MP4; never hide an unresolved-library warning to make the send action appear successful.
 
 ## Verify before applying
 
