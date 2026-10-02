@@ -35,10 +35,10 @@ Use **View** to show or hide:
 - Local Library Manager;
 - AI Copilot Chat;
 - PCB Layers;
-- Zone Manager;
+- Zone Manager (**Shift+B**) — see [Zone Manager](pcb/zones-and-planes.md#zone-manager);
 - Design Rules;
 - 3D Viewer;
-- Performance HUD (frame-time overlay, useful when reporting a slow or stuttering canvas).
+- Performance HUD — a frame-time overlay; see the FAQ entry *The canvas feels slow or stutters* under [Schematic and PCB](faq.md#schematic-and-pcb).
 
 ### Tools
 

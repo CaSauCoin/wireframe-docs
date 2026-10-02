@@ -13,6 +13,9 @@ Pages added or rewritten after checking them against the current WireFrame sourc
 - **Corrected:** CAD outline import reads **DXF** as well as SVG when **Import as BOARD OUTLINE** is ticked. This supersedes the earlier "SVG only" note below.
 - **Corrected:** PCB PDF printing is **File → Export → Print PCB to PDF (1:1)**, one PDF per layer, with manual **Mirror X**.
 - **Added:** **Tools → Auto Wire**, the **Board Fit** and **System** review tabs, the current Preferences categories.
+- **Added:** [Zone Manager](pcb/zones-and-planes.md#zone-manager) — quick actions, where a quick zone takes its outline, the zone table; the quick ground plane steps now match the app (**Fill GND**, then **Apply**).
+- **Added:** **Performance HUD** in the FAQ — what each phase means and `WF_PERF_LOG=1` for bug reports.
+- **Corrected:** the built-in **Gerber Viewer** is documented as a preview (it does not draw layer geometry yet); Gerber checks now point to a full viewer.
 
 ## v1.5.47 — Release candidate
 

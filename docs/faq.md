@@ -47,7 +47,19 @@ Use this page to diagnose common release issues. Start with the check that match
     Review the active design rules and net classes first. Open each violation, identify the two objects involved, and decide whether to reroute, move an item, or correct the applicable rule. Do not suppress a violation merely to obtain a clean report.
 
 ??? question "Copper zones show gaps or stale geometry"
-    Confirm the zone net, layer, clearance, and priority, then rebuild the zone fill after routing or placement changes. Clearances around objects on other nets are expected.
+    Open **View → Zone Manager** (**Shift+B**), confirm each zone's net, layer, clearance, and priority, then select **Apply (Rebuild All Zones)** after routing or placement changes. Clearances around objects on other nets are expected. Two identical rows usually mean **Fill GND** was pressed twice — delete one.
+
+??? question "The canvas feels slow or stutters"
+    Open **View → Performance HUD**. The overlay shows the frame rate on screen and the work per frame, then splits each frame into phases with mean and worst times:
+
+    | Phase | If it dominates |
+    |---|---|
+    | **panels (CPU)** — with indented rows such as `pcb canvas`, `schematic canvas`, `AI copilot panel`, `review: BOM cards` | One panel is expensive to draw; the indented row names it. Closing or docking that panel is the quick test |
+    | **upload + draw (GL)** | The graphics driver is the bottleneck — very large boards, or a weak or software GPU |
+    | **platform windows (one swap each)** | Many panels are floating as separate windows; each costs a swap. Dock them back into the main window |
+    | **swap (main window)** | Waiting on the display (vsync); usually not a problem in itself |
+
+    The HUD also shows how many input events were queued and how far the pointer lagged behind the real cursor, and the size of the last frame's draw data. It measures only while it is open.
 
 ## Simulation
 
@@ -96,6 +108,7 @@ Include:
 - A short sequence that reproduces the issue.
 - The exact error message and relevant log excerpt.
 - A screenshot with credentials and proprietary data removed.
+- For slowness: a screenshot of **View → Performance HUD** taken while it happens. When the app cannot be clicked — or for a log over time — start WireFrame from a terminal with the environment variable `WF_PERF_LOG=1`; it prints a one-line timing summary every 2 seconds.
 - A minimal project copy when it is safe to share.
 
 Check the [Changelog](changelog.md) first, then use the project's official issue or support channel.
