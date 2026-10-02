@@ -119,24 +119,20 @@ For makers who produce boards by toner transfer or UV film, WireFrame prints PCB
 5. Select **Export PDFs...** and choose a folder. The files are written to `<project>_PDFs/<project>_<layer>.pdf`.
 6. Print at **100% scale** — never fit-to-page — and measure a known dimension on the printout before transferring.
 
-## Built-in Gerber Viewer
+## Check the Gerbers before ordering
 
-WireFrame includes a **Gerber viewer** to inspect exported files without external software.
+Always look at the exported Gerber and drill files in a Gerber viewer before sending them to a manufacturer — it is the last chance to catch a missing layer, a shifted drill file, or an outline that did not export.
 
-**How to use:**
+1. Open the export folder in a full Gerber viewer: KiCad **GerbView**, **gerbv**, or the viewer on your manufacturer's order page.
+2. Load every copper, mask, silkscreen, outline, and drill file together.
+3. Check that:
+    - every layer you expect is present and aligned with the others;
+    - traces are continuous and pads sit on their copper;
+    - drill hits land in the centre of pads and vias;
+    - the board outline is closed and matches the mechanical drawing.
 
-1. Select **Tools → Gerber Viewer** and open a generated `.gbr` file, or use another trusted Gerber viewer.
-2. Select representative copper, mask, silkscreen, and outline outputs.
-3. Pan and zoom to verify:
-    - Trace continuity
-    - Pad alignment and spacing
-    - Board outline shape
-
-![Gerber Viewer](../img/fabrication/gerber-files.png)
-
-Visually confirm trace continuity, pad flashes, apertures, and the board outline before sending the package to a manufacturer.
-
----
+!!! warning "Built-in Gerber Viewer is a preview"
+    **Tools → Gerber Viewer...** opens a `.gbr` (or `.gtl`, `.gbl`, `.gts`, `.gbs`, `.gto`, `.gbo`, `.gm1`) file in a WireFrame window. In the current release it shows the file name but does **not** yet draw the layer geometry, and it has no zoom or pan. Do not use it to approve a fabrication package — use one of the viewers above.
 
 ## Complete Export Workflow
 

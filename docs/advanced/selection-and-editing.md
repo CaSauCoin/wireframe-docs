@@ -132,7 +132,7 @@ These actions remove a source or item from the active library pool; they are not
 | **Page Settings** | **OK**, **Cancel** | **OK** applies and persists the page changes. **Cancel** closes the modal without completing the update. |
 | **AI OCR Manager** | **Add Images**, **Paste from Clipboard**, **Remove**, **Generate Pins**, **Cancel** | Add only clear pin-table images, remove irrelevant pages, and review every generated pin against the datasheet. |
 
-The **Gerber Viewer** is a normal tool window, not a blocking modal. You can keep it open while comparing fabrication layers.
+The **Gerber Viewer** is a normal tool window, not a blocking modal. In the current release it is a preview that does not draw layer geometry yet — see [Check the Gerbers before ordering](../pcb/fabrication-and-export.md#check-the-gerbers-before-ordering).
 
 ### Image — Modal versus docked panel
 
