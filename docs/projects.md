@@ -20,6 +20,31 @@ Keep the project and its documents in a dedicated folder. This makes relative li
     4. **Result shot (2–3 s):** Hold on the new project in **Project Structure** with its name readable.
     5. **Deliver:** Export a **10–15 second** 1080p MP4; replace any clip using older menu labels.
 
+<!-- wf:video id=create-a-new-project
+caption: File → New → New Project, pick a folder, name it, Create
+setup:
+- wait: 1
+steps:
+- wait: 1
+- pick_folder: demo-projects
+- menu:
+  - File
+  - New
+  - New Project (.prjxml)...
+- wait: 1
+- type:
+    text: Demo Board
+- wait: 1
+- click_at:
+  - 634
+  - 485
+- wait: 3
+brief_sha256: 9fd78258131dd895
+-->
+<!-- wf:out id=create-a-new-project sha=52b07e517724 -->
+<video controls muted playsinline preload="metadata" src="../assets/wf/docs/projects/create-a-new-project.mp4" title="File → New → New Project, pick a folder, name it, Create"></video>
+<!-- /wf:out -->
+
 ## Open a project or document
 
 | What you want to open | Command |
@@ -38,6 +63,24 @@ Opening a `.prjxml` restores its linked documents and project structure. Opening
     3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
+
+<!-- wf:shot id=project-structure-with-multiple-documents
+caption: Project Structure with several schematics and one PCB
+setup:
+- open_project
+- wait: 1
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+capture:
+  window: Project Structure
+  padding: 8
+brief_sha256: 252fa9b96dbcf65e
+-->
+<!-- wf:out id=project-structure-with-multiple-documents sha=664f28041221 -->
+![Project Structure with several schematics and one PCB](assets/wf/docs/projects/project-structure-with-multiple-documents.png)
+<!-- /wf:out -->
 
 ## Add and organize documents
 
@@ -76,6 +119,28 @@ Before updating a PCB:
     4. **Result shot (4–5 s):** Hold on the opened PCB with transferred footprints and ratsnest visible.
     5. **Deliver:** Export a **15–20 second** 1080p MP4; do not call the command “Convert to PCB.”
 
+<!-- wf:video id=update-schematic-to-pcb
+caption: Tools → Update Schematic to PCB, then the board
+setup:
+- open_project
+- ensure_schematic
+- wait: 1
+steps:
+- wait: 1
+- menu:
+  - Tools
+  - Update Schematic to PCB
+- wait: 3
+- ensure_pcb
+- keys:
+  - Home
+- wait: 3
+brief_sha256: 0a8cff539f0aacf1
+-->
+<!-- wf:out id=update-schematic-to-pcb sha=6e9edff590b3 -->
+<video controls muted playsinline preload="metadata" src="../assets/wf/docs/projects/update-schematic-to-pcb.mp4" title="Tools → Update Schematic to PCB, then the board"></video>
+<!-- /wf:out -->
+
 ## Import a KiCad project
 
 1. Select **File → Import → KiCad Project (.kicad_pro, .pro)**.
@@ -101,6 +166,27 @@ After import, check:
     3. **Action shot (8–14 s):** Choose the project, show at least two genuine asynchronous progress stages, and cut only the inactive portion of the import.
     4. **Result shot (4–6 s):** Hold on the imported **Project Structure**, then open one schematic or PCB document.
     5. **Deliver:** Export a **15–25 second** 1080p MP4; replace any clip that omits the progress overlay.
+
+<!-- wf:video id=import-a-kicad-project
+caption: Importing a KiCad project
+setup:
+- wait: 1
+steps:
+- wait: 1
+- open_file: wireframe:tests/data/7805_voltage_regulator/kicad/7805_regulator.kicad_pro
+- menu:
+  - File
+  - Import
+  - KiCad Project (.kicad_pro, .pro)...
+- wait: 10
+- keys:
+  - Home
+- wait: 2
+brief_sha256: c4580440ada7f097
+-->
+<!-- wf:out id=import-a-kicad-project sha=4f43681410af -->
+<video controls muted playsinline preload="metadata" src="../assets/wf/docs/projects/import-a-kicad-project.mp4" title="Importing a KiCad project"></video>
+<!-- /wf:out -->
 
 ## Import scope and removed legacy guidance
 

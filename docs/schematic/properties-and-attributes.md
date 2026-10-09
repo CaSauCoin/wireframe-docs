@@ -40,6 +40,36 @@ Text controls may also set visibility, position, rotation, and size for the desi
     4. **Result shot (3–4 s):** Press Undo and hold on the restored value and position.
     5. **Deliver:** Export a **15–20 second** 1080p MP4 and replace media using obsolete property labels.
 
+<!-- wf:video id=edit-and-align-component-text
+caption: Edit C6's value in Properties, then undo
+setup:
+- open_project
+- ensure_schematic
+- wait: 1
+- canvas_hover: C6
+- scroll: -6
+- wait: 0.5
+- canvas_click: C6
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+steps:
+- wait: 1.5
+- type:
+    ref: '**/##Value'
+    text: 22uF 10V
+- wait: 2
+- keys:
+  - Ctrl
+  - Z
+- wait: 2
+brief_sha256: 7085671e0ff8e91c
+-->
+<!-- wf:out id=edit-and-align-component-text sha=42c750198a6d -->
+<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/schematic/properties-and-attributes/edit-and-align-component-text.mp4" title="Edit C6&#x27;s value in Properties, then undo"></video>
+<!-- /wf:out -->
+
 ## Wire and net properties
 
 Selecting a wire or net label exposes its net name and available connectivity information. Use consistent names for rails and signals; renaming a shared net can affect multiple labels and connected items.

@@ -11,6 +11,31 @@ This tutorial uses AI Copilot to prepare a small NE555 LED blinker, review its p
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
+<!-- wf:shot id=finished-ai-assisted-example
+caption: 'The finished NE555 blinker: schematic generated from the reviewed plan, with the Copilot beside
+  it'
+project: samples/ne555-blinker/NE555 Blinker.prjxml
+setup:
+- open_project
+- ensure_schematic
+- wait: 1
+- canvas_click:
+  - -5000
+  - -5000
+- keys:
+  - Home
+- panel: ai
+- wait: 1.5
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+brief_sha256: a79bc0ededcd8271
+-->
+<!-- wf:out id=finished-ai-assisted-example sha=8d5ef477e6a1 -->
+![The finished NE555 blinker: schematic generated from the reviewed plan, with the Copilot beside it](../assets/wf/docs/tutorial/ai-design/finished-ai-assisted-example.png)
+<!-- /wf:out -->
+
 ## Before you start
 
 You need a new project, an OpenRouter API key configured from **View → AI Copilot Chat**, suitable component libraries, and at least one usable simulation engine. Save the project before starting the request.
@@ -31,6 +56,66 @@ Include voltage, frequency, tolerances, package preferences, connector requireme
     3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
+
+<!-- wf:shot id=prompt-and-clarification
+caption: The NE555 request, then the first clarifying question
+project: none
+setup:
+- pick_folder: tutorials
+- menu:
+  - File
+  - New
+  - New Project (.prjxml)...
+- wait: 1
+- type:
+    text: NE555 Blinker
+- click_at:
+  - 634
+  - 485
+- wait: 2
+- menu:
+  - File
+  - New
+  - New Schematic (.schxml)
+- wait: 1
+- save_file: tutorials/NE555 Blinker.schxml
+- keys:
+  - Ctrl
+  - S
+- wait: 2
+- panel: ai
+- wait: 1
+- type:
+    ref: //AI Copilot Panel/##ChatInput
+    text: Design a 9 V NE555 astable LED blinker. Target 1 Hz, use a red LED, include current limiting
+      and supply decoupling, and identify every assumption that needs my confirmation.
+- keys:
+  - Enter
+- wait_for:
+    ref: //AI Copilot Panel/Use all suggestions & continue
+    timeout: 580
+    scroll_in: //AI Copilot Panel
+- menu:
+  - View
+  - Project Structure
+- action:
+    action: mouse_move_to
+    x: 120
+    y: 500
+- scroll: -400
+- wait: 1
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+capture:
+  window: AI Copilot Panel
+  padding: 4
+brief_sha256: fcd5386ecc342a33
+-->
+<!-- wf:out id=prompt-and-clarification sha=be5bbdfddf08 -->
+![The NE555 request, then the first clarifying question](../assets/wf/docs/tutorial/ai-design/prompt-and-clarification.png)
+<!-- /wf:out -->
 
 ## 2. Review the proposed design
 
@@ -53,6 +138,29 @@ Do not approve a component merely because its name matches. Package, pin numberi
     3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
+
+<!-- wf:shot id=component-review-tabs
+caption: Connections Netlist — every net of the NE555 blinker with the pins it joins and why
+project: samples/ne555-blinker/NE555 Blinker.prjxml
+setup:
+- open_project
+- panel: ai
+- wait: 2
+- click: //AI Copilot Panel/{fa:tasks}
+- wait: 2
+- &id001
+  action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+- tab: Connections Netlist
+- wait: 1
+- *id001
+brief_sha256: d76ed8651b6d7381
+-->
+<!-- wf:out id=component-review-tabs sha=e561de85fd1e -->
+![Connections Netlist — every net of the NE555 blinker with the pins it joins and why](../assets/wf/docs/tutorial/ai-design/component-review-tabs.png)
+<!-- /wf:out -->
 
 ## 3. Generate a missing component when required
 
@@ -83,6 +191,83 @@ A visual waveform that “looks right” is not a pass criterion. Use the A/B cu
     3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
+
+<!-- wf:shot id=measured-transient-result
+caption: 'Measured result: one period of the timer output between the A and B cursors'
+project: samples/ne555-blinker/NE555 Blinker.prjxml
+setup:
+- open_project
+- ensure_schematic
+- wait: 1
+- keys:
+  - F5
+- wait: 2
+- click_at:
+  - 385
+  - 760
+- wait: 1
+- action:
+    action: mouse_move_to
+    x: 240
+    y: 600
+- scroll: -3
+- wait: 0.5
+- type:
+    ref: //SPICE Circuit Simulation & Analysis/##DC
+    text: '9'
+- keys:
+  - Tab
+- click_at:
+  - 430
+  - 112
+- wait: 0.5
+- click: //##Combo_00/{fa:wave-square} Transient (.tran)
+- wait: 0.5
+- type:
+    ref: //SPICE Circuit Simulation & Analysis/##StopTime
+    text: '3000'
+- keys:
+  - Tab
+- type:
+    ref: //SPICE Circuit Simulation & Analysis/##TimeStep
+    text: '1'
+- keys:
+  - Tab
+- wait: 0.5
+- click_at:
+  - 489
+  - 112
+- wait: 12
+- &id001
+  action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+- click_at:
+  - 240
+  - 792
+- wait: 1
+- drag_at:
+    from:
+    - 682
+    - 500
+    to:
+    - 818
+    - 500
+- drag_at:
+    from:
+    - 1032
+    - 500
+    to:
+    - 1055
+    - 500
+- wait: 1
+- *id001
+brief_sha256: c270ffd33ab631a2
+-->
+<!-- wf:out id=measured-transient-result sha=32043ce35a8d -->
+![Measured result: one period of the timer output between the A and B cursors](../assets/wf/docs/tutorial/ai-design/measured-transient-result.png)
+<!-- /wf:out -->
 
 ## 5. Apply, place, and route
 

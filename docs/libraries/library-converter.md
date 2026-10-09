@@ -20,6 +20,26 @@ The window has two main areas:
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
+<!-- wf:shot id=local-library-manager-overview
+caption: Local Library Manager — import options and the loaded inventory
+setup:
+- open_project
+- ensure_schematic
+- wait: 1
+- menu:
+  - View
+  - Local Library Manager
+- wait: 2
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+brief_sha256: 5922ed51f81e3066
+-->
+<!-- wf:out id=local-library-manager-overview sha=fb46fca0158a -->
+![Local Library Manager — import options and the loaded inventory](../assets/wf/docs/libraries/library-converter/local-library-manager-overview.png)
+<!-- /wf:out -->
+
 ## Add a KiCad library folder
 
 1. Open **Local Library Manager**.
@@ -65,6 +85,39 @@ To import:
     4. **Result shot (3–4 s):** Expand the new entry under **Imported / Converted Libraries** and hold on its symbol/footprint counts.
     5. **Deliver:** Export a **12–18 second** 1080p MP4 with all private paths hidden.
 
+<!-- wf:video id=import-an-altium-library
+caption: Add library → Altium library, pick a SchLib, and it lands under Imported
+setup:
+- open_project
+- ensure_schematic
+- wait: 1
+- menu:
+  - View
+  - Local Library Manager
+- wait: 2
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+steps:
+- wait: 1
+- click: //Library Manager/{fa:plus}  Add library  {fa:caret-down}
+- wait: 1.2
+- open_file: wireframe:tests/data/altium_libraries/Schlib1.SchLib
+- click_at:
+  - 1412
+  - 178
+- wait: 3
+- click_at:
+  - 345
+  - 331
+- wait: 2.5
+brief_sha256: 28d9019b49f0e3cb
+-->
+<!-- wf:out id=import-an-altium-library sha=074e827582f7 -->
+<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/libraries/library-converter/import-an-altium-library.mp4" title="Add library → Altium library, pick a SchLib, and it lands under Imported"></video>
+<!-- /wf:out -->
+
 !!! warning "Review converted content"
     Library conversion is not manufacturing approval. Check the exact part variant, pin mapping, pad dimensions, footprint orientation, and model paths before using an imported component.
 
@@ -97,6 +150,37 @@ When editing symbol properties, use **Cancel** to discard the pending form edits
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
+<!-- wf:shot id=inventory-selection-and-cad-preview-tabs
+caption: An imported Altium library selected, with its parts and the Symbol / Footprint / 3D preview
+setup:
+- open_project
+- ensure_schematic
+- wait: 1
+- menu:
+  - View
+  - Local Library Manager
+- wait: 2
+- click: //Library Manager/{fa:plus}  Add library  {fa:caret-down}
+- wait: 1
+- open_file: wireframe:tests/data/altium_libraries/Schlib1.SchLib
+- click_at:
+  - 1412
+  - 178
+- wait: 3
+- click_at:
+  - 345
+  - 331
+- wait: 2
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+brief_sha256: 2609136198f1a6e8
+-->
+<!-- wf:out id=inventory-selection-and-cad-preview-tabs sha=13dfe979dc99 -->
+![An imported Altium library selected, with its parts and the Symbol / Footprint / 3D preview](../assets/wf/docs/libraries/library-converter/inventory-selection-and-cad-preview-tabs.png)
+<!-- /wf:out -->
+
 ### Short video — Inspect and correct an imported component
 
 !!! note "Video production brief"
@@ -105,6 +189,53 @@ When editing symbol properties, use **Cancel** to discard the pending form edits
     3. **Action shot (8–11 s):** Expand the entry, select a component, pause on **Symbol**, **Footprint**, and **3D Model** in order, then open **Edit Symbol Properties & Pins**.
     4. **Result shot (3–4 s):** Select **Cancel** and hold on the unchanged preview to demonstrate that no edit was saved.
     5. **Deliver:** Export a **15–20 second** 1080p MP4 using a visible pointer and no private path.
+
+<!-- wf:video id=inspect-and-correct-an-imported-component
+caption: Select the imported part, step through Symbol, Footprint and 3D, open Edit properties & pins
+setup:
+- open_project
+- ensure_schematic
+- wait: 1
+- menu:
+  - View
+  - Local Library Manager
+- wait: 2
+- click: //Library Manager/{fa:plus}  Add library  {fa:caret-down}
+- wait: 1
+- open_file: wireframe:tests/data/altium_libraries/Schlib1.SchLib
+- click_at:
+  - 1412
+  - 178
+- wait: 3
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+steps:
+- wait: 1
+- click_at:
+  - 345
+  - 331
+- wait: 1.5
+- click_at:
+  - 1176
+  - 268
+- wait: 1.5
+- click_at:
+  - 1305
+  - 268
+- wait: 1.5
+- click_at:
+  - 1045
+  - 268
+- wait: 1.5
+- click: //Library Manager/{fa:edit}  Edit properties & pins
+- wait: 2.5
+brief_sha256: 89b281d9b40e8642
+-->
+<!-- wf:out id=inspect-and-correct-an-imported-component sha=4ca34b486533 -->
+<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/libraries/library-converter/inspect-and-correct-an-imported-component.mp4" title="Select the imported part, step through Symbol, Footprint and 3D, open Edit properties &amp; pins"></video>
+<!-- /wf:out -->
 
 ## Component Library panel context actions
 

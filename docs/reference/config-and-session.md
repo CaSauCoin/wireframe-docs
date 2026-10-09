@@ -79,6 +79,25 @@ Renaming is preferable to immediate deletion because the previous settings remai
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
+<!-- wf:shot id=preferences-categories
+caption: Preferences with its category list
+setup:
+- open_project
+- wait: 1
+- menu:
+  - Preferences
+  - Preferences...
+- wait: 1
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+brief_sha256: be232845023a8ed3
+-->
+<!-- wf:out id=preferences-categories sha=265c4e3e38f0 -->
+![Preferences with its category list](../assets/wf/docs/reference/config-and-session/preferences-categories.png)
+<!-- /wf:out -->
+
 ### Short video — Recover a damaged workspace configuration
 
 !!! note "Video production brief"

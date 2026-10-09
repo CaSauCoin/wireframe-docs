@@ -67,6 +67,27 @@ Drag a panel by its title to dock it to another edge or tab group. Preferences c
     4. **Result shot (3–4 s):** Hold on the restored layout matching the opening state.
     5. **Deliver:** Export a **12–18 second** 1080p MP4 and replace media with obsolete **View** or **Preferences** labels.
 
+<!-- wf:video id=rearrange-and-restore-panels
+caption: Close a panel, then Preferences → Reset to Default Layout
+setup:
+- open_project
+- wait: 1
+steps:
+- wait: 1
+- click_at:
+  - 1447
+  - 36
+- wait: 2
+- menu:
+  - Preferences
+  - Reset to Default Layout
+- wait: 3
+brief_sha256: 194ebbf4934e46ed
+-->
+<!-- wf:out id=rearrange-and-restore-panels sha=2cc8c768f500 -->
+<video controls muted playsinline preload="metadata" src="../assets/wf/docs/ui-overview/rearrange-and-restore-panels.mp4" title="Close a panel, then Preferences → Reset to Default Layout"></video>
+<!-- /wf:out -->
+
 ## Project Structure
 
 The Project Structure panel lists the active project and linked schematics and PCBs. Use it to open documents and manage project membership. Standalone files appear separately from project-owned documents.
@@ -79,6 +100,23 @@ The Project Structure panel lists the active project and linked schematics and P
     3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
+
+<!-- wf:shot id=current-project-structure
+caption: Current Project Structure
+planned_by: agyserve · gemini-3.8-flash-high
+planned_at: '2026-10-05'
+setup:
+- open_project
+- open: '**/{fa:star} 7805_regulator.prjxml'
+- wait: 1.0
+capture:
+  window: Project Structure
+  padding: 8
+brief_sha256: b38c0f17fbfead10
+-->
+<!-- wf:out id=current-project-structure sha=b7da15508f75 -->
+![Current Project Structure](assets/wf/docs/ui-overview/current-project-structure.png)
+<!-- /wf:out -->
 
 ## Editor panel
 
@@ -125,6 +163,24 @@ Status messages and notification overlays report saves, imports, checks, and fai
     3. **Action shot (4–6 s):** Trigger the successful action and hold its notification, then trigger the non-destructive warning after the first overlay clears.
     4. **Result shot (2–3 s):** Hold on the warning long enough to read its message and severity styling.
     5. **Deliver:** Export an **8–12 second** 1080p MP4; replace the clip if the current overlay design differs.
+
+<!-- wf:video id=notification-and-status-feedback
+caption: An action reports back in a notification
+setup:
+- open_project
+- ensure_schematic
+- wait: 1
+steps:
+- wait: 1
+- menu:
+  - Tools
+  - Update Schematic to PCB
+- wait: 5
+brief_sha256: 5081b018a987adf6
+-->
+<!-- wf:out id=notification-and-status-feedback sha=3468c19a4b87 -->
+<video controls muted playsinline preload="metadata" src="../assets/wf/docs/ui-overview/notification-and-status-feedback.mp4" title="An action reports back in a notification"></video>
+<!-- /wf:out -->
 
 ## Current Preferences categories
 

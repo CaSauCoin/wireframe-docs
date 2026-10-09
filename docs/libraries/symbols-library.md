@@ -20,6 +20,26 @@ For project portability, keep required custom libraries with the project or in a
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
+<!-- wf:shot id=kicad-symbol-source-and-inventory
+caption: Local Library Manager — KiCad symbol sources and the active inventory
+setup:
+- open_project
+- ensure_schematic
+- wait: 1
+- menu:
+  - View
+  - Local Library Manager
+- wait: 2
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+brief_sha256: b68c58cfdbecfa22
+-->
+<!-- wf:out id=kicad-symbol-source-and-inventory sha=8d8c4486ac47 -->
+![Local Library Manager — KiCad symbol sources and the active inventory](../assets/wf/docs/libraries/symbols-library/kicad-symbol-source-and-inventory.png)
+<!-- /wf:out -->
+
 ## Review a symbol
 
 Before use, compare it with the exact datasheet:

@@ -42,6 +42,47 @@ Pasted groups preserve their relative geometry and follow the cursor until place
     4. **Result shot (3–4 s):** Press Undo once and hold on the restored schematic state.
     5. **Deliver:** Export a **15–20 second** 1080p MP4 and replace older media when selection styling or behavior differs.
 
+<!-- wf:video id=copy-place-and-undo-a-group
+caption: Box-select, copy, paste, place — then undo
+setup:
+- open_project
+- ensure_schematic
+- wait: 1
+- canvas_hover: U2
+- scroll: -3
+- wait: 1
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+steps:
+- wait: 1
+- canvas_box:
+  - U2
+  - C5
+  - C6
+- wait: 1
+- keys:
+  - Ctrl
+  - C
+- keys:
+  - Ctrl
+  - V
+- wait: 1
+- canvas_click:
+  - 1300
+  - 560
+- wait: 2
+- keys:
+  - Ctrl
+  - Z
+- wait: 2
+brief_sha256: 8cd5372ce5390660
+-->
+<!-- wf:out id=copy-place-and-undo-a-group sha=45d67407fade -->
+<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/advanced/selection-and-editing/copy-place-and-undo-a-group.mp4" title="Box-select, copy, paste, place — then undo"></video>
+<!-- /wf:out -->
+
 ## Schematic object interactions
 
 When you right-click a component that is not already selected, WireFrame selects it before opening the menu. Hold ++ctrl++ if you need to preserve the rest of the selection. A right-click on empty canvas clears the selection unless ++ctrl++ is held.
@@ -66,6 +107,24 @@ The **Move** submenu nudges a component **Up**, **Down**, **Left**, or **Right**
     3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
+
+<!-- wf:shot id=schematic-component-context-menu
+caption: Component context menu on the schematic
+setup:
+- open_project
+- ensure_schematic
+- wait: 1
+- canvas_click:
+    target: U2
+    button: right
+- wait: 0.5
+capture:
+  popups: true
+brief_sha256: 0b1830046fdd9add
+-->
+<!-- wf:out id=schematic-component-context-menu sha=600a7bb267b4 -->
+![Component context menu on the schematic](../assets/wf/docs/advanced/selection-and-editing/schematic-component-context-menu.png)
+<!-- /wf:out -->
 
 ### Short video — Move a component attribute safely
 
@@ -100,6 +159,29 @@ An action can be absent when too few compatible items are selected. Select the i
     3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
+
+<!-- wf:shot id=pcb-trace-context-menu
+caption: Trace context menu with two +5V traces selected
+setup:
+- open_project
+- ensure_pcb
+- wait: 1
+- canvas_click: trace:45
+- canvas_click:
+    target: trace:44
+    mods:
+    - Ctrl
+- canvas_click:
+    target: trace:44
+    button: right
+- wait: 0.5
+capture:
+  popups: true
+brief_sha256: 03f91b6ac02a4b69
+-->
+<!-- wf:out id=pcb-trace-context-menu sha=391bb8c6de9c -->
+![Trace context menu with two +5V traces selected](../assets/wf/docs/advanced/selection-and-editing/pcb-trace-context-menu.png)
+<!-- /wf:out -->
 
 ## Library clicks and context menus
 

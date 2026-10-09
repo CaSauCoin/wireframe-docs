@@ -18,9 +18,9 @@ Avoid requests such as “make a power supply” without ratings. Copilot can as
 
 ## Research and clarification
 
-After receiving the request, review the research summary and answer the displayed clarification questions. Select **Proceed to Design** when the answers are correct. Use **Skip (Use Defaults)** only for exploratory work.
+After receiving the request, review the research summary (**Module Analysis**) and answer the clarification questions shown under it, one at a time. Use **Next question** and **Back** to move between them; on the last question the button becomes **Start designing**. Use **Use all suggestions & continue** only for exploratory work.
 
-Each question offers one or more choices plus a **Custom** answer field. Selecting **Proceed to Design** submits the visible choices. **Skip (Use Defaults)** replaces the unanswered decisions with WireFrame's defaults; it is not an approval of production requirements.
+Each question offers one or more choices — the one marked **Suggested** is the Copilot's default — plus an **Or your own answer** field. **Start designing** submits your answers. **Use all suggestions & continue** fills every unanswered question with its suggestion and keeps each one listed as an explicit assumption; it is not an approval of production requirements.
 
 ### Image — Clarifying questions
 
@@ -30,6 +30,67 @@ Each question offers one or more choices plus a **Custom** answer field. Selecti
     3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
+
+<!-- wf:shot id=clarifying-questions
+caption: After the research step the Copilot asks its questions one at a time, with the suggested answer
+  marked
+project: none
+setup:
+- pick_folder: tutorials
+- menu:
+  - File
+  - New
+  - New Project (.prjxml)...
+- wait: 1
+- type:
+    text: NE555 Blinker
+- click_at:
+  - 634
+  - 485
+- wait: 2
+- menu:
+  - File
+  - New
+  - New Schematic (.schxml)
+- wait: 1
+- save_file: tutorials/NE555 Blinker.schxml
+- keys:
+  - Ctrl
+  - S
+- wait: 2
+- panel: ai
+- wait: 1
+- type:
+    ref: //AI Copilot Panel/##ChatInput
+    text: Design a 9 V NE555 astable LED blinker. Target 1 Hz, use a red LED, include current limiting
+      and supply decoupling, and identify every assumption that needs my confirmation.
+- keys:
+  - Enter
+- wait_for:
+    ref: //AI Copilot Panel/Use all suggestions & continue
+    timeout: 580
+    scroll_in: //AI Copilot Panel
+- menu:
+  - View
+  - Project Structure
+- action:
+    action: mouse_move_to
+    x: 120
+    y: 500
+- scroll: -400
+- wait: 1
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+capture:
+  window: AI Copilot Panel
+  padding: 4
+brief_sha256: 6c41f47d30dc22ee
+-->
+<!-- wf:out id=clarifying-questions sha=d9c1a487dbe4 -->
+![After the research step the Copilot asks its questions one at a time, with the suggested answer marked](../assets/wf/docs/ai/design-agent/clarifying-questions.png)
+<!-- /wf:out -->
 
 ## Review BOM components
 
@@ -61,6 +122,29 @@ An item marked **auto** was added by WireFrame support rules. Keep it only when 
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
+<!-- wf:shot id=bom-component-review
+caption: BOM Components for the NE555 blinker — every card with value, package, verification and actions
+project: samples/ne555-blinker/NE555 Blinker.prjxml
+setup:
+- open_project
+- panel: ai
+- wait: 2
+- click: //AI Copilot Panel/{fa:tasks}
+- wait: 2
+- &id001
+  action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+- click: //AI Planned BOM & Schematic Review/Needs attention first
+- wait: 1
+- *id001
+brief_sha256: ef4d4450ef1871b7
+-->
+<!-- wf:out id=bom-component-review sha=e0befd8cf391 -->
+![BOM Components for the NE555 blinker — every card with value, package, verification and actions](../assets/wf/docs/ai/design-agent/bom-component-review.png)
+<!-- /wf:out -->
+
 ## Review connections and netlist checks
 
 Open **Connections Netlist** to inspect named nets and referenced pins. Then open **Netlist Check** and resolve critical findings before placement or simulation.
@@ -89,6 +173,33 @@ Open **Blocks** and select **Generate Blocks**. Review the membership and purpos
     3. **Action shot (6–9 s):** Click **Generate Blocks**, keep one genuine running state, then cut to the completed cards and scan their titles and memberships.
     4. **Result shot (3–4 s):** Click **Send Blocks to Chat** and hold on the confirmation plus the resulting chat cards.
     5. **Deliver:** Export a **12–18 second** 1080p MP4; never hide an unresolved-library warning to make the send action appear successful.
+
+<!-- wf:video id=generate-and-review-functional-blocks
+caption: 'The Blocks tab: power input, NE555 oscillator and LED output, each scoped to its parts'
+project: samples/ne555-blinker/NE555 Blinker.prjxml
+setup:
+- open_project
+- panel: ai
+- wait: 2
+- click: //AI Copilot Panel/{fa:tasks}
+- wait: 2
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+steps:
+- wait: 1
+- tab: Blocks
+- wait: 2.5
+- tab: Netlist Check
+- wait: 2
+- tab: Blocks
+- wait: 2
+brief_sha256: 1a4d1c57917d68d3
+-->
+<!-- wf:out id=generate-and-review-functional-blocks sha=dae94a6f4664 -->
+<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/ai/design-agent/generate-and-review-functional-blocks.mp4" title="The Blocks tab: power input, NE555 oscillator and LED output, each scoped to its parts"></video>
+<!-- /wf:out -->
 
 ## Verify before applying
 

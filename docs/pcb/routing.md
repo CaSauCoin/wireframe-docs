@@ -27,6 +27,24 @@ The ratsnest connection disappears when the destination is electrically complete
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
+<!-- wf:shot id=completed-pad-to-pad-route
+caption: A completed +5V route on F.Cu, selected
+setup:
+- open_project
+- ensure_pcb
+- wait: 1
+- canvas_click: trace:45
+- wait: 0.5
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+brief_sha256: 28fa26183f831998
+-->
+<!-- wf:out id=completed-pad-to-pad-route sha=6a64dfe884c6 -->
+![A completed +5V route on F.Cu, selected](../assets/wf/docs/pcb/routing/completed-pad-to-pad-route.png)
+<!-- /wf:out -->
+
 | Action | Input |
 |---|---|
 | Start on a pad | Left-click |

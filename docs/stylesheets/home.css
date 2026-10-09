@@ -1,0 +1,254 @@
+/* WireFrame docs — landing page, learning paths and motion.
+ * Works on top of extra.css (colours: --md-primary-fg-color = #00E5FF).
+ * Every animation is switched off under prefers-reduced-motion. */
+
+/* colours: tokens from extra.css (--wf-line, --wf-muted, --wf-glow, --wf-grad) */
+
+/* ── Hero ─────────────────────────────────────────────────── */
+.wf-hero {
+    position: relative;
+    padding: 3.2rem 1rem 2.4rem;
+    margin: 0 0 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid var(--wf-line);
+    overflow: hidden;
+}
+/* soft moving light behind the title */
+.wf-hero::before {
+    content: "";
+    position: absolute;
+    inset: -40% -10% auto;
+    height: 140%;
+    background:
+        radial-gradient(38% 45% at 30% 40%, rgba(0, 229, 255, 0.16), transparent 70%),
+        radial-gradient(32% 40% at 72% 35%, rgba(139, 92, 246, 0.14), transparent 70%);
+    animation: wf-drift 14s ease-in-out infinite alternate;
+    pointer-events: none;
+    z-index: -1;
+}
+.wf-hero h1 {
+    font-size: clamp(2rem, 4.6vw, 3.3rem) !important;
+    line-height: 1.12 !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.02em;
+    margin: 0.4rem auto 1rem !important;
+    max-width: 18ch;
+}
+.wf-eyebrow {
+    display: inline-block;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--md-primary-fg-color);
+    border: 1px solid rgba(0, 229, 255, 0.35);
+    border-radius: 999px;
+    padding: 0.25rem 0.8rem;
+    margin: 0;
+}
+.wf-hero .wf-subtitle {
+    max-width: 46rem;
+    margin: 0 auto 1.6rem;
+    font-size: 1.02rem;
+    color: var(--wf-muted);
+}
+.wf-hero .md-button {
+    margin: 0.3rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.wf-hero .md-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px var(--wf-glow);
+}
+
+/* animated gradient text */
+.wf-gradient-text {
+    background: linear-gradient(90deg, #00e5ff, #8b5cf6, #22d3ee, #00e5ff);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: wf-shine 8s linear infinite;
+}
+
+/* ── Section titles ───────────────────────────────────────── */
+.md-typeset h2.wf-section-title {
+    margin-top: 2.6rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+.md-typeset h2.wf-section-title::after {
+    content: "";
+    display: block;
+    width: 3rem;
+    height: 3px;
+    margin-top: 0.45rem;
+    border-radius: 3px;
+    background: var(--wf-grad);
+}
+
+/* ── Cards (Material "grid cards") ────────────────────────── */
+.md-typeset .grid.cards > ul > li,
+.md-typeset .grid > .card {
+    border: 1px solid var(--wf-line) !important;
+    border-radius: 12px !important;
+    background: var(--wf-surface);
+    transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+}
+.md-typeset .grid.cards > ul > li:hover {
+    transform: translateY(-4px);
+    border-color: rgba(0, 229, 255, 0.55) !important;
+    box-shadow: 0 12px 32px -12px var(--wf-glow);
+}
+.md-typeset .grid.cards .lg {
+    font-size: 1.9em;
+    color: var(--md-primary-fg-color);
+}
+.wf-paths li a { font-weight: 600; }
+
+/* tour cards: screenshot on top, cropped to a neat strip */
+.wf-tour li > p:first-child { margin: -0.8rem -0.8rem 0.6rem; }
+.wf-tour li img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 8;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 12px 12px 0 0;
+    transition: transform 0.4s ease, filter 0.4s ease;
+    filter: saturate(0.85) brightness(0.9);
+}
+.wf-tour li { overflow: hidden; }
+.wf-tour li:hover img { transform: scale(1.04); filter: none; }
+
+/* ── "First hour" timeline ────────────────────────────────── */
+.wf-steps {
+    position: relative;
+    margin: 1.2rem 0 0.5rem;
+    padding-left: 0.2rem;
+}
+.wf-steps::before {
+    content: "";
+    position: absolute;
+    left: 1.15rem;
+    top: 0.6rem;
+    bottom: 0.6rem;
+    width: 2px;
+    background: linear-gradient(180deg, var(--wf-cyan), var(--wf-violet), transparent);
+    opacity: 0.6;
+}
+.wf-step {
+    position: relative;
+    padding: 0.2rem 0 0.9rem 3.2rem;
+}
+.wf-step-num {
+    position: absolute;
+    left: 0;
+    top: 0.15rem;
+    width: 2.3rem;
+    height: 2.3rem;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    font-weight: 700;
+    color: #001418;
+    background: linear-gradient(135deg, #00e5ff, #8b5cf6);
+    box-shadow: 0 0 0 4px var(--md-default-bg-color), 0 0 18px var(--wf-glow);
+}
+.md-typeset .wf-step h3 { margin: 0.25rem 0 0.25rem; }
+.md-typeset .wf-step h3 small,
+.md-typeset .wf-path small {
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: var(--md-primary-fg-color);
+    border: 1px solid rgba(0, 229, 255, 0.35);
+    border-radius: 999px;
+    padding: 0.05rem 0.5rem;
+    margin-left: 0.4rem;
+    vertical-align: middle;
+}
+.md-typeset .wf-step p { margin: 0; color: var(--wf-muted); }
+
+/* ── Learning path checklists ─────────────────────────────── */
+.md-typeset .wf-path .task-list-item {
+    padding: 0.55rem 0.8rem 0.55rem 2.2rem;
+    margin: 0.35rem 0;
+    border: 1px solid var(--wf-line);
+    border-radius: 10px;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+.md-typeset .wf-path .task-list-item:hover {
+    border-color: rgba(0, 229, 255, 0.45);
+    background: rgba(0, 229, 255, 0.04);
+}
+.md-typeset .wf-path .task-list-control { left: 0.75rem; top: 0.7rem; position: absolute; }
+.md-typeset .wf-path .task-list-item { position: relative; list-style: none; }
+
+/* ── Small help strip ─────────────────────────────────────── */
+.wf-help {
+    margin-top: 2rem;
+    padding: 0.9rem 1.1rem;
+    border-radius: 10px;
+    border: 1px dashed rgba(0, 229, 255, 0.35);
+    text-align: center;
+}
+
+/* ── Reading comfort on every page ────────────────────────── */
+.md-typeset img { border-radius: 8px; }
+.md-typeset video {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid var(--wf-line);
+    box-shadow: 0 10px 30px -18px rgba(0, 0, 0, 0.9);
+}
+.md-typeset a:not(.md-button) {
+    text-decoration: underline;
+    text-decoration-color: rgba(0, 229, 255, 0.35);
+    text-underline-offset: 3px;
+    transition: text-decoration-color 0.2s ease;
+}
+.md-typeset a:not(.md-button):hover { text-decoration-color: currentColor; }
+.md-typeset .grid.cards a, .md-typeset .headerlink { text-decoration: none; }
+
+/* ── Reveal on scroll (no JS: scroll-driven where supported) ─ */
+@supports (animation-timeline: view()) {
+    .wf-reveal,
+    .md-typeset .grid.cards > ul > li {
+        animation: wf-fade-up linear both;
+        animation-timeline: view();
+        animation-range: entry 0% cover 22%;
+    }
+}
+
+/* ── Keyframes ────────────────────────────────────────────── */
+@keyframes wf-shine { to { background-position: 300% 0; } }
+@keyframes wf-drift {
+    from { transform: translate3d(-3%, 0, 0); }
+    to   { transform: translate3d(3%, 4%, 0); }
+}
+@keyframes wf-fade-up {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .wf-gradient-text, .wf-hero::before,
+    .wf-reveal, .md-typeset .grid.cards > ul > li { animation: none !important; }
+    .md-typeset .grid.cards > ul > li:hover,
+    .wf-tour li:hover img, .wf-hero .md-button:hover { transform: none; }
+}
+
+@media screen and (max-width: 44.9375em) {
+    .wf-hero { padding: 2.2rem 0.2rem 1.8rem; }
+    .wf-step { padding-left: 2.9rem; }
+}
+
+/* the hero title is not something to link to */
+.wf-hero .headerlink { display: none; }
+
+/* a ticked step in a learning path */
+.md-typeset .wf-path .task-list-item.wf-done { opacity: 0.55; }
+.md-typeset .wf-path .task-list-item.wf-done a { text-decoration: line-through; }
+
+/* the content-page h1 underline and h2 rule do not belong on the landing page */
+.wf-hero h1::after { display: none; }
+.md-typeset h2.wf-section-title { border-top: 0; padding-top: 0; }

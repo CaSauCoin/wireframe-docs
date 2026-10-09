@@ -15,6 +15,66 @@ Add the expected load, choose a signal, define an acceptable limit, and run the 
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
+<!-- wf:shot id=testbench-with-load-and-assertion
+caption: The Testbench tab — loads, assertions and the last run
+project: samples/ne555-blinker/NE555 Blinker.prjxml
+setup:
+- open_project
+- ensure_schematic
+- wait: 1
+- keys:
+  - F5
+- wait: 2
+- click_at:
+  - 385
+  - 760
+- wait: 1
+- action:
+    action: mouse_move_to
+    x: 240
+    y: 600
+- scroll: -3
+- wait: 0.5
+- type:
+    ref: //SPICE Circuit Simulation & Analysis/##DC
+    text: '9'
+- keys:
+  - Tab
+- click_at:
+  - 430
+  - 112
+- wait: 0.5
+- click: //##Combo_00/{fa:wave-square} Transient (.tran)
+- wait: 0.5
+- type:
+    ref: //SPICE Circuit Simulation & Analysis/##StopTime
+    text: '3000'
+- keys:
+  - Tab
+- type:
+    ref: //SPICE Circuit Simulation & Analysis/##TimeStep
+    text: '1'
+- keys:
+  - Tab
+- wait: 0.5
+- click_at:
+  - 489
+  - 112
+- wait: 12
+- &id001
+  action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+- tab: Testbench
+- wait: 1
+- *id001
+brief_sha256: 65c8b420720e7d67
+-->
+<!-- wf:out id=testbench-with-load-and-assertion sha=15f8f8b9952a -->
+![The Testbench tab — loads, assertions and the last run](../assets/wf/docs/simulation/testbenches-and-measurements/testbench-with-load-and-assertion.png)
+<!-- /wf:out -->
+
 Open the Simulation Workbench and select the **Testbench** tab. The heading shows whether you are editing the whole-sheet testbench or one selected circuit block.
 
 ## Add a load
