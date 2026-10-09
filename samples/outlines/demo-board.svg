@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80.0mm" height="60.0mm" viewBox="0 0 80.0 60.0">
+  <!-- WireFrame documentation sample: fictional 80 x 60 mm board -->
+  <rect x="0" y="0" width="80.0" height="60.0" rx="3.0" ry="3.0" fill="none" stroke="black" stroke-width="0.1"/>
+  <rect x="50.0" y="10.0" width="20.0" height="12.0" fill="none" stroke="black" stroke-width="0.1"/>
+  <circle cx="4.0" cy="56.0" r="1.6" fill="none" stroke="black" stroke-width="0.1"/><circle cx="4.0" cy="4.0" r="1.6" fill="none" stroke="black" stroke-width="0.1"/><circle cx="76.0" cy="56.0" r="1.6" fill="none" stroke="black" stroke-width="0.1"/><circle cx="76.0" cy="4.0" r="1.6" fill="none" stroke="black" stroke-width="0.1"/>
+</svg>

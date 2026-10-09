@@ -29,7 +29,7 @@ Open **Preferences** and use the relevant category:
 | Panels or workspace | Docking, panel behavior, multi-monitor options |
 | Grid and editing | Grid visibility, snapping, rotation, PCB defaults |
 | Simulation | Engine executables, analysis, transient defaults |
-| AI | OpenRouter key and model |
+| AI | Endpoint, API key (hosted providers only), design and fast model ids |
 | Version and account | Tier, version, and update information |
 
 Close Preferences after confirming the new value. For an important project, restart WireFrame once and verify that the setting persists.

@@ -41,26 +41,58 @@ From **Simulate & Verify**, use **Run Schematic Auto-Router** only after library
 
 Use Undo or **Revise Design** when the result is not acceptable.
 
-## Update and place the PCB
+## Update the schematic to a PCB
 
-After the schematic is approved, use **Tools → Update Schematic to PCB**. Arrange footprints by function, then verify:
+After the schematic is approved, use **Tools → Update Schematic to PCB**. Then give the board its shape — **File → Import → CAD Outline**, `/board`, or the **Board Fit** tab (see [Board Shape and Outline](../pcb/board-outline.md)). The layout refuses a board with no outline.
 
-- connectors and controls are reachable;
-- decoupling parts are close to the intended pins;
-- power paths are short and wide enough;
-- noisy and sensitive blocks are separated;
-- board-edge and mechanical clearances are respected.
+## Lay the PCB out with `/layout`
 
-## Run PCB auto-routing
+With the PCB open, type `/layout` in AI Copilot. The layout runs on a **copy** of the board in five stages, shown on a live card in the chat as they happen:
 
-If using an automatic PCB route:
+| Stage | What it does |
+|---|---|
+| **Place** | Puts parts on the board: connectors to the edge facing out, each functional block around its busiest part, decoupling capacitors against the pins they serve |
+| **Planes** | Adds the copper pours the design rules ask for; a split plane gives each rail the region over its own loads |
+| **Vias** | A fanout via for every surface pad of a plane net, into its own rail's region; thermal via arrays in exposed pads |
+| **Route** | Tracks for every net no plane or pour carries. Nothing is forced: a net that cannot be routed cleanly is named, never shipped with a violation |
+| **Stitch** | Ground stitching and the edge via fence, after the tracks |
 
-1. Finalize board outline and placement first.
-2. Confirm net classes and design rules.
-3. Run the router.
-4. Inspect every via, layer transition, clearance, and unrouted net.
-5. Manually repair critical power, high-speed, RF, differential, and sensitive analog paths.
-6. Run DRC and DFM.
+**Nothing changes on the board until you apply.** The card has **Stop** while it runs, then **Apply to the board** (or **Apply this option**) and **Discard**. After applying, **Ctrl+Z** takes it back one stage at a time.
+
+### Choose the copper layer count first
+
+The number of copper layers sets the board's price and what the layout can do — 2 layers is cheapest (rails routed, ground poured), 4 layers adds inner ground and power planes. It is **your** decision: Copilot asks for it before the first layout and records the answer for the project; it does not lay a board out until you have answered.
+
+### Ways to use `/layout`
+
+| You type | What happens |
+|---|---|
+| `/layout` | All stages, no model call |
+| `/layout place,route` | Only the stages you list (`place`, `planes`, `vias`, `route`, `stitch`) — no model call |
+| `/layout apply` | Commits the proposed layout; `/layout apply option <name>` commits one compared option |
+| `/layout discard` | Throws the proposal away; the board stays as it was |
+| `/layout rules` | Prints the layout rules in force (net classes, widths, clearances) |
+| `/layout check` | Checks the board as it stands; `/layout check full` lists every item |
+| `/layout <what you want>` | Copilot plans the layout from your request — for example *"keep the keypad together and route on two layers"* |
+
+With a free-text request, Copilot can lay the board out **several ways and compare them** (parts placed, connections routed, vias, copper, overlaps, parts off the board, decoupling distance, blockers), show the table, say which the numbers favour, and **ask which to apply**. When you ask for the board to be finished rather than for options, it can keep improving a layout round by round — each round listed with its reason — until everything is placed and routed or no change helps.
+
+Copilot changes a net class (a narrower track or a smaller clearance) only if you allowed rule changes, never below the fabricator's minimum, and never below **0.10 mm** track/space on 1- and 2-layer boards. It tells you which classes it changed and asks you to accept them.
+
+### Short video — Lay out a board with /layout
+
+!!! note "Video production brief"
+    1. **Prepare:** Open the sample project's PCB with a board outline, the copper layer count already chosen, and parts not yet placed.
+    2. **Opening shot (1–2 s):** Show the unplaced board and the AI Copilot chat side by side.
+    3. **Action shot (8–12 s):** Type `/layout` and let the live card run through Place, Planes, Vias, Route, and Stitch; cut only waiting time.
+    4. **Result shot (3–4 s):** Hold on the finished card with its routed count and the **Apply to the board** and **Discard** buttons visible, then press **Apply to the board**.
+    5. **Deliver:** Export a **15–20 second** 1080p MP4 and keep the stage labels readable.
+
+### Review an applied layout
+
+1. Inspect every via, layer transition, clearance, and connection the router named as unrouted.
+2. Manually repair critical power, high-speed, RF, differential, and sensitive analog paths.
+3. Run **DFM & DRC Check**.
 
 ### Short video — Review an automatic route
 
@@ -70,6 +102,10 @@ If using an automatic PCB route:
     3. **Action shot (6–10 s):** Apply the route, show the F.Cu-to-B.Cu transition at the via, then open and run **DFM & DRC Check**. Cut only inactive processing time.
     4. **Result shot (3–4 s):** Hold on the reduced ratsnest count and the actual check summary; do not stop on a progress animation.
     5. **Deliver:** Export a **12–18 second** 1080p MP4 and retain enough resolution to inspect both layer colors.
+
+## One board or a tower: `/topology`
+
+`/topology` asks whether the product should be one board or a stack of boards, and if a stack, which part goes on which board. The options are measured side by side from the design and any 3D files on the **Board Fit** tab; without a design, only the available room is measured. See [Enclosure Fit and Multi-Board Products](../advanced/enclosure-and-assembly.md).
 
 ## Manual override is expected
 
@@ -81,6 +117,8 @@ The previous page documented clustering algorithms, A* internals, route-order im
 
 ## See also
 
+- [Copilot Commands](commands.md)
+- [Board Shape and Outline](../pcb/board-outline.md)
 - [AI Design Agent](design-agent.md)
 - [PCB Footprints and Placement](../pcb/footprints-and-placement.md)
 - [Routing Traces](../pcb/routing.md)
