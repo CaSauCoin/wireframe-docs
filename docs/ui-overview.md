@@ -12,7 +12,7 @@ Use **File** to:
 
 - create a project, schematic, or PCB;
 - open a WireFrame file or project;
-- import a KiCad project or SVG board outline;
+- import a KiCad project or an SVG/DXF board outline;
 - save the active document;
 - export schematic PDF, PCB PDF, or fabrication outputs;
 - edit schematic page settings;
@@ -35,8 +35,10 @@ Use **View** to show or hide:
 - Local Library Manager;
 - AI Copilot Chat;
 - PCB Layers;
-- Zone Manager;
-- Design Rules.
+- Zone Manager (**Shift+B**) — see [Zone Manager](pcb/zones-and-planes.md#zone-manager);
+- Design Rules;
+- 3D Viewer;
+- Performance HUD — a frame-time overlay; see the FAQ entry *The canvas feels slow or stutters* under [Schematic and PCB](faq.md#schematic-and-pcb).
 
 ### Tools
 
@@ -186,12 +188,15 @@ brief_sha256: 5081b018a987adf6
 
 | Category | Includes |
 |---|---|
-| Application | Theme, units, autosave |
-| Panels | Detachable panels, follow behavior, layouts and presets |
-| Grid | Visibility, crosshair, snap, step, rotation, PCB defaults |
-| Simulation | Engine paths, default analysis, transient defaults |
-| AI | Provider key and model settings |
-| About / Updates | Version, tier, update check |
+| **Common** | Appearance (theme), units, autosave |
+| **Workspace** | Panels, window behavior, layout presets |
+| **Grid & Snap** | Grid visibility and step, snapping |
+| **Editing** | Rotation step, PCB defaults such as the default trace width for new boards |
+| **Hotkeys** | Key bindings — click a binding to record a new combination |
+| **Simulation** | Engine paths (ngspice, Xyce, LTspice), default analysis, transient defaults |
+| **3D Viewer** | Materials of the 3D board preview: solder mask, trace under mask, pad plating, silkscreen |
+| **AI Assistant** | Endpoint, API key, design and fast models — see [AI Copilot](ai/index.md#configure-ai-access) |
+| **Packages and Updates** | Version, tier, and update check |
 
 Select **OK** to keep changes or **Cancel** to discard pending dialog changes.
 
