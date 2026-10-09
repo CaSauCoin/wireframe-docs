@@ -75,6 +75,26 @@ The higher-priority zone owns the overlapping copper area; the lower-priority zo
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
+<!-- wf:shot id=overlapping-zones-with-different-priorities
+caption: Zone Manager — the board's GND pours with their layer, priority and clearance
+setup:
+- open_project
+- ensure_pcb
+- wait: 1
+- menu:
+  - View
+  - Zone Manager
+- wait: 1
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+brief_sha256: 2cc4a83854365dd4
+-->
+<!-- wf:out id=overlapping-zones-with-different-priorities sha=cd6fd7b81f01 -->
+![Zone Manager — the board's GND pours with their layer, priority and clearance](../assets/wf/docs/pcb/zones-and-planes/overlapping-zones-with-different-priorities.png)
+<!-- /wf:out -->
+
 !!! tip "Priority guidelines"
     - Ground plane → priority **0** (lowest)
     - VCC island inside the GND plane → priority **1**

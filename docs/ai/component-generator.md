@@ -1,29 +1,27 @@
-# AI Component Generator
+# Fix or Create a Component
 
-Use **AI Component Generator** when a design needs a physical component that is not ready in your project library. WireFrame can create a schematic symbol and a matching PCB footprint from a known template or from a manufacturer datasheet.
+When the AI design needs a part your libraries do not have — or a part whose symbol or land pattern is wrong — WireFrame repairs it **through the AI panel**, with the datasheet as evidence, and shows you every change before it is saved. There is no separate generator window: you ask for the fix in the chat, review the plan, and apply it.
 
-Generated library items are a starting point for review. Always compare the result with the exact manufacturer part number, pin table, package drawing, and recommended land pattern before using it in a board.
+!!! warning "A generated or repaired part is a starting point"
+    Compare the result with the exact manufacturer part number, pin table, package drawing and recommended land pattern before you use it on a board you will order.
 
-## Before you start
+## Find the parts that need work
 
-Prepare the following information:
+Open the design's **Component Review** (the { fa-tasks } button in the AI Copilot panel) and stay on **BOM Components**. Keep **Needs attention first** ticked: cards that block the design come to the top.
 
-- the exact manufacturer part number;
-- the package variant, such as `SOIC-8`, `TQFP-48`, or `QFN-32`;
-- the physical pin or pad count;
-- the manufacturer datasheet for any uncommon or package-sensitive part;
-- a writable project library location.
+A card needs work when it shows one of these:
 
-Avoid generating from a family name alone. For example, `STM32`, `USB-C connector`, or `5 V regulator` can refer to many incompatible pinouts and packages.
+| Card shows | Meaning |
+|---|---|
+| **Not in Pool** | No symbol + footprint in your libraries matches this row yet |
+| A pin or pad count mismatch | The symbol and the land pattern disagree about the part's contacts |
+| **Inspect both previews, then confirm them** | The pair was bound automatically and is waiting for a person |
 
-## Open the generator
+Each card has three ways forward:
 
-1. Open the AI design's **Component Review**.
-2. Find a component marked **Not in Pool**, **Symbol not in Pool**, or showing a pin-count mismatch.
-3. Confirm its **Value** and **Footprint Package**.
-4. Select **AI Gen** on that component card.
-
-To create straightforward missing parts in one pass, select **AI Gen Missing** below the component list. Use this bulk action only when the component names, packages, and pin counts are already unambiguous. Review every generated result afterward.
+- **Create** searches WireFrame's published library for this exact part first — most common parts already ship a checked symbol, footprint and 3D model — and opens the Symbol Library Editor only when it is not there.
+- **Import** adds a library file you already have (KiCad, or an Altium library).
+- **`/fix <refdes> …`** in the AI panel asks the Copilot to repair or build the part. The card tells you the exact form to type.
 
 ### Image — Missing component card and AI Gen action
 
@@ -34,6 +32,84 @@ To create straightforward missing parts in one pass, select **AI Gen Missing** b
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
+<!-- wf:shot id=missing-component-card-and-ai-gen-action
+caption: U1 (NE555P) marked Not in Pool, with Create and Import, and the /fix hint
+setup:
+- pick_folder: tutorials
+- menu:
+  - File
+  - New
+  - New Project (.prjxml)...
+- wait: 1
+- type:
+    text: NE555 Blinker
+- click_at:
+  - 634
+  - 485
+- wait: 2
+- menu:
+  - File
+  - New
+  - New Schematic (.schxml)
+- wait: 1
+- save_file: tutorials/NE555 Blinker.schxml
+- keys:
+  - Ctrl
+  - S
+- wait: 2
+- panel: ai
+- wait: 1
+- type:
+    ref: //AI Copilot Panel/##ChatInput
+    text: Design a 9 V NE555 astable LED blinker. Target 1 Hz, use a red LED, include current limiting
+      and supply decoupling, and identify every assumption that needs my confirmation.
+- keys:
+  - Enter
+- wait: 25
+- menu:
+  - View
+  - Project Structure
+- action:
+    action: mouse_move_to
+    x: 120
+    y: 500
+- scroll: -400
+- wait: 1
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+- click: //AI Copilot Panel/Use all suggestions & continue
+- wait: 300
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+brief_sha256: 37b6ba5839330c49
+-->
+<!-- wf:out id=missing-component-card-and-ai-gen-action sha=a2890f8c5313 -->
+![U1 (NE555P) marked Not in Pool, with Create and Import, and the /fix hint](../assets/wf/docs/ai/component-generator/missing-component-card-and-ai-gen-action.png)
+<!-- /wf:out -->
+
+## Repair a part with `/fix`
+
+Type the reference designator and what is wrong, in plain words:
+
+```text
+/fix U1 the symbol's pins have no names, take them from the datasheet
+/fix D1 use a 3 mm LED instead of 5 mm
+/fix J1 this is a 2-pin 2.54 mm header, not a screw terminal
+```
+
+What happens next:
+
+1. **Evidence.** WireFrame looks for the part's datasheet: a file you attached, then the published index, then the web. Only pages WireFrame downloads and reads itself count as evidence.
+2. **Plan.** The Copilot proposes a repair — the pin table, the package, the land pattern — and WireFrame validates it against that evidence and its package rules before showing it to you.
+3. **Review.** The plan appears in the chat with **Apply**, **Attach datasheet…** and **Cancel**. Nothing has changed yet.
+4. **Apply.** WireFrame writes the symbol and footprint to the project library, opens the editor and replays the repair so you can watch the pins and pads being drawn, then re-checks the card.
+
+Attach the manufacturer's PDF with **Attach datasheet…** whenever the part is not a common one: a clean datasheet is the best evidence there is.
+
 ### Short video — Generate all missing components
 
 !!! note "Video production brief"
@@ -42,30 +118,6 @@ To create straightforward missing parts in one pass, select **AI Gen Missing** b
     3. **Action shot (3–5 s):** Move once to **AI Gen Missing**, click, and show the first visible generation status. Cut out only inactive waiting time; do not accelerate or fabricate progress.
     4. **Result shot (2–3 s):** Hold on the refreshed cards showing **Found in Pool** and readable pin counts.
     5. **Deliver:** Export an **8–12 second**, 16:9, 1080p MP4; keep the pointer visible and exclude unrelated panels.
-
-## Choose a generation method
-
-| Method | Best for | What you must verify |
-|---|---|---|
-| **From Template** | Common packages and familiar parts with a clear pin count | Selected schematic template, footprint template, package variant, and pin count |
-| **From Datasheet** | ICs, connectors, uncommon packages, or any uncertain pinout | Datasheet revision, extracted pin table, dimensions, pitch, pad sizes, and orientation |
-
-When WireFrame reports that it is not confident about the pinout, stop template generation and use the manufacturer's datasheet.
-
-## Generate from a template
-
-This is the faster option and should be the first choice for standard resistors, capacitors, headers, common IC packages, and other parts with an unambiguous physical form.
-
-1. Open the **From Template** tab.
-2. Add a short description when the component name does not fully identify its function or package.
-3. Select **Research & Select Template**.
-4. Read the AI recommendation.
-5. Check **PCB Template**, **SCH Template**, and **Pin Count**.
-6. Correct any field that does not match the exact part.
-7. Select **Generate from Template**.
-8. If the recommendation is wrong, update the description and select **Retry Research**.
-
-WireFrame prefers a matching verified library footprint when one is available. Otherwise, it builds from the selected template.
 
 ### Image — Review the template recommendation
 
@@ -76,68 +128,23 @@ WireFrame prefers a matching verified library footprint when one is available. O
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
-### Image — Low-confidence pinout warning
+## Inspect the result
 
-!!! note "Image capture brief"
-    1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
-    2. **Build the frame:** Capture the amber **AI not confident about the pinout** state with a generic symbol recommendation. The image must also show the guidance to use **From Datasheet** or retry research. Suggested size: **1000 × 500 px**.
-    3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
-    4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
-    5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
+After a repair, select **Manage** on the card to open the part in the library editors. Check, against the datasheet:
 
-## Generate from a datasheet
+**Symbol**
 
-Use this method when pin numbers or mechanical dimensions cannot be safely inferred from the component name.
+- the pin count, and every pin number against its name;
+- power, ground, no-connect and exposed-pad pins;
+- the reference prefix and the default footprint.
 
-1. If possible, complete **Research & Select Template** first so WireFrame has an expected package and pin count.
-2. Open the **From Datasheet** tab.
-3. Select **Browse File**.
-4. Attach the manufacturer's PDF datasheet or a clear image of the relevant pinout and mechanical drawing.
-5. Confirm that the file shown in the dialog is the correct revision.
-6. Select **Generate from Datasheet**.
-7. Wait for extraction and generation to finish. You may select **Close (keeps running)** without cancelling the active request.
+**Footprint**
 
-The window is modal while visible: other app controls remain inactive until you close it. During research or generation, **Close (keeps running)** dismisses only the window. When idle, the same footer action is **Cancel**. Successful generation closes the modal automatically; a failure remains visible in the modal so you can correct the input.
+- pad count, pitch, pad size and drill;
+- pin 1 position and the package outline;
+- courtyard, silkscreen and fabrication layers.
 
-For a PDF, WireFrame looks for pinout and mechanical sections and uses the relevant text and drawing pages. A clean manufacturer PDF normally produces a more reliable result than a distributor screenshot or a scanned document.
-
-!!! info "Datasheet privacy"
-    Datasheet text and relevant images are sent to the configured AI provider for analysis. Do not attach confidential, licensed, or export-controlled documents unless your organization permits that use.
-
-### Short video — Create a component from a datasheet
-
-!!! note "Video production brief"
-    1. **Prepare:** Download a public manufacturer PDF to a neutral demo path and open the target component's **From Datasheet** tab.
-    2. **Opening shot (1–2 s):** Show the empty attachment state, target part number, and **Browse File**.
-    3. **Action shot (6–9 s):** Click **Browse File**, choose the prepared PDF, confirm its filename, then select **Generate from Datasheet**. Use a hard cut across long processing while retaining one honest progress state.
-    4. **Result shot (3–4 s):** End on the refreshed Component Review card, then briefly show matching generated symbol pins and footprint pads.
-    5. **Deliver:** Export a **12–18 second**, 16:9, 1080p MP4. Hide usernames, private paths, keys, and confidential documents.
-
-## Review the generated component
-
-After successful generation, WireFrame saves the symbol and footprint to the writable project library, refreshes the library pool, and updates the component card. Do not continue to placement until the symbol, footprint, and pin count agree.
-
-Review these items against the datasheet:
-
-### Symbol checklist
-
-- every physical pin is present;
-- pin numbers and names match the exact package variant;
-- power, ground, input, output, and passive electrical types are appropriate;
-- hidden or stacked power pins still represent real package pins;
-- the reference prefix and component value are appropriate;
-- no-connect and exposed-pad requirements are understood.
-
-### Footprint checklist
-
-- pad count matches the symbol's physical pin count;
-- pad numbering and pin-1 orientation match the datasheet;
-- surface-mount or through-hole technology is correct;
-- pitch, row spacing, drill size, and pad dimensions match the recommended land pattern;
-- thermal or exposed pads are present when required;
-- silkscreen, courtyard, and body outline do not obscure pads or violate assembly clearance.
-
-Select **Manage** on the component card to inspect or correct the generated symbol and footprint in the library editors. Save your changes, then let Component Review re-check the library assignment.
+Save corrections in the editor; Component Review re-checks the card on its own.
 
 ### Image — Inspect the generated symbol and footprint
 
@@ -148,11 +155,11 @@ Select **Manage** on the component card to inspect or correct the generated symb
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
-## Confirm generated library knowledge
+## Confirm the part
 
-WireFrame records an electrical description for a generated symbol as unverified library knowledge. In **Library Pool Settings**, confirm it only after you have checked the stated rules against the manufacturer datasheet.
+A repaired or automatically bound part is not trusted until a person confirms it. Select the card, look at the **Schematic Symbol View** and **Physical Footprint View**, then press **Confirm this component**. When several rows share the same symbol and footprint, one confirmation covers all of them — the button says how many.
 
-Do not confirm a record merely because the symbol looks correct. Confirmation means you accept the pin behavior and electrical constraints for later design checks.
+What WireFrame learns about a part (its electrical contract) belongs to the part, not to one project, and is reused on every board:
 
 ### Image — Confirm an AI-generated library contract
 
@@ -167,30 +174,22 @@ Do not confirm a record merely because the symbol looks correct. Confirmation me
 
 | Message or result | What to do |
 |---|---|
-| **AI not confident about the pinout** | Attach the exact manufacturer datasheet instead of using a generic template |
-| **No file attached** | Add a PDF, PNG, or JPG in **From Datasheet** |
-| **No writable project library directory** | Save or open the project and configure a writable project library location |
-| **Another AI generation request is already running** | Wait for the active component to finish before starting another |
-| The rest of the app does not respond | The generator is a modal. Close it with its title-bar close control, **Cancel**, or **Close (keeps running)** |
-| The popup closed while generation was active | The request continues in the background; return to Component Review and wait for the card to refresh |
-| Wrong package or pad count | Correct the package and pin count, then retry; do not resize the result by eye |
-| Generation request failed | Check the AI connection and account allowance, then retry with a smaller or clearer input |
-| Generated part is found but still shows a mismatch | Open **Manage**, compare symbol pins with footprint pads, save corrections, and re-check the library pool |
+| "Which part? Name its refdes" | Start the request with the designator: `/fix U4 …` |
+| "… is not a row in this design" | Use one of the designators the message lists |
+| "Still working on the last library request" | Wait for the running repair to finish |
+| The plan is refused or keeps the wrong package | Attach the exact manufacturer datasheet and ask again |
+| No writable project library | Save the project first; repaired parts go into its `lib_<project>` folder |
+| The part is found but still shows a mismatch | Open **Manage**, compare symbol pins with footprint pads, save, and let the card re-check |
 
 ## Release checklist
 
-Before using an AI-generated component in a release design:
-
-- record the exact manufacturer part number and datasheet revision;
-- complete both symbol and footprint checklists;
-- run ERC after placing the symbol;
-- run DRC and DFM after placing the footprint;
-- inspect pin 1 and package orientation in the 3D or assembly view;
-- have another reviewer check safety-critical, high-voltage, RF, power, or fine-pitch parts.
+- [ ] Every card is **Confirmed for netlist**, by a person.
+- [ ] Pin names and numbers match the datasheet of the exact part number.
+- [ ] Package, pitch and pad sizes match the manufacturer's land pattern.
+- [ ] Pin 1 and polarity marks agree between symbol, footprint and silkscreen.
 
 ## See also
 
-- [AI Design Agent](design-agent.md) — review the generated BOM and missing library items.
-- [Symbol Library Editor](../libraries/symbol-creator.md) — correct or create a symbol manually.
-- [Footprint Libraries](../libraries/footprints-library.md) — inspect and edit footprint definitions.
-- [DFM and DRC](../pcb/dfm-and-drc.md) — verify the board before release.
+- [AI Design Agent](design-agent.md)
+- [Symbol Library Editor](../libraries/symbol-creator.md)
+- [Footprints Library](../libraries/footprints-library.md)

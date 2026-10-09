@@ -17,6 +17,28 @@ Every schematic sheet has a **title block** in the lower-right corner. It displa
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
+<!-- wf:shot id=completed-schematic-title-block
+caption: A whole schematic page with its title block
+setup:
+- open_project
+- ensure_schematic
+- wait: 1
+- canvas_click:
+  - 100
+  - 100
+- keys:
+  - Home
+- wait: 1
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+brief_sha256: 34762e309e0ad239
+-->
+<!-- wf:out id=completed-schematic-title-block sha=90eee1d4ffc9 -->
+![A whole schematic page with its title block](../assets/wf/docs/schematic/templates/completed-schematic-title-block.png)
+<!-- /wf:out -->
+
 ### Editing the title block
 
 1. Click on **empty canvas** (deselect everything).
@@ -58,6 +80,26 @@ The **Page Settings** modal provides page metadata, border styling, and logo con
     3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
+
+<!-- wf:shot id=page-settings-modal
+caption: Page Settings for a schematic sheet
+setup:
+- open_project
+- ensure_schematic
+- wait: 1
+- menu:
+  - File
+  - Page Settings...
+- wait: 1
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+brief_sha256: a3c155b78bae985c
+-->
+<!-- wf:out id=page-settings-modal sha=63bbcf4ea2bf -->
+![Page Settings for a schematic sheet](../assets/wf/docs/schematic/templates/page-settings-modal.png)
+<!-- /wf:out -->
 
 ### Paper size
 

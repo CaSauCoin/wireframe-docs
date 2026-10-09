@@ -31,6 +31,32 @@ The Electrical Rules Check (ERC) scans your schematic for common connectivity an
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
+<!-- wf:shot id=erc-results-and-highlighted-issue
+caption: ERC lists U2 pin 1 unconnected — its GND symbol was removed
+setup:
+- open_project
+- ensure_schematic
+- wait: 1
+- menu:
+  - Tools
+  - Electrical Rules Check (ERC)
+- wait: 1
+- canvas_click: AIGND2_2
+- keys:
+  - Delete
+- wait: 1
+- click: //Electrical Rules Check (ERC)/{fa:sync} Run Project-Wide ERC Analysis
+- wait: 1
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+brief_sha256: 4c536a2fc4099df8
+-->
+<!-- wf:out id=erc-results-and-highlighted-issue sha=08c1535e52c8 -->
+![ERC lists U2 pin 1 unconnected — its GND symbol was removed](../assets/wf/docs/schematic/erc/erc-results-and-highlighted-issue.png)
+<!-- /wf:out -->
+
 ---
 
 ## Check Types
@@ -98,6 +124,40 @@ Repeat **Run ERC → locate issue → correct design → Run ERC** until no bloc
     3. **Action shot (8–10 s):** Navigate to the issue, make the single correction, and run ERC again.
     4. **Result shot (4–5 s):** Hold on the refreshed results with that violation removed.
     5. **Deliver:** Export an approximately **20-second** 1080p MP4 and retain the demo project for reproducibility.
+
+<!-- wf:video id=fix-and-re-run-erc
+caption: U2's GND symbol is missing — undo restores it, and a re-run clears the error
+setup:
+- open_project
+- ensure_schematic
+- wait: 1
+- menu:
+  - Tools
+  - Electrical Rules Check (ERC)
+- wait: 1
+- canvas_click: AIGND2_2
+- keys:
+  - Delete
+- wait: 1
+- click: //Electrical Rules Check (ERC)/{fa:sync} Run Project-Wide ERC Analysis
+- wait: 1
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+steps:
+- wait: 2
+- keys:
+  - Ctrl
+  - Z
+- wait: 1.5
+- click: //Electrical Rules Check (ERC)/{fa:sync} Run Project-Wide ERC Analysis
+- wait: 3
+brief_sha256: d657ce8f2cad2a1b
+-->
+<!-- wf:out id=fix-and-re-run-erc sha=b5ae24207328 -->
+<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/schematic/erc/fix-and-re-run-erc.mp4" title="U2&#x27;s GND symbol is missing — undo restores it, and a re-run clears the error"></video>
+<!-- /wf:out -->
 
 ---
 

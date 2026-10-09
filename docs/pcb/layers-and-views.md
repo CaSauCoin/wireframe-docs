@@ -38,6 +38,27 @@ Open **View → PCB Layers** or use the companion panel shown with an active PCB
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
+<!-- wf:shot id=pcb-layers-panel
+caption: PCB Layers panel with F.Cu active
+setup:
+- open_project
+- ensure_pcb
+- wait: 1
+- focus: //Layers
+- wait: 1
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+capture:
+  window: Layers
+  padding: 8
+brief_sha256: aac3d86c82026b85
+-->
+<!-- wf:out id=pcb-layers-panel sha=d1b3e695f598 -->
+![PCB Layers panel with F.Cu active](../assets/wf/docs/pcb/layers-and-views/pcb-layers-panel.png)
+<!-- /wf:out -->
+
 | Column | Interaction |
 |---|---|
 | **👁 Eye icon** | Click to **show / hide** the layer |

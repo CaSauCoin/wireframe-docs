@@ -8,14 +8,23 @@ copyright: '© 2026 WireFrame EDA. All rights reserved.'
 # Theme configuration (Material dark mode)
 theme:
   name: material
+  custom_dir: overrides
   language: en
+  # Dark first (it is how the app looks); a toggle for daylight and print.
   palette:
-    scheme: slate
-    primary: cyan
-    accent: cyan
-  font:
-    text: Roboto
-    code: JetBrains Mono
+    - scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+    - scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+  font: false
   icon:
     logo: material/chip
     repo: fontawesome/brands/github
@@ -29,14 +38,31 @@ theme:
     - navigation.footer
     - search.suggest
     - search.highlight
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
+    - content.code.copy
+    - content.tooltips
+    - content.tabs.link
+    - announce.dismiss
+    - toc.follow
+    - search.highlight
     - search.share
     - content.code.copy
     - content.tabs.link
-    - toc.follow
+
+# Production briefs (the capture scripts doc_builder reads) stay in the
+# Markdown but are left out of the built site — see the hook's docstring.
+hooks:
+  - hooks/hide_capture_briefs.py
 
 # Custom CSS
 extra_css:
   - stylesheets/extra.css
+  - stylesheets/home.css
+
+extra_javascript:
+  - javascripts/learn.js
 
 # Extra configuration
 extra:
@@ -52,10 +78,25 @@ extra:
 # Plugins
 plugins:
   - search
+  - glightbox:
+      touchNavigation: true
+      loop: false
+      effect: zoom
+      width: 100%
+      height: auto
+      zoomable: true
+      draggable: false
+      skip_classes:
+        - wf-no-zoom
 
 # Navigation structure
 nav:
   - Home: index.md
+
+  - Start Here:
+      - Learning Paths: learn/index.md
+      - "Tutorial: A Simple LED Board": tutorial/index.md
+      - "Tutorial: AI-Assisted Design": tutorial/ai-design.md
 
   - Getting Started:
       - Installation: installation.md
@@ -114,9 +155,6 @@ nav:
       - FAQ & Troubleshooting: faq.md
       - Changelog: changelog.md
 
-  - Tutorials:
-      - NE555 LED Blinker: tutorial/index.md
-      - AI-Assisted Design: tutorial/ai-design.md
 
 
 # Markdown extensions

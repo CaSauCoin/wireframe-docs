@@ -92,6 +92,37 @@ Never show activation tokens or AI API keys in screenshots or support reports.
     4. **Result shot (4–6 s):** Hold on the empty project workspace and its **Project Structure** entry.
     5. **Deliver:** Export a **20–30 second** 1080p MP4; cut loading time and show no credentials.
 
+<!-- wf:video id=first-run-verification
+caption: Preferences, then a first empty project
+setup:
+- wait: 1
+steps:
+- wait: 1
+- menu:
+  - Preferences
+  - Preferences...
+- wait: 2
+- click: '**/Cancel'
+- wait: 1
+- pick_folder: first-project
+- menu:
+  - File
+  - New
+  - New Project (.prjxml)...
+- wait: 1
+- type:
+    text: My First Board
+- wait: 1
+- click_at:
+  - 634
+  - 485
+- wait: 3
+brief_sha256: fc44e3f2c570ac8b
+-->
+<!-- wf:out id=first-run-verification sha=c7d31f2456cc -->
+<video controls muted playsinline preload="metadata" src="../assets/wf/docs/installation/first-run-verification.mp4" title="Preferences, then a first empty project"></video>
+<!-- /wf:out -->
+
 ## Upgrade checklist
 
 1. Save and back up important projects.

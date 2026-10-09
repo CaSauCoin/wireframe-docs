@@ -30,6 +30,49 @@ Do not use a graphic line as a wire. If two pins must be electrically connected,
     4. **Result shot (3–4 s):** Select each object normally so current handles and selection styling are visible.
     5. **Deliver:** Export a **15–20 second** 1080p MP4 and replace older media if tools or handles differ.
 
+<!-- wf:video id=add-a-circuit-note-and-grouping-box
+caption: Add a text note and a grouping rectangle around the LDO
+setup:
+- open_project
+- ensure_schematic
+- wait: 1
+- canvas_hover: U2
+- scroll: -3
+- wait: 0.5
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+steps:
+- wait: 1
+- click: //SchematicToolbarWindow/{fa:font}
+- wait: 0.5
+- canvas_click:
+  - 1250
+  - 480
+- wait: 1
+- click: //SchematicToolbarWindow/{fa:square}
+- wait: 0.5
+- canvas_click:
+  - 1090
+  - 290
+- wait: 0.5
+- canvas_click:
+  - 1500
+  - 500
+- wait: 1
+- keys:
+  - Escape
+- canvas_click:
+  - 1250
+  - 600
+- wait: 2
+brief_sha256: f82d656a0bf9c147
+-->
+<!-- wf:out id=add-a-circuit-note-and-grouping-box sha=b4fd644931d6 -->
+<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/schematic/graphics-and-annotations/add-a-circuit-note-and-grouping-box.mp4" title="Add a text note and a grouping rectangle around the LDO"></video>
+<!-- /wf:out -->
+
 ## Annotation guidelines
 
 - State measurable constraints, not vague comments.
@@ -51,6 +94,42 @@ Do not rely on a schematic dimension tool unless it is visible and verified in t
     3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
+
+<!-- wf:shot id=documented-schematic-block
+caption: The LDO block with a grouping rectangle and a note
+setup:
+- open_project
+- ensure_schematic
+- wait: 1
+- canvas_hover: U2
+- scroll: -3
+- wait: 0.5
+- click: //SchematicToolbarWindow/{fa:font}
+- canvas_click:
+  - 1250
+  - 480
+- click: //SchematicToolbarWindow/{fa:square}
+- canvas_click:
+  - 1090
+  - 290
+- canvas_click:
+  - 1500
+  - 500
+- keys:
+  - Escape
+- canvas_click:
+  - 1250
+  - 600
+- wait: 1
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+brief_sha256: 5ead5ed9c76d8a4c
+-->
+<!-- wf:out id=documented-schematic-block sha=5be2e99ac968 -->
+![The LDO block with a grouping rectangle and a note](../assets/wf/docs/schematic/graphics-and-annotations/documented-schematic-block.png)
+<!-- /wf:out -->
 
 ## Related guidelines
 

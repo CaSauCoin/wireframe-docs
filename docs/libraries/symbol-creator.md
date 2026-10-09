@@ -48,6 +48,27 @@ Use **AI OCR Manager** when the datasheet exposes a clear pin table as an image 
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
+<!-- wf:shot id=ai-ocr-manager-with-a-clean-pin-table
+caption: AI OCR Manager, opened from the Symbol Library Editor, before any image is added
+setup:
+- open_project
+- wait: 1
+- menu:
+  - Tools
+  - Symbol Library Editor
+- wait: 2
+- click: '**/{fa:magic} AI OCR Manager'
+- wait: 1
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+brief_sha256: 780063412c1039f2
+-->
+<!-- wf:out id=ai-ocr-manager-with-a-clean-pin-table sha=b766d672fd45 -->
+![AI OCR Manager, opened from the Symbol Library Editor, before any image is added](../assets/wf/docs/libraries/symbol-creator/ai-ocr-manager-with-a-clean-pin-table.png)
+<!-- /wf:out -->
+
 ### Short video — OCR pins and verify one correction
 
 !!! note "Video production brief"
@@ -65,6 +86,25 @@ Use **AI OCR Manager** when the datasheet exposes a clear pin table as an image 
     3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
+
+<!-- wf:shot id=symbol-library-editor
+caption: Symbol Library Editor
+setup:
+- open_project
+- wait: 1
+- menu:
+  - Tools
+  - Symbol Library Editor
+- wait: 2
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+brief_sha256: 6b9b2ec42fafd6b5
+-->
+<!-- wf:out id=symbol-library-editor sha=eea75d94e43a -->
+![Symbol Library Editor](../assets/wf/docs/libraries/symbol-creator/symbol-library-editor.png)
+<!-- /wf:out -->
 
 ## Validate before use
 

@@ -26,6 +26,28 @@ Press ++w++ or click the **Wire** button on the toolbar.
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
+<!-- wf:shot id=wire-attached-to-two-component-pins
+caption: VIN wire landing on the pins of C5 and U2
+setup:
+- open_project
+- ensure_schematic
+- wait: 1
+- canvas_hover: C5
+- scroll: -6
+- wait: 0.5
+- canvas_hover: C5
+- scroll: -6
+- wait: 0.5
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+brief_sha256: 2e31690f8949c65b
+-->
+<!-- wf:out id=wire-attached-to-two-component-pins sha=d8ef320eebbd -->
+![VIN wire landing on the pins of C5 and U2](../assets/wf/docs/schematic/wiring-and-nets/wire-attached-to-two-component-pins.png)
+<!-- /wf:out -->
+
 | Action | Input |
 |---|---|
 | Start a wire | Click on a pin or canvas point |
@@ -121,6 +143,28 @@ Power symbols are single-pin components that automatically assign a net name to 
     3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
+
+<!-- wf:shot id=power-symbols-on-a-decoupling-capacitor
+caption: C6 decoupling the +3V3 rail to GND
+setup:
+- open_project
+- ensure_schematic
+- wait: 1
+- canvas_hover: C6
+- scroll: -6
+- wait: 0.5
+- canvas_hover: C6
+- scroll: -6
+- wait: 0.5
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+brief_sha256: 25131546c5754268
+-->
+<!-- wf:out id=power-symbols-on-a-decoupling-capacitor sha=c397b47c5074 -->
+![C6 decoupling the +3V3 rail to GND](../assets/wf/docs/schematic/wiring-and-nets/power-symbols-on-a-decoupling-capacitor.png)
+<!-- /wf:out -->
 
 ---
 

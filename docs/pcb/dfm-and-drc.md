@@ -23,6 +23,28 @@ Before exporting Gerber files, run **DFM/DRC** to detect and fix design errors. 
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
+<!-- wf:shot id=dfm-and-drc-results
+caption: DFM & DRC Check after a run — errors and warnings
+setup:
+- open_project
+- ensure_pcb
+- wait: 1
+- menu:
+  - Tools
+  - DFM & DRC Check Panel...
+- wait: 1
+- click: '**/{fa:play} Run DFM Analysis'
+- wait: 4
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+brief_sha256: 395b3d0325c9dbde
+-->
+<!-- wf:out id=dfm-and-drc-results sha=474c8ad1489c -->
+![DFM & DRC Check after a run — errors and warnings](../assets/wf/docs/pcb/dfm-and-drc/dfm-and-drc-results.png)
+<!-- /wf:out -->
+
 ---
 
 ## Understanding the Results

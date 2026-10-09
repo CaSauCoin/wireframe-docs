@@ -21,6 +21,62 @@ Use:
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
+<!-- wf:shot id=waveform-viewer-with-two-signals
+caption: NE555 blinker, 3 s transient — timer output, timing capacitor, discharge and the 9 V rail
+project: samples/ne555-blinker/NE555 Blinker.prjxml
+setup:
+- open_project
+- ensure_schematic
+- wait: 1
+- keys:
+  - F5
+- wait: 2
+- click_at:
+  - 385
+  - 760
+- wait: 1
+- action:
+    action: mouse_move_to
+    x: 240
+    y: 600
+- scroll: -3
+- wait: 0.5
+- type:
+    ref: //SPICE Circuit Simulation & Analysis/##DC
+    text: '9'
+- keys:
+  - Tab
+- click_at:
+  - 430
+  - 112
+- wait: 0.5
+- click: //##Combo_00/{fa:wave-square} Transient (.tran)
+- wait: 0.5
+- type:
+    ref: //SPICE Circuit Simulation & Analysis/##StopTime
+    text: '3000'
+- keys:
+  - Tab
+- type:
+    ref: //SPICE Circuit Simulation & Analysis/##TimeStep
+    text: '1'
+- keys:
+  - Tab
+- wait: 0.5
+- click_at:
+  - 489
+  - 112
+- wait: 12
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+brief_sha256: d51ef6102daa4dbb
+-->
+<!-- wf:out id=waveform-viewer-with-two-signals sha=0812c6f13f55 -->
+![NE555 blinker, 3 s transient — timer output, timing capacitor, discharge and the 9 V rail](../assets/wf/docs/simulation/waveform-viewer/waveform-viewer-with-two-signals.png)
+<!-- /wf:out -->
+
 ## View controls
 
 | Control | Purpose |
@@ -48,6 +104,84 @@ Disable auto-scale when you need a stable visual range across repeated runs. Re-
     3. **Action shot (5–8 s):** Enable **A/B cursors**, place A on the first equivalent edge, and place B on the next equivalent edge.
     4. **Result shot (2–3 s):** Hold on both cursors and the readable time delta.
     5. **Deliver:** Export a **10–15 second** 1080p MP4 with a visible pointer and no unnecessary zoom animation.
+
+<!-- wf:video id=measure-a-waveform-with-a-b-cursors
+caption: Turn on A/B cursors and drag them onto two rising edges of the timer output
+project: samples/ne555-blinker/NE555 Blinker.prjxml
+setup:
+- open_project
+- ensure_schematic
+- wait: 1
+- keys:
+  - F5
+- wait: 2
+- click_at:
+  - 385
+  - 760
+- wait: 1
+- action:
+    action: mouse_move_to
+    x: 240
+    y: 600
+- scroll: -3
+- wait: 0.5
+- type:
+    ref: //SPICE Circuit Simulation & Analysis/##DC
+    text: '9'
+- keys:
+  - Tab
+- click_at:
+  - 430
+  - 112
+- wait: 0.5
+- click: //##Combo_00/{fa:wave-square} Transient (.tran)
+- wait: 0.5
+- type:
+    ref: //SPICE Circuit Simulation & Analysis/##StopTime
+    text: '3000'
+- keys:
+  - Tab
+- type:
+    ref: //SPICE Circuit Simulation & Analysis/##TimeStep
+    text: '1'
+- keys:
+  - Tab
+- wait: 0.5
+- click_at:
+  - 489
+  - 112
+- wait: 12
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+steps:
+- wait: 1
+- click_at:
+  - 240
+  - 792
+- wait: 1.5
+- drag_at:
+    from:
+    - 682
+    - 500
+    to:
+    - 818
+    - 500
+- wait: 1
+- drag_at:
+    from:
+    - 1032
+    - 500
+    to:
+    - 1055
+    - 500
+- wait: 3
+brief_sha256: 8929a337f0cc6ab5
+-->
+<!-- wf:out id=measure-a-waveform-with-a-b-cursors sha=90402b5fb199 -->
+<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/simulation/waveform-viewer/measure-a-waveform-with-a-b-cursors.mp4" title="Turn on A/B cursors and drag them onto two rising edges of the timer output"></video>
+<!-- /wf:out -->
 
 ## Interpret common analyses
 

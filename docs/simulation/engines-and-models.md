@@ -64,6 +64,66 @@ Choose the circuit scope, run preflight, resolve every missing or incompatible m
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
+<!-- wf:shot id=engine-and-model-readiness
+caption: Engine choice and the Models tab for the NE555 blinker
+project: samples/ne555-blinker/NE555 Blinker.prjxml
+setup:
+- open_project
+- ensure_schematic
+- wait: 1
+- keys:
+  - F5
+- wait: 2
+- click_at:
+  - 385
+  - 760
+- wait: 1
+- action:
+    action: mouse_move_to
+    x: 240
+    y: 600
+- scroll: -3
+- wait: 0.5
+- type:
+    ref: //SPICE Circuit Simulation & Analysis/##DC
+    text: '9'
+- keys:
+  - Tab
+- click_at:
+  - 430
+  - 112
+- wait: 0.5
+- click: //##Combo_00/{fa:wave-square} Transient (.tran)
+- wait: 0.5
+- type:
+    ref: //SPICE Circuit Simulation & Analysis/##StopTime
+    text: '3000'
+- keys:
+  - Tab
+- type:
+    ref: //SPICE Circuit Simulation & Analysis/##TimeStep
+    text: '1'
+- keys:
+  - Tab
+- wait: 0.5
+- click_at:
+  - 489
+  - 112
+- wait: 12
+- &id001
+  action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+- tab: Models
+- wait: 1
+- *id001
+brief_sha256: 2497a6f619e1bf63
+-->
+<!-- wf:out id=engine-and-model-readiness sha=50e0935ef411 -->
+![Engine choice and the Models tab for the NE555 blinker](../assets/wf/docs/simulation/engines-and-models/engine-and-model-readiness.png)
+<!-- /wf:out -->
+
 ## Troubleshooting
 
 | What you see | What to check |

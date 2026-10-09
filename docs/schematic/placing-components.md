@@ -28,6 +28,38 @@ If the exact part is missing, import an approved library, create it in Symbol Li
     4. **Result shot (2–3 s):** Exit placement mode with ++esc++ and hold on the selected placed symbol.
     5. **Deliver:** Export a **10–15 second** 1080p MP4; replace older media if the library UI differs.
 
+<!-- wf:video id=find-and-place-a-symbol
+caption: Filter the Library for AMS1117, drag it onto the sheet, press Esc
+setup:
+- open_project
+- ensure_schematic
+- wait: 1
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+steps:
+- wait: 1
+- type:
+    ref: //Library/##FilterSym
+    text: AMS
+- wait: 1.5
+- drag_to_canvas:
+    from: //Library/{fa:microchip} AMS1117-3.3@1
+    to:
+    - 1300
+    - 540
+- wait: 1.5
+- keys:
+  - Escape
+- canvas_click: U3
+- wait: 2
+brief_sha256: ae328a0a2c365469
+-->
+<!-- wf:out id=find-and-place-a-symbol sha=4caabf831614 -->
+<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/schematic/placing-components/find-and-place-a-symbol.mp4" title="Filter the Library for AMS1117, drag it onto the sheet, press Esc"></video>
+<!-- /wf:out -->
+
 ## Complete component properties
 
 Select the component and verify:

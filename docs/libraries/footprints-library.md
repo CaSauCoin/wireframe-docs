@@ -20,6 +20,26 @@ Keep custom footprints and their 3D models in a controlled project or team locat
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
+<!-- wf:shot id=footprint-source-and-active-inventory
+caption: Local Library Manager with the project's KiCad library folders loaded
+setup:
+- open_project
+- ensure_schematic
+- wait: 1
+- menu:
+  - View
+  - Local Library Manager
+- wait: 2
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+brief_sha256: 18e2a7efa4ab9d2e
+-->
+<!-- wf:out id=footprint-source-and-active-inventory sha=fb46fca0158a -->
+![Local Library Manager with the project's KiCad library folders loaded](../assets/wf/docs/libraries/footprints-library/footprint-source-and-active-inventory.png)
+<!-- /wf:out -->
+
 ## Review a footprint
 
 Compare the footprint with the exact datasheet land pattern:
@@ -47,6 +67,25 @@ Open **Tools → PCB Footprint Editor**. Configure the package and pads, review 
     3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
+
+<!-- wf:shot id=pcb-footprint-editor
+caption: Footprint Library Editor with an 8-pin dual-row package
+setup:
+- open_project
+- wait: 1
+- menu:
+  - Tools
+  - PCB Footprint Editor
+- wait: 2
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+brief_sha256: a8d5ea63c48a9392
+-->
+<!-- wf:out id=pcb-footprint-editor sha=7f96fb2ac0ce -->
+![Footprint Library Editor with an 8-pin dual-row package](../assets/wf/docs/libraries/footprints-library/pcb-footprint-editor.png)
+<!-- /wf:out -->
 
 Before release, place the footprint on a test board and inspect pad geometry, courtyard, silkscreen, origin, and orientation.
 
