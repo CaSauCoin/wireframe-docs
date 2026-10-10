@@ -7,7 +7,7 @@ When the AI design needs a part your libraries do not have — or a part whose s
 
 ## Find the parts that need work
 
-Open the design's **Component Review** (the { fa-tasks } button in the AI Copilot panel) and stay on **BOM Components**. Keep **Needs attention first** ticked: cards that block the design come to the top.
+Open the design's **Component Review** (**Design Plan** in the AI Copilot panel) and stay on **BOM Components**. Keep **Needs attention first** ticked: cards that block the design come to the top.
 
 A card needs work when it shows one of these:
 
@@ -15,7 +15,7 @@ A card needs work when it shows one of these:
 |---|---|
 | **Not in Pool** | No symbol + footprint in your libraries matches this row yet |
 | A pin or pad count mismatch | The symbol and the land pattern disagree about the part's contacts |
-| **Inspect both previews, then confirm them** | The pair was bound automatically and is waiting for a person |
+| **Inspect both previews, then confirm** | The pair was bound automatically and is waiting for a person |
 
 Each card has three ways forward:
 
@@ -27,7 +27,7 @@ Each card has three ways forward:
 
 !!! note "Image capture brief"
     1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
-    2. **Build the frame:** Capture **Component Review** with one component card marked **Not in Pool**. Include the component name, **Value**, **Footprint Package**, **AI Gen**, **Create**, and **Import** controls. Crop tightly enough that the warning and the action buttons remain readable. Suggested size: **1200 × 700 px**.
+    2. **Build the frame:** Capture **Component Review** with one component card marked **Not in Pool**. Include the component name, **Value**, **Footprint Package**, the `/fix` hint, **Create**, and **Import** controls. Crop tightly enough that the warning and the action buttons remain readable. Suggested size: **1200 × 700 px**.
     3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
@@ -105,25 +105,29 @@ What happens next:
 
 1. **Evidence.** WireFrame looks for the part's datasheet: a file you attached, then the published index, then the web. Only pages WireFrame downloads and reads itself count as evidence.
 2. **Plan.** The Copilot proposes a repair — the pin table, the package, the land pattern — and WireFrame validates it against that evidence and its package rules before showing it to you.
-3. **Review.** The plan appears in the chat with **Apply**, **Attach datasheet…** and **Cancel**. Nothing has changed yet.
+3. **Review.** The plan appears in the chat with **Apply**, **Attach datasheet...** and **Cancel**. Nothing has changed yet.
 4. **Apply.** WireFrame writes the symbol and footprint to the project library, opens the editor and replays the repair so you can watch the pins and pads being drawn, then re-checks the card.
 
-Attach the manufacturer's PDF with **Attach datasheet…** whenever the part is not a common one: a clean datasheet is the best evidence there is.
+Attach the manufacturer's PDF with **Attach datasheet...** whenever the part is not a common one: a clean datasheet is the best evidence there is.
+
+### Build every missing part at once
+
+When several parts have no symbol or footprint, ask for it in the chat — for example *"fix the parts that cannot be used yet"*. Copilot answers *Running **AI Verify & Fix** on the parts that cannot be used yet* and builds a symbol and footprint for each, then re-checks the findings against the parts it produced. Each result still needs the inspection and confirmation below.
 
 ### Short video — Generate all missing components
 
 !!! note "Video production brief"
     1. **Prepare:** Use a public demo design with two unambiguous components marked **Not in Pool**; preconfigure the AI connection and hide keys.
-    2. **Opening shot (1–2 s):** Hold on both missing cards and the enabled **AI Gen Missing** button.
-    3. **Action shot (3–5 s):** Move once to **AI Gen Missing**, click, and show the first visible generation status. Cut out only inactive waiting time; do not accelerate or fabricate progress.
+    2. **Opening shot (1–2 s):** Hold on both missing cards marked **Not in Pool** beside the AI Copilot chat.
+    3. **Action shot (3–5 s):** Type *fix the parts that cannot be used yet* in the chat, send it, and show the **AI Verify & Fix** status. Cut out only inactive waiting time; do not accelerate or fabricate progress.
     4. **Result shot (2–3 s):** Hold on the refreshed cards showing **Found in Pool** and readable pin counts.
     5. **Deliver:** Export an **8–12 second**, 16:9, 1080p MP4; keep the pointer visible and exclude unrelated panels.
 
-### Image — Review the template recommendation
+### Image — Review a repair plan
 
 !!! note "Image capture brief"
     1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
-    2. **Build the frame:** Capture the **AI Component Generator → From Template** tab after research has completed. Show the target component, recommendation summary, **PCB Template**, **SCH Template**, **Pin Count**, **Generate from Template**, and **Retry Research**. If possible, use an example with a confident recommendation. Suggested size: **1000 × 740 px**.
+    2. **Build the frame:** After `/fix U1 …` with the WF-DEMO8 datasheet attached, capture the plan in the AI Copilot chat with its pin table, package, and the **Apply**, **Attach datasheet...**, and **Cancel** buttons readable. Suggested size: **1000 × 740 px**.
     3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.

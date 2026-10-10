@@ -15,7 +15,7 @@ Not sure what to read first? Choose the path that matches you. Each one lists th
 
     <div class="wf-path" markdown>
 
-    - [ ] **[Install WireFrame](../installation.md)** <small>10 min</small> — download, sign in, first launch.
+    - [ ] **[Install WireFrame](../installation.md)** <small>10 min</small> — download, install, first launch.
     - [ ] **[Getting started](../getting-started.md)** <small>10 min</small> — create a project, add a schematic and a PCB.
     - [ ] **[The user interface](../ui-overview.md)** <small>5 min</small> — what every panel is for.
     - [ ] **[Placing components](../schematic/placing-components.md)** and **[Wiring & nets](../schematic/wiring-and-nets.md)** <small>10 min</small>
@@ -57,7 +57,7 @@ Not sure what to read first? Choose the path that matches you. Each one lists th
     - [ ] **[AI overview](../ai/index.md)** <small>10 min</small> — settings, sessions, what the Copilot can and cannot change.
     - [ ] **[Tutorial: AI-Assisted Design](../tutorial/ai-design.md)** <small>20 min</small> — an NE555 blinker from a one-line request.
     - [ ] **[AI Design Agent](../ai/design-agent.md)** <small>5 min</small> — the Component Review tabs, card by card.
-    - [ ] **[AI Component Generator](../ai/component-generator.md)** <small>5 min</small> — when a part is not in your library.
+    - [ ] **[Fix or Create a Component](../ai/component-generator.md)** <small>5 min</small> — when a part is not in your library.
     - [ ] **[Review & simulation guide](../ai-copilot.md)** <small>5 min</small> — what to verify before you apply.
 
     </div>

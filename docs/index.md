@@ -66,7 +66,7 @@ Pick the line that sounds most like you. Each one opens a short path with the pa
 
 ### Install and open WireFrame <small>10 min</small>
 
-Download the build for your system, sign in, and check that it starts. → [Installation](installation.md)
+Download the build for your system and check that it starts — no account is needed. → [Installation](installation.md)
 </div>
 
 <div class="wf-step wf-reveal" markdown>
@@ -135,5 +135,5 @@ Ask for a circuit, then review what it proposes before anything is applied. → 
     AI proposals, imported libraries, automatic placement and routing, and simulation results are all **proposals**. Check part numbers, pin mapping, package geometry, model assumptions and design rules before you release a board.
 
 <div class="wf-help" markdown>
-**Stuck?** Search with ++ctrl+k++, read the [FAQ & Troubleshooting](faq.md), or see the [keyboard shortcuts](advanced/shortcuts.md).
+**Stuck?** Search this guide with ++slash++ or ++s++, read the [FAQ & Troubleshooting](faq.md), or see the [keyboard shortcuts](advanced/shortcuts.md).
 </div>

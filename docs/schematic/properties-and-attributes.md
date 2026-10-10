@@ -4,7 +4,7 @@ The Properties panel changes with the current selection. Use it to edit sheet me
 
 ## Sheet properties
 
-Click empty canvas to show page-level settings such as paper size, title, company, revision, date, author, sheet number, filename, and border styling.
+Click empty canvas to show **Document Settings**. Under **Title Block Info** set the **Width** and **Height** of the title block, **Title**, **Company**, **Revision**, **Drawn By**, **Date**, **Sheet No.**, and **Total**. **Size** shows the current paper size; **Page Setup...** opens the full **Page Settings** dialog with paper size, border, and logo — see [Templates and Title Block](templates.md).
 
 Complete these fields before PDF release so every exported sheet can be identified independently.
 
@@ -21,15 +21,26 @@ Complete these fields before PDF release so every exported sheet can be identifi
 
 When one component is selected, review:
 
-| Property | Purpose |
-|---|---|
-| Designator | Unique circuit reference such as `R1` or `U3` |
-| Value | Electrical value or part number used by design and BOM |
-| Comment | Supporting note when needed |
-| Symbol/type | Library identity |
-| Footprint | Physical package used by PCB update |
+| Tab / section | Property | Purpose |
+|---|---|---|
+| **General → Info** | **Designator** | Unique circuit reference such as `R1` or `U3` |
+| | **Value** | Electrical value or part number used by design and BOM |
+| | **Comment** | Supporting note when needed |
+| | **Exclude from PCB** | Leaves the part out of **Update Schematic to PCB** |
+| **General → Location** | **Position**, **Rotation** | Placement on the sheet |
+| **General → Linked Footprint** | Footprint, **Link Footprint & Save to File** | Physical package used by PCB update |
+| **3D Model** | — | Preview of the footprint's 3D model |
+| **Pins** | **No**, **Name**, **Show Num**, **Show Name** | Pin numbering and which pin texts are shown |
 
-Text controls may also set visibility, position, rotation, and size for the designator, value, and pin labels. Keep them readable without covering wires or pins.
+The eye button beside **Designator**, **Value**, and **Comment** shows or hides that text on the sheet.
+
+### Moving and aligning component text
+
+1. Right-click the component and choose **Edit Attributes (Lock Body)**. The body stays put while you work on its texts.
+2. Drag the designator, value, or pin texts; rotate a selected text with ++space++ (or ++r++); align several with ++shift+y++ / ++shift+x++.
+3. Right-click again and choose **Finish Editing**.
+
+**Sync Attributes to Similar Components** (right-click) copies the position, rotation, size, and visibility of this component's designator, value, and pin texts to every component with the same value (or name) and the same footprint.
 
 ### Short video — Edit and align component text
 
@@ -74,11 +85,11 @@ brief_sha256: 7085671e0ff8e91c
 
 Selecting a wire or net label exposes its net name and available connectivity information. Use consistent names for rails and signals; renaming a shared net can affect multiple labels and connected items.
 
-Net-class behavior for the PCB is managed in [Design Rules and Net Classes](../pcb/design-rules.md), not through a speculative “future” schematic field.
+Net classes for the PCB are set in [Design Rules and Net Classes](../pcb/design-rules.md).
 
 ## Multi-selection and graphics
 
-With multiple items selected, only common supported fields should be changed together. A selected graphic may expose position, size, color, line width, fill, or layer depending on its type.
+A selected graphic shows **Graphic Object**: **Content** for text, **Size**, **Color**, and **Thickness**, depending on its type.
 
 After a bulk change, zoom in and inspect each affected item before saving.
 

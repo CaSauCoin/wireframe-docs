@@ -5,9 +5,9 @@ Symbol libraries provide the logical schematic representation of components. Use
 ## Add a symbol source
 
 1. Open **View → Local Library Manager**.
-2. Add the containing library folder or select the KiCad symbol file.
-3. Confirm that the source is active and its symbols appear in the inventory.
-4. Activate a schematic and search for the symbol in its Component Library.
+2. Select **Add library ▾ → Folder of KiCad libraries...** or **KiCad symbol file (.kicad_sym)...**.
+3. Select the new source and confirm its symbols are listed and ticked (shown in the Library panel).
+4. Activate a schematic and search for the symbol with **Filter...** in the Library panel.
 
 For project portability, keep required custom libraries with the project or in a controlled team location.
 
@@ -56,7 +56,13 @@ A readable drawing can still be electrically wrong. Treat pin number and footpri
 
 ## Assign a footprint
 
-Use the symbol's available footprint assignment or library action to select an approved physical package. Confirm package name, pad count, numbering, pitch, polarity marker, and orientation.
+Link an approved physical package in one of these places:
+
+- for a placed component: **Properties → General → Linked Footprint → Link Footprint & Save to File**;
+- for the library symbol: Library Manager → **Footprint** tab → **Link a footprint file...**, or **Edit properties & pins → Default footprint**;
+- in the Library panel preview (**Properties → Footprint** tab): **Manual Load .kicad_mod**, then **Link Footprint & Save to File**.
+
+Confirm package name, pad count, numbering, pitch, polarity marker, and orientation.
 
 Existing placed instances may not inherit a later library change. Review them individually and update the PCB only after the schematic assignments are correct.
 
@@ -71,13 +77,13 @@ Existing placed instances may not inherit a later library change. Review them in
 
 ## Import an Altium symbol library
 
-In **Local Library Manager**, choose the Altium importer and select a supported `.SchLib`, `.IntLib`, or `.LibPkg` file. After conversion, review the imported symbol and its footprint relationship before use.
+In the Library Manager, select **Add library ▾ → Altium library (SchLib, PcbLib, IntLib)...** and choose a `.SchLib`, `.IntLib`, or `.LibPkg` file. After conversion, review the imported symbol and its footprint relationship before use.
 
 Eagle library import is not exposed in the current release UI and is intentionally omitted.
 
 ## Create or generate a missing symbol
 
-Use [Symbol Library Editor](symbol-creator.md) for manual creation or correction. When Component Review identifies a missing part, [AI Component Generator](../ai/component-generator.md) can prepare a symbol and footprint from a template or datasheet, but both assets still require the same datasheet review.
+Use [Symbol Library Editor](symbol-creator.md) for manual creation or correction. When Component Review identifies a missing part, `/fix` in the AI panel ([Fix or Create a Component](../ai/component-generator.md)) can prepare a symbol and footprint from the datasheet, but both assets still require the same datasheet review.
 
 ## Related guidelines
 

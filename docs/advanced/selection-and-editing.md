@@ -10,13 +10,15 @@ Use this page as the interaction reference for the schematic canvas, PCB canvas,
 | Add or remove an item from the selection | Hold ++ctrl++ while left-clicking |
 | Select an area | Drag a selection box on empty canvas |
 | Clear selection | Left-click empty canvas without ++ctrl++, or press ++esc++ |
-| Select all visible editable items | ++ctrl+a++ |
+| Select a whole PCB net | Double-click one of its traces |
+
+++ctrl+a++ selects all rows in the Project Structure and the Library Manager lists; it does not select everything on the canvas.
 
 Before a group edit, zoom in and confirm every highlighted object. Hidden or locked layers may affect what can be selected on a PCB.
 
 ## Move and transform
 
-Drag a selected object or group to move it. Use ++r++ for rotation where available and ++f++ to move a selected PCB footprint between board sides.
+Drag a selected object or group to move it, or nudge it with the arrow keys (5 px on a schematic, 5 mil on a PCB). Rotate with ++space++ (on a schematic, ++r++ also rotates while something is selected) by the step set in **Preferences → Editing**. Press ++f++ to move a selected PCB footprint to the other side of the board.
 
 After a transform, inspect connected wires or tracks, pad endpoints, text orientation, and board-side layer mapping. Use ++ctrl+z++ immediately if the result is not intended.
 
@@ -29,7 +31,7 @@ After a transform, inspect connected wires or tracks, pad endpoints, text orient
 | Paste | ++ctrl+v++ |
 | Delete | ++delete++ or ++backspace++ |
 | Undo | ++ctrl+z++ |
-| Redo | ++ctrl+y++ or ++ctrl+shift+z++ |
+| Redo | ++ctrl+y++ |
 
 Pasted groups preserve their relative geometry and follow the cursor until placed. WireFrame assigns new object identities; review component designators, net attachment, and footprint references after copying between design areas.
 
@@ -137,19 +139,15 @@ brief_sha256: 0b1830046fdd9add
 
 ## PCB context menus
 
-PCB context actions depend on both the item under the pointer and the current multi-selection. Do not expect schematic component actions in the PCB editor.
+PCB context actions depend on the item under the pointer and the current selection. Do not expect schematic component actions in the PCB editor, and there is no context menu on a footprint — use the keys (++space++, ++f++, ++delete++) or **Properties** for footprints.
 
-| Selection | Available context actions | Use |
+| Right-click target | Menu | Use |
 |---|---|---|
-| Two or more designators | **Align Designators** → **Align Left**, **Align Right**, **Align Center (H)**, **Align Top**, **Align Bottom**, **Align Center (V)** | Align reference/value text as a group |
-| Polygon or rectangle graphic | **Shape Operations**, fillet radius, **Apply to All Corners** | Round every supported corner using the entered radius |
-| Other graphic | Shape Operations explains that fillet is unavailable; **Delete** remains available | Avoid applying a polygon-only edit to an unsupported shape |
-| Two or more trace segments | **Segment Alignment** → **Distribute Spacing**, **Pack to Anchor (Top/Left)** | Regularize a selected trace group |
-| Selected trace segments | **Arc Mitering** → arc radius, **Apply Arc to Selection** | Replace eligible corners using the chosen radius |
-| Selected trace segments | **Trace Consolidation** → **Merge Collinear Segments** | Remove redundant collinear segment boundaries |
-| Selected trace segments | **Delete Selected Traces** | Delete only the selected route segments |
+| Selected **traces** | A header with the track and segment count, net, and layer; **Select** (**Connected Track Chain**, **All Copper of Net(s)**, **Highlight Net**); **Edit** (**Move to Layer ▸**, **Width ▸**, **Corners ▸**, **Merge Collinear Segments**); **Bus** (**Distribute Evenly**, **Pack to Top / Left**, **Pack to Bottom / Right**, **Set Pitch ▸**); **High-speed ▸**; **Delete Segment(s)**, **Delete Track(s)** | See [the trace context menu](../pcb/routing.md#the-trace-context-menu) |
+| Two or more **designators** | **Align Designators ▸** → **Align Left**, **Align Right**, **Align Center (H)**, **Align Top**, **Align Bottom**, **Align Center (V)** | Align reference text as a group |
+| A **polygon or rectangle** graphic | **Shape Operations** — **Fillet Radius** (mils) and **Apply to All Corners**; **Delete** | Round every corner by the entered radius; a rectangle becomes a polygon |
 
-An action can be absent when too few compatible items are selected. Select the intended segments or designators first, then right-click one of them.
+An action can be absent when too few compatible items are selected — **Bus** needs several parallel tracks. Select the intended items first, then right-click one of them.
 
 ### Image — PCB trace context menu
 
@@ -202,9 +200,8 @@ These actions remove a source or item from the active library pool; they are not
 
 - A modal blocks interaction with the windows behind it until it is closed.
 - Use its named **Cancel** or **Close** action when available; do not assume a click outside will dismiss it.
-- The **AI Component Generator** can be closed while work is active with **Close (keeps running)**. This hides the modal but does not cancel the request.
-- A successful AI component generation closes its modal and refreshes Component Review. A failed request leaves its explanation visible so you can correct the input and retry.
-- File pickers opened by **Import**, **Browse File**, or library source buttons do not change the project until you choose a file and complete the relevant workflow.
+- AI repairs (`/fix`) run in the AI Copilot panel, not in a modal: the chat shows the plan with **Apply**, **Attach datasheet...**, and **Cancel**, and nothing changes until you apply.
+- File pickers opened by **Import** or library source buttons do not change the project until you choose a file and complete the relevant workflow.
 
 ### Common confirmation windows
 
@@ -220,7 +217,7 @@ The **Gerber Viewer** is a normal tool window, not a blocking modal. In the curr
 
 !!! note "Image capture brief"
     1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
-    2. **Build the frame:** Create a two-panel screenshot: **AI Component Generator modal** on the left and the docked **Component Library** on the right. Add subtle callouts for the modal close action and panel collapse control. Do not cover UI labels with annotations. Suggested size: **1500 × 850 px**.
+    2. **Build the frame:** Create a two-panel screenshot: the **Page Settings** modal on the left and the docked **Component Library** on the right. Add subtle callouts for the modal close action and panel collapse control. Do not cover UI labels with annotations. Suggested size: **1500 × 850 px**.
     3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
