@@ -11,23 +11,26 @@ PCB layers control which drawing plane is active — copper, silkscreen, solder 
 | **F.Cu** | Red | Front copper — traces and pads |
 | **B.Cu** | Blue | Back copper |
 | **F.SilkS** | Yellow | Front silkscreen — labels, outlines, logos |
-| **B.SilkS** | Magenta | Back silkscreen |
-| **F.Mask** | Purple | Front solder mask openings (around pads) |
-| **B.Mask** | Green | Back solder mask openings |
-| **F.Paste** | Light red | Front solder paste |
-| **B.Paste** | Light blue | Back solder paste |
+| **B.SilkS** | Cyan | Back silkscreen |
+| **F.Mask** | Translucent purple | Front solder mask openings (around pads) |
+| **B.Mask** | Translucent cyan | Back solder mask openings |
+| **F.Paste** | Translucent light grey | Front solder paste |
+| **B.Paste** | Translucent grey | Back solder paste |
 | **F.Fab** | Grey | Front fabrication layer |
-| **B.Fab** | Grey | Back fabrication layer |
+| **B.Fab** | Dark grey | Back fabrication layer |
 | **F.CrtYd** | Light grey | Front courtyard (keep-out area per component) |
 | **B.CrtYd** | Light grey | Back courtyard |
 | **Edge.Cuts** | Magenta | Board outline — physical board shape |
-| **Dwgs.User** | Grey | User annotations and notes |
+| **Dwgs.User** | White | User drawings and notes |
+| **Eco1.User**, **Eco2.User**, **Cmts.User** | Green, olive, blue | Extra user layers |
+
+Boards with more than two copper layers add inner layers (**In1.Cu**, **In2.Cu**, …) between F.Cu and B.Cu.
 
 ---
 
 ## The Layer Panel
 
-Open **View → PCB Layers** or use the companion panel shown with an active PCB:
+Open **View → PCB Layers**. The **Layers** panel follows the active PCB:
 
 ### Image — PCB Layers panel
 
@@ -59,13 +62,20 @@ brief_sha256: aac3d86c82026b85
 ![PCB Layers panel with F.Cu active](../assets/wf/docs/pcb/layers-and-views/pcb-layers-panel.png)
 <!-- /wf:out -->
 
-| Column | Interaction |
+| Control | Interaction |
 |---|---|
-| **👁 Eye icon** | Click to **show / hide** the layer |
-| **Color swatch** | Click to **change the layer color** |
-| **Layer name** | Click to set as the **active routing/drawing layer** |
+| **Copper Stackup** | Number of copper layers: **2**, **4**, **6**, **8**, **16**, or **32 Layers** |
+| **Hide All References** | Hides every footprint designator on the canvas |
+| **Vis** (eye) | Click to **show / hide** the layer |
+| **Lock** | Click to **lock** the layer; hover shows **Layer Locked** or **Click to lock layer** |
+| **Color** | Click the swatch to **change the layer color** |
+| **Name** | Click to make it the **active layer** |
 
 The active layer has a **highlighted background**.
+
+### Locked layers
+
+Footprints, traces, and designators on a locked layer ignore clicks, so they cannot be selected or moved by accident, and changing layer onto it while routing is refused with *"… is locked"*. Lock finished layers — the board outline, for instance — to protect them while you work on the rest.
 
 ---
 
@@ -75,7 +85,7 @@ The active layer determines where traces and graphics are placed:
 
 - Routing a trace → places it on the **active copper layer**
 - Drawing text → places it on the **active layer** (set to F.SilkS for silkscreen labels)
-- Change the active layer by **clicking its name** in the Layer panel
+- Change the active layer by **clicking its name** in the Layers panel, or from the keyboard: ++tab++ (to its via pair, F.Cu ↔ B.Cu by default), ++equal++ / ++minus++ (next / previous copper layer), ++page-up++ / ++page-down++ (F.Cu / B.Cu). A short note on the canvas confirms *Active layer: …*
 
 !!! tip "Always check your active layer before routing"
     F.Cu (red) and B.Cu (blue) are physically different sides of the board. Routing on the wrong layer will not connect the intended pads.
@@ -87,7 +97,7 @@ The active layer determines where traces and graphics are placed:
 Click the **eye icon** next to a layer name to toggle its visibility:
 
 - Hidden layers — traces, pads, and graphics are **not drawn on the canvas**
-- The data still exists — you can still select and edit hidden-layer items if you know they are there
+- The data still exists on the board and in the saved file — hiding a layer does not remove anything
 
 **Practical examples:**
 
@@ -101,7 +111,7 @@ Click the **eye icon** next to a layer name to toggle its visibility:
 
 Click the **color swatch** next to any layer name to open a color picker.
 
-Default colors are chosen for easy visual distinction (red/blue for copper). You can adjust them to your preference — the setting is saved.
+Default colors are chosen for easy visual distinction (red/blue for copper). You can adjust them to your preference.
 
 ---
 
@@ -122,11 +132,13 @@ Default colors are chosen for easy visual distinction (red/blue for copper). You
 
 | Action | Input |
 |---|---|
-| **Pan** | Hold middle mouse button and drag |
-| **Zoom in / out** | Scroll wheel (centered on cursor position) |
-| **Fit to board** | Use the configured Fit to Screen shortcut or canvas action |
-| **Zoom to selection** | Press ++shift+f++ |
-| **100% zoom** | Press ++1++ |
+| **Pan** | Middle-drag or right-drag; two-finger scroll on a macOS trackpad |
+| **Zoom in / out** | Scroll wheel, centred on the cursor (++ctrl++ / ++cmd++ + scroll on macOS) |
+| **100% zoom** | ++ctrl+0++ |
+| **Toggle grid / crosshair** | ++shift+g++ / ++shift+c++ |
+| **Switch unit mm / mil** | ++shift+u++, or the **mil / mm** button on the toolbar |
+
+**Fit to Screen** (++home++) and **Zoom to Selection** (++ctrl+shift+f++) work in the schematic editor only.
 
 ---
 

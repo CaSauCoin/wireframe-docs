@@ -1,56 +1,70 @@
-# Product Documentation & Guides Portal (`/Guide_line`)
+# WireFrame EDA — User Guide
 
-This directory houses the WireFrame official user manual, quickstart tutorials, advanced layout guides, and API reference documentation. It is built as a static website powered by **MkDocs** and the **Material for MkDocs** theme.
-
-## 1. High-Level Architecture
-
-Documentation source markdown files are hosted under `/docs` and compiled into a highly responsive, modern static website.
+The WireFrame user guide: installation, tutorials, schematic, PCB, simulation, AI Copilot, libraries, and reference pages. It is a static site built with **MkDocs** and the **Material for MkDocs** theme, published at <https://guideline-one.vercel.app/> (the app's **Help → Documentation**).
 
 ```mermaid
 flowchart TD
-    A[Markdown guides in docs/] -->|MkDocs build| B[Static HTML in site/]
+    A[Markdown guides in docs/] -->|mkdocs build| B[Static HTML in site/]
     B --> C[Local preview]
     B --> D[Vercel deployment]
 ```
 
----
+## Run locally
 
-## 2. Directory & Asset Layout
+Requires Python 3.9 or later.
 
-| Path | Purpose | Key Details |
-|:---|:---|:---|
-| `mkdocs.yml` | MkDocs Configuration | Outlines the documentation hierarchy (Navigation), custom search indices, color theme settings (Slate Dark / Light), and extensions. |
-| `run_dev.sh` | Local developer script | Auto-initiates virtual environments, installs requirements, and boots the documentation server at `http://127.0.0.1:8001` with hot-reload enabled. |
-| `package.json` | Web scripts | Maps build commands for deployment pipelines. |
-| `vercel.json` | Vercel Static Config | Hosts and directs requests on Vercel networks. |
-| `/docs` | Source Markdown files | Structured documentation files: tutorials, FAQs, PCB guidelines, UI overviews, and changelogs. |
-| `/site` | Compiled Output | Directory generated on build, containing optimized static HTML, CSS, JS, and image assets. |
+**macOS / Linux**
 
----
-
-## 3. Guide Categories in `/docs`
-
-- **Getting Started** (`getting-started.md`): Installation checklists, compiler dependencies, project creations, and workspace settings.
-- **UI Overview** (`ui-overview.md`): Map of ImGui panel widgets (Canvas, Library Search, Properties Inspector, Command Console).
-- **Schematic Capture** (`schematic/`): Symbol placements, wire drawings, net labels, and ERC audits.
-- **PCB Layout** (`pcb/`): Physical routing, trace widths, layers settings, via structures, thermal relief zones, and DFM rules.
-- **Advanced Features** (`advanced/`): Automated fuzzy symbol matching, AI Copilot chat controls, and NgSpice circuit simulator operations.
-
----
-
-## 4. Run & Build Locally
-
-### Launch Live Preview
-Boot the documentation server locally with live reload:
 ```bash
-chmod +x run_dev.sh
 ./run_dev.sh
 ```
-This activates a background MkDocs server. Access the documentation portal in your browser at `http://127.0.0.1:8001`.
 
-### Build Production Assets
-To compile the static pages for web server deployment:
-```bash
-python3 -m mkdocs build
+The script creates `.venv`, installs `requirements.txt`, and serves the site with live reload at <http://127.0.0.1:8001>. Set `PORT=8002 ./run_dev.sh` to use another port.
+
+**Windows (PowerShell)**
+
+```powershell
+py -m venv .venv
+.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+mkdocs serve --dev-addr 127.0.0.1:8001
 ```
-This generates the optimized static build inside the `/site` directory.
+
+## Build the static site
+
+```bash
+mkdocs build --strict
+python3 -m http.server -d site 8002   # preview the build at http://127.0.0.1:8002
+```
+
+`--strict` fails on broken links or missing pages. Vercel runs `npm run build` (see `package.json`), which builds into `site/`.
+
+## Layout
+
+| Path | Purpose |
+|---|---|
+| `mkdocs.yml` | Site configuration: navigation, theme, plugins, Markdown extensions |
+| `docs/` | The pages (Markdown), stylesheets, scripts, and images |
+| `docs/assets/wf/` | Screenshots and videos captured from the app by WireFrame's `doc_builder` |
+| `hooks/hide_capture_briefs.py` | Build hook: hides capture briefs, turns captured slots into figures, drops empty slots |
+| `.wf-docs.yaml` | Per-scene settings for `doc_builder` (sample files, hints, skipped scenes) |
+| `samples/` | Fictional sample files used by the capture scenes |
+| `run_dev.sh` | Local live preview |
+| `package.json`, `vercel.json` | Build command and Vercel static deployment |
+| `site/` | Build output |
+
+## Images and videos
+
+Sections titled `### Image — …`, `### Short video — …`, or `### Diagram — …` are capture slots. Each carries a brief (a `!!! note "… brief"` block) and, once captured, the media. The build hook hides the briefs; a slot without media is left out of the page until it is captured. Capture with WireFrame's `doc_builder` from the WireFrame repository:
+
+```bash
+python3 -m doc_builder docs-scan ../wireframe-docs
+python3 -m doc_builder docs-fill ../wireframe-docs
+```
+
+## Guide sections
+
+- **Start Here** — learning paths and two tutorials (LED board, AI-assisted design).
+- **Getting Started** — installation, first session, user interface, projects and files.
+- **Schematic Design**, **Simulation**, **AI Copilot**, **PCB Layout**, **Libraries**, **Advanced Features**.
+- **Reference** — configuration and session, file formats, FAQ, release notes.

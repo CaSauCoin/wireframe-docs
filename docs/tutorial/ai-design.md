@@ -38,7 +38,7 @@ brief_sha256: a79bc0ededcd8271
 
 ## Before you start
 
-You need a new project, an AI endpoint configured in **Preferences → AI Assistant** (an OpenRouter key, or the local agyserve preset), suitable component libraries, and at least one usable simulation engine. Save the project before starting the request.
+You need a new project, an AI endpoint configured in **Preferences → AI Assistant** (an OpenRouter key, or the local agyserve preset), suitable component libraries, and a simulation engine (ngspice is built in). Save the project before starting the request, then open **View → AI Copilot Chat** (++ctrl+space++).
 
 ## 1. State measurable requirements
 
@@ -119,14 +119,15 @@ brief_sha256: fcd5386ecc342a33
 
 ## 2. Review the proposed design
 
-Use the **Component Review** tabs in order:
+Open **Design Plan** in the AI Copilot panel. In the **AI Planned BOM & Schematic Review** window (the *Component Review*), work through the tabs:
 
 1. **BOM Components** — verify part identity, value, rating, package, and availability.
 2. **Connections Netlist** — compare every NE555 pin and LED polarity with the datasheet.
 3. **Blocks** — confirm that timing, output, power, and decoupling functions are present.
-4. **Local Pool Settings** — decide which approved local assets may be reused.
-5. **Simulate & Verify** — prepare measurable checks.
-6. **Design Analysis** and **Netlist Check** — resolve warnings before applying changes.
+4. **Netlist Check** — resolve pin and connectivity findings.
+5. **Simulate & Verify** — readiness checks and **Run Simulation**.
+6. **Design Analysis** — resolve warnings before applying changes.
+7. **Local Pool Settings** — decide which approved local assets may be reused.
 
 Do not approve a component merely because its name matches. Package, pin numbering, ratings, and model pin order must also match.
 
@@ -162,18 +163,24 @@ brief_sha256: d76ed8651b6d7381
 ![Connections Netlist — every net of the NE555 blinker with the pins it joins and why](../assets/wf/docs/tutorial/ai-design/component-review-tabs.png)
 <!-- /wf:out -->
 
-## 3. Generate a missing component when required
+## 3. Fix or create a missing component when required
 
-Select **AI Gen** for an unresolved item. Choose **From Template** for a clear standard part, or **From Datasheet** when an exact symbol and package must be derived from manufacturer material.
+For a card marked **Not in Pool**, try **Create** first — it searches WireFrame's published library for the exact part. If it is not there, repair or build the part in the AI panel:
 
-Before continuing, check pin count, pin names, electrical types, pad numbering, dimensions, pitch, orientation marker, and symbol-to-footprint mapping. Follow the [AI Component Generator guideline](../ai/component-generator.md) for the complete acceptance checklist.
+```text
+/fix U1 build the symbol and footprint from the datasheet
+```
+
+Attach the manufacturer's PDF with **Attach datasheet...**, review the plan Copilot shows, and select **Apply**. To build every missing part at once, ask in the chat — for example *"fix the parts that cannot be used yet"*.
+
+Before continuing, check pin count, pin names, electrical types, pad numbering, dimensions, pitch, orientation marker, and symbol-to-footprint mapping, then **Confirm this component**. Follow [Fix or Create a Component](../ai/component-generator.md) for the complete acceptance checklist.
 
 ### Short video — Resolve a missing component
 
 !!! note "Video production brief"
     1. **Prepare:** Use a public eight-pin component, an approved public datasheet, and a card marked **Not in Pool**.
-    2. **Opening shot (2–3 s):** Hold on the missing card and its **AI Gen** action.
-    3. **Action shot (12–18 s):** Open the generator, attach or select the prepared source, start generation, show one real progress state, then cut across the wait.
+    2. **Opening shot (2–3 s):** Hold on the missing card and its `/fix` hint.
+    3. **Action shot (12–18 s):** Type `/fix U1 …` in the AI panel, attach the prepared datasheet, show the plan, select **Apply**, show one real progress state, then cut across the wait.
     4. **Review shot (8–10 s):** Open the generated symbol and footprint, compare pin 1 and at least three readable pin-to-pad numbers, then return to the refreshed card.
     5. **Deliver:** Export a **25–35 second** 1080p MP4; hide the API key, local paths, and any proprietary datasheet content.
 
@@ -271,7 +278,7 @@ brief_sha256: c270ffd33ab631a2
 
 ## 5. Apply, place, and route
 
-Apply only the reviewed proposal. Run ERC on the generated schematic, then update the PCB from the active schematic using the current project tool. Review footprint orientation and board constraints before using placement or routing assistance.
+Apply only the reviewed proposal. Run ERC on the generated schematic, then use **Tools → Update Schematic to PCB**. Review footprint orientation and board constraints, then type `/layout` in AI Copilot for an assisted placement and routing proposal — nothing changes until you select **Apply to the board**.
 
 After any assisted placement or routing:
 

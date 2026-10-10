@@ -1,6 +1,6 @@
 # Tutorial: A Simple LED Board
 
-This tutorial covers the complete user workflow with a small connector–resistor–LED circuit. The goal is to practice project organization, library use, schematic checks, PCB update, routing, DFM/DRC, and release output.
+This tutorial takes one small circuit — a 5 V input, a resistor, and an LED — from an empty project to a fabrication package. It practises the whole workflow: project, libraries, schematic, ERC, PCB update, routing, DFM/DRC, and release output. Allow about 25 minutes.
 
 ### Image — Finished tutorial project
 
@@ -11,11 +11,22 @@ This tutorial covers the complete user workflow with a small connector–resisto
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
+## The circuit
+
+| Ref | Part | Value | Footprint (example) |
+|---|---|---|---|
+| J1 | 2-pin connector, 2.54 mm | `5V IN` | 1×02 pin header, 2.54 mm |
+| R1 | Resistor | `330` | 0805 (2012 metric) |
+| D1 | LED, red | `RED` | 0805 (2012 metric) |
+
+J1 pin 1 is +5 V and pin 2 is GND. The current flows J1.1 → R1 → D1 anode → D1 cathode → J1.2.
+
+**Choosing R1.** With a 5 V supply, a red LED dropping about 2.0 V, and a target of about 10 mA: R = (5 − 2.0) / 0.010 = 300 Ω. The next standard value up, 330 Ω, gives (5 − 2.0) / 330 ≈ 9 mA. Use your LED's datasheet forward voltage and current if they differ.
+
 ## Before you start
 
-Prepare an approved symbol and footprint for a resistor, LED, and two-pin connector. Open **View → Local Library Manager** and confirm all six assets in the active inventory.
-
-Create a project from **File → New → New Project (.prjxml)** and keep it in a dedicated folder.
+1. Create the project: **File → New → New Project (.prjxml)...**, choose an empty folder, name it `led_board`, and select **Create**.
+2. Make the three parts available. Either add a KiCad library that has them with **View → Local Library Manager → Add library ▾**, or install them from WireFrame's catalog: in the **Library** panel open **Online Store**, search for each part, and select **Install**.
 
 ### Short video — Create the tutorial project
 
@@ -28,13 +39,15 @@ Create a project from **File → New → New Project (.prjxml)** and keep it in 
 
 ## 1. Create the schematic
 
-1. Add a new schematic to the project and save it.
-2. Place the connector, resistor, and LED.
-3. Arrange them so signal flow is easy to read.
-4. Set unique designators, values, and footprint assignments.
-5. Wire the supply path through the resistor and LED, then return to the connector.
+1. Right-click `led_board` in **Project Structure** → **Add New Schematic**, then press ++ctrl+s++ and save it as `led_board.schxml`.
+2. In the **Library** panel (**Local Library** tab), type the part name in **Filter...** and **drag** the connector, the resistor, and the LED onto the sheet. Leave space between them.
+3. Rotate a part with ++space++ (or ++r++ while it is selected) so the circuit reads left to right.
+4. Select each part and fill **Properties → General → Info**: **Designator** `J1`, `R1`, `D1`, and **Value** `5V IN`, `330`, `RED`. Check **Linked Footprint**; if it is empty, use **Link Footprint & Save to File** and pick the footprint from the table above.
+5. Press ++w++ and draw the wires: click J1 pin 1, then R1 pin 1 to finish; R1 pin 2 to the LED **anode**; the LED **cathode** to J1 pin 2. ++esc++ leaves the Wire tool.
+6. Press ++g++ and click near J1 pin 2 to place a **GND** symbol, then wire it to the pin. Optionally press ++p++ for a power symbol on J1 pin 1 and set its **Value** to `+5V`.
+7. Save (++ctrl+s++).
 
-Choose the resistor from the actual supply voltage, LED forward voltage, and target current. The example value is not a universal engineering recommendation.
+Check the LED orientation against its datasheet: the anode goes towards R1, the cathode towards GND.
 
 ### Image — Completed LED schematic
 
@@ -47,9 +60,13 @@ Choose the resistor from the actual supply voltage, LED forward voltage, and tar
 
 ## 2. Check the schematic
 
-Run **Electrical Rules Check**. Resolve incorrect pin connections, missing values, duplicate designators, and any blocking connectivity issue. Review LED polarity and connector pin numbering against their datasheets.
+Select **Tools → Electrical Rules Check (ERC)**, then **Run Project-Wide ERC Analysis**. The panel should show **0 Errors**. Typical first-time problems:
 
-Do not continue merely because the drawing looks connected; the electrical check and footprint mapping are separate requirements.
+- **E302 Critical pin unconnected** — a wire stops just short of a pin. Redraw it so it ends on the pin.
+- **E101 Duplicate designator** — two parts named the same; rename one.
+- **W200 Net with only one connection** — a wire or label that goes nowhere.
+
+Run the check again after each fix. A drawing that *looks* connected is not enough; ERC and the footprint links are separate requirements.
 
 ### Short video — Fix one ERC issue
 
@@ -62,9 +79,10 @@ Do not continue merely because the drawing looks connected; the electrical check
 
 ## 3. Update the PCB
 
-With the schematic active, select **Tools → Update Schematic to PCB**. Choose the intended target board, review the imported footprints, and confirm that their designators and ratsnest connections match the schematic.
-
-Draw a closed outline on **Edge.Cuts**, then place the connector near an accessible edge and leave practical space around the LED and resistor.
+1. Right-click the project → **Add New PCB**, and save it as `led_board.pcbxml`.
+2. Make the schematic tab active and select **Tools → Update Schematic to PCB**. J1, R1, and D1 arrive on the board in a grid, joined by ratsnest lines.
+3. Draw the board outline: in the **Layers** panel click **Edge.Cuts**, choose **Draw Rectangle** (++r++), and drag a rectangle about **30 × 20 mm** around the parts. (You can also type `/board 30x20 mm` in AI Copilot, or import a drawing with **File → Import → CAD Outline**.)
+4. Drag J1 to an edge so the connector is reachable, and place R1 and D1 nearby. Rotate with ++space++.
 
 ### Image — PCB after schematic update
 
@@ -77,9 +95,12 @@ Draw a closed outline on **Edge.Cuts**, then place the connector near an accessi
 
 ## 4. Route and inspect
 
-Use the Route Trace tool to complete each connection. As each electrical path becomes complete, confirm that its ratsnest line clears. Keep copper away from the board edge and follow the active net-class width and clearance.
+1. Click **F.Cu** in the **Layers** panel.
+2. Press ++x++, click a pad, click to add corners, and click the destination pad. Route the three connections. ++esc++ ends a route; ++backspace++ takes back the last corner.
+3. Each finished connection clears its ratsnest line. Nets named `GND` or starting with `+` (such as `+5V`) use the **Power** class — 20 mil tracks, 15 mil clearance; the R1–D1 net uses **Default** — 10 mil tracks, 6 mil clearance. Both are plenty for 9 mA (see [Design Rules](../pcb/design-rules.md)).
+4. Optional: open **View → Zone Manager**, choose **GND plane ▾ → B.Cu**, then **Refill**, to pour ground on the back.
 
-After routing, inspect LED and connector orientation, silkscreen readability, pad-to-track endpoints, and any layer changes.
+After routing, check LED and connector orientation, silkscreen readability, and that every track ends on its pad.
 
 ### Short video — Route the LED board
 
@@ -92,7 +113,7 @@ After routing, inspect LED and connector orientation, silkscreen readability, pa
 
 ## 5. Run DFM/DRC
 
-Open **DFM & DRC Check**, run the full check, and resolve every release-blocking error. Review warnings one by one; record why a warning is acceptable rather than hiding it.
+Open **Tools → DFM & DRC Check Panel...** and select **Run DFM Analysis**. Click each error to jump to it, fix it, and run again until the result reads **Found 0 Error(s)**. Review each warning; record why an accepted warning is fine rather than hiding it.
 
 ### Image — Clean DFM/DRC result
 
@@ -105,9 +126,11 @@ Open **DFM & DRC Check**, run the full check, and resolve every release-blocking
 
 ## 6. Generate release output
 
-Open **File → Export → Fabrication Outputs (Gerber/Drill/BOM)** or **Tools → Fabrication Output**. Include the required Gerber, drill, BOM, connectivity, and manifest outputs for the selected manufacturer.
-
-Inspect representative copper, mask, silkscreen, drill, and board-outline data in the available preview or a trusted viewer. Confirm that every output belongs to the same saved board revision.
+1. Save the board.
+2. Select **File → Export → Fabrication Outputs (Gerber/Drill/BOM)...**.
+3. Open **Options**, set **Revision** to `A`, and leave the other options at their defaults.
+4. Select **Generate Files to Memory**, read the file list and any warnings, then **Save Package (.zip)...**.
+5. Unzip the package and open the Gerber and drill files in a full Gerber viewer (KiCad GerbView, gerbv, or your manufacturer's viewer) before ordering.
 
 ### Short video — Verify the fabrication package
 
@@ -120,12 +143,11 @@ Inspect representative copper, mask, silkscreen, drill, and board-outline data i
 
 ## Completion checklist
 
-- Project, schematic, and PCB are saved in the intended folder.
-- Symbols, footprints, pin numbers, and polarity are verified.
-- ERC and DFM/DRC have no unresolved blocking errors.
-- No unintended ratsnest connection remains.
-- Board outline, drills, masks, and BOM are present in the release package.
-- The archived package identifies the correct board revision.
+- Project, schematic, and PCB are saved in the project folder.
+- R1 = 330 Ω and the LED polarity are correct; every symbol has its footprint.
+- ERC shows no errors; DFM/DRC shows no errors.
+- No ratsnest line remains.
+- The package contains copper, mask, silkscreen, outline, drill files, and the BOM, all from revision `A`.
 
 ## Continue learning
 

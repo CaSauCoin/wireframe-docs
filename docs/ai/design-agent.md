@@ -100,14 +100,16 @@ For each physical component:
 2. Confirm the package.
 3. Read the role and origin indicator.
 4. Resolve **Not in Pool**, partial matches, and pin-count mismatches.
-5. Use **AI Gen**, **Create**, **Import**, or **Manage** as appropriate.
+5. Use **Create**, **Import**, or **Manage** on the card — or repair the part in the AI panel with `/fix <refdes> <what is wrong>` (the card shows the exact form).
 
 Left-click a component card, its type tag, or one of its actions to make that item the active preview. The action row changes with library state:
 
 | Component state | Actions | Result |
 |---|---|---|
-| Found in Pool | **AI Gen**, **Manage**, **Import** | Regenerate, open the matched library editors, or replace the assignment from a KiCad symbol file |
-| Not in Pool | **AI Gen**, **Create**, **Import** | Generate with AI, start a new symbol in Symbol Library Editor, or load a `.kicad_sym` file |
+| Found in Pool | **Manage**, **Import** | Open the matched library editors, or replace the assignment from a library file |
+| Not in Pool | **Create**, **Import** | Search the published library and otherwise start a new symbol in Symbol Library Editor, or load a library file |
+
+To repair or build a part with AI, type `/fix <refdes> <what is wrong> [file.pdf]` in the AI panel — see [Fix or Create a Component](component-generator.md).
 
 Editing **Value** or **Footprint Package** invalidates derived validation, simulation, and placement results. Let the pool re-check finish, then repeat the relevant review tabs.
 
@@ -222,7 +224,7 @@ After revision, previous validation, simulation, and placement results may be st
 
 ## See also
 
-- [AI Component Generator](component-generator.md)
+- [Fix or Create a Component](component-generator.md)
 - [Placement and Routing Assistant](auto-placer-router.md)
 - [Simulation Workbench](../simulation/index.md)
 - [ERC](../schematic/erc.md)

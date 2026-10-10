@@ -1,22 +1,20 @@
 # Routing Traces
 
-Trace routing connects pads on the PCB with copper paths, enforcing electrical and design-rule constraints. This page covers the full routing workflow: drawing traces, placing vias, adding holes, and routing helpers.
+Trace routing connects pads on the PCB with copper paths under the board's design rules. This page covers drawing traces, changing layer through vias, mounting holes, and editing finished routes.
 
 ---
 
 ## Starting a Route
 
-Press ++x++ or click **Route Trace** on the PCB toolbar.
+Press ++x++ or click **Route Trace** on the PCB toolbar (the vertical toolbar on the right edge of the canvas).
 
 ### Drawing a trace
 
-1. **Click on a pad** (or an existing trace/via) to start routing
-2. The trace follows the cursor with **45° helper points** computed automatically
-3. **Left-click** to confirm each corner vertex
-4. **Click the destination pad** to complete the trace — the ratsnest line disappears
-5. Or **right-click** / ++esc++ to cancel
-
-The ratsnest connection disappears when the destination is electrically complete.
+1. **Click a pad** (or an existing trace or via) to start. The trace takes the net of what you clicked and the width of that net's class.
+2. Move the cursor. WireFrame proposes a path with 45° or 90° steps and rounds or mitres the corners in the style set under **Properties → Board Settings → Corners**. If the straight path would break a rule, it tries a path that walks around the obstacle.
+3. **Click** to commit each waypoint. ++backspace++ takes back the last waypoint.
+4. **Click the destination pad** to finish — or a trace of the same net, which joins the new trace to it. When the pad is on the other copper layer, a via is inserted automatically. The ratsnest line disappears once the connection is complete.
+5. To stop elsewhere, **double-click**, or press ++esc++: the committed part of the trace is kept. ++esc++ before the first waypoint removes the trace.
 
 ### Image — Completed pad-to-pad route
 
@@ -47,40 +45,46 @@ brief_sha256: 28fa26183f831998
 
 | Action | Input |
 |---|---|
-| Start on a pad | Left-click |
-| Add a corner | Left-click |
-| Finish on the destination pad | Left-click on target pad |
-| Cancel | Right-click or ++esc++ |
-| Switch layer (place via) | ++v++ while routing |
+| Start on a pad, trace, or via | Click |
+| Commit a waypoint | Click |
+| Take back the last waypoint | ++backspace++ |
+| Finish on the destination pad | Click the pad |
+| Finish here | Double-click, or ++esc++ |
+| Thinner / wider trace | ++bracket-left++ / ++bracket-right++ (1 mil per press, within the net class limits) |
+| Change layer (drops a via) | ++v++, ++tab++, or ++space++ — see below |
+
+While you route, a small readout near the cursor shows the net, its class, the layer, the width, the clearance, how violations are handled, and the routed length so far.
 
 ---
 
-## Real-Time Clearance Checking
+## Clearance While Routing
 
-During routing, WireFrame checks for violations and **warns immediately** if the trace is too close to:
+When every candidate path would break the clearance of the net class, the net class setting **Design Rules → Clearance → When violated** decides what happens:
 
-| Check | Example |
-|---|---|
-| Trace ↔ Trace | Two traces on the same layer too close together |
-| Trace ↔ Pad | Trace overlapping a pad from a different net |
-| Trace ↔ Via/Hole | Trace crossing through a drill area |
-| Trace ↔ Board Edge | Trace too close to Edge.Cuts |
+| Setting | Preview colour | Result |
+|---|---|---|
+| **Block** (default) | Red | The segment cannot be committed — move the cursor to a clear path |
+| **Warn** | Amber | The segment is committed; DRC will report it |
+| **Allow** | Layer colour | The segment is committed without a warning |
 
-- A **red indicator** appears at the violation point
-- The trace cannot be completed while a clearance violation is active
+Ending a route on a pad of a **different net** is allowed; DFM/DRC reports the short. Always run [DFM & DRC](dfm-and-drc.md) after routing.
 
 ---
 
 ## Vias — Switching Layers
 
-A via is a plated hole that connects **F.Cu and B.Cu**, allowing a trace to change board sides.
+A via is a plated hole that connects copper layers so a trace can change layer.
 
-### Placing a via while routing
+### Changing layer while routing
 
-1. While routing on **F.Cu**, press ++v++
-2. A via is placed at the current cursor position
-3. The active routing layer switches to **B.Cu**
-4. Continue routing on B.Cu from the via
+| Key | Via goes to |
+|---|---|
+| ++v++, ++tab++, or ++space++ | The other layer of the via pair (F.Cu ↔ B.Cu by default) |
+| ++equal++ / ++minus++ (or keypad ++num-plus++ / ++num-minus++) | The next / previous copper layer of the stackup |
+| ++page-up++ / ++page-down++ | F.Cu / B.Cu |
+| ++shift+v++ | A layer you pick from a list |
+
+The via is dropped at the last waypoint and routing continues on the new layer. Move away from the start point first — a via cannot be dropped on it. The via type (through, blind/buried, or micro) follows **Properties → Board Settings → Vias → Type**, which defaults to the net class.
 
 ### Image — Route changing layer through a via
 
@@ -91,35 +95,37 @@ A via is a plated hole that connects **F.Cu and B.Cu**, allowing a trace to chan
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
-### Manual via placement
+### Placing a via by itself
 
-1. Select the **Draw Via** tool from the toolbar
-2. Click on the board to place a via
-3. Assign a net in the Properties panel if needed
+1. Select **Place Via** on the toolbar (++v++ when not routing).
+2. Click on the board. The via takes the net of the trace or pad under the cursor.
 
 ### Via properties
 
-| Property | Description |
+Select one or more vias to edit them in **Properties**. Edits apply to every selected via.
+
+| Field | Description |
 |---|---|
-| Diameter | Copper annular ring outer diameter |
-| Drill | Drill hole diameter |
-| Net | The electrical net the via belongs to |
+| Lock | Locked vias cannot be moved or deleted |
+| Type | **Through**, **Blind/Buried**, or **Micro**, with the layers it spans |
+| **Diameter** / **Drill** | Copper pad and hole size; **Ring** shows the annular ring left around the hole |
+| **Reset to net class** | Takes diameter and drill from the net class in Design Rules |
 
 ---
 
-## Mechanical Holes
+## Mounting Holes
 
-Use the **Place Hole** tool to add **non-electrical** holes (screws, standoffs):
+Use **Place Mounting Hole** (++h++) for holes such as screws and standoffs:
 
-1. Select Place Hole from the toolbar
-2. Click on the board to place it
-3. Set parameters in the Properties panel:
+1. Select the tool and click on the board.
+2. Select the hole and set it in **Properties → Hole Properties**:
 
-| Property | Description | Example |
+| Field | Description | Example |
 |---|---|---|
-| `diameter` | Hole diameter | 3.2 mm for M3 screws |
-| `plated` | Whether the hole has copper plating | Usually `false` |
-| `netName` | Net if plated (e.g. for GND stitching) | `GND` |
+| **Diameter** | Hole diameter, in mil with the mm value beside it | 3.2 mm for M3 screws |
+| **X** / **Y** | Position | |
+| **Plated (PTH)** | Copper-plated hole | Usually off |
+| **Net** | Net of a plated hole (shown when **Plated** is on) | `GND` |
 
 ---
 
@@ -127,119 +133,71 @@ Use the **Place Hole** tool to add **non-electrical** holes (screws, standoffs):
 
 | Operation | How |
 |---|---|
-| **Move an entire trace** | Select + drag |
-| **Drag a segment** | Click and drag a segment between two vertices |
-| **Delete a trace** | Select + ++delete++ (ratsnest reappears) |
-| **Move a segment** | Drag the selected segment; collision checks ignore only the segment being edited |
-| **Delete a segment** | Select the segment and delete it without removing unrelated route geometry |
-| **Align segments** | Use the alignment action to create a DRC-aware parallel offset |
+| Select a segment | Click it |
+| Select a whole net | Double-click a trace — every trace and via of that net is selected and highlighted |
+| Move | Drag the selection, or nudge it with the arrow keys (5 mil per press) |
+| Delete | ++delete++, or right-click → **Delete Segment(s)** / **Delete Track(s)**. The ratsnest reappears |
+| Change layer, width, or corners | Right-click → **Edit** (below), or **Properties → Trace Properties → Layer** |
 
-## Net classes and advanced rules
+Moving a via or a footprint keeps the attached trace endpoints connected.
 
-Open **Design Rules Manager** to assign width and clearance behavior by net class. Automatic rules can classify common power nets and serialize assignments with the board, while a manual net assignment takes precedence.
+### The trace context menu
 
-For dense connections, multi-trace routing can move a group of traces with automatic node snapping and parallel polyline offsets. Always re-run DFM after an aligned or multi-trace edit.
+Right-click a selected trace:
 
-!!! info "Automatic net update"
-    Deleting or modifying a trace marks the affected net as dirty → the ratsnest is automatically recomputed to show any missing connections.
+| Group | Item | What it does |
+|---|---|---|
+| **Select** | **Connected Track Chain** | Every track joined end-to-end to the selection, through vias, up to the pads |
+| | **All Copper of Net(s)** | Every track and via of the selected nets |
+| | **Highlight Net** | Highlights the net on the canvas |
+| **Edit** | **Move to Layer ▸** | Moves the selected tracks to another copper layer |
+| | **Width ▸** | Type a width and **Apply**, or use **Net class width** or **Match widest** |
+| | **Corners ▸** | Set a radius, then **Miter 45°** or **Arc** |
+| | **Merge Collinear Segments** | Joins pieces that continue along the same line |
+| **Bus** (several parallel tracks) | **Distribute Evenly** | Keeps the two outer tracks and spaces the ones between evenly |
+| | **Pack to Top / Left**, **Pack to Bottom / Right** | Closes the gaps to width + clearance toward one side; ends on pads stay put |
+| | **Set Pitch ▸** | Centre-to-centre spacing from the top or left track |
+| **High-speed ▸** | Tune length, pairs, and groups | See [Length tuning and pairs](#length-tuning-and-differential-pairs) |
+| | **Delete Segment(s)** / **Delete Track(s)** | Removes the selected segments, or whole tracks |
+
+Review clearance after every group operation and re-run DFM.
 
 ---
 
 ## Consolidate Collinear Trace Segments
 
-After routing, use **Trace Consolidation → Merge Collinear Segments** on selected trace segments to remove redundant boundaries between pieces that continue along the same line.
-
-1. Select the collinear trace segments you want to consolidate.
-2. Right-click one of the selected segments.
-3. Open **Trace Consolidation**.
-4. Select **Merge Collinear Segments**.
-5. Inspect the result and re-run DFM/DRC.
-
-This action does not promise to simplify arbitrary zig-zags or redesign the route. Use **Arc Mitering → Apply Arc to Selection** when the intended operation is corner rounding instead.
+After routing, select the segments, right-click, and choose **Edit → Merge Collinear Segments** to remove boundaries between pieces that continue along the same line. It does not simplify zig-zags or redesign the route; use **Corners ▸** to round or mitre corners instead. Inspect the result and re-run DFM/DRC.
 
 ### Image — Route before and after trace consolidation
 
 !!! note "Image capture brief"
     1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
-    2. **Build the frame:** Use a two-panel image of the same selected route before and after **Merge Collinear Segments**. Keep the geometry identical except for the removed collinear boundaries, and include a small inset of **Trace Consolidation**. Do not label the action **Gloss**. Suggested size: **1400 × 760 px**.
+    2. **Build the frame:** Use a two-panel image of the same selected route before and after **Merge Collinear Segments**. Keep the geometry identical except for the removed collinear boundaries, and include a small inset of the right-click menu with **Merge Collinear Segments**. Do not label the action **Gloss**. Suggested size: **1400 × 760 px**.
     3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
-## Align and round selected segments
+---
 
-With two or more trace segments selected, right-click to open the trace context menu:
+## Routing Several Traces Together
 
-- **Segment Alignment → Distribute Spacing** evens the spacing across the selection.
-- **Segment Alignment → Pack to Anchor (Top/Left)** packs the group toward its top or left anchor.
-- Enter an **Arc Mitering** radius, then choose **Apply Arc to Selection** to round eligible corners.
-- **Delete Selected Traces** removes the selected segments only.
-
-Review clearance after every group operation. The available actions depend on a compatible multi-selection.
+Select two or more existing traces, choose **Route Trace**, and click one of the selected traces to continue them all at once. The other traces follow in parallel at their current spacing.
 
 ---
 
-## Smart Drag
+## Length Tuning and Differential Pairs
 
-WireFrame maintains connections during drag operations:
+- **Tune Length** (toolbar, under Route Trace): hover a straight segment of a net that is shorter than its pair, its length group, or its class target. The distance from the segment sets the bump height and the side of the cursor sets the side; click to add a meander. ++esc++ leaves the tool.
+- Right-click → **High-speed ▸** adds a meander with set **Add**, **Height**, **Pitch**, side, and corner style, declares two nets as a differential pair (**Declare as differential pair**), or adds nets to a length group.
+- **Properties → Board Settings → High-speed**: with **Pairs → Both halves** on, starting a route on a pad of a declared pair routes both halves together; **Return vias → Add GND vias** drops a GND via beside a pair's vias when it changes layer; **Meanders** sets the corner style of tuning bumps.
 
-- **Moving a via** — attached traces keep their endpoints connected to the via
-- **Moving a footprint** — connected trace endpoints adjust automatically to maintain pad attachment
-
----
-
-## Auto-Snapping
-
-While routing, WireFrame automatically **snaps the cursor** to nearby connection targets:
-
-| Target | Behavior |
-|---|---|
-| **Pad center** | Cursor snaps to the pad center when nearby — ensures perfect connection |
-| **Existing via** | Cursor snaps to via center for easy connection |
-| **Existing trace** | Cursor snaps to the nearest point on a trace segment of the same net |
-
-Auto-snapping prevents common routing errors like "almost connected" traces that look connected but fail DFM checks.
+Pairs, length groups, and targets are defined in [Design Rules](design-rules.md).
 
 ---
 
-## Segment Merging
+## AI-Assisted Routing
 
-When you extend an existing trace or add a segment that continues in the same direction, WireFrame **automatically merges** collinear segments into a single continuous trace:
-
-After merging, consecutive collinear pieces behave as one continuous segment. Verify the result by selecting the route and checking that no unintended corner remains.
-
-This keeps the design clean and reduces the number of trace objects in the file.
-
----
-
-## Bus Routing (Multi-Trace)
-
-WireFrame supports routing multiple parallel traces simultaneously:
-
-- When routing from a group of pads (e.g., a data bus D0–D7), the router can create **parallel traces** with a consistent offset (Slave-Master pattern).
-- Traces maintain equal spacing and follow the same routing path shape.
-
----
-
-## Double-Click Net Selection
-
-**Double-click** on any trace to select the **entire net** — all trace segments and vias connected to the same net are highlighted at once.
-
-This is useful for:
-
-- Reviewing a complete signal path
-- Deleting an entire net's routing
-- Checking net connectivity visually
-
----
-
-## AI Auto-Router
-
-WireFrame includes an AI-powered automatic router that can route **all connections** on the board:
-
-- Proposes routing based on the current board and constraints.
-- Requires review of layers, clearances, vias, and remaining ratsnest connections.
-- See [Placement and Routing Assistant](../ai/auto-placer-router.md) for the complete guideline.
+The AI Copilot can propose placement and routing for the whole board with `/layout`. Proposals run on a copy and change nothing until you apply them. See [Placement and Routing Assistant](../ai/auto-placer-router.md).
 
 ---
 

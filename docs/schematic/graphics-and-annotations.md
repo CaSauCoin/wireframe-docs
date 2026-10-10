@@ -6,10 +6,11 @@ Use schematic graphics and text to explain circuit intent, group related section
 
 | Tool | Use it for |
 |---|---|
-| Line, rectangle, circle, arc, polygon | Visual grouping or explanatory shapes |
-| Text | Notes, limits, test points, and design intent |
-| Harness | Supported grouped connection notation |
-| Junction | Explicit electrical meeting point |
+| **Draw Line** (++shift+l++), **Draw Rectangle** (++r++), **Draw Circle** (++e++), **Draw Arc** (++a++), **Draw Polygon** (++o++) | Visual grouping or explanatory shapes |
+| **Place Text** (++t++) | Notes, limits, test points, and design intent |
+| **Net Harness** (++h++) | A drawn line that marks a bundle of signals; it does not connect nets |
+| **Junction** (++j++) | Explicit electrical meeting point of wires |
+| **Import Image** | A PNG, JPG, or BMP picture (a logo, a block diagram) placed at the centre of the view |
 
 Do not use a graphic line as a wire. If two pins must be electrically connected, use the Wire tool and verify the result with net highlighting or ERC.
 
@@ -18,7 +19,7 @@ Do not use a graphic line as a wire. If two pins must be electrically connected,
 1. Select the graphic or text tool.
 2. Place its points or bounds on the sheet.
 3. Press ++esc++ when the shape is complete.
-4. Select it and use Properties to set content, color, line width, fill, position, or size when available.
+4. Select it and use **Properties → Graphic Object** to set **Content** (text), **Size**, **Color**, or **Thickness**.
 5. Save and inspect the PDF result if the annotation is part of release documentation.
 
 ### Short video — Add a circuit note and grouping box
@@ -84,7 +85,7 @@ brief_sha256: f82d656a0bf9c147
 
 ## Dimensions
 
-Do not rely on a schematic dimension tool unless it is visible and verified in the release build. Record required distances as clear text or in the relevant PCB/mechanical workflow instead of documenting experimental or programmatic features.
+The schematic editor has no dimension tool. Record required distances as text, and place real dimensions on the PCB with the **Measure** tool (++m++).
 
 ### Image — Documented schematic block
 

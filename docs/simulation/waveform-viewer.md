@@ -12,6 +12,8 @@ Use:
 - **All** for broad debugging;
 - **None** before building a focused comparison.
 
+You can also mark a net directly on the schematic: choose **Probe Signal** on the schematic toolbar (++v++) and click a wire, pin, net label, or power symbol. A probe marker is placed on that net.
+
 ### Image — Waveform Viewer with two signals
 
 !!! note "Image capture brief"
