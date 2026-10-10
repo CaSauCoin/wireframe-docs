@@ -32,7 +32,7 @@ When Copilot presents a block card that can be placed:
 
 ## Run schematic auto-routing
 
-From **Simulate & Verify**, use **Run Schematic Auto-Router** only after library and netlist checks pass. Inspect:
+With the schematic active, use **Tools → Auto Wire** only after library and netlist checks pass. It draws the wires of the planned netlist with a local orthogonal router — no AI request — and the whole run is one undo step. Inspect:
 
 - whether wires terminate on the correct pins;
 - whether labels and junctions remain readable;
@@ -69,6 +69,9 @@ The number of copper layers sets the board's price and what the layout can do �
 |---|---|
 | `/layout` | All stages, no model call |
 | `/layout place,route` | Only the stages you list (`place`, `planes`, `vias`, `route`, `stitch`) — no model call |
+| `/layout fresh` | Takes the board's existing tracks up first, then runs the stages |
+| `/layout reseed` | Places every part again instead of keeping the current placement |
+| `/layout fix` | Runs the layout, reads every failure — unrouted connections and the circuit's own rules — changes what it calls for, and runs again, without a model call. `/layout fix rules` also allows net class changes within the fabricator's limits |
 | `/layout apply` | Commits the proposed layout; `/layout apply option <name>` commits one compared option |
 | `/layout discard` | Throws the proposal away; the board stays as it was |
 | `/layout rules` | Prints the layout rules in force (net classes, widths, clearances) |

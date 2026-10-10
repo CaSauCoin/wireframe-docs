@@ -1,122 +1,105 @@
 # Footprints and Placement
 
-Footprints are the **physical packages** placed on the PCB — pads, drill holes, silkscreen graphics, and optional 3D models. This page covers loading libraries, placing, moving, rotating, and flipping footprints.
+Footprints are the **physical packages** placed on the PCB — pads, drill holes, silkscreen graphics, and optional 3D models. This page covers how footprints reach the board, and how to move, rotate, flip, and remove them.
 
 ---
 
-## Loading Footprint Libraries
+## Where Footprints Come From
 
-Open **View → Local Library Manager** and add the folder or KiCad footprint source. With a PCB active, approved footprints appear in its library panel.
-
-1. Click **Load Footprints…**
-2. Select one or more KiCad footprint files (`.kicad_mod`)
-3. WireFrame parses the footprint data in the background
-4. After parsing, footprint names appear in the list and can be filtered
-
-Each loaded footprint contains:
+Every footprint on a board belongs to a component of the project's schematic. The footprint itself is the one assigned to that symbol (see [Symbols Library](../libraries/symbols-library.md)).
 
 | Data | Description |
 |---|---|
-| **Pads** | Number, position, shape (circle/rect/oval), drill size, layers |
-| **Graphics** | Lines, arcs, circles, polygons, reference and value text |
-| **3D model** | Optional STEP/OBJ file path with offset, scale, and rotation |
+| **Pads** | Number, position, shape, drill size, layers |
+| **Graphics** | Silkscreen, fabrication, and courtyard outlines; reference and value text |
+| **3D model** | Optional STEP or other 3D file with offset, scale, and rotation |
+
+Footprint sources are managed in **View → Local Library Manager** — KiCad footprint folders, single `.kicad_mod` files, and converted Altium libraries. **Load Footprints...** at the top of the PCB **Footprints** panel adds one `.kicad_mod` file to the library.
 
 !!! info "Free KiCad footprint libraries"
-    Download from [https://www.kicad.org/libraries/](https://www.kicad.org/libraries/) — WireFrame is fully compatible.
+    The official KiCad libraries at [https://www.kicad.org/libraries/](https://www.kicad.org/libraries/) can be added as a footprint source.
 
 ---
 
 ## Placing Footprints
 
-### Method 1: From schematic conversion (recommended)
+### From the schematic (the normal way)
 
-After running **Tools → Update Schematic to PCB**, an **Available Footprints** list shows all unplaced schematic components:
+With a schematic of the project active, run **Tools → Update Schematic to PCB** (choose the target board when the project has several PCBs). WireFrame then:
 
-1. Open the "Available Footprints" dialog (appears automatically after conversion)
-2. Select a component from the list
-3. Click on the board to place it
-4. The footprint appears with its ID matching the schematic component (e.g. `U1`, `R3`)
+1. collects every sheet of the design, starting from the top sheet;
+2. loads each component's footprint, assigning one from the library symbol when the field is empty, and lists components whose footprint cannot be found;
+3. **keeps** footprints that are already on the board — position, rotation, and side — when their footprint did not change;
+4. **removes** footprints whose component no longer exists in the schematic;
+5. places **new** footprints in a grid, 200 mil apart, starting at the board origin;
+6. updates the nets and saves the PCB.
 
-### Method 2: Directly from the library
+Drag the new footprints from the grid to their places on the board. A project is required: a standalone schematic cannot be converted.
 
-1. In the **Library panel**, double-click a footprint name
-2. The PCB enters **placement mode** — the footprint preview follows the cursor
-3. Press ++r++ to rotate before placing (if needed)
-4. **Left-click** to place at the desired position
+### Placing an unplaced footprint again
 
-| Action | Input |
-|---|---|
-| Place footprint | Left-click |
-| Rotate before placing | ++r++ |
-| Cancel placement | Right-click or ++esc++ |
+The **Footprints** panel (right side, with a PCB active) lists footprints that belong to the design but are not on the board — for example ones you removed with ++delete++. It reads **All components placed.** when there are none.
+
+1. Type in **Filter...** to find the footprint.
+2. **Drag** its row onto the canvas. It lands at the drop point, at 0°, on the top side.
 
 ---
 
-## Moving and Rotating Footprints
+## Moving, Rotating, and Flipping
 
-### Moving
-
-1. **Select** one or more footprints
-2. **Click and drag** to move them on the board
-3. Connected traces and vias **automatically update their endpoints** to maintain pad connections
-
-All move operations support full **Undo** (++ctrl+z++).
-
-### Rotating
-
-| Action | Input |
+| Action | How |
 |---|---|
-| Rotate 90° | ++r++ or context menu → Rotate |
+| Select | Click a footprint; drag a box over several |
+| Move | Drag the selection, or nudge with the arrow keys (5 mil per press) |
+| Rotate | ++space++ — by the step set in **Preferences → Editing** (90° by default) |
+| Flip to the other side | ++f++, or **Flip Layer (F)** in Properties |
+| Exact position | **Properties → Footprint Properties → Transform**: **X**, **Y**, **Rotation** |
 
-After rotating:
-- The footprint angle is updated
-- All pad positions are recomputed
-- Connected trace endpoints adjust to the new pad locations
+Connected traces and vias keep their endpoints on the pads while you move or rotate. All of these are undoable (++ctrl+z++).
 
----
+### Flipping (Front ↔ Back)
 
-## Flipping Footprints (Front ↔ Back)
-
-To move a component to the **opposite side of the board**:
-
-1. Select one or more footprints
-2. Press ++f++ or **context menu → Flip**
-3. Layers are swapped:
-    - `F.Cu` → `B.Cu`, `F.SilkS` → `B.SilkS`, and so on
-
-| Before flip | After flip |
-|---|---|
-| Copper and silkscreen use the front-layer set | Copper and silkscreen remap to the back-layer set |
-| Designator reads normally from the top view | Designator is mirrored for physical bottom-side placement |
+Flipping moves a footprint to the opposite side of the board. Its copper and silkscreen move to the back-layer set (`F.Cu` → `B.Cu`, `F.SilkS` → `B.SilkS`, and so on), and the footprint is mirrored as seen from the top. **Properties** shows **(Current: Top)** or **(Current: Bottom)**.
 
 !!! info "Visual feedback"
-    Flipped footprints change color (e.g. red F.Cu → blue B.Cu) and the designator text may mirror — this is the expected behavior and matches the physical reality of a bottom-side component.
+    Flipped footprints change color (e.g. red F.Cu → blue B.Cu) and the designator mirrors — this matches the physical reality of a bottom-side component.
 
 ---
 
-## Adjusting Designator Text Position
+## Footprint Properties
 
-Each footprint has a designator label (e.g. "R1", "U3") that can be repositioned independently:
+Select one footprint to see **Footprint Properties**:
 
-| Feature | Description |
+| Field | Description |
 |---|---|
-| Position | Drag the designator text separately from the footprint body |
-| Rotation | Rotate the label independently |
-| Selection | Click directly on the text to select only the text |
-
-Use this when the designator overlaps a trace or pad — drag it to a clear area nearby.
+| **Reference** | Designator, e.g. `R1` |
+| **Value** | Value text, e.g. `10k` |
+| Library | The footprint it was built from (read-only) |
+| **Transform** | **X**, **Y** (mil, with mm beside), **Rotation** |
+| **Flip Layer (F)** | Moves it to the other side |
 
 ---
 
-## Unplace vs. Delete
+## Adjusting Designator Text
 
-| Operation | Result |
+Each footprint has a designator label (e.g. "R1", "U3") that can be moved on its own:
+
+| Action | How |
 |---|---|
-| **Unplace** | Removes from the board, returns it to the "Available" list — can be placed again later |
-| **Delete** | Permanently removes the footprint (and connected traces) — fully undoable |
+| Select only the text | Click directly on the designator |
+| Move | Drag it |
+| Rotate | ++space++ with the designator selected |
+| Align several | Select the designators, right-click → **Align Designators ▸** (**Align Left**, **Align Right**, **Align Center (H)**, **Align Top**, **Align Bottom**, **Align Center (V)**), or ++shift+y++ / ++shift+x++ |
 
-!!! tip "When to use Unplace"
-    Use **Unplace** if the component still exists in the schematic and you want to place it again later. Use **Delete** to remove it from the PCB entirely.
+Use this when the designator overlaps a trace or pad.
+
+---
+
+## Removing a Footprint
+
+Select a footprint and press ++delete++. The footprint leaves the board and goes back to the **Footprints** panel, so you can drag it in again. Its traces stay where they are. Removing it is undoable.
+
+To remove a component from the design for good, delete it in the schematic and run **Update Schematic to PCB** again.
 
 ---
 
@@ -125,3 +108,4 @@ Use this when the designator overlaps a trace or pad — drag it to a clear area
 - [Routing](routing.md) — route traces between placed footprints
 - [Footprint Libraries](../libraries/footprints-library.md) — create and manage footprint libraries
 - [3D Viewer](../advanced/3d-viewer.md) — preview footprints with 3D models
+- [Placement and Routing Assistant](../ai/auto-placer-router.md) — AI-assisted placement

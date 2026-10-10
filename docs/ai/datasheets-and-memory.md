@@ -78,5 +78,5 @@ A newer decision about the same subject replaces the older one, but the history 
 ## See also
 
 - [Copilot Commands](commands.md)
-- [AI Component Generator](component-generator.md)
+- [Fix or Create a Component](component-generator.md)
 - [AI Copilot](index.md)

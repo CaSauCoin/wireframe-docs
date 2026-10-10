@@ -8,42 +8,57 @@ The PCB Editor handles board layout — from component placement to trace routin
 
 | Task | Tool |
 |---|---|
-| Place footprints from library or schematic | Library panel / Available Footprints dialog |
-| Route copper traces between pads | Route Trace tool (++x++) |
-| Place vias to switch routing layers | Via tool (++v++) |
-| Add mechanical holes (screws, standoffs) | Place Hole tool |
-| Define the board outline | Edge.Cuts layer + drawing tools |
-| Fill copper zones (ground planes) | Zone / Fill GND Plane |
-| Run DFM / DRC checks | Tools → DFM & DRC Check Panel |
-| Export Gerber, drill, BOM, PDF | File → Export → Fabrication Outputs / Tools → Fabrication Output |
-| Preview the board in 3D | View → 3D Viewer |
+| Bring footprints in from the schematic | **Tools → Update Schematic to PCB** |
+| Place a footprint again after removing it | Drag it from the **Footprints** panel |
+| Route copper traces between pads | **Route Trace** (++x++) |
+| Place vias to switch routing layers | **Place Via** (++v++), or ++v++ while routing |
+| Add mechanical holes (screws, standoffs) | **Place Mounting Hole** (++h++) |
+| Define the board outline | Edge.Cuts layer + drawing tools, or **File → Import → CAD Outline** |
+| Fill copper zones (ground planes) | **View → Zone Manager** |
+| Set clearances, widths, and net classes | **View → Design Rules** |
+| Run DFM / DRC checks | **Tools → DFM & DRC Check Panel...** |
+| Export Gerber, drill, BOM, PDF | **File → Export → Fabrication Outputs (Gerber/Drill/BOM)...** or **Tools → Fabrication Output...** |
+| Preview the board in 3D | **View → 3D Viewer** (++3++) |
 
 ---
 
 ## Workspace
 
-![PCB workspace](../img/pcb/workspace.png)
+### Image — PCB workspace
 
-- **Canvas** — the board area with grid, footprints, traces, zones, and **ratsnest** lines (unrouted connections)
-- **Toolbar** — floating tool buttons above the canvas
-- **Layer panel** — toggle visibility and select the active routing layer
-- **Library panel** — footprint list for placement
-- **Properties panel** — edit properties of the selected PCB object
+!!! note "Image capture brief"
+    1. **Prepare:** Open the sample project's PCB with footprints placed and a few traces routed.
+    2. **Build the frame:** Capture the PCB editor with the canvas, the vertical toolbar on the right edge, the Layers panel, the Footprints panel, and Properties showing **Board Settings**.
+    3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
+    4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
+    5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
+
+- **Canvas** — the board area with rulers, grid, footprints, traces, zones, and **ratsnest** lines (unrouted connections)
+- **Toolbar** — a vertical strip of tool buttons on the right edge of the canvas; ++tab++ hides or shows it
+- **Layers panel** — toggle visibility and select the active layer (**View → PCB Layers**)
+- **Footprints panel** — footprints of the design that are not on the board yet
+- **Properties panel** — the selected object, or **Board Settings** when nothing is selected
 
 ---
 
 ## PCB Toolbar Tools
 
+From top to bottom:
+
 | Tool | Shortcut | Function |
 |---|---|---|
 | **Select** | ++esc++ | Select and move objects |
-| **Place Footprint** | — | Place a footprint from the library |
-| **Route Trace** | ++x++ | Route copper traces between pads |
-| **Draw Via** | ++v++ | Place a via manually |
-| **Place Hole** | — | Place a mechanical hole |
-| **Draw Line / Rect / Circle / Arc / Polygon** | — | Draw graphic shapes on any layer |
-| **Draw Text** | — | Place text on silkscreen or fab layers |
-| **Measure** | — | Measure distances on the board |
+| **Place Footprint** | ++o++ | Footprints are placed by dragging them from the **Footprints** panel |
+| **Route Trace** | ++x++ | Route copper traces between pads — see [Routing](routing.md) |
+| **Tune Length** | — | Add meanders to a net that is shorter than its target — see [Routing](routing.md#length-tuning-and-differential-pairs) |
+| **Place Via** | ++v++ | Place a via by itself |
+| **Place Mounting Hole** | ++h++ | Place a mechanical hole |
+| **Draw Line / Rectangle / Circle / Arc / Polygon** | ++shift+l++ / ++r++ / ++e++ / ++a++ / — | Draw shapes on the active layer |
+| **Place Text** | ++t++ | Place text on the active layer |
+| **Vectorize Image** | — | Turn a PNG/JPG logo into board artwork — see [below](#logos-and-images) |
+| **Import CAD (SVG)** | — | Import an SVG drawing — see [Board Shape and Outline](board-outline.md) |
+| **Measure** | ++m++ | Place a dimension: click the start, click the end, move to set the offset, click to place |
+| **mil / mm** | ++shift+u++ | Switch the display unit |
 
 ---
 
@@ -51,9 +66,11 @@ The PCB Editor handles board layout — from component placement to trace routin
 
 Every PCB needs a board outline that defines its **physical shape**:
 
-1. In the **Layer panel**, click **Edge.Cuts** to make it the active layer
+1. In the **Layers** panel, click **Edge.Cuts** to make it the active layer
 2. Use the **Draw Rectangle** (or Polygon) tool to draw the board shape
 3. The outline appears in magenta
+
+You can also import a mechanical drawing — see [Board Shape and Outline](board-outline.md).
 
 !!! tip "Why Edge.Cuts matters"
     The board outline is used for:
@@ -79,6 +96,19 @@ Ratsnest lines are **thin dashed lines** showing connections that have not yet b
 - Ratsnest lines **automatically update** after every edit
 - When you **route a trace**, the corresponding ratsnest line **disappears**
 - The goal is to **route until all ratsnest lines are gone**
+
+---
+
+## Logos and Images
+
+**Vectorize Image** on the toolbar turns a PNG, JPG, or BMP into board artwork:
+
+1. Choose the image. **Image Vectorizer Settings** opens with a **Live Preview**.
+2. Adjust **Invert Colors** (for light art on a dark background), **Fill Style** (**None (Outline)**, **Solid Fill**, **Hatch (Grid)**), **Threshold (Black/White)** — or **Auto** to pick it — **Smoothing**, **Edge Blur**, and **Simplification (Epsilon)**.
+3. Set the size with **Scale (mils per pixel)** or **Target Width (mm)**; **Size Info** shows the result in mm and mil.
+4. Select **Import**. The artwork is added on **F.SilkS** as a footprint named `LOGO…` and follows the cursor — click to drop it. Move or rotate it like any other footprint.
+
+Measure the result and check the line width against your manufacturer's minimum silkscreen or copper width before release.
 
 ---
 

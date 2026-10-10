@@ -8,10 +8,10 @@ The Schematic Editor is where you **design your circuit**: place components, dra
 
 | Task | Tool |
 |---|---|
-| Place components from libraries | Library panel → Double-click |
+| Place components from libraries | Drag a symbol from the **Library** panel onto the sheet |
 | Draw wires connecting pins | Wire tool (++w++) |
-| Assign net labels (SDA, SCL, +3V3…) | Label tool (++l++) |
-| Place power symbols (GND, VCC) | GND / VCC toolbar buttons |
+| Assign net labels (SDA, SCL, +3V3…) | **Label** tool (++n++) |
+| Place power symbols (GND, VCC) | **Place GND** (++g++) / **Place VCC** (++p++) |
 | Draw annotations (boxes, text, lines) | Line, Rect, Text tools |
 | Edit component properties | Properties panel |
 | View net connectivity | Built automatically as you draw |
@@ -22,10 +22,17 @@ The Schematic Editor is where you **design your circuit**: place components, dra
 
 The schematic workspace consists of:
 
-![Schematic workspace](../img/schematic/workspace.png)
+### Image — Schematic workspace
+
+!!! note "Image capture brief"
+    1. **Prepare:** Open the sample project's schematic.
+    2. **Build the frame:** Capture the schematic editor with the canvas, the toolbar centred at the top, the Library panel (**Local Library** tab), and Properties.
+    3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
+    4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
+    5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 - **Canvas** — dot grid with an A4 page outline (configurable to A3, custom). Place all components and wires here.
-- **Toolbar** — floating tool buttons above the canvas
+- **Toolbar** — a strip of tool buttons centred at the top of the canvas; ++tab++ hides or shows it
 - **Library panel** — symbol list for placing components
 - **Properties panel** — edit properties of the selected item or page settings
 - **ERC panel** — electrical rules check results ([details](erc.md))
@@ -37,20 +44,23 @@ The schematic workspace consists of:
 
 Each toolbar button activates a **drawing mode** that determines how mouse clicks are interpreted:
 
-| Mode | Button | Behavior |
+| Tool (tooltip) | Shortcut | Behavior |
 |---|---|---|
-| `Select` | ▷ Arrow | Click to select, drag to move, drag box to multi-select |
-| `Wire` | ─ Wire | Click to start / add corners / end a wire |
-| `Label` | 🏷 Label | Click to place a net label |
-| `Text` | T Text | Click to place a text annotation |
-| `Line` | ╱ Line | Click start → drag → release |
-| `Rectangle` | □ Rect | Click one corner → drag to opposite |
-| `Circle` | ○ Circle | Click center → drag to set radius |
-| `Arc` | ⌒ Arc | Click to define arc points |
-| `Polygon` | ⬠ Polygon | Click vertices → right-click to close |
-| `Junction` | • Dot | Click to place junction dots manually |
-| `GND` | ⏚ GND | Click to place a GND power symbol |
-| `VCC` | ↑ VCC | Click to place a VCC power symbol |
+| **Select** | ++esc++ | Click to select, drag to move, drag a box to multi-select |
+| **Wire** | ++w++ | Click to start / add corners / end a wire |
+| **Label** | ++n++ | Click to place a net label |
+| **Probe Signal** | ++v++ | Click a wire, pin, net label, or power symbol to place a probe marker on its net for the simulation — see [Waveform Viewer](../simulation/waveform-viewer.md) |
+| **Place GND** | ++g++ | Click to place a GND power symbol |
+| **Place VCC** | ++p++ | Click to place a VCC power symbol |
+| **Draw Line** | ++shift+l++ | Click start → drag → release |
+| **Draw Rectangle** | ++r++ | Click one corner → drag to opposite |
+| **Draw Circle** | ++e++ | Click center → drag to set radius |
+| **Draw Arc** | ++a++ | Click to define arc points |
+| **Draw Polygon** | ++o++ | Click vertices → right-click to close |
+| **Junction** | ++j++ | Click to place junction dots manually |
+| **Net Harness** | ++h++ | Drag to draw a harness line — a drawing that marks a bundle of signals; it does not connect nets |
+| **Place Text** | ++t++ | Click to place a text annotation |
+| **Import Image** | — | Place a PNG, JPG, or BMP picture at the centre of the view |
 
 The active tool is **highlighted cyan**. Press ++esc++ to return to Select mode at any time.
 
@@ -65,14 +75,14 @@ The active tool is **highlighted cyan**. Press ++esc++ to return to Select mode 
 | Select a single component | Left-click on it |
 | Select multiple objects | Drag a selection box on empty canvas |
 | Open context menu | Right-click any object |
-| Cancel current operation | ++esc++ or right-click |
+| Cancel current operation | ++esc++ |
 | Delete selected | ++delete++ or ++backspace++ |
 | Undo / Redo | ++ctrl+z++ / ++ctrl+y++ |
 
 ### Smart interactions
 
 - **Dragging a component** — connected wires follow automatically, no broken connections
-- **Rotating** (++r++) — component rotates 90°, wires adjust to the new pin positions
+- **Rotating** (++space++, or ++r++ with a component selected) — the component rotates by the rotation step (90° by default), wires adjust to the new pin positions
 - **Deleting a component** — connected wires are also removed (fully undoable)
 
 ---

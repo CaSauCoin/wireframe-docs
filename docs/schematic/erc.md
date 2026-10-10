@@ -17,10 +17,10 @@ The Electrical Rules Check (ERC) scans your schematic for common connectivity an
 
 ## Running the ERC
 
-1. Open the schematic you want to check.
-2. Select **Tools → Electrical Rules Check (ERC)**.
-3. The **ERC Panel** opens and immediately runs all checks.
-4. Results populate in the panel.
+1. Open any schematic of the project.
+2. Select **Tools → Electrical Rules Check (ERC)**. The **Electrical Rules Check (ERC)** panel opens.
+3. Select **Run Project-Wide ERC Analysis**. Every sheet of the project is checked together, so a net that continues on another sheet through a label is not reported as open.
+4. The panel shows the number of **Errors** and **Warnings** and a table of results.
 
 ### Image — ERC results and highlighted issue
 
@@ -59,62 +59,28 @@ brief_sha256: 4c536a2fc4099df8
 
 ---
 
-## Check Types
+## Reading the Results
 
-### 🔴 Floating Input Pins
+Each row has a **Severity** (**Error** or **Warning**), a **Code**, and a **Description**. Where it applies, the row also lists the **Affected Net** and the **Affected Pins** as `designator:pin`, for example `U2:1`.
 
-Detects input-type pins with **no electrical connection** (no wire, no net label, no power symbol).
+| Code | Severity | Meaning | How to fix |
+|---|---|---|---|
+| **E101** | Error | **Duplicate designator** — two components share a designator, possibly on different sheets | Rename one in **Properties → Designator** |
+| **E102** | Error | **Multiple output drivers** — two or more output pins drive the same net | Separate the outputs, use open-drain/open-collector parts, or add buffering |
+| **E301** | Error | **No driving source** — a net has inputs but nothing drives it | Connect the source, or the pull-up/pull-down the datasheet asks for |
+| **E302** | Error | **Critical pin unconnected** — an unconnected pin of a resistor, capacitor, inductor, or diode, or a passive, input, output, power, or bidirectional pin | Wire it, or remove the part if it is not used |
+| **W200** | Warning | **Net with only one connection** across the project — usually a label or wire that goes nowhere | Add the matching label at the destination, or complete the wire |
+| **W301** | Warning | **Pin unconnected** — a pin of another or unknown type is left open | Connect it, or confirm in the datasheet that it may float |
 
-- **Why it matters**: Floating inputs on digital ICs cause unpredictable behavior and excessive power draw.
-- **How to fix**: Connect the pin to a signal, pull-up/pull-down resistor, or explicitly mark it as "no connect" if the pin is unused.
+Pins whose type is *no connect* are never reported. Two outputs are reported only when both are definite outputs: bidirectional pins sharing a bus (SWDIO, I²C) are expected.
 
-For example, an MCU reset input with no connection may need the pull-up or control circuit specified by its datasheet. Do not apply a generic resistor value without checking the device requirements.
+## Fixing Issues
 
-### 🔴 Unconnected Nets
+1. Read the **Affected Pins** of the row — for example `U2:1` is pin 1 of U2.
+2. Find the part on the sheet and correct the connection, value, or designator.
+3. Select **Run Project-Wide ERC Analysis** again.
 
-A net label is placed but connects to **only one pin** — meaning the connection goes nowhere.
-
-- **Why it matters**: The intended signal path is broken.
-- **How to fix**: Add the matching net label on the destination, or draw a wire to complete the connection.
-
-### 🔴 Output Driver Contention
-
-Two or more **output pins** are connected to the same net, creating a potential short circuit.
-
-- **Why it matters**: Conflicting output drivers can damage ICs and cause undefined logic states.
-- **How to fix**: Review the design — use open-collector outputs, add buffers, or separate the conflicting outputs.
-
-### 🟡 Duplicate Designators
-
-Two components share the same designator (e.g., both named `R1`).
-
-- **Why it matters**: The BOM will merge them incorrectly, and PCB netlist mapping fails.
-- **How to fix**: Rename one of the components in the Properties panel.
-
-### 🟡 Missing Component Values
-
-A component has no **Value** property set (empty field).
-
-- **Why it matters**: The BOM will have an empty entry, and simulation cannot determine the component's behavior.
-- **How to fix**: Select the component → set the Value in the Properties panel (e.g., `10kΩ`, `100nF`).
-
----
-
-## Navigating ERC Results
-
-### Zoom to issue
-
-**Double-click** any ERC result row:
-
-1. The canvas **automatically pans and zooms** to center the problematic area.
-2. The affected component or pin is highlighted.
-3. Fix the issue directly on the canvas.
-
-### Re-run after fixing
-
-After making corrections, click **Run ERC** again (or close and reopen the ERC panel) to verify the issue is resolved.
-
-Repeat **Run ERC → locate issue → correct design → Run ERC** until no blocking error remains. Review warnings individually before PCB conversion.
+Repeat **Run → locate → correct → Run** until no error remains. Review warnings individually before PCB conversion.
 
 ### Short video — Fix and re-run ERC
 

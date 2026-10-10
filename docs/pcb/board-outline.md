@@ -45,6 +45,15 @@ Mechanical drawings are +Y up while the board is +Y down; WireFrame flips DXF ge
 !!! note "DXF needs the board-outline option"
     DXF files are read only when **Import as BOARD OUTLINE** is ticked. Importing graphics onto **Edge.Cuts**, **Top Silk**, or **Top Cu** without that option, and the **Import CAD** button on the PCB toolbar, read SVG only.
 
+### Importing SVG artwork instead of an outline
+
+With **Import as BOARD OUTLINE** unticked, an SVG is imported as graphics. Choose the **Target Layer** — **Edge.Cuts**, **Top Silk**, or **Top Cu** — and optionally:
+
+- **Center to Mouse Cursor** — place the drawing where the cursor is instead of at its file coordinates;
+- **Import as Rigid Footprint (Prevent accidental reshaping)** — keep the drawing as one footprint so it moves as a whole.
+
+The **Import CAD (SVG)** button on the PCB toolbar opens the same dialog for SVG files.
+
 ### Image — CAD outline import verdict
 
 !!! note "Image capture brief"

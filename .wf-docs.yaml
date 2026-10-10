@@ -42,7 +42,7 @@ scenes:
   "docs/reference/config-and-session.md#recover-a-damaged-workspace-configuration":
     skip: backing up and opening the config folder happens in the OS file manager, outside the app
   "docs/tutorial/index.md#*":
-    skip: needs the NE555 tutorial project, which is not in samples/ yet — add it to enable these scenes
+    skip: needs the LED tutorial project (J1 2-pin header, R1 330 ohm 0805, D1 red LED 0805), which is not in samples/ yet — add it to enable these scenes
 
   # ── Cần file đầu vào ──────────────────────────────────────────────────────
   "*cad-outline-import-verdict":
@@ -147,7 +147,7 @@ scenes:
     project: wireframe:tests/data/buck_converter_automotive/wireframe/buck-converter-automotive.prjxml
     hint: >-
       ensure_pcb, then {"canvas_click": {"target": "net:+5V", "button": "right"}}
-      opens the trace context menu (Arc Mitering, Trace Consolidation, ...).
+      opens the trace context menu (Select, Edit, Bus, High-speed, Delete).
   "*ratsnest-cleared-by-routing":
     project: wireframe:tests/data/buck_converter_automotive/wireframe/buck-converter-automotive.prjxml
 
@@ -175,10 +175,10 @@ scenes:
   # ── AI review: the saved design plan, no live model needed ───────────────
   "docs/ai/*":
     hint: &ai_review >-
-      The saved AI design plan opens with the {fa:tasks} button in the AI
-      Copilot Panel: "AI Planned BOM & Schematic Review" with tabs BOM
+      The saved AI design plan opens with the {fa:tasks} "Design Plan" button in
+      the AI Copilot Panel: "AI Planned BOM & Schematic Review" with tabs BOM
       Components, Connections Netlist, Blocks, Board Fit, System, Netlist Check,
-      Simulate & Verify, Design Analysis. It already has parts to fix and to
+      Simulate & Verify, Design Analysis, Local Pool Settings. It already has parts to fix and to
       review (CAD pair rejected, Manage / Import, /fix hints). The chat has NO AI
       endpoint in this lab: a sent message never gets a reply, so do not wait
       for one — show the review instead.

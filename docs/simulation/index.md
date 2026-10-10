@@ -2,10 +2,10 @@
 
 Use the Simulation Workbench to check how a schematic behaves before you move on to PCB layout. You can view voltage waveforms, measure signals, and verify that important outputs stay within your chosen limits.
 
-Open a schematic, then select **Simulation → SPICE Simulation Panel** or press ++f5++.
+Open a schematic, then select **Simulation → SPICE Simulation Panel**. Pressing ++f5++ with a schematic active opens the panel **and runs** the current setup.
 
-!!! note "Available in the upcoming release"
-    This guide describes WireFrame 1.5.47. The simulator included with WireFrame is ready to use after installation.
+!!! note "Simulator included"
+    WireFrame ships ngspice, which runs inside the application — nothing else to install. Xyce, LTspice, and a separately installed ngspice are optional; see [Engines & SPICE Models](engines-and-models.md).
 
 ## Quick start
 
@@ -42,7 +42,7 @@ Open a schematic, then select **Simulation → SPICE Simulation Panel** or press
 |---|---|
 | **Transient** | Startup, switching, timing, oscillation, or ripple over time |
 | **AC Sweep** | Gain and phase across a frequency range |
-| **DC Bias** | Steady DC voltage at each node |
+| **DC Bias Op** | Steady DC voltage at each node (operating point) |
 | **DC Sweep** | How an output changes while an input voltage is varied |
 
 The controls below the toolbar change with the selected analysis. Hover a disabled option to see why it is unavailable for the current circuit.

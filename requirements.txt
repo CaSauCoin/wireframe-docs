@@ -1,3 +1,5 @@
-mkdocs
-mkdocs-material
-mkdocs-glightbox
+# Pinned below the next major versions: MkDocs 2.0 removes the plugin system
+# this site depends on (glightbox, the capture-brief hook).
+mkdocs>=1.6,<2
+mkdocs-material>=9.5,<10
+mkdocs-glightbox>=0.4,<0.6

@@ -4,10 +4,11 @@ Use a WireFrame project to keep schematics, PCB documents, and project libraries
 
 ## Create a project
 
-1. Select **File → New → New Project (.prjxml)**.
-2. Choose the parent folder.
-3. Enter the project name in the creation dialog.
-4. Select **Create**.
+1. Select **File → New → New Project (.prjxml)...**.
+2. Choose the folder for the project (**Select Folder for New Project**).
+3. In **Create New Project**, check **Selected Path**, type the project name, and select **Create**.
+
+WireFrame writes `<name>.prjxml` and an empty project library folder `lib_<name>/` into that folder, then opens the project.
 
 Keep the project and its documents in a dedicated folder. This makes relative library and model paths easier to move, archive, and share.
 
@@ -49,9 +50,9 @@ brief_sha256: 9fd78258131dd895
 
 | What you want to open | Command |
 |---|---|
-| WireFrame project | **File → Open Project (.prjxml)** |
-| Project, schematic, or PCB | **File → Open File** |
-| KiCad project | **File → Import → KiCad Project (.kicad_pro, .pro)** |
+| WireFrame project | **File → Open Project (.prjxml)...** (++ctrl+p++) |
+| Project, schematic, or PCB | **File → Open File...** (++ctrl+o++ opens a schematic or PCB) |
+| KiCad project | **File → Import → KiCad Project (.kicad_pro, .pro)...** |
 
 Opening a `.prjxml` restores its linked documents and project structure. Opening a `.schxml` or `.pcbxml` directly adds it as a standalone file for the current session.
 
@@ -84,7 +85,7 @@ brief_sha256: 252fa9b96dbcf65e
 
 ## Add and organize documents
 
-Use the **Project Structure** panel to add a new or existing schematic or PCB to the active project. Save a newly created document before relying on it as a project member.
+Right-click the project in **Project Structure** and choose **Add New Schematic** or **Add New PCB**. Save a newly created document before relying on it as a project member. Right-click a file for **Rename**, **Exclude from Project**, **Remove from List** (the file stays on disk), **Delete...** (removes it from disk — cannot be undone), and, for a PCB, **Set Root Schematic ▸** — see [Project Structure](ui-overview.md#project-structure).
 
 **File → New → New Schematic (.schxml)** and **New PCB (.pcbxml)** create a document directly. **File → Close Document** closes the active document; **File → Close Project** closes the project without deleting any of its files.
 
@@ -103,9 +104,10 @@ Before updating a PCB:
 1. Complete the schematic connectivity.
 2. Assign a valid footprint to every physical component.
 3. Run ERC and resolve critical issues.
-4. Select **Tools → Update Schematic to PCB**.
-5. Choose the target PCB when the project has more than one.
-6. Review new or changed footprints and the ratsnest before routing.
+4. With a schematic of the project active, select **Tools → Update Schematic to PCB** (a submenu lists the boards when the project has more than one). A project is required — a standalone schematic cannot be converted.
+5. Review new or changed footprints and the ratsnest before routing.
+
+The update collects every sheet of the design from the top sheet down, keeps footprints that are already placed (position, rotation, and side), removes footprints whose component is gone from the schematic, places new footprints in a grid, updates the nets, and saves the PCB. Running it again after schematic changes is safe. See [Footprints and Placement](pcb/footprints-and-placement.md#from-the-schematic-the-normal-way).
 
 ![Project File Structure](img/home/project-file-structure.png)
 
@@ -145,9 +147,9 @@ brief_sha256: 0a8cff539f0aacf1
 
 ## Import a KiCad project
 
-1. Select **File → Import → KiCad Project (.kicad_pro, .pro)**.
+1. Select **File → Import → KiCad Project (.kicad_pro, .pro)...**.
 2. Select the KiCad project file.
-3. Keep WireFrame open while the progress overlay reports each import stage.
+3. Keep WireFrame open while the progress overlay reports each import stage. The converted WireFrame project is written into the KiCad project's folder.
 4. Review the resulting project, schematics, PCB, and library assignments.
 5. Save the converted WireFrame documents.
 
@@ -190,9 +192,9 @@ brief_sha256: c4580440ada7f097
 <video controls muted playsinline preload="metadata" src="../assets/wf/docs/projects/import-a-kicad-project.mp4" title="Importing a KiCad project"></video>
 <!-- /wf:out -->
 
-## Import scope and removed legacy guidance
+## Import scope
 
-The current project importer supports KiCad `.kicad_pro` and legacy `.pro` project files. Older guideline sections claiming **File → Import → Altium Project** or **Eagle Project** have been removed because those commands are not present in the current application.
+The project importer supports KiCad `.kicad_pro` and legacy `.pro` project files. Altium and Eagle *projects* cannot be imported.
 
 Altium library files remain supported through **View → Local Library Manager**. See [Library Import and Management](libraries/library-converter.md).
 
@@ -207,7 +209,7 @@ With a PCB active, select **File → Import → CAD Outline (.svg / .dxf)...** a
 
 WireFrame remembers open projects, standalone documents, panel layout, and recent folders. On the next launch, confirm that restored documents still resolve their linked libraries and models.
 
-If the previous session should not be restored, close its documents and project before exiting or reset the saved layout/session from Preferences.
+If the previous session should not be restored, close its documents and project before exiting, or turn off **Preferences → Workspace → Restore on launch**.
 
 ## See also
 

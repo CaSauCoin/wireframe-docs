@@ -1,6 +1,6 @@
 # Supported File Formats
 
-This page separates formats that WireFrame opens directly, formats imported through a specific workflow, and release outputs. Support is determined by the command available in the current application—not by a converter script or an older roadmap.
+This page lists the formats WireFrame opens directly, the formats it imports through a specific command, and what it writes.
 
 ## WireFrame project files
 
@@ -23,8 +23,8 @@ Use **File → Import → KiCad Project** for:
 
 The importer reads the documents available from the selected KiCad project. Review imported symbols, footprints, nets, layers, and board outline before continuing.
 
-!!! note "Removed legacy guidance"
-    Altium `.PrjPcb` and Eagle project import are not exposed by the current File menu. Older claims that these projects could be imported directly have been removed.
+!!! note "Not supported"
+    Altium `.PrjPcb` and Eagle projects cannot be imported. Altium *libraries* can — see below.
 
 ## Library sources
 
@@ -47,7 +47,7 @@ With a PCB active, use **File → Import → CAD Outline (.svg / .dxf)...**.
 
 | Format | Read as |
 |---|---|
-| `.svg` | Board outline, or graphics on Edge.Cuts / Top Silk / Top Cu; size from the **Scale** field |
+| `.svg` | Board outline, or graphics on Edge.Cuts / Top Silk / Top Cu; size from the **Scale** field. The **Import CAD (SVG)** toolbar button reads SVG too |
 | `.dxf` (ASCII) | Board outline only (**Import as BOARD OUTLINE**); size from `$INSUNITS`. `LINE`, `LWPOLYLINE`, `POLYLINE`, `CIRCLE`, `ARC`, `SPLINE` are read; blocks (`INSERT`) and binary DXF are not, and are named in the verdict |
 
 The board shape is saved in the `.pcbxml`. See [Board Shape and Outline](../pcb/board-outline.md).
@@ -60,14 +60,17 @@ The board shape is saved in the `.pcbxml`. See [Board Shape and Outline](../pcb/
 
 Depending on the selected export workflow, WireFrame can produce:
 
-| Format | Purpose |
-|---|---|
-| Gerber / Gerber X2 | Copper, mask, silkscreen, and board geometry |
-| Excellon drill | Plated and non-plated drilling data |
-| IPC-D-356A | Electrical connectivity reference |
-| CSV | Bill of materials |
-| PDF | Schematic documentation or supported plot output |
-| Manifest / README | Fabrication-package inventory and generation context |
+| Format | Written by | Purpose |
+|---|---|---|
+| Gerber X2 (`.GTL`, `.GBL`, `.G1`…, `.GTS`, `.GBS`, `.GTP`, `.GBP`, `.GTO`, `.GBO`, `.GKO`, `.GM1`–`.GM4`) | Fabrication package | Copper, mask, paste, silkscreen, outline, and documentation layers |
+| Excellon drill (`Drill_PTH.DRL`, `Drill_NPTH.DRL`) | Fabrication package | Plated and non-plated drilling data |
+| IPC-D-356A (`.d356`) | Fabrication package | Netlist for bare-board electrical test |
+| Gerber job file (`.gbrjob`) | Fabrication package | Stackup and file list |
+| CSV (`BOM.csv`, `BOM_Grouped.csv`, `PickAndPlace.csv`) | Fabrication package | Bill of materials and component positions |
+| `README.txt`, `Drill_Report.txt` | Fabrication package | Package inventory and drill summary |
+| `.zip` | Fabrication package | All of the above in one archive |
+| PDF | **Export Schematic to PDF...**, **Print PCB to PDF (1:1)...** | Schematic documentation; one true-scale PDF per PCB layer |
+| `.kicad_mod`, `.kicad_sym` | Footprint and Symbol Library Editors | Library parts |
 
 An exported file is not self-validating. Inspect the package, confirm the saved board revision, and follow the [Fabrication and Export](../pcb/fabrication-and-export.md) checklist.
 

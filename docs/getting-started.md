@@ -1,12 +1,11 @@
 # Getting Started
 
-This guide walks you through your first session with WireFrame EDA in approximately **10 minutes**.  
-You will learn how to launch the application, understand the main interface, and set up your first project.
+This guide walks you through your first session with WireFrame EDA in about **10 minutes**: launching the application, the main window, and your first project.
 
 !!! abstract "What you'll learn"
     - Launching WireFrame
-    - Understanding the main UI areas
-    - Creating a new project
+    - Understanding the main window
+    - Creating a project
     - Adding schematic and PCB files
     - Opening existing projects and files
 
@@ -14,98 +13,103 @@ You will learn how to launch the application, understand the main interface, and
 
 ## 1. Launching WireFrame
 
-=== "Linux"
-
-    Run from terminal:
-    ```bash
-    ./wireframe
-    ```
-    Or search for **WireFrame** in your application menu.
-
 === "Windows"
 
-    Open **Start Menu** → type **WireFrame** → press ++enter++.
+    Open the **Start** menu → type **WireFrame** → press ++enter++.
 
 === "macOS"
 
-    Open **Launchpad** → find **WireFrame** → click to launch.
+    Open **Applications** (or Launchpad) → **WireFrame**.
 
-On startup, WireFrame automatically **restores any open projects and documents** from your previous session.
+=== "Linux"
 
-> A brief dark flash is normal — the interface loads on the next render frame.
+    Open **WireFrame EDA** from the application menu.
+
+No sign-in is needed: WireFrame runs in community mode. On startup it restores the window size and position, and reopens the projects and documents that were open when you quit (**Preferences → Workspace → Restore on launch**).
 
 ---
 
-## 2. The Main Interface
+## 2. The Main Window
 
-After launching, you will see the following layout:
+### Image — Default layout with a project open
 
-![WireFrame initial layout](img/getting-started/initial-layout.png)
+!!! note "Image capture brief"
+    1. **Prepare:** Open the sample project after **Preferences → Workspace → Default layout** so every panel is where a fresh install has it.
+    2. **Build the frame:** Capture the whole window with the menu bar (File, Edit, View, Tools, Simulation, Preferences, Help), Project Structure, the editor with a schematic tab, Library, Properties, and AI Copilot visible.
+    3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
+    4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
+    5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 | Area | Default position | Purpose |
 |---|---|---|
-| **Menu bar** | Top | Access all features via menus |
-| **Project Structure** | Left | Project file tree |
-| **Canvas (Editor)** | Center | Design area — schematic or PCB |
-| **Library** | Right (top) | Component / footprint list |
-| **Properties** | Right (bottom) | Edit properties of the selected object |
-| **Layer** *(PCB only)* | Right (middle) | Toggle and select PCB layers |
-| **Logger** | Bottom overlay | Errors, warnings, and status messages |
+| **Menu bar** | Top | **File**, **Edit**, **View**, **Tools**, **Simulation**, **Preferences**, **Help**, and the account menu on the right |
+| **Project Structure** | Left, top | Project file tree |
+| **AI Copilot** | Left, bottom | Chat with the design assistant |
+| **Editor** | Centre | One tab per open schematic or PCB |
+| **Library** / **Footprints** | Right, top | Symbols for a schematic, unplaced footprints for a PCB |
+| **Properties** | Right, bottom | The selected object, or the document settings |
+| **Layers** *(PCB)* | Beside the Properties panel | Visibility, lock, and colour of PCB layers |
+| Notifications | Bottom of the editor | Short messages such as *Document saved successfully* |
 
 !!! tip "Rearranging panels"
-    **Drag any panel tab** to a different edge or corner to reposition it. Your layout is saved automatically and restored on next launch.
+    **Drag any panel tab** to another edge or corner. The layout is saved when you quit. **Preferences → Reset to Default Layout** puts every panel back; **Preferences → Workspace → Layout presets** saves arrangements under a name.
 
 ---
 
 ## 3. Creating a New Project
 
 !!! important "Why use a project?"
-    A **project** (`.prjxml`) is a central hub for all your files — schematics, PCBs, and libraries. Working inside a project makes file management easier and enables one-click Gerber export.
+    A **project** (`.prjxml`) links your schematics, PCBs, and project library. **Update Schematic to PCB** and AI design work need a project.
 
 **Steps:**
 
-1. Go to **File → New → New Project (.prjxml)**
-2. Choose a folder and enter a filename, for example: `MyBoard.prjxml`
-3. Click **Create** (or **Save**)
+1. Go to **File → New → New Project (.prjxml)...**
+2. Choose the folder for the project (**Select Folder for New Project**).
+3. In **Create New Project**, type the project name and select **Create**.
 
-WireFrame automatically creates:
+WireFrame creates, in that folder:
 
-- `MyBoard.prjxml` — stores references to all schematics and PCBs
-- A `lib/` folder for local libraries
+- `<name>.prjxml` — the project file with its list of schematics and PCBs;
+- `lib_<name>/` — the project library, where repaired and generated parts are saved.
 
-The **Project Structure** panel immediately shows your new project with empty **Schematics** and **PCBs** groups.
+The **Project Structure** panel shows the new project. Right-click it to **Add New Schematic** or **Add New PCB**.
 
 ---
 
 ## 4. Adding a Schematic File
 
-1. Go to **File → New** and choose a new schematic
-2. A new tab opens in the editor: `Untitled-SCH-1`
-3. The canvas shows:
-    - A dot grid on a dark background
-    - An A4 page outline
-    - The floating schematic toolbar at the top
+1. Right-click the project in **Project Structure** → **Add New Schematic**.
+    Or use **File → New → New Schematic (.schxml)** (++ctrl+n++) for a standalone sheet.
+2. A new tab opens in the editor. The canvas shows a dot grid, the page outline, rulers, and the schematic toolbar centred at the top.
+3. Press ++ctrl+s++ to save it as a `.schxml` file, for example `main.schxml`.
 
-Press **Ctrl+S** to save → name the file `.schxml`, for example: `main.schxml`
+### Image — New schematic
 
-The schematic canvas looks like this:
-
-![Empty schematic canvas](img/getting-started/empty-schematic.png)
+!!! note "Image capture brief"
+    1. **Prepare:** Press **Ctrl+N** in a clean workspace.
+    2. **Build the frame:** Capture the new schematic tab with the page outline, the rulers, and the schematic toolbar centred at the top of the canvas.
+    3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
+    4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
+    5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 ---
 
 ## 5. Adding a PCB File
 
-1. Go to **File → New** and choose a new PCB
-2. A new tab opens: `Untitled-PCB-1`
-3. The canvas shows a grid and the PCB floating toolbar
+1. Right-click the project → **Add New PCB**, or use **File → New → New PCB (.pcbxml)**.
+2. A new tab opens with rulers, a grid, and the PCB toolbar on the right edge of the canvas.
+
+### Image — New PCB
+
+!!! note "Image capture brief"
+    1. **Prepare:** Choose **File → New → New PCB (.pcbxml)** in a clean workspace.
+    2. **Build the frame:** Capture the new PCB tab with the rulers, the vertical PCB toolbar on the right edge of the canvas, and the Footprints, Properties, and Layers panels.
+    3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
+    4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
+    5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 !!! tip "Convert from schematic instead"
-    Rather than creating a PCB manually, complete your schematic first and use **Tools → Update Schematic to PCB**. Review the target board, imported footprints, and ratsnest before routing.
-
-The PCB canvas looks like this:
-
-![Empty PCB canvas](img/getting-started/empty-pcb.png)
+    Complete your schematic first and use **Tools → Update Schematic to PCB**. Footprints arrive on the board in a grid with their nets; review the target board, imported footprints, and ratsnest before routing.
 
 ---
 
@@ -113,26 +117,24 @@ The PCB canvas looks like this:
 
 ### Opening a project (`.prjxml`)
 
-1. **File → Open Project (.prjxml)**
+1. **File → Open Project (.prjxml)...** (++ctrl+p++)
 2. Select the `.prjxml` file
-3. The **Project Structure** panel populates with all linked schematics and PCBs
-4. Click any entry to open it in the editor
+3. The **Project Structure** panel lists its schematics and PCBs
+4. Click an entry to open it in the editor
 
-### Opening a standalone file
+### Opening a single file
 
-1. **File → Open File** (or ++ctrl+o++)
-2. Select a `.schxml` (schematic) or `.pcbxml` (PCB) file
-3. The file opens as a tab in the editor — no project required
+1. **File → Open File...** (++ctrl+o++)
+2. Select a `.schxml` (schematic), `.pcbxml` (PCB), or `.prjxml` (project) file
+3. A schematic or PCB opens as a tab — no project required
 
 ---
 
 ## Next Steps
 
-You now know the basics. Continue with:
-
 | Next page | Content |
 |---|---|
-| [UI Overview](ui-overview.md) | Detailed guide to every panel and toolbar |
+| [UI Overview](ui-overview.md) | Every panel and menu |
 | [Schematic Editor](schematic/index.md) | Place components, draw wires, manage nets |
 | [PCB Editor](pcb/index.md) | Lay out footprints, route traces, export Gerbers |
 | [Full Tutorial](tutorial/index.md) | End-to-end walkthrough: a complete LED circuit |
