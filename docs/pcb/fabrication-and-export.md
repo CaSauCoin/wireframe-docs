@@ -124,6 +124,57 @@ Always look at the exported Gerber and drill files in a Gerber viewer before sen
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
+<!-- wf:shot id=verified-fabrication-package
+caption: 'Fabrication & Assembly Output after Generate Files to Memory: revision A and the list of generated
+  files'
+project: none
+setup:
+- wait: 1
+- open_file: wireframe:tests/data/buck_converter_automotive/kicad/buck-converter-automotive.kicad_pro
+- menu:
+  - File
+  - Import
+  - KiCad Project (.kicad_pro, .pro)...
+- wait: 12
+- click_at:
+    at:
+    - 150
+    - 109
+    double: true
+- wait: 4
+- menu:
+  - File
+  - Export
+  - Fabrication Outputs (Gerber/Drill/BOM)...
+- wait: 2
+- click: //Fabrication & Assembly Output/Revision
+- keys:
+  - Backspace
+- keys:
+  - Backspace
+- keys:
+  - Backspace
+- type:
+    text: A
+- keys:
+  - Enter
+- wait: 1
+- click: //Fabrication & Assembly Output/{fa:cog} Generate Files to Memory
+- wait: 5
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+- wait: 1
+capture:
+  window: Fabrication & Assembly Output
+  padding: 6
+brief_sha256: a30ac2b6b395155f
+-->
+<!-- wf:out id=verified-fabrication-package sha=0f27b5ba2957 -->
+![Fabrication & Assembly Output after Generate Files to Memory: revision A and the list of generated files](../assets/wf/docs/pcb/fabrication-and-export/verified-fabrication-package.png)
+<!-- /wf:out -->
+
 !!! warning "Inspect the archive"
     A successful export does not prove manufacturability. Confirm that Edge.Cuts is closed, drill classifications are correct, every expected layer is present, and the package matches the board revision being released.
 

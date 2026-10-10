@@ -1,0 +1,713 @@
+<?xml version="1.0"?>
+<schematic>
+	<page_settings paper_size="0" title_width="1728" title_height="512">
+		<title>Untitled Sheet</title>
+		<company>WireFrame EDA</company>
+		<revision>V1.0</revision>
+		<date>2026-10-09</date>
+		<drawn_by>Author</drawn_by>
+		<sheet_num>1</sheet_num>
+		<sheet_total>1</sheet_total>
+		<comment1></comment1>
+		<comment2></comment2>
+		<comment3></comment3>
+		<comment4></comment4>
+		<logo_base64></logo_base64>
+		<border_color>4294967295</border_color>
+	</page_settings>
+	<sim_config analysis="1" tran_stopTime="0.0050000000000000001" tran_stepTime="1.0000000000000001e-05" ac_startFreq="1" ac_stopFreq="1000000" ac_ptsDec="100">
+		<power_rails />
+	</sim_config>
+	<components>
+		<component id="J1" type="Conn_01x02" x="1130" y="390" rotation="0" sourceFolderPath="lib/Conn_01x02.kicad_sym" footprint="PinHeader_1x02_P2.54mm_Vertical">
+			<value>Conn_01x02_P2.54mm</value>
+			<comment>9V_IN — 9V power input</comment>
+			<designatorAttribute content="J1" x="-20.7000008" y="12.6999989" rotation="90" visible="true" fontSize="12" />
+			<valueAttribute content="Conn_01x02_P2.54mm" x="20.7000008" y="12.6999989" rotation="90" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="Pin_1" x="-50.7999992" y="-0" length="38.0999985" angle="0" electrical_type="passive">
+					<nameAttribute content="Pin_1" x="43.0999985" y="-5" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="1" x="5" y="-15" rotation="0" visible="true" fontSize="10" />
+				</pin>
+				<pin number="2" name="Pin_2" x="-50.7999992" y="25.3999996" length="38.0999985" angle="0" electrical_type="passive">
+					<nameAttribute content="Pin_2" x="43.0999985" y="-5" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="2" x="5" y="-15" rotation="0" visible="true" fontSize="10" />
+				</pin>
+			</pins>
+			<generic_shapes>
+				<rect x1="-12.6999998" y1="-12.6999998" x2="12.6999998" y2="38.0999985" />
+				<rect x1="-12.6999998" y1="-1.26999998" x2="0" y2="1.26999998" />
+				<rect x1="-12.6999998" y1="24.1300011" x2="0" y2="26.6700001" />
+			</generic_shapes>
+			<parameters />
+		</component>
+		<component id="C2" type="C" x="989.199219" y="428.099609" rotation="0" sourceFolderPath="lib/C.kicad_sym" footprint="C_0805_2012Metric">
+			<value>100nF</value>
+			<comment>VCC supply decoupling capacitor</comment>
+			<designatorAttribute content="C2" x="-28.3199997" y="0" rotation="90" visible="true" fontSize="12" />
+			<valueAttribute content="100nF" x="28.3199997" y="0" rotation="90" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="" x="0" y="-38.0999985" length="27.9399986" angle="90" electrical_type="passive">
+					<nameAttribute content="" x="-5" y="32.9399986" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="1" x="-15" y="5" rotation="0" visible="true" fontSize="10" />
+				</pin>
+				<pin number="2" name="" x="0" y="38.0999985" length="27.9399986" angle="270" electrical_type="passive">
+					<nameAttribute content="" x="-5" y="-47.9399986" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="2" x="-15" y="-15" rotation="0" visible="true" fontSize="10" />
+				</pin>
+			</pins>
+			<generic_shapes>
+				<polyline>
+					<pt x="-20.3199997" y="-7.62000036" />
+					<pt x="20.3199997" y="-7.62000036" />
+				</polyline>
+				<polyline>
+					<pt x="-20.3199997" y="7.62000036" />
+					<pt x="20.3199997" y="7.62000036" />
+				</polyline>
+			</generic_shapes>
+			<parameters />
+		</component>
+		<component id="AIPWR1_1" type="Power" x="1059.19922" y="390" rotation="0" oriented="true" sourceFolderPath="" footprint="">
+			<value>+9V</value>
+			<designatorAttribute content="" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<valueAttribute content="+9V" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<pins>
+				<pin number="1" name="vcc" x="0" y="0" length="5" angle="0" electrical_type="power_in">
+					<nameAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+				</pin>
+			</pins>
+			<generic_shapes />
+			<parameters />
+		</component>
+		<component id="AIGND2_1" type="Power" x="1059.19922" y="415.400391" rotation="0" oriented="true" sourceFolderPath="" footprint="">
+			<value>GND</value>
+			<designatorAttribute content="" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<valueAttribute content="GND" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<pins>
+				<pin number="1" name="gnd" x="0" y="0" length="5" angle="0" electrical_type="power_in">
+					<nameAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+				</pin>
+			</pins>
+			<generic_shapes />
+			<parameters />
+		</component>
+		<component id="AIGND3_1" type="Power" x="989.199219" y="486.199219" rotation="0" oriented="true" sourceFolderPath="" footprint="">
+			<value>GND</value>
+			<designatorAttribute content="" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<valueAttribute content="GND" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<pins>
+				<pin number="1" name="gnd" x="0" y="0" length="5" angle="0" electrical_type="power_in">
+					<nameAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+				</pin>
+			</pins>
+			<generic_shapes />
+			<parameters />
+		</component>
+		<component id="U1" type="NE555P" x="1910" y="650" rotation="0" sourceFolderPath="lib/NE555P.kicad_sym" footprint="DIP-8_W7.62mm">
+			<value>NE555P</value>
+			<comment>astable timer oscillator</comment>
+			<designatorAttribute content="U1" x="-84.1999969" y="0" rotation="51.3401947" visible="true" fontSize="12" />
+			<valueAttribute content="NE555P" x="84.1999969" y="0" rotation="51.3401947" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="GND" x="0" y="101.599998" length="25.3999996" angle="270" electrical_type="power_in">
+					<nameAttribute content="GND" x="-5" y="-45.4000015" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="1" x="-15" y="-15" rotation="0" visible="true" fontSize="10" />
+				</pin>
+				<pin number="8" name="VCC" x="25.3999996" y="-101.599998" length="25.3999996" angle="90" electrical_type="power_in">
+					<nameAttribute content="VCC" x="-5" y="30.3999996" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="8" x="-15" y="5" rotation="0" visible="true" fontSize="10" />
+				</pin>
+				<pin number="2" name="TRIG" x="-101.599998" y="50.7999992" length="25.3999996" angle="0" electrical_type="input">
+					<nameAttribute content="TRIG" x="30.3999996" y="-5" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="2" x="5" y="-15" rotation="0" visible="true" fontSize="10" />
+				</pin>
+				<pin number="3" name="OUT" x="101.599998" y="-0" length="25.3999996" angle="180" electrical_type="output">
+					<nameAttribute content="OUT" x="-45.4000015" y="-5" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="3" x="-15" y="-15" rotation="0" visible="true" fontSize="10" />
+				</pin>
+				<pin number="4" name="~{RST}" x="-101.599998" y="-50.7999992" length="25.3999996" angle="0" electrical_type="input">
+					<nameAttribute content="~{RST}" x="30.3999996" y="-5" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="4" x="5" y="-15" rotation="0" visible="true" fontSize="10" />
+				</pin>
+				<pin number="5" name="CONT" x="0" y="-101.599998" length="25.3999996" angle="90" electrical_type="passive">
+					<nameAttribute content="CONT" x="-5" y="30.3999996" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="5" x="-15" y="5" rotation="0" visible="true" fontSize="10" />
+				</pin>
+				<pin number="6" name="THRES" x="-101.599998" y="25.3999996" length="25.3999996" angle="0" electrical_type="input">
+					<nameAttribute content="THRES" x="30.3999996" y="-5" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="6" x="5" y="-15" rotation="0" visible="true" fontSize="10" />
+				</pin>
+				<pin number="7" name="DISCH" x="-101.599998" y="-25.3999996" length="25.3999996" angle="0" electrical_type="input">
+					<nameAttribute content="DISCH" x="30.3999996" y="-5" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="7" x="5" y="-15" rotation="0" visible="true" fontSize="10" />
+				</pin>
+			</pins>
+			<generic_shapes>
+				<rect x1="-76.1999969" y1="-76.1999969" x2="76.1999969" y2="76.1999969" />
+			</generic_shapes>
+			<parameters />
+		</component>
+		<component id="R1" type="R" x="1827" y="960.900391" rotation="0" sourceFolderPath="lib/R.kicad_sym" footprint="R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal">
+			<value>10k</value>
+			<comment>upper timing resistor</comment>
+			<designatorAttribute content="R1" x="-18.1599998" y="0" rotation="90" visible="true" fontSize="12" />
+			<valueAttribute content="10k" x="18.1599998" y="0" rotation="90" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="" x="0" y="-38.0999985" length="12.6999998" angle="90" electrical_type="passive">
+					<nameAttribute content="" x="-5" y="17.7000008" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="1" x="-15" y="5" rotation="0" visible="true" fontSize="10" />
+				</pin>
+				<pin number="2" name="" x="0" y="38.0999985" length="12.6999998" angle="270" electrical_type="passive">
+					<nameAttribute content="" x="-5" y="-32.7000008" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="2" x="-15" y="-15" rotation="0" visible="true" fontSize="10" />
+				</pin>
+			</pins>
+			<generic_shapes>
+				<rect x1="-10.1599998" y1="25.3999996" x2="10.1599998" y2="-25.3999996" />
+			</generic_shapes>
+			<parameters />
+		</component>
+		<component id="R2" type="R" x="1885.10156" y="999" rotation="270" sourceFolderPath="lib/R.kicad_sym" footprint="R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal">
+			<value>68k</value>
+			<comment>lower timing resistor</comment>
+			<designatorAttribute content="R2" x="-18.1599998" y="0" rotation="90" visible="true" fontSize="12" />
+			<valueAttribute content="68k" x="18.1599998" y="0" rotation="90" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="" x="0" y="-38.0999985" length="12.6999998" angle="90" electrical_type="passive">
+					<nameAttribute content="" x="-5" y="17.7000008" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="1" x="-15" y="5" rotation="0" visible="true" fontSize="10" />
+				</pin>
+				<pin number="2" name="" x="0" y="38.0999985" length="12.6999998" angle="270" electrical_type="passive">
+					<nameAttribute content="" x="-5" y="-32.7000008" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="2" x="-15" y="-15" rotation="0" visible="true" fontSize="10" />
+				</pin>
+			</pins>
+			<generic_shapes>
+				<rect x1="-10.1599998" y1="25.3999996" x2="10.1599998" y2="-25.3999996" />
+			</generic_shapes>
+			<parameters />
+		</component>
+		<component id="C1" type="C" x="1943.19922" y="1037.09961" rotation="0" sourceFolderPath="lib/C.kicad_sym" footprint="CP_Radial_D5.0mm_P2.00mm">
+			<value>10uF</value>
+			<comment>astable timing capacitor</comment>
+			<designatorAttribute content="C1" x="-28.3199997" y="0" rotation="90" visible="true" fontSize="12" />
+			<valueAttribute content="10uF" x="28.3199997" y="0" rotation="90" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="" x="0" y="-38.0999985" length="27.9399986" angle="90" electrical_type="passive">
+					<nameAttribute content="" x="-5" y="32.9399986" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="1" x="-15" y="5" rotation="0" visible="true" fontSize="10" />
+				</pin>
+				<pin number="2" name="" x="0" y="38.0999985" length="27.9399986" angle="270" electrical_type="passive">
+					<nameAttribute content="" x="-5" y="-47.9399986" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="2" x="-15" y="-15" rotation="0" visible="true" fontSize="10" />
+				</pin>
+			</pins>
+			<generic_shapes>
+				<polyline>
+					<pt x="-20.3199997" y="-7.62000036" />
+					<pt x="20.3199997" y="-7.62000036" />
+				</polyline>
+				<polyline>
+					<pt x="-20.3199997" y="7.62000036" />
+					<pt x="20.3199997" y="7.62000036" />
+				</polyline>
+			</generic_shapes>
+			<parameters />
+		</component>
+		<component id="C3" type="C" x="1880" y="426.5" rotation="0" sourceFolderPath="lib/C.kicad_sym" footprint="C_0805_2012Metric">
+			<value>10nF</value>
+			<comment>control voltage decoupling capacitor</comment>
+			<designatorAttribute content="C3" x="-28.3199997" y="0" rotation="90" visible="true" fontSize="12" />
+			<valueAttribute content="10nF" x="28.3199997" y="0" rotation="90" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="" x="0" y="-38.0999985" length="27.9399986" angle="90" electrical_type="passive">
+					<nameAttribute content="" x="-5" y="32.9399986" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="1" x="-15" y="5" rotation="0" visible="true" fontSize="10" />
+				</pin>
+				<pin number="2" name="" x="0" y="38.0999985" length="27.9399986" angle="270" electrical_type="passive">
+					<nameAttribute content="" x="-5" y="-47.9399986" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="2" x="-15" y="-15" rotation="0" visible="true" fontSize="10" />
+				</pin>
+			</pins>
+			<generic_shapes>
+				<polyline>
+					<pt x="-20.3199997" y="-7.62000036" />
+					<pt x="20.3199997" y="-7.62000036" />
+				</polyline>
+				<polyline>
+					<pt x="-20.3199997" y="7.62000036" />
+					<pt x="20.3199997" y="7.62000036" />
+				</polyline>
+			</generic_shapes>
+			<parameters />
+		</component>
+		<component id="AILABEL1_1" type="NetLabel" x="1788.39844" y="624.599609" rotation="180" oriented="true" sourceFolderPath="" footprint="">
+			<value>DISCHARGE</value>
+			<designatorAttribute content="" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<valueAttribute content="DISCHARGE" x="5" y="0" rotation="0" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="net" x="0" y="0" length="15" angle="0" electrical_type="passive">
+					<nameAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+				</pin>
+			</pins>
+			<generic_shapes />
+			<parameters />
+		</component>
+		<component id="AILABEL2_1" type="NetLabel" x="1788.39844" y="675.400391" rotation="180" oriented="true" sourceFolderPath="" footprint="">
+			<value>TIMING_NODE</value>
+			<designatorAttribute content="" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<valueAttribute content="TIMING_NODE" x="5" y="0" rotation="0" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="net" x="0" y="0" length="15" angle="0" electrical_type="passive">
+					<nameAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+				</pin>
+			</pins>
+			<generic_shapes />
+			<parameters />
+		</component>
+		<component id="AILABEL3_1" type="NetLabel" x="1788.39844" y="700.800781" rotation="180" oriented="true" sourceFolderPath="" footprint="">
+			<value>TIMING_NODE</value>
+			<designatorAttribute content="" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<valueAttribute content="TIMING_NODE" x="5" y="0" rotation="0" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="net" x="0" y="0" length="15" angle="0" electrical_type="passive">
+					<nameAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+				</pin>
+			</pins>
+			<generic_shapes />
+			<parameters />
+		</component>
+		<component id="AILABEL4_1" type="NetLabel" x="2031.60156" y="650" rotation="0" oriented="true" sourceFolderPath="" footprint="">
+			<value>TIMER_OUT</value>
+			<designatorAttribute content="" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<valueAttribute content="TIMER_OUT" x="5" y="0" rotation="0" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="net" x="0" y="0" length="15" angle="0" electrical_type="passive">
+					<nameAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+				</pin>
+			</pins>
+			<generic_shapes />
+			<parameters />
+		</component>
+		<component id="AIPWR5_1" type="Power" x="1788.39844" y="599.199219" rotation="0" oriented="true" sourceFolderPath="" footprint="">
+			<value>+9V</value>
+			<designatorAttribute content="" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<valueAttribute content="+9V" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<pins>
+				<pin number="1" name="vcc" x="0" y="0" length="5" angle="0" electrical_type="power_in">
+					<nameAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+				</pin>
+			</pins>
+			<generic_shapes />
+			<parameters />
+		</component>
+		<component id="AIPWR6_1" type="Power" x="1935.39844" y="528.400391" rotation="0" oriented="true" sourceFolderPath="" footprint="">
+			<value>+9V</value>
+			<designatorAttribute content="" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<valueAttribute content="+9V" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<pins>
+				<pin number="1" name="vcc" x="0" y="0" length="5" angle="0" electrical_type="power_in">
+					<nameAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+				</pin>
+			</pins>
+			<generic_shapes />
+			<parameters />
+		</component>
+		<component id="AIGND7_1" type="Power" x="1910" y="771.599609" rotation="0" oriented="true" sourceFolderPath="" footprint="">
+			<value>GND</value>
+			<designatorAttribute content="" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<valueAttribute content="GND" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<pins>
+				<pin number="1" name="gnd" x="0" y="0" length="5" angle="0" electrical_type="power_in">
+					<nameAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+				</pin>
+			</pins>
+			<generic_shapes />
+			<parameters />
+		</component>
+		<component id="AIGND8_1" type="Power" x="1880" y="484.599609" rotation="0" oriented="true" sourceFolderPath="" footprint="">
+			<value>GND</value>
+			<designatorAttribute content="" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<valueAttribute content="GND" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<pins>
+				<pin number="1" name="gnd" x="0" y="0" length="5" angle="0" electrical_type="power_in">
+					<nameAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+				</pin>
+			</pins>
+			<generic_shapes />
+			<parameters />
+		</component>
+		<component id="AILABEL9_1" type="NetLabel" x="1807" y="999" rotation="180" oriented="true" sourceFolderPath="" footprint="">
+			<value>DISCHARGE</value>
+			<designatorAttribute content="" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<valueAttribute content="DISCHARGE" x="5" y="0" rotation="0" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="net" x="0" y="0" length="15" angle="0" electrical_type="passive">
+					<nameAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+				</pin>
+			</pins>
+			<generic_shapes />
+			<parameters />
+		</component>
+		<component id="AIPWR10_1" type="Power" x="1827" y="902.800781" rotation="0" oriented="true" sourceFolderPath="" footprint="">
+			<value>+9V</value>
+			<designatorAttribute content="" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<valueAttribute content="+9V" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<pins>
+				<pin number="1" name="vcc" x="0" y="0" length="5" angle="0" electrical_type="power_in">
+					<nameAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+				</pin>
+			</pins>
+			<generic_shapes />
+			<parameters />
+		</component>
+		<component id="AIGND11_1" type="Power" x="1943.19922" y="1095.19922" rotation="0" oriented="true" sourceFolderPath="" footprint="">
+			<value>GND</value>
+			<designatorAttribute content="" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<valueAttribute content="GND" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<pins>
+				<pin number="1" name="gnd" x="0" y="0" length="5" angle="0" electrical_type="power_in">
+					<nameAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+				</pin>
+			</pins>
+			<generic_shapes />
+			<parameters />
+		</component>
+		<component id="AILABEL12_1" type="NetLabel" x="1963.19922" y="999" rotation="0" oriented="true" sourceFolderPath="" footprint="">
+			<value>TIMING_NODE</value>
+			<designatorAttribute content="" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<valueAttribute content="TIMING_NODE" x="5" y="0" rotation="0" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="net" x="0" y="0" length="15" angle="0" electrical_type="passive">
+					<nameAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+				</pin>
+			</pins>
+			<generic_shapes />
+			<parameters />
+		</component>
+		<component id="R3" type="R" x="1084.10156" y="1084.16016" rotation="270" sourceFolderPath="lib/R.kicad_sym" footprint="R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal">
+			<value>470</value>
+			<comment>LED current limiting resistor</comment>
+			<designatorAttribute content="R3" x="-18.1599998" y="0" rotation="90" visible="true" fontSize="12" />
+			<valueAttribute content="470" x="18.1599998" y="0" rotation="90" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="" x="0" y="-38.0999985" length="12.6999998" angle="90" electrical_type="passive">
+					<nameAttribute content="" x="-5" y="17.7000008" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="1" x="-15" y="5" rotation="0" visible="true" fontSize="10" />
+				</pin>
+				<pin number="2" name="" x="0" y="38.0999985" length="12.6999998" angle="270" electrical_type="passive">
+					<nameAttribute content="" x="-5" y="-32.7000008" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="2" x="-15" y="-15" rotation="0" visible="true" fontSize="10" />
+				</pin>
+			</pins>
+			<generic_shapes>
+				<rect x1="-10.1599998" y1="25.3999996" x2="10.1599998" y2="-25.3999996" />
+			</generic_shapes>
+			<parameters />
+		</component>
+		<component id="D1" type="LED" x="1142.19922" y="1122.25977" rotation="270" sourceFolderPath="lib/LED.kicad_sym" footprint="LED_D5.0mm">
+			<value>Red</value>
+			<comment>blinker output indicator</comment>
+			<designatorAttribute content="D1" x="-16.5100002" y="-20.7000008" rotation="0" visible="true" fontSize="12" />
+			<valueAttribute content="Red" x="-16.5100002" y="30.8600006" rotation="0" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="K" x="-38.0999985" y="-0" length="25.3999996" angle="0" electrical_type="passive">
+					<nameAttribute content="K" x="30.3999996" y="-5" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="1" x="5" y="-15" rotation="0" visible="true" fontSize="10" />
+				</pin>
+				<pin number="2" name="A" x="38.0999985" y="-0" length="25.3999996" angle="180" electrical_type="passive">
+					<nameAttribute content="A" x="-45.4000015" y="-5" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="2" x="-15" y="-15" rotation="0" visible="true" fontSize="10" />
+				</pin>
+			</pins>
+			<generic_shapes>
+				<polyline>
+					<pt x="-30.4800014" y="7.62000036" />
+					<pt x="-45.7200012" y="22.8600006" />
+					<pt x="-38.0999985" y="22.8600006" />
+					<pt x="-45.7200012" y="22.8600006" />
+					<pt x="-45.7200012" y="15.2400007" />
+				</polyline>
+				<polyline>
+					<pt x="-17.7800007" y="7.62000036" />
+					<pt x="-33.0200005" y="22.8600006" />
+					<pt x="-25.3999996" y="22.8600006" />
+					<pt x="-33.0200005" y="22.8600006" />
+					<pt x="-33.0200005" y="15.2400007" />
+				</polyline>
+				<polyline>
+					<pt x="-12.6999998" y="-0" />
+					<pt x="12.6999998" y="-0" />
+				</polyline>
+				<polyline>
+					<pt x="-12.6999998" y="12.6999998" />
+					<pt x="-12.6999998" y="-12.6999998" />
+				</polyline>
+				<polyline>
+					<pt x="12.6999998" y="12.6999998" />
+					<pt x="12.6999998" y="-12.6999998" />
+					<pt x="-12.6999998" y="-0" />
+					<pt x="12.6999998" y="12.6999998" />
+				</polyline>
+			</generic_shapes>
+			<parameters />
+		</component>
+		<component id="AILABEL1_2" type="NetLabel" x="1026" y="1084.16016" rotation="180" oriented="true" sourceFolderPath="" footprint="">
+			<value>TIMER_OUT</value>
+			<designatorAttribute content="" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<valueAttribute content="TIMER_OUT" x="5" y="0" rotation="0" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="net" x="0" y="0" length="15" angle="0" electrical_type="passive">
+					<nameAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+				</pin>
+			</pins>
+			<generic_shapes />
+			<parameters />
+		</component>
+		<component id="AIGND2_2" type="Power" x="1142.19922" y="1180.35938" rotation="0" oriented="true" sourceFolderPath="" footprint="">
+			<value>GND</value>
+			<designatorAttribute content="" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<valueAttribute content="GND" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<pins>
+				<pin number="1" name="gnd" x="0" y="0" length="5" angle="0" electrical_type="power_in">
+					<nameAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+				</pin>
+			</pins>
+			<generic_shapes />
+			<parameters />
+		</component>
+	</components>
+	<wires>
+		<wire id="1" net="+9V">
+			<points>
+				<point x="1079.19922" y="390" />
+				<point x="1059.19922" y="390" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="J1" pin_num="1" />
+				<connection point_index="1" comp_id="AIPWR1_1" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="2" net="GND">
+			<points>
+				<point x="1079.19922" y="415.400391" />
+				<point x="1059.19922" y="415.400391" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="J1" pin_num="2" />
+				<connection point_index="1" comp_id="AIGND2_1" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="3" net="GND">
+			<points>
+				<point x="989.199219" y="466.199219" />
+				<point x="989.199219" y="486.199219" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="C2" pin_num="2" />
+				<connection point_index="1" comp_id="AIGND3_1" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="4" net="+9V">
+			<points>
+				<point x="1059.19922" y="390" />
+				<point x="989.199219" y="390" />
+			</points>
+			<connections />
+		</wire>
+		<wire id="5" net="DISCHARGE">
+			<points>
+				<point x="1808.39844" y="624.599609" />
+				<point x="1788.39844" y="624.599609" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="U1" pin_num="7" />
+				<connection point_index="1" comp_id="AILABEL1_1" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="6" net="TIMING_NODE">
+			<points>
+				<point x="1808.39844" y="675.400391" />
+				<point x="1788.39844" y="675.400391" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="U1" pin_num="6" />
+				<connection point_index="1" comp_id="AILABEL2_1" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="7" net="TIMING_NODE">
+			<points>
+				<point x="1808.39844" y="700.800781" />
+				<point x="1788.39844" y="700.800781" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="U1" pin_num="2" />
+				<connection point_index="1" comp_id="AILABEL3_1" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="8" net="TIMER_OUT">
+			<points>
+				<point x="2011.60156" y="650" />
+				<point x="2031.60156" y="650" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="U1" pin_num="3" />
+				<connection point_index="1" comp_id="AILABEL4_1" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="9" net="+9V">
+			<points>
+				<point x="1808.39844" y="599.199219" />
+				<point x="1788.39844" y="599.199219" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="U1" pin_num="4" />
+				<connection point_index="1" comp_id="AIPWR5_1" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="10" net="+9V">
+			<points>
+				<point x="1935.39844" y="548.400391" />
+				<point x="1935.39844" y="528.400391" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="U1" pin_num="8" />
+				<connection point_index="1" comp_id="AIPWR6_1" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="11" net="GND">
+			<points>
+				<point x="1910" y="751.599609" />
+				<point x="1910" y="771.599609" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="U1" pin_num="1" />
+				<connection point_index="1" comp_id="AIGND7_1" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="12" net="GND">
+			<points>
+				<point x="1880" y="464.599609" />
+				<point x="1880" y="484.599609" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="C3" pin_num="2" />
+				<connection point_index="1" comp_id="AIGND8_1" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="13" net="CONT">
+			<points>
+				<point x="1910" y="548.400391" />
+				<point x="1910" y="388.400391" />
+				<point x="1880" y="388.400391" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="U1" pin_num="5" />
+			</connections>
+		</wire>
+		<wire id="14" net="+9V">
+			<points>
+				<point x="1827" y="922.800781" />
+				<point x="1827" y="902.800781" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="R1" pin_num="1" />
+				<connection point_index="1" comp_id="AIPWR10_1" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="15" net="DISCHARGE">
+			<points>
+				<point x="1807" y="999" />
+				<point x="1827" y="999" />
+				<point x="1847" y="999" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="AILABEL9_1" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="16" net="GND">
+			<points>
+				<point x="1943.19922" y="1075.19922" />
+				<point x="1943.19922" y="1095.19922" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="C1" pin_num="2" />
+				<connection point_index="1" comp_id="AIGND11_1" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="17" net="TIMING_NODE">
+			<points>
+				<point x="1923.19922" y="999" />
+				<point x="1943.19922" y="999" />
+				<point x="1963.19922" y="999" />
+			</points>
+			<connections>
+				<connection point_index="2" comp_id="AILABEL12_1" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="18" net="TIMER_OUT">
+			<points>
+				<point x="1026" y="1084.16016" />
+				<point x="1046" y="1084.16016" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="AILABEL1_2" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="19" net="GND">
+			<points>
+				<point x="1142.19922" y="1160.35938" />
+				<point x="1142.19922" y="1180.35938" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="D1" pin_num="1" />
+				<connection point_index="1" comp_id="AIGND2_2" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="20" net="LED_ANODE">
+			<points>
+				<point x="1122.19922" y="1084.16016" />
+				<point x="1142.19922" y="1084.16016" />
+			</points>
+			<connections />
+		</wire>
+	</wires>
+	<graphics>
+		<images />
+		<lines />
+		<rects>
+			<rect id="1" x1="630" y1="90" x2="1470" y2="820" layer="0" color="4293301856" thickness="2" fillStyle="0" fillColor="0" cornerRadius="0" name="AI Block: 9V Power Input &amp; Decoupling" />
+			<rect id="4" x1="1470" y1="90" x2="2343.30469" y2="1493.69824" layer="0" color="4293301856" thickness="2" fillStyle="0" fillColor="0" cornerRadius="0" name="AI Block: NE555 Astable Oscillator" />
+			<rect id="6" x1="1686" y1="835.800781" x2="2098.19922" y2="1142.19922" layer="0" color="2695859320" thickness="1" fillStyle="0" fillColor="0" cornerRadius="0" name="AI Block Group: NE555 Astable Oscillator" />
+			<rect id="8" x1="630" y1="820" x2="1470" y2="1493.69824" layer="0" color="4293301856" thickness="2" fillStyle="0" fillColor="0" cornerRadius="0" name="AI Block: LED Blinker Output" />
+		</rects>
+		<circles />
+		<texts>
+			<text id="2" x="650" y="768" size="32" color="4283489982" layer="0" name="AI Block Title: 9V Power Input &amp; Decoupling" angle="0" thickness="1" justifyH="0" justifyV="1">9V Power Input &amp; Decoupling</text>
+			<text id="5" x="1490" y="1441.69824" size="32" color="4283489982" layer="0" name="AI Block Title: NE555 Astable Oscillator" angle="0" thickness="1" justifyH="0" justifyV="1">NE555 Astable Oscillator</text>
+			<text id="9" x="650" y="1441.69824" size="32" color="4283489982" layer="0" name="AI Block Title: LED Blinker Output" angle="0" thickness="1" justifyH="0" justifyV="1">LED Blinker Output</text>
+		</texts>
+		<arcs />
+		<polygons />
+		<junctions />
+		<harnesses />
+	</graphics>
+</schematic>

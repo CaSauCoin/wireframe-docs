@@ -83,6 +83,24 @@ An exported file is not self-validating. Inspect the package, confirm the saved 
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
+<!-- wf:shot id=supported-import-commands
+caption: 'Library Manager → Add library: KiCad folders and files, and Altium libraries'
+setup:
+- open_project
+- ensure_schematic
+- wait: 1
+- menu:
+  - View
+  - Local Library Manager
+- wait: 2
+- click: //Library Manager/{fa:plus}  Add library  {fa:caret-down}
+- wait: 1
+brief_sha256: 3364480ac0fba1a9
+-->
+<!-- wf:out id=supported-import-commands sha=6dcb55f0fcff -->
+![Library Manager → Add library: KiCad folders and files, and Altium libraries](../assets/wf/docs/reference/file-formats/supported-import-commands.png)
+<!-- /wf:out -->
+
 ## Related guidelines
 
 - [Projects and Files](../projects.md)

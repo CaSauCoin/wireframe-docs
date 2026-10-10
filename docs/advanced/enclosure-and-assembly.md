@@ -66,6 +66,42 @@ The board can be added to the schematic as a part: a **BOARD CUT** box on the ro
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
+<!-- wf:shot id=board-fit-with-a-case-and-lid
+caption: 'Board Fit with a case and lid: the board cut from the case floor, its 4 holes and keepouts,
+  18 lid openings, and what it has to hold'
+setup:
+- open_project
+- panel: ai
+- wait: 2
+- click: //AI Copilot Panel/{fa:tasks}
+- wait: 2
+- tab: Board Fit
+- wait: 2
+- open_file: $OUT/prepared/case/led_matrix_case.step
+- click: '**/{fa:cube}  3D model(s)…'
+- wait: 6
+- open_file: $OUT/prepared/case/led_matrix_lid.step
+- click: '**/{fa:cube} Lid…'
+- wait: 6
+- click: '**/{fa:check}  Use this plane as the board'
+- wait: 4
+- action:
+    action: mouse_move_to
+    x: 900
+    y: 500
+- scroll: -10
+- wait: 1
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+- wait: 1
+brief_sha256: 7bba4f5d3f64ddf6
+-->
+<!-- wf:out id=board-fit-with-a-case-and-lid sha=e6c7ba26ac68 -->
+![Board Fit with a case and lid: the board cut from the case floor, its 4 holes and keepouts, 18 lid openings, and what it has to hold](../assets/wf/docs/advanced/enclosure-and-assembly/board-fit-with-a-case-and-lid.png)
+<!-- /wf:out -->
+
 ## System: products made of several boards
 
 One project is one board. A product made of several — a flight stack, a HAT on a Pi, a display cabled to the main board — is an **assembly** (`.asmxml`): which boards, where each sits in the tower, and how they are wired to each other. Problems that no single project can see — a pinout that disagrees across a cable, two different rails joined, signals crossing without a ground — are checked here.
@@ -96,6 +132,91 @@ A board's own pinout is edited in its own project; open it from the System tab.
     3. **Action shot (6–10 s):** Select **Connect two boards…**, name the connection, choose **Pin for pin**, and confirm.
     4. **Result shot (3–4 s):** Hold on the connection with its pin-by-pin view and the blocker/warning summary readable.
     5. **Deliver:** Export a **12–18 second** 1080p MP4.
+
+<!-- wf:video id=connect-two-boards-in-an-assembly
+caption: 'System tab: connect the ESC to the flight controller with a JST-SH cable, then read the connection
+  pin by pin'
+setup:
+- open_project
+- panel: ai
+- wait: 2
+- click: //AI Copilot Panel/{fa:tasks}
+- wait: 2
+- tab: System
+- wait: 2
+- open_file: $OUT/prepared/drone/drone.asmxml
+- click: '**/{fa:folder-open}  Open assembly…'
+- wait: 5
+- click_at:
+  - 355
+  - 626
+- wait: 1
+- click_at:
+  - 590
+  - 729
+- wait: 1
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+steps:
+- wait: 2
+- click: '**/{fa:link}  Connect two boards…'
+- wait: 1
+- click_at:
+  - 490
+  - 635
+- wait: 0.8
+- click_at:
+  - 450
+  - 660
+- wait: 0.8
+- click_at:
+  - 490
+  - 685
+- wait: 0.8
+- click_at:
+  - 450
+  - 734
+- wait: 0.8
+- click_at:
+  - 490
+  - 713
+- wait: 0.8
+- click_at:
+  - 450
+  - 738
+- wait: 0.8
+- click_at:
+  - 497
+  - 769
+- type:
+    text: JST-SH 1.0 mm 8P
+- wait: 1
+- click_at:
+  - 386
+  - 847
+- wait: 2
+- click_at:
+  - 267
+  - 234
+- wait: 1
+- click_at:
+  - 293
+  - 557
+- wait: 1
+- click: '**/Pin for pin'
+- wait: 1
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+- wait: 4
+brief_sha256: 2fc69558f82527ec
+-->
+<!-- wf:out id=connect-two-boards-in-an-assembly sha=27c08add699b -->
+<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/advanced/enclosure-and-assembly/connect-two-boards-in-an-assembly.mp4" title="System tab: connect the ESC to the flight controller with a JST-SH cable, then read the connection pin by pin"></video>
+<!-- /wf:out -->
 
 ## See also
 

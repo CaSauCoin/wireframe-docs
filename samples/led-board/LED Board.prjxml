@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<WireFrameProject version="1.2">
+	<Settings>
+		<LibFolder>lib_LED Board</LibFolder>
+	</Settings>
+	<Schematics>
+		<File>led_indicator_power_input.schxml</File>
+		<File>LED Board_schematic.schxml</File>
+	</Schematics>
+	<PCBs />
+	<Libraries />
+</WireFrameProject>

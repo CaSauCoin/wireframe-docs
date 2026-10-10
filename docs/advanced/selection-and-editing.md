@@ -137,6 +137,55 @@ brief_sha256: 0b1830046fdd9add
     4. **Result shot (2–3 s):** Right-click and choose **Finish Editing**; hold on the unchanged body and corrected reference position.
     5. **Deliver:** Export a **10–14 second** 1080p MP4 with a restrained click highlight.
 
+<!-- wf:video id=move-a-component-attribute-safely
+caption: Edit Attributes (Lock Body) moves only the R1 reference; Finish Editing leaves the body where
+  it was
+setup:
+- open_project
+- ensure_schematic
+- wait: 2
+- canvas_fit:
+    refs:
+    - R1
+    margin: 2.5
+- wait: 1
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+steps:
+- wait: 1.5
+- canvas_click:
+    target: R1
+    button: right
+- wait: 1.5
+- click: '**/{fa:edit} Edit Attributes (Lock Body)'
+- wait: 1
+- canvas_drag:
+    from: text:R1
+    by:
+    - 6
+    - 14
+- wait: 1.5
+- canvas_click:
+    target:
+    - 1661.3
+    - 1084.6
+    button: right
+- wait: 1.5
+- click: '**/{fa:check} Finish Editing'
+- wait: 1
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+- wait: 2.5
+brief_sha256: 4b4c7c8fc06f2235
+-->
+<!-- wf:out id=move-a-component-attribute-safely sha=70a4b0cc1849 -->
+<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/advanced/selection-and-editing/move-a-component-attribute-safely.mp4" title="Edit Attributes (Lock Body) moves only the R1 reference; Finish Editing leaves the body where it was"></video>
+<!-- /wf:out -->
+
 ## PCB context menus
 
 PCB context actions depend on the item under the pointer and the current selection. Do not expect schematic component actions in the PCB editor, and there is no context menu on a footprint — use the keys (++space++, ++f++, ++delete++) or **Properties** for footprints.
@@ -221,6 +270,26 @@ The **Gerber Viewer** is a normal tool window, not a blocking modal. In the curr
     3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
+
+<!-- wf:shot id=modal-versus-docked-panel
+caption: A modal (Page Settings) in front of the docked panels
+setup:
+- open_project
+- ensure_schematic
+- wait: 1
+- menu:
+  - File
+  - Page Settings...
+- wait: 1
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+brief_sha256: fa87a731de55cf82
+-->
+<!-- wf:out id=modal-versus-docked-panel sha=3ff962ea23f2 -->
+![A modal (Page Settings) in front of the docked panels](../assets/wf/docs/advanced/selection-and-editing/modal-versus-docked-panel.png)
+<!-- /wf:out -->
 
 ## Safe editing checklist
 

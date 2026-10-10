@@ -17,6 +17,29 @@ Complete these fields before PDF release so every exported sheet can be identifi
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
+<!-- wf:shot id=sheet-properties-and-title-block
+caption: Sheet properties (Document Settings) and the title block they fill
+setup:
+- open_project
+- ensure_schematic
+- wait: 1
+- keys:
+  - Home
+- wait: 0.5
+- click_at:
+  - 700
+  - 700
+- wait: 0.5
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+brief_sha256: b1fad8de01dc06c6
+-->
+<!-- wf:out id=sheet-properties-and-title-block sha=af1c10742287 -->
+![Sheet properties (Document Settings) and the title block they fill](../assets/wf/docs/schematic/properties-and-attributes/sheet-properties-and-title-block.png)
+<!-- /wf:out -->
+
 ## Component properties
 
 When one component is selected, review:

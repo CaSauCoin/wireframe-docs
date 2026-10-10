@@ -199,7 +199,7 @@ steps:
 - wait: 2
 brief_sha256: 1a4d1c57917d68d3
 -->
-<!-- wf:out id=generate-and-review-functional-blocks sha=dae94a6f4664 -->
+<!-- wf:out id=generate-and-review-functional-blocks sha=f15f01c4cabe -->
 <video controls muted playsinline preload="metadata" src="../../assets/wf/docs/ai/design-agent/generate-and-review-functional-blocks.mp4" title="The Blocks tab: power input, NE555 oscillator and LED output, each scoped to its parts"></video>
 <!-- /wf:out -->
 

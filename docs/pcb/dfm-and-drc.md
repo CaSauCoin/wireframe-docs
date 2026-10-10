@@ -124,6 +124,113 @@ With the panel open, markers on the canvas show where violations are. They hide 
     4. **Result shot (4–6 s):** Hold on the refreshed summary with that violation cleared and the corrected object visible.
     5. **Deliver:** Export a **20–30 second** 1080p MP4; do not hide remaining violations outside the stated example.
 
+<!-- wf:video id=resolve-and-recheck-a-violation
+caption: Default clearance set to 7 mil flags 13 places on a board laid out at 5 mil; focus one, set the
+  rule back to the fab value, run the check again
+project: none
+setup:
+- wait: 1
+- open_file: wireframe:tests/data/buck_converter_automotive/kicad/buck-converter-automotive.kicad_pro
+- menu:
+  - File
+  - Import
+  - KiCad Project (.kicad_pro, .pro)...
+- wait: 12
+- click_at:
+    at:
+    - 150
+    - 109
+    double: true
+- wait: 4
+- menu:
+  - View
+  - Design Rules
+- wait: 2
+- click_at:
+  - 1175
+  - 453
+- keys:
+  - End
+- keys:
+  - Backspace
+- keys:
+  - Backspace
+- keys:
+  - Backspace
+- keys:
+  - Backspace
+- keys:
+  - Backspace
+- keys:
+  - Backspace
+- keys:
+  - Backspace
+- type:
+    text: '7'
+- keys:
+  - Enter
+- wait: 1
+- click: //Design Rules Manager/Close
+- wait: 1
+- menu:
+  - Tools
+  - DFM & DRC Check Panel...
+- wait: 1
+- click: '**/{fa:play} Run DFM Analysis'
+- wait: 4
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+steps:
+- wait: 2
+- click_at:
+  - 1470
+  - 245
+- wait: 3
+- menu:
+  - View
+  - Design Rules
+- wait: 2
+- click_at:
+  - 1175
+  - 453
+- keys:
+  - End
+- keys:
+  - Backspace
+- keys:
+  - Backspace
+- keys:
+  - Backspace
+- keys:
+  - Backspace
+- keys:
+  - Backspace
+- keys:
+  - Backspace
+- keys:
+  - Backspace
+- type:
+    text: '5'
+- keys:
+  - Enter
+- wait: 2
+- click: //Design Rules Manager/Close
+- wait: 1
+- click: '**/{fa:play} Run DFM Analysis'
+- wait: 2
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+- wait: 4
+brief_sha256: 0c438ae461c4de56
+-->
+<!-- wf:out id=resolve-and-recheck-a-violation sha=a819eeacb53c -->
+<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/pcb/dfm-and-drc/resolve-and-recheck-a-violation.mp4" title="Default clearance set to 7 mil flags 13 places on a board laid out at 5 mil; focus one, set the rule back to the fab value, run the check again"></video>
+<!-- /wf:out -->
+
 ---
 
 ---

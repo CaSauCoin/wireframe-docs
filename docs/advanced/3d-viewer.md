@@ -24,6 +24,26 @@ From an open PCB document:
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
+<!-- wf:shot id=3d-viewer
+caption: 'The 3D Viewer: the buck converter board with its component models'
+project: wireframe:tests/data/buck_converter_automotive/wireframe/buck-converter-automotive.prjxml
+setup:
+- open_project
+- ensure_pcb
+- wait: 1
+- keys:
+  - '3'
+- wait: 3
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+brief_sha256: 1f97eea2e9acd5ff
+-->
+<!-- wf:out id=3d-viewer sha=32ee83fcf431 -->
+![The 3D Viewer: the buck converter board with its component models](../assets/wf/docs/advanced/3d-viewer/3d-viewer.png)
+<!-- /wf:out -->
+
 ---
 
 ## Camera Controls

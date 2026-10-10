@@ -65,6 +65,29 @@ Changes in the Properties panel apply **immediately** — the title block update
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
+<!-- wf:shot id=title-block-properties
+caption: Properties → Document Settings → Title Block Info beside the title block
+setup:
+- open_project
+- ensure_schematic
+- wait: 1
+- keys:
+  - Home
+- wait: 0.5
+- click_at:
+  - 700
+  - 700
+- wait: 0.5
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+brief_sha256: 0cfe94e2682e4ca2
+-->
+<!-- wf:out id=title-block-properties sha=af1c10742287 -->
+![Properties → Document Settings → Title Block Info beside the title block](../assets/wf/docs/schematic/templates/title-block-properties.png)
+<!-- /wf:out -->
+
 ---
 
 ## Page Setup

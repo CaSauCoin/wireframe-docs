@@ -102,6 +102,82 @@ While routing, the readout near the cursor shows the class, width, clearance, an
     4. **Verification shot (5–7 s):** Run DFM/DRC and hold on the result plus the selected wide route.
     5. **Deliver:** Export a **20–30 second** 1080p MP4 with the active unit and width readable.
 
+<!-- wf:video id=assign-and-verify-a-net-class
+caption: VIN moved from Default to Power under Every net; the new route takes the 20 mil class width,
+  then DFM & DRC
+project: wireframe:tests/data/7805_voltage_regulator/wireframe/7805_regulator.prjxml
+setup:
+- open_project
+- ensure_pcb
+- wait: 2
+- canvas_fit:
+    refs:
+    - C1
+    - U2
+    margin: 0.15
+- wait: 1
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+steps:
+- wait: 1
+- menu:
+  - View
+  - Design Rules
+- wait: 2.5
+- click: //Design Rules Manager/##seg@5
+- wait: 1.5
+- click_at:
+  - 300
+  - 404
+- type:
+    text: VIN
+- wait: 2
+- click_at:
+  - 1055
+  - 456
+- wait: 1
+- click_at:
+  - 1017
+  - 505
+- wait: 2
+- click: //Design Rules Manager/Close
+- wait: 1
+- keys:
+  - X
+- canvas_click: pad:U2.3
+- wait: 1
+- canvas_hover:
+  - 300
+  - -800
+- wait: 1
+- canvas_hover: pad:C1.1
+- wait: 1.5
+- canvas_click: pad:C1.1
+- wait: 1
+- keys:
+  - Escape
+- wait: 1
+- menu:
+  - Tools
+  - DFM & DRC Check Panel...
+- wait: 1
+- click: '**/{fa:play} Run DFM Analysis'
+- wait: 2
+- canvas_click: net:VIN
+- wait: 1
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+- wait: 4
+brief_sha256: c8d421ddcf7bfd61
+-->
+<!-- wf:out id=assign-and-verify-a-net-class sha=35bf59addd05 -->
+<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/pcb/design-rules/assign-and-verify-a-net-class.mp4" title="VIN moved from Default to Power under Every net; the new route takes the 20 mil class width, then DFM &amp; DRC"></video>
+<!-- /wf:out -->
+
 ## Release checklist
 
 - Constraints match the selected manufacturer's current capabilities.

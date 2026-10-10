@@ -31,6 +31,29 @@ The schematic workspace consists of:
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
+<!-- wf:shot id=schematic-workspace
+caption: The schematic editor with Library and Properties
+setup:
+- open_project
+- ensure_schematic
+- wait: 1
+- keys:
+  - Home
+- wait: 0.5
+- click_at:
+  - 700
+  - 700
+- wait: 0.5
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+brief_sha256: 4150fafce92026e0
+-->
+<!-- wf:out id=schematic-workspace sha=af1c10742287 -->
+![The schematic editor with Library and Properties](../assets/wf/docs/schematic/index/schematic-workspace.png)
+<!-- /wf:out -->
+
 - **Canvas** — dot grid with an A4 page outline (configurable to A3, custom). Place all components and wires here.
 - **Toolbar** — a strip of tool buttons centred at the top of the canvas; ++tab++ hides or shows it
 - **Library panel** — symbol list for placing components
