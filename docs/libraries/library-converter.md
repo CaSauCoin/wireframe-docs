@@ -1,15 +1,17 @@
 # Library Import and Management
 
-Use **Local Library Manager** to add KiCad libraries, import Altium libraries, inspect active inventory, and remove sources you no longer need. This page replaces the old command-line converter documentation, which described developer tooling rather than the released user interface.
+Use the **Library Manager** to add KiCad libraries, import Altium libraries, choose which parts the Library panel shows, inspect and correct parts, and install parts from WireFrame's online catalog.
 
-## Open Local Library Manager
+## Open the Library Manager
 
-Select **View → Local Library Manager**.
+Select **View → Local Library Manager**, or **Manage libraries...** at the top of the Library panel. The header shows how many sources and symbols are loaded and how many are shown in the Library panel.
 
-The window has two main areas:
+The window has two modes:
 
-- **Add & Import Options** for adding a folder, KiCad symbol files, or an Altium library;
-- **Loaded Library Inventory** for inspecting and managing active sources.
+- **My libraries** — the sources you added, their parts, and a preview;
+- **Online catalog** — WireFrame's component store, browsed by category.
+
+**Close (Esc)** closes the window. Library sources can also be managed from **Preferences → Libraries**.
 
 ### Image — Local Library Manager overview
 
@@ -40,41 +42,24 @@ brief_sha256: 5922ed51f81e3066
 ![Local Library Manager — import options and the loaded inventory](../assets/wf/docs/libraries/library-converter/local-library-manager-overview.png)
 <!-- /wf:out -->
 
-## Add a KiCad library folder
+## Add a library
 
-1. Open **Local Library Manager**.
-2. Under **Library Folder**, select **Select Folder**.
-3. Choose a directory containing `.kicad_sym`, `.kicad_mod`, or `.pretty` footprint content.
-4. Wait for the folder to appear under **Loaded Folders**.
-5. Open a schematic or PCB and confirm that the expected items appear in the Component Library.
+Select **Add library ▾** (in **My libraries**) and choose:
 
-Use a folder when a library contains multiple related symbol and footprint files. Keep the folder available at the same path after loading it.
+| Menu item | Adds |
+|---|---|
+| **Folder of KiCad libraries...** | A directory with `.kicad_sym`, `.kicad_mod`, or `.pretty` content. It appears under **Folders** |
+| **KiCad symbol file (.kicad_sym)...** | One or more symbol files. They appear under **Symbol files** |
+| **Altium library (SchLib, PcbLib, IntLib)...** | An Altium `.SchLib`, `.PcbLib`, `.IntLib`, or `.LibPkg`, converted in place. It appears under **Imported** |
 
-## Add KiCad symbol files
-
-1. Under **KiCad Symbol File**, select **Select File(s)**.
-2. Choose one or more `.kicad_sym` files.
-3. Confirm the files appear in the inventory.
-4. Search for a known symbol in the Component Library.
-
-For individual footprints, use the footprint-loading action in the PCB library panel or add the containing folder.
+Keep a folder at the same path after adding it. For a single footprint file, use **Load Footprints...** in the PCB Footprints panel, or add its folder.
 
 ## Import an Altium library
 
-The current importer accepts:
-
-- `.SchLib`;
-- `.PcbLib`;
-- `.IntLib`;
-- `.LibPkg`.
-
-To import:
-
-1. Under **Altium Library Importer**, select **Select Altium File**.
-2. Choose the source library.
-3. Wait for **Converting Altium** to finish.
-4. Find the result under **Imported / Converted Libraries**.
-5. Inspect representative symbols, footprints, pad numbering, and 3D model references.
+1. Select **Add library ▾ → Altium library (SchLib, PcbLib, IntLib)...** and choose the file (`.SchLib`, `.PcbLib`, `.IntLib`, or `.LibPkg`).
+2. Wait while the window shows *Converting the Altium library...*.
+3. Find the result under **Imported** in the source list.
+4. Inspect representative symbols, footprints, pad numbering, and 3D model references.
 
 ### Short video — Import an Altium library
 
@@ -121,25 +106,36 @@ brief_sha256: 28d9019b49f0e3cb
 !!! warning "Review converted content"
     Library conversion is not manufacturing approval. Check the exact part variant, pin mapping, pad dimensions, footprint orientation, and model paths before using an imported component.
 
+!!! warning "Review converted content"
+    Library conversion is not manufacturing approval. Check the exact part variant, pin mapping, pad dimensions, footprint orientation, and model paths before using an imported component.
+
+## Choose what the Library panel shows
+
+Select a source on the left to list its parts.
+
+- **Search parts** filters the list; ++arrow-up++ / ++arrow-down++ move through it while you type.
+- The tick beside a part shows or hides it in the Library panel. **All** and **None** show or hide every listed part; **Hide power & logos** hides power symbols and logos. Select several parts (++shift++ / ++ctrl++ click) and press ++space++ to show or hide them together.
+- The line under the search reads *n of m shown in the Library panel*.
+
+Hiding a part does not delete it — it only keeps the Library panel short.
+
 ## Inspect or remove a source
 
-The **Loaded Library Inventory** separates sources into **Loaded Folders**, **Imported / Converted Libraries**, and **Individual Library Files**. Select a source to populate its component list. Use **Select All** or **Deselect All** when reviewing a large source, then select a component to open its CAD preview.
+Hover a source for its full path. The buttons beside the source name **Copy path** and **Remove from library**; the same actions are in its right-click menu. Removing asks for confirmation — *Remove "…" from the library? Its files stay on disk.*
 
-A folder can be expanded with its arrow or by double-clicking it. Hover a folder, file, or converted entry to inspect its full source path. Use the trash action beside an inventory entry only when no active project depends on it.
+Removing a source does not repair placed components whose definitions can no longer be resolved. Archive required project libraries with the project before moving it to another machine.
 
-Removing a source from the manager does not repair placed components whose definitions can no longer be resolved. Archive required project libraries with the project before moving it to another machine.
+## Review and edit a part
 
-## Review and edit an imported component
+Select a part to preview it on the right, with **Symbol**, **Footprint**, and **3D** tabs and its **Reference** and **Footprint** below.
 
-The preview area follows the selected component and provides three tabs:
-
-| Preview tab | Review | Available action |
+| Tab | Review | Actions |
 |---|---|---|
-| **Symbol** | Shape, pin numbers, pin names, electrical types, reference prefix, and default footprint | **Edit Symbol Properties & Pins**, **Add Pin**, **Edit Geometry in full Canvas Editor**, **Save**, or **Save As** |
-| **Footprint** | Pad numbers, pad geometry, body outline, and linked footprint | **Edit Geometry in full Canvas Editor** or **Link Footprint & Save to File** |
-| **3D Model** | Package model, orientation, offset, and scale | **Edit 3D Model & Alignment** |
+| **Symbol** | Shape, pin numbers and names, reference prefix, default footprint | **Edit properties & pins** opens **Edit symbol**: **Name**, **Reference prefix**, **Default footprint**, and the **Pins** table (**Name**, **Type**) with **Add pin**; **Edit geometry in the Symbol Editor**; **Save**, **Save as...**, or **Cancel** |
+| **Footprint** | Pad numbers, pad geometry, body outline | **Edit in the Footprint Editor**; **Link a footprint file...** links another footprint — saved into the symbol file and applied to this part on the open schematic |
+| **3D** | Package model, orientation, offset, scale | **Edit 3D model & alignment** |
 
-When editing symbol properties, use **Cancel** to discard the pending form edits. Saving a renamed symbol or linking a footprint can affect how the item is resolved later, so confirm the symbol-to-footprint mapping before closing the manager.
+**Cancel** discards pending edits. Saving a renamed symbol or linking a footprint changes how the part is resolved later, so confirm the symbol-to-footprint mapping before closing the manager.
 
 ### Image — Inventory selection and CAD preview tabs
 
@@ -237,28 +233,28 @@ brief_sha256: 89b281d9b40e8642
 <video controls muted playsinline preload="metadata" src="../../assets/wf/docs/libraries/library-converter/inspect-and-correct-an-imported-component.mp4" title="Select the imported part, step through Symbol, Footprint and 3D, open Edit properties &amp; pins"></video>
 <!-- /wf:out -->
 
-## Component Library panel context actions
+## Install parts from the online catalog
 
-The docked **Component Library** is separate from Local Library Manager. In its **Local Library** tab:
+Switch to **Online catalog**:
 
-- right-click a converted library and select **Remove Library**;
-- right-click a loaded folder and select **Remove Folder**;
-- right-click a symbol and select **Remove Symbol**;
-- select multiple symbols with ++ctrl++ or ++shift++, then use **Remove Selected** or right-click for **Remove _n_ Selected**;
-- drag an approved symbol onto the schematic canvas to place it.
+1. Pick **All parts** or a category on the left.
+2. Search with **Search name, value, description**; **Installed** and **3D** narrow the list to installed parts or parts that ship a 3D model.
+3. Select parts (++shift++ / ++ctrl++ click) and choose **Install selected (n)**, or **Install all (n)** for every part listed that is not installed yet (after a confirmation).
 
-Use the manager for source-level import and detailed preview. Use the docked panel for search, selection, placement, and its limited removal actions.
+Each installed part is downloaded with its symbol, footprint, and 3D model and added to **My libraries → Imported**. The **Online Store** tab of the Library panel offers the same catalog next to the schematic, with **Install** and **Drag to schematic** on each part.
 
-## What is not currently supported in the UI
+## Component Library panel
 
-The released interface does not expose:
+The docked **Library** panel is separate from the Library Manager. In its **Local Library** tab:
 
-- importing an entire Altium project;
-- importing Eagle `.lbr`, `.sch`, or `.brd` files;
-- cloning and converting arbitrary GitHub repositories;
-- the old `python3 run.py` converter workflow.
+- **Filter...** searches the shown parts; **Hide Power/Logo** hides power symbols and logos;
+- drag a symbol onto the schematic canvas to place it;
+- right-click a converted library for **Remove Library**, a folder for **Remove Folder**, or a symbol for **Remove Symbol**;
+- select several symbols with ++ctrl++ or ++shift++, then use **Remove Selected** (or **Clear** to drop the selection).
 
-Those items have been removed from the user guideline. Do not add them back until they are available and verified in the application UI.
+## What is not supported
+
+WireFrame does not import an entire Altium project or Eagle `.lbr`, `.sch`, or `.brd` files. KiCad *projects* are imported with **File → Import → KiCad Project** — see [Projects and Files](../projects.md).
 
 ## After any import
 
@@ -273,5 +269,5 @@ Those items have been removed from the user guideline. Do not add them back unti
 
 - [Symbol Libraries](symbols-library.md)
 - [Footprint Libraries](footprints-library.md)
-- [AI Component Generator](../ai/component-generator.md)
+- [Fix or Create a Component](../ai/component-generator.md)
 - [Projects and Files](../projects.md)

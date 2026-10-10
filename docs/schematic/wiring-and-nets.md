@@ -13,9 +13,10 @@ Press ++w++ or click the **Wire** button on the toolbar.
 ### How to draw a wire
 
 1. **Click** on a component pin (or any point on the canvas) to start a wire
-2. A temporary wire follows the cursor — drawn **orthogonally** (horizontal and vertical segments only)
-3. **Left-click** to add each corner vertex
-4. **Right-click** or press ++esc++ to end the wire
+2. A temporary wire follows the cursor — drawn **orthogonally** (horizontal and vertical segments only) and snapped to the grid. Press ++space++ to flip whether the first bend goes horizontal or vertical
+3. **Click** to add each corner vertex
+4. **Click a pin or an existing wire** to finish there — the wire snaps to it. To finish at a free point, **double-click**
+5. ++esc++ cancels the wire you are drawing
 
 ### Image — Wire attached to two component pins
 
@@ -51,9 +52,12 @@ brief_sha256: 2e31690f8949c65b
 | Action | Input |
 |---|---|
 | Start a wire | Click on a pin or canvas point |
-| Add a corner | Left-click |
-| End the wire | Right-click or ++esc++ |
-| Cancel before starting | ++esc++ |
+| Add a corner | Click |
+| Flip the bend direction | ++space++ |
+| End on a pin or wire | Click it |
+| End at a free point | Double-click |
+| Cancel the wire being drawn | ++esc++ |
+| Leave the Wire tool | ++esc++ again |
 
 !!! tip "Starting from a pin snaps automatically"
     When you click on a pin tip, WireFrame snaps the first vertex precisely to that pin — no manual alignment needed.
@@ -114,9 +118,9 @@ Net labels allow you to **connect two points electrically without drawing a wire
 
 ### How to place a net label
 
-1. Press ++l++ or click the **Label** tool
-2. Click on the canvas to place a label
-3. Edit the **Value** in the Properties panel (e.g. `SDA`, `SCL`, `+3V3`, `RESET`)
+1. Press ++n++ or click the **Label** tool
+2. Click on the canvas to place a label. It gets a suggested name such as `NET_1`
+3. Select it and edit the **Value** in the Properties panel (e.g. `SDA`, `SCL`, `+3V3`, `RESET`)
 4. All wires connected to that label share the **same net name**
 
 For example, matching `SDA` labels at the controller and sensor place both endpoints on the same named net even when no wire spans the page between them.
@@ -130,8 +134,8 @@ For example, matching `SDA` labels at the controller and sensor place both endpo
 
 | Symbol | Shortcut | Description |
 |---|---|---|
-| **GND** | ++g++ | Ground reference — implicitly connects all GND pins |
-| **VCC** | — (toolbar) | Positive supply rail |
+| **Place GND** | ++g++ | Ground reference — implicitly connects all GND pins |
+| **Place VCC** | ++p++ | Positive supply rail, named `VCC`; change its **Value** (e.g. `+3V3`) for another rail |
 
 Power symbols are single-pin components that automatically assign a net name to any wire connected to them.
 

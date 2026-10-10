@@ -18,7 +18,7 @@ Ask Copilot, review its findings, inspect every proposed change, and then choose
 ## Ask a focused question
 
 1. Open your project and the relevant schematic.
-2. Open the **Copilot** panel.
+2. Open **View → AI Copilot Chat** (++ctrl+space++).
 3. Describe the circuit section and what you want checked.
 4. Review the components, nets, and warnings mentioned in the response.
 5. If changes are proposed, inspect the preview before selecting **Apply**.
@@ -44,7 +44,7 @@ When a proposed block can be placed on the canvas:
 
 ## Create a symbol or footprint from a datasheet
 
-When Component Review reports **Not in Pool**, use **AI Gen** to create a symbol and footprint from a standard template or a manufacturer datasheet. Follow the complete [AI Component Generator guideline](ai/component-generator.md) before using the result in a board.
+When Component Review reports **Not in Pool**, try **Create** (it searches the published library first), or type `/fix <refdes> <what is wrong>` in the AI panel with the manufacturer datasheet attached. Follow [Fix or Create a Component](ai/component-generator.md) before using the result in a board.
 
 Before accepting the generated library item, verify:
 

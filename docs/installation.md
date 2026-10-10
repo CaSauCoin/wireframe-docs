@@ -1,14 +1,26 @@
 # Installation
 
-Install WireFrame only from the official release channel and choose the package that matches your operating system and CPU architecture. This guideline covers pre-built end-user packages, not source builds.
+Install WireFrame only from the official release channel and choose the package that matches your operating system. This guide covers the pre-built packages, not source builds.
+
+## System requirements
+
+| | Windows | macOS | Linux |
+|---|---|---|---|
+| Operating system | Windows 10 or later, 64-bit | A recent macOS on Apple silicon | A Debian-based distribution (Ubuntu and similar), 64-bit |
+| Package | `WireFrame_v<version>_Setup_Windows_x64.exe` | `WireFrame_v<version>_macOS.dmg` | `WireFrame_v<version>_<Distro>-<release>_amd64.deb` |
+| Graphics | OpenGL 3.3 or later | OpenGL 3.3 or later | OpenGL 3.3 or later |
+
+A graphics driver without OpenGL 3.3 support — some virtual machines and remote desktops — shows a blank or black window. Update the driver or run WireFrame on the host machine.
+
+AI Copilot needs an internet connection to a hosted AI provider or a local endpoint; everything else works offline.
 
 ## Before downloading
 
 Download from the [official WireFrame download page](https://wireframe.com.vn/download).
 
-1. Confirm whether you need the stable release or the v1.5.47 release candidate.
+1. Choose the stable release unless you are deliberately testing a release candidate.
 2. Read the release notes and back up active production projects before testing a release candidate.
-3. Verify the downloaded filename, version, platform, and architecture.
+3. Check that the downloaded file name matches your platform and the version you expect. If a checksum is published beside the download, compare it.
 4. Keep operating-system security protections enabled.
 
 ### Image — Official release download page
@@ -22,12 +34,12 @@ Download from the [official WireFrame download page](https://wireframe.com.vn/do
 
 ## Windows
 
-1. Download the official 64-bit Windows installer.
-2. Open the installer and review the publisher and filename shown by Windows.
-3. Follow the installer steps and launch WireFrame from the Start menu.
-4. If SmartScreen appears, continue only after confirming that the package came from the official release channel and its checksum matches the published value.
+1. Run `WireFrame_v<version>_Setup_Windows_x64.exe` and check the publisher and file name Windows shows.
+2. Follow the installer. It installs into *Program Files*, adds a Start menu entry, and can add a desktop icon.
+3. Leave **Launch WireFrame** ticked on the last page, or start it from the Start menu.
+4. If SmartScreen appears, continue (**More info → Run anyway**) only after confirming that the package came from the official release channel.
 
-Do not disable SmartScreen globally. If the publisher, filename, or checksum is unexpected, cancel the installation and obtain a fresh package.
+Do not disable SmartScreen globally. If the publisher, file name, or checksum is unexpected, cancel the installation and download a fresh package.
 
 ### Image — Windows installer
 
@@ -40,12 +52,12 @@ Do not disable SmartScreen globally. If the publisher, filename, or checksum is 
 
 ## macOS
 
-1. Download the package built for your Mac architecture.
-2. Open the disk image and drag WireFrame to **Applications**.
+1. Open `WireFrame_v<version>_macOS.dmg`.
+2. Drag WireFrame to **Applications**.
 3. Eject the disk image.
 4. Launch WireFrame from **Applications**.
 
-If macOS blocks the first launch, use **System Settings → Privacy & Security → Open Anyway** only after confirming the package source. Do not routinely remove quarantine attributes with a privileged Terminal command; that bypass should be reserved for a verified support procedure.
+If macOS blocks the first launch, use **System Settings → Privacy & Security → Open Anyway** only after confirming the package source. Do not routinely remove quarantine attributes with a privileged Terminal command; reserve that for a verified support procedure.
 
 ### Image — macOS installation and first launch
 
@@ -58,9 +70,15 @@ If macOS blocks the first launch, use **System Settings → Privacy & Security �
 
 ## Linux
 
-For a Debian package, open it with the system package installer or install the exact downloaded file from a terminal. If the package manager reports missing dependencies, use the distribution's normal dependency-repair workflow, then retry the launch from the application menu.
+Download the `.deb` built for your distribution and release, then install it with the system package installer, or from a terminal:
 
-Before reporting a launch issue, record the distribution, release, desktop session, CPU architecture, WireFrame package version, and exact terminal output.
+```bash
+sudo apt install ./WireFrame_v<version>_<Distro>-<release>_amd64.deb
+```
+
+`apt` installs missing dependencies. Start WireFrame from the application menu.
+
+Before reporting a launch issue, record the distribution and release, the desktop session (X11 or Wayland), the WireFrame version, and the exact terminal output.
 
 ### Image — Linux package installation
 
@@ -71,17 +89,19 @@ Before reporting a launch issue, record the distribution, release, desktop sessi
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
-## First launch and sign-in
+## First launch
 
-On first launch, complete the visible account or activation flow, then open **Preferences** and confirm:
+WireFrame runs in **community mode**: no account, licence key, or activation is needed. The account menu at the right end of the menu bar shows your name and mode (for example *Engineer | Community*), **Login is optional**, and offers **Check for Updates**, **Clear saved login**, **Star repository**, and **Donate / Buy me a coffee**.
 
-- application version and tier;
-- theme and units;
-- autosave;
-- simulation engine status;
-- AI settings only when you intend to use Copilot.
+On first launch, open **Preferences → Preferences...** (++ctrl+comma++) and check:
 
-Never show activation tokens or AI API keys in screenshots or support reports.
+- **General** — display units (**Mil** or **Millimeter**) and autosave;
+- **Appearance** — theme, accent colour, interface font and size;
+- **Simulation** — that ngspice is available, and paths of optional engines;
+- **AI Assistant** — only when you intend to use Copilot;
+- **Updates** — the version and whether a newer one is ready.
+
+Never show AI API keys in screenshots or support reports.
 
 ### Short video — First-run verification
 
@@ -123,14 +143,20 @@ brief_sha256: fc44e3f2c570ac8b
 <video controls muted playsinline preload="metadata" src="../assets/wf/docs/installation/first-run-verification.mp4" title="Preferences, then a first empty project"></video>
 <!-- /wf:out -->
 
+## Updates
+
+When a newer version is published, the **Help** menu shows **Update to v…** and **Preferences → Updates** says *A newer version is ready to download*. Use **Check for Updates** (account menu) or the check button in **Preferences → Updates** to look again. Updating opens the download page; install the new package over the old one.
+
+If the server requires a newer version, WireFrame shows **UPDATE REQUIRED** with **UPDATE NOW** instead of the editor. **SERVICE UNAVAILABLE** means the update service could not be reached — try again later.
+
 ## Upgrade checklist
 
 1. Save and back up important projects.
 2. Close WireFrame normally.
 3. Install the new package using the platform's standard process.
-4. Confirm the displayed version.
+4. Confirm the displayed version (**Help → About WireFrame EDA** or **Preferences → Updates**).
 5. Open a copy of a representative project.
-6. Verify libraries, simulation engines, AI settings, ERC/DFM behavior, and one fabrication preview before using the build for release work.
+6. Verify libraries, simulation engines, AI settings, ERC/DFM behavior, and one fabrication package before using the build for release work.
 
 ## Related guidelines
 

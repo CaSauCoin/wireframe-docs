@@ -4,13 +4,15 @@ AI Copilot helps turn a circuit request into a reviewable design, inspect an exi
 
 ## Configure AI access
 
-Open **Preferences → AI Assistant**, or open the Copilot menu and select **AI settings...**. WireFrame speaks one protocol to every provider (an OpenAI-style `/chat/completions` endpoint), so the setup is an endpoint, the model ids it serves, and a key when the endpoint bills per token.
+Open **Preferences → Preferences... → AI Assistant**, or the **⋮** menu of the AI Copilot panel → **AI settings...**. WireFrame speaks one protocol to every provider (an OpenAI-style `/chat/completions` endpoint), so the setup is an endpoint, the model ids it serves, and a key when the endpoint bills per token.
 
-1. Under **API Endpoint**, pick a preset or type an endpoint URL.
-2. If the endpoint is a hosted provider, paste its key under **API Key**. Local endpoints have no key field.
-3. Fill **Design model** and **Fast model**. Use **List** beside each field to ask the endpoint which ids it serves.
-4. Select **Test** (hosted) or **Check server** (local) and wait for the status line.
-5. Open **View → AI Copilot Chat**.
+1. In the **Provider** card, pick **OpenRouter**, **agyserve**, or **Custom**. With **Custom**, type the **Endpoint URL** — any server that speaks the OpenAI chat API.
+2. For a hosted provider, paste the **API key** (for OpenRouter it starts with `sk-or-v1-`). A local endpoint shows **Not required**. **Clear key** removes a saved key.
+3. In the **Models** card, fill **Design model** and **Fast model**. **List** beside each field asks the endpoint which ids it serves.
+4. Select **Save & test** (hosted) or **Check server** (local) and wait for the **Connection** line.
+5. Open **View → AI Copilot Chat** (++ctrl+space++).
+
+Until a key is saved for a hosted provider, the dialog reads *AI is disabled until a key is saved*.
 
 | Preset | What it configures | Key |
 |---|---|---|
@@ -26,13 +28,15 @@ A preset sets the endpoint **and** its model ids together. Model ids are not por
 | **Design model** | Planning the BOM and netlist, repairing findings, generating library parts, reviewing a board — the model that decides circuits |
 | **Fast model** | Request routing, project naming, requirement research, board questions — classification and summaries. Leave it empty to use the design model |
 
-The fast tier can also use its own endpoint (**Fast tier endpoint**). A common split is the design tier on one provider and the fast tier on another, for example routine calls on **agyserve** while design calls stay on a hosted model.
+The **Fast-tier routing** card can send the fast tier to its own endpoint: **Fast endpoint** — **Same**, **OpenRouter**, **agyserve**, or **Custom** — with its own **Fast endpoint URL** and **Fast endpoint key** (empty = the key above). A common split is routine calls on **agyserve** while design calls stay on a hosted model. If both tiers name the same model, the dialog says that nothing is saved by the split.
+
+The **Usage** card shows what the key has left or has spent, when the provider reports it.
 
 ### Local endpoints and agyserve
 
-The line **Requests go to …** under the fields shows where requests are sent and whether they are billed per token or stay on this machine.
+The line **Requests go to …** shows where requests are sent and whether they are *Billed per token by the provider* or stay on this machine.
 
-For **agyserve**, WireFrame starts the bridge in the background on the first request when port 8799 is offline. If **Check server** still fails, start it yourself from a WireFrame source checkout with `python3 Tools/agyserve/server.py`, then check again. Expect 20–30 seconds per request — slower than a hosted provider.
+For **agyserve**, WireFrame starts the bridge in the background on the first request when port 8799 is offline; **Check server** then reads **Running — n models**. If it reads **Not reachable**, WireFrame could not start it — read `wireframe-agyserve.log` (the dialog names its folder), make sure the Antigravity CLI (`agy`) is installed and signed in, and check again. Expect 20–30 seconds per request — slower than a hosted provider.
 
 Keys are stored in the local WireFrame configuration. Do not place a key in screenshots, project files, bug reports, or shared configuration examples.
 
@@ -70,7 +74,7 @@ brief_sha256: 770e674e0ce469d2
 
 ## Start a focused session
 
-Use the **+** control to create a session and the history control to reopen earlier project sessions. Describe one goal at a time and include measurable requirements where possible.
+Use the **+** button in the Copilot panel to start a session and the history button to reopen earlier sessions of the project. Describe one goal at a time and include measurable requirements where possible.
 
 Good starting requests include:
 
@@ -170,17 +174,19 @@ brief_sha256: 78ff13376c9526fa
 
 ## Component Review tabs
 
+**Design Plan** in the AI Copilot panel opens the **AI Planned BOM & Schematic Review** window — called *Component Review* in this guide. Its status chips at the top summarise the design (parts bound, nets, enclosure, netlist issues, simulation, analysis); the tabs, in order:
+
 | Tab | Use it for |
 |---|---|
 | **BOM Components** | Check part number, value, package, origin, and library status |
 | **Connections Netlist** | Review named connections and pin references |
 | **Blocks** | Generate and review functional circuit groups |
-| **Local Pool Settings** | Add library sources and review generated contracts |
-| **Simulate & Verify** | Run simulation checks for the proposed design |
-| **Design Analysis** | Review design-level findings |
-| **Netlist Check** | Find pin, connectivity, and consistency problems |
 | **Board Fit** | Board shape, enclosure, stacks, and whether the BOM fits — see [Enclosure Fit and Multi-Board Products](../advanced/enclosure-and-assembly.md) |
 | **System** | Products made of several boards (`.asmxml`): stacking and board-to-board wiring checks |
+| **Netlist Check** | Find pin, connectivity, and consistency problems |
+| **Simulate & Verify** | Readiness (components, library match, GND, power source, nets) and **Run Simulation** for the proposed design |
+| **Design Analysis** | Review design-level findings |
+| **Local Pool Settings** | Add library sources and review generated contracts |
 
 ### Image — Current Component Review tabs
 
@@ -224,7 +230,7 @@ brief_sha256: cf3dd64d95d11c33
 - [Copilot Commands](commands.md)
 - [Datasheets, Repairs and Project Memory](datasheets-and-memory.md)
 - [AI Design Agent](design-agent.md)
-- [AI Component Generator](component-generator.md)
+- [Fix or Create a Component](component-generator.md)
 - [Placement and Routing Assistant](auto-placer-router.md)
 - [Review and Simulation Guide](../ai-copilot.md)
 - [AI-Assisted Design Tutorial](../tutorial/ai-design.md)

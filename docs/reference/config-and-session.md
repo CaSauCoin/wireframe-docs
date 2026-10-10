@@ -14,25 +14,30 @@ Depending on the feature used, the local configuration can include:
 - Simulation defaults.
 - Layer visibility and lock state.
 - Custom keyboard shortcuts.
-- Sign-in/device session data and AI provider settings.
+- Optional sign-in data, a device identifier, and AI provider settings.
 
 !!! warning "Contains private data"
-    The configuration can contain an authentication token and an AI API key. Never attach the complete file to an issue report or place it in source control.
+    The configuration can contain sign-in data and an AI API key. Never attach the complete file to an issue report or place it in source control.
 
 ## Change preferences safely
 
-Open **Preferences** and use the relevant category:
+Open **Preferences → Preferences...** (++ctrl+comma++), pick a category on the left (or type in the search box), change the value, and select **OK**. **Cancel** puts back what was there when the dialog opened.
 
 | Category | Typical settings |
 |---|---|
-| Appearance | Theme, units, autosave |
-| Panels or workspace | Docking, panel behavior, multi-monitor options |
-| Grid and editing | Grid visibility, snapping, rotation, PCB defaults |
-| Simulation | Engine executables, analysis, transient defaults |
-| AI | Endpoint, API key (hosted providers only), design and fast model ids |
-| Version and account | Tier, version, and update information |
+| **General** | Display units, autosave and its interval |
+| **Appearance** | Theme mode, accent colour, interface font and size |
+| **Workspace** | Detachable panels, companion panels, default layout, restore on launch, layout presets |
+| **Grid & Snap** | Grid, crosshair, snapping, grid step |
+| **Editing** | Rotation step, default trace width for new boards |
+| **Keyboard Shortcuts** | Key bindings |
+| **Simulation** | Default analysis, transient defaults, engine executables |
+| **Libraries** | Library sources, online catalog, library cache folder |
+| **3D Viewer** | Board preview materials |
+| **AI Assistant** | Provider, endpoint, API key (hosted providers only), design and fast model ids |
+| **Updates** | Version, licence tier, and update check |
 
-Close Preferences after confirming the new value. For an important project, restart WireFrame once and verify that the setting persists.
+For an important project, restart WireFrame once and verify that the setting persists.
 
 ## Session restoration
 

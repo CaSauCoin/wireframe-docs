@@ -51,6 +51,11 @@ theme:
     - content.code.copy
     - content.tabs.link
 
+# Internal production standard for the capture team: kept in the repo, not
+# published to users.
+exclude_docs: |
+  reference/media-production.md
+
 # Production briefs (the capture scripts doc_builder reads) stay in the
 # Markdown but are left out of the built site — see the hook's docstring.
 hooks:
@@ -125,7 +130,7 @@ nav:
       - Copilot Commands: ai/commands.md
       - AI Design Agent: ai/design-agent.md
       - Placement & Routing Assistant: ai/auto-placer-router.md
-      - AI Component Generator: ai/component-generator.md
+      - "Fix or Create a Component": ai/component-generator.md
       - Datasheets, Repairs & Memory: ai/datasheets-and-memory.md
       - Review & Simulation Guide: ai-copilot.md
 
@@ -155,7 +160,6 @@ nav:
   - Reference:
       - Config & Session: reference/config-and-session.md
       - File Formats: reference/file-formats.md
-      - Release Media Production: reference/media-production.md
       - FAQ & Troubleshooting: faq.md
       - Changelog: changelog.md
 

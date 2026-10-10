@@ -24,16 +24,16 @@ Use this page to diagnose common release issues. Start with the check that match
     The project importer supports KiCad project files (`.kicad_pro` and legacy `.pro`). Altium and Eagle *project* import are not part of the current release workflow. Altium *library* files can be imported through **View → Local Library Manager**.
 
 ??? question "My KiCad symbols or footprints do not appear"
-    Open **View → Local Library Manager**, verify that the source is present and active, then check its reported inventory. Confirm that the source contains supported KiCad symbol or footprint files and has not been moved since it was added.
+    Open **View → Local Library Manager**, select the source, and check that its parts are listed and ticked (a hidden part does not appear in the Library panel; **Hide power & logos** hides power symbols). Confirm that the source contains KiCad symbol or footprint files and has not been moved since it was added.
 
 ??? question "How do I import an Altium library?"
-    Open **View → Local Library Manager**, choose the Altium importer, and select a supported `.SchLib`, `.PcbLib`, `.IntLib`, or `.LibPkg` file. Review the imported symbol and footprint before using it in a design. See [Library Import and Management](libraries/library-converter.md).
+    Open **View → Local Library Manager**, select **Add library ▾ → Altium library (SchLib, PcbLib, IntLib)...**, and choose a `.SchLib`, `.PcbLib`, `.IntLib`, or `.LibPkg` file. Review the imported symbol and footprint before using it in a design. See [Library Import and Management](libraries/library-converter.md).
 
 ??? question "A component is missing from an AI-generated design"
-    Confirm the exact part number, package, and pin count, then select **AI Gen** beside the missing item. Use **From Template** for a clear standard part or **From Datasheet** when the exact pinout and package drawing matter. Review both generated assets using the [AI Component Generator guideline](ai/component-generator.md).
+    Confirm the exact part number, package, and pin count. On the card, **Create** searches WireFrame's published library first. Otherwise type `/fix <refdes> <what is wrong>` in the AI panel and attach the manufacturer datasheet with **Attach datasheet...**; to build every missing part at once, ask *"fix the parts that cannot be used yet"*. Review both generated assets using [Fix or Create a Component](ai/component-generator.md).
 
 ??? question "How do I link a footprint to a symbol?"
-    Select the symbol and inspect its footprint assignment in the available properties or library workflow. Confirm the package name, pad count, pad numbering, and orientation against the datasheet before transferring the design to PCB.
+    For a placed component, select it and use **Properties → General → Linked Footprint → Link Footprint & Save to File**. For the library symbol, use the Library Manager's **Footprint** tab → **Link a footprint file...**. Confirm the package name, pad count, pad numbering, and orientation against the datasheet before **Update Schematic to PCB**. See [Symbol Libraries](libraries/symbols-library.md#assign-a-footprint).
 
 ## Schematic and PCB
 
@@ -47,7 +47,7 @@ Use this page to diagnose common release issues. Start with the check that match
     Review the active design rules and net classes first. Open each violation, identify the two objects involved, and decide whether to reroute, move an item, or correct the applicable rule. Do not suppress a violation merely to obtain a clean report.
 
 ??? question "Copper zones show gaps or stale geometry"
-    Open **View → Zone Manager** (**Shift+B**), confirm each zone's net, layer, clearance, and priority, then select **Apply (Rebuild All Zones)** after routing or placement changes. Clearances around objects on other nets are expected. Two identical rows usually mean **Fill GND** was pressed twice — delete one.
+    Open **View → Zone Manager**, confirm each zone's net, layer, clearance, and priority, then select **Refill** after routing or placement changes. A row at 0% has not been filled yet, or has no copper of its net to join. Clearances around objects on other nets are expected. A row marked `×2` usually means **GND plane** was pressed twice — delete the extra zone.
 
 ??? question "The canvas feels slow or stutters"
     Open **View → Performance HUD**. The overlay shows the frame rate on screen and the work per frame, then splits each frame into phases with mean and worst times:
@@ -102,7 +102,9 @@ Use this page to diagnose common release issues. Start with the check that match
 
 ## Reporting an issue
 
-Include:
+The quickest way is **Help → Report a Bug...** (or **Help → Request a Feature...**) inside WireFrame. Write a **Summary** and **Details**, optionally **Attach image...** (PNG or JPG; files over 10 MB may be refused), keep **Include app version and OS** ticked, and select **Send**. If sending fails, your text is kept so you can **Try again** later.
+
+Whichever channel you use, include:
 
 - WireFrame version and operating system.
 - A short sequence that reproduces the issue.
@@ -111,4 +113,4 @@ Include:
 - For slowness: a screenshot of **View → Performance HUD** taken while it happens. When the app cannot be clicked — or for a log over time — start WireFrame from a terminal with the environment variable `WF_PERF_LOG=1`; it prints a one-line timing summary every 2 seconds.
 - A minimal project copy when it is safe to share.
 
-Check the [Changelog](changelog.md) first, then use the project's official issue or support channel.
+Check the [Changelog](changelog.md) first. Never attach API keys, customer data, or private paths.
