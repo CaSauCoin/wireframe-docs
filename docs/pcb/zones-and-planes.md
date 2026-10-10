@@ -23,6 +23,26 @@ Copper zones (fills / pours) cover a board area with copper — typically used f
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
+<!-- wf:shot id=a-filled-copper-zone
+caption: 'A filled GND zone: clearance around other nets, thermal spokes to GND pads'
+project: wireframe:tests/data/buck_converter_automotive/wireframe/buck-converter-automotive.prjxml
+setup:
+- open_project
+- ensure_pcb
+- wait: 1
+- canvas_hover: C13
+- scroll: -4
+- wait: 1
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+brief_sha256: 544f6c3c7ff7fdf1
+-->
+<!-- wf:out id=a-filled-copper-zone sha=9ec208eb8174 -->
+![A filled GND zone: clearance around other nets, thermal spokes to GND pads](../assets/wf/docs/pcb/zones-and-planes/a-filled-copper-zone.png)
+<!-- /wf:out -->
+
 A filled zone follows its outline while maintaining clearance around objects on other nets. Pads on the zone net connect according to the configured zone connection style.
 
 Each zone has:
@@ -57,6 +77,46 @@ The fill keeps clearance around pads and traces on other nets and connects `GND`
     3. **Action shot (5–8 s):** Select **GND plane ▾ → Top and bottom**, then **Refill** and wait for the fill.
     4. **Result shot (2–3 s):** Hold on the filled board with the two `GND` rows (F.Cu and B.Cu) readable in the zone list.
     5. **Deliver:** Export a **10–15 second** 1080p MP4.
+
+<!-- wf:video id=fill-a-ground-plane-from-the-zone-manager
+caption: Zone Manager → GND plane → Top and bottom, then Refill
+project: wireframe:tests/data/7805_voltage_regulator/wireframe/7805_regulator.prjxml
+setup:
+- open_project
+- ensure_pcb
+- wait: 2
+- menu:
+  - View
+  - Zone Manager
+- wait: 2
+- canvas_fit: {}
+- wait: 1
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+steps:
+- wait: 2
+- click_at:
+  - 385
+  - 619
+- wait: 1.5
+- click_at:
+  - 470
+  - 650
+- wait: 1.5
+- click: //Zone Manager/{fa:sync}  Refill
+- wait: 2
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+- wait: 3
+brief_sha256: 669b938da1a35385
+-->
+<!-- wf:out id=fill-a-ground-plane-from-the-zone-manager sha=3a87ca484f47 -->
+<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/pcb/zones-and-planes/fill-a-ground-plane-from-the-zone-manager.mp4" title="Zone Manager → GND plane → Top and bottom, then Refill"></video>
+<!-- /wf:out -->
 
 ---
 
@@ -113,6 +173,30 @@ Every change is one undo step (**Ctrl+Z**), and the board refills automatically 
     3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
+
+<!-- wf:shot id=zone-manager-with-two-planes
+caption: Zone Manager with GND planes on F.Cu and B.Cu
+project: wireframe:tests/data/buck_converter_automotive/wireframe/buck-converter-automotive.prjxml
+setup:
+- open_project
+- ensure_pcb
+- wait: 1
+- menu:
+  - View
+  - Zone Manager
+- wait: 1
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+capture:
+  window: Zone Manager
+  padding: 6
+brief_sha256: 98ac765cfd91c6dc
+-->
+<!-- wf:out id=zone-manager-with-two-planes sha=8733e54168de -->
+![Zone Manager with GND planes on F.Cu and B.Cu](../assets/wf/docs/pcb/zones-and-planes/zone-manager-with-two-planes.png)
+<!-- /wf:out -->
 
 ---
 

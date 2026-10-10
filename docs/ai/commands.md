@@ -13,6 +13,22 @@ Anything that does not start with `/` is an ordinary question. Mention a referen
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
+<!-- wf:shot id=copilot-command-list
+caption: Typing / in the Copilot chat lists the commands
+setup:
+- open_project
+- panel: ai
+- wait: 1
+- click: //AI Copilot Panel/##ChatInput
+- type:
+    text: /
+- wait: 1
+brief_sha256: 7b6bb049dcfb2f4c
+-->
+<!-- wf:out id=copilot-command-list sha=eac99894db6c -->
+![Typing / in the Copilot chat lists the commands](../assets/wf/docs/ai/commands/copilot-command-list.png)
+<!-- /wf:out -->
+
 ## Commands that read the design you are planning
 
 These work on the BOM and netlist being planned in the current chat, before any schematic exists. They read the plan directly and make **no model call**, so they are instant and free.

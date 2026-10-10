@@ -23,18 +23,19 @@ Keep the project and its documents in a dedicated folder. This makes relative li
 
 <!-- wf:video id=create-a-new-project
 caption: File → New → New Project, pick a folder, name it, Create
+project: none
 setup:
 - wait: 1
 steps:
 - wait: 1
-- pick_folder: demo-projects
+- pick_folder: demo-project
 - menu:
   - File
   - New
   - New Project (.prjxml)...
 - wait: 1
 - type:
-    text: Demo Board
+    text: Demo Blinker
 - wait: 1
 - click_at:
   - 634
@@ -42,7 +43,7 @@ steps:
 - wait: 3
 brief_sha256: 9fd78258131dd895
 -->
-<!-- wf:out id=create-a-new-project sha=52b07e517724 -->
+<!-- wf:out id=create-a-new-project sha=ec17c47108a2 -->
 <video controls muted playsinline preload="metadata" src="../assets/wf/docs/projects/create-a-new-project.mp4" title="File → New → New Project, pick a folder, name it, Create"></video>
 <!-- /wf:out -->
 
@@ -172,7 +173,8 @@ After import, check:
     5. **Deliver:** Export a **15–25 second** 1080p MP4; replace any clip that omits the progress overlay.
 
 <!-- wf:video id=import-a-kicad-project
-caption: Importing a KiCad project
+caption: File → Import → KiCad Project, then the imported project
+project: none
 setup:
 - wait: 1
 steps:
@@ -188,8 +190,8 @@ steps:
 - wait: 2
 brief_sha256: c4580440ada7f097
 -->
-<!-- wf:out id=import-a-kicad-project sha=4f43681410af -->
-<video controls muted playsinline preload="metadata" src="../assets/wf/docs/projects/import-a-kicad-project.mp4" title="Importing a KiCad project"></video>
+<!-- wf:out id=import-a-kicad-project sha=037252c5d1ad -->
+<video controls muted playsinline preload="metadata" src="../assets/wf/docs/projects/import-a-kicad-project.mp4" title="File → Import → KiCad Project, then the imported project"></video>
 <!-- /wf:out -->
 
 ## Import scope

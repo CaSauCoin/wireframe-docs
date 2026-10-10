@@ -1,0 +1,503 @@
+{
+    "arrange_requests": [],
+    "blocks_to_redraw": [],
+    "components": [
+        {
+            "ai_gen_instructions": "",
+            "ai_gen_pcb_template": "",
+            "ai_gen_pin_count": 0,
+            "ai_gen_pin_labels": [],
+            "ai_gen_sch_template": "",
+            "ai_gen_summary": "",
+            "assigned_folder": "",
+            "expected_pin_count": 8,
+            "footprint_pool_file": "/private/tmp/wf-docs/20261009-054101-blk/out/files/tutorials/lib_NE555 Blinker/DIP-8_W7.62mm.kicad_mod",
+            "found_in_pool": true,
+            "id": "U1",
+            "name": "NE555P",
+            "notes": "Classic bipolar timer IC in DIP-8 package operating from 4.5V to 16V supply with up to 200mA output drive.",
+            "origin": "ai",
+            "origin_note": "",
+            "package": "DIP-8_W7.62mm",
+            "physical_check": "pads fit the DIP-8 drawing (model knowledge).",
+            "physical_spec": {
+                "body_height_mm": [
+                    5.08,
+                    5.08,
+                    5.08
+                ],
+                "body_length_mm": [
+                    6.1,
+                    6.35,
+                    6.6
+                ],
+                "body_width_mm": [
+                    9.02,
+                    9.81,
+                    10.16
+                ],
+                "confidence": 0.95,
+                "exposed_pad_mm": [
+                    0.0,
+                    0.0
+                ],
+                "identity": "ne555p",
+                "lead_diameter_mm": [
+                    0.53,
+                    0.53,
+                    0.53
+                ],
+                "lead_span_mm": null,
+                "mount": "tht",
+                "notes": "The P suffix indicates a standard plastic DIP-8 package with 2.54 mm pin pitch and 7.62 mm row spacing, matching the bound DIP-8 footprint.",
+                "package": "DIP-8",
+                "part_number": "NE555P",
+                "pitch_mm": 2.54,
+                "row_spacing_mm": 7.62,
+                "rows": 2,
+                "source": {
+                    "kind": "knowledge",
+                    "page": 0,
+                    "reference": "TI NE555 datasheet / JEDEC MS-001 (PDIP-8, P package)",
+                    "url": ""
+                },
+                "specific_part": true,
+                "standard_key": "dip8",
+                "terminal_count": 8,
+                "terminal_length_mm": null,
+                "terminal_style": "tht",
+                "terminal_width_mm": null,
+                "valid": true
+            },
+            "pin_count": 8,
+            "pool_file": "/private/tmp/wf-docs/20261009-054101-blk/out/files/tutorials/lib_NE555 Blinker/NE555P.kicad_sym",
+            "pool_symbol_name": "NE555P",
+            "quantity": 1,
+            "role": "astable timer oscillator",
+            "type": "IC",
+            "value": "NE555P",
+            "verification_signature": "2:U1|6:NE555P|2:IC|6:NE555P|13:DIP-8_W7.62mm|6:NE555P|95:/private/tmp/wf-docs/20261009-054101-blk/out/files/tutorials/lib_NE555 Blinker/NE555P.kicad_sym|102:/private/tmp/wf-docs/20261009-054101-blk/out/files/tutorials/lib_NE555 Blinker/DIP-8_W7.62mm.kicad_mod|1|8|8"
+        },
+        {
+            "ai_gen_instructions": "",
+            "ai_gen_pcb_template": "",
+            "ai_gen_pin_count": 0,
+            "ai_gen_pin_labels": [],
+            "ai_gen_sch_template": "",
+            "ai_gen_summary": "",
+            "assigned_folder": "",
+            "expected_pin_count": 2,
+            "footprint_pool_file": "/private/tmp/wf-docs/20261009-054101-blk/out/files/tutorials/lib_NE555 Blinker/PinHeader_1x02_P2.54mm_Vertical.kicad_mod",
+            "found_in_pool": true,
+            "id": "J1",
+            "name": "Conn_01x02_P2.54mm",
+            "notes": "2-pin 2.54mm vertical header for connecting 9V PP3 battery clips or external bench power.",
+            "origin": "ai",
+            "origin_note": "",
+            "package": "PinHeader_1x02_P2.54mm_Vertical",
+            "physical_check": "no standard drawing to compare this land pattern with.",
+            "pin_count": 2,
+            "pool_file": "/private/tmp/wf-docs/20261009-054101-blk/out/files/tutorials/lib_NE555 Blinker/Conn_01x02.kicad_sym",
+            "pool_symbol_name": "Conn_01x02",
+            "quantity": 1,
+            "role": "9V power input",
+            "type": "Connector/Header",
+            "value": "9V_IN",
+            "verification_signature": "2:J1|18:Conn_01x02_P2.54mm|16:Connector/Header|5:9V_IN|31:PinHeader_1x02_P2.54mm_Vertical|10:Conn_01x02|99:/private/tmp/wf-docs/20261009-054101-blk/out/files/tutorials/lib_NE555 Blinker/Conn_01x02.kicad_sym|120:/private/tmp/wf-docs/20261009-054101-blk/out/files/tutorials/lib_NE555 Blinker/PinHeader_1x02_P2.54mm_Vertical.kicad_mod|1|2|2"
+        },
+        {
+            "ai_gen_instructions": "",
+            "ai_gen_pcb_template": "",
+            "ai_gen_pin_count": 0,
+            "ai_gen_pin_labels": [],
+            "ai_gen_sch_template": "",
+            "ai_gen_summary": "",
+            "assigned_folder": "",
+            "expected_pin_count": 2,
+            "footprint_pool_file": "/private/tmp/wf-docs/20261009-054101-blk/out/files/tutorials/lib_NE555 Blinker/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.kicad_mod",
+            "found_in_pool": true,
+            "id": "R1",
+            "name": "R",
+            "notes": "Charges timing capacitor C1 through VCC to pin 7 (DISCH); 10k limits discharge current to safe levels.",
+            "origin": "ai",
+            "origin_note": "",
+            "package": "R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal",
+            "physical_check": "no standard drawing to compare this land pattern with.",
+            "pin_count": 2,
+            "pool_file": "/private/tmp/wf-docs/20261009-054101-blk/out/files/tutorials/lib_NE555 Blinker/R.kicad_sym",
+            "pool_symbol_name": "R",
+            "quantity": 1,
+            "role": "upper timing resistor",
+            "type": "Resistor",
+            "value": "10k",
+            "verification_signature": "2:R1|1:R|8:Resistor|3:10k|48:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal|1:R|90:/private/tmp/wf-docs/20261009-054101-blk/out/files/tutorials/lib_NE555 Blinker/R.kicad_sym|137:/private/tmp/wf-docs/20261009-054101-blk/out/files/tutorials/lib_NE555 Blinker/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.kicad_mod|1|2|2"
+        },
+        {
+            "ai_gen_instructions": "",
+            "ai_gen_pcb_template": "",
+            "ai_gen_pin_count": 0,
+            "ai_gen_pin_labels": [],
+            "ai_gen_sch_template": "",
+            "ai_gen_summary": "",
+            "assigned_folder": "",
+            "expected_pin_count": 2,
+            "footprint_pool_file": "/private/tmp/wf-docs/20261009-054101-blk/out/files/tutorials/lib_NE555 Blinker/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.kicad_mod",
+            "found_in_pool": true,
+            "id": "R2",
+            "name": "R",
+            "notes": "Sets charge and discharge duration between pin 7 and pin 2/6; gives ~1 Hz oscillation frequency with R1=10k and C1=10uF.",
+            "origin": "ai",
+            "origin_note": "",
+            "package": "R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal",
+            "physical_check": "no standard drawing to compare this land pattern with.",
+            "pin_count": 2,
+            "pool_file": "/private/tmp/wf-docs/20261009-054101-blk/out/files/tutorials/lib_NE555 Blinker/R.kicad_sym",
+            "pool_symbol_name": "R",
+            "quantity": 1,
+            "role": "lower timing resistor",
+            "type": "Resistor",
+            "value": "68k",
+            "verification_signature": "2:R2|1:R|8:Resistor|3:68k|48:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal|1:R|90:/private/tmp/wf-docs/20261009-054101-blk/out/files/tutorials/lib_NE555 Blinker/R.kicad_sym|137:/private/tmp/wf-docs/20261009-054101-blk/out/files/tutorials/lib_NE555 Blinker/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.kicad_mod|1|2|2"
+        },
+        {
+            "ai_gen_instructions": "",
+            "ai_gen_pcb_template": "",
+            "ai_gen_pin_count": 0,
+            "ai_gen_pin_labels": [],
+            "ai_gen_sch_template": "",
+            "ai_gen_summary": "",
+            "assigned_folder": "",
+            "expected_pin_count": 2,
+            "footprint_pool_file": "/private/tmp/wf-docs/20261009-054101-blk/out/files/tutorials/lib_NE555 Blinker/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.kicad_mod",
+            "found_in_pool": true,
+            "id": "R3",
+            "name": "R",
+            "notes": "Limits red LED current to ~12 mA from NE555 high output (~7.5V on 9V supply with ~1.8V LED forward drop).",
+            "origin": "ai",
+            "origin_note": "",
+            "package": "R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal",
+            "physical_check": "no standard drawing to compare this land pattern with.",
+            "pin_count": 2,
+            "pool_file": "/private/tmp/wf-docs/20261009-054101-blk/out/files/tutorials/lib_NE555 Blinker/R.kicad_sym",
+            "pool_symbol_name": "R",
+            "quantity": 1,
+            "role": "LED current limiting resistor",
+            "type": "Resistor",
+            "value": "470",
+            "verification_signature": "2:R3|1:R|8:Resistor|3:470|48:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal|1:R|90:/private/tmp/wf-docs/20261009-054101-blk/out/files/tutorials/lib_NE555 Blinker/R.kicad_sym|137:/private/tmp/wf-docs/20261009-054101-blk/out/files/tutorials/lib_NE555 Blinker/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.kicad_mod|1|2|2"
+        },
+        {
+            "ai_gen_instructions": "",
+            "ai_gen_pcb_template": "",
+            "ai_gen_pin_count": 0,
+            "ai_gen_pin_labels": [],
+            "ai_gen_sch_template": "",
+            "ai_gen_summary": "",
+            "assigned_folder": "",
+            "expected_pin_count": 2,
+            "footprint_pool_file": "/private/tmp/wf-docs/20261009-054101-blk/out/files/tutorials/lib_NE555 Blinker/CP_Radial_D5.0mm_P2.00mm.kicad_mod",
+            "found_in_pool": true,
+            "id": "C1",
+            "name": "CP",
+            "notes": "10uF radial electrolytic timing capacitor charged/discharged between 1/3 VCC and 2/3 VCC thresholds for ~1s period.",
+            "origin": "ai",
+            "origin_note": "",
+            "package": "CP_Radial_D5.0mm_P2.00mm",
+            "physical_check": "no standard drawing to compare this land pattern with.",
+            "pin_count": 2,
+            "pool_file": "/private/tmp/wf-docs/20261009-054101-blk/out/files/tutorials/lib_NE555 Blinker/C.kicad_sym",
+            "pool_symbol_name": "C",
+            "quantity": 1,
+            "role": "astable timing capacitor",
+            "type": "Capacitor",
+            "value": "10uF",
+            "verification_signature": "2:C1|2:CP|9:Capacitor|4:10uF|24:CP_Radial_D5.0mm_P2.00mm|1:C|90:/private/tmp/wf-docs/20261009-054101-blk/out/files/tutorials/lib_NE555 Blinker/C.kicad_sym|113:/private/tmp/wf-docs/20261009-054101-blk/out/files/tutorials/lib_NE555 Blinker/CP_Radial_D5.0mm_P2.00mm.kicad_mod|1|2|2"
+        },
+        {
+            "ai_gen_instructions": "",
+            "ai_gen_pcb_template": "",
+            "ai_gen_pin_count": 0,
+            "ai_gen_pin_labels": [],
+            "ai_gen_sch_template": "",
+            "ai_gen_summary": "",
+            "assigned_folder": "",
+            "expected_pin_count": 2,
+            "footprint_pool_file": "/Users/casaucoin/.wireframe/library_cache/repos/kicad-footprints/Capacitor_SMD.pretty/C_0805_2012Metric.kicad_mod",
+            "found_in_pool": true,
+            "id": "C2",
+            "name": "C",
+            "notes": "100nF ceramic disc bypass capacitor across VCC and GND to absorb bipolar 555 totem-pole switching transients.",
+            "origin": "ai",
+            "origin_note": "",
+            "package": "C_0805_2012Metric",
+            "physical_check": "pads are a standard 0805 land, as the footprint name says.",
+            "pin_count": 2,
+            "pool_file": "/private/tmp/wf-docs/20261009-054101-blk/out/files/tutorials/lib_NE555 Blinker/C.kicad_sym",
+            "pool_symbol_name": "C",
+            "quantity": 1,
+            "role": "VCC supply decoupling capacitor",
+            "type": "Capacitor",
+            "value": "100nF",
+            "verification_signature": "2:C2|1:C|9:Capacitor|5:100nF|17:C_0805_2012Metric|1:C|90:/private/tmp/wf-docs/20261009-054101-blk/out/files/tutorials/lib_NE555 Blinker/C.kicad_sym|113:/Users/casaucoin/.wireframe/library_cache/repos/kicad-footprints/Capacitor_SMD.pretty/C_0805_2012Metric.kicad_mod|1|2|2",
+            "verified_by": "auto"
+        },
+        {
+            "ai_gen_instructions": "",
+            "ai_gen_pcb_template": "",
+            "ai_gen_pin_count": 0,
+            "ai_gen_pin_labels": [],
+            "ai_gen_sch_template": "",
+            "ai_gen_summary": "",
+            "assigned_folder": "",
+            "expected_pin_count": 2,
+            "footprint_pool_file": "/Users/casaucoin/.wireframe/library_cache/repos/kicad-footprints/Capacitor_SMD.pretty/C_0805_2012Metric.kicad_mod",
+            "found_in_pool": true,
+            "id": "C3",
+            "name": "C",
+            "notes": "10nF ceramic disc bypass from pin 5 (CONT) to GND to stabilize internal comparator reference voltages against noise.",
+            "origin": "ai",
+            "origin_note": "",
+            "package": "C_0805_2012Metric",
+            "physical_check": "pads are a standard 0805 land, as the footprint name says.",
+            "pin_count": 2,
+            "pool_file": "/private/tmp/wf-docs/20261009-054101-blk/out/files/tutorials/lib_NE555 Blinker/C.kicad_sym",
+            "pool_symbol_name": "C",
+            "quantity": 1,
+            "role": "control voltage decoupling capacitor",
+            "type": "Capacitor",
+            "value": "10nF",
+            "verification_signature": "2:C3|1:C|9:Capacitor|4:10nF|17:C_0805_2012Metric|1:C|90:/private/tmp/wf-docs/20261009-054101-blk/out/files/tutorials/lib_NE555 Blinker/C.kicad_sym|113:/Users/casaucoin/.wireframe/library_cache/repos/kicad-footprints/Capacitor_SMD.pretty/C_0805_2012Metric.kicad_mod|1|2|2",
+            "verified_by": "auto"
+        },
+        {
+            "ai_gen_instructions": "",
+            "ai_gen_pcb_template": "",
+            "ai_gen_pin_count": 0,
+            "ai_gen_pin_labels": [],
+            "ai_gen_sch_template": "",
+            "ai_gen_summary": "",
+            "assigned_folder": "",
+            "expected_pin_count": 2,
+            "footprint_pool_file": "/private/tmp/wf-docs/20261009-054101-blk/out/files/tutorials/lib_NE555 Blinker/LED_D5.0mm.kicad_mod",
+            "found_in_pool": true,
+            "id": "D1",
+            "name": "LED",
+            "notes": "Standard 5mm through-hole red LED (forward voltage ~1.8V - 2.0V) driven directly by NE555 output.",
+            "origin": "ai",
+            "origin_note": "",
+            "package": "LED_D5.0mm",
+            "physical_check": "no standard drawing to compare this land pattern with.",
+            "pin_count": 2,
+            "pool_file": "/private/tmp/wf-docs/20261009-054101-blk/out/files/tutorials/lib_NE555 Blinker/LED.kicad_sym",
+            "pool_symbol_name": "LED",
+            "quantity": 1,
+            "role": "blinker output indicator",
+            "type": "LED",
+            "value": "Red",
+            "verification_signature": "2:D1|3:LED|3:LED|3:Red|10:LED_D5.0mm|3:LED|92:/private/tmp/wf-docs/20261009-054101-blk/out/files/tutorials/lib_NE555 Blinker/LED.kicad_sym|99:/private/tmp/wf-docs/20261009-054101-blk/out/files/tutorials/lib_NE555 Blinker/LED_D5.0mm.kicad_mod|1|2|2"
+        }
+    ],
+    "convergence_run": {
+        "awaiting": [],
+        "parked": [],
+        "reached": "done",
+        "steps": [],
+        "stop": "converged"
+    },
+    "customPoolPaths": [
+        "/tmp/wf-docs/20261009-054101-blk/out/files/tutorials/lib_NE555 Blinker"
+    ],
+    "description": "The circuit is wired as a standard NE555 astable multivibrator powered from a 9V DC input (J1) with 100nF supply decoupling (C2). Timing resistors R1, R2, and polarized timing capacitor C1 establish ~1 Hz oscillation with threshold and trigger pins tied together, while control voltage pin 5 is bypassed to ground via C3 (10nF). The timer output (pin 3) drives indicator LED D1 through current-limiting resistor R3.",
+    "layout_intents": [],
+    "netlist": [
+        {
+            "name": "+9V",
+            "pins": [
+                "J1:1",
+                "U1:8",
+                "U1:4",
+                "R1:1",
+                "C2:1"
+            ],
+            "rationale": "9V DC supply rail distributing power to the NE555 VCC pin, reset pin (held high), upper timing resistor R1, and decoupling capacitor C2"
+        },
+        {
+            "name": "GND",
+            "pins": [
+                "J1:2",
+                "U1:1",
+                "C1:2",
+                "C2:2",
+                "C3:2",
+                "D1:1"
+            ],
+            "rationale": "Common system ground connecting power input return, NE555 GND pin, timing capacitor negative terminal, decoupling caps C2/C3, and LED cathode"
+        },
+        {
+            "name": "DISCHARGE",
+            "pins": [
+                "U1:7",
+                "R1:2",
+                "R2:1"
+            ],
+            "rationale": "Timing discharge node between R1 and R2 connected to NE555 open-collector DISCH pin"
+        },
+        {
+            "name": "TIMING_NODE",
+            "pins": [
+                "U1:2",
+                "U1:6",
+                "R2:2",
+                "C1:1"
+            ],
+            "rationale": "Oscillator threshold and trigger node connecting NE555 THRES and TRIG pins across timing resistor R2 and timing capacitor C1"
+        },
+        {
+            "name": "CONT",
+            "pins": [
+                "U1:5",
+                "C3:1"
+            ],
+            "rationale": "Control voltage reference node bypassing the internal voltage divider to ground through 10nF filter capacitor C3"
+        },
+        {
+            "name": "TIMER_OUT",
+            "pins": [
+                "U1:3",
+                "R3:1"
+            ],
+            "rationale": "Astable square wave output from NE555 pin 3 driving current-limiting resistor R3"
+        },
+        {
+            "name": "LED_ANODE",
+            "pins": [
+                "R3:2",
+                "D1:2"
+            ],
+            "rationale": "Current-limited output node connecting resistor R3 to the anode of red LED D1"
+        }
+    ],
+    "parts_to_unplace": [],
+    "placement_blocks": [
+        {
+            "component_ids": [
+                "J1",
+                "C2"
+            ],
+            "id": "power_input",
+            "interface_nets": [],
+            "rationale": "External 9V DC input connector J1 paired with main VCC supply rail bypass capacitor C2.",
+            "title": "9V Power Input & Decoupling"
+        },
+        {
+            "component_ids": [
+                "U1",
+                "R1",
+                "R2",
+                "C1",
+                "C3"
+            ],
+            "id": "timer_oscillator",
+            "interface_nets": [],
+            "rationale": "NE555 timer IC U1 together with upper/lower timing network resistors R1/R2, timing capacitor C1, and control voltage filter capacitor C3 forming the ~1 Hz oscillator core.",
+            "title": "NE555 Astable Oscillator"
+        },
+        {
+            "component_ids": [
+                "R3",
+                "D1"
+            ],
+            "id": "led_output",
+            "interface_nets": [],
+            "rationale": "Output indicator red LED D1 driven by the timer output pin through current-limiting resistor R3.",
+            "title": "LED Blinker Output"
+        }
+    ],
+    "placement_blocks_ready": true,
+    "project": "ne555_9v_astable_blinker",
+    "rail_facts": [
+        {
+            "net": "+9V",
+            "quote": "9 V",
+            "source": "requirement",
+            "v_max": 9.0,
+            "v_min": 9.0
+        }
+    ],
+    "research_completed": true,
+    "research_json": "{\"clarifying_questions\":[{\"default\":\"Through-hole technology (DIP-8 NE555, 5mm LED, axial resistors, radial capacitors)\",\"options\":[\"Through-hole technology (DIP-8 NE555, 5mm LED, axial resistors, radial capacitors)\",\"Surface-mount technology (SOIC-8 NE555, 0805 passives and 0805/1206 LED)\"],\"question\":\"Which component package and mounting style do you prefer?\",\"why\":\"Decides the footprints, pad pitch, and board dimensions for hand assembly vs automated SMD assembly.\"},{\"default\":\"9V PP3 battery snap clips / solder pads on board\",\"options\":[\"9V PP3 battery snap clips / solder pads on board\",\"2-pin 5.08mm screw terminal block\",\"2.1mm x 5.5mm DC center-positive barrel jack\",\"2-pin 2.54mm male header\"],\"question\":\"What power input connector style should be placed on the board?\",\"why\":\"Decides the power input connector part number, footprint, and board edge placement.\"},{\"default\":\"Standard astable duty cycle (~60% ON / 40% OFF with 2 timing resistors and 1 capacitor)\",\"options\":[\"Standard astable duty cycle (~60% ON / 40% OFF with 2 timing resistors and 1 capacitor)\",\"Symmetric 50% duty cycle (adds a 1N4148 steering diode across R2 for equal charge/discharge)\",\"Short strobe flash (~15% ON / 85% OFF with steering diode for low average battery consumption)\"],\"question\":\"What LED blink duty cycle (ON vs OFF ratio) is desired?\",\"why\":\"Decides whether an additional 1N4148 diode is placed on the schematic and determines the exact R1/R2 resistor values.\"}],\"component_hints\":[{\"notes\":\"Standard bipolar 555 timer rated up to 16V supply with 200mA output capability\",\"role\":\"Timer IC\",\"suggestion\":\"NE555P (DIP-8) or NE555D (SOIC-8)\"},{\"notes\":\"Forward voltage ~1.8V to 2.0V\",\"role\":\"Indicator LED\",\"suggestion\":\"Standard Red LED (5mm THT or 0805/1206 SMD)\"},{\"notes\":\"Limits LED current from 9V / NE555 high output (~7.5V-8.0V) to ~12-15 mA\",\"role\":\"Current Limiting Resistor\",\"suggestion\":\"470 ohm to 560 ohm, 1/4W\"},{\"notes\":\"Sets ~1 Hz astable oscillation frequency based on f = 1.44 / ((R1 + 2*R2) * C1)\",\"role\":\"Timing Resistors & Capacitor\",\"suggestion\":\"R1=10k, R2=68k, C1=10uF electrolytic (or R1=1k, R2=72k with diode)\"},{\"notes\":\"Suppresses NE555 totem-pole switching shoot-through transients and stabilizes threshold references\",\"role\":\"Decoupling Capacitors\",\"suggestion\":\"100nF 50V ceramic (VCC decoupling) and 10nF 50V ceramic (pin 5 CONT filter)\"}],\"confidence\":0.85,\"constraints\":[\"9V DC single-rail supply operation\",\"Target oscillation frequency approximately 1 Hz\",\"LED drive current limited to safe operational level (<20 mA)\",\"Local decoupling required to handle bipolar NE555 output stage switching spikes\"],\"missing_requirements\":[\"Package and mounting technology (Through-Hole vs SMD)\",\"Power input connector type (9V battery snap, DC jack, or terminal block)\",\"Desired blink duty cycle (standard asymmetric ~60/40 vs symmetric 50/50 vs brief strobe)\"],\"module_summary\":\"A 9V astable multivibrator LED blinker circuit utilizing a classic NE555 timer IC configured to oscillate at approximately 1 Hz, driving a red indicator LED with series current limiting and power rail decoupling.\",\"reference_datasheet\":\"Texas Instruments NE555 Precision Timers Datasheet (SLAS088)\",\"required_blocks\":[\"power_input_and_decoupling\",\"ne555_astable_oscillator\",\"led_output_driver\"],\"risks\":[\"Bipolar NE555 current shoot-through spike (~300-400 mA transient) during output switching can induce supply noise if decoupling is omitted\",\"Electrolytic timing capacitor tolerance (+/-20%) and leakage can cause observable variation from exact 1 Hz target\",\"Output voltage drop of ~1.5V below VCC when sourcing current from bipolar 555 output pin\"],\"specifications\":{\"Indicator LED\":\"Red LED (Vf approx. 1.8V - 2.0V)\",\"Operating Topology\":\"NE555 astable multivibrator\",\"Output Drive Current\":\"10-15 mA LED forward current\",\"Supply Decoupling\":\"100nF ceramic bypass on VCC/GND + 10nF on CONT pin\",\"Supply Input\":\"9V DC nominal\",\"Target Frequency\":\"1 Hz (1 cycle per second)\"}}",
+    "research_result": {
+        "confidence": 0.8500000238418579,
+        "module_summary": "A 9V astable multivibrator LED blinker circuit utilizing a classic NE555 timer IC configured to oscillate at approximately 1 Hz, driving a red indicator LED with series current limiting and power rail decoupling.",
+        "questions": [
+            {
+                "answer": "Through-hole technology (DIP-8 NE555, 5mm LED, axial resistors, radial capacitors)",
+                "answered_by_user": false,
+                "default": "Through-hole technology (DIP-8 NE555, 5mm LED, axial resistors, radial capacitors)",
+                "options": [
+                    "Through-hole technology (DIP-8 NE555, 5mm LED, axial resistors, radial capacitors)",
+                    "Surface-mount technology (SOIC-8 NE555, 0805 passives and 0805/1206 LED)"
+                ],
+                "question": "Which component package and mounting style do you prefer?",
+                "selected_option": 0,
+                "why": "Decides the footprints, pad pitch, and board dimensions for hand assembly vs automated SMD assembly."
+            },
+            {
+                "answer": "9V PP3 battery snap clips / solder pads on board",
+                "answered_by_user": false,
+                "default": "9V PP3 battery snap clips / solder pads on board",
+                "options": [
+                    "9V PP3 battery snap clips / solder pads on board",
+                    "2-pin 5.08mm screw terminal block",
+                    "2.1mm x 5.5mm DC center-positive barrel jack",
+                    "2-pin 2.54mm male header"
+                ],
+                "question": "What power input connector style should be placed on the board?",
+                "selected_option": 0,
+                "why": "Decides the power input connector part number, footprint, and board edge placement."
+            },
+            {
+                "answer": "Standard astable duty cycle (~60% ON / 40% OFF with 2 timing resistors and 1 capacitor)",
+                "answered_by_user": false,
+                "default": "Standard astable duty cycle (~60% ON / 40% OFF with 2 timing resistors and 1 capacitor)",
+                "options": [
+                    "Standard astable duty cycle (~60% ON / 40% OFF with 2 timing resistors and 1 capacitor)",
+                    "Symmetric 50% duty cycle (adds a 1N4148 steering diode across R2 for equal charge/discharge)",
+                    "Short strobe flash (~15% ON / 85% OFF with steering diode for low average battery consumption)"
+                ],
+                "question": "What LED blink duty cycle (ON vs OFF ratio) is desired?",
+                "selected_option": 0,
+                "why": "Decides whether an additional 1N4148 diode is placed on the schematic and determines the exact R1/R2 resistor values."
+            }
+        ],
+        "reference_datasheet": "Texas Instruments NE555 Precision Timers Datasheet (SLAS088)",
+        "specifications": {
+            "Candidate Components": "Timer IC: NE555P (DIP-8) or NE555D (SOIC-8) (Standard bipolar 555 timer rated up to 16V supply with 200mA output capability); Indicator LED: Standard Red LED (5mm THT or 0805/1206 SMD) (Forward voltage ~1.8V to 2.0V); Current Limiting Resistor: 470 ohm to 560 ohm, 1/4W (Limits LED current from 9V / NE555 high output (~7.5V-8.0V) to ~12-15 mA); Timing Resistors & Capacitor: R1=10k, R2=68k, C1=10uF electrolytic (or R1=1k, R2=72k with diode) (Sets ~1 Hz astable oscillation frequency based on f = 1.44 / ((R1 + 2*R2) * C1)); Decoupling Capacitors: 100nF 50V ceramic (VCC decoupling) and 10nF 50V ceramic (pin 5 CONT filter) (Suppresses NE555 totem-pole switching shoot-through transients and stabilizes threshold references)",
+            "Constraints": "9V DC single-rail supply operation; Target oscillation frequency approximately 1 Hz; LED drive current limited to safe operational level (<20 mA); Local decoupling required to handle bipolar NE555 output stage switching spikes",
+            "Indicator LED": "Red LED (Vf approx. 1.8V - 2.0V)",
+            "Missing Requirements": "Package and mounting technology (Through-Hole vs SMD); Power input connector type (9V battery snap, DC jack, or terminal block); Desired blink duty cycle (standard asymmetric ~60/40 vs symmetric 50/50 vs brief strobe)",
+            "Operating Topology": "NE555 astable multivibrator",
+            "Output Drive Current": "10-15 mA LED forward current",
+            "Required Blocks": "power_input_and_decoupling; ne555_astable_oscillator; led_output_driver",
+            "Risks": "Bipolar NE555 current shoot-through spike (~300-400 mA transient) during output switching can induce supply noise if decoupling is omitted; Electrolytic timing capacitor tolerance (+/-20%) and leakage can cause observable variation from exact 1 Hz target; Output voltage drop of ~1.5V below VCC when sourcing current from bipolar 555 output pin",
+            "Supply Decoupling": "100nF ceramic bypass on VCC/GND + 10nF on CONT pin",
+            "Supply Input": "9V DC nominal",
+            "Target Frequency": "1 Hz (1 cycle per second)"
+        },
+        "user_confirmed": false
+    },
+    "sheet_groups": [
+        {
+            "block_ids": [
+                "power_input",
+                "timer_oscillator",
+                "led_output"
+            ],
+            "file_name": "led_output_power_input_timer_oscillator.schxml",
+            "id": "timer_blinker",
+            "rationale": "With a total of 9 components across power input, oscillator core, and LED indicator, the entire 555 timer circuit fits naturally on a single cohesive schematic page.",
+            "title": "NE555 Timer & LED Blinker"
+        }
+    ],
+    "user_requirement": "Design a 9 V NE555 astable LED blinker. Target 1 Hz, use a red LED, include current limiting and supply decoupling, and identify every assumption that needs my confirmation."
+}

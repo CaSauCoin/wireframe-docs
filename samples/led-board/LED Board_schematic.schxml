@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<schematic>
+	<page_settings paper_size="0" title_width="1728" title_height="512">
+		<title>Untitled Sheet</title>
+		<company>WireFrame EDA</company>
+		<revision>V1.0</revision>
+		<date>2026-10-09</date>
+		<drawn_by>Author</drawn_by>
+		<sheet_num>1</sheet_num>
+		<sheet_total>1</sheet_total>
+		<comment1></comment1>
+		<comment2></comment2>
+		<comment3></comment3>
+		<comment4></comment4>
+		<logo_base64></logo_base64>
+		<border_color>4294967295</border_color>
+	</page_settings>
+	<sim_config analysis="1" tran_stopTime="0.0050000000000000001" tran_stepTime="1.0000000000000001e-05" ac_startFreq="1" ac_stopFreq="1000000" ac_ptsDec="100">
+		<power_rails />
+	</sim_config>
+	<components>
+		<component id="SHEET1" type="HierarchicalSheet" x="1340" y="730" rotation="0" sourceFolderPath="" footprint="">
+			<value>led_indicator_power_input.schxml</value>
+			<designatorAttribute content="Power &amp; Indicator" x="150" y="-28" rotation="0" visible="true" fontSize="28" />
+			<valueAttribute content="led_indicator_power_input.schxml" x="150" y="170" rotation="0" visible="true" fontSize="18" />
+			<pins />
+			<generic_shapes>
+				<rect x1="0" y1="0" x2="300" y2="150" />
+			</generic_shapes>
+			<parameters />
+		</component>
+	</components>
+	<wires />
+	<graphics>
+		<images />
+		<lines />
+		<rects />
+		<circles />
+		<texts />
+		<arcs />
+		<polygons />
+		<junctions />
+		<harnesses />
+	</graphics>
+</schematic>

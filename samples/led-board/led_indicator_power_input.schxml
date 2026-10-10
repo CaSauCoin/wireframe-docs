@@ -1,0 +1,241 @@
+<?xml version="1.0"?>
+<schematic>
+	<page_settings paper_size="0" title_width="1728" title_height="512">
+		<title>Untitled Sheet</title>
+		<company>WireFrame EDA</company>
+		<revision>V1.0</revision>
+		<date>2026-10-09</date>
+		<drawn_by>Author</drawn_by>
+		<sheet_num>1</sheet_num>
+		<sheet_total>1</sheet_total>
+		<comment1></comment1>
+		<comment2></comment2>
+		<comment3></comment3>
+		<comment4></comment4>
+		<logo_base64></logo_base64>
+		<border_color>4294967295</border_color>
+	</page_settings>
+	<sim_config analysis="1" tran_stopTime="0.0050000000000000001" tran_stepTime="1.0000000000000001e-05" ac_startFreq="1" ac_stopFreq="1000000" ac_ptsDec="100">
+		<power_rails />
+	</sim_config>
+	<components>
+		<component id="J1" type="Conn_01x02" x="1510" y="410" rotation="0" sourceFolderPath="lib/Conn_01x02.kicad_sym" footprint="PinHeader_1x02_P2.54mm_Vertical">
+			<value>Conn_01x02_P2.54mm</value>
+			<comment>Conn_01x02 — 5V DC power input header</comment>
+			<designatorAttribute content="J1" x="-20.7000008" y="12.6999989" rotation="90" visible="true" fontSize="12" />
+			<valueAttribute content="Conn_01x02_P2.54mm" x="20.7000008" y="12.6999989" rotation="90" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="Pin_1" x="-50.7999992" y="-0" length="38.0999985" angle="0" electrical_type="passive">
+					<nameAttribute content="Pin_1" x="43.0999985" y="-5" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="1" x="5" y="-15" rotation="0" visible="true" fontSize="10" />
+				</pin>
+				<pin number="2" name="Pin_2" x="-50.7999992" y="25.3999996" length="38.0999985" angle="0" electrical_type="passive">
+					<nameAttribute content="Pin_2" x="43.0999985" y="-5" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="2" x="5" y="-15" rotation="0" visible="true" fontSize="10" />
+				</pin>
+			</pins>
+			<generic_shapes>
+				<rect x1="-12.6999998" y1="-12.6999998" x2="12.6999998" y2="38.0999985" />
+				<rect x1="-12.6999998" y1="-1.26999998" x2="0" y2="1.26999998" />
+				<rect x1="-12.6999998" y1="24.1300011" x2="0" y2="26.6700001" />
+			</generic_shapes>
+			<parameters />
+		</component>
+		<component id="AIPWR1_1" type="Power" x="1439.19922" y="410" rotation="0" oriented="true" sourceFolderPath="" footprint="">
+			<value>+5V</value>
+			<designatorAttribute content="" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<valueAttribute content="+5V" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<pins>
+				<pin number="1" name="vcc" x="0" y="0" length="5" angle="0" electrical_type="power_in">
+					<nameAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+				</pin>
+			</pins>
+			<generic_shapes />
+			<parameters />
+		</component>
+		<component id="AIGND2_1" type="Power" x="1439.19922" y="435.400391" rotation="0" oriented="true" sourceFolderPath="" footprint="">
+			<value>GND</value>
+			<designatorAttribute content="" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<valueAttribute content="GND" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<pins>
+				<pin number="1" name="gnd" x="0" y="0" length="5" angle="0" electrical_type="power_in">
+					<nameAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+				</pin>
+			</pins>
+			<generic_shapes />
+			<parameters />
+		</component>
+		<component id="R1" type="R" x="1476.69922" y="970.099609" rotation="0" sourceFolderPath="lib/R.kicad_sym" footprint="R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal">
+			<value>330R</value>
+			<comment>LED current-limiting resistor</comment>
+			<designatorAttribute content="R1" x="-18.1599998" y="0" rotation="90" visible="true" fontSize="12" />
+			<valueAttribute content="330R" x="18.1599998" y="0" rotation="90" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="" x="0" y="-38.0999985" length="12.6999998" angle="90" electrical_type="passive">
+					<nameAttribute content="" x="-5" y="17.7000008" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="1" x="-15" y="5" rotation="0" visible="true" fontSize="10" />
+				</pin>
+				<pin number="2" name="" x="0" y="38.0999985" length="12.6999998" angle="270" electrical_type="passive">
+					<nameAttribute content="" x="-5" y="-32.7000008" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="2" x="-15" y="-15" rotation="0" visible="true" fontSize="10" />
+				</pin>
+			</pins>
+			<generic_shapes>
+				<rect x1="-10.1599998" y1="25.3999996" x2="10.1599998" y2="-25.3999996" />
+			</generic_shapes>
+			<parameters />
+		</component>
+		<component id="D1" type="LED" x="1476.69922" y="1066.29883" rotation="270" sourceFolderPath="lib/LED.kicad_sym" footprint="LED_D5.0mm">
+			<value>Red</value>
+			<comment>Visual indicator LED</comment>
+			<designatorAttribute content="D1" x="-16.5100002" y="-20.7000008" rotation="0" visible="true" fontSize="12" />
+			<valueAttribute content="Red" x="-16.5100002" y="30.8600006" rotation="0" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="K" x="-38.0999985" y="-0" length="25.3999996" angle="0" electrical_type="passive">
+					<nameAttribute content="K" x="30.3999996" y="-5" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="1" x="5" y="-15" rotation="0" visible="true" fontSize="10" />
+				</pin>
+				<pin number="2" name="A" x="38.0999985" y="-0" length="25.3999996" angle="180" electrical_type="passive">
+					<nameAttribute content="A" x="-45.4000015" y="-5" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="2" x="-15" y="-15" rotation="0" visible="true" fontSize="10" />
+				</pin>
+			</pins>
+			<generic_shapes>
+				<polyline>
+					<pt x="-30.4800014" y="7.62000036" />
+					<pt x="-45.7200012" y="22.8600006" />
+					<pt x="-38.0999985" y="22.8600006" />
+					<pt x="-45.7200012" y="22.8600006" />
+					<pt x="-45.7200012" y="15.2400007" />
+				</polyline>
+				<polyline>
+					<pt x="-17.7800007" y="7.62000036" />
+					<pt x="-33.0200005" y="22.8600006" />
+					<pt x="-25.3999996" y="22.8600006" />
+					<pt x="-33.0200005" y="22.8600006" />
+					<pt x="-33.0200005" y="15.2400007" />
+				</polyline>
+				<polyline>
+					<pt x="-12.6999998" y="-0" />
+					<pt x="12.6999998" y="-0" />
+				</polyline>
+				<polyline>
+					<pt x="-12.6999998" y="12.6999998" />
+					<pt x="-12.6999998" y="-12.6999998" />
+				</polyline>
+				<polyline>
+					<pt x="12.6999998" y="12.6999998" />
+					<pt x="12.6999998" y="-12.6999998" />
+					<pt x="-12.6999998" y="-0" />
+					<pt x="12.6999998" y="12.6999998" />
+				</polyline>
+			</generic_shapes>
+			<parameters />
+		</component>
+		<component id="AIPWR1_2" type="Power" x="1476.69922" y="912" rotation="0" oriented="true" sourceFolderPath="" footprint="">
+			<value>+5V</value>
+			<designatorAttribute content="" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<valueAttribute content="+5V" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<pins>
+				<pin number="1" name="vcc" x="0" y="0" length="5" angle="0" electrical_type="power_in">
+					<nameAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+				</pin>
+			</pins>
+			<generic_shapes />
+			<parameters />
+		</component>
+		<component id="AIGND2_2" type="Power" x="1476.69922" y="1124.39844" rotation="0" oriented="true" sourceFolderPath="" footprint="">
+			<value>GND</value>
+			<designatorAttribute content="" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<valueAttribute content="GND" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<pins>
+				<pin number="1" name="gnd" x="0" y="0" length="5" angle="0" electrical_type="power_in">
+					<nameAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+				</pin>
+			</pins>
+			<generic_shapes />
+			<parameters />
+		</component>
+	</components>
+	<wires>
+		<wire id="1" net="+5V">
+			<points>
+				<point x="1459.19922" y="410" />
+				<point x="1439.19922" y="410" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="J1" pin_num="1" />
+				<connection point_index="1" comp_id="AIPWR1_1" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="2" net="GND">
+			<points>
+				<point x="1459.19922" y="435.400391" />
+				<point x="1439.19922" y="435.400391" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="J1" pin_num="2" />
+				<connection point_index="1" comp_id="AIGND2_1" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="3" net="LED_ANODE">
+			<points>
+				<point x="1476.69922" y="1018.19922" />
+				<point x="1476.69922" y="1008.19922" />
+			</points>
+			<connections>
+				<connection point_index="1" comp_id="R1" pin_num="2" />
+			</connections>
+		</wire>
+		<wire id="4" net="+5V">
+			<points>
+				<point x="1476.69922" y="932" />
+				<point x="1476.69922" y="912" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="R1" pin_num="1" />
+				<connection point_index="1" comp_id="AIPWR1_2" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="5" net="LED_ANODE">
+			<points>
+				<point x="1476.69922" y="1018.19922" />
+				<point x="1476.69922" y="1028.19922" />
+			</points>
+			<connections>
+				<connection point_index="1" comp_id="D1" pin_num="2" />
+			</connections>
+		</wire>
+		<wire id="6" net="GND">
+			<points>
+				<point x="1476.69922" y="1104.39844" />
+				<point x="1476.69922" y="1124.39844" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="D1" pin_num="1" />
+				<connection point_index="1" comp_id="AIGND2_2" pin_num="1" />
+			</connections>
+		</wire>
+	</wires>
+	<graphics>
+		<images />
+		<lines />
+		<rects>
+			<rect id="1" x1="1260" y1="220" x2="1705.5" y2="690" layer="0" color="4293301856" thickness="2" fillStyle="0" fillColor="0" cornerRadius="0" name="AI Block: Power Input" />
+			<rect id="4" x1="1260" y1="690" x2="1705.5" y2="1375" layer="0" color="4293301856" thickness="2" fillStyle="0" fillColor="0" cornerRadius="0" name="AI Block: LED Indicator" />
+		</rects>
+		<circles />
+		<texts>
+			<text id="2" x="1280" y="638" size="32" color="4283489982" layer="0" name="AI Block Title: Power Input" angle="0" thickness="1" justifyH="0" justifyV="1">Power Input</text>
+			<text id="5" x="1280" y="1323" size="32" color="4283489982" layer="0" name="AI Block Title: LED Indicator" angle="0" thickness="1" justifyH="0" justifyV="1">LED Indicator</text>
+		</texts>
+		<arcs />
+		<polygons />
+		<junctions />
+		<harnesses />
+	</graphics>
+</schematic>

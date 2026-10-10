@@ -63,6 +63,30 @@ The **Import CAD (SVG)** button on the PCB toolbar opens the same dialog for SVG
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
+<!-- wf:shot id=cad-outline-import-verdict
+caption: Import CAD File with Import as BOARD OUTLINE ticked and the verdict
+setup:
+- open_project
+- ensure_pcb
+- wait: 1
+- open_file: samples/outlines/demo-board.dxf
+- menu:
+  - File
+  - Import
+  - CAD Outline (.svg / .dxf)...
+- wait: 2
+- check: //Import CAD File/Import as BOARD OUTLINE (shape, cutouts and mounting holes)
+- wait: 1.5
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+brief_sha256: bbb0125a567efde2
+-->
+<!-- wf:out id=cad-outline-import-verdict sha=0ae4477bb046 -->
+![Import CAD File with Import as BOARD OUTLINE ticked and the verdict](../assets/wf/docs/pcb/board-outline/cad-outline-import-verdict.png)
+<!-- /wf:out -->
+
 ## Describe the board in AI Copilot
 
 With a project open, type the board in plain words:

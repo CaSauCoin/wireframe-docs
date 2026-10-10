@@ -11,6 +11,23 @@ WireFrame uses dockable panels around the active schematic or PCB editor. Availa
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
+<!-- wf:shot id=main-window
+caption: The main window with a PCB open
+project: wireframe:tests/data/buck_converter_automotive/wireframe/buck-converter-automotive.prjxml
+setup:
+- open_project
+- ensure_pcb
+- wait: 1
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+brief_sha256: 1ece0c294228e249
+-->
+<!-- wf:out id=main-window sha=315db8e28df4 -->
+![The main window with a PCB open](assets/wf/docs/ui-overview/main-window.png)
+<!-- /wf:out -->
+
 ## Main menus
 
 ### File

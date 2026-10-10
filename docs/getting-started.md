@@ -40,6 +40,29 @@ No sign-in is needed: WireFrame runs in community mode. On startup it restores t
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
+<!-- wf:shot id=default-layout-with-a-project-open
+caption: The default layout with a project open
+setup:
+- open_project
+- ensure_schematic
+- wait: 1
+- keys:
+  - Home
+- wait: 0.5
+- click_at:
+  - 700
+  - 700
+- wait: 0.5
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+brief_sha256: 7027d5fceb146593
+-->
+<!-- wf:out id=default-layout-with-a-project-open sha=af1c10742287 -->
+![The default layout with a project open](assets/wf/docs/getting-started/default-layout-with-a-project-open.png)
+<!-- /wf:out -->
+
 | Area | Default position | Purpose |
 |---|---|---|
 | **Menu bar** | Top | **File**, **Edit**, **View**, **Tools**, **Simulation**, **Preferences**, **Help**, and the account menu on the right |
@@ -92,6 +115,25 @@ The **Project Structure** panel shows the new project. Right-click it to **Add N
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
+<!-- wf:shot id=new-schematic
+caption: 'A new schematic: page outline, rulers and the schematic toolbar'
+project: none
+setup:
+- wait: 1
+- keys:
+  - Ctrl
+  - N
+- wait: 2
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+brief_sha256: ba0b9acca80cfbfc
+-->
+<!-- wf:out id=new-schematic sha=0208ea826873 -->
+![A new schematic: page outline, rulers and the schematic toolbar](assets/wf/docs/getting-started/new-schematic.png)
+<!-- /wf:out -->
+
 ---
 
 ## 5. Adding a PCB File
@@ -107,6 +149,26 @@ The **Project Structure** panel shows the new project. Right-click it to **Add N
     3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
+
+<!-- wf:shot id=new-pcb
+caption: 'A new PCB: rulers, the vertical PCB toolbar, Footprints, Properties and Layers'
+project: none
+setup:
+- wait: 1
+- menu:
+  - File
+  - New
+  - New PCB (.pcbxml)
+- wait: 2
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+brief_sha256: 299edd20c74f66bc
+-->
+<!-- wf:out id=new-pcb sha=86ca617721d2 -->
+![A new PCB: rulers, the vertical PCB toolbar, Footprints, Properties and Layers](assets/wf/docs/getting-started/new-pcb.png)
+<!-- /wf:out -->
 
 !!! tip "Convert from schematic instead"
     Complete your schematic first and use **Tools → Update Schematic to PCB**. Footprints arrive on the board in a grid with their nets; review the target board, imported footprints, and ratsnest before routing.

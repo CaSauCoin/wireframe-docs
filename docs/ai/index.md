@@ -50,7 +50,7 @@ Keys are stored in the local WireFrame configuration. Do not place a key in scre
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 <!-- wf:shot id=ai-settings
-caption: Settings → AI Assistant — provider, endpoint, key and models
+caption: 'Preferences → AI Assistant: provider presets, endpoint, key and the Design and Fast models'
 setup:
 - open_project
 - wait: 1
@@ -59,17 +59,17 @@ setup:
   - Preferences...
 - wait: 1
 - click_at:
-  - 377
-  - 626
+  - 380
+  - 622
 - wait: 1
 - action:
     action: mouse_move_to
     x: 1000
     y: 12
-brief_sha256: 770e674e0ce469d2
+brief_sha256: a0ecc288e65e8366
 -->
 <!-- wf:out id=ai-settings sha=c6ef29069f27 -->
-![Settings → AI Assistant — provider, endpoint, key and models](../assets/wf/docs/ai/index/ai-settings.png)
+![Preferences → AI Assistant: provider presets, endpoint, key and the Design and Fast models](../assets/wf/docs/ai/index/ai-settings.png)
 <!-- /wf:out -->
 
 ## Start a focused session

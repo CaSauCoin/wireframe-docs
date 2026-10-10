@@ -71,7 +71,7 @@ Keep a folder at the same path after adding it. For a single footprint file, use
     5. **Deliver:** Export a **12–18 second** 1080p MP4 with all private paths hidden.
 
 <!-- wf:video id=import-an-altium-library
-caption: Add library → Altium library, pick a SchLib, and it lands under Imported
+caption: Library Manager → Add library → Altium library; it lands under Imported
 setup:
 - open_project
 - ensure_schematic
@@ -99,8 +99,8 @@ steps:
 - wait: 2.5
 brief_sha256: 28d9019b49f0e3cb
 -->
-<!-- wf:out id=import-an-altium-library sha=074e827582f7 -->
-<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/libraries/library-converter/import-an-altium-library.mp4" title="Add library → Altium library, pick a SchLib, and it lands under Imported"></video>
+<!-- wf:out id=import-an-altium-library sha=c62562b0bc63 -->
+<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/libraries/library-converter/import-an-altium-library.mp4" title="Library Manager → Add library → Altium library; it lands under Imported"></video>
 <!-- /wf:out -->
 
 !!! warning "Review converted content"
@@ -197,7 +197,7 @@ setup:
   - Local Library Manager
 - wait: 2
 - click: //Library Manager/{fa:plus}  Add library  {fa:caret-down}
-- wait: 1
+- wait: 1.2
 - open_file: wireframe:tests/data/altium_libraries/Schlib1.SchLib
 - click_at:
   - 1412
@@ -229,7 +229,7 @@ steps:
 - wait: 2.5
 brief_sha256: 89b281d9b40e8642
 -->
-<!-- wf:out id=inspect-and-correct-an-imported-component sha=4ca34b486533 -->
+<!-- wf:out id=inspect-and-correct-an-imported-component sha=10b0df6e3416 -->
 <video controls muted playsinline preload="metadata" src="../../assets/wf/docs/libraries/library-converter/inspect-and-correct-an-imported-component.mp4" title="Select the imported part, step through Symbol, Footprint and 3D, open Edit properties &amp; pins"></video>
 <!-- /wf:out -->
 

@@ -95,6 +95,56 @@ The via is dropped at the last waypoint and routing continues on the new layer. 
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
+<!-- wf:shot id=route-changing-layer-through-a-via
+caption: A +3V3 route that leaves C7 on F.Cu (red), drops a via with V, and continues on B.Cu (blue)
+project: wireframe:tests/data/7805_voltage_regulator/wireframe/7805_regulator.prjxml
+setup:
+- open_project
+- ensure_pcb
+- wait: 2
+- canvas_fit:
+    refs:
+    - C7
+    - U2
+    margin: 0.2
+- wait: 1
+- keys:
+  - X
+- wait: 1
+- canvas_click: pad:C7.1
+- wait: 1
+- canvas_click:
+  - 150
+  - 175
+- wait: 1
+- keys:
+  - V
+- wait: 1
+- canvas_hover:
+  - 150
+  - -60
+- wait: 1
+- canvas_click:
+  - 150
+  - -60
+- wait: 1
+- keys:
+  - Escape
+- wait: 1
+- keys:
+  - Escape
+- wait: 1
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+- wait: 1
+brief_sha256: 79c5704094dcad31
+-->
+<!-- wf:out id=route-changing-layer-through-a-via sha=8ef4e1b9f848 -->
+![A +3V3 route that leaves C7 on F.Cu (red), drops a via with V, and continues on B.Cu (blue)](../assets/wf/docs/pcb/routing/route-changing-layer-through-a-via.png)
+<!-- /wf:out -->
+
 ### Placing a via by itself
 
 1. Select **Place Via** on the toolbar (++v++ when not routing).
@@ -176,6 +226,34 @@ After routing, select the segments, right-click, and choose **Edit → Merge Col
     3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
+
+<!-- wf:shot id=route-before-and-after-trace-consolidation
+caption: 'Right-click a selected /12V_filtered track: Merge Collinear Segments joins the pieces that run
+  along one straight line'
+setup:
+- open_project
+- ensure_pcb
+- wait: 2
+- canvas_fit:
+    box:
+    - -440
+    - -20
+    - -60
+    - 240
+- wait: 1
+- canvas_click: trace:25
+- wait: 1
+- canvas_click:
+    target: trace:25
+    button: right
+- wait: 1
+- hover: '**/{fa:compress-arrows-alt}  Merge Collinear Segments'
+- wait: 1
+brief_sha256: ed87886135515216
+-->
+<!-- wf:out id=route-before-and-after-trace-consolidation sha=ee2c855be2cb -->
+![Right-click a selected /12V_filtered track: Merge Collinear Segments joins the pieces that run along one straight line](../assets/wf/docs/pcb/routing/route-before-and-after-trace-consolidation.png)
+<!-- /wf:out -->
 
 ---
 

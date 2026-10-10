@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<WireFrameProject version="1.2">
+	<Settings>
+		<LibFolder>lib_NE555 Blinker</LibFolder>
+	</Settings>
+	<Schematics>
+		<File>led_output_power_input_timer_oscillator.schxml</File>
+		<File>NE555 Blinker_schematic.schxml</File>
+	</Schematics>
+	<PCBs />
+	<Libraries />
+</WireFrameProject>

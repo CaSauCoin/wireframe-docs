@@ -93,6 +93,32 @@ A **junction dot** appears when three or more wires meet at a single point:
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
+<!-- wf:shot id=junction-compared-with-a-wire-crossing
+caption: 'Left: a junction dot joins three wires into one net. Right: the GND wire crosses the same wire
+  with no dot, so the two stay separate'
+project: wireframe:tests/data/mcu_datalogger/wireframe/MCU Datalogger.prjxml
+setup:
+- open_project
+- ensure_schematic
+- wait: 2
+- canvas_fit:
+    box:
+    - 600
+    - 1290
+    - 840
+    - 1430
+- wait: 1
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+- wait: 1
+brief_sha256: ff7b6c01e4713d55
+-->
+<!-- wf:out id=junction-compared-with-a-wire-crossing sha=d23ce72acb66 -->
+![Left: a junction dot joins three wires into one net. Right: the GND wire crosses the same wire with no dot, so the two stay separate](../assets/wf/docs/schematic/wiring-and-nets/junction-compared-with-a-wire-crossing.png)
+<!-- /wf:out -->
+
 - Junction dots are **placed automatically** when three or more connections share a point
 - You can also place them manually with the **Junction** tool
 - Two crossing wires **without** a junction are not electrically connected

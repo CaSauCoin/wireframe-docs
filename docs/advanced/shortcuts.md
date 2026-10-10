@@ -31,6 +31,35 @@ Bindings are saved in the user configuration and restored on the next launch.
     4. **Capture and finish:** Capture a native-resolution PNG, crop to the Preferences dialog, and add at most three subtle callouts.
     5. **Approve:** Check the image at 100% zoom for current labels and readable bindings.
 
+<!-- wf:shot id=keyboard-shortcuts-page
+caption: Preferences → Keyboard Shortcuts, filtered to “wire”
+setup:
+- open_project
+- wait: 1
+- menu:
+  - Preferences
+  - Preferences...
+- wait: 1
+- click_at:
+  - 380
+  - 437
+- wait: 1
+- click_at:
+  - 780
+  - 190
+- type:
+    text: wire
+- wait: 1
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+brief_sha256: ebfd641c410ab5d3
+-->
+<!-- wf:out id=keyboard-shortcuts-page sha=63d2c3a35b0b -->
+![Preferences → Keyboard Shortcuts, filtered to “wire”](../assets/wf/docs/advanced/shortcuts/keyboard-shortcuts-page.png)
+<!-- /wf:out -->
+
 ---
 
 ## Mouse

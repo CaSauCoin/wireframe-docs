@@ -33,62 +33,21 @@ Each card has three ways forward:
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 <!-- wf:shot id=missing-component-card-and-ai-gen-action
-caption: U1 (NE555P) marked Not in Pool, with Create and Import, and the /fix hint
+caption: 'A card that needs work: Create, Import, and the /fix hint'
 setup:
-- pick_folder: tutorials
-- menu:
-  - File
-  - New
-  - New Project (.prjxml)...
-- wait: 1
-- type:
-    text: NE555 Blinker
-- click_at:
-  - 634
-  - 485
-- wait: 2
-- menu:
-  - File
-  - New
-  - New Schematic (.schxml)
-- wait: 1
-- save_file: tutorials/NE555 Blinker.schxml
-- keys:
-  - Ctrl
-  - S
-- wait: 2
+- open_project
 - panel: ai
-- wait: 1
-- type:
-    ref: //AI Copilot Panel/##ChatInput
-    text: Design a 9 V NE555 astable LED blinker. Target 1 Hz, use a red LED, include current limiting
-      and supply decoupling, and identify every assumption that needs my confirmation.
-- keys:
-  - Enter
-- wait: 25
-- menu:
-  - View
-  - Project Structure
-- action:
-    action: mouse_move_to
-    x: 120
-    y: 500
-- scroll: -400
-- wait: 1
+- wait: 2
+- click: //AI Copilot Panel/{fa:tasks}
+- wait: 2
 - action:
     action: mouse_move_to
     x: 1000
     y: 12
-- click: //AI Copilot Panel/Use all suggestions & continue
-- wait: 300
-- action:
-    action: mouse_move_to
-    x: 1000
-    y: 12
-brief_sha256: 37b6ba5839330c49
+brief_sha256: 9b7e360b92b75ea6
 -->
-<!-- wf:out id=missing-component-card-and-ai-gen-action sha=a2890f8c5313 -->
-![U1 (NE555P) marked Not in Pool, with Create and Import, and the /fix hint](../assets/wf/docs/ai/component-generator/missing-component-card-and-ai-gen-action.png)
+<!-- wf:out id=missing-component-card-and-ai-gen-action sha=7e3c64602881 -->
+![A card that needs work: Create, Import, and the /fix hint](../assets/wf/docs/ai/component-generator/missing-component-card-and-ai-gen-action.png)
 <!-- /wf:out -->
 
 ## Repair a part with `/fix`

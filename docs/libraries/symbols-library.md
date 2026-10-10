@@ -75,6 +75,53 @@ Existing placed instances may not inherit a later library change. Review them in
     4. **Result shot (3–4 s):** Compare at least three readable symbol pins with corresponding footprint pads.
     5. **Deliver:** Export a **15–20 second** 1080p MP4; replace older media whenever labels or controls differ.
 
+<!-- wf:video id=assign-and-verify-a-footprint
+caption: R1 reports Footprint 'R_0805_2012Metric' not loaded; Link Footprint & Save to File picks the
+  .kicad_mod and the preview shows its two pads
+setup:
+- open_project
+- ensure_schematic
+- wait: 2
+- canvas_fit:
+    refs:
+    - R1
+    margin: 2.5
+- wait: 1
+- canvas_click: R1
+- wait: 1
+- action:
+    action: mouse_move_to
+    x: 1450
+    y: 600
+- scroll: -10
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+- wait: 1
+steps:
+- wait: 2.5
+- open_file: wireframe:tests/data/mcu_datalogger/wireframe/MCU Datalogger_lib/R_0805_2012Metric.kicad_mod
+- hover: '**/{fa:link} Link Footprint & Save to File'
+- wait: 1
+- click: '**/{fa:link} Link Footprint & Save to File'
+- wait: 2
+- action:
+    action: mouse_move_to
+    x: 1450
+    y: 600
+- scroll: -10
+- action:
+    action: mouse_move_to
+    x: 1470
+    y: 705
+- wait: 4
+brief_sha256: 6f00fe6429c0a032
+-->
+<!-- wf:out id=assign-and-verify-a-footprint sha=01051aef577b -->
+<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/libraries/symbols-library/assign-and-verify-a-footprint.mp4" title="R1 reports Footprint &#x27;R_0805_2012Metric&#x27; not loaded; Link Footprint &amp; Save to File picks the .kicad_mod and the preview shows its two pads"></video>
+<!-- /wf:out -->
+
 ## Import an Altium symbol library
 
 In the Library Manager, select **Add library ▾ → Altium library (SchLib, PcbLib, IntLib)...** and choose a `.SchLib`, `.IntLib`, or `.LibPkg` file. After conversion, review the imported symbol and its footprint relationship before use.

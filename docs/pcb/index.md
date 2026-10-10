@@ -33,6 +33,23 @@ The PCB Editor handles board layout — from component placement to trace routin
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
+<!-- wf:shot id=pcb-workspace
+caption: 'The PCB editor: canvas, vertical toolbar, Layers, Footprints and Board Settings'
+project: wireframe:tests/data/buck_converter_automotive/wireframe/buck-converter-automotive.prjxml
+setup:
+- open_project
+- ensure_pcb
+- wait: 1
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+brief_sha256: a5f102850adc67cb
+-->
+<!-- wf:out id=pcb-workspace sha=315db8e28df4 -->
+![The PCB editor: canvas, vertical toolbar, Layers, Footprints and Board Settings](../assets/wf/docs/pcb/index/pcb-workspace.png)
+<!-- /wf:out -->
+
 - **Canvas** — the board area with rulers, grid, footprints, traces, zones, and **ratsnest** lines (unrouted connections)
 - **Toolbar** — a vertical strip of tool buttons on the right edge of the canvas; ++tab++ hides or shows it
 - **Layers panel** — toggle visibility and select the active layer (**View → PCB Layers**)
@@ -92,6 +109,54 @@ Ratsnest lines are **thin dashed lines** showing connections that have not yet b
     3. **Action shot (5–8 s):** Start the route on the first pad, place any required corner, and finish on the destination pad.
     4. **Result shot (2–3 s):** Hold on the completed selected track and the cleared ratsnest connection.
     5. **Deliver:** Export a **10–15 second** 1080p MP4 and replace the existing empty file.
+
+<!-- wf:video id=ratsnest-cleared-by-routing
+caption: Route Trace from C7 to the regulator tab; the +3V3 ratsnest line clears
+project: wireframe:tests/data/7805_voltage_regulator/wireframe/7805_regulator.prjxml
+setup:
+- open_project
+- ensure_pcb
+- wait: 2
+- canvas_fit:
+    refs:
+    - C7
+    - U2
+    margin: 0.2
+- wait: 1
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+steps:
+- wait: 1.5
+- canvas_hover: pad:C7.1
+- wait: 1
+- keys:
+  - X
+- wait: 0.5
+- canvas_click: pad:C7.1
+- wait: 1
+- canvas_hover:
+  - 470
+  - -100
+- wait: 1
+- canvas_hover: pad:U2.2@1
+- wait: 1
+- canvas_click: pad:U2.2@1
+- wait: 1
+- keys:
+  - Escape
+- wait: 1
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+- wait: 2
+brief_sha256: 101f88647dbaff97
+-->
+<!-- wf:out id=ratsnest-cleared-by-routing sha=a5e1057b4be1 -->
+<video controls muted playsinline preload="metadata" src="../assets/wf/docs/pcb/index/ratsnest-cleared-by-routing.mp4" title="Route Trace from C7 to the regulator tab; the +3V3 ratsnest line clears"></video>
+<!-- /wf:out -->
 
 - Ratsnest lines **automatically update** after every edit
 - When you **route a trace**, the corresponding ratsnest line **disappears**
