@@ -18,16 +18,13 @@ Every schematic sheet has a **title block** in the lower-right corner. It displa
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 <!-- wf:shot id=completed-schematic-title-block
-caption: A whole schematic page with its title block
+caption: 'The KLP4e main sheet: A4 frame with zone marks, five titled blocks, and the title block bottom
+  right'
 setup:
 - open_project
 - ensure_schematic
 - wait: 1
-- canvas_click:
-  - 100
-  - 100
-- keys:
-  - Home
+- canvas_fit
 - wait: 1
 - action:
     action: mouse_move_to
@@ -35,8 +32,8 @@ setup:
     y: 12
 brief_sha256: 34762e309e0ad239
 -->
-<!-- wf:out id=completed-schematic-title-block sha=90eee1d4ffc9 -->
-![A whole schematic page with its title block](../assets/wf/docs/schematic/templates/completed-schematic-title-block.png)
+<!-- wf:out id=completed-schematic-title-block sha=d31b086998d6 -->
+![The KLP4e main sheet: A4 frame with zone marks, five titled blocks, and the title block bottom right](../assets/wf/docs/schematic/templates/completed-schematic-title-block.png)
 <!-- /wf:out -->
 
 ### Editing the title block
@@ -66,17 +63,17 @@ Changes in the Properties panel apply **immediately** — the title block update
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 <!-- wf:shot id=title-block-properties
-caption: Properties → Document Settings → Title Block Info beside the title block
+caption: Properties → Document Settings → Title Block Info beside the title block it fills
 setup:
 - open_project
 - ensure_schematic
 - wait: 1
-- keys:
-  - Home
-- wait: 0.5
-- click_at:
-  - 700
-  - 700
+- canvas_fit:
+    box:
+    - 1150
+    - 1450
+    - 3000
+    - 2110
 - wait: 0.5
 - action:
     action: mouse_move_to
@@ -84,8 +81,8 @@ setup:
     y: 12
 brief_sha256: 0cfe94e2682e4ca2
 -->
-<!-- wf:out id=title-block-properties sha=af1c10742287 -->
-![Properties → Document Settings → Title Block Info beside the title block](../assets/wf/docs/schematic/templates/title-block-properties.png)
+<!-- wf:out id=title-block-properties sha=e5f7e768b196 -->
+![Properties → Document Settings → Title Block Info beside the title block it fills](../assets/wf/docs/schematic/templates/title-block-properties.png)
 <!-- /wf:out -->
 
 ---
@@ -125,7 +122,7 @@ setup:
     y: 12
 brief_sha256: a3c155b78bae985c
 -->
-<!-- wf:out id=page-settings-modal sha=63bbcf4ea2bf -->
+<!-- wf:out id=page-settings-modal sha=4f43c5b309b5 -->
 ![Page Settings for a schematic sheet](../assets/wf/docs/schematic/templates/page-settings-modal.png)
 <!-- /wf:out -->
 

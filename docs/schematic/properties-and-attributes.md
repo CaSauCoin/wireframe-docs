@@ -18,17 +18,18 @@ Complete these fields before PDF release so every exported sheet can be identifi
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 <!-- wf:shot id=sheet-properties-and-title-block
-caption: Sheet properties (Document Settings) and the title block they fill
+caption: 'Document Settings beside the KLP4e title block: the Title field holds ${project_name}, and the
+  block shows the project name in its place'
 setup:
 - open_project
 - ensure_schematic
 - wait: 1
-- keys:
-  - Home
-- wait: 0.5
-- click_at:
-  - 700
-  - 700
+- canvas_fit:
+    box:
+    - 1150
+    - 1450
+    - 3000
+    - 2110
 - wait: 0.5
 - action:
     action: mouse_move_to
@@ -36,8 +37,8 @@ setup:
     y: 12
 brief_sha256: b1fad8de01dc06c6
 -->
-<!-- wf:out id=sheet-properties-and-title-block sha=af1c10742287 -->
-![Sheet properties (Document Settings) and the title block they fill](../assets/wf/docs/schematic/properties-and-attributes/sheet-properties-and-title-block.png)
+<!-- wf:out id=sheet-properties-and-title-block sha=e5f7e768b196 -->
+![Document Settings beside the KLP4e title block: the Title field holds ${project_name}, and the block shows the project name in its place](../assets/wf/docs/schematic/properties-and-attributes/sheet-properties-and-title-block.png)
 <!-- /wf:out -->
 
 ## Component properties
@@ -75,15 +76,18 @@ The eye button beside **Designator**, **Value**, and **Comment** shows or hides 
     5. **Deliver:** Export a **15–20 second** 1080p MP4 and replace media using obsolete property labels.
 
 <!-- wf:video id=edit-and-align-component-text
-caption: Edit C6's value in Properties, then undo
+caption: Select R5, change its value from 330 Ω to 470 Ω in Properties, then undo
 setup:
 - open_project
 - ensure_schematic
 - wait: 1
-- canvas_hover: C6
-- scroll: -6
+- canvas_fit:
+    refs:
+    - R5
+    - D1
+    margin: 0.6
 - wait: 0.5
-- canvas_click: C6
+- canvas_click: R5
 - action:
     action: mouse_move_to
     x: 1000
@@ -92,7 +96,7 @@ steps:
 - wait: 1.5
 - type:
     ref: '**/##Value'
-    text: 22uF 10V
+    text: 470 Ω
 - wait: 2
 - keys:
   - Ctrl
@@ -100,8 +104,8 @@ steps:
 - wait: 2
 brief_sha256: 7085671e0ff8e91c
 -->
-<!-- wf:out id=edit-and-align-component-text sha=42c750198a6d -->
-<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/schematic/properties-and-attributes/edit-and-align-component-text.mp4" title="Edit C6&#x27;s value in Properties, then undo"></video>
+<!-- wf:out id=edit-and-align-component-text sha=a59b46582932 -->
+<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/schematic/properties-and-attributes/edit-and-align-component-text.mp4" title="Select R5, change its value from 330 Ω to 470 Ω in Properties, then undo"></video>
 <!-- /wf:out -->
 
 ## Wire and net properties
