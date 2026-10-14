@@ -28,16 +28,17 @@ Press ++w++ or click the **Wire** button on the toolbar.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 <!-- wf:shot id=wire-attached-to-two-component-pins
-caption: VIN wire landing on the pins of C5 and U2
+caption: The 16 MHz crystal Y2 wired to its two 22 pF load capacitors, C2 and C3
 setup:
 - open_project
 - ensure_schematic
 - wait: 1
-- canvas_hover: C5
-- scroll: -6
-- wait: 0.5
-- canvas_hover: C5
-- scroll: -6
+- canvas_fit:
+    refs:
+    - Y2
+    - C2
+    - C3
+    margin: 0.25
 - wait: 0.5
 - action:
     action: mouse_move_to
@@ -45,8 +46,8 @@ setup:
     y: 12
 brief_sha256: 2e31690f8949c65b
 -->
-<!-- wf:out id=wire-attached-to-two-component-pins sha=d8ef320eebbd -->
-![VIN wire landing on the pins of C5 and U2](../assets/wf/docs/schematic/wiring-and-nets/wire-attached-to-two-component-pins.png)
+<!-- wf:out id=wire-attached-to-two-component-pins sha=87a0614170ad -->
+![The 16 MHz crystal Y2 wired to its two 22 pF load capacitors, C2 and C3](../assets/wf/docs/schematic/wiring-and-nets/wire-attached-to-two-component-pins.png)
 <!-- /wf:out -->
 
 | Action | Input |
@@ -96,7 +97,7 @@ A **junction dot** appears when three or more wires meet at a single point:
 <!-- wf:shot id=junction-compared-with-a-wire-crossing
 caption: 'Left: a junction dot joins three wires into one net. Right: the GND wire crosses the same wire
   with no dot, so the two stay separate'
-project: wireframe:tests/data/mcu_datalogger/wireframe/MCU Datalogger.prjxml
+project: board:klp4e-datalogger
 setup:
 - open_project
 - ensure_schematic
@@ -115,7 +116,7 @@ setup:
 - wait: 1
 brief_sha256: ff7b6c01e4713d55
 -->
-<!-- wf:out id=junction-compared-with-a-wire-crossing sha=d23ce72acb66 -->
+<!-- wf:out id=junction-compared-with-a-wire-crossing sha=57af6730eca1 -->
 ![Left: a junction dot joins three wires into one net. Right: the GND wire crosses the same wire with no dot, so the two stay separate](../assets/wf/docs/schematic/wiring-and-nets/junction-compared-with-a-wire-crossing.png)
 <!-- /wf:out -->
 
@@ -175,16 +176,17 @@ Power symbols are single-pin components that automatically assign a net name to 
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 <!-- wf:shot id=power-symbols-on-a-decoupling-capacitor
-caption: C6 decoupling the +3V3 rail to GND
+caption: 'C5 (100 nF) across the supply beside the battery BT1: a Vcc net label above, a GND symbol below,
+  PWR_FLAG on both rails'
 setup:
 - open_project
 - ensure_schematic
 - wait: 1
-- canvas_hover: C6
-- scroll: -6
-- wait: 0.5
-- canvas_hover: C6
-- scroll: -6
+- canvas_fit:
+    refs:
+    - C5
+    - BT1
+    margin: 0.6
 - wait: 0.5
 - action:
     action: mouse_move_to
@@ -192,9 +194,11 @@ setup:
     y: 12
 brief_sha256: 25131546c5754268
 -->
-<!-- wf:out id=power-symbols-on-a-decoupling-capacitor sha=c397b47c5074 -->
-![C6 decoupling the +3V3 rail to GND](../assets/wf/docs/schematic/wiring-and-nets/power-symbols-on-a-decoupling-capacitor.png)
+<!-- wf:out id=power-symbols-on-a-decoupling-capacitor sha=d565197ae4af -->
+![C5 (100 nF) across the supply beside the battery BT1: a Vcc net label above, a GND symbol below, PWR_FLAG on both rails](../assets/wf/docs/schematic/wiring-and-nets/power-symbols-on-a-decoupling-capacitor.png)
 <!-- /wf:out -->
+
+The KLP4e datalogger brings its supply to each part with **net labels** named `Vcc` rather than with a supply symbol, and ground with **GND** symbols — both are ways of naming a net. The `PWR_FLAG` markers come from the KiCad project; WireFrame keeps them on the sheet as drawn.
 
 ---
 

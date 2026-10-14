@@ -29,11 +29,13 @@ If the exact part is missing, import an approved library, create it in Symbol Li
     5. **Deliver:** Export a **10–15 second** 1080p MP4; replace older media if the library UI differs.
 
 <!-- wf:video id=find-and-place-a-symbol
-caption: Filter the Library for AMS1117, drag it onto the sheet, press Esc
+caption: Filter the project library for 24LC, drag a third 24LC1025 EEPROM onto the sheet, press Esc —
+  it becomes U5
 setup:
 - open_project
 - ensure_schematic
 - wait: 1
+- canvas_fit
 - action:
     action: mouse_move_to
     x: 1000
@@ -42,23 +44,25 @@ steps:
 - wait: 1
 - type:
     ref: //Library/##FilterSym
-    text: AMS
+    text: 24LC
 - wait: 1.5
 - drag_to_canvas:
-    from: //Library/{fa:microchip} AMS1117-3.3@1
+    from: //Library/{fa:microchip} 24LC1025@1
     to:
-    - 1300
-    - 540
+    - 600
+    - 1760
 - wait: 1.5
 - keys:
   - Escape
-- canvas_click: U3
+- canvas_click: U5
 - wait: 2
 brief_sha256: ae328a0a2c365469
 -->
-<!-- wf:out id=find-and-place-a-symbol sha=4caabf831614 -->
-<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/schematic/placing-components/find-and-place-a-symbol.mp4" title="Filter the Library for AMS1117, drag it onto the sheet, press Esc"></video>
+<!-- wf:out id=find-and-place-a-symbol sha=d8c2c0cfc642 -->
+<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/schematic/placing-components/find-and-place-a-symbol.mp4" title="Filter the project library for 24LC, drag a third 24LC1025 EEPROM onto the sheet, press Esc — it becomes U5"></video>
 <!-- /wf:out -->
+
+On the KLP4e datalogger the **Library** panel lists the symbols that came with the project — the 16 symbols imported from its KiCad project into the project's own library. A placed part takes the next free designator: after U1–U4 the new EEPROM becomes **U5**. Its pins are unconnected until you wire them, and [ERC](erc.md) reports each one.
 
 ## Complete component properties
 
