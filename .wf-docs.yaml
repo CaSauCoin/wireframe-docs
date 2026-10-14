@@ -140,6 +140,9 @@ scenes:
   "docs/installation.md#linux-package-installation":
     skip: a package manager in a terminal, not a WireFrame window
 
+  # Schematic scenes of the editing page (its trace scene below stays on the buck converter).
+  "docs/advanced/selection-and-editing.md#*":
+    project: board:klp4e-datalogger
   # ── PCB pages: a routed 2-layer board (MAX17574 buck, GND pours) ──────────
   # MG-5 automotive buck converter (MIT): U1 MAX17574, L1 15 uH, L2 33 uH,
   # C1..C13, D1/D2 SMBJ20A, D3 blue LED, F1 fuse, J1 12 V in, J2 5 V out.
@@ -169,8 +172,6 @@ scenes:
   "docs/schematic/*":
     project: board:klp4e-datalogger
   "docs/libraries/*":
-    project: board:klp4e-datalogger
-  "docs/advanced/selection-and-editing.md#*":
     project: board:klp4e-datalogger
   "*schematic-component-context-menu":
     project: board:klp4e-datalogger
