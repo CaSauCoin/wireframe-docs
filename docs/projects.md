@@ -67,7 +67,9 @@ Opening a `.prjxml` restores its linked documents and project structure. Opening
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 <!-- wf:shot id=project-structure-with-multiple-documents
-caption: Project Structure with several schematics and one PCB
+caption: 'Project Structure of the hexapod robot''s main board: the root sheet, eight sub-sheets and one
+  PCB'
+project: board:hexapod
 setup:
 - open_project
 - wait: 1
@@ -80,8 +82,8 @@ capture:
   padding: 8
 brief_sha256: 252fa9b96dbcf65e
 -->
-<!-- wf:out id=project-structure-with-multiple-documents sha=664f28041221 -->
-![Project Structure with several schematics and one PCB](assets/wf/docs/projects/project-structure-with-multiple-documents.png)
+<!-- wf:out id=project-structure-with-multiple-documents sha=fa75e73b67c3 -->
+![Project Structure of the hexapod robot's main board: the root sheet, eight sub-sheets and one PCB](assets/wf/docs/projects/project-structure-with-multiple-documents.png)
 <!-- /wf:out -->
 
 ## Add and organize documents

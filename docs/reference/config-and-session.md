@@ -99,7 +99,7 @@ setup:
     y: 12
 brief_sha256: be232845023a8ed3
 -->
-<!-- wf:out id=preferences-categories sha=265c4e3e38f0 -->
+<!-- wf:out id=preferences-categories sha=6187da44ad80 -->
 ![Preferences with its category list](../assets/wf/docs/reference/config-and-session/preferences-categories.png)
 <!-- /wf:out -->
 

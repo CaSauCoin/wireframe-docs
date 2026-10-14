@@ -358,30 +358,30 @@
       "file": "docs/assets/wf/docs/advanced/shortcuts/keyboard-shortcuts-page.png",
       "page": "docs/advanced/shortcuts.md",
       "slot": "keyboard-shortcuts-page",
-      "slot_sha256": "dbe88366cbf22bbedf5b5e25f139fb86fdb38391cbea6207c19ea97f98403645",
+      "slot_sha256": "fa0b3eb37ffd190000291b8722fdc9b9fec096755f917da020478681d91bfab4",
       "caption": "Preferences → Keyboard Shortcuts, filtered to “wire”",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-10T08:24:36+00:00",
-      "run": "/tmp/wf-docs/20261010-152415-docs/20261010-152428-keyboard-shortcuts-page",
+      "captured_at": "2026-10-14T17:32:52+00:00",
+      "run": "/tmp/wf-docs/20261015-003247-docs/20261015-003247-keyboard-shortcuts-page",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "d9b9e0f2f3069f9f991a44107d5280ec488fe1b3b7a18ea6504311e15a901a3a",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "8626c80f5e64b7009d807f4a9f105365589846f4118c9bc84f551e9c3bc6ff2b",
         "version": "1.5.47",
         "git": {
-          "commit": "da76518ca4f8d47ce5f8fc36826257f622ab39ed",
-          "branch": "AI/PCB/implement",
+          "commit": "49e3534a32fdc6ed36ff5dae24ea670aea3ce629",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261010-152415-docs/20261010-152428-keyboard-shortcuts-page/out/shots/keyboard-shortcuts-page.png (1600x870)",
+      "app_report": "saved /tmp/wf-docs/20261015-003247-docs/20261015-003247-keyboard-shortcuts-page/out/shots/keyboard-shortcuts-page.png (1600x900)",
       "state": {
-        "active_document": "7805_regulator.pcbxml",
+        "active_document": "buck-converter-automotive.pcbxml",
         "active_type": "pcb",
-        "documents": 4,
-        "frame": 1559,
+        "documents": 2,
+        "frame": 484,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -390,10 +390,10 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "63d2c3a35b0b3237e3680128107209d673a2c62354d7f7f5ef62dce7c3447094",
-      "bytes": 313791,
+      "sha256": "422b9b978bacdf4d59a66989c36465282edeedafb4b4ed238a5097ebf147760f",
+      "bytes": 291460,
       "width": 1600,
-      "height": 870
+      "height": 900
     },
     "docs/ai/commands.md#copilot-command-list": {
       "kind": "shot",
@@ -2145,30 +2145,30 @@
       "file": "docs/assets/wf/docs/projects/project-structure-with-multiple-documents.png",
       "page": "docs/projects.md",
       "slot": "project-structure-with-multiple-documents",
-      "slot_sha256": "0aec0e89a29b69654137d90a1dffd7cd112ea54654f3566b2b8ea9545eda4842",
-      "caption": "Project Structure with several schematics and one PCB",
+      "slot_sha256": "9849a1d98b2d0c9fb897459f775e2a02e48b821261479487e5fcf722de613f2c",
+      "caption": "Project Structure of the hexapod robot's main board: the root sheet, eight sub-sheets and one PCB",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-08T17:14:25+00:00",
-      "run": "/tmp/wf-docs/20261009-001120-docs/20261009-001421-project-structure-with-multiple-documents",
+      "captured_at": "2026-10-14T17:33:09+00:00",
+      "run": "/tmp/wf-docs/20261015-003306-docs/20261015-003306-project-structure-with-multiple-documents",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "48701fc3ed340c29e4adfa846bc046b1ddc2be4eafae7b29f2e2cebb63060f51",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "8626c80f5e64b7009d807f4a9f105365589846f4118c9bc84f551e9c3bc6ff2b",
         "version": "1.5.47",
         "git": {
-          "commit": "48c03b5ae3fa56f7017161359fac0adac6998e1e",
-          "branch": "AI/PCB/implement",
+          "commit": "49e3534a32fdc6ed36ff5dae24ea670aea3ce629",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261009-001120-docs/20261009-001421-project-structure-with-multiple-documents/out/shots/project-structure-with-multiple-documents.png (295x420)",
+      "app_report": "saved /tmp/wf-docs/20261015-003306-docs/20261015-003306-project-structure-with-multiple-documents/out/shots/project-structure-with-multiple-documents.png (391x435) of Project Structure",
       "state": {
-        "active_document": "7805_regulator.pcbxml",
+        "active_document": "Automative_Hexapod.pcbxml",
         "active_type": "pcb",
-        "documents": 4,
-        "frame": 406,
+        "documents": 10,
+        "frame": 166,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -2177,10 +2177,10 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "664f280412218645de4aeb3bdc5981653cf8952956943b133ad3f9d8b92a808e",
-      "bytes": 37410,
-      "width": 295,
-      "height": 420
+      "sha256": "fa75e73b67c39920254f4537bdaa86bf3e3a39e2ee3ce3a86df7e86dfa8a1569",
+      "bytes": 45401,
+      "width": 391,
+      "height": 435
     },
     "docs/projects.md#update-schematic-to-pcb": {
       "kind": "video",
@@ -2237,26 +2237,26 @@
       "caption": "Preferences with its category list",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-08T17:15:13+00:00",
-      "run": "/tmp/wf-docs/20261009-001120-docs/20261009-001507-preferences-categories",
+      "captured_at": "2026-10-14T17:32:12+00:00",
+      "run": "/tmp/wf-docs/20261015-003209-docs/20261015-003209-preferences-categories",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "48701fc3ed340c29e4adfa846bc046b1ddc2be4eafae7b29f2e2cebb63060f51",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "8626c80f5e64b7009d807f4a9f105365589846f4118c9bc84f551e9c3bc6ff2b",
         "version": "1.5.47",
         "git": {
-          "commit": "48c03b5ae3fa56f7017161359fac0adac6998e1e",
-          "branch": "AI/PCB/implement",
+          "commit": "49e3534a32fdc6ed36ff5dae24ea670aea3ce629",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261009-001120-docs/20261009-001507-preferences-categories/out/shots/preferences-categories.png (1600x870)",
+      "app_report": "saved /tmp/wf-docs/20261015-003209-docs/20261015-003209-preferences-categories/out/shots/preferences-categories.png (1600x900)",
       "state": {
-        "active_document": "7805_regulator.pcbxml",
+        "active_document": "buck-converter-automotive.pcbxml",
         "active_type": "pcb",
-        "documents": 4,
-        "frame": 728,
+        "documents": 2,
+        "frame": 352,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -2265,10 +2265,10 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "265c4e3e38f0e5f56c276d3b0e679b2d2223cbbe91ad4178d872337f9d4aae35",
-      "bytes": 301951,
+      "sha256": "6187da44ad806c327a333bff26c10153cb2a1b124992620efe5a3bd6a88c6441",
+      "bytes": 280459,
       "width": 1600,
-      "height": 870
+      "height": 900
     },
     "docs/reference/file-formats.md#supported-import-commands": {
       "kind": "shot",
