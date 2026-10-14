@@ -32,18 +32,15 @@ The Electrical Rules Check (ERC) scans your schematic for common connectivity an
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 <!-- wf:shot id=erc-results-and-highlighted-issue
-caption: ERC lists U2 pin 1 unconnected — its GND symbol was removed
+caption: 'ERC on the KLP4e datalogger as published: 18 errors, 9 warnings, each with its net and pins'
 setup:
 - open_project
 - ensure_schematic
 - wait: 1
+- canvas_fit
 - menu:
   - Tools
   - Electrical Rules Check (ERC)
-- wait: 1
-- canvas_click: AIGND2_2
-- keys:
-  - Delete
 - wait: 1
 - click: //Electrical Rules Check (ERC)/{fa:sync} Run Project-Wide ERC Analysis
 - wait: 1
@@ -53,15 +50,20 @@ setup:
     y: 12
 brief_sha256: 4c536a2fc4099df8
 -->
-<!-- wf:out id=erc-results-and-highlighted-issue sha=08c1535e52c8 -->
-![ERC lists U2 pin 1 unconnected — its GND symbol was removed](../assets/wf/docs/schematic/erc/erc-results-and-highlighted-issue.png)
+<!-- wf:out id=erc-results-and-highlighted-issue sha=21c7e3e998de -->
+![ERC on the KLP4e datalogger as published: 18 errors, 9 warnings, each with its net and pins](../assets/wf/docs/schematic/erc/erc-results-and-highlighted-issue.png)
 <!-- /wf:out -->
 
 ---
 
 ## Reading the Results
 
-Each row has a **Severity** (**Error** or **Warning**), a **Code**, and a **Description**. Where it applies, the row also lists the **Affected Net** and the **Affected Pins** as `designator:pin`, for example `U2:1`.
+Each row has a **Severity** (**Error** or **Warning**), a **Code**, and a **Description**. Where it applies, the row also lists the **Affected Net** and the **Affected Pins** as `designator:pin`, for example `U4:19` — pin 19 of U4.
+
+The picture above is the [KLP4e datalogger](https://github.com/futureshocked/KLP4e_MCU-Datalogger) exactly as it is published, and it is a good lesson in reading ERC: a finished, working board still reports 18 errors and 9 warnings. The first rows are typical:
+
+- **E301 on `Net-(U1-X1)`** — pin X1 of the DS1337 real-time clock is an *input*, and the 32.768 kHz crystal on that net is *passive*, so nothing on the net counts as a driver. An oscillator pin is driven by the crystal circuit, not by an output pin: check the datasheet, then accept the result.
+- **W200 on `unconnected-(U4-ADC6-Pad19)`, `…ADC7-Pad22`, `…PB1-Pad13`** — ATmega328P pins left unused. Each sits alone on its net. That is fine for spare GPIO, but every one of them deserves a look: it is exactly how a forgotten connection looks too.
 
 | Code | Severity | Meaning | How to fix |
 |---|---|---|---|
@@ -76,7 +78,7 @@ Pins whose type is *no connect* are never reported. Two outputs are reported onl
 
 ## Fixing Issues
 
-1. Read the **Affected Pins** of the row — for example `U2:1` is pin 1 of U2.
+1. Read the **Affected Pins** of the row — for example `U4:19` is pin 19 of U4.
 2. Find the part on the sheet and correct the connection, value, or designator.
 3. Select **Run Project-Wide ERC Analysis** again.
 
@@ -92,19 +94,29 @@ Repeat **Run → locate → correct → Run** until no error remains. Review war
     5. **Deliver:** Export an approximately **20-second** 1080p MP4 and retain the demo project for reproducibility.
 
 <!-- wf:video id=fix-and-re-run-erc
-caption: U2's GND symbol is missing — undo restores it, and a re-run clears the error
+caption: Remove the SDA label at U2 and ERC goes from 18 to 19 errors; undo, re-run, and it is back to
+  18
 setup:
 - open_project
 - ensure_schematic
 - wait: 1
+- canvas_fit:
+    box:
+    - 250
+    - 1040
+    - 1350
+    - 1460
 - menu:
   - Tools
   - Electrical Rules Check (ERC)
 - wait: 1
-- canvas_click: AIGND2_2
-- keys:
-  - Delete
-- wait: 1
+- drag_at:
+    from:
+    - 300
+    - 72
+    to:
+    - 1120
+    - 412
 - click: //Electrical Rules Check (ERC)/{fa:sync} Run Project-Wide ERC Analysis
 - wait: 1
 - action:
@@ -113,17 +125,49 @@ setup:
     y: 12
 steps:
 - wait: 2
+- canvas_click: NetLabel_2
+- wait: 1
+- keys:
+  - Delete
+- wait: 1
+- click: //Electrical Rules Check (ERC)/{fa:sync} Run Project-Wide ERC Analysis
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
+- wait: 2.5
 - keys:
   - Ctrl
   - Z
-- wait: 1.5
+- wait: 1
 - click: //Electrical Rules Check (ERC)/{fa:sync} Run Project-Wide ERC Analysis
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
 - wait: 3
 brief_sha256: d657ce8f2cad2a1b
 -->
-<!-- wf:out id=fix-and-re-run-erc sha=b5ae24207328 -->
-<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/schematic/erc/fix-and-re-run-erc.mp4" title="U2&#x27;s GND symbol is missing — undo restores it, and a re-run clears the error"></video>
+<!-- wf:out id=fix-and-re-run-erc sha=d63ff38cbf89 -->
+<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/schematic/erc/fix-and-re-run-erc.mp4" title="Remove the SDA label at U2 and ERC goes from 18 to 19 errors; undo, re-run, and it is back to 18"></video>
 <!-- /wf:out -->
+
+In the video, the `SDA` net label next to the U2 EEPROM is deleted on purpose. Its pin is now alone, and the count goes from 18 to 19 errors. ++ctrl+z++ puts the label back, and the next run is back to 18 — the way to confirm that a change fixed what you meant and nothing else.
+
+---
+
+## Pitfalls
+
+**What ERC catches**
+
+- A pin connected to nothing at all (E302 / W301), a label that leads nowhere (W200), two outputs fighting (E102), an input with no driver (E301), the same designator twice (E101).
+- Across sheets: a net carried by labels to another sheet is followed, so it is not reported as open.
+
+**What it does not catch — check these yourself**
+
+- **Power inputs that are not powered.** There is no "power input not driven" rule: E301 counts *input* pins only, and `power_in` pins are not checked for a source. If the `GND` symbol under the ATmega328P is deleted, its three ground pins stay wired to each other but leave the `GND` net — and ERC still reports 18 errors. Before layout, click a ground or supply wire and check that the highlighted net reaches its source.
+- **Wrong values or wrong parts.** ERC looks at connections, not at what a resistor is worth or whether the footprint matches the symbol. That is the job of the [AI review](../ai/index.md) and of the [footprint check](../libraries/symbols-library.md).
+- **A connection that should not exist.** Two nets accidentally joined by a label with the same name are, for ERC, one valid net.
 
 ---
 

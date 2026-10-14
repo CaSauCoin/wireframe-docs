@@ -32,17 +32,16 @@ The schematic workspace consists of:
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 <!-- wf:shot id=schematic-workspace
-caption: The schematic editor with Library and Properties
+caption: 'The schematic editor on the KLP4e datalogger: canvas, toolbar, Library and Properties'
 setup:
 - open_project
 - ensure_schematic
 - wait: 1
-- keys:
-  - Home
+- canvas_fit
 - wait: 0.5
 - click_at:
-  - 700
-  - 700
+  - 800
+  - 860
 - wait: 0.5
 - action:
     action: mouse_move_to
@@ -50,8 +49,8 @@ setup:
     y: 12
 brief_sha256: 4150fafce92026e0
 -->
-<!-- wf:out id=schematic-workspace sha=af1c10742287 -->
-![The schematic editor with Library and Properties](../assets/wf/docs/schematic/index/schematic-workspace.png)
+<!-- wf:out id=schematic-workspace sha=a995e7848f99 -->
+![The schematic editor on the KLP4e datalogger: canvas, toolbar, Library and Properties](../assets/wf/docs/schematic/index/schematic-workspace.png)
 <!-- /wf:out -->
 
 - **Canvas** — dot grid with an A4 page outline (configurable to A3, custom). Place all components and wires here.

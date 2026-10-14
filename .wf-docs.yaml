@@ -7,7 +7,9 @@ docs_dir: docs
 assets_dir: docs/assets/wf
 
 # Project mở trước mỗi cảnh (được CHÉP vào thư mục run, bản gốc không bị đụng).
-project: wireframe:tests/data/7805_voltage_regulator/wireframe/7805_regulator.prjxml
+# Board thật trong boards.yaml (clone ở commit ghim, import bằng WireFrame);
+# section nào dùng board nào: CONTENT_PLAN.md §2. Không dùng mạch 7805 nữa.
+project: board:buck-converter
 
 # Khung chụp cố định. Các slot đã chụp có bước click_at / drag_at theo toạ độ của
 # khung 1600 x 900 — đổi khung thì phải chụp lại và đo lại các toạ độ đó.
@@ -25,7 +27,7 @@ samples:
   - samples/outlines/demo-board.svg
   - samples/datasheets/wf-demo8.pdf
   - samples/datasheets/wf-demo8-pinout.png
-  - wireframe:tests/data/7805_voltage_regulator/kicad/7805_regulator.kicad_pro
+  - board:buck-converter:kicad
   - wireframe:tests/data/altium_libraries/Schlib1.SchLib
   - wireframe:tests/data/altium_libraries/PcbLib1.PcbLib
 
@@ -71,10 +73,12 @@ scenes:
       blank pin names, give up and say so rather than staging a different repair.
 
   "*import-a-kicad-project":
+    project: none
     hint: >-
-      Queue open_file with the 7805_regulator.kicad_pro sample, then
-      File > Import > KiCad Project (.kicad_pro, .pro)... The import writes its
-      workspace next to that (copied) file.
+      Queue open_file with board:buck-converter:kicad (the KiCad project of the
+      automotive buck converter), then File > Import > KiCad Project
+      (.kicad_pro, .pro)... The import writes its workspace next to that
+      (copied) file.
 
   "*import-an-altium-library":
     hint: Use the Altium sample libraries Schlib1.SchLib / PcbLib1.PcbLib from FILES.
@@ -123,7 +127,7 @@ scenes:
 
   # ── Project khác mặc định ─────────────────────────────────────────────────
   "*generate-and-review-functional-blocks":
-    project: wireframe:tests/data/mcu_datalogger/wireframe/MCU Datalogger.prjxml
+    project: board:klp4e-datalogger
 
   # ── Thêm khi chụp bằng tay (bước viết sẵn trong slot) ─────────────────────
   # ── Outside the app: no WireFrame window exists yet ──────────────────────
@@ -136,30 +140,48 @@ scenes:
   "docs/installation.md#linux-package-installation":
     skip: a package manager in a terminal, not a WireFrame window
 
-  # ── PCB pages: a routed board (62 traces, 48 vias, zones) ────────────────
+  # ── PCB pages: a routed 2-layer board (MAX17574 buck, GND pours) ──────────
+  # MG-5 automotive buck converter (MIT): U1 MAX17574, L1 15 uH, L2 33 uH,
+  # C1..C13, D1/D2 SMBJ20A, D3 blue LED, F1 fuse, J1 12 V in, J2 5 V out.
   "docs/pcb/*":
-    project: wireframe:tests/data/buck_converter_automotive/wireframe/buck-converter-automotive.prjxml
+    project: board:buck-converter
     hint: >-
       Start with ensure_pcb. The board is already routed. Traces are clickable
       as "net:<NET>" or "trace:<id>" (see TRACES); a right-click on a trace
       opens the trace context menu.
   "*pcb-trace-context-menu":
-    project: wireframe:tests/data/buck_converter_automotive/wireframe/buck-converter-automotive.prjxml
+    project: board:buck-converter
     hint: >-
       ensure_pcb, then {"canvas_click": {"target": "net:+5V", "button": "right"}}
       opens the trace context menu (Select, Edit, Bus, High-speed, Delete).
   "*ratsnest-cleared-by-routing":
-    project: wireframe:tests/data/buck_converter_automotive/wireframe/buck-converter-automotive.prjxml
+    project: board:buck-converter
+  # Planes and stackup read better on four layers: H730duino (STM32H730, MIT).
+  "docs/pcb/layers-and-views.md#*":
+    project: board:h730duino
+  "docs/advanced/3d-viewer.md#*":
+    project: board:h730duino
 
-  # ── Schematic canvas scenes ──────────────────────────────────────────────
+  # ── Schematic pages: KLP4e MCU datalogger (Peter Dalmaris, MIT) ───────────
+  # Main sheet "MCU Datalogger": U4 ATmega328P-AU, U1 DS1337S+ RTC, U2/U3
+  # 24LC1025 EEPROM, Y1 32.768 kHz, Y2 16 MHz, C1..C5, R1..R7, D1 LED, BT1.
+  # Second sheet "connectors": J1..J4.
+  "docs/schematic/*":
+    project: board:klp4e-datalogger
+  "docs/libraries/*":
+    project: board:klp4e-datalogger
+  "docs/advanced/selection-and-editing.md#*":
+    project: board:klp4e-datalogger
   "*schematic-component-context-menu":
+    project: board:klp4e-datalogger
     hint: >-
       ensure_schematic, then right-click a part by refdes, e.g.
-      {"canvas_click": {"target": "U2", "button": "right"}} opens the component
+      {"canvas_click": {"target": "U4", "button": "right"}} opens the component
       menu (Edit Attributes (Lock Body), Move, Rotate (90), Reload from Library).
   "*copy-place-and-undo-a-group":
+    project: board:klp4e-datalogger
     hint: >-
-      ensure_schematic; select a group with {"canvas_box": ["U2", "C5", "C6"]},
+      ensure_schematic; select a group with {"canvas_box": ["U2", "U3"]},
       then keys Ctrl+C, Ctrl+V and place with a canvas_click on empty canvas
       (a world point [x, y] away from every part); Ctrl+Z undoes it.
   "*fix-and-re-run-erc":
@@ -173,7 +195,9 @@ scenes:
       its wires), run ERC, then fix it on camera with Ctrl+Z and re-run ERC.
 
   # ── AI review: the saved design plan, no live model needed ───────────────
+  # NE555 blinker made by the Copilot (samples/ne555-blinker): its saved plan.
   "docs/ai/*":
+    project: samples/ne555-blinker/NE555 Blinker.prjxml
     hint: &ai_review >-
       The saved AI design plan opens with the {fa:tasks} "Design Plan" button in
       the AI Copilot Panel: "AI Planned BOM & Schematic Review" with tabs BOM
@@ -183,6 +207,11 @@ scenes:
       endpoint in this lab: a sent message never gets a reply, so do not wait
       for one — show the review instead.
   "docs/ai-copilot.md#*":
+    project: samples/ne555-blinker/NE555 Blinker.prjxml
     hint: *ai_review
   "docs/tutorial/ai-design.md#*":
+    project: samples/ne555-blinker/NE555 Blinker.prjxml
     hint: *ai_review
+  # /layout and the router on a real 4-layer board (a copy; nothing is saved).
+  "docs/ai/auto-placer-router.md#*":
+    project: board:h730duino
