@@ -141,6 +141,8 @@ Select a part to preview it on the right, with **Symbol**, **Footprint**, and **
 
 **Cancel** discards pending edits. Saving a renamed symbol or linking a footprint changes how the part is resolved later, so confirm the symbol-to-footprint mapping before closing the manager.
 
+To work on a whole library — many parts at once, or with the Copilot's library commands such as `/review all` and `/deepsearch all` — select **✎ Edit** (or double-click a part) to open it in the [Library Workspace](library-workspace.md). How WireFrame chooses a library part for a BOM row is explained in [How a Part Is Found](how-parts-are-found.md).
+
 ### Image — Inventory selection and CAD preview tabs
 
 !!! note "Image capture brief"
@@ -271,6 +273,8 @@ WireFrame does not import an entire Altium project or Eagle `.lbr`, `.sch`, or `
 
 ## See also
 
+- [Library Workspace](library-workspace.md)
+- [How a Part Is Found](how-parts-are-found.md)
 - [Symbol Libraries](symbols-library.md)
 - [Footprint Libraries](footprints-library.md)
 - [Fix or Create a Component](../ai/component-generator.md)

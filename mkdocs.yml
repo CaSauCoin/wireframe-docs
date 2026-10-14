@@ -150,6 +150,8 @@ nav:
       - Footprints Library: libraries/footprints-library.md
       - Symbol Library Editor: libraries/symbol-creator.md
       - Library Import & Management: libraries/library-converter.md
+      - Library Workspace: libraries/library-workspace.md
+      - How a Part Is Found: libraries/how-parts-are-found.md
 
   - Advanced Features:
       - Selection, Context Menus & Popups: advanced/selection-and-editing.md
