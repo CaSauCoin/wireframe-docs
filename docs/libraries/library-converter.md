@@ -38,7 +38,7 @@ setup:
     y: 12
 brief_sha256: 5922ed51f81e3066
 -->
-<!-- wf:out id=local-library-manager-overview sha=fb46fca0158a -->
+<!-- wf:out id=local-library-manager-overview sha=5a290a10d330 -->
 ![Local Library Manager — import options and the loaded inventory](../assets/wf/docs/libraries/library-converter/local-library-manager-overview.png)
 <!-- /wf:out -->
 
@@ -91,15 +91,19 @@ steps:
 - open_file: wireframe:tests/data/altium_libraries/Schlib1.SchLib
 - click_at:
   - 1412
-  - 178
+  - 194
 - wait: 3
 - click_at:
-  - 345
-  - 331
+  - 288
+  - 249
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
 - wait: 2.5
 brief_sha256: 28d9019b49f0e3cb
 -->
-<!-- wf:out id=import-an-altium-library sha=c62562b0bc63 -->
+<!-- wf:out id=import-an-altium-library sha=63bd71b59854 -->
 <video controls muted playsinline preload="metadata" src="../../assets/wf/docs/libraries/library-converter/import-an-altium-library.mp4" title="Library Manager → Add library → Altium library; it lands under Imported"></video>
 <!-- /wf:out -->
 
@@ -161,11 +165,11 @@ setup:
 - open_file: wireframe:tests/data/altium_libraries/Schlib1.SchLib
 - click_at:
   - 1412
-  - 178
+  - 194
 - wait: 3
 - click_at:
-  - 345
-  - 331
+  - 288
+  - 249
 - wait: 2
 - action:
     action: mouse_move_to
@@ -173,7 +177,7 @@ setup:
     y: 12
 brief_sha256: 2609136198f1a6e8
 -->
-<!-- wf:out id=inventory-selection-and-cad-preview-tabs sha=13dfe979dc99 -->
+<!-- wf:out id=inventory-selection-and-cad-preview-tabs sha=296f5b17cc34 -->
 ![An imported Altium library selected, with its parts and the Symbol / Footprint / 3D preview](../assets/wf/docs/libraries/library-converter/inventory-selection-and-cad-preview-tabs.png)
 <!-- /wf:out -->
 
@@ -201,7 +205,7 @@ setup:
 - open_file: wireframe:tests/data/altium_libraries/Schlib1.SchLib
 - click_at:
   - 1412
-  - 178
+  - 194
 - wait: 3
 - action:
     action: mouse_move_to
@@ -210,26 +214,26 @@ setup:
 steps:
 - wait: 1
 - click_at:
-  - 345
-  - 331
+  - 288
+  - 249
 - wait: 1.5
 - click_at:
   - 1176
-  - 268
+  - 283
 - wait: 1.5
 - click_at:
   - 1305
-  - 268
+  - 283
 - wait: 1.5
 - click_at:
   - 1045
-  - 268
+  - 283
 - wait: 1.5
 - click: //Library Manager/{fa:edit}  Edit properties & pins
 - wait: 2.5
 brief_sha256: 89b281d9b40e8642
 -->
-<!-- wf:out id=inspect-and-correct-an-imported-component sha=10b0df6e3416 -->
+<!-- wf:out id=inspect-and-correct-an-imported-component sha=882cf6edf606 -->
 <video controls muted playsinline preload="metadata" src="../../assets/wf/docs/libraries/library-converter/inspect-and-correct-an-imported-component.mp4" title="Select the imported part, step through Symbol, Footprint and 3D, open Edit properties &amp; pins"></video>
 <!-- /wf:out -->
 
