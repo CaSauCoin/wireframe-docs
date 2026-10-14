@@ -36,18 +36,13 @@ caption: Preferences → Keyboard Shortcuts, filtered to “wire”
 setup:
 - open_project
 - wait: 1
-- menu:
-  - Preferences
-  - Preferences...
+- action:
+    action: open_dialog
+    dialog: preferences
+    page: Keyboard Shortcuts
 - wait: 1
-- click_at:
-  - 380
-  - 437
-- wait: 1
-- click_at:
-  - 780
-  - 190
 - type:
+    ref: '**/##KeyMapSearch'
     text: wire
 - wait: 1
 - action:
@@ -56,7 +51,7 @@ setup:
     y: 12
 brief_sha256: ebfd641c410ab5d3
 -->
-<!-- wf:out id=keyboard-shortcuts-page sha=63d2c3a35b0b -->
+<!-- wf:out id=keyboard-shortcuts-page sha=422b9b978bac -->
 ![Preferences → Keyboard Shortcuts, filtered to “wire”](../assets/wf/docs/advanced/shortcuts/keyboard-shortcuts-page.png)
 <!-- /wf:out -->
 
