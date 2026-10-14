@@ -2540,30 +2540,30 @@
       "file": "docs/assets/wf/docs/schematic/placing-components/find-and-place-a-symbol.mp4",
       "page": "docs/schematic/placing-components.md",
       "slot": "find-and-place-a-symbol",
-      "slot_sha256": "c4ee559e8577b7a454185ed5c6bb0585fae2bc336d314a822b4ac64225d26217",
-      "caption": "Filter the Library for AMS1117, drag it onto the sheet, press Esc",
+      "slot_sha256": "4dd79751092129ce54418f68b4a1d096bddbaa13ec485373a232d5b8a2f68409",
+      "caption": "Filter the project library for 24LC, drag a third 24LC1025 EEPROM onto the sheet, press Esc — it becomes U5",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-08T17:16:47+00:00",
-      "run": "/tmp/wf-docs/20261009-001120-docs/20261009-001622-find-and-place-a-symbol",
+      "captured_at": "2026-10-14T16:30:59+00:00",
+      "run": "/tmp/wf-docs/20261014-233046-docs/20261014-233046-find-and-place-a-symbol",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "48701fc3ed340c29e4adfa846bc046b1ddc2be4eafae7b29f2e2cebb63060f51",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "337ec07fef006ef4d314c83001a6e8b06cf9e98a8f6bc678a0419bd2a3ada9cd",
         "version": "1.5.47",
         "git": {
-          "commit": "48c03b5ae3fa56f7017161359fac0adac6998e1e",
-          "branch": "AI/PCB/implement",
+          "commit": "042a4a9938d7bcd88491508014e3588633aa0635",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "recording /tmp/wf-docs/20261009-001120-docs/20261009-001622-find-and-place-a-symbol/out/videos/find-and-place-a-symbol.mp4",
+      "app_report": "recording /tmp/wf-docs/20261014-233046-docs/20261014-233046-find-and-place-a-symbol/out/videos/find-and-place-a-symbol.mp4",
       "state": {
-        "active_document": "aux_power_buck_regulator_power_in_and1.schxml",
+        "active_document": "MCU Datalogger.schxml",
         "active_type": "schematic",
-        "documents": 4,
-        "frame": 420,
+        "documents": 3,
+        "frame": 373,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -2572,12 +2572,12 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "4caabf831614ef47b50e389769da7c7b059afbab4bf323848de4bb51785066f7",
-      "bytes": 241183,
+      "sha256": "d8c2c0cfc642578b2c5d46bdc5913d135fcf374d2bac597c614465dff057df79",
+      "bytes": 538920,
       "width": 1598,
-      "height": 868,
+      "height": 898,
       "codec": "h264",
-      "duration": 6.466667
+      "duration": 10.867
     },
     "docs/schematic/properties-and-attributes.md#edit-and-align-component-text": {
       "kind": "video",
@@ -2802,30 +2802,30 @@
       "file": "docs/assets/wf/docs/schematic/wiring-and-nets/junction-compared-with-a-wire-crossing.png",
       "page": "docs/schematic/wiring-and-nets.md",
       "slot": "junction-compared-with-a-wire-crossing",
-      "slot_sha256": "3f80409a4599d33902585e951c5c4f1fc60c6f0ac00bad83bbc7c8ea7b0fa03b",
+      "slot_sha256": "3732a32120c3045f2d79fd3bbd88dcd6b34f010814f4538a4b01d55cd712880c",
       "caption": "Left: a junction dot joins three wires into one net. Right: the GND wire crosses the same wire with no dot, so the two stay separate",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-10T09:25:08+00:00",
-      "run": "/tmp/wf-docs/20261010-162501-docs/20261010-162501-junction-compared-with-a-wire-crossing",
+      "captured_at": "2026-10-14T16:31:07+00:00",
+      "run": "/tmp/wf-docs/20261014-233059-docs/20261014-233102-junction-compared-with-a-wire-crossing",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "eaa219e755dfbf711d216483948c710e4397a6a5015b6a1712ed7d9b971558aa",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "337ec07fef006ef4d314c83001a6e8b06cf9e98a8f6bc678a0419bd2a3ada9cd",
         "version": "1.5.47",
         "git": {
-          "commit": "da76518ca4f8d47ce5f8fc36826257f622ab39ed",
-          "branch": "AI/PCB/implement",
-          "dirty": true
+          "commit": "042a4a9938d7bcd88491508014e3588633aa0635",
+          "branch": "HEAD",
+          "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261010-162501-docs/20261010-162501-junction-compared-with-a-wire-crossing/out/shots/junction-compared-with-a-wire-crossing.png (1600x870)",
+      "app_report": "saved /tmp/wf-docs/20261014-233059-docs/20261014-233102-junction-compared-with-a-wire-crossing/out/shots/junction-compared-with-a-wire-crossing.png (1600x900)",
       "state": {
         "active_document": "MCU Datalogger.schxml",
         "active_type": "schematic",
         "documents": 3,
-        "frame": 1577,
+        "frame": 1067,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -2834,10 +2834,10 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "d23ce72acb66fe27c53240024e958ac5578d4a302f4d7cbd99e4cce2fff98ac6",
-      "bytes": 273088,
+      "sha256": "57af6730eca112097447f76407a9213133787512712f219806f6016b4c8b1dc6",
+      "bytes": 296398,
       "width": 1600,
-      "height": 870
+      "height": 900
     },
     "docs/schematic/wiring-and-nets.md#power-symbols-on-a-decoupling-capacitor": {
       "kind": "shot",
@@ -2845,30 +2845,30 @@
       "file": "docs/assets/wf/docs/schematic/wiring-and-nets/power-symbols-on-a-decoupling-capacitor.png",
       "page": "docs/schematic/wiring-and-nets.md",
       "slot": "power-symbols-on-a-decoupling-capacitor",
-      "slot_sha256": "976c28d96d707d50c68d308f0c192e30495309bcf4b37af5d5309a521f1c7906",
-      "caption": "C6 decoupling the +3V3 rail to GND",
+      "slot_sha256": "78acd8ca8e0c668676d33bdf3d52179f17c8c8d8bea3c4e53a50ad305962033b",
+      "caption": "C5 (100 nF) across the supply beside the battery BT1: a Vcc net label above, a GND symbol below, PWR_FLAG on both rails",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-08T17:17:31+00:00",
-      "run": "/tmp/wf-docs/20261009-001120-docs/20261009-001725-power-symbols-on-a-decoupling-capacitor",
+      "captured_at": "2026-10-14T16:31:10+00:00",
+      "run": "/tmp/wf-docs/20261014-233059-docs/20261014-233107-power-symbols-on-a-decoupling-capacitor",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "48701fc3ed340c29e4adfa846bc046b1ddc2be4eafae7b29f2e2cebb63060f51",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "337ec07fef006ef4d314c83001a6e8b06cf9e98a8f6bc678a0419bd2a3ada9cd",
         "version": "1.5.47",
         "git": {
-          "commit": "48c03b5ae3fa56f7017161359fac0adac6998e1e",
-          "branch": "AI/PCB/implement",
+          "commit": "042a4a9938d7bcd88491508014e3588633aa0635",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261009-001120-docs/20261009-001725-power-symbols-on-a-decoupling-capacitor/out/shots/power-symbols-on-a-decoupling-capacitor.png (1600x870)",
+      "app_report": "saved /tmp/wf-docs/20261014-233059-docs/20261014-233107-power-symbols-on-a-decoupling-capacitor/out/shots/power-symbols-on-a-decoupling-capacitor.png (1600x900)",
       "state": {
-        "active_document": "aux_power_buck_regulator_power_in_and1.schxml",
+        "active_document": "MCU Datalogger.schxml",
         "active_type": "schematic",
-        "documents": 4,
-        "frame": 866,
+        "documents": 3,
+        "frame": 485,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -2877,10 +2877,10 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "c397b47c5074abf812a4a28b7948963dce712647cb371e6906d47e0a2242ce1b",
-      "bytes": 233926,
+      "sha256": "d565197ae4af40156880fd8440dbc3c5993326f62f7967865017647216c17a4d",
+      "bytes": 282272,
       "width": 1600,
-      "height": 870
+      "height": 900
     },
     "docs/schematic/wiring-and-nets.md#wire-attached-to-two-component-pins": {
       "kind": "shot",
@@ -2888,30 +2888,30 @@
       "file": "docs/assets/wf/docs/schematic/wiring-and-nets/wire-attached-to-two-component-pins.png",
       "page": "docs/schematic/wiring-and-nets.md",
       "slot": "wire-attached-to-two-component-pins",
-      "slot_sha256": "1419742ea01d760cb7caedfd7df2777e09aff61487fa3f9f40e960c2c0b39b09",
-      "caption": "VIN wire landing on the pins of C5 and U2",
+      "slot_sha256": "603bc537da1754ebb83397bfbac44e8f115fb7616f3eace637c9e6bbf6bba3da",
+      "caption": "The 16 MHz crystal Y2 wired to its two 22 pF load capacitors, C2 and C3",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-08T17:17:25+00:00",
-      "run": "/tmp/wf-docs/20261009-001120-docs/20261009-001720-wire-attached-to-two-component-pins",
+      "captured_at": "2026-10-14T16:31:02+00:00",
+      "run": "/tmp/wf-docs/20261014-233059-docs/20261014-233059-wire-attached-to-two-component-pins",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "48701fc3ed340c29e4adfa846bc046b1ddc2be4eafae7b29f2e2cebb63060f51",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "337ec07fef006ef4d314c83001a6e8b06cf9e98a8f6bc678a0419bd2a3ada9cd",
         "version": "1.5.47",
         "git": {
-          "commit": "48c03b5ae3fa56f7017161359fac0adac6998e1e",
-          "branch": "AI/PCB/implement",
+          "commit": "042a4a9938d7bcd88491508014e3588633aa0635",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261009-001120-docs/20261009-001720-wire-attached-to-two-component-pins/out/shots/wire-attached-to-two-component-pins.png (1600x870)",
+      "app_report": "saved /tmp/wf-docs/20261014-233059-docs/20261014-233059-wire-attached-to-two-component-pins/out/shots/wire-attached-to-two-component-pins.png (1600x900)",
       "state": {
-        "active_document": "aux_power_buck_regulator_power_in_and1.schxml",
+        "active_document": "MCU Datalogger.schxml",
         "active_type": "schematic",
-        "documents": 4,
-        "frame": 877,
+        "documents": 3,
+        "frame": 498,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -2920,10 +2920,10 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "d8ef320eebbda91d6fd3e5960d85d4ba710d4e45a762b0100a838b795bb2cca8",
-      "bytes": 230839,
+      "sha256": "87a0614170ad912126ab1fa6d66c95a752743ad606bde304e93a25209d2849cd",
+      "bytes": 283917,
       "width": 1600,
-      "height": 870
+      "height": 900
     },
     "docs/simulation/engines-and-models.md#engine-and-model-readiness": {
       "kind": "shot",
