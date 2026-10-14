@@ -16,7 +16,8 @@ With a PCB active, select **View → Design Rules**. The **Design Rules Manager*
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 <!-- wf:shot id=design-rules-manager
-caption: Design Rules Manager with the Default and Power net classes
+caption: 'The Design Rules Manager on the imported buck converter: its one class, Default, drawn to scale
+  — 9.8 mil track, 5 mil clearance, 27.6 mil via'
 setup:
 - open_project
 - ensure_pcb
@@ -31,8 +32,8 @@ setup:
     y: 12
 brief_sha256: f62c8f826a83ff3a
 -->
-<!-- wf:out id=design-rules-manager sha=47b1e5e0c2b7 -->
-![Design Rules Manager with the Default and Power net classes](../assets/wf/docs/pcb/design-rules/design-rules-manager.png)
+<!-- wf:out id=design-rules-manager sha=38c567bd8798 -->
+![The Design Rules Manager on the imported buck converter: its one class, Default, drawn to scale — 9.8 mil track, 5 mil clearance, 27.6 mil via](../assets/wf/docs/pcb/design-rules/design-rules-manager.png)
 <!-- /wf:out -->
 
 At the bottom of the window:
@@ -62,7 +63,7 @@ Do not copy "typical" internet values into a production board. Use the current f
 
 ## Net Classes
 
-The left column lists the classes; **Default** (star) is what every net falls back to and cannot be renamed or deleted. A new board has **Default** and **Power**. Hover a class to see how many nets use it.
+The left column lists the classes; **Default** (star) is what every net falls back to and cannot be renamed or deleted. A new board has **Default** and **Power**; a board imported from KiCad has the classes its project defined — the buck converter in the pictures has only **Default**. Hover a class to see how many nets use it.
 
 - **New class** creates a copy of the selected class; **Rename** and **Delete** act on the selected one. Nets, rules, and tracks follow a new name.
 - Each class has these cards:
@@ -80,7 +81,7 @@ A value below the board's constraint is flagged under the field.
 
 ## Assignment — which net gets which class
 
-**Rules by net name** are checked top to bottom and the first match wins. Each rule is a pattern (**starts with**, **contains**, or **is exactly**) and a class; use the arrow to check a rule earlier, and **Add** to create one (e.g. `GND`, `USB_`, `+`). A new board starts with *contains GND → Power*, *contains VCC → Power*, and *starts with + → Power*. Type a name under **Try a net name** to see which class it would get.
+**Rules by net name** are checked top to bottom and the first match wins. Each rule is a pattern (**starts with**, **contains**, or **is exactly**) and a class; use the arrow to check a rule earlier, and **Add** to create one (e.g. `GND`, `USB_`, `+`). A new board starts with *contains GND → Power*, *contains VCC → Power*, and *starts with + → Power*; an imported board starts with no rules. Type a name under **Try a net name** to see which class it would get.
 
 **Every net** lists each net with its **Class** and **Because** (the rule that matched). Choosing a class here is a manual assignment, marked **Manual**, and overrides every rule; **Reset** returns the net to the rules. Use **Filter nets** to find one.
 
@@ -91,7 +92,14 @@ A value below the board's constraint is flagged under the field.
 
 ## Verify the effect
 
-While routing, the readout near the cursor shows the class, width, clearance, and violation handling of the net. After changing rules, rerun DFM/DRC: changing a rule does not reroute existing tracks — use **Apply class sizes...** only when every listed track should change.
+While routing, the readout near the cursor shows the class, width, clearance, and violation handling of the net. Selecting a track shows its net and class in **Trace Properties**.
+
+What changes existing copper, and what does not:
+
+- **Changing a class's values** (width, via size) leaves the tracks already drawn alone. The footer counts how many tracks and vias differ from their class size; **Apply class sizes...** resizes them all, in one undo step, after asking.
+- **Moving a net to another class** (a manual choice under **Every net**, or **Reset**) resizes *that net's* tracks and vias to the new class at once, in one undo step. Pick the width before you reassign: on the buck converter, putting `+5V` into a 20 mil class narrows its 1 mm input track and widens its 0.25 mm feeds, and DRC then reports six clearance errors around the inductor. ++ctrl+z++ undoes it.
+
+After either change, rerun DFM/DRC.
 
 ### Short video — Assign and verify a net class
 
@@ -103,18 +111,20 @@ While routing, the readout near the cursor shows the class, width, clearance, an
     5. **Deliver:** Export a **20–30 second** 1080p MP4 with the active unit and width readable.
 
 <!-- wf:video id=assign-and-verify-a-net-class
-caption: VIN moved from Default to Power under Every net; the new route takes the 20 mil class width,
-  then DFM & DRC
-project: wireframe:tests/data/7805_voltage_regulator/wireframe/7805_regulator.prjxml
+caption: 'A Power class at the 1 mm (39.37 mil) the author used for the 12 V input; /12V_fused assigned
+  to it under Every net (13 → 10 tracks off their class size), its track shows Class: Power, and DFM stays
+  clean'
+project: board:buck-converter
 setup:
 - open_project
 - ensure_pcb
 - wait: 2
 - canvas_fit:
-    refs:
-    - C1
-    - U2
-    margin: 0.15
+    box:
+    - -900
+    - -350
+    - 0
+    - 50
 - wait: 1
 - action:
     action: mouse_move_to
@@ -125,57 +135,50 @@ steps:
 - menu:
   - View
   - Design Rules
-- wait: 2.5
-- click: //Design Rules Manager/##seg@5
-- wait: 1.5
-- click_at:
-  - 300
-  - 404
+- wait: 2
+- click: //Design Rules Manager/{fa:plus}  New class
+- wait: 1
 - type:
-    text: VIN
+    ref: '**/##name'
+    text: Power
+    enter: true
+- wait: 1.5
+- type:
+    ref: '**/##w'
+    text: '39.37'
+    enter: true
+- wait: 2
+- click: //Design Rules Manager/##seg@5
 - wait: 2
 - click_at:
-  - 1055
-  - 456
+  - 1078
+  - 470
 - wait: 1
 - click_at:
-  - 1017
-  - 505
-- wait: 2
+  - 1078
+  - 508
+- wait: 2.5
 - click: //Design Rules Manager/Close
 - wait: 1
-- keys:
-  - X
-- canvas_click: pad:U2.3
-- wait: 1
-- canvas_hover:
-  - 300
-  - -800
-- wait: 1
-- canvas_hover: pad:C1.1
-- wait: 1.5
-- canvas_click: pad:C1.1
-- wait: 1
-- keys:
-  - Escape
-- wait: 1
+- canvas_click:
+  - -660
+  - -265.2
+- wait: 2.5
 - menu:
   - Tools
   - DFM & DRC Check Panel...
 - wait: 1
 - click: '**/{fa:play} Run DFM Analysis'
-- wait: 2
-- canvas_click: net:VIN
 - wait: 1
 - action:
     action: mouse_move_to
     x: 1000
     y: 12
-- wait: 4
+- wait: 3
 brief_sha256: c8d421ddcf7bfd61
 -->
-<!-- wf:out id=assign-and-verify-a-net-class sha=35bf59addd05 -->
-<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/pcb/design-rules/assign-and-verify-a-net-class.mp4" title="VIN moved from Default to Power under Every net; the new route takes the 20 mil class width, then DFM &amp; DRC"></video>
+<!-- wf:out id=assign-and-verify-a-net-class sha=b4a74dcebd9b -->
+<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/pcb/design-rules/assign-and-verify-a-net-class.mp4" title="A Power class at the 1 mm (39.37 mil) the author used for the 12 V input; /12V_fused assigned to it under Every net (13 → 10 tracks off their class size), its track shows Class: Power, and DFM stays clean"></video>
 <!-- /wf:out -->
 
 ## Release checklist

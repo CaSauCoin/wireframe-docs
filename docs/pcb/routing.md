@@ -31,7 +31,7 @@ setup:
 - open_project
 - ensure_pcb
 - wait: 1
-- canvas_click: trace:45
+- canvas_click: trace:44
 - wait: 0.5
 - action:
     action: mouse_move_to
@@ -39,7 +39,7 @@ setup:
     y: 12
 brief_sha256: 28fa26183f831998
 -->
-<!-- wf:out id=completed-pad-to-pad-route sha=6a64dfe884c6 -->
+<!-- wf:out id=completed-pad-to-pad-route sha=fc19e66b10ed -->
 ![A completed +5V route on F.Cu, selected](../assets/wf/docs/pcb/routing/completed-pad-to-pad-route.png)
 <!-- /wf:out -->
 
@@ -96,44 +96,62 @@ The via is dropped at the last waypoint and routing continues on the new layer. 
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 <!-- wf:shot id=route-changing-layer-through-a-via
-caption: A +3V3 route that leaves C7 on F.Cu (red), drops a via with V, and continues on B.Cu (blue)
-project: wireframe:tests/data/7805_voltage_regulator/wireframe/7805_regulator.prjxml
+caption: 'The LED feed rerouted through the back: it leaves D3 on F.Cu, V drops a via, it crosses on B.Cu,
+  a second V brings it back up to R8 — and DFM stays clean'
+project: board:buck-converter
 setup:
 - open_project
 - ensure_pcb
 - wait: 2
 - canvas_fit:
-    refs:
-    - C7
-    - U2
-    margin: 0.2
+    box:
+    - 540
+    - -420
+    - 800
+    - -270
 - wait: 1
+- canvas_click:
+  - 666
+  - -315
+- keys:
+  - Delete
+- wait: 1
+- canvas_hover: pad:D3.2
 - keys:
   - X
-- wait: 1
-- canvas_click: pad:C7.1
-- wait: 1
+- wait: 0.5
+- canvas_click: pad:D3.2
+- wait: 0.5
 - canvas_click:
-  - 150
-  - 175
-- wait: 1
+  - 629
+  - -372
+- wait: 0.5
 - keys:
   - V
-- wait: 1
+- wait: 0.5
 - canvas_hover:
-  - 150
-  - -60
-- wait: 1
+  - 703.3
+  - -372
 - canvas_click:
-  - 150
-  - -60
+  - 703.3
+  - -372
+- wait: 0.5
+- keys:
+  - V
+- wait: 0.5
+- canvas_hover: pad:R8.2
+- canvas_click: pad:R8.2
 - wait: 1
 - keys:
   - Escape
-- wait: 1
 - keys:
   - Escape
+- menu:
+  - Tools
+  - DFM & DRC Check Panel...
 - wait: 1
+- click: '**/{fa:play} Run DFM Analysis'
+- wait: 2
 - action:
     action: mouse_move_to
     x: 1000
@@ -141,8 +159,8 @@ setup:
 - wait: 1
 brief_sha256: 79c5704094dcad31
 -->
-<!-- wf:out id=route-changing-layer-through-a-via sha=8ef4e1b9f848 -->
-![A +3V3 route that leaves C7 on F.Cu (red), drops a via with V, and continues on B.Cu (blue)](../assets/wf/docs/pcb/routing/route-changing-layer-through-a-via.png)
+<!-- wf:out id=route-changing-layer-through-a-via sha=21f4e54a3b11 -->
+![The LED feed rerouted through the back: it leaves D3 on F.Cu, V drops a via, it crosses on B.Cu, a second V brings it back up to R8 — and DFM stays clean](../assets/wf/docs/pcb/routing/route-changing-layer-through-a-via.png)
 <!-- /wf:out -->
 
 ### Placing a via by itself
@@ -251,7 +269,7 @@ setup:
 - wait: 1
 brief_sha256: ed87886135515216
 -->
-<!-- wf:out id=route-before-and-after-trace-consolidation sha=ee2c855be2cb -->
+<!-- wf:out id=route-before-and-after-trace-consolidation sha=3538ea333591 -->
 ![Right-click a selected /12V_filtered track: Merge Collinear Segments joins the pieces that run along one straight line](../assets/wf/docs/pcb/routing/route-before-and-after-trace-consolidation.png)
 <!-- /wf:out -->
 

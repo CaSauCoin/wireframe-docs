@@ -179,7 +179,7 @@ setup:
 - wait: 1
 steps:
 - wait: 1
-- open_file: wireframe:tests/data/7805_voltage_regulator/kicad/7805_regulator.kicad_pro
+- open_file: board:buck-converter:kicad
 - menu:
   - File
   - Import
