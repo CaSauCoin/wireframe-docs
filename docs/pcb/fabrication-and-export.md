@@ -125,42 +125,25 @@ Always look at the exported Gerber and drill files in a Gerber viewer before sen
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 <!-- wf:shot id=verified-fabrication-package
-caption: 'Fabrication & Assembly Output after Generate Files to Memory: revision A and the list of generated
-  files'
-project: none
+caption: 'Fabrication & Assembly Output on the buck converter after Generate & verify package: revision
+  A, and every file read back and checked against the board'
+project: board:buck-converter
 setup:
-- wait: 1
-- open_file: board:buck-converter:kicad
-- menu:
-  - File
-  - Import
-  - KiCad Project (.kicad_pro, .pro)...
-- wait: 12
-- click_at:
-    at:
-    - 150
-    - 109
-    double: true
-- wait: 4
+- open_project
+- ensure_pcb
+- wait: 2
 - menu:
   - File
   - Export
   - Fabrication Outputs (Gerber/Drill/BOM)...
 - wait: 2
-- click: //Fabrication & Assembly Output/Revision
-- keys:
-  - Backspace
-- keys:
-  - Backspace
-- keys:
-  - Backspace
 - type:
+    ref: '**/##rev'
     text: A
-- keys:
-  - Enter
+    enter: true
 - wait: 1
-- click: //Fabrication & Assembly Output/{fa:cog} Generate Files to Memory
-- wait: 5
+- click: '**/{fa:cogs}  Generate & verify package'
+- wait: 8
 - action:
     action: mouse_move_to
     x: 1000
@@ -171,8 +154,8 @@ capture:
   padding: 6
 brief_sha256: a30ac2b6b395155f
 -->
-<!-- wf:out id=verified-fabrication-package sha=0f27b5ba2957 -->
-![Fabrication & Assembly Output after Generate Files to Memory: revision A and the list of generated files](../assets/wf/docs/pcb/fabrication-and-export/verified-fabrication-package.png)
+<!-- wf:out id=verified-fabrication-package sha=d8c341a06687 -->
+![Fabrication & Assembly Output on the buck converter after Generate & verify package: revision A, and every file read back and checked against the board](../assets/wf/docs/pcb/fabrication-and-export/verified-fabrication-package.png)
 <!-- /wf:out -->
 
 !!! warning "Inspect the archive"

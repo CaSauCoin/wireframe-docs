@@ -147,7 +147,7 @@ setup:
 - open_project
 - panel: ai
 - wait: 2
-- click: //AI Copilot Panel/{fa:tasks}
+- click: //AI Copilot Panel/{fa:tasks} Design Plan
 - wait: 2
 - &id001
   action:
@@ -159,7 +159,7 @@ setup:
 - *id001
 brief_sha256: d76ed8651b6d7381
 -->
-<!-- wf:out id=component-review-tabs sha=e561de85fd1e -->
+<!-- wf:out id=component-review-tabs sha=e52215effc29 -->
 ![Connections Netlist — every net of the NE555 blinker with the pins it joins and why](../assets/wf/docs/tutorial/ai-design/component-review-tabs.png)
 <!-- /wf:out -->
 

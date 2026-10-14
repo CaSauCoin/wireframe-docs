@@ -41,7 +41,7 @@ setup:
     y: 12
 brief_sha256: 395b3d0325c9dbde
 -->
-<!-- wf:out id=dfm-and-drc-results sha=474c8ad1489c -->
+<!-- wf:out id=dfm-and-drc-results sha=b8d75a542c22 -->
 ![DFM & DRC Check after a run — errors and warnings](../assets/wf/docs/pcb/dfm-and-drc/dfm-and-drc-results.png)
 <!-- /wf:out -->
 
@@ -227,7 +227,7 @@ steps:
 - wait: 4
 brief_sha256: 0c438ae461c4de56
 -->
-<!-- wf:out id=resolve-and-recheck-a-violation sha=a819eeacb53c -->
+<!-- wf:out id=resolve-and-recheck-a-violation sha=aabd644b729f -->
 <video controls muted playsinline preload="metadata" src="../../assets/wf/docs/pcb/dfm-and-drc/resolve-and-recheck-a-violation.mp4" title="Default clearance set to 7 mil flags 13 places on a board laid out at 5 mil; focus one, set the rule back to the fab value, run the check again"></video>
 <!-- /wf:out -->
 

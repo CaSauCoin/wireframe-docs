@@ -7,30 +7,30 @@
       "file": "docs/assets/wf/docs/advanced/3d-viewer/3d-viewer.png",
       "page": "docs/advanced/3d-viewer.md",
       "slot": "3d-viewer",
-      "slot_sha256": "01a31b1ac6a0dfe7036bfaae93137d81c0337b0ddfc9e41341c3992d7108b87d",
+      "slot_sha256": "c973273a0c709359279f41c67370a310740ec9cba737cd33ae45b8e0bef64f6f",
       "caption": "The 3D Viewer: the buck converter board with its component models",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-10T08:24:22+00:00",
-      "run": "/tmp/wf-docs/20261010-152415-docs/20261010-152415-3d-viewer",
+      "captured_at": "2026-10-14T17:12:44+00:00",
+      "run": "/tmp/wf-docs/20261015-001236-docs/20261015-001236-3d-viewer",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "d9b9e0f2f3069f9f991a44107d5280ec488fe1b3b7a18ea6504311e15a901a3a",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "903ca3dd1208714d3f692a0ff591866ae08a0ec27e7027b9bfd03a0596be3ab4",
         "version": "1.5.47",
         "git": {
-          "commit": "da76518ca4f8d47ce5f8fc36826257f622ab39ed",
-          "branch": "AI/PCB/implement",
+          "commit": "e6dfa2199ffbea7a02ec2dab1ba2501956202b63",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261010-152415-docs/20261010-152415-3d-viewer/out/shots/3d-viewer.png (1600x870)",
+      "app_report": "saved /tmp/wf-docs/20261015-001236-docs/20261015-001236-3d-viewer/out/shots/3d-viewer.png (1600x900)",
       "state": {
-        "active_document": "buck-converter-automotive.pcbxml",
+        "active_document": "h730duino.pcbxml",
         "active_type": "pcb",
-        "documents": 2,
-        "frame": 747,
+        "documents": 9,
+        "frame": 279,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -40,10 +40,10 @@
           "3D View"
         ]
       },
-      "sha256": "32ee83fcf431f6f53d907dc8bd99d8fcdb16611b77771c099344632eb61251f5",
-      "bytes": 250695,
+      "sha256": "20faa772e05f40c82cfb45e3cd5ac36e490c1b86e172ef06e715cbb567fc091f",
+      "bytes": 282692,
       "width": 1600,
-      "height": 870
+      "height": 900
     },
     "docs/advanced/enclosure-and-assembly.md#board-fit-with-a-case-and-lid": {
       "kind": "shot",
@@ -51,30 +51,30 @@
       "file": "docs/assets/wf/docs/advanced/enclosure-and-assembly/board-fit-with-a-case-and-lid.png",
       "page": "docs/advanced/enclosure-and-assembly.md",
       "slot": "board-fit-with-a-case-and-lid",
-      "slot_sha256": "bf9caf8d3f1e2f3604679a2918a36680b4efcb1ae3f6029b4b8290797ecc8d66",
-      "caption": "Board Fit with a case and lid: the board cut from the case floor, its 4 holes and keepouts, 18 lid openings, and what it has to hold",
+      "slot_sha256": "c5f622c98d2868c908e5d5e552e840d4c84106489878b2dbde06815a998e0ba6",
+      "caption": "Board Fit with the demo LED-matrix case and lid: the board cut from the case floor (114.6 × 78.6 mm, 4 holes, 4 keepouts, 18 lid openings), and a warning that the open project's PCB has a different, 59 × 22 mm edge",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-10T08:59:36+00:00",
-      "run": "/tmp/wf-docs/20261010-155905-docs/20261010-155905-board-fit-with-a-case-and-lid",
+      "captured_at": "2026-10-14T17:31:25+00:00",
+      "run": "/tmp/wf-docs/20261015-003057-docs/20261015-003057-board-fit-with-a-case-and-lid",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "118763b0e95d2677220b360e002e7ea13dbadad8c78dc92c3c5a585266a11053",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "8626c80f5e64b7009d807f4a9f105365589846f4118c9bc84f551e9c3bc6ff2b",
         "version": "1.5.47",
         "git": {
-          "commit": "da76518ca4f8d47ce5f8fc36826257f622ab39ed",
-          "branch": "AI/PCB/implement",
-          "dirty": true
+          "commit": "49e3534a32fdc6ed36ff5dae24ea670aea3ce629",
+          "branch": "HEAD",
+          "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261010-155905-docs/20261010-155905-board-fit-with-a-case-and-lid/out/shots/board-fit-with-a-case-and-lid.png (1600x870)",
+      "app_report": "saved /tmp/wf-docs/20261015-003057-docs/20261015-003057-board-fit-with-a-case-and-lid/out/shots/board-fit-with-a-case-and-lid.png (1600x900)",
       "state": {
-        "active_document": "7805_regulator.pcbxml",
+        "active_document": "buck-converter-automotive.pcbxml",
         "active_type": "pcb",
-        "documents": 4,
-        "frame": 11683,
+        "documents": 2,
+        "frame": 6695,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -83,10 +83,10 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "e6c7ba26ac682da5cf9257c52575000f8649977bbe67799796032f04b62daf66",
-      "bytes": 327391,
+      "sha256": "ca0b380c5d668bce8a11d942db051be99977ead52cd93d7efe97ee618ad21b39",
+      "bytes": 312644,
       "width": 1600,
-      "height": 870
+      "height": 900
     },
     "docs/advanced/enclosure-and-assembly.md#connect-two-boards-in-an-assembly": {
       "kind": "video",
@@ -94,30 +94,30 @@
       "file": "docs/assets/wf/docs/advanced/enclosure-and-assembly/connect-two-boards-in-an-assembly.mp4",
       "page": "docs/advanced/enclosure-and-assembly.md",
       "slot": "connect-two-boards-in-an-assembly",
-      "slot_sha256": "dfab423a97c7ae9035cac6556f2a2cd85d40afb605119d758cc424b7435a2974",
-      "caption": "System tab: connect the ESC to the flight controller with a JST-SH cable, then read the connection pin by pin",
+      "slot_sha256": "aba3d53dca45c419064f270441759ef9a9e65815ccd02ef68bd5357f3c687d52",
+      "caption": "System tab with the demo drone: ESC, flight controller and a bought VTX; cable X1 read pin by pin — the ESC's CURR meets the controller's CURRENT, and the mismatch is flagged",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-10T09:06:58+00:00",
-      "run": "/tmp/wf-docs/20261010-160505-docs/20261010-160505-connect-two-boards-in-an-assembly",
+      "captured_at": "2026-10-14T17:30:38+00:00",
+      "run": "/tmp/wf-docs/20261015-002938-docs/20261015-003006-connect-two-boards-in-an-assembly",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "118763b0e95d2677220b360e002e7ea13dbadad8c78dc92c3c5a585266a11053",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "8626c80f5e64b7009d807f4a9f105365589846f4118c9bc84f551e9c3bc6ff2b",
         "version": "1.5.47",
         "git": {
-          "commit": "da76518ca4f8d47ce5f8fc36826257f622ab39ed",
-          "branch": "AI/PCB/implement",
-          "dirty": true
+          "commit": "49e3534a32fdc6ed36ff5dae24ea670aea3ce629",
+          "branch": "HEAD",
+          "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "recording /tmp/wf-docs/20261010-160505-docs/20261010-160505-connect-two-boards-in-an-assembly/out/videos/connect-two-boards-in-an-assembly.mp4",
+      "app_report": "recording /tmp/wf-docs/20261015-002938-docs/20261015-003006-connect-two-boards-in-an-assembly/out/videos/connect-two-boards-in-an-assembly.mp4",
       "state": {
-        "active_document": "7805_regulator.pcbxml",
+        "active_document": "buck-converter-automotive.pcbxml",
         "active_type": "pcb",
-        "documents": 4,
-        "frame": 5920,
+        "documents": 2,
+        "frame": 3308,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -126,12 +126,12 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "27c08add699bd1abc2a54b330fecb647cf48fd6e6dca5252e92c91303ec445aa",
-      "bytes": 955783,
+      "sha256": "beb88684216f6c5f974dcc522e80c5796a73e670b7e7e22f52578d923456a94d",
+      "bytes": 487020,
       "width": 1598,
-      "height": 868,
+      "height": 898,
       "codec": "h264",
-      "duration": 28.966667
+      "duration": 16.7
     },
     "docs/advanced/selection-and-editing.md#copy-place-and-undo-a-group": {
       "kind": "video",
@@ -401,30 +401,30 @@
       "file": "docs/assets/wf/docs/ai/commands/copilot-command-list.png",
       "page": "docs/ai/commands.md",
       "slot": "copilot-command-list",
-      "slot_sha256": "76f559a9dfe46f1bafaccd7cbb7d2eb9d4f1cb40b062cf03b6cffe3c83e81fc8",
+      "slot_sha256": "534e92dcc3598bcab093180f434b818891c24370485bb62f8b0c6b9eb51fb026",
       "caption": "Typing / in the Copilot chat lists the commands",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-10T08:24:43+00:00",
-      "run": "/tmp/wf-docs/20261010-152415-docs/20261010-152436-copilot-command-list",
+      "captured_at": "2026-10-14T17:15:47+00:00",
+      "run": "/tmp/wf-docs/20261015-001544-docs/20261015-001544-copilot-command-list",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "d9b9e0f2f3069f9f991a44107d5280ec488fe1b3b7a18ea6504311e15a901a3a",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "903ca3dd1208714d3f692a0ff591866ae08a0ec27e7027b9bfd03a0596be3ab4",
         "version": "1.5.47",
         "git": {
-          "commit": "da76518ca4f8d47ce5f8fc36826257f622ab39ed",
-          "branch": "AI/PCB/implement",
+          "commit": "e6dfa2199ffbea7a02ec2dab1ba2501956202b63",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261010-152415-docs/20261010-152436-copilot-command-list/out/shots/copilot-command-list.png (1600x870)",
+      "app_report": "saved /tmp/wf-docs/20261015-001544-docs/20261015-001544-copilot-command-list/out/shots/copilot-command-list.png (1600x900)",
       "state": {
-        "active_document": "7805_regulator.pcbxml",
-        "active_type": "pcb",
-        "documents": 4,
-        "frame": 622,
+        "active_document": "NE555 Blinker_schematic.schxml",
+        "active_type": "schematic",
+        "documents": 2,
+        "frame": 586,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -433,10 +433,10 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "eac99894db6caf468cb27c652505391bcc660b1a8c5c1b84fc642342f1439b27",
-      "bytes": 290509,
+      "sha256": "b5edb0b043a9a85d32bd190c811a828705d59d7459984b513c60abd5b7627720",
+      "bytes": 227744,
       "width": 1600,
-      "height": 870
+      "height": 900
     },
     "docs/ai/component-generator.md#missing-component-card-and-ai-gen-action": {
       "kind": "shot",
@@ -444,30 +444,30 @@
       "file": "docs/assets/wf/docs/ai/component-generator/missing-component-card-and-ai-gen-action.png",
       "page": "docs/ai/component-generator.md",
       "slot": "missing-component-card-and-ai-gen-action",
-      "slot_sha256": "140a6bb842bb27e336e79c1222255b0cf3c64918c8b8b46ff3f67494a75f6a07",
+      "slot_sha256": "ea3c0f2645f6a6e28ed6ea3a0e3f8e423aa6f6a51f956984c7d1450274a5973b",
       "caption": "A card that needs work: Create, Import, and the /fix hint",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-10T08:26:36+00:00",
-      "run": "/tmp/wf-docs/20261010-152626-docs/20261010-152626-missing-component-card-and-ai-gen-action",
+      "captured_at": "2026-10-14T17:19:10+00:00",
+      "run": "/tmp/wf-docs/20261015-001840-docs/20261015-001905-missing-component-card-and-ai-gen-action",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "d9b9e0f2f3069f9f991a44107d5280ec488fe1b3b7a18ea6504311e15a901a3a",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "903ca3dd1208714d3f692a0ff591866ae08a0ec27e7027b9bfd03a0596be3ab4",
         "version": "1.5.47",
         "git": {
-          "commit": "da76518ca4f8d47ce5f8fc36826257f622ab39ed",
-          "branch": "AI/PCB/implement",
+          "commit": "e6dfa2199ffbea7a02ec2dab1ba2501956202b63",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261010-152626-docs/20261010-152626-missing-component-card-and-ai-gen-action/out/shots/missing-component-card-and-ai-gen-action.png (1600x870)",
+      "app_report": "saved /tmp/wf-docs/20261015-001840-docs/20261015-001905-missing-component-card-and-ai-gen-action/out/shots/missing-component-card-and-ai-gen-action.png (1600x900)",
       "state": {
-        "active_document": "7805_regulator.pcbxml",
-        "active_type": "pcb",
-        "documents": 4,
-        "frame": 980,
+        "active_document": "NE555 Blinker_schematic.schxml",
+        "active_type": "schematic",
+        "documents": 2,
+        "frame": 1028,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -476,10 +476,10 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "7e3c64602881fef140d4e39a20e41f99d6cdb0465f8f5ca2641bee272c1b3132",
-      "bytes": 440587,
+      "sha256": "3f474734b2b357a92118af25611504ca54354c6b36f7ac9cc74a039eb753a81a",
+      "bytes": 412508,
       "width": 1600,
-      "height": 870
+      "height": 900
     },
     "docs/ai/design-agent.md#bom-component-review": {
       "kind": "shot",
@@ -487,30 +487,30 @@
       "file": "docs/assets/wf/docs/ai/design-agent/bom-component-review.png",
       "page": "docs/ai/design-agent.md",
       "slot": "bom-component-review",
-      "slot_sha256": "7f75b175653c6248a94055d5b47c5857164af269257819a4e3df386872c5e4b0",
+      "slot_sha256": "2ddf9b874a078514ca64c6cf3f1b63c16a56aa701099daa02d953f95ee3a1188",
       "caption": "BOM Components for the NE555 blinker — every card with value, package, verification and actions",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-08T23:10:27+00:00",
-      "run": "/tmp/wf-docs/20261009-060956-docs/20261009-060956-bom-component-review",
+      "captured_at": "2026-10-14T17:19:16+00:00",
+      "run": "/tmp/wf-docs/20261015-001840-docs/20261015-001910-bom-component-review",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "8a51d3242d53de1255bc515d30d3ce50f1729259235cd8bc986dcdfe6c16a55e",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "903ca3dd1208714d3f692a0ff591866ae08a0ec27e7027b9bfd03a0596be3ab4",
         "version": "1.5.47",
         "git": {
-          "commit": "212638b3b37e7a4eee47c72903337e82ee48c093",
-          "branch": "AI/PCB/implement",
+          "commit": "e6dfa2199ffbea7a02ec2dab1ba2501956202b63",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261009-060956-docs/20261009-060956-bom-component-review/out/shots/bom-component-review.png (1600x870)",
+      "app_report": "saved /tmp/wf-docs/20261015-001840-docs/20261015-001910-bom-component-review/out/shots/bom-component-review.png (1600x900)",
       "state": {
         "active_document": "NE555 Blinker_schematic.schxml",
         "active_type": "schematic",
         "documents": 2,
-        "frame": 856,
+        "frame": 1275,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -519,10 +519,10 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "e0befd8cf3918cd4014e6abd9dce323a5a5440d44a3cbccfa8a3b8364c7679ef",
-      "bytes": 401217,
+      "sha256": "5f8dd3fed4fe27577f05d96c4ea07a4ce40e0f66006cc5ad0fc2993bca4b552d",
+      "bytes": 411050,
       "width": 1600,
-      "height": 870
+      "height": 900
     },
     "docs/ai/design-agent.md#clarifying-questions": {
       "kind": "shot",
@@ -573,30 +573,30 @@
       "file": "docs/assets/wf/docs/ai/design-agent/generate-and-review-functional-blocks.mp4",
       "page": "docs/ai/design-agent.md",
       "slot": "generate-and-review-functional-blocks",
-      "slot_sha256": "91d1d5534a746c1baa677f60b18537b5ba969f74cac559e41a6f216f54555eb3",
+      "slot_sha256": "50ac4e7770364727d18dcac729a09c987adc24be4b9e095b88cb56f035fe093b",
       "caption": "The Blocks tab: power input, NE555 oscillator and LED output, each scoped to its parts",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-10T08:27:18+00:00",
-      "run": "/tmp/wf-docs/20261010-152626-docs/20261010-152636-generate-and-review-functional-blocks",
+      "captured_at": "2026-10-14T17:19:30+00:00",
+      "run": "/tmp/wf-docs/20261015-001840-docs/20261015-001916-generate-and-review-functional-blocks",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "d9b9e0f2f3069f9f991a44107d5280ec488fe1b3b7a18ea6504311e15a901a3a",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "903ca3dd1208714d3f692a0ff591866ae08a0ec27e7027b9bfd03a0596be3ab4",
         "version": "1.5.47",
         "git": {
-          "commit": "da76518ca4f8d47ce5f8fc36826257f622ab39ed",
-          "branch": "AI/PCB/implement",
+          "commit": "e6dfa2199ffbea7a02ec2dab1ba2501956202b63",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "recording /tmp/wf-docs/20261010-152626-docs/20261010-152636-generate-and-review-functional-blocks/out/videos/generate-and-review-functional-blocks.mp4",
+      "app_report": "recording /tmp/wf-docs/20261015-001840-docs/20261015-001916-generate-and-review-functional-blocks/out/videos/generate-and-review-functional-blocks.mp4",
       "state": {
         "active_document": "NE555 Blinker_schematic.schxml",
         "active_type": "schematic",
         "documents": 2,
-        "frame": 2374,
+        "frame": 1049,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -605,12 +605,12 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "f15f01c4cabe11eaf3daea33976b8d5860b24fdb35a06d7dc4e323f38fb0b264",
-      "bytes": 553503,
+      "sha256": "c10050ead5981a3e3609d5868ad4f377be4ec6e20bb355fefe40962465078788",
+      "bytes": 532424,
       "width": 1598,
-      "height": 868,
+      "height": 898,
       "codec": "h264",
-      "duration": 9.366667
+      "duration": 8.867
     },
     "docs/ai/index.md#ai-settings": {
       "kind": "shot",
@@ -618,30 +618,30 @@
       "file": "docs/assets/wf/docs/ai/index/ai-settings.png",
       "page": "docs/ai/index.md",
       "slot": "ai-settings",
-      "slot_sha256": "fd77be7fe164717528a7bcfb01ba15222e2c69b5e2517ee2a71c59f6322ffda7",
+      "slot_sha256": "d7f15f70c02c499b7824a7903cb8993cb68169a4f3174335ae2f2a267292007f",
       "caption": "Preferences → AI Assistant: provider presets, endpoint, key and the Design and Fast models",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-10T08:31:51+00:00",
-      "run": "/tmp/wf-docs/20261010-153144-docs/20261010-153144-ai-settings",
+      "captured_at": "2026-10-14T17:15:56+00:00",
+      "run": "/tmp/wf-docs/20261015-001544-docs/20261015-001552-ai-settings",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "d9b9e0f2f3069f9f991a44107d5280ec488fe1b3b7a18ea6504311e15a901a3a",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "903ca3dd1208714d3f692a0ff591866ae08a0ec27e7027b9bfd03a0596be3ab4",
         "version": "1.5.47",
         "git": {
-          "commit": "da76518ca4f8d47ce5f8fc36826257f622ab39ed",
-          "branch": "AI/PCB/implement",
+          "commit": "e6dfa2199ffbea7a02ec2dab1ba2501956202b63",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261010-153144-docs/20261010-153144-ai-settings/out/shots/ai-settings.png (1600x870)",
+      "app_report": "saved /tmp/wf-docs/20261015-001544-docs/20261015-001552-ai-settings/out/shots/ai-settings.png (1600x900)",
       "state": {
-        "active_document": "7805_regulator.pcbxml",
-        "active_type": "pcb",
-        "documents": 4,
-        "frame": 1208,
+        "active_document": "NE555 Blinker_schematic.schxml",
+        "active_type": "schematic",
+        "documents": 2,
+        "frame": 789,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -650,10 +650,10 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "c6ef29069f27764b636f0e206ffae8fda8cce6099aa037a0ea7f2221c69b7c80",
-      "bytes": 368478,
+      "sha256": "3a93ebeb3b9d40b2f8ba945c30dd979b5c718384e592d3a67559f89528613016",
+      "bytes": 270109,
       "width": 1600,
-      "height": 870
+      "height": 900
     },
     "docs/ai/index.md#current-component-review-tabs": {
       "kind": "shot",
@@ -661,30 +661,30 @@
       "file": "docs/assets/wf/docs/ai/index/current-component-review-tabs.png",
       "page": "docs/ai/index.md",
       "slot": "current-component-review-tabs",
-      "slot_sha256": "b809bc52ac319a4cecaec5acc69e5f8f5888cba984e73b57027273541a32a010",
+      "slot_sha256": "dbd584c436feecac1e3ddffa44ea6101492730006943ba3096e674a1c62a7ba0",
       "caption": "The review window: status chips, the tabs, and BOM Components selected",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-08T23:13:36+00:00",
-      "run": "/tmp/wf-docs/20261009-060956-docs/20261009-061306-current-component-review-tabs",
+      "captured_at": "2026-10-14T17:19:35+00:00",
+      "run": "/tmp/wf-docs/20261015-001840-docs/20261015-001930-current-component-review-tabs",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "8a51d3242d53de1255bc515d30d3ce50f1729259235cd8bc986dcdfe6c16a55e",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "903ca3dd1208714d3f692a0ff591866ae08a0ec27e7027b9bfd03a0596be3ab4",
         "version": "1.5.47",
         "git": {
-          "commit": "212638b3b37e7a4eee47c72903337e82ee48c093",
-          "branch": "AI/PCB/implement",
+          "commit": "e6dfa2199ffbea7a02ec2dab1ba2501956202b63",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261009-060956-docs/20261009-061306-current-component-review-tabs/out/shots/current-component-review-tabs.png (1600x870)",
+      "app_report": "saved /tmp/wf-docs/20261015-001840-docs/20261015-001930-current-component-review-tabs/out/shots/current-component-review-tabs.png (1600x900)",
       "state": {
         "active_document": "NE555 Blinker_schematic.schxml",
         "active_type": "schematic",
         "documents": 2,
-        "frame": 721,
+        "frame": 1032,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -693,10 +693,10 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "13e76425677ab984bfa32a4e09465b867e46da0ff2e9d68b1ac160ef69ed4187",
-      "bytes": 419094,
+      "sha256": "3f474734b2b357a92118af25611504ca54354c6b36f7ac9cc74a039eb753a81a",
+      "bytes": 412508,
       "width": 1600,
-      "height": 870
+      "height": 900
     },
     "docs/ai/index.md#start-and-reopen-a-copilot-session": {
       "kind": "video",
@@ -1359,30 +1359,30 @@
       "file": "docs/assets/wf/docs/pcb/board-outline/cad-outline-import-verdict.png",
       "page": "docs/pcb/board-outline.md",
       "slot": "cad-outline-import-verdict",
-      "slot_sha256": "8dd44b4e8df723a5b8be8a4a7fa17559cbca01540f0b59c41dbcd78481e7f880",
+      "slot_sha256": "714f92c7cb6bd9da1c977f04f2db7e8dec10f14ac28668ea73bf651f438c24f7",
       "caption": "Import CAD File with Import as BOARD OUTLINE ticked and the verdict",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-10T08:31:22+00:00",
-      "run": "/tmp/wf-docs/20261010-153115-docs/20261010-153115-cad-outline-import-verdict",
+      "captured_at": "2026-10-14T17:16:03+00:00",
+      "run": "/tmp/wf-docs/20261015-001544-docs/20261015-001556-cad-outline-import-verdict",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "d9b9e0f2f3069f9f991a44107d5280ec488fe1b3b7a18ea6504311e15a901a3a",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "903ca3dd1208714d3f692a0ff591866ae08a0ec27e7027b9bfd03a0596be3ab4",
         "version": "1.5.47",
         "git": {
-          "commit": "da76518ca4f8d47ce5f8fc36826257f622ab39ed",
-          "branch": "AI/PCB/implement",
+          "commit": "e6dfa2199ffbea7a02ec2dab1ba2501956202b63",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261010-153115-docs/20261010-153115-cad-outline-import-verdict/out/shots/cad-outline-import-verdict.png (1600x870)",
+      "app_report": "saved /tmp/wf-docs/20261015-001544-docs/20261015-001556-cad-outline-import-verdict/out/shots/cad-outline-import-verdict.png (1600x900)",
       "state": {
         "active_document": "buck-converter-automotive.pcbxml",
         "active_type": "pcb",
         "documents": 2,
-        "frame": 1825,
+        "frame": 687,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -1391,10 +1391,10 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "0ae4477bb046095374eb17c673464ff4a30837c6a13ab9eb0d351ae4160f02fe",
-      "bytes": 428117,
+      "sha256": "f82535ec3182cfcb4c64b309d1680e1eef5e45075bf19edaf2ff19744e91fe80",
+      "bytes": 356739,
       "width": 1600,
-      "height": 870
+      "height": 900
     },
     "docs/pcb/design-rules.md#assign-and-verify-a-net-class": {
       "kind": "video",
@@ -1490,30 +1490,30 @@
       "file": "docs/assets/wf/docs/pcb/dfm-and-drc/dfm-and-drc-results.png",
       "page": "docs/pcb/dfm-and-drc.md",
       "slot": "dfm-and-drc-results",
-      "slot_sha256": "448a34b3b4794f80f7eaefe2947ea63f0d101abfd19957f211b079a496d4874c",
+      "slot_sha256": "9d3bb82ca912579521d8ce55493ef2c9645c85ce1a9e5b115344fd330eed5457",
       "caption": "DFM & DRC Check after a run — errors and warnings",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-08T17:13:48+00:00",
-      "run": "/tmp/wf-docs/20261009-001120-docs/20261009-001339-dfm-and-drc-results",
+      "captured_at": "2026-10-14T17:16:11+00:00",
+      "run": "/tmp/wf-docs/20261015-001544-docs/20261015-001603-dfm-and-drc-results",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "48701fc3ed340c29e4adfa846bc046b1ddc2be4eafae7b29f2e2cebb63060f51",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "903ca3dd1208714d3f692a0ff591866ae08a0ec27e7027b9bfd03a0596be3ab4",
         "version": "1.5.47",
         "git": {
-          "commit": "48c03b5ae3fa56f7017161359fac0adac6998e1e",
-          "branch": "AI/PCB/implement",
+          "commit": "e6dfa2199ffbea7a02ec2dab1ba2501956202b63",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261009-001120-docs/20261009-001339-dfm-and-drc-results/out/shots/dfm-and-drc-results.png (1600x870)",
+      "app_report": "saved /tmp/wf-docs/20261015-001544-docs/20261015-001603-dfm-and-drc-results/out/shots/dfm-and-drc-results.png (1600x900)",
       "state": {
         "active_document": "buck-converter-automotive.pcbxml",
         "active_type": "pcb",
         "documents": 2,
-        "frame": 1877,
+        "frame": 907,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -1522,10 +1522,10 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "474c8ad1489ca0b8bb2f21a30ff32aa4ac5b0e1a1e320c8212a66e125e09b920",
-      "bytes": 453542,
+      "sha256": "b8d75a542c226b14585a7d81c0c73e5b1be9853dcc2e89f372f9821216ac05fa",
+      "bytes": 329242,
       "width": 1600,
-      "height": 870
+      "height": 900
     },
     "docs/pcb/dfm-and-drc.md#resolve-and-recheck-a-violation": {
       "kind": "video",
@@ -1533,30 +1533,30 @@
       "file": "docs/assets/wf/docs/pcb/dfm-and-drc/resolve-and-recheck-a-violation.mp4",
       "page": "docs/pcb/dfm-and-drc.md",
       "slot": "resolve-and-recheck-a-violation",
-      "slot_sha256": "21f556dd8637f0836d3b357d81d9888588bb3172d4f528d3e3cf9c46e0a40d47",
+      "slot_sha256": "19848db7b7402dfc6610f04e26a23d8462e291542a02be579c16203eb4b1fe71",
       "caption": "Default clearance set to 7 mil flags 13 places on a board laid out at 5 mil; focus one, set the rule back to the fab value, run the check again",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-10T09:22:02+00:00",
-      "run": "/tmp/wf-docs/20261010-162013-docs/20261010-162013-resolve-and-recheck-a-violation",
+      "captured_at": "2026-10-14T17:17:08+00:00",
+      "run": "/tmp/wf-docs/20261015-001544-docs/20261015-001611-resolve-and-recheck-a-violation",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "118763b0e95d2677220b360e002e7ea13dbadad8c78dc92c3c5a585266a11053",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "903ca3dd1208714d3f692a0ff591866ae08a0ec27e7027b9bfd03a0596be3ab4",
         "version": "1.5.47",
         "git": {
-          "commit": "da76518ca4f8d47ce5f8fc36826257f622ab39ed",
-          "branch": "AI/PCB/implement",
-          "dirty": true
+          "commit": "e6dfa2199ffbea7a02ec2dab1ba2501956202b63",
+          "branch": "HEAD",
+          "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "recording /tmp/wf-docs/20261010-162013-docs/20261010-162013-resolve-and-recheck-a-violation/out/videos/resolve-and-recheck-a-violation.mp4",
+      "app_report": "recording /tmp/wf-docs/20261015-001544-docs/20261015-001611-resolve-and-recheck-a-violation/out/videos/resolve-and-recheck-a-violation.mp4",
       "state": {
         "active_document": "buck-converter-automotive.pcbxml",
         "active_type": "pcb",
         "documents": 1,
-        "frame": 10290,
+        "frame": 6067,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -1565,12 +1565,12 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "a819eeacb53c431a5ed14b00b182ff0a0a4d845f571b5ae836add8346b67ed0a",
-      "bytes": 793856,
+      "sha256": "aabd644b729f98b100436d6a62399872747a77793498b9bec2e25c762ee927ac",
+      "bytes": 926225,
       "width": 1598,
-      "height": 868,
+      "height": 898,
       "codec": "h264",
-      "duration": 24.166667
+      "duration": 27.834
     },
     "docs/pcb/fabrication-and-export.md#verified-fabrication-package": {
       "kind": "shot",
@@ -1578,30 +1578,30 @@
       "file": "docs/assets/wf/docs/pcb/fabrication-and-export/verified-fabrication-package.png",
       "page": "docs/pcb/fabrication-and-export.md",
       "slot": "verified-fabrication-package",
-      "slot_sha256": "217d87c18533b68d189fb32f14252b35d0221b0ee39ac52f65fa6bfa8dcf52c3",
-      "caption": "Fabrication & Assembly Output after Generate Files to Memory: revision A and the list of generated files",
+      "slot_sha256": "3ca0af4510163fa6f42ea05ae1e14cb099bd49d6d8249ff34b407024ac90b964",
+      "caption": "Fabrication & Assembly Output on the buck converter after Generate & verify package: revision A, and every file read back and checked against the board",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-10T09:14:02+00:00",
-      "run": "/tmp/wf-docs/20261010-161334-docs/20261010-161334-verified-fabrication-package",
+      "captured_at": "2026-10-14T17:19:51+00:00",
+      "run": "/tmp/wf-docs/20261015-001840-docs/20261015-001935-verified-fabrication-package",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "118763b0e95d2677220b360e002e7ea13dbadad8c78dc92c3c5a585266a11053",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "903ca3dd1208714d3f692a0ff591866ae08a0ec27e7027b9bfd03a0596be3ab4",
         "version": "1.5.47",
         "git": {
-          "commit": "da76518ca4f8d47ce5f8fc36826257f622ab39ed",
-          "branch": "AI/PCB/implement",
-          "dirty": true
+          "commit": "e6dfa2199ffbea7a02ec2dab1ba2501956202b63",
+          "branch": "HEAD",
+          "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261010-161334-docs/20261010-161334-verified-fabrication-package/out/shots/verified-fabrication-package.png (832x672)",
+      "app_report": "saved /tmp/wf-docs/20261015-001840-docs/20261015-001935-verified-fabrication-package/out/shots/verified-fabrication-package.png (1112x792) of //Fabrication & Assembly Output###FabricationOutput",
       "state": {
         "active_document": "buck-converter-automotive.pcbxml",
         "active_type": "pcb",
-        "documents": 1,
-        "frame": 10995,
+        "documents": 2,
+        "frame": 1845,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -1610,10 +1610,10 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "0f27b5ba2957d1f3ad534c9204e8cd6877161d8f025152a0c94d7425a01c49ee",
-      "bytes": 148360,
-      "width": 832,
-      "height": 672
+      "sha256": "d8c341a0668782ea08bea45ca8df509f9e717bc4c06348db8dda526e3d731746",
+      "bytes": 237542,
+      "width": 1112,
+      "height": 792
     },
     "docs/pcb/index.md#pcb-workspace": {
       "kind": "shot",
@@ -2100,30 +2100,30 @@
       "file": "docs/assets/wf/docs/projects/import-a-kicad-project.mp4",
       "page": "docs/projects.md",
       "slot": "import-a-kicad-project",
-      "slot_sha256": "00bac2bc65a694a1325a48d0ced9341b092d67f89f67995fc919b979e030ad70",
+      "slot_sha256": "cfc0737b1f3fa237acb1b6c919b79958254e4c3432ecce3afe26db96048a8495",
       "caption": "File → Import → KiCad Project, then the imported project",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-10T08:30:57+00:00",
-      "run": "/tmp/wf-docs/20261010-152626-docs/20261010-153000-import-a-kicad-project",
+      "captured_at": "2026-10-14T17:17:45+00:00",
+      "run": "/tmp/wf-docs/20261015-001544-docs/20261015-001728-import-a-kicad-project",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "d9b9e0f2f3069f9f991a44107d5280ec488fe1b3b7a18ea6504311e15a901a3a",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "903ca3dd1208714d3f692a0ff591866ae08a0ec27e7027b9bfd03a0596be3ab4",
         "version": "1.5.47",
         "git": {
-          "commit": "da76518ca4f8d47ce5f8fc36826257f622ab39ed",
-          "branch": "AI/PCB/implement",
+          "commit": "e6dfa2199ffbea7a02ec2dab1ba2501956202b63",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "recording /tmp/wf-docs/20261010-152626-docs/20261010-153000-import-a-kicad-project/out/videos/import-a-kicad-project.mp4",
+      "app_report": "recording /tmp/wf-docs/20261015-001544-docs/20261015-001728-import-a-kicad-project/out/videos/import-a-kicad-project.mp4",
       "state": {
         "active_document": "",
         "active_type": "none",
         "documents": 0,
-        "frame": 688,
+        "frame": 400,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -2132,12 +2132,12 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "037252c5d1ad9fc0e7518a7407c58e1cdf69029ffbcc50ff543f8d7b82c595ba",
-      "bytes": 234381,
+      "sha256": "03898289074e6fbb5c6e1677fde6af65e9dd29b138ff8790960241d596357fe2",
+      "bytes": 422785,
       "width": 1598,
-      "height": 868,
+      "height": 898,
       "codec": "h264",
-      "duration": 14.8
+      "duration": 15.4
     },
     "docs/projects.md#project-structure-with-multiple-documents": {
       "kind": "shot",
@@ -3238,30 +3238,30 @@
       "file": "docs/assets/wf/docs/tutorial/ai-design/component-review-tabs.png",
       "page": "docs/tutorial/ai-design.md",
       "slot": "component-review-tabs",
-      "slot_sha256": "52c8fa89c905ffd35276d4ccefda366bda011417cc1cf9241d70d3c6671a0cea",
+      "slot_sha256": "4dac9407a83200c773ad579fc1ca2d66e16bc54349d37d9bffdedc8d26c4efc4",
       "caption": "Connections Netlist — every net of the NE555 blinker with the pins it joins and why",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-08T23:14:34+00:00",
-      "run": "/tmp/wf-docs/20261009-060956-docs/20261009-061404-component-review-tabs",
+      "captured_at": "2026-10-14T17:19:57+00:00",
+      "run": "/tmp/wf-docs/20261015-001840-docs/20261015-001951-component-review-tabs",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "8a51d3242d53de1255bc515d30d3ce50f1729259235cd8bc986dcdfe6c16a55e",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "903ca3dd1208714d3f692a0ff591866ae08a0ec27e7027b9bfd03a0596be3ab4",
         "version": "1.5.47",
         "git": {
-          "commit": "212638b3b37e7a4eee47c72903337e82ee48c093",
-          "branch": "AI/PCB/implement",
+          "commit": "e6dfa2199ffbea7a02ec2dab1ba2501956202b63",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261009-060956-docs/20261009-061404-component-review-tabs/out/shots/component-review-tabs.png (1600x870)",
+      "app_report": "saved /tmp/wf-docs/20261015-001840-docs/20261015-001951-component-review-tabs/out/shots/component-review-tabs.png (1600x900)",
       "state": {
         "active_document": "NE555 Blinker_schematic.schxml",
         "active_type": "schematic",
         "documents": 2,
-        "frame": 583,
+        "frame": 1327,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -3270,10 +3270,10 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "e561de85fd1e6809f061e1f26c35b41db6809cb7d3d69c113f6b68d925ce73db",
-      "bytes": 321426,
+      "sha256": "e52215effc29b4405279aed07b470c6ca3a77e3131f25e11d34161b02edc3e1e",
+      "bytes": 343804,
       "width": 1600,
-      "height": 870
+      "height": 900
     },
     "docs/tutorial/ai-design.md#finished-ai-assisted-example": {
       "kind": "shot",

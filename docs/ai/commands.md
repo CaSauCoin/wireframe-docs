@@ -15,6 +15,7 @@ Anything that does not start with `/` is an ordinary question. Mention a referen
 
 <!-- wf:shot id=copilot-command-list
 caption: Typing / in the Copilot chat lists the commands
+project: samples/ne555-blinker/NE555 Blinker.prjxml
 setup:
 - open_project
 - panel: ai
@@ -25,7 +26,7 @@ setup:
 - wait: 1
 brief_sha256: 7b6bb049dcfb2f4c
 -->
-<!-- wf:out id=copilot-command-list sha=eac99894db6c -->
+<!-- wf:out id=copilot-command-list sha=b5edb0b043a9 -->
 ![Typing / in the Copilot chat lists the commands](../assets/wf/docs/ai/commands/copilot-command-list.png)
 <!-- /wf:out -->
 

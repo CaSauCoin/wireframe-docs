@@ -131,7 +131,7 @@ setup:
 - open_project
 - panel: ai
 - wait: 2
-- click: //AI Copilot Panel/{fa:tasks}
+- click: //AI Copilot Panel/{fa:tasks} Design Plan
 - wait: 2
 - &id001
   action:
@@ -143,7 +143,7 @@ setup:
 - *id001
 brief_sha256: ef4d4450ef1871b7
 -->
-<!-- wf:out id=bom-component-review sha=e0befd8cf391 -->
+<!-- wf:out id=bom-component-review sha=5f8dd3fed4fe -->
 ![BOM Components for the NE555 blinker — every card with value, package, verification and actions](../assets/wf/docs/ai/design-agent/bom-component-review.png)
 <!-- /wf:out -->
 
@@ -183,7 +183,7 @@ setup:
 - open_project
 - panel: ai
 - wait: 2
-- click: //AI Copilot Panel/{fa:tasks}
+- click: //AI Copilot Panel/{fa:tasks} Design Plan
 - wait: 2
 - action:
     action: mouse_move_to
@@ -199,7 +199,7 @@ steps:
 - wait: 2
 brief_sha256: 1a4d1c57917d68d3
 -->
-<!-- wf:out id=generate-and-review-functional-blocks sha=f15f01c4cabe -->
+<!-- wf:out id=generate-and-review-functional-blocks sha=c10050ead598 -->
 <video controls muted playsinline preload="metadata" src="../../assets/wf/docs/ai/design-agent/generate-and-review-functional-blocks.mp4" title="The Blocks tab: power input, NE555 oscillator and LED output, each scoped to its parts"></video>
 <!-- /wf:out -->
 

@@ -51,6 +51,7 @@ Keys are stored in the local WireFrame configuration. Do not place a key in scre
 
 <!-- wf:shot id=ai-settings
 caption: 'Preferences → AI Assistant: provider presets, endpoint, key and the Design and Fast models'
+project: samples/ne555-blinker/NE555 Blinker.prjxml
 setup:
 - open_project
 - wait: 1
@@ -68,7 +69,7 @@ setup:
     y: 12
 brief_sha256: a0ecc288e65e8366
 -->
-<!-- wf:out id=ai-settings sha=c6ef29069f27 -->
+<!-- wf:out id=ai-settings sha=3a93ebeb3b9d -->
 ![Preferences → AI Assistant: provider presets, endpoint, key and the Design and Fast models](../assets/wf/docs/ai/index/ai-settings.png)
 <!-- /wf:out -->
 
@@ -204,7 +205,7 @@ setup:
 - open_project
 - panel: ai
 - wait: 2
-- click: //AI Copilot Panel/{fa:tasks}
+- click: //AI Copilot Panel/{fa:tasks} Design Plan
 - wait: 2
 - action:
     action: mouse_move_to
@@ -212,7 +213,7 @@ setup:
     y: 12
 brief_sha256: cf3dd64d95d11c33
 -->
-<!-- wf:out id=current-component-review-tabs sha=13e76425677a -->
+<!-- wf:out id=current-component-review-tabs sha=3f474734b2b3 -->
 ![The review window: status chips, the tabs, and BOM Components selected](../assets/wf/docs/ai/index/current-component-review-tabs.png)
 <!-- /wf:out -->
 
