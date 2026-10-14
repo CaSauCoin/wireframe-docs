@@ -1,0 +1,114 @@
+# The real boards behind the guide, the blog and the videos.
+#
+# Nothing here is copied into this repository: doc_builder clones each board at
+# the pinned commit and imports it with WireFrame's own importer
+# (`python3 -m doc_builder boards ../wireframe-docs --fetch`), so every image
+# can be rebuilt from source. A scene uses one with `project: board:<id>`.
+#
+# role:
+#   showcase  large boards for demo / PR / sponsor videos (dense, many layers, an SoC)
+#   guide     small, verified boards the user guide is illustrated with
+#   blog      a board a blog post is written about
+#
+# Every board is open hardware; its licence and author are credited on the
+# page that shows it (`boards --credits`).
+
+boards:
+
+  # ── Showcase ───────────────────────────────────────────────────────────────
+  jetson-nano-baseboard:
+    title: Jetson Nano / Xavier NX baseboard
+    author: Antmicro
+    license: Apache-2.0
+    repo: https://github.com/antmicro/jetson-nano-baseboard
+    commit: d8d0b2d71ab4cc4bcdb204a09f78be40d4c8cda3
+    kicad: jetson-nano-baseboard.kicad_pro
+    role: [showcase, blog]
+    notes: >-
+      8 copper layers, 391 parts, SO-DIMM system-on-module, PCIe x4 M.2, four MIPI CSI-2
+      cameras, HDMI + DisplayPort, Gigabit Ethernet, 6-36 V input. 100 x 55 mm.
+
+  openair-max:
+    title: One-Air-Max air-quality sensor
+    author: KiCad demo projects
+    license: CC-BY-SA-4.0
+    repo: https://gitlab.com/kicad/code/kicad
+    commit: 2e4a4a68e735e771793366bfc0d89a52505a7ece
+    subdir: demos/openair-max
+    kicad: One-Air-Max.kicad_pro
+    url: https://gitlab.com/kicad/code/kicad/-/tree/master/demos/openair-max
+    role: [showcase, blog]
+    notes: >-
+      4 layers (F.Cu / In1 power / In2 GND / B.Cu), 210 parts, ESP32-C6 module with PCB antenna
+      and keepout, BQ25672 charger, TPS62902 buck, solar + battery, sensor front-end.
+
+  jetson-agx-thor-baseboard:
+    title: Jetson AGX Thor baseboard
+    author: Antmicro (KiCad demo projects)
+    license: Apache-2.0
+    repo: https://gitlab.com/kicad/code/kicad
+    commit: 2e4a4a68e735e771793366bfc0d89a52505a7ece
+    subdir: demos/jetson-agx-thor-baseboard
+    kicad: jetson-agx-thor-baseboard.kicad_pro
+    url: https://gitlab.com/kicad/code/kicad/-/tree/master/demos/jetson-agx-thor-baseboard
+    role: [showcase, blog]
+    notes: >-
+      10 copper layers, 1125 parts, 180 x 100 mm: NVIDIA Jetson AGX Thor (T5000) module,
+      MIPI CSI-2 cameras, PCIe, SFP, DisplayPort, USB, length-tuned differential pairs.
+
+  cm5-minima:
+    title: CM5 Minima (Raspberry Pi Compute Module 5 carrier)
+    author: KiCad demo projects
+    license: CERN-OHL-S-2.0
+    repo: https://gitlab.com/kicad/code/kicad
+    commit: 2e4a4a68e735e771793366bfc0d89a52505a7ece
+    subdir: demos/cm5_minima
+    kicad: CM5_MINIMA_3.kicad_pro
+    url: https://gitlab.com/kicad/code/kicad/-/tree/master/demos/cm5_minima
+    role: [showcase, blog]
+    notes: 6 layers, 112 parts, 61 x 64 mm carrier for the Raspberry Pi CM5 (BCM2712 SoC module).
+
+  h730duino:
+    title: H730duino
+    author: Martin Ribelotta
+    license: MIT
+    repo: https://github.com/martinribelotta/h730duino
+    commit: d8f03b62cdc8adddc411dcd4d9bba60abc2dcfea
+    kicad: h730duino.pro
+    role: [showcase, guide, blog]
+    notes: >-
+      4 layers, STM32H730 (Cortex-M7, 550 MHz) in the Arduino Mega form factor: Ethernet PHY,
+      HyperRAM, QSPI flash, USB-C, microSD, protected power. 101.6 x 53.3 mm.
+
+  hexapod:
+    title: Autonomous hexapod main board
+    author: Nguyen Trong Phuc
+    license: GPL-2.0
+    repo: https://github.com/NguyenTrongPhuc552003/reinforcement-autonomous-hexapod
+    commit: ae42ec8c636b186110ebff8e3f5f67e889ab43cc
+    kicad: hardware/Source/Ver_1.1.0/Automative_Hexapod.kicad_pro
+    role: [showcase, guide, blog]
+    notes: >-
+      2 layers, 160 parts on 8 sheets: BeagleBone AI cape for an 18-servo hexapod — servo
+      drivers, power distribution, IMU and sensors.
+
+  # ── Guide (small, verified) ───────────────────────────────────────────────
+  buck-converter:
+    title: Automotive buck converter
+    author: MG-5
+    license: MIT
+    repo: https://github.com/MG-5/buck-converter-automotive
+    commit: 84dcbe30f7cbf4026ffdf9f7307903bac8b6391b
+    kicad: buck-converter-automotive.kicad_pro
+    role: [guide, blog]
+    notes: 12 V automotive input to 5 V, 36 parts, 2 layers, fully routed with GND pours.
+
+  klp4e-datalogger:
+    title: KLP4e MCU datalogger
+    author: Peter Dalmaris (KiCad Like a Pro, 4th ed.)
+    license: MIT
+    repo: https://github.com/futureshocked/KLP4e_MCU-Datalogger
+    commit: d0f97dad43d3a96687aa874125b7befc64189778
+    kicad: MCU Datalogger.kicad_pro
+    role: [guide, blog]
+    notes: ATmega328P datalogger with RTC, EEPROM and sensor connectors on two sheets; 2 layers.
