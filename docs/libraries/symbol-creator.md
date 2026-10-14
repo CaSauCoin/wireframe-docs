@@ -76,7 +76,7 @@ setup:
     y: 12
 brief_sha256: 780063412c1039f2
 -->
-<!-- wf:out id=ai-ocr-manager-with-a-clean-pin-table sha=b766d672fd45 -->
+<!-- wf:out id=ai-ocr-manager-with-a-clean-pin-table sha=7530eaf34d72 -->
 ![AI OCR Manager, opened from the Symbol Library Editor, before any image is added](../assets/wf/docs/libraries/symbol-creator/ai-ocr-manager-with-a-clean-pin-table.png)
 <!-- /wf:out -->
 
@@ -113,7 +113,7 @@ setup:
     y: 12
 brief_sha256: 6b9b2ec42fafd6b5
 -->
-<!-- wf:out id=symbol-library-editor sha=eea75d94e43a -->
+<!-- wf:out id=symbol-library-editor sha=dbddcd7fe441 -->
 ![Symbol Library Editor](../assets/wf/docs/libraries/symbol-creator/symbol-library-editor.png)
 <!-- /wf:out -->
 

@@ -923,30 +923,30 @@
       "file": "docs/assets/wf/docs/libraries/footprints-library/footprint-source-and-active-inventory.png",
       "page": "docs/libraries/footprints-library.md",
       "slot": "footprint-source-and-active-inventory",
-      "slot_sha256": "9e262a0f43f73c6f68319f0ccbe2ddabe453a4642abf9801497af71b424a9324",
+      "slot_sha256": "48981491f59dcfd208afdb70f2f42598ce2a64b2d822661a780ad40acf1a4dc5",
       "caption": "Local Library Manager with the project's KiCad library folders loaded",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-08T17:12:39+00:00",
-      "run": "/tmp/wf-docs/20261009-001120-docs/20261009-001232-footprint-source-and-active-inventory",
+      "captured_at": "2026-10-14T16:45:26+00:00",
+      "run": "/tmp/wf-docs/20261014-234521-docs/20261014-234521-footprint-source-and-active-inventory",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "48701fc3ed340c29e4adfa846bc046b1ddc2be4eafae7b29f2e2cebb63060f51",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "ee88ecc8e528432386b19f29d272c2e8a29ae381b745c7f739c42c513b2126ab",
         "version": "1.5.47",
         "git": {
-          "commit": "48c03b5ae3fa56f7017161359fac0adac6998e1e",
-          "branch": "AI/PCB/implement",
+          "commit": "2c566d06be39034cb12f6c6479a39875a3d45a51",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261009-001120-docs/20261009-001232-footprint-source-and-active-inventory/out/shots/footprint-source-and-active-inventory.png (1600x870)",
+      "app_report": "saved /tmp/wf-docs/20261014-234521-docs/20261014-234521-footprint-source-and-active-inventory/out/shots/footprint-source-and-active-inventory.png (1600x900)",
       "state": {
-        "active_document": "aux_power_buck_regulator_power_in_and1.schxml",
+        "active_document": "MCU Datalogger.schxml",
         "active_type": "schematic",
-        "documents": 4,
-        "frame": 1090,
+        "documents": 3,
+        "frame": 740,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -955,10 +955,10 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "fb46fca0158a10793a522bf48bec7b9d36cc70e40022678e6142299b52da2549",
-      "bytes": 338543,
+      "sha256": "5a290a10d33003bface28d72276570ff2d0790c33f9ea52bae8516202737f210",
+      "bytes": 289125,
       "width": 1600,
-      "height": 870
+      "height": 900
     },
     "docs/libraries/footprints-library.md#pcb-footprint-editor": {
       "kind": "shot",
@@ -966,30 +966,30 @@
       "file": "docs/assets/wf/docs/libraries/footprints-library/pcb-footprint-editor.png",
       "page": "docs/libraries/footprints-library.md",
       "slot": "pcb-footprint-editor",
-      "slot_sha256": "5c354803d7088ce8bbc3f206dbc4e3f28b41dae2965e1311c8cd91ac678a17bc",
+      "slot_sha256": "b2aa90a8a2216acb59d75dd9b776292775770e6995c9371b56f4b383f6a9dcd6",
       "caption": "Footprint Library Editor with an 8-pin dual-row package",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-08T17:12:45+00:00",
-      "run": "/tmp/wf-docs/20261009-001120-docs/20261009-001239-pcb-footprint-editor",
+      "captured_at": "2026-10-14T16:45:30+00:00",
+      "run": "/tmp/wf-docs/20261014-234521-docs/20261014-234526-pcb-footprint-editor",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "48701fc3ed340c29e4adfa846bc046b1ddc2be4eafae7b29f2e2cebb63060f51",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "ee88ecc8e528432386b19f29d272c2e8a29ae381b745c7f739c42c513b2126ab",
         "version": "1.5.47",
         "git": {
-          "commit": "48c03b5ae3fa56f7017161359fac0adac6998e1e",
-          "branch": "AI/PCB/implement",
+          "commit": "2c566d06be39034cb12f6c6479a39875a3d45a51",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261009-001120-docs/20261009-001239-pcb-footprint-editor/out/shots/pcb-footprint-editor.png (1600x870)",
+      "app_report": "saved /tmp/wf-docs/20261014-234521-docs/20261014-234526-pcb-footprint-editor/out/shots/pcb-footprint-editor.png (1600x900)",
       "state": {
-        "active_document": "7805_regulator.pcbxml",
+        "active_document": "MCU Datalogger.pcbxml",
         "active_type": "pcb",
-        "documents": 4,
-        "frame": 1159,
+        "documents": 3,
+        "frame": 732,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -998,10 +998,10 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "7f96fb2ac0ce44b6fac7508395fc748804331e53a68ead710d384842dafbd3bf",
-      "bytes": 396219,
+      "sha256": "d804142997b5b41800a778bf57425634483d4941a62a221f60e87d04a6cdd23b",
+      "bytes": 371998,
       "width": 1600,
-      "height": 870
+      "height": 900
     },
     "docs/libraries/library-converter.md#import-an-altium-library": {
       "kind": "video",
@@ -1009,30 +1009,30 @@
       "file": "docs/assets/wf/docs/libraries/library-converter/import-an-altium-library.mp4",
       "page": "docs/libraries/library-converter.md",
       "slot": "import-an-altium-library",
-      "slot_sha256": "45143d139a00dd95bf877fb51a997281a70076047ec887956b1e1dc32e3f4c4f",
+      "slot_sha256": "246cec92235eabd59c506f97f0e79b03c6e0630fe37a47d8843bee0dab6ae57c",
       "caption": "Library Manager → Add library → Altium library; it lands under Imported",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-10T08:28:15+00:00",
-      "run": "/tmp/wf-docs/20261010-152626-docs/20261010-152727-import-an-altium-library",
+      "captured_at": "2026-10-14T16:44:13+00:00",
+      "run": "/tmp/wf-docs/20261014-234350-docs/20261014-234355-import-an-altium-library",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "d9b9e0f2f3069f9f991a44107d5280ec488fe1b3b7a18ea6504311e15a901a3a",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "ee88ecc8e528432386b19f29d272c2e8a29ae381b745c7f739c42c513b2126ab",
         "version": "1.5.47",
         "git": {
-          "commit": "da76518ca4f8d47ce5f8fc36826257f622ab39ed",
-          "branch": "AI/PCB/implement",
+          "commit": "2c566d06be39034cb12f6c6479a39875a3d45a51",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "recording /tmp/wf-docs/20261010-152626-docs/20261010-152727-import-an-altium-library/out/videos/import-an-altium-library.mp4",
+      "app_report": "recording /tmp/wf-docs/20261014-234350-docs/20261014-234355-import-an-altium-library/out/videos/import-an-altium-library.mp4",
       "state": {
-        "active_document": "aux_power_buck_regulator_power_in_and1.schxml",
+        "active_document": "MCU Datalogger.schxml",
         "active_type": "schematic",
-        "documents": 4,
-        "frame": 1240,
+        "documents": 3,
+        "frame": 732,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -1041,12 +1041,12 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "c62562b0bc6335c416e39d68f5aa8053a51da51591254f611cb036fd92b997e3",
-      "bytes": 366140,
+      "sha256": "63bd71b5985499af85eecf2409d719b844bd3969819e4c8589cdb81cdacf8aa3",
+      "bytes": 363349,
       "width": 1598,
-      "height": 868,
+      "height": 898,
       "codec": "h264",
-      "duration": 11.5
+      "duration": 13.4
     },
     "docs/libraries/library-converter.md#inspect-and-correct-an-imported-component": {
       "kind": "video",
@@ -1054,30 +1054,30 @@
       "file": "docs/assets/wf/docs/libraries/library-converter/inspect-and-correct-an-imported-component.mp4",
       "page": "docs/libraries/library-converter.md",
       "slot": "inspect-and-correct-an-imported-component",
-      "slot_sha256": "2000a7009f05183a8fa91455971c02aeca88ee175c80561a4c4e9334f8098879",
+      "slot_sha256": "b27e3f56a687e82bb1f75ea024808a7300488c502899099a0801c86ba5237c93",
       "caption": "Select the imported part, step through Symbol, Footprint and 3D, open Edit properties & pins",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-10T08:29:21+00:00",
-      "run": "/tmp/wf-docs/20261010-152626-docs/20261010-152815-inspect-and-correct-an-imported-component",
+      "captured_at": "2026-10-14T16:44:48+00:00",
+      "run": "/tmp/wf-docs/20261014-234350-docs/20261014-234423-inspect-and-correct-an-imported-component",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "d9b9e0f2f3069f9f991a44107d5280ec488fe1b3b7a18ea6504311e15a901a3a",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "ee88ecc8e528432386b19f29d272c2e8a29ae381b745c7f739c42c513b2126ab",
         "version": "1.5.47",
         "git": {
-          "commit": "da76518ca4f8d47ce5f8fc36826257f622ab39ed",
-          "branch": "AI/PCB/implement",
+          "commit": "2c566d06be39034cb12f6c6479a39875a3d45a51",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "recording /tmp/wf-docs/20261010-152626-docs/20261010-152815-inspect-and-correct-an-imported-component/out/videos/inspect-and-correct-an-imported-component.mp4",
+      "app_report": "recording /tmp/wf-docs/20261014-234350-docs/20261014-234423-inspect-and-correct-an-imported-component/out/videos/inspect-and-correct-an-imported-component.mp4",
       "state": {
-        "active_document": "aux_power_buck_regulator_power_in_and1.schxml",
+        "active_document": "MCU Datalogger.schxml",
         "active_type": "schematic",
-        "documents": 4,
-        "frame": 2945,
+        "documents": 3,
+        "frame": 1474,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -1086,12 +1086,12 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "10b0df6e3416c716e788c326c4404859d11cb5c52dc370a55ab61aa4361a2def",
-      "bytes": 376958,
+      "sha256": "882cf6edf60619e76ff7c08d9d597a1158b38fb9ef6ee14f901a521abba6847d",
+      "bytes": 373778,
       "width": 1598,
-      "height": 868,
+      "height": 898,
       "codec": "h264",
-      "duration": 14.933333
+      "duration": 15.9
     },
     "docs/libraries/library-converter.md#inventory-selection-and-cad-preview-tabs": {
       "kind": "shot",
@@ -1099,30 +1099,30 @@
       "file": "docs/assets/wf/docs/libraries/library-converter/inventory-selection-and-cad-preview-tabs.png",
       "page": "docs/libraries/library-converter.md",
       "slot": "inventory-selection-and-cad-preview-tabs",
-      "slot_sha256": "c1a8f84c8da00c1f3deacaa517207fe332c238494ceb960e48ac414f8b2c058e",
+      "slot_sha256": "70b34939b715dc8b1504fed72f51ccfae69c684c83338768250d716a377b5941",
       "caption": "An imported Altium library selected, with its parts and the Symbol / Footprint / 3D preview",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-08T17:26:10+00:00",
-      "run": "/tmp/wf-docs/20261009-002532-docs/20261009-002557-inventory-selection-and-cad-preview-tabs",
+      "captured_at": "2026-10-14T16:44:23+00:00",
+      "run": "/tmp/wf-docs/20261014-234350-docs/20261014-234413-inventory-selection-and-cad-preview-tabs",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "48701fc3ed340c29e4adfa846bc046b1ddc2be4eafae7b29f2e2cebb63060f51",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "ee88ecc8e528432386b19f29d272c2e8a29ae381b745c7f739c42c513b2126ab",
         "version": "1.5.47",
         "git": {
-          "commit": "48c03b5ae3fa56f7017161359fac0adac6998e1e",
-          "branch": "AI/PCB/implement",
+          "commit": "2c566d06be39034cb12f6c6479a39875a3d45a51",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261009-002532-docs/20261009-002557-inventory-selection-and-cad-preview-tabs/out/shots/inventory-selection-and-cad-preview-tabs.png (1600x870)",
+      "app_report": "saved /tmp/wf-docs/20261014-234350-docs/20261014-234413-inventory-selection-and-cad-preview-tabs/out/shots/inventory-selection-and-cad-preview-tabs.png (1600x900)",
       "state": {
-        "active_document": "aux_power_buck_regulator_power_in_and1.schxml",
+        "active_document": "MCU Datalogger.schxml",
         "active_type": "schematic",
-        "documents": 4,
-        "frame": 3158,
+        "documents": 3,
+        "frame": 1781,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -1131,10 +1131,10 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "13dfe979dc99412d1040c5f94d653b83fae73f4f1e1fc0af3eb605e7872a69f6",
-      "bytes": 277870,
+      "sha256": "296f5b17cc34976d8948d774afb08f3ff41cb8b51f2141481d8823bc4c8e96d1",
+      "bytes": 245920,
       "width": 1600,
-      "height": 870
+      "height": 900
     },
     "docs/libraries/library-converter.md#local-library-manager-overview": {
       "kind": "shot",
@@ -1142,30 +1142,30 @@
       "file": "docs/assets/wf/docs/libraries/library-converter/local-library-manager-overview.png",
       "page": "docs/libraries/library-converter.md",
       "slot": "local-library-manager-overview",
-      "slot_sha256": "7b2e84f6257a788948bec57fe3b1b78dcd625f2712d128f0ac9e9261eca7b2f7",
+      "slot_sha256": "ca4fb5e0f30ac2204d30c25fe5260c479422603d4e15ac92755326a993a3fc01",
       "caption": "Local Library Manager — import options and the loaded inventory",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-08T17:12:52+00:00",
-      "run": "/tmp/wf-docs/20261009-001120-docs/20261009-001245-local-library-manager-overview",
+      "captured_at": "2026-10-14T16:43:55+00:00",
+      "run": "/tmp/wf-docs/20261014-234350-docs/20261014-234350-local-library-manager-overview",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "48701fc3ed340c29e4adfa846bc046b1ddc2be4eafae7b29f2e2cebb63060f51",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "ee88ecc8e528432386b19f29d272c2e8a29ae381b745c7f739c42c513b2126ab",
         "version": "1.5.47",
         "git": {
-          "commit": "48c03b5ae3fa56f7017161359fac0adac6998e1e",
-          "branch": "AI/PCB/implement",
+          "commit": "2c566d06be39034cb12f6c6479a39875a3d45a51",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261009-001120-docs/20261009-001245-local-library-manager-overview/out/shots/local-library-manager-overview.png (1600x870)",
+      "app_report": "saved /tmp/wf-docs/20261014-234350-docs/20261014-234350-local-library-manager-overview/out/shots/local-library-manager-overview.png (1600x900)",
       "state": {
-        "active_document": "aux_power_buck_regulator_power_in_and1.schxml",
+        "active_document": "MCU Datalogger.schxml",
         "active_type": "schematic",
-        "documents": 4,
-        "frame": 1116,
+        "documents": 3,
+        "frame": 720,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -1174,10 +1174,10 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "fb46fca0158a10793a522bf48bec7b9d36cc70e40022678e6142299b52da2549",
-      "bytes": 338543,
+      "sha256": "5a290a10d33003bface28d72276570ff2d0790c33f9ea52bae8516202737f210",
+      "bytes": 289125,
       "width": 1600,
-      "height": 870
+      "height": 900
     },
     "docs/libraries/symbol-creator.md#ai-ocr-manager-with-a-clean-pin-table": {
       "kind": "shot",
@@ -1185,30 +1185,30 @@
       "file": "docs/assets/wf/docs/libraries/symbol-creator/ai-ocr-manager-with-a-clean-pin-table.png",
       "page": "docs/libraries/symbol-creator.md",
       "slot": "ai-ocr-manager-with-a-clean-pin-table",
-      "slot_sha256": "4c7df9c3a556bb175145dcafc7d6162108a1cb738c8c0555ab32078406da40f2",
+      "slot_sha256": "94a6a677db49b0d593a0ec4fe5eedee93c5dd4843f8703468e52fd81a0ee34e7",
       "caption": "AI OCR Manager, opened from the Symbol Library Editor, before any image is added",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-08T17:13:21+00:00",
-      "run": "/tmp/wf-docs/20261009-001120-docs/20261009-001314-ai-ocr-manager-with-a-clean-pin-table",
+      "captured_at": "2026-10-14T16:45:35+00:00",
+      "run": "/tmp/wf-docs/20261014-234530-docs/20261014-234530-ai-ocr-manager-with-a-clean-pin-table",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "48701fc3ed340c29e4adfa846bc046b1ddc2be4eafae7b29f2e2cebb63060f51",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "ee88ecc8e528432386b19f29d272c2e8a29ae381b745c7f739c42c513b2126ab",
         "version": "1.5.47",
         "git": {
-          "commit": "48c03b5ae3fa56f7017161359fac0adac6998e1e",
-          "branch": "AI/PCB/implement",
+          "commit": "2c566d06be39034cb12f6c6479a39875a3d45a51",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261009-001120-docs/20261009-001314-ai-ocr-manager-with-a-clean-pin-table/out/shots/ai-ocr-manager-with-a-clean-pin-table.png (1600x870)",
+      "app_report": "saved /tmp/wf-docs/20261014-234530-docs/20261014-234530-ai-ocr-manager-with-a-clean-pin-table/out/shots/ai-ocr-manager-with-a-clean-pin-table.png (1600x900)",
       "state": {
-        "active_document": "7805_regulator.pcbxml",
+        "active_document": "MCU Datalogger.pcbxml",
         "active_type": "pcb",
-        "documents": 4,
-        "frame": 1436,
+        "documents": 3,
+        "frame": 874,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -1217,10 +1217,10 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "b766d672fd45fa7f9a45280dae1489910293c77885cc0f9ee0596c2f7ecc5b2f",
-      "bytes": 276527,
+      "sha256": "7530eaf34d72e7cb678fdb02b1cf84336144f6d5359cd17981a35a52c1fbd11e",
+      "bytes": 266635,
       "width": 1600,
-      "height": 870
+      "height": 900
     },
     "docs/libraries/symbol-creator.md#symbol-library-editor": {
       "kind": "shot",
@@ -1228,30 +1228,30 @@
       "file": "docs/assets/wf/docs/libraries/symbol-creator/symbol-library-editor.png",
       "page": "docs/libraries/symbol-creator.md",
       "slot": "symbol-library-editor",
-      "slot_sha256": "6bf916b5b9eaed7852b5faa70604e4aa9c9b082b5db04b47c2a712cc097c3db4",
+      "slot_sha256": "e594a5cc5b4ae02254767d2a9c72208bbeee07847b98086ed8f3b7a8acb84f36",
       "caption": "Symbol Library Editor",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-08T17:13:28+00:00",
-      "run": "/tmp/wf-docs/20261009-001120-docs/20261009-001321-symbol-library-editor",
+      "captured_at": "2026-10-14T16:45:39+00:00",
+      "run": "/tmp/wf-docs/20261014-234530-docs/20261014-234535-symbol-library-editor",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "48701fc3ed340c29e4adfa846bc046b1ddc2be4eafae7b29f2e2cebb63060f51",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "ee88ecc8e528432386b19f29d272c2e8a29ae381b745c7f739c42c513b2126ab",
         "version": "1.5.47",
         "git": {
-          "commit": "48c03b5ae3fa56f7017161359fac0adac6998e1e",
-          "branch": "AI/PCB/implement",
+          "commit": "2c566d06be39034cb12f6c6479a39875a3d45a51",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261009-001120-docs/20261009-001321-symbol-library-editor/out/shots/symbol-library-editor.png (1600x870)",
+      "app_report": "saved /tmp/wf-docs/20261014-234530-docs/20261014-234535-symbol-library-editor/out/shots/symbol-library-editor.png (1600x900)",
       "state": {
-        "active_document": "7805_regulator.pcbxml",
+        "active_document": "MCU Datalogger.pcbxml",
         "active_type": "pcb",
-        "documents": 4,
-        "frame": 1105,
+        "documents": 3,
+        "frame": 665,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -1260,10 +1260,10 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "eea75d94e43afbb69ca3f8762dc01b54bee9d4e3b1bc9cceb4aee1c6bc50abbe",
-      "bytes": 278151,
+      "sha256": "dbddcd7fe4414664e850181465abeac14c5c3207abae234a4aebada6d20bc713",
+      "bytes": 257943,
       "width": 1600,
-      "height": 870
+      "height": 900
     },
     "docs/libraries/symbols-library.md#assign-and-verify-a-footprint": {
       "kind": "video",
@@ -1271,30 +1271,30 @@
       "file": "docs/assets/wf/docs/libraries/symbols-library/assign-and-verify-a-footprint.mp4",
       "page": "docs/libraries/symbols-library.md",
       "slot": "assign-and-verify-a-footprint",
-      "slot_sha256": "6f9695ea82eee39f4d90c9199e939e7d58142d4cee0aec73dd747fe1dcbab1a5",
-      "caption": "R1 reports Footprint 'R_0805_2012Metric' not loaded; Link Footprint & Save to File picks the .kicad_mod and the preview shows its two pads",
+      "slot_sha256": "7d41510aafd27ae10d28a0d77363cb3b1489cc10eae2e8d3e8257121e1a673da",
+      "caption": "R1 (10 kΩ) shows its linked R_0805_2012Metric footprint in Properties; Link Footprint & Save to File links the .kicad_mod you pick and saves it with the part",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-10T09:29:11+00:00",
-      "run": "/tmp/wf-docs/20261010-162817-docs/20261010-162818-assign-and-verify-a-footprint",
+      "captured_at": "2026-10-14T16:46:36+00:00",
+      "run": "/tmp/wf-docs/20261014-234616-docs/20261014-234616-assign-and-verify-a-footprint",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "eaa219e755dfbf711d216483948c710e4397a6a5015b6a1712ed7d9b971558aa",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "ee88ecc8e528432386b19f29d272c2e8a29ae381b745c7f739c42c513b2126ab",
         "version": "1.5.47",
         "git": {
-          "commit": "da76518ca4f8d47ce5f8fc36826257f622ab39ed",
-          "branch": "AI/PCB/implement",
-          "dirty": true
+          "commit": "2c566d06be39034cb12f6c6479a39875a3d45a51",
+          "branch": "HEAD",
+          "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "recording /tmp/wf-docs/20261010-162817-docs/20261010-162818-assign-and-verify-a-footprint/out/videos/assign-and-verify-a-footprint.mp4",
+      "app_report": "recording /tmp/wf-docs/20261014-234616-docs/20261014-234616-assign-and-verify-a-footprint/out/videos/assign-and-verify-a-footprint.mp4",
       "state": {
-        "active_document": "aux_power_buck_regulator_power_in_and1.schxml",
+        "active_document": "MCU Datalogger.schxml",
         "active_type": "schematic",
-        "documents": 4,
-        "frame": 2491,
+        "documents": 3,
+        "frame": 1320,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -1303,12 +1303,12 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "01051aef577b47325a98c80893b55f8419d482f07a22a0ca1fbc92b2efd78f4d",
-      "bytes": 288665,
+      "sha256": "c4f9ec3b55c8bd4e82527622427f15a3ef4a5b2a1338bb2783691c73651c0856",
+      "bytes": 280407,
       "width": 1598,
-      "height": 868,
+      "height": 898,
       "codec": "h264",
-      "duration": 13.233333
+      "duration": 13.534
     },
     "docs/libraries/symbols-library.md#kicad-symbol-source-and-inventory": {
       "kind": "shot",
@@ -1316,30 +1316,30 @@
       "file": "docs/assets/wf/docs/libraries/symbols-library/kicad-symbol-source-and-inventory.png",
       "page": "docs/libraries/symbols-library.md",
       "slot": "kicad-symbol-source-and-inventory",
-      "slot_sha256": "e46b23ba76cf132b4f4d85c7664dc49f8e937a6ceabae90d0e1649905b3d8641",
+      "slot_sha256": "0537aba552ce11442a96473d3bb77b016293c4954bc55bac4fed67248e1bb0e8",
       "caption": "Local Library Manager — KiCad symbol sources and the active inventory",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-08T17:13:34+00:00",
-      "run": "/tmp/wf-docs/20261009-001120-docs/20261009-001328-kicad-symbol-source-and-inventory",
+      "captured_at": "2026-10-14T16:45:01+00:00",
+      "run": "/tmp/wf-docs/20261014-234457-docs/20261014-234457-kicad-symbol-source-and-inventory",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "48701fc3ed340c29e4adfa846bc046b1ddc2be4eafae7b29f2e2cebb63060f51",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "ee88ecc8e528432386b19f29d272c2e8a29ae381b745c7f739c42c513b2126ab",
         "version": "1.5.47",
         "git": {
-          "commit": "48c03b5ae3fa56f7017161359fac0adac6998e1e",
-          "branch": "AI/PCB/implement",
+          "commit": "2c566d06be39034cb12f6c6479a39875a3d45a51",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261009-001120-docs/20261009-001328-kicad-symbol-source-and-inventory/out/shots/kicad-symbol-source-and-inventory.png (1600x870)",
+      "app_report": "saved /tmp/wf-docs/20261014-234457-docs/20261014-234457-kicad-symbol-source-and-inventory/out/shots/kicad-symbol-source-and-inventory.png (1600x900)",
       "state": {
-        "active_document": "aux_power_buck_regulator_power_in_and1.schxml",
+        "active_document": "MCU Datalogger.schxml",
         "active_type": "schematic",
-        "documents": 4,
-        "frame": 1104,
+        "documents": 3,
+        "frame": 742,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -1348,10 +1348,10 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "8d8c4486ac47b6bddb5691fc59b45fc5317a019c0a0efa380920e465024794c1",
-      "bytes": 338586,
+      "sha256": "5a290a10d33003bface28d72276570ff2d0790c33f9ea52bae8516202737f210",
+      "bytes": 289125,
       "width": 1600,
-      "height": 870
+      "height": 900
     },
     "docs/pcb/board-outline.md#cad-outline-import-verdict": {
       "kind": "shot",

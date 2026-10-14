@@ -36,7 +36,7 @@ setup:
     y: 12
 brief_sha256: 18e2a7efa4ab9d2e
 -->
-<!-- wf:out id=footprint-source-and-active-inventory sha=fb46fca0158a -->
+<!-- wf:out id=footprint-source-and-active-inventory sha=5a290a10d330 -->
 ![Local Library Manager with the project's KiCad library folders loaded](../assets/wf/docs/libraries/footprints-library/footprint-source-and-active-inventory.png)
 <!-- /wf:out -->
 
@@ -83,7 +83,7 @@ setup:
     y: 12
 brief_sha256: a8d5ea63c48a9392
 -->
-<!-- wf:out id=pcb-footprint-editor sha=7f96fb2ac0ce -->
+<!-- wf:out id=pcb-footprint-editor sha=d804142997b5 -->
 ![Footprint Library Editor with an 8-pin dual-row package](../assets/wf/docs/libraries/footprints-library/pcb-footprint-editor.png)
 <!-- /wf:out -->
 

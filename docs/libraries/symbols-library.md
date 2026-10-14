@@ -36,7 +36,7 @@ setup:
     y: 12
 brief_sha256: b68c58cfdbecfa22
 -->
-<!-- wf:out id=kicad-symbol-source-and-inventory sha=8d8c4486ac47 -->
+<!-- wf:out id=kicad-symbol-source-and-inventory sha=5a290a10d330 -->
 ![Local Library Manager — KiCad symbol sources and the active inventory](../assets/wf/docs/libraries/symbols-library/kicad-symbol-source-and-inventory.png)
 <!-- /wf:out -->
 
@@ -76,8 +76,8 @@ Existing placed instances may not inherit a later library change. Review them in
     5. **Deliver:** Export a **15–20 second** 1080p MP4; replace older media whenever labels or controls differ.
 
 <!-- wf:video id=assign-and-verify-a-footprint
-caption: R1 reports Footprint 'R_0805_2012Metric' not loaded; Link Footprint & Save to File picks the
-  .kicad_mod and the preview shows its two pads
+caption: R1 (10 kΩ) shows its linked R_0805_2012Metric footprint in Properties; Link Footprint & Save
+  to File links the .kicad_mod you pick and saves it with the part
 setup:
 - open_project
 - ensure_schematic
@@ -118,8 +118,8 @@ steps:
 - wait: 4
 brief_sha256: 6f00fe6429c0a032
 -->
-<!-- wf:out id=assign-and-verify-a-footprint sha=01051aef577b -->
-<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/libraries/symbols-library/assign-and-verify-a-footprint.mp4" title="R1 reports Footprint &#x27;R_0805_2012Metric&#x27; not loaded; Link Footprint &amp; Save to File picks the .kicad_mod and the preview shows its two pads"></video>
+<!-- wf:out id=assign-and-verify-a-footprint sha=c4f9ec3b55c8 -->
+<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/libraries/symbols-library/assign-and-verify-a-footprint.mp4" title="R1 (10 kΩ) shows its linked R_0805_2012Metric footprint in Properties; Link Footprint &amp; Save to File links the .kicad_mod you pick and saves it with the part"></video>
 <!-- /wf:out -->
 
 ## Import an Altium symbol library
