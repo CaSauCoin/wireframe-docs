@@ -32,14 +32,16 @@ Do not use a graphic line as a wire. If two pins must be electrically connected,
     5. **Deliver:** Export a **15–20 second** 1080p MP4 and replace older media if tools or handles differ.
 
 <!-- wf:video id=add-a-circuit-note-and-grouping-box
-caption: Add a text note and a grouping rectangle around the LDO
+caption: Place a text note under the 32.768 kHz crystal Y1 and draw a grouping rectangle around it
 setup:
 - open_project
 - ensure_schematic
 - wait: 1
-- canvas_hover: U2
-- scroll: -3
-- wait: 0.5
+- canvas_fit:
+    refs:
+    - Y1
+    - U1
+    margin: 0.35
 - action:
     action: mouse_move_to
     x: 1000
@@ -49,30 +51,33 @@ steps:
 - click: //SchematicToolbarWindow/{fa:font}
 - wait: 0.5
 - canvas_click:
-  - 1250
-  - 480
+  - 200
+  - 650
 - wait: 1
 - click: //SchematicToolbarWindow/{fa:square}
 - wait: 0.5
 - canvas_click:
-  - 1090
-  - 290
+  - 195
+  - 505
 - wait: 0.5
 - canvas_click:
-  - 1500
-  - 500
+  - 300
+  - 615
 - wait: 1
 - keys:
   - Escape
-- canvas_click:
-  - 1250
-  - 600
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
 - wait: 2
 brief_sha256: f82d656a0bf9c147
 -->
-<!-- wf:out id=add-a-circuit-note-and-grouping-box sha=b4fd644931d6 -->
-<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/schematic/graphics-and-annotations/add-a-circuit-note-and-grouping-box.mp4" title="Add a text note and a grouping rectangle around the LDO"></video>
+<!-- wf:out id=add-a-circuit-note-and-grouping-box sha=90830286b292 -->
+<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/schematic/graphics-and-annotations/add-a-circuit-note-and-grouping-box.mp4" title="Place a text note under the 32.768 kHz crystal Y1 and draw a grouping rectangle around it"></video>
 <!-- /wf:out -->
+
+The KLP4e datalogger is a good model: every functional block on its main sheet — *Real time clock*, *MCU*, *EEPROM*, *Connectors*, *Mounting* — sits inside a rectangle with a title in large text. Imported from KiCad, those rectangles and titles come in as WireFrame graphics, drawn exactly where the author put them.
 
 ## Annotation guidelines
 
@@ -97,30 +102,20 @@ The schematic editor has no dimension tool. Record required distances as text, a
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 <!-- wf:shot id=documented-schematic-block
-caption: The LDO block with a grouping rectangle and a note
+caption: 'The KLP4e real-time clock block as its author drew it: a grouping rectangle titled Real time
+  clock around U1, its crystal and pull-ups'
 setup:
 - open_project
 - ensure_schematic
 - wait: 1
-- canvas_hover: U2
-- scroll: -3
-- wait: 0.5
-- click: //SchematicToolbarWindow/{fa:font}
-- canvas_click:
-  - 1250
-  - 480
-- click: //SchematicToolbarWindow/{fa:square}
-- canvas_click:
-  - 1090
-  - 290
-- canvas_click:
-  - 1500
-  - 500
-- keys:
-  - Escape
-- canvas_click:
-  - 1250
-  - 600
+- canvas_fit:
+    refs:
+    - Y1
+    - U1
+    - R1
+    - R2
+    - C1
+    margin: 0.12
 - wait: 1
 - action:
     action: mouse_move_to
@@ -128,8 +123,8 @@ setup:
     y: 12
 brief_sha256: 5ead5ed9c76d8a4c
 -->
-<!-- wf:out id=documented-schematic-block sha=5be2e99ac968 -->
-![The LDO block with a grouping rectangle and a note](../assets/wf/docs/schematic/graphics-and-annotations/documented-schematic-block.png)
+<!-- wf:out id=documented-schematic-block sha=3c09411ccc43 -->
+![The KLP4e real-time clock block as its author drew it: a grouping rectangle titled Real time clock around U1, its crystal and pull-ups](../assets/wf/docs/schematic/graphics-and-annotations/documented-schematic-block.png)
 <!-- /wf:out -->
 
 ## Related guidelines

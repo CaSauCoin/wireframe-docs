@@ -2409,30 +2409,30 @@
       "file": "docs/assets/wf/docs/schematic/graphics-and-annotations/add-a-circuit-note-and-grouping-box.mp4",
       "page": "docs/schematic/graphics-and-annotations.md",
       "slot": "add-a-circuit-note-and-grouping-box",
-      "slot_sha256": "749989aad2bf1b87f4e47722d84c74650314437730abb615c35415c4b698b435",
-      "caption": "Add a text note and a grouping rectangle around the LDO",
+      "slot_sha256": "2733480e6cf6e2a82d30bb2039fc838e9310158860f2ab7efbf6cde6a8d4a315",
+      "caption": "Place a text note under the 32.768 kHz crystal Y1 and draw a grouping rectangle around it",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-08T17:16:15+00:00",
-      "run": "/tmp/wf-docs/20261009-001120-docs/20261009-001544-add-a-circuit-note-and-grouping-box",
+      "captured_at": "2026-10-14T16:35:00+00:00",
+      "run": "/tmp/wf-docs/20261014-233446-docs/20261014-233446-add-a-circuit-note-and-grouping-box",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "48701fc3ed340c29e4adfa846bc046b1ddc2be4eafae7b29f2e2cebb63060f51",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "337ec07fef006ef4d314c83001a6e8b06cf9e98a8f6bc678a0419bd2a3ada9cd",
         "version": "1.5.47",
         "git": {
-          "commit": "48c03b5ae3fa56f7017161359fac0adac6998e1e",
-          "branch": "AI/PCB/implement",
+          "commit": "042a4a9938d7bcd88491508014e3588633aa0635",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "recording /tmp/wf-docs/20261009-001120-docs/20261009-001544-add-a-circuit-note-and-grouping-box/out/videos/add-a-circuit-note-and-grouping-box.mp4",
+      "app_report": "recording /tmp/wf-docs/20261014-233446-docs/20261014-233446-add-a-circuit-note-and-grouping-box/out/videos/add-a-circuit-note-and-grouping-box.mp4",
       "state": {
-        "active_document": "aux_power_buck_regulator_power_in_and1.schxml",
+        "active_document": "MCU Datalogger.schxml",
         "active_type": "schematic",
-        "documents": 4,
-        "frame": 714,
+        "documents": 3,
+        "frame": 367,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -2441,12 +2441,12 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "b4fd644931d680cd031c09c65821af669976ec1b62fad2504e8c06c7132f85ad",
-      "bytes": 172166,
+      "sha256": "90830286b2921b0b62564c9ddcda6ea08c64aa2b57f00d58e4f2be715084bf7f",
+      "bytes": 362108,
       "width": 1598,
-      "height": 868,
+      "height": 898,
       "codec": "h264",
-      "duration": 7.8
+      "duration": 12.6
     },
     "docs/schematic/graphics-and-annotations.md#documented-schematic-block": {
       "kind": "shot",
@@ -2454,30 +2454,30 @@
       "file": "docs/assets/wf/docs/schematic/graphics-and-annotations/documented-schematic-block.png",
       "page": "docs/schematic/graphics-and-annotations.md",
       "slot": "documented-schematic-block",
-      "slot_sha256": "f11f6d1850aa9df0bd8a265dbeeaa6d9daa2cfe8865a3466d09647ae9cc19b08",
-      "caption": "The LDO block with a grouping rectangle and a note",
+      "slot_sha256": "7a2953c3bedf7656c0a960077e9e06be1fad0ead63a590b721dd2c325f8ea646",
+      "caption": "The KLP4e real-time clock block as its author drew it: a grouping rectangle titled Real time clock around U1, its crystal and pull-ups",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-08T17:16:22+00:00",
-      "run": "/tmp/wf-docs/20261009-001120-docs/20261009-001615-documented-schematic-block",
+      "captured_at": "2026-10-14T16:35:04+00:00",
+      "run": "/tmp/wf-docs/20261014-233446-docs/20261014-233500-documented-schematic-block",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "48701fc3ed340c29e4adfa846bc046b1ddc2be4eafae7b29f2e2cebb63060f51",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "337ec07fef006ef4d314c83001a6e8b06cf9e98a8f6bc678a0419bd2a3ada9cd",
         "version": "1.5.47",
         "git": {
-          "commit": "48c03b5ae3fa56f7017161359fac0adac6998e1e",
-          "branch": "AI/PCB/implement",
+          "commit": "042a4a9938d7bcd88491508014e3588633aa0635",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261009-001120-docs/20261009-001615-documented-schematic-block/out/shots/documented-schematic-block.png (1600x870)",
+      "app_report": "saved /tmp/wf-docs/20261014-233446-docs/20261014-233500-documented-schematic-block/out/shots/documented-schematic-block.png (1600x900)",
       "state": {
-        "active_document": "aux_power_buck_regulator_power_in_and1.schxml",
+        "active_document": "MCU Datalogger.schxml",
         "active_type": "schematic",
-        "documents": 4,
-        "frame": 1166,
+        "documents": 3,
+        "frame": 583,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -2486,10 +2486,10 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "5be2e99ac968247252d6f7a499d4306ad2482a0fb5ea886415360086bda28adc",
-      "bytes": 231461,
+      "sha256": "3c09411ccc4313d114c9758ada4f94dc5f212ba6bc04ee76d6d7824544e190b2",
+      "bytes": 334258,
       "width": 1600,
-      "height": 870
+      "height": 900
     },
     "docs/schematic/index.md#schematic-workspace": {
       "kind": "shot",
@@ -2585,30 +2585,30 @@
       "file": "docs/assets/wf/docs/schematic/properties-and-attributes/edit-and-align-component-text.mp4",
       "page": "docs/schematic/properties-and-attributes.md",
       "slot": "edit-and-align-component-text",
-      "slot_sha256": "31e0022bec54e07042faa3a695fb74ae8ff64567d4cdf9783599c42d7c838143",
-      "caption": "Edit C6's value in Properties, then undo",
+      "slot_sha256": "e7de7fcecebb79aa5da138e4e55b0a966a41d9f991f77ed246bfe040181d71a9",
+      "caption": "Select R5, change its value from 330 Ω to 470 Ω in Properties, then undo",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-08T17:17:08+00:00",
-      "run": "/tmp/wf-docs/20261009-001120-docs/20261009-001647-edit-and-align-component-text",
+      "captured_at": "2026-10-14T16:35:51+00:00",
+      "run": "/tmp/wf-docs/20261014-233537-docs/20261014-233540-edit-and-align-component-text",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "48701fc3ed340c29e4adfa846bc046b1ddc2be4eafae7b29f2e2cebb63060f51",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "337ec07fef006ef4d314c83001a6e8b06cf9e98a8f6bc678a0419bd2a3ada9cd",
         "version": "1.5.47",
         "git": {
-          "commit": "48c03b5ae3fa56f7017161359fac0adac6998e1e",
-          "branch": "AI/PCB/implement",
+          "commit": "042a4a9938d7bcd88491508014e3588633aa0635",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "recording /tmp/wf-docs/20261009-001120-docs/20261009-001647-edit-and-align-component-text/out/videos/edit-and-align-component-text.mp4",
+      "app_report": "recording /tmp/wf-docs/20261014-233537-docs/20261014-233540-edit-and-align-component-text/out/videos/edit-and-align-component-text.mp4",
       "state": {
-        "active_document": "aux_power_buck_regulator_power_in_and1.schxml",
+        "active_document": "MCU Datalogger.schxml",
         "active_type": "schematic",
-        "documents": 4,
-        "frame": 761,
+        "documents": 3,
+        "frame": 508,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -2617,12 +2617,12 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "42c750198a6d14f07e432477aee1d526164b5d66b47a89d9b9e76ba2c3372a10",
-      "bytes": 141073,
+      "sha256": "a59b465829327646315bd40e02c7c625c07f4ab80b77ae74cc46510bfa5c59bf",
+      "bytes": 296432,
       "width": 1598,
-      "height": 868,
+      "height": 898,
       "codec": "h264",
-      "duration": 4.7
+      "duration": 8.6
     },
     "docs/schematic/properties-and-attributes.md#sheet-properties-and-title-block": {
       "kind": "shot",
@@ -2630,30 +2630,30 @@
       "file": "docs/assets/wf/docs/schematic/properties-and-attributes/sheet-properties-and-title-block.png",
       "page": "docs/schematic/properties-and-attributes.md",
       "slot": "sheet-properties-and-title-block",
-      "slot_sha256": "4181eee86605084cad906a83e619aa5c5de93fcca5b0a9ff82e7840dacbcf6ee",
-      "caption": "Sheet properties (Document Settings) and the title block they fill",
+      "slot_sha256": "75d9868f1bf88532ac80647718472e6b1e998d833726536fa53776aab95ef5c9",
+      "caption": "Document Settings beside the KLP4e title block: the Title field holds ${project_name}, and the block shows the project name in its place",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-10T08:25:35+00:00",
-      "run": "/tmp/wf-docs/20261010-152415-docs/20261010-152529-sheet-properties-and-title-block",
+      "captured_at": "2026-10-14T16:35:40+00:00",
+      "run": "/tmp/wf-docs/20261014-233537-docs/20261014-233537-sheet-properties-and-title-block",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "d9b9e0f2f3069f9f991a44107d5280ec488fe1b3b7a18ea6504311e15a901a3a",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "337ec07fef006ef4d314c83001a6e8b06cf9e98a8f6bc678a0419bd2a3ada9cd",
         "version": "1.5.47",
         "git": {
-          "commit": "da76518ca4f8d47ce5f8fc36826257f622ab39ed",
-          "branch": "AI/PCB/implement",
+          "commit": "042a4a9938d7bcd88491508014e3588633aa0635",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261010-152415-docs/20261010-152529-sheet-properties-and-title-block/out/shots/sheet-properties-and-title-block.png (1600x870)",
+      "app_report": "saved /tmp/wf-docs/20261014-233537-docs/20261014-233537-sheet-properties-and-title-block/out/shots/sheet-properties-and-title-block.png (1600x900)",
       "state": {
-        "active_document": "aux_power_buck_regulator_power_in_and1.schxml",
+        "active_document": "MCU Datalogger.schxml",
         "active_type": "schematic",
-        "documents": 4,
-        "frame": 1158,
+        "documents": 3,
+        "frame": 473,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -2662,10 +2662,10 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "af1c10742287de0415040d698b667be8bfdd0a868d7b2c6802d40336ec34fa9a",
-      "bytes": 339913,
+      "sha256": "e5f7e768b196f066907cf7262914e217a71e12418f6f4a6a0d3c0233af44dfe8",
+      "bytes": 366104,
       "width": 1600,
-      "height": 870
+      "height": 900
     },
     "docs/schematic/templates.md#completed-schematic-title-block": {
       "kind": "shot",
@@ -2673,30 +2673,30 @@
       "file": "docs/assets/wf/docs/schematic/templates/completed-schematic-title-block.png",
       "page": "docs/schematic/templates.md",
       "slot": "completed-schematic-title-block",
-      "slot_sha256": "8bfd1fc41ff8e9bb29381512b8ebcc8d5d159b7fcf9b84ec446a4f0a0ddf20a0",
-      "caption": "A whole schematic page with its title block",
+      "slot_sha256": "f4ed464fccb0cf6709d34edb05b10d291d26726aeaf6b8a874e8501753b0946b",
+      "caption": "The KLP4e main sheet: A4 frame with zone marks, five titled blocks, and the title block bottom right",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-08T17:17:14+00:00",
-      "run": "/tmp/wf-docs/20261009-001120-docs/20261009-001708-completed-schematic-title-block",
+      "captured_at": "2026-10-14T16:35:54+00:00",
+      "run": "/tmp/wf-docs/20261014-233551-docs/20261014-233551-completed-schematic-title-block",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "48701fc3ed340c29e4adfa846bc046b1ddc2be4eafae7b29f2e2cebb63060f51",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "337ec07fef006ef4d314c83001a6e8b06cf9e98a8f6bc678a0419bd2a3ada9cd",
         "version": "1.5.47",
         "git": {
-          "commit": "48c03b5ae3fa56f7017161359fac0adac6998e1e",
-          "branch": "AI/PCB/implement",
+          "commit": "042a4a9938d7bcd88491508014e3588633aa0635",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261009-001120-docs/20261009-001708-completed-schematic-title-block/out/shots/completed-schematic-title-block.png (1600x870)",
+      "app_report": "saved /tmp/wf-docs/20261014-233551-docs/20261014-233551-completed-schematic-title-block/out/shots/completed-schematic-title-block.png (1600x900)",
       "state": {
-        "active_document": "aux_power_buck_regulator_power_in_and1.schxml",
+        "active_document": "MCU Datalogger.schxml",
         "active_type": "schematic",
-        "documents": 4,
-        "frame": 848,
+        "documents": 3,
+        "frame": 558,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -2705,10 +2705,10 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "90eee1d4ffc9a5f3740cf23b2b99bebc4b489efd94db6f7a3cd47c8a6639fc48",
-      "bytes": 317732,
+      "sha256": "d31b086998d6fcde8910c15e7c383454c6bbfddf636feafdb57e5cf797123c00",
+      "bytes": 448016,
       "width": 1600,
-      "height": 870
+      "height": 900
     },
     "docs/schematic/templates.md#page-settings-modal": {
       "kind": "shot",
@@ -2716,30 +2716,30 @@
       "file": "docs/assets/wf/docs/schematic/templates/page-settings-modal.png",
       "page": "docs/schematic/templates.md",
       "slot": "page-settings-modal",
-      "slot_sha256": "980b9bd1b60d43f1c890b6e2c2c82fc32b0640d7883aedbdcf0608e19d0e2d5a",
+      "slot_sha256": "6a29d466cc2a7c59c164003fd3b2c79bec3abf70ba018313761d5b6d446a6470",
       "caption": "Page Settings for a schematic sheet",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-08T17:17:20+00:00",
-      "run": "/tmp/wf-docs/20261009-001120-docs/20261009-001714-page-settings-modal",
+      "captured_at": "2026-10-14T16:36:00+00:00",
+      "run": "/tmp/wf-docs/20261014-233551-docs/20261014-233557-page-settings-modal",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "48701fc3ed340c29e4adfa846bc046b1ddc2be4eafae7b29f2e2cebb63060f51",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "337ec07fef006ef4d314c83001a6e8b06cf9e98a8f6bc678a0419bd2a3ada9cd",
         "version": "1.5.47",
         "git": {
-          "commit": "48c03b5ae3fa56f7017161359fac0adac6998e1e",
-          "branch": "AI/PCB/implement",
+          "commit": "042a4a9938d7bcd88491508014e3588633aa0635",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261009-001120-docs/20261009-001714-page-settings-modal/out/shots/page-settings-modal.png (1600x870)",
+      "app_report": "saved /tmp/wf-docs/20261014-233551-docs/20261014-233557-page-settings-modal/out/shots/page-settings-modal.png (1600x900)",
       "state": {
-        "active_document": "aux_power_buck_regulator_power_in_and1.schxml",
+        "active_document": "MCU Datalogger.schxml",
         "active_type": "schematic",
-        "documents": 4,
-        "frame": 816,
+        "documents": 3,
+        "frame": 581,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -2748,10 +2748,10 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "63bbcf4ea2bf79a5d2a4024b32b1a810648266a05e4946b0a6bfe50864148358",
-      "bytes": 281680,
+      "sha256": "4f43c5b309b54a8afa4cb83faaf5191958cce2c7b7a29f5b360513e858707eec",
+      "bytes": 325097,
       "width": 1600,
-      "height": 870
+      "height": 900
     },
     "docs/schematic/templates.md#title-block-properties": {
       "kind": "shot",
@@ -2759,30 +2759,30 @@
       "file": "docs/assets/wf/docs/schematic/templates/title-block-properties.png",
       "page": "docs/schematic/templates.md",
       "slot": "title-block-properties",
-      "slot_sha256": "a76e872795a8663a3982439b6607922efa314f699bd8266587cdc35a61d02ff6",
-      "caption": "Properties → Document Settings → Title Block Info beside the title block",
+      "slot_sha256": "d19f0550e021193e655919256c1dff2fe4991b4d8b65795d643cfcf0a9ec5e80",
+      "caption": "Properties → Document Settings → Title Block Info beside the title block it fills",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-10T08:25:42+00:00",
-      "run": "/tmp/wf-docs/20261010-152415-docs/20261010-152535-title-block-properties",
+      "captured_at": "2026-10-14T16:35:57+00:00",
+      "run": "/tmp/wf-docs/20261014-233551-docs/20261014-233554-title-block-properties",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "d9b9e0f2f3069f9f991a44107d5280ec488fe1b3b7a18ea6504311e15a901a3a",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "337ec07fef006ef4d314c83001a6e8b06cf9e98a8f6bc678a0419bd2a3ada9cd",
         "version": "1.5.47",
         "git": {
-          "commit": "da76518ca4f8d47ce5f8fc36826257f622ab39ed",
-          "branch": "AI/PCB/implement",
+          "commit": "042a4a9938d7bcd88491508014e3588633aa0635",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261010-152415-docs/20261010-152535-title-block-properties/out/shots/title-block-properties.png (1600x870)",
+      "app_report": "saved /tmp/wf-docs/20261014-233551-docs/20261014-233554-title-block-properties/out/shots/title-block-properties.png (1600x900)",
       "state": {
-        "active_document": "aux_power_buck_regulator_power_in_and1.schxml",
+        "active_document": "MCU Datalogger.schxml",
         "active_type": "schematic",
-        "documents": 4,
-        "frame": 1226,
+        "documents": 3,
+        "frame": 482,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -2791,10 +2791,10 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "af1c10742287de0415040d698b667be8bfdd0a868d7b2c6802d40336ec34fa9a",
-      "bytes": 339913,
+      "sha256": "e5f7e768b196f066907cf7262914e217a71e12418f6f4a6a0d3c0233af44dfe8",
+      "bytes": 366104,
       "width": 1600,
-      "height": 870
+      "height": 900
     },
     "docs/schematic/wiring-and-nets.md#junction-compared-with-a-wire-crossing": {
       "kind": "shot",
