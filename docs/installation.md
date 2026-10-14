@@ -114,8 +114,9 @@ Never show AI API keys in screenshots or support reports.
 
 <!-- wf:video id=first-run-verification
 caption: Preferences, then a first empty project
+project: none
 setup:
-- wait: 1
+- wait: 8
 steps:
 - wait: 1
 - menu:
@@ -132,14 +133,11 @@ steps:
 - wait: 1
 - type:
     text: My First Board
-- wait: 1
-- click_at:
-  - 634
-  - 485
+    enter: true
 - wait: 3
 brief_sha256: fc44e3f2c570ac8b
 -->
-<!-- wf:out id=first-run-verification sha=c7d31f2456cc -->
+<!-- wf:out id=first-run-verification sha=4eaaeb99ad18 -->
 <video controls muted playsinline preload="metadata" src="../assets/wf/docs/installation/first-run-verification.mp4" title="Preferences, then a first empty project"></video>
 <!-- /wf:out -->
 

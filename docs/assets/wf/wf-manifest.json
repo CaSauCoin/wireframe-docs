@@ -753,26 +753,26 @@
       "caption": "The default layout with a project open",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-10T08:24:48+00:00",
-      "run": "/tmp/wf-docs/20261010-152415-docs/20261010-152443-default-layout-with-a-project-open",
+      "captured_at": "2026-10-14T17:36:44+00:00",
+      "run": "/tmp/wf-docs/20261015-003641-docs/20261015-003641-default-layout-with-a-project-open",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "d9b9e0f2f3069f9f991a44107d5280ec488fe1b3b7a18ea6504311e15a901a3a",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "978d2a5c9990fb2a43f0756fea727bad4d05d4d007826981ca2a0aa385baf0ad",
         "version": "1.5.47",
         "git": {
-          "commit": "da76518ca4f8d47ce5f8fc36826257f622ab39ed",
-          "branch": "AI/PCB/implement",
+          "commit": "f04a6fa82105d0b8ab6204f5ed5bc76c3d45346a",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261010-152415-docs/20261010-152443-default-layout-with-a-project-open/out/shots/default-layout-with-a-project-open.png (1600x870)",
+      "app_report": "saved /tmp/wf-docs/20261015-003641-docs/20261015-003641-default-layout-with-a-project-open/out/shots/default-layout-with-a-project-open.png (1600x900)",
       "state": {
-        "active_document": "aux_power_buck_regulator_power_in_and1.schxml",
+        "active_document": "buck-converter-automotive.schxml",
         "active_type": "schematic",
-        "documents": 4,
-        "frame": 1252,
+        "documents": 2,
+        "frame": 632,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -781,10 +781,10 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "af1c10742287de0415040d698b667be8bfdd0a868d7b2c6802d40336ec34fa9a",
-      "bytes": 339913,
+      "sha256": "b9d7589fb535130d7047d3ab867309bee2d531f59eef0e520a59867c063a540b",
+      "bytes": 335768,
       "width": 1600,
-      "height": 870
+      "height": 900
     },
     "docs/getting-started.md#new-pcb": {
       "kind": "shot",
@@ -796,26 +796,26 @@
       "caption": "A new PCB: rulers, the vertical PCB toolbar, Footprints, Properties and Layers",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-10T08:25:01+00:00",
-      "run": "/tmp/wf-docs/20261010-152415-docs/20261010-152455-new-pcb",
+      "captured_at": "2026-10-14T17:36:51+00:00",
+      "run": "/tmp/wf-docs/20261015-003641-docs/20261015-003648-new-pcb",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "d9b9e0f2f3069f9f991a44107d5280ec488fe1b3b7a18ea6504311e15a901a3a",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "978d2a5c9990fb2a43f0756fea727bad4d05d4d007826981ca2a0aa385baf0ad",
         "version": "1.5.47",
         "git": {
-          "commit": "da76518ca4f8d47ce5f8fc36826257f622ab39ed",
-          "branch": "AI/PCB/implement",
+          "commit": "f04a6fa82105d0b8ab6204f5ed5bc76c3d45346a",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261010-152415-docs/20261010-152455-new-pcb/out/shots/new-pcb.png (1600x870)",
+      "app_report": "saved /tmp/wf-docs/20261015-003641-docs/20261015-003648-new-pcb/out/shots/new-pcb.png (1600x900)",
       "state": {
         "active_document": "Untitled-PCB-1",
         "active_type": "pcb",
         "documents": 1,
-        "frame": 1939,
+        "frame": 1022,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -824,10 +824,10 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "86ca617721d27ca423949c90822ff0eaed5d2a0deafa3834b75c4ba29fffa481",
-      "bytes": 197528,
+      "sha256": "f596695a4405cc887f23947271e1dcf33f10baaf9e843f773adcfe0126c22944",
+      "bytes": 218267,
       "width": 1600,
-      "height": 870
+      "height": 900
     },
     "docs/getting-started.md#new-schematic": {
       "kind": "shot",
@@ -839,26 +839,26 @@
       "caption": "A new schematic: page outline, rulers and the schematic toolbar",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-10T08:24:55+00:00",
-      "run": "/tmp/wf-docs/20261010-152415-docs/20261010-152448-new-schematic",
+      "captured_at": "2026-10-14T17:36:48+00:00",
+      "run": "/tmp/wf-docs/20261015-003641-docs/20261015-003644-new-schematic",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "d9b9e0f2f3069f9f991a44107d5280ec488fe1b3b7a18ea6504311e15a901a3a",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "978d2a5c9990fb2a43f0756fea727bad4d05d4d007826981ca2a0aa385baf0ad",
         "version": "1.5.47",
         "git": {
-          "commit": "da76518ca4f8d47ce5f8fc36826257f622ab39ed",
-          "branch": "AI/PCB/implement",
+          "commit": "f04a6fa82105d0b8ab6204f5ed5bc76c3d45346a",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261010-152415-docs/20261010-152448-new-schematic/out/shots/new-schematic.png (1600x870)",
+      "app_report": "saved /tmp/wf-docs/20261015-003641-docs/20261015-003644-new-schematic/out/shots/new-schematic.png (1600x900)",
       "state": {
         "active_document": "Untitled-SCH-1",
         "active_type": "schematic",
         "documents": 1,
-        "frame": 1963,
+        "frame": 1006,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -867,10 +867,10 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "0208ea82687302e0b131c4f12bcf6969d369bbd46145b7841850f6ed092f312d",
-      "bytes": 182083,
+      "sha256": "70fee785d1b74f74eb707982351a50442e64578747f0ffc7f28a827757006be0",
+      "bytes": 197698,
       "width": 1600,
-      "height": 870
+      "height": 900
     },
     "docs/installation.md#first-run-verification": {
       "kind": "video",
@@ -878,30 +878,30 @@
       "file": "docs/assets/wf/docs/installation/first-run-verification.mp4",
       "page": "docs/installation.md",
       "slot": "first-run-verification",
-      "slot_sha256": "5aaf53eb88e514530e56d7a4968b4273975b8bab7065a40a4c84cecd56423939",
+      "slot_sha256": "fd8c2ca197359ed39e49ed5e64d73218137b96cabfc8509ab4fba357332e9dfe",
       "caption": "Preferences, then a first empty project",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-08T17:12:32+00:00",
-      "run": "/tmp/wf-docs/20261009-001120-docs/20261009-001203-first-run-verification",
+      "captured_at": "2026-10-14T17:36:40+00:00",
+      "run": "/tmp/wf-docs/20261015-003616-docs/20261015-003616-first-run-verification",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "48701fc3ed340c29e4adfa846bc046b1ddc2be4eafae7b29f2e2cebb63060f51",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "978d2a5c9990fb2a43f0756fea727bad4d05d4d007826981ca2a0aa385baf0ad",
         "version": "1.5.47",
         "git": {
-          "commit": "48c03b5ae3fa56f7017161359fac0adac6998e1e",
-          "branch": "AI/PCB/implement",
+          "commit": "f04a6fa82105d0b8ab6204f5ed5bc76c3d45346a",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "recording /tmp/wf-docs/20261009-001120-docs/20261009-001203-first-run-verification/out/videos/first-run-verification.mp4",
+      "app_report": "recording /tmp/wf-docs/20261015-003616-docs/20261015-003616-first-run-verification/out/videos/first-run-verification.mp4",
       "state": {
-        "active_document": "7805_regulator.pcbxml",
-        "active_type": "pcb",
-        "documents": 4,
-        "frame": 398,
+        "active_document": "",
+        "active_type": "none",
+        "documents": 0,
+        "frame": 2977,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -910,12 +910,12 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "c7d31f2456cc916982ff1906791ebe779746f199cf69e5579bb206dff47c39cc",
-      "bytes": 381095,
+      "sha256": "4eaaeb99ad18ead3e7e62763c0f2f03bd13144bf6ad4babdac6dba8636bf2b41",
+      "bytes": 326224,
       "width": 1598,
-      "height": 868,
+      "height": 898,
       "codec": "h264",
-      "duration": 7.3
+      "duration": 16.167
     },
     "docs/libraries/footprints-library.md#footprint-source-and-active-inventory": {
       "kind": "shot",
