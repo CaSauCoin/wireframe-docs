@@ -25,7 +25,7 @@ Copper zones (fills / pours) cover a board area with copper — typically used f
 
 <!-- wf:shot id=a-filled-copper-zone
 caption: 'A filled GND zone: clearance around other nets, thermal spokes to GND pads'
-project: wireframe:tests/data/buck_converter_automotive/wireframe/buck-converter-automotive.prjxml
+project: board:buck-converter
 setup:
 - open_project
 - ensure_pcb
@@ -39,7 +39,7 @@ setup:
     y: 12
 brief_sha256: 544f6c3c7ff7fdf1
 -->
-<!-- wf:out id=a-filled-copper-zone sha=9ec208eb8174 -->
+<!-- wf:out id=a-filled-copper-zone sha=17a9405c9bb9 -->
 ![A filled GND zone: clearance around other nets, thermal spokes to GND pads](../assets/wf/docs/pcb/zones-and-planes/a-filled-copper-zone.png)
 <!-- /wf:out -->
 
@@ -79,8 +79,9 @@ The fill keeps clearance around pads and traces on other nets and connects `GND`
     5. **Deliver:** Export a **10–15 second** 1080p MP4.
 
 <!-- wf:video id=fill-a-ground-plane-from-the-zone-manager
-caption: Zone Manager → GND plane → Top and bottom, then Refill
-project: wireframe:tests/data/7805_voltage_regulator/wireframe/7805_regulator.prjxml
+caption: 'Zone Manager on the buck converter: the F.Cu GND pour fills 48 % at 19.7 mil clearance; 10 mil
+  and Refill take it to 58 %, and DFM stays clean'
+project: board:buck-converter
 setup:
 - open_project
 - ensure_pcb
@@ -89,7 +90,7 @@ setup:
   - View
   - Zone Manager
 - wait: 2
-- canvas_fit: {}
+- canvas_fit
 - wait: 1
 - action:
     action: mouse_move_to
@@ -97,13 +98,10 @@ setup:
     y: 12
 steps:
 - wait: 2
-- click_at:
-  - 385
-  - 619
-- wait: 1.5
-- click_at:
-  - 470
-  - 650
+- type:
+    ref: '**/##zc'
+    text: '10'
+    enter: true
 - wait: 1.5
 - click: //Zone Manager/{fa:sync}  Refill
 - wait: 2
@@ -114,8 +112,8 @@ steps:
 - wait: 3
 brief_sha256: 669b938da1a35385
 -->
-<!-- wf:out id=fill-a-ground-plane-from-the-zone-manager sha=3a87ca484f47 -->
-<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/pcb/zones-and-planes/fill-a-ground-plane-from-the-zone-manager.mp4" title="Zone Manager → GND plane → Top and bottom, then Refill"></video>
+<!-- wf:out id=fill-a-ground-plane-from-the-zone-manager sha=e4e992f6e7ca -->
+<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/pcb/zones-and-planes/fill-a-ground-plane-from-the-zone-manager.mp4" title="Zone Manager on the buck converter: the F.Cu GND pour fills 48 % at 19.7 mil clearance; 10 mil and Refill take it to 58 %, and DFM stays clean"></video>
 <!-- /wf:out -->
 
 ---
@@ -176,7 +174,7 @@ Every change is one undo step (**Ctrl+Z**), and the board refills automatically 
 
 <!-- wf:shot id=zone-manager-with-two-planes
 caption: Zone Manager with GND planes on F.Cu and B.Cu
-project: wireframe:tests/data/buck_converter_automotive/wireframe/buck-converter-automotive.prjxml
+project: board:buck-converter
 setup:
 - open_project
 - ensure_pcb
@@ -194,7 +192,7 @@ capture:
   padding: 6
 brief_sha256: 98ac765cfd91c6dc
 -->
-<!-- wf:out id=zone-manager-with-two-planes sha=8733e54168de -->
+<!-- wf:out id=zone-manager-with-two-planes sha=ff2e3d1af85d -->
 ![Zone Manager with GND planes on F.Cu and B.Cu](../assets/wf/docs/pcb/zones-and-planes/zone-manager-with-two-planes.png)
 <!-- /wf:out -->
 
@@ -240,7 +238,7 @@ setup:
     y: 12
 brief_sha256: 2cc4a83854365dd4
 -->
-<!-- wf:out id=overlapping-zones-with-different-priorities sha=cd6fd7b81f01 -->
+<!-- wf:out id=overlapping-zones-with-different-priorities sha=53eb14048314 -->
 ![Zone Manager — the board's GND pours with their layer, priority and clearance](../assets/wf/docs/pcb/zones-and-planes/overlapping-zones-with-different-priorities.png)
 <!-- /wf:out -->
 

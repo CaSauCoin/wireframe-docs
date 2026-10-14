@@ -12,20 +12,22 @@ WireFrame uses dockable panels around the active schematic or PCB editor. Availa
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 <!-- wf:shot id=main-window
-caption: The main window with a PCB open
-project: wireframe:tests/data/buck_converter_automotive/wireframe/buck-converter-automotive.prjxml
+caption: The main window with the automotive buck converter board open
+project: board:buck-converter
 setup:
 - open_project
 - ensure_pcb
 - wait: 1
+- canvas_fit
+- wait: 0.5
 - action:
     action: mouse_move_to
     x: 1000
     y: 12
 brief_sha256: 1ece0c294228e249
 -->
-<!-- wf:out id=main-window sha=315db8e28df4 -->
-![The main window with a PCB open](assets/wf/docs/ui-overview/main-window.png)
+<!-- wf:out id=main-window sha=32abb8da02ac -->
+![The main window with the automotive buck converter board open](assets/wf/docs/ui-overview/main-window.png)
 <!-- /wf:out -->
 
 ## Main menus
@@ -112,7 +114,7 @@ steps:
 - wait: 3
 brief_sha256: 194ebbf4934e46ed
 -->
-<!-- wf:out id=rearrange-and-restore-panels sha=2cc8c768f500 -->
+<!-- wf:out id=rearrange-and-restore-panels sha=ebf19a055f3b -->
 <video controls muted playsinline preload="metadata" src="../assets/wf/docs/ui-overview/rearrange-and-restore-panels.mp4" title="Close a panel, then Preferences → Reset to Default Layout"></video>
 <!-- /wf:out -->
 
@@ -141,20 +143,18 @@ Right-click the **project** for **Add New Schematic**, **Add New PCB**, **Rename
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 <!-- wf:shot id=current-project-structure
-caption: Current Project Structure
-planned_by: agyserve · gemini-3.8-flash-high
-planned_at: '2026-10-05'
+caption: 'Project Structure: the buck converter project, its schematic and its board'
 setup:
 - open_project
-- open: '**/{fa:star} 7805_regulator.prjxml'
+- ensure_schematic
 - wait: 1.0
 capture:
   window: Project Structure
   padding: 8
 brief_sha256: b38c0f17fbfead10
 -->
-<!-- wf:out id=current-project-structure sha=b7da15508f75 -->
-![Current Project Structure](assets/wf/docs/ui-overview/current-project-structure.png)
+<!-- wf:out id=current-project-structure sha=365b6a07c4ec -->
+![Project Structure: the buck converter project, its schematic and its board](assets/wf/docs/ui-overview/current-project-structure.png)
 <!-- /wf:out -->
 
 ## Editor panel
@@ -224,7 +224,7 @@ steps:
 - wait: 5
 brief_sha256: 5081b018a987adf6
 -->
-<!-- wf:out id=notification-and-status-feedback sha=3468c19a4b87 -->
+<!-- wf:out id=notification-and-status-feedback sha=00e74b436661 -->
 <video controls muted playsinline preload="metadata" src="../assets/wf/docs/ui-overview/notification-and-status-feedback.mp4" title="An action reports back in a notification"></video>
 <!-- /wf:out -->
 

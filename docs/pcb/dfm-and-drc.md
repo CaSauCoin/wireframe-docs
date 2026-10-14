@@ -130,7 +130,7 @@ caption: Default clearance set to 7 mil flags 13 places on a board laid out at 5
 project: none
 setup:
 - wait: 1
-- open_file: wireframe:tests/data/buck_converter_automotive/kicad/buck-converter-automotive.kicad_pro
+- open_file: board:buck-converter:kicad
 - menu:
   - File
   - Import

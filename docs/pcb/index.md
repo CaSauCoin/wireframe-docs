@@ -35,18 +35,20 @@ The PCB Editor handles board layout — from component placement to trace routin
 
 <!-- wf:shot id=pcb-workspace
 caption: 'The PCB editor: canvas, vertical toolbar, Layers, Footprints and Board Settings'
-project: wireframe:tests/data/buck_converter_automotive/wireframe/buck-converter-automotive.prjxml
+project: board:buck-converter
 setup:
 - open_project
 - ensure_pcb
 - wait: 1
+- canvas_fit
+- wait: 0.5
 - action:
     action: mouse_move_to
     x: 1000
     y: 12
 brief_sha256: a5f102850adc67cb
 -->
-<!-- wf:out id=pcb-workspace sha=315db8e28df4 -->
+<!-- wf:out id=pcb-workspace sha=300905941233 -->
 ![The PCB editor: canvas, vertical toolbar, Layers, Footprints and Board Settings](../assets/wf/docs/pcb/index/pcb-workspace.png)
 <!-- /wf:out -->
 
@@ -111,17 +113,22 @@ Ratsnest lines are **thin dashed lines** showing connections that have not yet b
     5. **Deliver:** Export a **10–15 second** 1080p MP4 and replace the existing empty file.
 
 <!-- wf:video id=ratsnest-cleared-by-routing
-caption: Route Trace from C7 to the regulator tab; the +3V3 ratsnest line clears
-project: wireframe:tests/data/7805_voltage_regulator/wireframe/7805_regulator.prjxml
+caption: With the C10–U1 bootstrap track deleted a ratsnest line shows the open connection; Route Trace
+  (X) from C10 to the BST pin of U1 clears it
+project: board:buck-converter
 setup:
 - open_project
 - ensure_pcb
 - wait: 2
 - canvas_fit:
     refs:
-    - C7
-    - U2
-    margin: 0.2
+    - C10
+    - U1
+    margin: 0.3
+- wait: 1
+- canvas_click: trace:38
+- keys:
+  - Delete
 - wait: 1
 - action:
     action: mouse_move_to
@@ -129,20 +136,20 @@ setup:
     y: 12
 steps:
 - wait: 1.5
-- canvas_hover: pad:C7.1
+- canvas_hover: pad:C10.2
 - wait: 1
 - keys:
   - X
 - wait: 0.5
-- canvas_click: pad:C7.1
+- canvas_click: pad:C10.2
 - wait: 1
 - canvas_hover:
-  - 470
-  - -100
+  - 590
+  - 75
 - wait: 1
-- canvas_hover: pad:U2.2@1
+- canvas_hover: pad:U1.22
 - wait: 1
-- canvas_click: pad:U2.2@1
+- canvas_click: pad:U1.22
 - wait: 1
 - keys:
   - Escape
@@ -154,8 +161,8 @@ steps:
 - wait: 2
 brief_sha256: 101f88647dbaff97
 -->
-<!-- wf:out id=ratsnest-cleared-by-routing sha=a5e1057b4be1 -->
-<video controls muted playsinline preload="metadata" src="../assets/wf/docs/pcb/index/ratsnest-cleared-by-routing.mp4" title="Route Trace from C7 to the regulator tab; the +3V3 ratsnest line clears"></video>
+<!-- wf:out id=ratsnest-cleared-by-routing sha=87b1ea4c6255 -->
+<video controls muted playsinline preload="metadata" src="../assets/wf/docs/pcb/index/ratsnest-cleared-by-routing.mp4" title="With the C10–U1 bootstrap track deleted a ratsnest line shows the open connection; Route Trace (X) from C10 to the BST pin of U1 clears it"></video>
 <!-- /wf:out -->
 
 - Ratsnest lines **automatically update** after every edit

@@ -130,7 +130,7 @@ caption: 'Fabrication & Assembly Output after Generate Files to Memory: revision
 project: none
 setup:
 - wait: 1
-- open_file: wireframe:tests/data/buck_converter_automotive/kicad/buck-converter-automotive.kicad_pro
+- open_file: board:buck-converter:kicad
 - menu:
   - File
   - Import

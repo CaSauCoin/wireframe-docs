@@ -1402,30 +1402,30 @@
       "file": "docs/assets/wf/docs/pcb/design-rules/assign-and-verify-a-net-class.mp4",
       "page": "docs/pcb/design-rules.md",
       "slot": "assign-and-verify-a-net-class",
-      "slot_sha256": "f51908b0a59a62d19b7045b086444edd54e74de16a196e6a2f8e6ddbd2742070",
-      "caption": "VIN moved from Default to Power under Every net; the new route takes the 20 mil class width, then DFM & DRC",
+      "slot_sha256": "6ab0d7813405b09c836ff7966dd2ee0ee0c572962352035419eebd31c0de8213",
+      "caption": "A Power class at the 1 mm (39.37 mil) the author used for the 12 V input; /12V_fused assigned to it under Every net (13 → 10 tracks off their class size), its track shows Class: Power, and DFM stays clean",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-10T08:50:42+00:00",
-      "run": "/tmp/wf-docs/20261010-154833-docs/20261010-154834-assign-and-verify-a-net-class",
+      "captured_at": "2026-10-14T17:04:39+00:00",
+      "run": "/tmp/wf-docs/20261015-000353-docs/20261015-000357-assign-and-verify-a-net-class",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "d4f6acf1261e89fe77614e949cf4d5b24d2529d999c2c7c04127644349a418b3",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "903ca3dd1208714d3f692a0ff591866ae08a0ec27e7027b9bfd03a0596be3ab4",
         "version": "1.5.47",
         "git": {
-          "commit": "da76518ca4f8d47ce5f8fc36826257f622ab39ed",
-          "branch": "AI/PCB/implement",
-          "dirty": true
+          "commit": "e6dfa2199ffbea7a02ec2dab1ba2501956202b63",
+          "branch": "HEAD",
+          "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "recording /tmp/wf-docs/20261010-154833-docs/20261010-154834-assign-and-verify-a-net-class/out/videos/assign-and-verify-a-net-class.mp4",
+      "app_report": "recording /tmp/wf-docs/20261015-000353-docs/20261015-000357-assign-and-verify-a-net-class/out/videos/assign-and-verify-a-net-class.mp4",
       "state": {
-        "active_document": "7805_regulator.pcbxml",
+        "active_document": "buck-converter-automotive.pcbxml",
         "active_type": "pcb",
-        "documents": 4,
-        "frame": 1437,
+        "documents": 2,
+        "frame": 512,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -1434,12 +1434,12 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "35bf59addd05aca2816f9275b086b45d569a1858f249c464560ba7a68fdf81a7",
-      "bytes": 1316858,
+      "sha256": "b4a74dcebd9bc053bc439779e93fc6c8c0066e6b8de52b766a72eae28ebce404",
+      "bytes": 1385569,
       "width": 1598,
-      "height": 868,
+      "height": 898,
       "codec": "h264",
-      "duration": 36.533333
+      "duration": 37.467
     },
     "docs/pcb/design-rules.md#design-rules-manager": {
       "kind": "shot",
@@ -1447,30 +1447,30 @@
       "file": "docs/assets/wf/docs/pcb/design-rules/design-rules-manager.png",
       "page": "docs/pcb/design-rules.md",
       "slot": "design-rules-manager",
-      "slot_sha256": "0fcec6b7e79744e01f8a2fe3ce5595c849df85fa3a662f4b62b165ac48d45a90",
-      "caption": "Design Rules Manager with the Default and Power net classes",
+      "slot_sha256": "e6c40aff62b9ff17b26dad9c7461315c977b71dba981f50a88f993652e24cf39",
+      "caption": "The Design Rules Manager on the imported buck converter: its one class, Default, drawn to scale — 9.8 mil track, 5 mil clearance, 27.6 mil via",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-08T17:13:39+00:00",
-      "run": "/tmp/wf-docs/20261009-001120-docs/20261009-001334-design-rules-manager",
+      "captured_at": "2026-10-14T17:03:57+00:00",
+      "run": "/tmp/wf-docs/20261015-000353-docs/20261015-000353-design-rules-manager",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "48701fc3ed340c29e4adfa846bc046b1ddc2be4eafae7b29f2e2cebb63060f51",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "903ca3dd1208714d3f692a0ff591866ae08a0ec27e7027b9bfd03a0596be3ab4",
         "version": "1.5.47",
         "git": {
-          "commit": "48c03b5ae3fa56f7017161359fac0adac6998e1e",
-          "branch": "AI/PCB/implement",
+          "commit": "e6dfa2199ffbea7a02ec2dab1ba2501956202b63",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261009-001120-docs/20261009-001334-design-rules-manager/out/shots/design-rules-manager.png (1600x870)",
+      "app_report": "saved /tmp/wf-docs/20261015-000353-docs/20261015-000353-design-rules-manager/out/shots/design-rules-manager.png (1600x900)",
       "state": {
         "active_document": "buck-converter-automotive.pcbxml",
         "active_type": "pcb",
         "documents": 2,
-        "frame": 702,
+        "frame": 383,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -1479,10 +1479,10 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "47b1e5e0c2b74ef5d2faf03a867e314b66380519a4502ce3345cd9a3f32a2ad4",
-      "bytes": 298893,
+      "sha256": "38c567bd8798da79cf77ce436466ad854a8bbdb943c71dfb15fbb98ffd149769",
+      "bytes": 306058,
       "width": 1600,
-      "height": 870
+      "height": 900
     },
     "docs/pcb/dfm-and-drc.md#dfm-and-drc-results": {
       "kind": "shot",
@@ -1621,30 +1621,30 @@
       "file": "docs/assets/wf/docs/pcb/index/pcb-workspace.png",
       "page": "docs/pcb/index.md",
       "slot": "pcb-workspace",
-      "slot_sha256": "c5542d722b18c05c6583580166784bae6f30ea885dd75bf40bad8a4636bb6c5b",
+      "slot_sha256": "f334efdee7476bb6bf8a4492e4693ceaffc96bab2592a9cb1d1408cf0dbabc29",
       "caption": "The PCB editor: canvas, vertical toolbar, Layers, Footprints and Board Settings",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-10T08:25:05+00:00",
-      "run": "/tmp/wf-docs/20261010-152415-docs/20261010-152501-pcb-workspace",
+      "captured_at": "2026-10-14T17:12:07+00:00",
+      "run": "/tmp/wf-docs/20261015-001204-docs/20261015-001204-pcb-workspace",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "d9b9e0f2f3069f9f991a44107d5280ec488fe1b3b7a18ea6504311e15a901a3a",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "903ca3dd1208714d3f692a0ff591866ae08a0ec27e7027b9bfd03a0596be3ab4",
         "version": "1.5.47",
         "git": {
-          "commit": "da76518ca4f8d47ce5f8fc36826257f622ab39ed",
-          "branch": "AI/PCB/implement",
+          "commit": "e6dfa2199ffbea7a02ec2dab1ba2501956202b63",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261010-152415-docs/20261010-152501-pcb-workspace/out/shots/pcb-workspace.png (1600x870)",
+      "app_report": "saved /tmp/wf-docs/20261015-001204-docs/20261015-001204-pcb-workspace/out/shots/pcb-workspace.png (1600x900)",
       "state": {
         "active_document": "buck-converter-automotive.pcbxml",
         "active_type": "pcb",
         "documents": 2,
-        "frame": 340,
+        "frame": 298,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -1653,10 +1653,10 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "315db8e28df4ef524b876b040af906a179f57a035fddaefe6a359cfe6f9a6f87",
-      "bytes": 388425,
+      "sha256": "30090594123383a13ecfc43dbc5a499686c8674364d0431d58c0db6dae3a1e7d",
+      "bytes": 326282,
       "width": 1600,
-      "height": 870
+      "height": 900
     },
     "docs/pcb/index.md#ratsnest-cleared-by-routing": {
       "kind": "video",
@@ -1664,30 +1664,30 @@
       "file": "docs/assets/wf/docs/pcb/index/ratsnest-cleared-by-routing.mp4",
       "page": "docs/pcb/index.md",
       "slot": "ratsnest-cleared-by-routing",
-      "slot_sha256": "e069dd9c7d6fc5c61ddbab5de03a51d567501891d877465b58c4802d6ca923b0",
-      "caption": "Route Trace from C7 to the regulator tab; the +3V3 ratsnest line clears",
+      "slot_sha256": "fbd6fa6ab4aca27c7ad7d188f00f817918a5ca42b9ce60b154c7f8a0a4451f68",
+      "caption": "With the C10–U1 bootstrap track deleted a ratsnest line shows the open connection; Route Trace (X) from C10 to the BST pin of U1 clears it",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-10T08:43:55+00:00",
-      "run": "/tmp/wf-docs/20261010-154252-docs/20261010-154253-ratsnest-cleared-by-routing",
+      "captured_at": "2026-10-14T17:05:22+00:00",
+      "run": "/tmp/wf-docs/20261015-000459-docs/20261015-000501-ratsnest-cleared-by-routing",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "d4f6acf1261e89fe77614e949cf4d5b24d2529d999c2c7c04127644349a418b3",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "903ca3dd1208714d3f692a0ff591866ae08a0ec27e7027b9bfd03a0596be3ab4",
         "version": "1.5.47",
         "git": {
-          "commit": "da76518ca4f8d47ce5f8fc36826257f622ab39ed",
-          "branch": "AI/PCB/implement",
-          "dirty": true
+          "commit": "e6dfa2199ffbea7a02ec2dab1ba2501956202b63",
+          "branch": "HEAD",
+          "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "recording /tmp/wf-docs/20261010-154252-docs/20261010-154253-ratsnest-cleared-by-routing/out/videos/ratsnest-cleared-by-routing.mp4",
+      "app_report": "recording /tmp/wf-docs/20261015-000459-docs/20261015-000501-ratsnest-cleared-by-routing/out/videos/ratsnest-cleared-by-routing.mp4",
       "state": {
-        "active_document": "7805_regulator.pcbxml",
+        "active_document": "buck-converter-automotive.pcbxml",
         "active_type": "pcb",
-        "documents": 4,
-        "frame": 1061,
+        "documents": 2,
+        "frame": 610,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -1696,12 +1696,12 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "a5e1057b4be1ec6861c84d61597d3ea544445d33110a68d33e5342dd3d91aa87",
-      "bytes": 494950,
+      "sha256": "87b1ea4c6255717af8b5009fda6b96a6869fa80d9973bf821a417b28c21442e0",
+      "bytes": 646927,
       "width": 1598,
-      "height": 868,
+      "height": 898,
       "codec": "h264",
-      "duration": 14.933333
+      "duration": 14.634
     },
     "docs/pcb/layers-and-views.md#pcb-layers-panel": {
       "kind": "shot",
@@ -1709,30 +1709,30 @@
       "file": "docs/assets/wf/docs/pcb/layers-and-views/pcb-layers-panel.png",
       "page": "docs/pcb/layers-and-views.md",
       "slot": "pcb-layers-panel",
-      "slot_sha256": "3db7b1e4e9d700348160de08014b6ffffb6766927e119f8fb6aeeef5b9ad3acf",
+      "slot_sha256": "06ff042bc3fa657d2679c30b1f87528cf8282b4c946ee30f14174ef31410c1e0",
       "caption": "PCB Layers panel with F.Cu active",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-08T17:13:52+00:00",
-      "run": "/tmp/wf-docs/20261009-001120-docs/20261009-001348-pcb-layers-panel",
+      "captured_at": "2026-10-14T17:06:25+00:00",
+      "run": "/tmp/wf-docs/20261015-000621-docs/20261015-000621-pcb-layers-panel",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "48701fc3ed340c29e4adfa846bc046b1ddc2be4eafae7b29f2e2cebb63060f51",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "903ca3dd1208714d3f692a0ff591866ae08a0ec27e7027b9bfd03a0596be3ab4",
         "version": "1.5.47",
         "git": {
-          "commit": "48c03b5ae3fa56f7017161359fac0adac6998e1e",
-          "branch": "AI/PCB/implement",
+          "commit": "e6dfa2199ffbea7a02ec2dab1ba2501956202b63",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261009-001120-docs/20261009-001348-pcb-layers-panel/out/shots/pcb-layers-panel.png (252x420)",
+      "app_report": "saved /tmp/wf-docs/20261015-000621-docs/20261015-000621-pcb-layers-panel/out/shots/pcb-layers-panel.png (391x435) of //Layers###Layers_74b90b8c3249f5df",
       "state": {
-        "active_document": "buck-converter-automotive.pcbxml",
+        "active_document": "h730duino.pcbxml",
         "active_type": "pcb",
-        "documents": 2,
-        "frame": 708,
+        "documents": 9,
+        "frame": 356,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -1741,10 +1741,10 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "d1b3e695f5986380e97e3fcbcdcdce7652c84b275aff636652a8977b54a9e79b",
-      "bytes": 44982,
-      "width": 252,
-      "height": 420
+      "sha256": "34902d3f11e07113f5583558cf7213bbe9eb22e4e38375bd3c427bbc1e15a0b9",
+      "bytes": 48779,
+      "width": 391,
+      "height": 435
     },
     "docs/pcb/routing.md#completed-pad-to-pad-route": {
       "kind": "shot",
@@ -1752,30 +1752,30 @@
       "file": "docs/assets/wf/docs/pcb/routing/completed-pad-to-pad-route.png",
       "page": "docs/pcb/routing.md",
       "slot": "completed-pad-to-pad-route",
-      "slot_sha256": "8a88969a58602d97008a1ee2fa1bffc358a031ab543333c80f966923025c9e2c",
+      "slot_sha256": "06f17357a179ebae4d92f5d95e2ec34dee7196c180eed88141025dc58dd4ce26",
       "caption": "A completed +5V route on F.Cu, selected",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-08T17:13:56+00:00",
-      "run": "/tmp/wf-docs/20261009-001120-docs/20261009-001352-completed-pad-to-pad-route",
+      "captured_at": "2026-10-14T17:05:25+00:00",
+      "run": "/tmp/wf-docs/20261015-000522-docs/20261015-000522-completed-pad-to-pad-route",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "48701fc3ed340c29e4adfa846bc046b1ddc2be4eafae7b29f2e2cebb63060f51",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "903ca3dd1208714d3f692a0ff591866ae08a0ec27e7027b9bfd03a0596be3ab4",
         "version": "1.5.47",
         "git": {
-          "commit": "48c03b5ae3fa56f7017161359fac0adac6998e1e",
-          "branch": "AI/PCB/implement",
+          "commit": "e6dfa2199ffbea7a02ec2dab1ba2501956202b63",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261009-001120-docs/20261009-001352-completed-pad-to-pad-route/out/shots/completed-pad-to-pad-route.png (1600x870)",
+      "app_report": "saved /tmp/wf-docs/20261015-000522-docs/20261015-000522-completed-pad-to-pad-route/out/shots/completed-pad-to-pad-route.png (1600x900)",
       "state": {
         "active_document": "buck-converter-automotive.pcbxml",
         "active_type": "pcb",
         "documents": 2,
-        "frame": 540,
+        "frame": 335,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -1784,10 +1784,10 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "6a64dfe884c69603f8412fb2295a7b89e8fea87730ca8389e10629b6b67ca31a",
-      "bytes": 406257,
+      "sha256": "fc19e66b10eda5f75df90502ea059ebf7d368b389b247dd45144402606b850da",
+      "bytes": 345786,
       "width": 1600,
-      "height": 870
+      "height": 900
     },
     "docs/pcb/routing.md#route-before-and-after-trace-consolidation": {
       "kind": "shot",
@@ -1795,30 +1795,30 @@
       "file": "docs/assets/wf/docs/pcb/routing/route-before-and-after-trace-consolidation.png",
       "page": "docs/pcb/routing.md",
       "slot": "route-before-and-after-trace-consolidation",
-      "slot_sha256": "6b35c161aee24ad7c8b7a6ae8004cfea4eb52592cd24a970db9285508e0af181",
+      "slot_sha256": "5e29b488c393ba0a70f36d038c703beecfa473c009296f250e792383096cd2ed",
       "caption": "Right-click a selected /12V_filtered track: Merge Collinear Segments joins the pieces that run along one straight line",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-10T09:26:02+00:00",
-      "run": "/tmp/wf-docs/20261010-162553-docs/20261010-162553-route-before-and-after-trace-consolidation",
+      "captured_at": "2026-10-14T17:05:49+00:00",
+      "run": "/tmp/wf-docs/20261015-000522-docs/20261015-000541-route-before-and-after-trace-consolidation",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "eaa219e755dfbf711d216483948c710e4397a6a5015b6a1712ed7d9b971558aa",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "903ca3dd1208714d3f692a0ff591866ae08a0ec27e7027b9bfd03a0596be3ab4",
         "version": "1.5.47",
         "git": {
-          "commit": "da76518ca4f8d47ce5f8fc36826257f622ab39ed",
-          "branch": "AI/PCB/implement",
-          "dirty": true
+          "commit": "e6dfa2199ffbea7a02ec2dab1ba2501956202b63",
+          "branch": "HEAD",
+          "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261010-162553-docs/20261010-162553-route-before-and-after-trace-consolidation/out/shots/route-before-and-after-trace-consolidation.png (1600x870)",
+      "app_report": "saved /tmp/wf-docs/20261015-000522-docs/20261015-000541-route-before-and-after-trace-consolidation/out/shots/route-before-and-after-trace-consolidation.png (1600x900)",
       "state": {
         "active_document": "buck-converter-automotive.pcbxml",
         "active_type": "pcb",
         "documents": 2,
-        "frame": 2379,
+        "frame": 1013,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -1827,10 +1827,10 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "ee2c855be2cbf37471d250b2283eae5db4da2a44aa407b4f878d23302f4cede8",
-      "bytes": 415575,
+      "sha256": "3538ea3335918fa044bc5616885a6504aa3dbcef742867bb1019d9833c2f5ba3",
+      "bytes": 356449,
       "width": 1600,
-      "height": 870
+      "height": 900
     },
     "docs/pcb/routing.md#route-changing-layer-through-a-via": {
       "kind": "shot",
@@ -1838,30 +1838,30 @@
       "file": "docs/assets/wf/docs/pcb/routing/route-changing-layer-through-a-via.png",
       "page": "docs/pcb/routing.md",
       "slot": "route-changing-layer-through-a-via",
-      "slot_sha256": "1c09122580af010347e7e8abfe4d9af3190631363671ab75b8b650b96141dbb0",
-      "caption": "A +3V3 route that leaves C7 on F.Cu (red), drops a via with V, and continues on B.Cu (blue)",
+      "slot_sha256": "4fcb549c3667c895cd2bb94c261110e4fa66ef4072027051adc7c0c3185e2fed",
+      "caption": "The LED feed rerouted through the back: it leaves D3 on F.Cu, V drops a via, it crosses on B.Cu, a second V brings it back up to R8 — and DFM stays clean",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-10T08:50:58+00:00",
-      "run": "/tmp/wf-docs/20261010-154833-docs/20261010-155042-route-changing-layer-through-a-via",
+      "captured_at": "2026-10-14T17:09:46+00:00",
+      "run": "/tmp/wf-docs/20261015-000931-docs/20261015-000931-route-changing-layer-through-a-via",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "d4f6acf1261e89fe77614e949cf4d5b24d2529d999c2c7c04127644349a418b3",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "903ca3dd1208714d3f692a0ff591866ae08a0ec27e7027b9bfd03a0596be3ab4",
         "version": "1.5.47",
         "git": {
-          "commit": "da76518ca4f8d47ce5f8fc36826257f622ab39ed",
-          "branch": "AI/PCB/implement",
-          "dirty": true
+          "commit": "e6dfa2199ffbea7a02ec2dab1ba2501956202b63",
+          "branch": "HEAD",
+          "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261010-154833-docs/20261010-155042-route-changing-layer-through-a-via/out/shots/route-changing-layer-through-a-via.png (1600x870)",
+      "app_report": "saved /tmp/wf-docs/20261015-000931-docs/20261015-000931-route-changing-layer-through-a-via/out/shots/route-changing-layer-through-a-via.png (1600x900)",
       "state": {
-        "active_document": "7805_regulator.pcbxml",
+        "active_document": "buck-converter-automotive.pcbxml",
         "active_type": "pcb",
-        "documents": 4,
-        "frame": 4025,
+        "documents": 2,
+        "frame": 2376,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -1870,10 +1870,10 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "8ef4e1b9f8487a812f8a55429b63015360990278271a36e1c59edf4bf0346540",
-      "bytes": 325597,
+      "sha256": "21f4e54a3b112155c78a715427ef634f32883232c82c2806fe6058bfc224bab0",
+      "bytes": 283880,
       "width": 1600,
-      "height": 870
+      "height": 900
     },
     "docs/pcb/zones-and-planes.md#a-filled-copper-zone": {
       "kind": "shot",
@@ -1881,30 +1881,30 @@
       "file": "docs/assets/wf/docs/pcb/zones-and-planes/a-filled-copper-zone.png",
       "page": "docs/pcb/zones-and-planes.md",
       "slot": "a-filled-copper-zone",
-      "slot_sha256": "ef443c96a1289bfece0218ea5df04af538130fcd80e185b60ccb2982556f24aa",
+      "slot_sha256": "77f10727394037ebb3caab5b4bbd686f3e7665e1215e8efa11fcaa1e54c241d7",
       "caption": "A filled GND zone: clearance around other nets, thermal spokes to GND pads",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-10T08:25:10+00:00",
-      "run": "/tmp/wf-docs/20261010-152415-docs/20261010-152505-a-filled-copper-zone",
+      "captured_at": "2026-10-14T17:05:52+00:00",
+      "run": "/tmp/wf-docs/20261015-000549-docs/20261015-000549-a-filled-copper-zone",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "d9b9e0f2f3069f9f991a44107d5280ec488fe1b3b7a18ea6504311e15a901a3a",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "903ca3dd1208714d3f692a0ff591866ae08a0ec27e7027b9bfd03a0596be3ab4",
         "version": "1.5.47",
         "git": {
-          "commit": "da76518ca4f8d47ce5f8fc36826257f622ab39ed",
-          "branch": "AI/PCB/implement",
+          "commit": "e6dfa2199ffbea7a02ec2dab1ba2501956202b63",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261010-152415-docs/20261010-152505-a-filled-copper-zone/out/shots/a-filled-copper-zone.png (1600x870)",
+      "app_report": "saved /tmp/wf-docs/20261015-000549-docs/20261015-000549-a-filled-copper-zone/out/shots/a-filled-copper-zone.png (1600x900)",
       "state": {
         "active_document": "buck-converter-automotive.pcbxml",
         "active_type": "pcb",
         "documents": 2,
-        "frame": 686,
+        "frame": 366,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -1913,10 +1913,10 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "9ec208eb8174735cb07d15000f052ed82ec0c8ee98e77c5deaaf474d9301bec5",
-      "bytes": 370650,
+      "sha256": "17a9405c9bb9fd617dcc24eab7043f9dd1ac238ff8dbf4405658490dafe77063",
+      "bytes": 404713,
       "width": 1600,
-      "height": 870
+      "height": 900
     },
     "docs/pcb/zones-and-planes.md#fill-a-ground-plane-from-the-zone-manager": {
       "kind": "video",
@@ -1924,30 +1924,30 @@
       "file": "docs/assets/wf/docs/pcb/zones-and-planes/fill-a-ground-plane-from-the-zone-manager.mp4",
       "page": "docs/pcb/zones-and-planes.md",
       "slot": "fill-a-ground-plane-from-the-zone-manager",
-      "slot_sha256": "1ee70e3c2639277f0ba74c0d6dfb30fa0eb50ff9162f7051a7facc17d90c0707",
-      "caption": "Zone Manager → GND plane → Top and bottom, then Refill",
+      "slot_sha256": "1f0770e8f6c54aad3a87293456212e3e7b133a681cb1751ffa30afafbb00c201",
+      "caption": "Zone Manager on the buck converter: the F.Cu GND pour fills 48 % at 19.7 mil clearance; 10 mil and Refill take it to 58 %, and DFM stays clean",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-10T08:44:53+00:00",
-      "run": "/tmp/wf-docs/20261010-154252-docs/20261010-154356-fill-a-ground-plane-from-the-zone-manager",
+      "captured_at": "2026-10-14T17:11:10+00:00",
+      "run": "/tmp/wf-docs/20261015-001050-docs/20261015-001050-fill-a-ground-plane-from-the-zone-manager",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "d4f6acf1261e89fe77614e949cf4d5b24d2529d999c2c7c04127644349a418b3",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "903ca3dd1208714d3f692a0ff591866ae08a0ec27e7027b9bfd03a0596be3ab4",
         "version": "1.5.47",
         "git": {
-          "commit": "da76518ca4f8d47ce5f8fc36826257f622ab39ed",
-          "branch": "AI/PCB/implement",
-          "dirty": true
+          "commit": "e6dfa2199ffbea7a02ec2dab1ba2501956202b63",
+          "branch": "HEAD",
+          "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "recording /tmp/wf-docs/20261010-154252-docs/20261010-154356-fill-a-ground-plane-from-the-zone-manager/out/videos/fill-a-ground-plane-from-the-zone-manager.mp4",
+      "app_report": "recording /tmp/wf-docs/20261015-001050-docs/20261015-001050-fill-a-ground-plane-from-the-zone-manager/out/videos/fill-a-ground-plane-from-the-zone-manager.mp4",
       "state": {
-        "active_document": "7805_regulator.pcbxml",
+        "active_document": "buck-converter-automotive.pcbxml",
         "active_type": "pcb",
-        "documents": 4,
-        "frame": 2226,
+        "documents": 2,
+        "frame": 773,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -1956,12 +1956,12 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "3a87ca484f4765cd2ed718b1f23da6be2c47b9fcd631f90fad0fa93519a8a6dc",
-      "bytes": 362636,
+      "sha256": "e4e992f6e7ca2fdc015399c21572ea210a058fb1bc9fa8614a35e62da98e038b",
+      "bytes": 425066,
       "width": 1598,
-      "height": 868,
+      "height": 898,
       "codec": "h264",
-      "duration": 14.266667
+      "duration": 13.334
     },
     "docs/pcb/zones-and-planes.md#overlapping-zones-with-different-priorities": {
       "kind": "shot",
@@ -1969,30 +1969,30 @@
       "file": "docs/assets/wf/docs/pcb/zones-and-planes/overlapping-zones-with-different-priorities.png",
       "page": "docs/pcb/zones-and-planes.md",
       "slot": "overlapping-zones-with-different-priorities",
-      "slot_sha256": "599e88620642541f2335874b1b9cbbbaa46b98f56749bb53764345a5badea558",
+      "slot_sha256": "35a151247caf625760b7bf493b455b1cfdd18eda31a96cbcbfc406f5e2ba5dc4",
       "caption": "Zone Manager — the board's GND pours with their layer, priority and clearance",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-08T17:14:00+00:00",
-      "run": "/tmp/wf-docs/20261009-001120-docs/20261009-001356-overlapping-zones-with-different-priorities",
+      "captured_at": "2026-10-14T17:06:21+00:00",
+      "run": "/tmp/wf-docs/20261015-000549-docs/20261015-000618-overlapping-zones-with-different-priorities",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "48701fc3ed340c29e4adfa846bc046b1ddc2be4eafae7b29f2e2cebb63060f51",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "903ca3dd1208714d3f692a0ff591866ae08a0ec27e7027b9bfd03a0596be3ab4",
         "version": "1.5.47",
         "git": {
-          "commit": "48c03b5ae3fa56f7017161359fac0adac6998e1e",
-          "branch": "AI/PCB/implement",
+          "commit": "e6dfa2199ffbea7a02ec2dab1ba2501956202b63",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261009-001120-docs/20261009-001356-overlapping-zones-with-different-priorities/out/shots/overlapping-zones-with-different-priorities.png (1600x870)",
+      "app_report": "saved /tmp/wf-docs/20261015-000549-docs/20261015-000618-overlapping-zones-with-different-priorities/out/shots/overlapping-zones-with-different-priorities.png (1600x900)",
       "state": {
         "active_document": "buck-converter-automotive.pcbxml",
         "active_type": "pcb",
         "documents": 2,
-        "frame": 652,
+        "frame": 404,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -2001,10 +2001,10 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "cd6fd7b81f019d5f75b1810f3626b67d5360d9a6505ec2b0a5767451a493dff9",
-      "bytes": 343837,
+      "sha256": "53eb14048314a40299fc15a3cadcb405a52bdc82e58ce027afb61b361c20c8ef",
+      "bytes": 346521,
       "width": 1600,
-      "height": 870
+      "height": 900
     },
     "docs/pcb/zones-and-planes.md#zone-manager-with-two-planes": {
       "kind": "shot",
@@ -2012,30 +2012,30 @@
       "file": "docs/assets/wf/docs/pcb/zones-and-planes/zone-manager-with-two-planes.png",
       "page": "docs/pcb/zones-and-planes.md",
       "slot": "zone-manager-with-two-planes",
-      "slot_sha256": "28b8f6ed11a62d93a072988910d1dfc6f8a7452d1c1620078a65f46519579ec8",
+      "slot_sha256": "c23bf45bec109678b9ca5641c8654fbbadf68ad83120512bf71b262bead25a49",
       "caption": "Zone Manager with GND planes on F.Cu and B.Cu",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-10T08:25:14+00:00",
-      "run": "/tmp/wf-docs/20261010-152415-docs/20261010-152510-zone-manager-with-two-planes",
+      "captured_at": "2026-10-14T17:06:18+00:00",
+      "run": "/tmp/wf-docs/20261015-000549-docs/20261015-000614-zone-manager-with-two-planes",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "d9b9e0f2f3069f9f991a44107d5280ec488fe1b3b7a18ea6504311e15a901a3a",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "903ca3dd1208714d3f692a0ff591866ae08a0ec27e7027b9bfd03a0596be3ab4",
         "version": "1.5.47",
         "git": {
-          "commit": "da76518ca4f8d47ce5f8fc36826257f622ab39ed",
-          "branch": "AI/PCB/implement",
+          "commit": "e6dfa2199ffbea7a02ec2dab1ba2501956202b63",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261010-152415-docs/20261010-152510-zone-manager-with-two-planes/out/shots/zone-manager-with-two-planes.png (1084x263)",
+      "app_report": "saved /tmp/wf-docs/20261015-000549-docs/20261015-000614-zone-manager-with-two-planes/out/shots/zone-manager-with-two-planes.png (841x336) of //Zone Manager###ZoneMgr_13aacc18c5169c94",
       "state": {
         "active_document": "buck-converter-automotive.pcbxml",
         "active_type": "pcb",
         "documents": 2,
-        "frame": 682,
+        "frame": 401,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -2044,10 +2044,10 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "8733e54168de32e132ae9b3a1c7b7b30baac9457d0b3aad8b26538acf656393d",
-      "bytes": 44523,
-      "width": 1084,
-      "height": 263
+      "sha256": "ff2e3d1af85d624704e222c6656ba48c393fd4e5fa9eaf2bfb2e8d150c7c1228",
+      "bytes": 47600,
+      "width": 841,
+      "height": 336
     },
     "docs/projects.md#create-a-new-project": {
       "kind": "video",
@@ -3410,30 +3410,30 @@
       "file": "docs/assets/wf/docs/ui-overview/current-project-structure.png",
       "page": "docs/ui-overview.md",
       "slot": "current-project-structure",
-      "slot_sha256": "5481db9631a840d4f37aeec1bcb87fcc3e38442f084dc64fdf766a423048314a",
-      "caption": "Current Project Structure",
+      "slot_sha256": "415294c0d6a5173b71325ed7cb26044c605f53e1a824b96b6aae72750538a272",
+      "caption": "Project Structure: the buck converter project, its schematic and its board",
       "script": "",
-      "planned_by": "agyserve · gemini-3.8-flash-high",
-      "captured_at": "2026-10-08T17:19:03+00:00",
-      "run": "/tmp/wf-docs/20261009-001120-docs/20261009-001859-current-project-structure",
+      "planned_by": "",
+      "captured_at": "2026-10-14T17:11:28+00:00",
+      "run": "/tmp/wf-docs/20261015-001110-docs/20261015-001126-current-project-structure",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "48701fc3ed340c29e4adfa846bc046b1ddc2be4eafae7b29f2e2cebb63060f51",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "903ca3dd1208714d3f692a0ff591866ae08a0ec27e7027b9bfd03a0596be3ab4",
         "version": "1.5.47",
         "git": {
-          "commit": "48c03b5ae3fa56f7017161359fac0adac6998e1e",
-          "branch": "AI/PCB/implement",
+          "commit": "e6dfa2199ffbea7a02ec2dab1ba2501956202b63",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261009-001120-docs/20261009-001859-current-project-structure/out/shots/current-project-structure.png (252x420)",
+      "app_report": "saved /tmp/wf-docs/20261015-001110-docs/20261015-001126-current-project-structure/out/shots/current-project-structure.png (391x453) of Project Structure",
       "state": {
-        "active_document": "7805_regulator.pcbxml",
-        "active_type": "pcb",
-        "documents": 4,
-        "frame": 424,
+        "active_document": "buck-converter-automotive.schxml",
+        "active_type": "schematic",
+        "documents": 2,
+        "frame": 342,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -3442,10 +3442,10 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "b7da15508f75dd0b252b852ec38c883253dbfb8749e80d838a97676cce1ba463",
-      "bytes": 32681,
-      "width": 252,
-      "height": 420
+      "sha256": "365b6a07c4ecd83f8a1c7ad1cd79406a8750b242627c731c80287e5fa63b9cb5",
+      "bytes": 27010,
+      "width": 391,
+      "height": 453
     },
     "docs/ui-overview.md#main-window": {
       "kind": "shot",
@@ -3453,30 +3453,30 @@
       "file": "docs/assets/wf/docs/ui-overview/main-window.png",
       "page": "docs/ui-overview.md",
       "slot": "main-window",
-      "slot_sha256": "78e100d114e1ec64b57dbbf67732025be604cd801049123ed0245474ac69a2ba",
-      "caption": "The main window with a PCB open",
+      "slot_sha256": "8c0faf1ce72e9e360676911251052f7e3ae138fee5fddfa90d4856f9ec31ccf1",
+      "caption": "The main window with the automotive buck converter board open",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-10T08:25:46+00:00",
-      "run": "/tmp/wf-docs/20261010-152415-docs/20261010-152542-main-window",
+      "captured_at": "2026-10-14T17:12:04+00:00",
+      "run": "/tmp/wf-docs/20261015-001201-docs/20261015-001201-main-window",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "d9b9e0f2f3069f9f991a44107d5280ec488fe1b3b7a18ea6504311e15a901a3a",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "903ca3dd1208714d3f692a0ff591866ae08a0ec27e7027b9bfd03a0596be3ab4",
         "version": "1.5.47",
         "git": {
-          "commit": "da76518ca4f8d47ce5f8fc36826257f622ab39ed",
-          "branch": "AI/PCB/implement",
+          "commit": "e6dfa2199ffbea7a02ec2dab1ba2501956202b63",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261010-152415-docs/20261010-152542-main-window/out/shots/main-window.png (1600x870)",
+      "app_report": "saved /tmp/wf-docs/20261015-001201-docs/20261015-001201-main-window/out/shots/main-window.png (1600x900)",
       "state": {
         "active_document": "buck-converter-automotive.pcbxml",
         "active_type": "pcb",
         "documents": 2,
-        "frame": 363,
+        "frame": 305,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -3485,10 +3485,10 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "315db8e28df4ef524b876b040af906a179f57a035fddaefe6a359cfe6f9a6f87",
-      "bytes": 388425,
+      "sha256": "32abb8da02ac0ddbde597c4aba91cb577293a7fe711a1fdc906761c48043c7e6",
+      "bytes": 326283,
       "width": 1600,
-      "height": 870
+      "height": 900
     },
     "docs/ui-overview.md#notification-and-status-feedback": {
       "kind": "video",
@@ -3500,26 +3500,26 @@
       "caption": "An action reports back in a notification",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-08T17:19:16+00:00",
-      "run": "/tmp/wf-docs/20261009-001120-docs/20261009-001903-notification-and-status-feedback",
+      "captured_at": "2026-10-14T17:11:38+00:00",
+      "run": "/tmp/wf-docs/20261015-001110-docs/20261015-001128-notification-and-status-feedback",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "48701fc3ed340c29e4adfa846bc046b1ddc2be4eafae7b29f2e2cebb63060f51",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "903ca3dd1208714d3f692a0ff591866ae08a0ec27e7027b9bfd03a0596be3ab4",
         "version": "1.5.47",
         "git": {
-          "commit": "48c03b5ae3fa56f7017161359fac0adac6998e1e",
-          "branch": "AI/PCB/implement",
+          "commit": "e6dfa2199ffbea7a02ec2dab1ba2501956202b63",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "recording /tmp/wf-docs/20261009-001120-docs/20261009-001903-notification-and-status-feedback/out/videos/notification-and-status-feedback.mp4",
+      "app_report": "recording /tmp/wf-docs/20261015-001110-docs/20261015-001128-notification-and-status-feedback/out/videos/notification-and-status-feedback.mp4",
       "state": {
-        "active_document": "aux_power_buck_regulator_power_in_and1.schxml",
+        "active_document": "buck-converter-automotive.schxml",
         "active_type": "schematic",
-        "documents": 4,
-        "frame": 492,
+        "documents": 2,
+        "frame": 343,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -3528,12 +3528,12 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "3468c19a4b87df965cc58d8b03c312614a228b5ebf25dc308fde97fa82a9924f",
-      "bytes": 133773,
+      "sha256": "00e74b436661f08f0a0cb92116884916482dc3a919cbc914ba19a7d24410389b",
+      "bytes": 287397,
       "width": 1598,
-      "height": 868,
+      "height": 898,
       "codec": "h264",
-      "duration": 2.666667
+      "duration": 8.167
     },
     "docs/ui-overview.md#rearrange-and-restore-panels": {
       "kind": "video",
@@ -3545,26 +3545,26 @@
       "caption": "Close a panel, then Preferences → Reset to Default Layout",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-08T17:18:59+00:00",
-      "run": "/tmp/wf-docs/20261009-001120-docs/20261009-001841-rearrange-and-restore-panels",
+      "captured_at": "2026-10-14T17:11:26+00:00",
+      "run": "/tmp/wf-docs/20261015-001110-docs/20261015-001112-rearrange-and-restore-panels",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "48701fc3ed340c29e4adfa846bc046b1ddc2be4eafae7b29f2e2cebb63060f51",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "903ca3dd1208714d3f692a0ff591866ae08a0ec27e7027b9bfd03a0596be3ab4",
         "version": "1.5.47",
         "git": {
-          "commit": "48c03b5ae3fa56f7017161359fac0adac6998e1e",
-          "branch": "AI/PCB/implement",
+          "commit": "e6dfa2199ffbea7a02ec2dab1ba2501956202b63",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "recording /tmp/wf-docs/20261009-001120-docs/20261009-001841-rearrange-and-restore-panels/out/videos/rearrange-and-restore-panels.mp4",
+      "app_report": "recording /tmp/wf-docs/20261015-001110-docs/20261015-001112-rearrange-and-restore-panels/out/videos/rearrange-and-restore-panels.mp4",
       "state": {
-        "active_document": "7805_regulator.pcbxml",
+        "active_document": "buck-converter-automotive.pcbxml",
         "active_type": "pcb",
-        "documents": 4,
-        "frame": 405,
+        "documents": 2,
+        "frame": 204,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -3573,12 +3573,12 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "2cc8c768f500376920e702cce8fbb439f776b28523e8a0629f1d68b05d6cda39",
-      "bytes": 180544,
+      "sha256": "ebf19a055f3bd34673e4e6df62968ac20a3070e58e6d1410aadd9cedd19b2f77",
+      "bytes": 446343,
       "width": 1598,
-      "height": 868,
+      "height": 898,
       "codec": "h264",
-      "duration": 3.966667
+      "duration": 12.067
     }
   }
 }

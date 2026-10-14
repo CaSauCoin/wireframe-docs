@@ -26,7 +26,7 @@ From an open PCB document:
 
 <!-- wf:shot id=3d-viewer
 caption: 'The 3D Viewer: the buck converter board with its component models'
-project: wireframe:tests/data/buck_converter_automotive/wireframe/buck-converter-automotive.prjxml
+project: board:h730duino
 setup:
 - open_project
 - ensure_pcb
