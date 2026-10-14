@@ -2319,30 +2319,30 @@
       "file": "docs/assets/wf/docs/schematic/erc/erc-results-and-highlighted-issue.png",
       "page": "docs/schematic/erc.md",
       "slot": "erc-results-and-highlighted-issue",
-      "slot_sha256": "da3b3c3b364b3eafc56a0519afef7d22116cf08583ba0d5f9636ca0a7438bb36",
-      "caption": "ERC lists U2 pin 1 unconnected — its GND symbol was removed",
+      "slot_sha256": "434379f2d61fe8311f76cfba28d03c2fa17c59b21311080870d298b81a3c652f",
+      "caption": "ERC on the KLP4e datalogger as published: 18 errors, 9 warnings, each with its net and pins",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-08T17:15:21+00:00",
-      "run": "/tmp/wf-docs/20261009-001120-docs/20261009-001513-erc-results-and-highlighted-issue",
+      "captured_at": "2026-10-14T16:27:37+00:00",
+      "run": "/tmp/wf-docs/20261014-232733-docs/20261014-232733-erc-results-and-highlighted-issue",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "48701fc3ed340c29e4adfa846bc046b1ddc2be4eafae7b29f2e2cebb63060f51",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "337ec07fef006ef4d314c83001a6e8b06cf9e98a8f6bc678a0419bd2a3ada9cd",
         "version": "1.5.47",
         "git": {
-          "commit": "48c03b5ae3fa56f7017161359fac0adac6998e1e",
-          "branch": "AI/PCB/implement",
+          "commit": "042a4a9938d7bcd88491508014e3588633aa0635",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261009-001120-docs/20261009-001513-erc-results-and-highlighted-issue/out/shots/erc-results-and-highlighted-issue.png (1600x870)",
+      "app_report": "saved /tmp/wf-docs/20261014-232733-docs/20261014-232733-erc-results-and-highlighted-issue/out/shots/erc-results-and-highlighted-issue.png (1600x900)",
       "state": {
-        "active_document": "aux_power_buck_regulator_power_in_and1.schxml",
+        "active_document": "MCU Datalogger.schxml",
         "active_type": "schematic",
-        "documents": 4,
-        "frame": 1593,
+        "documents": 3,
+        "frame": 754,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -2352,10 +2352,10 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "08c1535e52c8451116ea29c2b45b8362df85d0dff38577ed6586110c1f36e973",
-      "bytes": 304623,
+      "sha256": "21c7e3e998dea02781b271c4feb63f390b4ff0b1017eab4a10a315c74e99c58d",
+      "bytes": 498042,
       "width": 1600,
-      "height": 870
+      "height": 900
     },
     "docs/schematic/erc.md#fix-and-re-run-erc": {
       "kind": "video",
@@ -2363,30 +2363,30 @@
       "file": "docs/assets/wf/docs/schematic/erc/fix-and-re-run-erc.mp4",
       "page": "docs/schematic/erc.md",
       "slot": "fix-and-re-run-erc",
-      "slot_sha256": "4e2d229bce13d5c03133fde0969b6120a80b218c1a1423aa4cc6d0ebcad3d0a2",
-      "caption": "U2's GND symbol is missing — undo restores it, and a re-run clears the error",
+      "slot_sha256": "92e762044f891c67ee3400b697734d248ee9cc3dc3f2d42b3a551b31869e7799",
+      "caption": "Remove the SDA label at U2 and ERC goes from 18 to 19 errors; undo, re-run, and it is back to 18",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-08T17:15:44+00:00",
-      "run": "/tmp/wf-docs/20261009-001120-docs/20261009-001521-fix-and-re-run-erc",
+      "captured_at": "2026-10-14T16:27:58+00:00",
+      "run": "/tmp/wf-docs/20261014-232733-docs/20261014-232737-fix-and-re-run-erc",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "48701fc3ed340c29e4adfa846bc046b1ddc2be4eafae7b29f2e2cebb63060f51",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "337ec07fef006ef4d314c83001a6e8b06cf9e98a8f6bc678a0419bd2a3ada9cd",
         "version": "1.5.47",
         "git": {
-          "commit": "48c03b5ae3fa56f7017161359fac0adac6998e1e",
-          "branch": "AI/PCB/implement",
+          "commit": "042a4a9938d7bcd88491508014e3588633aa0635",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "recording /tmp/wf-docs/20261009-001120-docs/20261009-001521-fix-and-re-run-erc/out/videos/fix-and-re-run-erc.mp4",
+      "app_report": "recording /tmp/wf-docs/20261014-232733-docs/20261014-232737-fix-and-re-run-erc/out/videos/fix-and-re-run-erc.mp4",
       "state": {
-        "active_document": "aux_power_buck_regulator_power_in_and1.schxml",
+        "active_document": "MCU Datalogger.schxml",
         "active_type": "schematic",
-        "documents": 4,
-        "frame": 1586,
+        "documents": 3,
+        "frame": 818,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -2396,12 +2396,12 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "b5ae24207328a31c2737f6cc636408e68234475f9af5653fca68e7ca039c7bb5",
-      "bytes": 166809,
+      "sha256": "d63ff38cbf891fba7f8dc071570df8d1af85fdf2fd896b93f49670c842329ba2",
+      "bytes": 439944,
       "width": 1598,
-      "height": 868,
+      "height": 898,
       "codec": "h264",
-      "duration": 4.533333
+      "duration": 16.634
     },
     "docs/schematic/graphics-and-annotations.md#add-a-circuit-note-and-grouping-box": {
       "kind": "video",
@@ -2497,30 +2497,30 @@
       "file": "docs/assets/wf/docs/schematic/index/schematic-workspace.png",
       "page": "docs/schematic/index.md",
       "slot": "schematic-workspace",
-      "slot_sha256": "d2bc4f91fea2cf80a52516d66b22e7d869dd661b6be3e55cb7038f5ea3638b28",
-      "caption": "The schematic editor with Library and Properties",
+      "slot_sha256": "fcabd2ee79e321af8ed5c86dbd538bc524f6ac1f7ad89b67c9eeb1f7dd339a8b",
+      "caption": "The schematic editor on the KLP4e datalogger: canvas, toolbar, Library and Properties",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-10T08:25:29+00:00",
-      "run": "/tmp/wf-docs/20261010-152415-docs/20261010-152522-schematic-workspace",
+      "captured_at": "2026-10-14T16:28:34+00:00",
+      "run": "/tmp/wf-docs/20261014-232831-docs/20261014-232831-schematic-workspace",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "d9b9e0f2f3069f9f991a44107d5280ec488fe1b3b7a18ea6504311e15a901a3a",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "337ec07fef006ef4d314c83001a6e8b06cf9e98a8f6bc678a0419bd2a3ada9cd",
         "version": "1.5.47",
         "git": {
-          "commit": "da76518ca4f8d47ce5f8fc36826257f622ab39ed",
-          "branch": "AI/PCB/implement",
+          "commit": "042a4a9938d7bcd88491508014e3588633aa0635",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261010-152415-docs/20261010-152522-schematic-workspace/out/shots/schematic-workspace.png (1600x870)",
+      "app_report": "saved /tmp/wf-docs/20261014-232831-docs/20261014-232831-schematic-workspace/out/shots/schematic-workspace.png (1600x900)",
       "state": {
-        "active_document": "aux_power_buck_regulator_power_in_and1.schxml",
+        "active_document": "MCU Datalogger.schxml",
         "active_type": "schematic",
-        "documents": 4,
-        "frame": 1185,
+        "documents": 3,
+        "frame": 578,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -2529,10 +2529,10 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "af1c10742287de0415040d698b667be8bfdd0a868d7b2c6802d40336ec34fa9a",
-      "bytes": 339913,
+      "sha256": "a995e7848f9967df59248510422ab01585f8c3ded75f14bf3e8ab6d39afbf84f",
+      "bytes": 447994,
       "width": 1600,
-      "height": 870
+      "height": 900
     },
     "docs/schematic/placing-components.md#find-and-place-a-symbol": {
       "kind": "video",
