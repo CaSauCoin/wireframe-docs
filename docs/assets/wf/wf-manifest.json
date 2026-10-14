@@ -139,30 +139,30 @@
       "file": "docs/assets/wf/docs/advanced/selection-and-editing/copy-place-and-undo-a-group.mp4",
       "page": "docs/advanced/selection-and-editing.md",
       "slot": "copy-place-and-undo-a-group",
-      "slot_sha256": "ab10ab708641f6fc7ec620a7f63a25b5b4a99f556c778ed0bf0c0278439d08ec",
-      "caption": "Box-select, copy, paste, place — then undo",
+      "slot_sha256": "33c7710778756a3023bf4280619af649f0e56287d2b73a951d8c3132cb687f09",
+      "caption": "Box-select the two EEPROMs, copy, paste and click to place the copy (29 → 31 parts) — then undo",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-08T17:11:49+00:00",
-      "run": "/tmp/wf-docs/20261009-001120-docs/20261009-001120-copy-place-and-undo-a-group",
+      "captured_at": "2026-10-14T16:38:52+00:00",
+      "run": "/tmp/wf-docs/20261014-233837-docs/20261014-233837-copy-place-and-undo-a-group",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "48701fc3ed340c29e4adfa846bc046b1ddc2be4eafae7b29f2e2cebb63060f51",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "337ec07fef006ef4d314c83001a6e8b06cf9e98a8f6bc678a0419bd2a3ada9cd",
         "version": "1.5.47",
         "git": {
-          "commit": "48c03b5ae3fa56f7017161359fac0adac6998e1e",
-          "branch": "AI/PCB/implement",
+          "commit": "042a4a9938d7bcd88491508014e3588633aa0635",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "recording /tmp/wf-docs/20261009-001120-docs/20261009-001120-copy-place-and-undo-a-group/out/videos/copy-place-and-undo-a-group.mp4",
+      "app_report": "recording /tmp/wf-docs/20261014-233837-docs/20261014-233837-copy-place-and-undo-a-group/out/videos/copy-place-and-undo-a-group.mp4",
       "state": {
-        "active_document": "aux_power_buck_regulator_power_in_and1.schxml",
+        "active_document": "MCU Datalogger.schxml",
         "active_type": "schematic",
-        "documents": 4,
-        "frame": 895,
+        "documents": 3,
+        "frame": 561,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -171,12 +171,12 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "45d67407fade8b9e8754d45943b49e9423c0f81d2b17a220aac0cdce2a66ee72",
-      "bytes": 173824,
+      "sha256": "030ddfc714041e2cea11ca25573c2d8cab5c44972a114264acb0653a750343f1",
+      "bytes": 398262,
       "width": 1598,
-      "height": 868,
+      "height": 898,
       "codec": "h264",
-      "duration": 6.233333
+      "duration": 11.2
     },
     "docs/advanced/selection-and-editing.md#modal-versus-docked-panel": {
       "kind": "shot",
@@ -184,30 +184,30 @@
       "file": "docs/assets/wf/docs/advanced/selection-and-editing/modal-versus-docked-panel.png",
       "page": "docs/advanced/selection-and-editing.md",
       "slot": "modal-versus-docked-panel",
-      "slot_sha256": "f2d1e7a66c6587322c653a9b3b934ebe74bb696cf38e8851d45ba595ef9badf0",
+      "slot_sha256": "b2ad6817fd9ffdcb8ff8db65c143c76f0c36946a705b202427d71f2c958fc34c",
       "caption": "A modal (Page Settings) in front of the docked panels",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-10T08:24:28+00:00",
-      "run": "/tmp/wf-docs/20261010-152415-docs/20261010-152422-modal-versus-docked-panel",
+      "captured_at": "2026-10-14T16:37:57+00:00",
+      "run": "/tmp/wf-docs/20261014-233714-docs/20261014-233753-modal-versus-docked-panel",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "d9b9e0f2f3069f9f991a44107d5280ec488fe1b3b7a18ea6504311e15a901a3a",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "337ec07fef006ef4d314c83001a6e8b06cf9e98a8f6bc678a0419bd2a3ada9cd",
         "version": "1.5.47",
         "git": {
-          "commit": "da76518ca4f8d47ce5f8fc36826257f622ab39ed",
-          "branch": "AI/PCB/implement",
+          "commit": "042a4a9938d7bcd88491508014e3588633aa0635",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261010-152415-docs/20261010-152422-modal-versus-docked-panel/out/shots/modal-versus-docked-panel.png (1600x870)",
+      "app_report": "saved /tmp/wf-docs/20261014-233714-docs/20261014-233753-modal-versus-docked-panel/out/shots/modal-versus-docked-panel.png (1600x900)",
       "state": {
-        "active_document": "aux_power_buck_regulator_power_in_and1.schxml",
+        "active_document": "MCU Datalogger.schxml",
         "active_type": "schematic",
-        "documents": 4,
-        "frame": 1205,
+        "documents": 3,
+        "frame": 550,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -216,10 +216,10 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "3ff962ea23f20efd86c87e930c3e04529533d954501617c1233ca1e681db9b69",
-      "bytes": 304669,
+      "sha256": "4f43c5b309b54a8afa4cb83faaf5191958cce2c7b7a29f5b360513e858707eec",
+      "bytes": 325097,
       "width": 1600,
-      "height": 870
+      "height": 900
     },
     "docs/advanced/selection-and-editing.md#move-a-component-attribute-safely": {
       "kind": "video",
@@ -227,30 +227,30 @@
       "file": "docs/assets/wf/docs/advanced/selection-and-editing/move-a-component-attribute-safely.mp4",
       "page": "docs/advanced/selection-and-editing.md",
       "slot": "move-a-component-attribute-safely",
-      "slot_sha256": "8070b58eb73e4155302358a146d7f72a1147e28308949b398a076211a22974dd",
-      "caption": "Edit Attributes (Lock Body) moves only the R1 reference; Finish Editing leaves the body where it was",
+      "slot_sha256": "b0d4a0c52852071cf54d16f4764d90fab2cb2dd526c157e4253634a809b7cea4",
+      "caption": "Edit Attributes (Lock Body) moves only the R1 designator of the RTC pull-up; Finish Editing leaves the body where it was",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-10T08:55:50+00:00",
-      "run": "/tmp/wf-docs/20261010-155452-docs/20261010-155452-move-a-component-attribute-safely",
+      "captured_at": "2026-10-14T16:37:51+00:00",
+      "run": "/tmp/wf-docs/20261014-233714-docs/20261014-233731-move-a-component-attribute-safely",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "118763b0e95d2677220b360e002e7ea13dbadad8c78dc92c3c5a585266a11053",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "337ec07fef006ef4d314c83001a6e8b06cf9e98a8f6bc678a0419bd2a3ada9cd",
         "version": "1.5.47",
         "git": {
-          "commit": "da76518ca4f8d47ce5f8fc36826257f622ab39ed",
-          "branch": "AI/PCB/implement",
-          "dirty": true
+          "commit": "042a4a9938d7bcd88491508014e3588633aa0635",
+          "branch": "HEAD",
+          "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "recording /tmp/wf-docs/20261010-155452-docs/20261010-155452-move-a-component-attribute-safely/out/videos/move-a-component-attribute-safely.mp4",
+      "app_report": "recording /tmp/wf-docs/20261014-233714-docs/20261014-233731-move-a-component-attribute-safely/out/videos/move-a-component-attribute-safely.mp4",
       "state": {
-        "active_document": "aux_power_buck_regulator_power_in_and1.schxml",
+        "active_document": "MCU Datalogger.schxml",
         "active_type": "schematic",
-        "documents": 4,
-        "frame": 2207,
+        "documents": 3,
+        "frame": 788,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -259,12 +259,12 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "70a4b0cc1849cb2d0b8efa6e7e0b8729ef7a22aeca2165e3048eae97c304e9c7",
-      "bytes": 360501,
+      "sha256": "a79cc838c462cf62394037e5ab31ea2514165818f7233c3462c0dbd71cdc5630",
+      "bytes": 367318,
       "width": 1598,
-      "height": 868,
+      "height": 898,
       "codec": "h264",
-      "duration": 15.766667
+      "duration": 15.634
     },
     "docs/advanced/selection-and-editing.md#pcb-trace-context-menu": {
       "kind": "shot",
@@ -272,30 +272,30 @@
       "file": "docs/assets/wf/docs/advanced/selection-and-editing/pcb-trace-context-menu.png",
       "page": "docs/advanced/selection-and-editing.md",
       "slot": "pcb-trace-context-menu",
-      "slot_sha256": "dcb2f56ee52df6f37354351e58871e99799c4b89f406af63ce7e7dc391ec9c45",
+      "slot_sha256": "5f66c0913a77ebfcbeb6abd2f613795ddfa9f6cebceba63c1a26c7c7da337a1b",
       "caption": "Trace context menu with two +5V traces selected",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-08T17:11:59+00:00",
-      "run": "/tmp/wf-docs/20261009-001120-docs/20261009-001154-pcb-trace-context-menu",
+      "captured_at": "2026-10-14T16:38:14+00:00",
+      "run": "/tmp/wf-docs/20261014-233811-docs/20261014-233811-pcb-trace-context-menu",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "48701fc3ed340c29e4adfa846bc046b1ddc2be4eafae7b29f2e2cebb63060f51",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "337ec07fef006ef4d314c83001a6e8b06cf9e98a8f6bc678a0419bd2a3ada9cd",
         "version": "1.5.47",
         "git": {
-          "commit": "48c03b5ae3fa56f7017161359fac0adac6998e1e",
-          "branch": "AI/PCB/implement",
+          "commit": "042a4a9938d7bcd88491508014e3588633aa0635",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261009-001120-docs/20261009-001154-pcb-trace-context-menu/out/shots/pcb-trace-context-menu.png (1600x870)",
+      "app_report": "saved /tmp/wf-docs/20261014-233811-docs/20261014-233811-pcb-trace-context-menu/out/shots/pcb-trace-context-menu.png (1600x900)",
       "state": {
         "active_document": "buck-converter-automotive.pcbxml",
         "active_type": "pcb",
         "documents": 2,
-        "frame": 557,
+        "frame": 352,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -304,10 +304,10 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "391bb8c6de9c428922e2cdbb3228980bbf68672fddae170355b5706c298c6fa1",
-      "bytes": 442865,
+      "sha256": "a5c227e8f824953a0192d392031368b6239ca7bebd170786b46a28d6b767bb57",
+      "bytes": 385369,
       "width": 1600,
-      "height": 870
+      "height": 900
     },
     "docs/advanced/selection-and-editing.md#schematic-component-context-menu": {
       "kind": "shot",
@@ -315,30 +315,30 @@
       "file": "docs/assets/wf/docs/advanced/selection-and-editing/schematic-component-context-menu.png",
       "page": "docs/advanced/selection-and-editing.md",
       "slot": "schematic-component-context-menu",
-      "slot_sha256": "f3f7565cbdbb5fd1baf5a718c155335a60d0c016f9123b1f864e0f2ae02adbd6",
-      "caption": "Component context menu on the schematic",
+      "slot_sha256": "7fcd24a162fedf3136f83803689d5ebc7a535d38442bc4c54a77b87cd2c987bb",
+      "caption": "Right-click the ATmega328P (U4) for its component menu",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-08T17:11:54+00:00",
-      "run": "/tmp/wf-docs/20261009-001120-docs/20261009-001149-schematic-component-context-menu",
+      "captured_at": "2026-10-14T16:37:31+00:00",
+      "run": "/tmp/wf-docs/20261014-233714-docs/20261014-233729-schematic-component-context-menu",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "48701fc3ed340c29e4adfa846bc046b1ddc2be4eafae7b29f2e2cebb63060f51",
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "337ec07fef006ef4d314c83001a6e8b06cf9e98a8f6bc678a0419bd2a3ada9cd",
         "version": "1.5.47",
         "git": {
-          "commit": "48c03b5ae3fa56f7017161359fac0adac6998e1e",
-          "branch": "AI/PCB/implement",
+          "commit": "042a4a9938d7bcd88491508014e3588633aa0635",
+          "branch": "HEAD",
           "dirty": false
         },
-        "platform": "Darwin 25.6.0 arm64",
+        "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261009-001120-docs/20261009-001149-schematic-component-context-menu/out/shots/schematic-component-context-menu.png (1600x870)",
+      "app_report": "saved /tmp/wf-docs/20261014-233714-docs/20261014-233729-schematic-component-context-menu/out/shots/schematic-component-context-menu.png (1600x900)",
       "state": {
-        "active_document": "aux_power_buck_regulator_power_in_and1.schxml",
+        "active_document": "MCU Datalogger.schxml",
         "active_type": "schematic",
-        "documents": 4,
-        "frame": 597,
+        "documents": 3,
+        "frame": 455,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -347,10 +347,10 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "600a7bb267b4834f46f0882280cc2411bb6c42e653aeb0e8df02c89bfdbf4083",
-      "bytes": 274615,
+      "sha256": "98dc3a3193edfbc6de817d83ed08ef0d914d091d70e8d85c127be8ab52f5ba7a",
+      "bytes": 383568,
       "width": 1600,
-      "height": 870
+      "height": 900
     },
     "docs/advanced/shortcuts.md#keyboard-shortcuts-page": {
       "kind": "shot",

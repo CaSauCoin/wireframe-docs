@@ -45,13 +45,17 @@ Pasted groups preserve their relative geometry and follow the cursor until place
     5. **Deliver:** Export a **15–20 second** 1080p MP4 and replace older media when selection styling or behavior differs.
 
 <!-- wf:video id=copy-place-and-undo-a-group
-caption: Box-select, copy, paste, place — then undo
+caption: Box-select the two EEPROMs, copy, paste and click to place the copy (29 → 31 parts) — then undo
 setup:
 - open_project
 - ensure_schematic
 - wait: 1
-- canvas_hover: U2
-- scroll: -3
+- canvas_fit:
+    box:
+    - 250
+    - 1040
+    - 1350
+    - 1900
 - wait: 1
 - action:
     action: mouse_move_to
@@ -61,8 +65,7 @@ steps:
 - wait: 1
 - canvas_box:
   - U2
-  - C5
-  - C6
+  - U3
 - wait: 1
 - keys:
   - Ctrl
@@ -72,8 +75,8 @@ steps:
   - V
 - wait: 1
 - canvas_click:
-  - 1300
-  - 560
+  - 600
+  - 1720
 - wait: 2
 - keys:
   - Ctrl
@@ -81,8 +84,8 @@ steps:
 - wait: 2
 brief_sha256: 8cd5372ce5390660
 -->
-<!-- wf:out id=copy-place-and-undo-a-group sha=45d67407fade -->
-<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/advanced/selection-and-editing/copy-place-and-undo-a-group.mp4" title="Box-select, copy, paste, place — then undo"></video>
+<!-- wf:out id=copy-place-and-undo-a-group sha=030ddfc71404 -->
+<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/advanced/selection-and-editing/copy-place-and-undo-a-group.mp4" title="Box-select the two EEPROMs, copy, paste and click to place the copy (29 → 31 parts) — then undo"></video>
 <!-- /wf:out -->
 
 ## Schematic object interactions
@@ -111,21 +114,25 @@ The **Move** submenu nudges a component **Up**, **Down**, **Left**, or **Right**
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 <!-- wf:shot id=schematic-component-context-menu
-caption: Component context menu on the schematic
+caption: Right-click the ATmega328P (U4) for its component menu
 setup:
 - open_project
 - ensure_schematic
 - wait: 1
+- canvas_fit:
+    refs:
+    - U4
+    margin: 0.4
 - canvas_click:
-    target: U2
+    target: U4
     button: right
 - wait: 0.5
 capture:
   popups: true
 brief_sha256: 0b1830046fdd9add
 -->
-<!-- wf:out id=schematic-component-context-menu sha=600a7bb267b4 -->
-![Component context menu on the schematic](../assets/wf/docs/advanced/selection-and-editing/schematic-component-context-menu.png)
+<!-- wf:out id=schematic-component-context-menu sha=98dc3a3193ed -->
+![Right-click the ATmega328P (U4) for its component menu](../assets/wf/docs/advanced/selection-and-editing/schematic-component-context-menu.png)
 <!-- /wf:out -->
 
 ### Short video — Move a component attribute safely
@@ -138,8 +145,8 @@ brief_sha256: 0b1830046fdd9add
     5. **Deliver:** Export a **10–14 second** 1080p MP4 with a restrained click highlight.
 
 <!-- wf:video id=move-a-component-attribute-safely
-caption: Edit Attributes (Lock Body) moves only the R1 reference; Finish Editing leaves the body where
-  it was
+caption: Edit Attributes (Lock Body) moves only the R1 designator of the RTC pull-up; Finish Editing leaves
+  the body where it was
 setup:
 - open_project
 - ensure_schematic
@@ -169,8 +176,8 @@ steps:
 - wait: 1.5
 - canvas_click:
     target:
-    - 1661.3
-    - 1084.6
+    - 930
+    - 560
     button: right
 - wait: 1.5
 - click: '**/{fa:check} Finish Editing'
@@ -182,8 +189,8 @@ steps:
 - wait: 2.5
 brief_sha256: 4b4c7c8fc06f2235
 -->
-<!-- wf:out id=move-a-component-attribute-safely sha=70a4b0cc1849 -->
-<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/advanced/selection-and-editing/move-a-component-attribute-safely.mp4" title="Edit Attributes (Lock Body) moves only the R1 reference; Finish Editing leaves the body where it was"></video>
+<!-- wf:out id=move-a-component-attribute-safely sha=a79cc838c462 -->
+<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/advanced/selection-and-editing/move-a-component-attribute-safely.mp4" title="Edit Attributes (Lock Body) moves only the R1 designator of the RTC pull-up; Finish Editing leaves the body where it was"></video>
 <!-- /wf:out -->
 
 ## PCB context menus
@@ -213,9 +220,9 @@ setup:
 - open_project
 - ensure_pcb
 - wait: 1
-- canvas_click: trace:45
+- canvas_click: trace:44
 - canvas_click:
-    target: trace:44
+    target: trace:46
     mods:
     - Ctrl
 - canvas_click:
@@ -226,7 +233,7 @@ capture:
   popups: true
 brief_sha256: 03f91b6ac02a4b69
 -->
-<!-- wf:out id=pcb-trace-context-menu sha=391bb8c6de9c -->
+<!-- wf:out id=pcb-trace-context-menu sha=a5c227e8f824 -->
 ![Trace context menu with two +5V traces selected](../assets/wf/docs/advanced/selection-and-editing/pcb-trace-context-menu.png)
 <!-- /wf:out -->
 
@@ -287,7 +294,7 @@ setup:
     y: 12
 brief_sha256: fa87a731de55cf82
 -->
-<!-- wf:out id=modal-versus-docked-panel sha=3ff962ea23f2 -->
+<!-- wf:out id=modal-versus-docked-panel sha=4f43c5b309b5 -->
 ![A modal (Page Settings) in front of the docked panels](../assets/wf/docs/advanced/selection-and-editing/modal-versus-docked-panel.png)
 <!-- /wf:out -->
 
