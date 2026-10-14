@@ -39,8 +39,6 @@ samples:
 scenes:
 
   # ── Không chụp được từ trong app ─────────────────────────────────────────
-  "docs/installation.md#first-run-verification":
-    skip: the installer and first launch happen before a scripted WireFrame session exists
   "docs/reference/config-and-session.md#recover-a-damaged-workspace-configuration":
     skip: backing up and opening the config folder happens in the OS file manager, outside the app
   "docs/tutorial/index.md#*":
