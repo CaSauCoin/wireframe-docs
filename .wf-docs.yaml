@@ -196,9 +196,9 @@ scenes:
       its wires), run ERC, then fix it on camera with Ctrl+Z and re-run ERC.
 
   # ── AI review: the saved design plan, no live model needed ───────────────
-  # NE555 blinker made by the Copilot (samples/ne555-blinker): its saved plan.
+  # AI pages show the NE555 blinker the Copilot made (samples/ne555-blinker):
+  # slots that need a project name it themselves.
   "docs/ai/*":
-    project: samples/ne555-blinker/NE555 Blinker.prjxml
     hint: &ai_review >-
       The saved AI design plan opens with the {fa:tasks} "Design Plan" button in
       the AI Copilot Panel: "AI Planned BOM & Schematic Review" with tabs BOM
@@ -208,10 +208,8 @@ scenes:
       endpoint in this lab: a sent message never gets a reply, so do not wait
       for one — show the review instead.
   "docs/ai-copilot.md#*":
-    project: samples/ne555-blinker/NE555 Blinker.prjxml
     hint: *ai_review
   "docs/tutorial/ai-design.md#*":
-    project: samples/ne555-blinker/NE555 Blinker.prjxml
     hint: *ai_review
   # /layout and the router on a real 4-layer board (a copy; nothing is saved).
   "docs/ai/auto-placer-router.md#*":

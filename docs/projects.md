@@ -190,7 +190,7 @@ steps:
 - wait: 2
 brief_sha256: c4580440ada7f097
 -->
-<!-- wf:out id=import-a-kicad-project sha=037252c5d1ad -->
+<!-- wf:out id=import-a-kicad-project sha=03898289074e -->
 <video controls muted playsinline preload="metadata" src="../assets/wf/docs/projects/import-a-kicad-project.mp4" title="File → Import → KiCad Project, then the imported project"></video>
 <!-- /wf:out -->
 

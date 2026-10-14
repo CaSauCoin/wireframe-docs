@@ -34,11 +34,12 @@ Each card has three ways forward:
 
 <!-- wf:shot id=missing-component-card-and-ai-gen-action
 caption: 'A card that needs work: Create, Import, and the /fix hint'
+project: samples/ne555-blinker/NE555 Blinker.prjxml
 setup:
 - open_project
 - panel: ai
 - wait: 2
-- click: //AI Copilot Panel/{fa:tasks}
+- click: //AI Copilot Panel/{fa:tasks} Design Plan
 - wait: 2
 - action:
     action: mouse_move_to
@@ -46,7 +47,7 @@ setup:
     y: 12
 brief_sha256: 9b7e360b92b75ea6
 -->
-<!-- wf:out id=missing-component-card-and-ai-gen-action sha=7e3c64602881 -->
+<!-- wf:out id=missing-component-card-and-ai-gen-action sha=3f474734b2b3 -->
 ![A card that needs work: Create, Import, and the /fix hint](../assets/wf/docs/ai/component-generator/missing-component-card-and-ai-gen-action.png)
 <!-- /wf:out -->
 

@@ -40,7 +40,7 @@ setup:
     y: 12
 brief_sha256: 1f97eea2e9acd5ff
 -->
-<!-- wf:out id=3d-viewer sha=32ee83fcf431 -->
+<!-- wf:out id=3d-viewer sha=20faa772e05f -->
 ![The 3D Viewer: the buck converter board with its component models](../assets/wf/docs/advanced/3d-viewer/3d-viewer.png)
 <!-- /wf:out -->
 
