@@ -112,8 +112,6 @@ Before updating a PCB:
 
 The update collects every sheet of the design from the top sheet down, keeps footprints that are already placed (position, rotation, and side), removes footprints whose component is gone from the schematic, places new footprints in a grid, updates the nets, and saves the PCB. Running it again after schematic changes is safe. See [Footprints and Placement](pcb/footprints-and-placement.md#from-the-schematic-the-normal-way).
 
-![Project File Structure](img/home/project-file-structure.png)
-
 !!! warning "Footprints are required"
     A physical component without a valid footprint cannot be placed correctly on the PCB. Resolve missing symbols, footprints, and pin-count mismatches in Component Review or the library editors before continuing.
 
