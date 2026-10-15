@@ -6,6 +6,8 @@ hide:
 
 <div class="wf-hero wf-reveal" markdown>
 
+<img class="wf-hero-logo" src="img/brand/logo.png" alt="WireFrame EDA logo" width="88" height="88">
+
 <p class="wf-eyebrow">WireFrame EDA · v1.5.47 guide</p>
 
 # <span class="wf-gradient-text">From idea to a board you can order.</span>
