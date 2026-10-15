@@ -3318,36 +3318,36 @@
       "width": 1600,
       "height": 870
     },
-    "docs/simulation/running-simulation.md#current-simulation-workbench": {
-      "kind": "shot",
-      "format": "png",
-      "file": "docs/assets/wf/docs/simulation/running-simulation/current-simulation-workbench.png",
-      "page": "docs/simulation/running-simulation.md",
-      "slot": "current-simulation-workbench",
-      "slot_sha256": "1c56380b75c8ddbdc0d477ea6b15d7167bcc65d50fc8d5435cb0b914dfdebc71",
-      "caption": "The Simulation Workbench after a transient run of the NE555 blinker",
+    "docs/simulation/index.md#copy-a-block-into-a-simulation": {
+      "kind": "video",
+      "format": "mp4",
+      "file": "docs/assets/wf/docs/simulation/index/copy-a-block-into-a-simulation.mp4",
+      "page": "docs/simulation/index.md",
+      "slot": "copy-a-block-into-a-simulation",
+      "slot_sha256": "1a0925f730e3d270c6c29f072c8c3563cbecd8b99e01318c03cc0887e43c3c92",
+      "caption": "The NE555 blinker's sheet: Simulation → Simulate a Block of This Sheet, then Copy to New Simulation — the block opens as a simulation of its own",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-08T22:54:56+00:00",
-      "run": "/tmp/wf-docs/20261009-055400-docs/20261009-055428-current-simulation-workbench",
+      "captured_at": "2026-10-15T07:35:27+00:00",
+      "run": "/tmp/wf-docs/20261015-143508-docs/20261015-143508-copy-a-block-into-a-simulation",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "76341c05abf64cdba6c84f36517b7bae938d836733eb66583138e11128ec4b40",
+        "binary": "cmake-build-release/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
+        "sha256": "ce804773ebf95937eee95386093302c66e6ce643338f45074f57138cfca3bc1f",
         "version": "1.5.47",
         "git": {
-          "commit": "4d1dfa8d4579d3528f29725e239244276791cb7a",
-          "branch": "AI/PCB/implement",
-          "dirty": false
+          "commit": "1fdc62e205e04d5071a81aad45ed0afe56c6b98a",
+          "branch": "AI/Schematic/implement",
+          "dirty": true
         },
         "platform": "Darwin 25.6.0 arm64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261009-055400-docs/20261009-055428-current-simulation-workbench/out/shots/current-simulation-workbench.png (1600x870)",
+      "app_report": "recording /tmp/wf-docs/20261015-143508-docs/20261015-143508-copy-a-block-into-a-simulation/out/videos/copy-a-block-into-a-simulation.mp4",
       "state": {
         "active_document": "led_output_power_input_timer_oscillator.schxml",
         "active_type": "schematic",
         "documents": 2,
-        "frame": 4533,
+        "frame": 772,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -3356,8 +3356,53 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "0812c6f13f552c514dc7d3b876e960774f86eab4e91f5fb06e6830adeac60dde",
-      "bytes": 336812,
+      "sha256": "1524371c661f8955021765a7276c72482ef6115daf59b341f1436ec5773e6d71",
+      "bytes": 572468,
+      "width": 1598,
+      "height": 868,
+      "codec": "h264",
+      "duration": 15.9
+    },
+    "docs/simulation/running-simulation.md#current-simulation-workbench": {
+      "kind": "shot",
+      "format": "png",
+      "file": "docs/assets/wf/docs/simulation/running-simulation/current-simulation-workbench.png",
+      "page": "docs/simulation/running-simulation.md",
+      "slot": "current-simulation-workbench",
+      "slot_sha256": "d05e48622d00f08922b64905dfd5eb674f5e33271d6ca00456f2d2d7c40e5d4a",
+      "caption": "The Simulation Workbench on the NE555 blinker's simulation after a 3 s transient, with the 9 V supply under Setup → Sources",
+      "script": "",
+      "planned_by": "",
+      "captured_at": "2026-10-15T07:35:55+00:00",
+      "run": "/tmp/wf-docs/20261015-143528-docs/20261015-143528-current-simulation-workbench",
+      "app": {
+        "binary": "cmake-build-release/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
+        "sha256": "ce804773ebf95937eee95386093302c66e6ce643338f45074f57138cfca3bc1f",
+        "version": "1.5.47",
+        "git": {
+          "commit": "1fdc62e205e04d5071a81aad45ed0afe56c6b98a",
+          "branch": "AI/Schematic/implement",
+          "dirty": true
+        },
+        "platform": "Darwin 25.6.0 arm64",
+        "source": "app"
+      },
+      "app_report": "saved /tmp/wf-docs/20261015-143528-docs/20261015-143528-current-simulation-workbench/out/shots/current-simulation-workbench.png (1600x870)",
+      "state": {
+        "active_document": "led_output_power_input_timer_oscillator-U1",
+        "active_type": "schematic",
+        "documents": 3,
+        "frame": 11261,
+        "panels": [
+          "MainDockSpace",
+          "Editor",
+          "Project Structure",
+          "Properties###Properties",
+          "AI Copilot Panel"
+        ]
+      },
+      "sha256": "2e743d936893379e6d1a150ea90f13cb085ac73a846d0314bfc901e97eb91a3f",
+      "bytes": 398465,
       "width": 1600,
       "height": 870
     },
@@ -3367,30 +3412,30 @@
       "file": "docs/assets/wf/docs/simulation/running-simulation/preflight-run-and-inspect.mp4",
       "page": "docs/simulation/running-simulation.md",
       "slot": "preflight-run-and-inspect",
-      "slot_sha256": "3e2cea7ac1687b604d10312c8d3d101c23c7eaa90cc30ce6bbea3b6c8f32fcc7",
-      "caption": "Preflight checks every part's SPICE model, then Run Simulation draws the waveforms",
+      "slot_sha256": "383ecc084fdec720dc964973534eac95b76fe9db5271852cf72f074ef4b848b9",
+      "caption": "Preflight on the NE555 blinker's simulation: every part has a model, Run Simulation, then the waveforms under Signals",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-08T23:09:32+00:00",
-      "run": "/tmp/wf-docs/20261009-060517-docs/20261009-060517-preflight-run-and-inspect",
+      "captured_at": "2026-10-15T07:37:16+00:00",
+      "run": "/tmp/wf-docs/20261015-143636-docs/20261015-143637-preflight-run-and-inspect",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "8a51d3242d53de1255bc515d30d3ce50f1729259235cd8bc986dcdfe6c16a55e",
+        "binary": "cmake-build-release/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
+        "sha256": "ce804773ebf95937eee95386093302c66e6ce643338f45074f57138cfca3bc1f",
         "version": "1.5.47",
         "git": {
-          "commit": "4d1dfa8d4579d3528f29725e239244276791cb7a",
-          "branch": "AI/PCB/implement",
+          "commit": "1fdc62e205e04d5071a81aad45ed0afe56c6b98a",
+          "branch": "AI/Schematic/implement",
           "dirty": true
         },
         "platform": "Darwin 25.6.0 arm64",
         "source": "app"
       },
-      "app_report": "recording /tmp/wf-docs/20261009-060517-docs/20261009-060517-preflight-run-and-inspect/out/videos/preflight-run-and-inspect.mp4",
+      "app_report": "recording /tmp/wf-docs/20261015-143636-docs/20261015-143637-preflight-run-and-inspect/out/videos/preflight-run-and-inspect.mp4",
       "state": {
-        "active_document": "led_output_power_input_timer_oscillator.schxml",
+        "active_document": "led_output_power_input_timer_oscillator-U1",
         "active_type": "schematic",
-        "documents": 2,
-        "frame": 1257,
+        "documents": 3,
+        "frame": 7240,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -3399,12 +3444,12 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "a38233eb8d2c759e876d8ddd04482231042fe04ccb38b034e6ac71df13e7342f",
-      "bytes": 455050,
+      "sha256": "473b33c8e52cddd62d9245580d28ee0d4665d5dec848c758020c6a8dbea8d04a",
+      "bytes": 800469,
       "width": 1598,
       "height": 868,
       "codec": "h264",
-      "duration": 15.033333
+      "duration": 24.333333
     },
     "docs/simulation/running-simulation.md#select-runnable-simulation-blocks": {
       "kind": "video",
@@ -3412,30 +3457,30 @@
       "file": "docs/assets/wf/docs/simulation/running-simulation/select-runnable-simulation-blocks.mp4",
       "page": "docs/simulation/running-simulation.md",
       "slot": "select-runnable-simulation-blocks",
-      "slot_sha256": "188eb1cc28d20ca6571a416b30853b30ae520a9ca35ddb35d3e3fb28c2119c3b",
-      "caption": "Blocks tab: Re-scan, keep only runnable blocks, select them",
+      "slot_sha256": "e52794605a70518f8d31b38553c215ddeb04bc685e8807f3694713cc2f395091",
+      "caption": "Blocks lists the circuits of the simulation with their readiness; None, Only runnable and Re-scan set what runs",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-08T23:00:52+00:00",
-      "run": "/tmp/wf-docs/20261009-055939-docs/20261009-055939-select-runnable-simulation-blocks",
+      "captured_at": "2026-10-15T07:40:16+00:00",
+      "run": "/tmp/wf-docs/20261015-143935-docs/20261015-143935-select-runnable-simulation-blocks",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "76341c05abf64cdba6c84f36517b7bae938d836733eb66583138e11128ec4b40",
+        "binary": "cmake-build-release/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
+        "sha256": "d3f54d207127e07020a84f05c293fdc4d58e6fa32e4caf57864e6e8aa27e00d5",
         "version": "1.5.47",
         "git": {
-          "commit": "4d1dfa8d4579d3528f29725e239244276791cb7a",
-          "branch": "AI/PCB/implement",
-          "dirty": false
+          "commit": "1fdc62e205e04d5071a81aad45ed0afe56c6b98a",
+          "branch": "AI/Schematic/implement",
+          "dirty": true
         },
         "platform": "Darwin 25.6.0 arm64",
         "source": "app"
       },
-      "app_report": "recording /tmp/wf-docs/20261009-055939-docs/20261009-055939-select-runnable-simulation-blocks/out/videos/select-runnable-simulation-blocks.mp4",
+      "app_report": "recording /tmp/wf-docs/20261015-143935-docs/20261015-143935-select-runnable-simulation-blocks/out/videos/select-runnable-simulation-blocks.mp4",
       "state": {
-        "active_document": "led_output_power_input_timer_oscillator.schxml",
+        "active_document": "led_output_power_input_timer_oscillator-U1",
         "active_type": "schematic",
-        "documents": 2,
-        "frame": 1498,
+        "documents": 3,
+        "frame": 11498,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -3444,12 +3489,12 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "60c12550bd79e86149a7b74bceacfa9e75ae9035b8bcf9ac130f0334f40b7ce6",
-      "bytes": 135896,
+      "sha256": "ed496d8fee0c3862b1c0417882571eecc907c8765c6a56a1db2685bd498d8a1c",
+      "bytes": 364662,
       "width": 1598,
       "height": 868,
       "codec": "h264",
-      "duration": 3.933333
+      "duration": 12.7
     },
     "docs/simulation/testbenches-and-measurements.md#testbench-with-load-and-assertion": {
       "kind": "shot",
@@ -3457,30 +3502,30 @@
       "file": "docs/assets/wf/docs/simulation/testbenches-and-measurements/testbench-with-load-and-assertion.png",
       "page": "docs/simulation/testbenches-and-measurements.md",
       "slot": "testbench-with-load-and-assertion",
-      "slot_sha256": "4b3b5101294285de759e5ca58941fe9f9e62cccdb12b999dcda970762cb6f8d4",
-      "caption": "The Testbench tab — loads, assertions and the last run",
+      "slot_sha256": "b61313270fafa3fe2fe43c32505674aa484c3d331bfc8d46ebedb82e7381e8ca",
+      "caption": "The Testbench of the NE555 blinker's simulation: a 1 kΩ load on the timer output and a frequency check that passes",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-08T22:56:46+00:00",
-      "run": "/tmp/wf-docs/20261009-055400-docs/20261009-055613-testbench-with-load-and-assertion",
+      "captured_at": "2026-10-15T07:35:08+00:00",
+      "run": "/tmp/wf-docs/20261015-143435-docs/20261015-143435-testbench-with-load-and-assertion",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "76341c05abf64cdba6c84f36517b7bae938d836733eb66583138e11128ec4b40",
+        "binary": "cmake-build-release/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
+        "sha256": "ce804773ebf95937eee95386093302c66e6ce643338f45074f57138cfca3bc1f",
         "version": "1.5.47",
         "git": {
-          "commit": "4d1dfa8d4579d3528f29725e239244276791cb7a",
-          "branch": "AI/PCB/implement",
-          "dirty": false
+          "commit": "1fdc62e205e04d5071a81aad45ed0afe56c6b98a",
+          "branch": "AI/Schematic/implement",
+          "dirty": true
         },
         "platform": "Darwin 25.6.0 arm64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261009-055400-docs/20261009-055613-testbench-with-load-and-assertion/out/shots/testbench-with-load-and-assertion.png (1600x870)",
+      "app_report": "saved /tmp/wf-docs/20261015-143435-docs/20261015-143435-testbench-with-load-and-assertion/out/shots/testbench-with-load-and-assertion.png (1600x870)",
       "state": {
-        "active_document": "led_output_power_input_timer_oscillator.schxml",
+        "active_document": "led_output_power_input_timer_oscillator-U1",
         "active_type": "schematic",
-        "documents": 2,
-        "frame": 3357,
+        "documents": 3,
+        "frame": 13338,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -3489,8 +3534,8 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "15f8f8b9952af24cc582bef048724a70d83e4f6af4249eb9a500eaa5b706e43a",
-      "bytes": 295146,
+      "sha256": "b55a38e0c01adfe489a0af6e36d32fea44f900c99448fcaefa905a355ee82705",
+      "bytes": 376803,
       "width": 1600,
       "height": 870
     },
@@ -3500,30 +3545,30 @@
       "file": "docs/assets/wf/docs/simulation/waveform-viewer/measure-a-waveform-with-a-b-cursors.mp4",
       "page": "docs/simulation/waveform-viewer.md",
       "slot": "measure-a-waveform-with-a-b-cursors",
-      "slot_sha256": "a68c5c3a89e2ff99efd2287dbb46a01e3b5c978c13bd4535b2ffffd2541f1dad",
-      "caption": "Turn on A/B cursors and drag them onto two rising edges of the timer output",
+      "slot_sha256": "4659b6ab2b675e94ffe691c0a9177adc91694e4c7eac34969f4683c95dbdca33",
+      "caption": "A/B cursors on two rising edges of timer_out read 1011 ms, 0.99 Hz; Measurements follow the window between them",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-08T22:58:24+00:00",
-      "run": "/tmp/wf-docs/20261009-055400-docs/20261009-055719-measure-a-waveform-with-a-b-cursors",
+      "captured_at": "2026-10-15T07:38:32+00:00",
+      "run": "/tmp/wf-docs/20261015-143747-docs/20261015-143747-measure-a-waveform-with-a-b-cursors",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "76341c05abf64cdba6c84f36517b7bae938d836733eb66583138e11128ec4b40",
+        "binary": "cmake-build-release/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
+        "sha256": "ce804773ebf95937eee95386093302c66e6ce643338f45074f57138cfca3bc1f",
         "version": "1.5.47",
         "git": {
-          "commit": "4d1dfa8d4579d3528f29725e239244276791cb7a",
-          "branch": "AI/PCB/implement",
-          "dirty": false
+          "commit": "1fdc62e205e04d5071a81aad45ed0afe56c6b98a",
+          "branch": "AI/Schematic/implement",
+          "dirty": true
         },
         "platform": "Darwin 25.6.0 arm64",
         "source": "app"
       },
-      "app_report": "recording /tmp/wf-docs/20261009-055400-docs/20261009-055719-measure-a-waveform-with-a-b-cursors/out/videos/measure-a-waveform-with-a-b-cursors.mp4",
+      "app_report": "recording /tmp/wf-docs/20261015-143747-docs/20261015-143747-measure-a-waveform-with-a-b-cursors/out/videos/measure-a-waveform-with-a-b-cursors.mp4",
       "state": {
-        "active_document": "led_output_power_input_timer_oscillator.schxml",
+        "active_document": "led_output_power_input_timer_oscillator-U1",
         "active_type": "schematic",
-        "documents": 2,
-        "frame": 2749,
+        "documents": 3,
+        "frame": 10228,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -3532,12 +3577,12 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "90402b5fb199d925a17732d2a2177b149e7cdafbf7d49e39d7b2010f16b72ce0",
-      "bytes": 177106,
+      "sha256": "e69b9702fd3100feec4344570d98adc56189e6bfdfa179be1eb6c2ef92749ac8",
+      "bytes": 725587,
       "width": 1598,
       "height": 868,
       "codec": "h264",
-      "duration": 4.3
+      "duration": 17.5
     },
     "docs/simulation/waveform-viewer.md#waveform-viewer-with-two-signals": {
       "kind": "shot",
@@ -3545,30 +3590,30 @@
       "file": "docs/assets/wf/docs/simulation/waveform-viewer/waveform-viewer-with-two-signals.png",
       "page": "docs/simulation/waveform-viewer.md",
       "slot": "waveform-viewer-with-two-signals",
-      "slot_sha256": "098cb3c92f597d7f4a481e1f8169cce154b5affbe9895f8eaf453d86a74243be",
-      "caption": "NE555 blinker, 3 s transient — timer output, timing capacitor, discharge and the 9 V rail",
+      "slot_sha256": "a22af0efc1661cb15c73213e39ec811a6ed949464a3490219dcb8575cb67b3f7",
+      "caption": "Signals filtered to tim: timer_out and timing_node of the NE555 blinker plotted together, with their measurements",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-08T22:57:19+00:00",
-      "run": "/tmp/wf-docs/20261009-055400-docs/20261009-055646-waveform-viewer-with-two-signals",
+      "captured_at": "2026-10-15T07:37:46+00:00",
+      "run": "/tmp/wf-docs/20261015-143716-docs/20261015-143716-waveform-viewer-with-two-signals",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "76341c05abf64cdba6c84f36517b7bae938d836733eb66583138e11128ec4b40",
+        "binary": "cmake-build-release/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
+        "sha256": "ce804773ebf95937eee95386093302c66e6ce643338f45074f57138cfca3bc1f",
         "version": "1.5.47",
         "git": {
-          "commit": "4d1dfa8d4579d3528f29725e239244276791cb7a",
-          "branch": "AI/PCB/implement",
-          "dirty": false
+          "commit": "1fdc62e205e04d5071a81aad45ed0afe56c6b98a",
+          "branch": "AI/Schematic/implement",
+          "dirty": true
         },
         "platform": "Darwin 25.6.0 arm64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261009-055400-docs/20261009-055646-waveform-viewer-with-two-signals/out/shots/waveform-viewer-with-two-signals.png (1600x870)",
+      "app_report": "saved /tmp/wf-docs/20261015-143716-docs/20261015-143716-waveform-viewer-with-two-signals/out/shots/waveform-viewer-with-two-signals.png (1600x870)",
       "state": {
-        "active_document": "led_output_power_input_timer_oscillator.schxml",
+        "active_document": "led_output_power_input_timer_oscillator-U1",
         "active_type": "schematic",
-        "documents": 2,
-        "frame": 2993,
+        "documents": 3,
+        "frame": 12290,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -3577,8 +3622,8 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "0812c6f13f552c514dc7d3b876e960774f86eab4e91f5fb06e6830adeac60dde",
-      "bytes": 336812,
+      "sha256": "b25e3cf9839d1392b8f9a85b60df65cda2898b34b8ed1e392fd8b7397efd8db0",
+      "bytes": 335166,
       "width": 1600,
       "height": 870
     },
