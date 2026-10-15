@@ -11,7 +11,7 @@ The short version: **matching is code, not a model**. The Copilot may *propose* 
 | **Pool** | **The project's own library** | `lib_<project>` beside the project file — the parts this board already uses |
 | | **Parts a person confirmed** | Parts someone checked and confirmed on an earlier project, kept for the next one |
 | | **Loaded libraries and library clones** | The libraries in the [Library Manager](library-converter.md), plus a targeted scan of the library clones on disk (KiCad's official libraries and others) |
-| **Then** | **WireFrame's published library** | 63,000+ parts, each with a symbol, a footprint and usually a 3D model, checked before publishing |
+| **Then** | **WireFrame's published library** | A curated catalogue of 10,000+ parts, each with a symbol, a footprint and usually a 3D model, checked before publishing |
 | | **LCSC / EasyEDA** | By the row's exact part number only, with the land pattern the manufacturer specifies |
 | | **A generated draft** | From the datasheet, a template or a description — a draft until you confirm it |
 
