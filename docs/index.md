@@ -99,37 +99,121 @@ Ask for a circuit, then review what it proposes before anything is applied. → 
 
 ## What you can do in WireFrame { .wf-section-title }
 
+Eight areas, each with its own guide. The links under each card go straight to the task.
+
 <div class="grid cards wf-tour" markdown>
 
 -   [![Schematic page with its title block](assets/wf/docs/schematic/templates/completed-schematic-title-block.png)](schematic/index.md)
 
-    **Schematic editor** — multi-sheet designs, wires and nets, title blocks, and an
-    electrical rules check that points at the pin. [Open the guide :octicons-arrow-right-24:](schematic/index.md)
+    **Schematic editor**
+
+    Multi-sheet schematics with live connectivity.
+    { .wf-tour-lead }
+
+    - [Place parts](schematic/placing-components.md) and fill in their properties
+    - [Wires, net labels and power symbols](schematic/wiring-and-nets.md), with net highlighting and Auto Wire
+    - [An ERC that names the pin](schematic/erc.md), run before the PCB
+    - [Title blocks and sheet templates](schematic/templates.md)
+
+    [Open the guide :octicons-arrow-right-24:](schematic/index.md){ .wf-tour-more }
 
 -   [![A routed board in the PCB editor](assets/wf/docs/pcb/routing/completed-pad-to-pad-route.png)](pcb/index.md)
 
-    **PCB layout** — footprints, tracks and vias, copper zones, layer control and
-    design rules. [Open the guide :octicons-arrow-right-24:](pcb/index.md)
+    **PCB layout**
+
+    From the ratsnest to a routed, poured board.
+    { .wf-tour-lead }
+
+    - [Board shape from SVG or DXF](pcb/board-outline.md), or described in chat
+    - [Footprints and placement](pcb/footprints-and-placement.md)
+    - [Tracks, vias, length tuning and differential pairs](pcb/routing.md)
+    - [Zones and planes](pcb/zones-and-planes.md), [design rules and net classes](pcb/design-rules.md)
+
+    [Open the guide :octicons-arrow-right-24:](pcb/index.md){ .wf-tour-more }
 
 -   [![The SPICE Simulation Workbench](assets/wf/docs/simulation/running-simulation/current-simulation-workbench.png)](simulation/index.md)
 
-    **Simulation** — copy a block into a simulation of its own, choose an
-    engine, add sources and assertions, measure waveforms. [Open the guide :octicons-arrow-right-24:](simulation/index.md)
+    **Simulation**
+
+    SPICE in a simulation file of its own.
+    { .wf-tour-lead }
+
+    - [Copy a block of a sheet](simulation/index.md#get-a-simulation) into a `.simxml`
+    - [Transient, AC, DC sweep and operating point](simulation/running-simulation.md) on ngspice, Xyce or LTspice
+    - [Waveforms measured with A/B cursors](simulation/waveform-viewer.md)
+    - [Testbench checks](simulation/testbenches-and-measurements.md): Pass, Fail or Not measured
+
+    [Open the guide :octicons-arrow-right-24:](simulation/index.md){ .wf-tour-more }
 
 -   [![AI Component Review of a planned BOM](assets/wf/docs/ai/design-agent/bom-component-review.png)](ai/index.md)
 
-    **AI Copilot** — a planned BOM and netlist you review card by card; every part is
-    checked against its symbol and land pattern. [Open the guide :octicons-arrow-right-24:](ai/index.md)
+    **AI Copilot**
+
+    Describe a circuit, then review what it proposes.
+    { .wf-tour-lead }
+
+    - [Plan a design](ai/design-agent.md): BOM, connections and blocks, card by card
+    - [Fix or create a part](ai/component-generator.md) with `/fix` and its datasheet
+    - [Commands for every panel](ai/commands.md) — type ++slash++ in the chat
+    - [Datasheets, repairs and project memory](ai/datasheets-and-memory.md)
+
+    [Open the guide :octicons-arrow-right-24:](ai/index.md){ .wf-tour-more }
 
 -   [![Local Library Manager](assets/wf/docs/libraries/library-converter/local-library-manager-overview.png)](libraries/library-converter.md)
 
-    **Libraries** — KiCad folders and files, Altium libraries converted in place,
-    symbol and footprint editors. [Open the guide :octicons-arrow-right-24:](libraries/library-converter.md)
+    **Libraries**
+
+    KiCad and Altium libraries, and your own.
+    { .wf-tour-lead }
+
+    - [Add KiCad folders or files, convert Altium](libraries/library-converter.md) in place
+    - [Library Workspace](libraries/library-workspace.md): edit and audit parts with the Copilot
+    - [Symbol editor](libraries/symbol-creator.md) and the [footprint library](libraries/footprints-library.md)
+    - [How a part is found](libraries/how-parts-are-found.md) for every BOM row
+
+    [Open the guide :octicons-arrow-right-24:](libraries/library-converter.md){ .wf-tour-more }
 
 -   [![DFM and DRC results](assets/wf/docs/pcb/dfm-and-drc/dfm-and-drc-results.png)](pcb/dfm-and-drc.md)
 
-    **Checks and fabrication** — DFM and DRC with the location of every violation,
-    then Gerber, drill and BOM. [Open the guide :octicons-arrow-right-24:](pcb/fabrication-and-export.md)
+    **Checks and fabrication**
+
+    Check the board, then send it to be made.
+    { .wf-tour-lead }
+
+    - [DFM and DRC](pcb/dfm-and-drc.md), each violation located on the board
+    - [One fabrication package](pcb/fabrication-and-export.md#the-fabrication-package): Gerber X2, drill, BOM, pick-and-place
+    - [Check the Gerbers before ordering](pcb/fabrication-and-export.md#check-the-gerbers-before-ordering)
+    - Schematic PDF and a 1:1 PCB print
+
+    [Open the guide :octicons-arrow-right-24:](pcb/fabrication-and-export.md){ .wf-tour-more }
+
+-   [![The 3D viewer](assets/wf/docs/advanced/3d-viewer/3d-viewer.png)](advanced/3d-viewer.md)
+
+    **3D viewer**
+
+    See the board before you order it.
+    { .wf-tour-lead }
+
+    - [Orbit, pan and zoom](advanced/3d-viewer.md#camera-controls) around the board
+    - Parts drawn from their STEP or OBJ models; [assign a missing model](advanced/3d-viewer.md#assigning-3d-models-to-footprints)
+    - [Bottom-side parts](advanced/3d-viewer.md#bottom-side-components) on the other face
+    - Heights, clearances and connector positions at a glance
+
+    [Open the guide :octicons-arrow-right-24:](advanced/3d-viewer.md){ .wf-tour-more }
+
+-   [![A board fitted to its case and lid](assets/wf/docs/advanced/enclosure-and-assembly/board-fit-with-a-case-and-lid.png)](advanced/enclosure-and-assembly.md)
+
+    **Enclosure and multi-board**
+
+    Fit the board to its case; build products of several boards.
+    { .wf-tour-lead }
+
+    - [Board Fit](advanced/enclosure-and-assembly.md#board-fit): a board cut out of a case, frame or standard outline
+    - Holes, keepouts and the parts the lid pins in place
+    - [Stacks of boards](advanced/enclosure-and-assembly.md#stacks-of-boards) on their spacers
+    - [System](advanced/enclosure-and-assembly.md#system-products-made-of-several-boards): boards connected pin by pin, checked across
+
+    [Open the guide :octicons-arrow-right-24:](advanced/enclosure-and-assembly.md){ .wf-tour-more }
 
 </div>
 
