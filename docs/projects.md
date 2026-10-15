@@ -43,7 +43,7 @@ steps:
 - wait: 3
 brief_sha256: 9fd78258131dd895
 -->
-<!-- wf:out id=create-a-new-project sha=ec17c47108a2 -->
+<!-- wf:out id=create-a-new-project sha=7df94f3eb478 -->
 <video controls muted playsinline preload="metadata" src="../assets/wf/docs/projects/create-a-new-project.mp4" title="File → New → New Project, pick a folder, name it, Create"></video>
 <!-- /wf:out -->
 
