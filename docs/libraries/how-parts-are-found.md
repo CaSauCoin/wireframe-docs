@@ -58,7 +58,8 @@ When a check says no, the BOM card says **which rule decided and why** — the c
 Two overlapping pads are an error only when the **symbol says they are different signals**. Manufacturers deliberately join ground to an exposed pad — KiCad ships 19 such footprints — while the same overlap between VIN and VOUT is a dead board. Without a symbol, an overlap is shown for you to look at, never reported as an error. This audit was calibrated on all 15,447 footprints of KiCad's library: apart from footprints with no pads at all (logos, heatsinks), none is flagged as an error.
 
 <!-- wf:shot id=bom-card-verdicts
-caption: A BOM card in the review — symbol and footprint verified with their contact count, the physical fit against the package drawing, and who confirmed it
+caption: A BOM card in the review — symbol and footprint verified with their contact count, the physical
+  fit against the package drawing, and whether a person has confirmed it yet
 project: samples/ne555-blinker/NE555 Blinker.prjxml
 setup:
 - open_project
@@ -71,6 +72,9 @@ setup:
     x: 1000
     y: 12
 -->
+<!-- wf:out id=bom-card-verdicts sha=b08cad2689c0 -->
+![A BOM card in the review — symbol and footprint verified with their contact count, the physical fit against the package drawing, and whether a person has confirmed it yet](../assets/wf/docs/libraries/how-parts-are-found/bom-card-verdicts.png)
+<!-- /wf:out -->
 
 ## Datasheets: downloaded, never quoted from memory
 

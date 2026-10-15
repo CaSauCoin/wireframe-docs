@@ -11,7 +11,8 @@ The **Library Workspace** is where a library is edited. The [Library Manager](li
 The Library Manager closes and the workspace opens as a tab next to your sheets and boards.
 
 <!-- wf:shot id=library-workspace-overview
-caption: The Library Workspace — the library's parts, the open part's details, and its symbol in the embedded editor
+caption: The Library Workspace — the library's parts, the open part's details, and its symbol in the embedded
+  editor
 project: board:klp4e-datalogger
 setup:
 - open_project
@@ -21,13 +22,16 @@ setup:
   - View
   - Local Library Manager
 - wait: 2
-- click: '//Library Manager/{fa:pen}  Edit'
+- click: //Library Manager/{fa:pen}  Edit
 - wait: 3
 - action:
     action: mouse_move_to
     x: 1000
     y: 12
 -->
+<!-- wf:out id=library-workspace-overview sha=f920f52d0439 -->
+![The Library Workspace — the library's parts, the open part's details, and its symbol in the embedded editor](../assets/wf/docs/libraries/library-workspace/library-workspace-overview.png)
+<!-- /wf:out -->
 
 ## What is on screen
 
@@ -72,7 +76,7 @@ setup:
   - View
   - Local Library Manager
 - wait: 2
-- click: '//Library Manager/{fa:pen}  Edit'
+- click: //Library Manager/{fa:pen}  Edit
 - wait: 3
 - panel: ai
 - wait: 1
@@ -83,8 +87,17 @@ steps:
     text: /review
 - keys:
   - Enter
-- wait: 8
+- wait: 10
+- action:
+    action: mouse_move_to
+    x: 190
+    y: 700
+- scroll: -20
+- wait: 3
 -->
+<!-- wf:out id=library-review-of-one-part sha=7284533213a5 -->
+<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/libraries/library-workspace/library-review-of-one-part.mp4" title="/review on one part of the KLP4e library — the checks that need no model"></video>
+<!-- /wf:out -->
 
 ## See also
 
