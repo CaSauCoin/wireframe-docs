@@ -97,7 +97,7 @@ setup:
 - wait: 1
 brief_sha256: 3364480ac0fba1a9
 -->
-<!-- wf:out id=supported-import-commands sha=6dcb55f0fcff -->
+<!-- wf:out id=supported-import-commands sha=3d1b072c7b9c -->
 ![Library Manager → Add library: KiCad folders and files, and Altium libraries](../assets/wf/docs/reference/file-formats/supported-import-commands.png)
 <!-- /wf:out -->
 

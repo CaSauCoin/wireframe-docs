@@ -89,13 +89,18 @@ steps:
 - click: //Library Manager/{fa:plus}  Add library  {fa:caret-down}
 - wait: 1.2
 - open_file: wireframe:tests/data/altium_libraries/Schlib1.SchLib
-- click_at:
-  - 1412
-  - 194
+- click_match:
+    window: '##Popup'
+    pattern: ^.*Altium library.*$
+    timeout: 10
 - wait: 3
 - click_at:
-  - 288
-  - 249
+  - 345
+  - 234
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
 - action:
     action: mouse_move_to
     x: 1000
@@ -103,7 +108,7 @@ steps:
 - wait: 2.5
 brief_sha256: 28d9019b49f0e3cb
 -->
-<!-- wf:out id=import-an-altium-library sha=63bd71b59854 -->
+<!-- wf:out id=import-an-altium-library sha=89b89820956e -->
 <video controls muted playsinline preload="metadata" src="../../assets/wf/docs/libraries/library-converter/import-an-altium-library.mp4" title="Library Manager → Add library → Altium library; it lands under Imported"></video>
 <!-- /wf:out -->
 
@@ -165,13 +170,18 @@ setup:
 - click: //Library Manager/{fa:plus}  Add library  {fa:caret-down}
 - wait: 1
 - open_file: wireframe:tests/data/altium_libraries/Schlib1.SchLib
-- click_at:
-  - 1412
-  - 194
+- click_match:
+    window: '##Popup'
+    pattern: ^.*Altium library.*$
+    timeout: 10
 - wait: 3
 - click_at:
-  - 288
-  - 249
+  - 345
+  - 234
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
 - wait: 2
 - action:
     action: mouse_move_to
@@ -179,7 +189,7 @@ setup:
     y: 12
 brief_sha256: 2609136198f1a6e8
 -->
-<!-- wf:out id=inventory-selection-and-cad-preview-tabs sha=296f5b17cc34 -->
+<!-- wf:out id=inventory-selection-and-cad-preview-tabs sha=d4387f78a351 -->
 ![An imported Altium library selected, with its parts and the Symbol / Footprint / 3D preview](../assets/wf/docs/libraries/library-converter/inventory-selection-and-cad-preview-tabs.png)
 <!-- /wf:out -->
 
@@ -205,9 +215,10 @@ setup:
 - click: //Library Manager/{fa:plus}  Add library  {fa:caret-down}
 - wait: 1.2
 - open_file: wireframe:tests/data/altium_libraries/Schlib1.SchLib
-- click_at:
-  - 1412
-  - 194
+- click_match:
+    window: '##Popup'
+    pattern: ^.*Altium library.*$
+    timeout: 10
 - wait: 3
 - action:
     action: mouse_move_to
@@ -216,26 +227,42 @@ setup:
 steps:
 - wait: 1
 - click_at:
-  - 288
-  - 249
+  - 345
+  - 234
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
 - wait: 1.5
 - click_at:
   - 1176
-  - 283
+  - 268
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
 - wait: 1.5
 - click_at:
   - 1305
-  - 283
+  - 268
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
 - wait: 1.5
 - click_at:
   - 1045
-  - 283
+  - 268
+- action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
 - wait: 1.5
 - click: //Library Manager/{fa:edit}  Edit properties & pins
 - wait: 2.5
 brief_sha256: 89b281d9b40e8642
 -->
-<!-- wf:out id=inspect-and-correct-an-imported-component sha=882cf6edf606 -->
+<!-- wf:out id=inspect-and-correct-an-imported-component sha=681acb02f195 -->
 <video controls muted playsinline preload="metadata" src="../../assets/wf/docs/libraries/library-converter/inspect-and-correct-an-imported-component.mp4" title="Select the imported part, step through Symbol, Footprint and 3D, open Edit properties &amp; pins"></video>
 <!-- /wf:out -->
 

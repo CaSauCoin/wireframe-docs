@@ -1271,30 +1271,30 @@
       "file": "docs/assets/wf/docs/libraries/library-converter/import-an-altium-library.mp4",
       "page": "docs/libraries/library-converter.md",
       "slot": "import-an-altium-library",
-      "slot_sha256": "246cec92235eabd59c506f97f0e79b03c6e0630fe37a47d8843bee0dab6ae57c",
+      "slot_sha256": "349980905502a5716e36d6cd1cbc5ba705370038ff9052086834f2d4c92e05a3",
       "caption": "Library Manager → Add library → Altium library; it lands under Imported",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-14T16:44:13+00:00",
-      "run": "/tmp/wf-docs/20261014-234350-docs/20261014-234355-import-an-altium-library",
+      "captured_at": "2026-10-15T07:01:56+00:00",
+      "run": "/tmp/wf-docs/20261015-140136-docs/20261015-140136-import-an-altium-library",
       "app": {
-        "binary": "cmake-build-release/src/wireframe",
-        "sha256": "ee88ecc8e528432386b19f29d272c2e8a29ae381b745c7f739c42c513b2126ab",
+        "binary": "cmake-build-release/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
+        "sha256": "ce804773ebf95937eee95386093302c66e6ce643338f45074f57138cfca3bc1f",
         "version": "1.5.47",
         "git": {
-          "commit": "2c566d06be39034cb12f6c6479a39875a3d45a51",
-          "branch": "HEAD",
-          "dirty": false
+          "commit": "160589ee674290345c66a3034e76973d4b264320",
+          "branch": "AI/Schematic/implement",
+          "dirty": true
         },
-        "platform": "Linux 6.8.0-138-generic x86_64",
+        "platform": "Darwin 25.6.0 arm64",
         "source": "app"
       },
-      "app_report": "recording /tmp/wf-docs/20261014-234350-docs/20261014-234355-import-an-altium-library/out/videos/import-an-altium-library.mp4",
+      "app_report": "recording /tmp/wf-docs/20261015-140136-docs/20261015-140136-import-an-altium-library/out/videos/import-an-altium-library.mp4",
       "state": {
         "active_document": "MCU Datalogger.schxml",
         "active_type": "schematic",
         "documents": 3,
-        "frame": 732,
+        "frame": 1667,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -1303,12 +1303,12 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "63bd71b5985499af85eecf2409d719b844bd3969819e4c8589cdb81cdacf8aa3",
-      "bytes": 363349,
+      "sha256": "89b89820956e74facbf431ff713b772c6e2494aab8a878614cfab0bc532d9eaa",
+      "bytes": 401484,
       "width": 1598,
-      "height": 898,
+      "height": 868,
       "codec": "h264",
-      "duration": 13.4
+      "duration": 13.366667
     },
     "docs/libraries/library-converter.md#inspect-and-correct-an-imported-component": {
       "kind": "video",
@@ -1316,30 +1316,30 @@
       "file": "docs/assets/wf/docs/libraries/library-converter/inspect-and-correct-an-imported-component.mp4",
       "page": "docs/libraries/library-converter.md",
       "slot": "inspect-and-correct-an-imported-component",
-      "slot_sha256": "b27e3f56a687e82bb1f75ea024808a7300488c502899099a0801c86ba5237c93",
+      "slot_sha256": "b4cc6b6d7287157435ddc89f8a40d41cc8bc089684127201277060a2b2f11253",
       "caption": "Select the imported part, step through Symbol, Footprint and 3D, open Edit properties & pins",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-14T16:44:48+00:00",
-      "run": "/tmp/wf-docs/20261014-234350-docs/20261014-234423-inspect-and-correct-an-imported-component",
+      "captured_at": "2026-10-15T07:04:55+00:00",
+      "run": "/tmp/wf-docs/20261015-140428-docs/20261015-140428-inspect-and-correct-an-imported-component",
       "app": {
-        "binary": "cmake-build-release/src/wireframe",
-        "sha256": "ee88ecc8e528432386b19f29d272c2e8a29ae381b745c7f739c42c513b2126ab",
+        "binary": "cmake-build-release/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
+        "sha256": "ce804773ebf95937eee95386093302c66e6ce643338f45074f57138cfca3bc1f",
         "version": "1.5.47",
         "git": {
-          "commit": "2c566d06be39034cb12f6c6479a39875a3d45a51",
-          "branch": "HEAD",
-          "dirty": false
+          "commit": "160589ee674290345c66a3034e76973d4b264320",
+          "branch": "AI/Schematic/implement",
+          "dirty": true
         },
-        "platform": "Linux 6.8.0-138-generic x86_64",
+        "platform": "Darwin 25.6.0 arm64",
         "source": "app"
       },
-      "app_report": "recording /tmp/wf-docs/20261014-234350-docs/20261014-234423-inspect-and-correct-an-imported-component/out/videos/inspect-and-correct-an-imported-component.mp4",
+      "app_report": "recording /tmp/wf-docs/20261015-140428-docs/20261015-140428-inspect-and-correct-an-imported-component/out/videos/inspect-and-correct-an-imported-component.mp4",
       "state": {
         "active_document": "MCU Datalogger.schxml",
         "active_type": "schematic",
         "documents": 3,
-        "frame": 1474,
+        "frame": 4087,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -1348,12 +1348,12 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "882cf6edf60619e76ff7c08d9d597a1158b38fb9ef6ee14f901a521abba6847d",
-      "bytes": 373778,
+      "sha256": "681acb02f1950a6396ea1f32ea9851aff8de22c0204fa46d5ba17c9b5570c07e",
+      "bytes": 492551,
       "width": 1598,
-      "height": 898,
+      "height": 868,
       "codec": "h264",
-      "duration": 15.9
+      "duration": 18.633333
     },
     "docs/libraries/library-converter.md#inventory-selection-and-cad-preview-tabs": {
       "kind": "shot",
@@ -1361,30 +1361,30 @@
       "file": "docs/assets/wf/docs/libraries/library-converter/inventory-selection-and-cad-preview-tabs.png",
       "page": "docs/libraries/library-converter.md",
       "slot": "inventory-selection-and-cad-preview-tabs",
-      "slot_sha256": "70b34939b715dc8b1504fed72f51ccfae69c684c83338768250d716a377b5941",
+      "slot_sha256": "24ee3f9e568f05ee7dab834df27220bb212d13f81fd01fb496c1ce8614091450",
       "caption": "An imported Altium library selected, with its parts and the Symbol / Footprint / 3D preview",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-14T16:44:23+00:00",
-      "run": "/tmp/wf-docs/20261014-234350-docs/20261014-234413-inventory-selection-and-cad-preview-tabs",
+      "captured_at": "2026-10-15T07:02:07+00:00",
+      "run": "/tmp/wf-docs/20261015-140156-docs/20261015-140156-inventory-selection-and-cad-preview-tabs",
       "app": {
-        "binary": "cmake-build-release/src/wireframe",
-        "sha256": "ee88ecc8e528432386b19f29d272c2e8a29ae381b745c7f739c42c513b2126ab",
+        "binary": "cmake-build-release/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
+        "sha256": "ce804773ebf95937eee95386093302c66e6ce643338f45074f57138cfca3bc1f",
         "version": "1.5.47",
         "git": {
-          "commit": "2c566d06be39034cb12f6c6479a39875a3d45a51",
-          "branch": "HEAD",
-          "dirty": false
+          "commit": "160589ee674290345c66a3034e76973d4b264320",
+          "branch": "AI/Schematic/implement",
+          "dirty": true
         },
-        "platform": "Linux 6.8.0-138-generic x86_64",
+        "platform": "Darwin 25.6.0 arm64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261014-234350-docs/20261014-234413-inventory-selection-and-cad-preview-tabs/out/shots/inventory-selection-and-cad-preview-tabs.png (1600x900)",
+      "app_report": "saved /tmp/wf-docs/20261015-140156-docs/20261015-140156-inventory-selection-and-cad-preview-tabs/out/shots/inventory-selection-and-cad-preview-tabs.png (1600x870)",
       "state": {
         "active_document": "MCU Datalogger.schxml",
         "active_type": "schematic",
         "documents": 3,
-        "frame": 1781,
+        "frame": 5602,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -1393,10 +1393,10 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "296f5b17cc34976d8948d774afb08f3ff41cb8b51f2141481d8823bc4c8e96d1",
-      "bytes": 245920,
+      "sha256": "d4387f78a351acb7c193721a1411157e1214bc35d10200392eb5aefe8987b5de",
+      "bytes": 284026,
       "width": 1600,
-      "height": 900
+      "height": 870
     },
     "docs/libraries/library-converter.md#local-library-manager-overview": {
       "kind": "shot",
@@ -2409,26 +2409,26 @@
       "caption": "File → New → New Project, pick a folder, name it, Create",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-10T08:30:00+00:00",
-      "run": "/tmp/wf-docs/20261010-152626-docs/20261010-152927-create-a-new-project",
+      "captured_at": "2026-10-15T06:48:17+00:00",
+      "run": "/tmp/wf-docs/20261015-134806-docs/20261015-134806-create-a-new-project",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "d9b9e0f2f3069f9f991a44107d5280ec488fe1b3b7a18ea6504311e15a901a3a",
+        "binary": "cmake-build-release/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
+        "sha256": "f4a303962e16ab3a45f5e65eb05b8c8e2b0e4946981df4d4dfa2bf13cfa18681",
         "version": "1.5.47",
         "git": {
-          "commit": "da76518ca4f8d47ce5f8fc36826257f622ab39ed",
-          "branch": "AI/PCB/implement",
-          "dirty": false
+          "commit": "160589ee674290345c66a3034e76973d4b264320",
+          "branch": "AI/Schematic/implement",
+          "dirty": true
         },
         "platform": "Darwin 25.6.0 arm64",
         "source": "app"
       },
-      "app_report": "recording /tmp/wf-docs/20261010-152626-docs/20261010-152927-create-a-new-project/out/videos/create-a-new-project.mp4",
+      "app_report": "recording /tmp/wf-docs/20261015-134806-docs/20261015-134806-create-a-new-project/out/videos/create-a-new-project.mp4",
       "state": {
         "active_document": "",
         "active_type": "none",
         "documents": 0,
-        "frame": 742,
+        "frame": 605,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -2437,12 +2437,12 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "ec17c47108a2328fefe7ae7f465247ced9150f2a5abcaba6efc1bd61e33e1633",
-      "bytes": 236992,
+      "sha256": "7df94f3eb4785e27494f105aba109b2ebb5be2694096412c677a68a587f70412",
+      "bytes": 180658,
       "width": 1598,
       "height": 868,
       "codec": "h264",
-      "duration": 9.2
+      "duration": 9.366667
     },
     "docs/projects.md#import-a-kicad-project": {
       "kind": "video",
@@ -2630,26 +2630,26 @@
       "caption": "Library Manager → Add library: KiCad folders and files, and Altium libraries",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-10T08:25:22+00:00",
-      "run": "/tmp/wf-docs/20261010-152415-docs/20261010-152514-supported-import-commands",
+      "captured_at": "2026-10-15T06:48:06+00:00",
+      "run": "/tmp/wf-docs/20261015-134759-docs/20261015-134800-supported-import-commands",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "d9b9e0f2f3069f9f991a44107d5280ec488fe1b3b7a18ea6504311e15a901a3a",
+        "binary": "cmake-build-release/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
+        "sha256": "f4a303962e16ab3a45f5e65eb05b8c8e2b0e4946981df4d4dfa2bf13cfa18681",
         "version": "1.5.47",
         "git": {
-          "commit": "da76518ca4f8d47ce5f8fc36826257f622ab39ed",
-          "branch": "AI/PCB/implement",
-          "dirty": false
+          "commit": "160589ee674290345c66a3034e76973d4b264320",
+          "branch": "AI/Schematic/implement",
+          "dirty": true
         },
         "platform": "Darwin 25.6.0 arm64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261010-152415-docs/20261010-152514-supported-import-commands/out/shots/supported-import-commands.png (1600x870)",
+      "app_report": "saved /tmp/wf-docs/20261015-134759-docs/20261015-134800-supported-import-commands/out/shots/supported-import-commands.png (1600x870)",
       "state": {
-        "active_document": "aux_power_buck_regulator_power_in_and1.schxml",
+        "active_document": "buck-converter-automotive.schxml",
         "active_type": "schematic",
-        "documents": 4,
-        "frame": 1831,
+        "documents": 2,
+        "frame": 2359,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -2658,8 +2658,8 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "6dcb55f0fcfff9c579fa29732c77482f4a5ca5cd8f2a455822ff900e40eeb8cb",
-      "bytes": 347232,
+      "sha256": "3d1b072c7b9c2960ff1029d2307ec0c60abc5643158440371817b238c214761d",
+      "bytes": 279151,
       "width": 1600,
       "height": 870
     },
@@ -3281,30 +3281,30 @@
       "file": "docs/assets/wf/docs/simulation/engines-and-models/engine-and-model-readiness.png",
       "page": "docs/simulation/engines-and-models.md",
       "slot": "engine-and-model-readiness",
-      "slot_sha256": "2659105eac93b3093b918d57dc9e6755b6d5423e18d1cd46236dca6a44e532cb",
+      "slot_sha256": "dd3e83198d1464f00d376c93d8adb8d69d8139afe25f84ed1e0d155ddc380af0",
       "caption": "Engine choice and the Models tab for the NE555 blinker",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-10-08T22:54:28+00:00",
-      "run": "/tmp/wf-docs/20261009-055400-docs/20261009-055400-engine-and-model-readiness",
+      "captured_at": "2026-10-15T07:01:35+00:00",
+      "run": "/tmp/wf-docs/20261015-140107-docs/20261015-140107-engine-and-model-readiness",
       "app": {
-        "binary": "cmake-build-debug/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "76341c05abf64cdba6c84f36517b7bae938d836733eb66583138e11128ec4b40",
+        "binary": "cmake-build-release/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
+        "sha256": "ce804773ebf95937eee95386093302c66e6ce643338f45074f57138cfca3bc1f",
         "version": "1.5.47",
         "git": {
-          "commit": "4d1dfa8d4579d3528f29725e239244276791cb7a",
-          "branch": "AI/PCB/implement",
-          "dirty": false
+          "commit": "160589ee674290345c66a3034e76973d4b264320",
+          "branch": "AI/Schematic/implement",
+          "dirty": true
         },
         "platform": "Darwin 25.6.0 arm64",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261009-055400-docs/20261009-055400-engine-and-model-readiness/out/shots/engine-and-model-readiness.png (1600x870)",
+      "app_report": "saved /tmp/wf-docs/20261015-140107-docs/20261015-140107-engine-and-model-readiness/out/shots/engine-and-model-readiness.png (1600x870)",
       "state": {
-        "active_document": "led_output_power_input_timer_oscillator.schxml",
+        "active_document": "led_output_power_input_timer_oscillator-U1",
         "active_type": "schematic",
-        "documents": 2,
-        "frame": 5055,
+        "documents": 3,
+        "frame": 10643,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -3313,8 +3313,8 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "50e0935ef411d089fca971e9f9f3a067fc7d3cdd441462355c536cbcff46ae2f",
-      "bytes": 345816,
+      "sha256": "ac2512a6b4bce205946dcda629313983de2384d304bc752f5b705f82dabfefb8",
+      "bytes": 404742,
       "width": 1600,
       "height": 870
     },

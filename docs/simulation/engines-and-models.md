@@ -75,7 +75,15 @@ setup:
   - F5
 - wait: 2
 - click_at:
-  - 385
+  - 723
+  - 228
+- wait: 2
+- click_at:
+  - 605
+  - 641
+- wait: 4
+- click_at:
+  - 384
   - 760
 - wait: 1
 - action:
@@ -85,24 +93,19 @@ setup:
 - scroll: -3
 - wait: 0.5
 - type:
-    ref: //SPICE Circuit Simulation & Analysis/##DC
+    ref: //SPICE Circuit Simulation & Analysis/**/##DC
     text: '9'
 - keys:
   - Tab
 - click_at:
-  - 430
+  - 350
   - 112
 - wait: 0.5
 - click: //##Combo_00/{fa:wave-square} Transient (.tran)
 - wait: 0.5
 - type:
-    ref: //SPICE Circuit Simulation & Analysis/##StopTime
+    ref: //SPICE Circuit Simulation & Analysis/**/##StopTime
     text: '3000'
-- keys:
-  - Tab
-- type:
-    ref: //SPICE Circuit Simulation & Analysis/##TimeStep
-    text: '1'
 - keys:
   - Tab
 - wait: 0.5
@@ -120,7 +123,7 @@ setup:
 - *id001
 brief_sha256: 2497a6f619e1bf63
 -->
-<!-- wf:out id=engine-and-model-readiness sha=50e0935ef411 -->
+<!-- wf:out id=engine-and-model-readiness sha=ac2512a6b4bc -->
 ![Engine choice and the Models tab for the NE555 blinker](../assets/wf/docs/simulation/engines-and-models/engine-and-model-readiness.png)
 <!-- /wf:out -->
 
