@@ -120,6 +120,32 @@
 .wf-tour li { overflow: hidden; }
 .wf-tour li:hover img { transform: scale(1.04); filter: none; }
 
+/* eight cards: 4 x 2 on a wide screen, 2 x 4 below, one column on a phone --
+   never a row with an empty slot */
+.md-typeset .grid.cards.wf-tour { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media screen and (max-width: 88em) {
+    .md-typeset .grid.cards.wf-tour { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media screen and (max-width: 44.9375em) {
+    .md-typeset .grid.cards.wf-tour { grid-template-columns: minmax(0, 1fr); }
+}
+.md-typeset .grid.cards.wf-tour > ul > li { display: flex; flex-direction: column; }
+.md-typeset .wf-tour li > p:nth-child(2) { margin: 0.2rem 0 0.15rem; font-size: 0.86rem; }
+.md-typeset .wf-tour .wf-tour-lead { margin: 0 0 0.55rem; color: var(--md-default-fg-color--light); font-size: 0.74rem; line-height: 1.5; }
+.md-typeset .wf-tour li > ul {
+    list-style: none; margin: 0 0 0.9rem; padding: 0.6rem 0 0; border-top: 1px solid var(--md-default-fg-color--lightest);
+    font-size: 0.7rem; line-height: 1.5;
+}
+.md-typeset .wf-tour li > ul > li { position: relative; margin: 0 0 0.42rem; padding-left: 1rem; }
+.md-typeset .wf-tour li > ul > li::before {
+    content: ""; position: absolute; left: 0.1rem; top: 0.52em; width: 0.38rem; height: 0.38rem;
+    border-radius: 50%; background: var(--md-accent-fg-color); opacity: 0.85;
+}
+.md-typeset .wf-tour li > ul a { color: var(--md-typeset-color); text-decoration: underline; text-decoration-color: var(--md-accent-fg-color--transparent); text-underline-offset: 0.18em; }
+.md-typeset .wf-tour li > ul a:hover { color: var(--md-accent-fg-color); }
+.md-typeset .wf-tour .wf-tour-more { margin-top: auto; font-weight: 600; font-size: 0.74rem; }
+.md-typeset .wf-tour li > p:last-child { margin-top: auto; margin-bottom: 0; }
+
 /* ── "First hour" timeline ────────────────────────────────── */
 .wf-steps {
     position: relative;
