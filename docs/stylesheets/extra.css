@@ -82,11 +82,23 @@
 }
 .md-header__title { font-weight: 700; letter-spacing: -0.01em; }
 .md-header__button.md-logo :is(img, svg) { fill: var(--wf-cyan); }
-.md-header__button.md-logo img { height: 1.75rem; width: auto; border-radius: 0.42rem;
-    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06), 0 0.3rem 0.9rem -0.35rem rgba(0, 214, 230, 0.55); }
-.md-nav__title .md-nav__button.md-logo img { height: 2.2rem; width: auto; border-radius: 0.5rem; }
-.wf-hero-logo { display: block; width: 4.4rem; height: 4.4rem; border-radius: 1rem; margin: 0 auto 1.1rem;
-    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06), 0 0.8rem 2.4rem -0.8rem rgba(0, 214, 230, 0.6); }
+/* The WireFrame mark: neon on dark, two steps deeper on white so it does not wash out. */
+:root { --wf-mark-a: #00f2ff; --wf-mark-b: #00ff9d; --wf-mark-node: #ffffff; --wf-mark-via: #0b0f14; }
+[data-md-color-scheme="default"] { --wf-mark-a: #0891b2; --wf-mark-b: #059669; --wf-mark-node: #0f172a; --wf-mark-via: #ffffff; }
+.wf-mark .wf-mark-a { stop-color: var(--wf-mark-a); }
+.wf-mark .wf-mark-b { stop-color: var(--wf-mark-b); }
+.wf-mark .wf-mark-node { fill: var(--wf-mark-node); }
+.wf-mark .wf-mark-via { fill: var(--wf-mark-via); }
+.wf-mark .wf-mark-via-a { stroke: var(--wf-mark-a); }
+.wf-mark .wf-mark-via-b { stroke: var(--wf-mark-b); }
+.md-header__button.md-logo svg.wf-mark { height: 1.45rem; width: 2rem; overflow: visible;
+    filter: drop-shadow(0 0 0.45rem color-mix(in srgb, var(--wf-mark-a) 35%, transparent)); }
+[data-md-color-scheme="default"] .md-header__button.md-logo svg.wf-mark { filter: none; }
+.md-nav__title .md-nav__button.md-logo svg.wf-mark { height: 2rem; width: 2.76rem; }
+.md-header__title { font-weight: 800; letter-spacing: -0.015em; }
+.md-typeset svg.wf-hero-mark, .wf-hero-mark { display: block; height: 4rem; width: 5.53rem; max-width: none; margin: 0 auto 1.3rem; overflow: visible;
+    filter: drop-shadow(0 0 1.2rem color-mix(in srgb, var(--wf-mark-a) 40%, transparent)); }
+[data-md-color-scheme="default"] .wf-hero-mark { filter: none; }
 .md-tabs {
     background: var(--wf-header-bg) !important;
     color: var(--md-default-fg-color);

@@ -1,4 +1,4 @@
-site_name: WireFrame EDA Documentation
+site_name: WireFrame EDA Docs
 site_url: https://guideline-one.vercel.app/
 site_description: >-
   Release-ready user guidelines for schematic capture, PCB layout, simulation,
@@ -25,10 +25,11 @@ theme:
         icon: material/weather-night
         name: Switch to dark mode
   font: false
-  # The app's own icon (WireFrame/assets/icon.png), not a theme glyph.
-  logo: img/brand/logo.png
-  favicon: img/brand/favicon.png
+  # The WireFrame mark (the app icon's trace, without its tile) inlined from
+  # overrides/.icons so its colours follow the light and dark schemes.
+  favicon: img/brand/favicon.svg
   icon:
+    logo: wireframe/mark
     repo: fontawesome/brands/github
   features:
     - navigation.tabs
