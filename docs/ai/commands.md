@@ -65,6 +65,26 @@ Before a schematic exists, the Copilot holds a **draft**: the requirements, the 
 | `/symbol <U1> <describe it> [image \| pdf]` | Design one part's symbol from a description, pinout images or a datasheet, built live in the Symbol editor | When the library has no symbol for the part |
 | `/footprint <U1> <describe it> [image \| pdf]` | Design one part's land pattern the same way, held against its symbol so every pin has a pad | When the library has no land pattern for the part |
 
+<!-- wf:video id=bom-of-the-planned-design
+caption: /bom on the NE555 blinker's planned design — the BOM and what is unresolved, with no model call
+project: samples/ne555-blinker/NE555 Blinker.prjxml
+setup:
+- open_project
+- panel: ai
+- wait: 2
+steps:
+- wait: 1
+- type:
+    ref: //AI Copilot Panel/##ChatInput
+    text: /bom
+- keys:
+  - Enter
+- wait: 5
+-->
+<!-- wf:out id=bom-of-the-planned-design sha=a3a6632a6317 -->
+<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/ai/commands/bom-of-the-planned-design.mp4" title="/bom on the NE555 blinker&#x27;s planned design — the BOM and what is unresolved, with no model call"></video>
+<!-- /wf:out -->
+
 ### Resume a design run
 
 If a long run stops — the provider failed, a quota ran out, you changed the model — resume it instead of starting over. These are offered when a reply names them.
@@ -120,6 +140,9 @@ setup:
 capture:
   window: AI Copilot Panel
 -->
+<!-- wf:out id=copilot-commands-on-the-pcb sha=88f42d75dcd4 -->
+![On the PCB, / offers the board's commands — review, findings, board, topology, layout](../assets/wf/docs/ai/commands/copilot-commands-on-the-pcb.png)
+<!-- /wf:out -->
 
 <!-- wf:video id=findings-on-the-board
 caption: /findings on the automotive buck converter — WireFrame's own checks, listed with no model call
@@ -139,10 +162,13 @@ steps:
   - Enter
 - wait: 6
 -->
+<!-- wf:out id=findings-on-the-board sha=f61d27764cb3 -->
+<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/ai/commands/findings-on-the-board.mp4" title="/findings on the automotive buck converter — WireFrame&#x27;s own checks, listed with no model call"></video>
+<!-- /wf:out -->
 
 ## Simulation workbench
 
-With the simulation workbench in front (**F5** on a schematic), the Copilot works on the circuits of that sheet and on the last run.
+A design's sheets are not simulated: a simulation is a file of its own (`.simxml`), made with **Simulation → New Simulation** or **Simulation → Simulate a Block of This Sheet…**. With one in front, the Copilot works on its circuits and on the last run.
 
 | Command | What it does | Why it is there |
 |---|---|---|
@@ -162,9 +188,12 @@ setup:
 - open_project
 - ensure_schematic
 - wait: 1
-- keys:
-  - F5
-- wait: 2
+- menu:
+  - Simulation
+  - Simulate a Block of This Sheet...
+- wait: 1
+- click: //Simulate a Block/{fa:copy} Copy to New Simulation
+- wait: 3
 - panel: ai
 - wait: 1
 - click: //AI Copilot Panel/##ChatInput
@@ -174,6 +203,9 @@ setup:
 capture:
   window: AI Copilot Panel
 -->
+<!-- wf:out id=copilot-commands-in-the-simulation-workbench sha=eb8cd5d2b756 -->
+![In the simulation workbench, / offers the simulation commands](../assets/wf/docs/ai/commands/copilot-commands-in-the-simulation-workbench.png)
+<!-- /wf:out -->
 
 ## Library Workspace
 
@@ -194,7 +226,8 @@ When a library is open for editing in the [Library Workspace](../libraries/libra
 | `/stop` | Stop the running batch; what is done stays done | Batches over `all` can be long |
 
 <!-- wf:shot id=copilot-commands-in-the-library-workspace
-caption: In the Library Workspace, / offers the library commands — they work on the open part, the selection or the whole library
+caption: In the Library Workspace, / offers the library commands — they work on the open part, the selection
+  or the whole library
 project: board:klp4e-datalogger
 setup:
 - open_project
@@ -204,7 +237,7 @@ setup:
   - View
   - Local Library Manager
 - wait: 2
-- click: '//Library Manager/{fa:pen}  Edit'
+- click: //Library Manager/{fa:pen}  Edit
 - wait: 3
 - panel: ai
 - wait: 1
@@ -213,6 +246,9 @@ setup:
     text: /
 - wait: 1
 -->
+<!-- wf:out id=copilot-commands-in-the-library-workspace sha=c9c3429d8656 -->
+![In the Library Workspace, / offers the library commands — they work on the open part, the selection or the whole library](../assets/wf/docs/ai/commands/copilot-commands-in-the-library-workspace.png)
+<!-- /wf:out -->
 
 ## Everywhere: project memory and help
 

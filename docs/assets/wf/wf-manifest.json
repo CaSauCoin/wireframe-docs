@@ -395,6 +395,51 @@
       "width": 1600,
       "height": 900
     },
+    "docs/ai/commands.md#bom-of-the-planned-design": {
+      "kind": "video",
+      "format": "mp4",
+      "file": "docs/assets/wf/docs/ai/commands/bom-of-the-planned-design.mp4",
+      "page": "docs/ai/commands.md",
+      "slot": "bom-of-the-planned-design",
+      "slot_sha256": "1a0a206926ab3651995370268d899c18d1b0087b8692c4835b58d8093acaec8d",
+      "caption": "/bom on the NE555 blinker's planned design — the BOM and what is unresolved, with no model call",
+      "script": "",
+      "planned_by": "",
+      "captured_at": "2026-10-15T00:15:25+00:00",
+      "run": "/tmp/wf-docs/20261015-071513-docs/20261015-071513-bom-of-the-planned-design",
+      "app": {
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "f93faaeb6791dda40405a87644037a81081cd7db5e7f8d8ab2b41db84de95c3a",
+        "version": "1.5.47",
+        "git": {
+          "commit": "bdb61b6fdc18348c6ec3304f8d21636831758063",
+          "branch": "HEAD",
+          "dirty": false
+        },
+        "platform": "Linux 6.8.0-138-generic x86_64",
+        "source": "app"
+      },
+      "app_report": "recording /tmp/wf-docs/20261015-071513-docs/20261015-071513-bom-of-the-planned-design/out/videos/bom-of-the-planned-design.mp4",
+      "state": {
+        "active_document": "NE555 Blinker_schematic.schxml",
+        "active_type": "schematic",
+        "documents": 2,
+        "frame": 574,
+        "panels": [
+          "MainDockSpace",
+          "Editor",
+          "Project Structure",
+          "Properties###Properties",
+          "AI Copilot Panel"
+        ]
+      },
+      "sha256": "a3a6632a6317c7c783af5e8c9d5757557306ba574a82025b54fff0c6828f45b6",
+      "bytes": 338097,
+      "width": 1598,
+      "height": 898,
+      "codec": "h264",
+      "duration": 9.034
+    },
     "docs/ai/commands.md#copilot-command-list": {
       "kind": "shot",
       "format": "png",
@@ -437,6 +482,180 @@
       "bytes": 227744,
       "width": 1600,
       "height": 900
+    },
+    "docs/ai/commands.md#copilot-commands-in-the-library-workspace": {
+      "kind": "shot",
+      "format": "png",
+      "file": "docs/assets/wf/docs/ai/commands/copilot-commands-in-the-library-workspace.png",
+      "page": "docs/ai/commands.md",
+      "slot": "copilot-commands-in-the-library-workspace",
+      "slot_sha256": "8bd834caace3e3eac5ebd90102da93a7241caeff430ed047df47958e757a1912",
+      "caption": "In the Library Workspace, / offers the library commands — they work on the open part, the selection or the whole library",
+      "script": "",
+      "planned_by": "",
+      "captured_at": "2026-10-14T23:41:57+00:00",
+      "run": "/tmp/wf-docs/20261015-064049-docs/20261015-064147-copilot-commands-in-the-library-workspace",
+      "app": {
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "cb3707876bc6f9bc729193203bbc03de2753cab2c60b8ff2fb6dd8140ee52c1e",
+        "version": "1.5.47",
+        "git": {
+          "commit": "d414189fdfd8044295b1372516d11a375c1dae7a",
+          "branch": "HEAD",
+          "dirty": false
+        },
+        "platform": "Linux 6.8.0-138-generic x86_64",
+        "source": "app"
+      },
+      "app_report": "saved /tmp/wf-docs/20261015-064049-docs/20261015-064147-copilot-commands-in-the-library-workspace/out/shots/copilot-commands-in-the-library-workspace.png (1600x900)",
+      "state": {
+        "active_document": "MCU Datalogger.schxml",
+        "active_type": "schematic",
+        "documents": 3,
+        "frame": 1528,
+        "panels": [
+          "MainDockSpace",
+          "Editor",
+          "Project Structure",
+          "Properties###Properties",
+          "AI Copilot Panel"
+        ]
+      },
+      "sha256": "c9c3429d8656e77f8bfe8721cdc50b830d291a5c24fa0f6043999d86433abeef",
+      "bytes": 378655,
+      "width": 1600,
+      "height": 900
+    },
+    "docs/ai/commands.md#copilot-commands-in-the-simulation-workbench": {
+      "kind": "shot",
+      "format": "png",
+      "file": "docs/assets/wf/docs/ai/commands/copilot-commands-in-the-simulation-workbench.png",
+      "page": "docs/ai/commands.md",
+      "slot": "copilot-commands-in-the-simulation-workbench",
+      "slot_sha256": "2246c231bcbaf9820ed7b7a1d315e322a4738f38777cb80fd769d45eaef438dc",
+      "caption": "In the simulation workbench, / offers the simulation commands",
+      "script": "",
+      "planned_by": "",
+      "captured_at": "2026-10-14T23:45:31+00:00",
+      "run": "/tmp/wf-docs/20261015-064522-docs/20261015-064522-copilot-commands-in-the-simulation-workbench",
+      "app": {
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "cb3707876bc6f9bc729193203bbc03de2753cab2c60b8ff2fb6dd8140ee52c1e",
+        "version": "1.5.47",
+        "git": {
+          "commit": "28802a04334cf9ccdae9cbe65c25e0629e7c102f",
+          "branch": "HEAD",
+          "dirty": false
+        },
+        "platform": "Linux 6.8.0-138-generic x86_64",
+        "source": "app"
+      },
+      "app_report": "saved /tmp/wf-docs/20261015-064522-docs/20261015-064522-copilot-commands-in-the-simulation-workbench/out/shots/copilot-commands-in-the-simulation-workbench.png (383x437) of AI Copilot Panel",
+      "state": {
+        "active_document": "led_output_power_input_timer_oscillator-U1",
+        "active_type": "schematic",
+        "documents": 3,
+        "frame": 1714,
+        "panels": [
+          "MainDockSpace",
+          "Editor",
+          "Project Structure",
+          "Properties###Properties",
+          "AI Copilot Panel"
+        ]
+      },
+      "sha256": "eb8cd5d2b756b3ba0d1dd67a9a024037164076a7c23868308649e4ede3210347",
+      "bytes": 54223,
+      "width": 383,
+      "height": 437
+    },
+    "docs/ai/commands.md#copilot-commands-on-the-pcb": {
+      "kind": "shot",
+      "format": "png",
+      "file": "docs/assets/wf/docs/ai/commands/copilot-commands-on-the-pcb.png",
+      "page": "docs/ai/commands.md",
+      "slot": "copilot-commands-on-the-pcb",
+      "slot_sha256": "1bf05971b07b6ae4a4c4e5d33f56a50d1d973d8b2123b2bccbb40205c0a562b8",
+      "caption": "On the PCB, / offers the board's commands — review, findings, board, topology, layout",
+      "script": "",
+      "planned_by": "",
+      "captured_at": "2026-10-14T23:41:08+00:00",
+      "run": "/tmp/wf-docs/20261015-064049-docs/20261015-064101-copilot-commands-on-the-pcb",
+      "app": {
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "cb3707876bc6f9bc729193203bbc03de2753cab2c60b8ff2fb6dd8140ee52c1e",
+        "version": "1.5.47",
+        "git": {
+          "commit": "d414189fdfd8044295b1372516d11a375c1dae7a",
+          "branch": "HEAD",
+          "dirty": false
+        },
+        "platform": "Linux 6.8.0-138-generic x86_64",
+        "source": "app"
+      },
+      "app_report": "saved /tmp/wf-docs/20261015-064049-docs/20261015-064101-copilot-commands-on-the-pcb/out/shots/copilot-commands-on-the-pcb.png (383x419) of AI Copilot Panel",
+      "state": {
+        "active_document": "buck-converter-automotive.pcbxml",
+        "active_type": "pcb",
+        "documents": 2,
+        "frame": 688,
+        "panels": [
+          "MainDockSpace",
+          "Editor",
+          "Project Structure",
+          "Properties###Properties",
+          "AI Copilot Panel"
+        ]
+      },
+      "sha256": "88f42d75dcd4e5813cf2327cb1801e32a99744f227483eaaf7eadc620be07834",
+      "bytes": 50235,
+      "width": 383,
+      "height": 419
+    },
+    "docs/ai/commands.md#findings-on-the-board": {
+      "kind": "video",
+      "format": "mp4",
+      "file": "docs/assets/wf/docs/ai/commands/findings-on-the-board.mp4",
+      "page": "docs/ai/commands.md",
+      "slot": "findings-on-the-board",
+      "slot_sha256": "198f7049488f611e49344f62eb56d33aa11b4ea4e64eb4d84b105f84ee785546",
+      "caption": "/findings on the automotive buck converter — WireFrame's own checks, listed with no model call",
+      "script": "",
+      "planned_by": "",
+      "captured_at": "2026-10-15T00:15:40+00:00",
+      "run": "/tmp/wf-docs/20261015-071525-docs/20261015-071525-findings-on-the-board",
+      "app": {
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "f93faaeb6791dda40405a87644037a81081cd7db5e7f8d8ab2b41db84de95c3a",
+        "version": "1.5.47",
+        "git": {
+          "commit": "bdb61b6fdc18348c6ec3304f8d21636831758063",
+          "branch": "HEAD",
+          "dirty": false
+        },
+        "platform": "Linux 6.8.0-138-generic x86_64",
+        "source": "app"
+      },
+      "app_report": "recording /tmp/wf-docs/20261015-071525-docs/20261015-071525-findings-on-the-board/out/videos/findings-on-the-board.mp4",
+      "state": {
+        "active_document": "buck-converter-automotive.pcbxml",
+        "active_type": "pcb",
+        "documents": 2,
+        "frame": 662,
+        "panels": [
+          "MainDockSpace",
+          "Editor",
+          "Project Structure",
+          "Properties###Properties",
+          "AI Copilot Panel"
+        ]
+      },
+      "sha256": "f61d27764cb3674e617dd6aa15cfe741e84820d5e8d3f49b5712fa2c4ec17dd8",
+      "bytes": 410185,
+      "width": 1598,
+      "height": 898,
+      "codec": "h264",
+      "duration": 10.434
     },
     "docs/ai/component-generator.md#missing-component-card-and-ai-gen-action": {
       "kind": "shot",
@@ -1003,6 +1222,49 @@
       "width": 1600,
       "height": 900
     },
+    "docs/libraries/how-parts-are-found.md#bom-card-verdicts": {
+      "kind": "shot",
+      "format": "png",
+      "file": "docs/assets/wf/docs/libraries/how-parts-are-found/bom-card-verdicts.png",
+      "page": "docs/libraries/how-parts-are-found.md",
+      "slot": "bom-card-verdicts",
+      "slot_sha256": "e7dd0fbb03e9cfb127bdd15dcc78f571e1211866b0d9dcc747e6d74abe959bcb",
+      "caption": "A BOM card in the review — symbol and footprint verified with their contact count, the physical fit against the package drawing, and who confirmed it",
+      "script": "",
+      "planned_by": "",
+      "captured_at": "2026-10-14T23:42:34+00:00",
+      "run": "/tmp/wf-docs/20261015-064226-docs/20261015-064226-bom-card-verdicts",
+      "app": {
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "cb3707876bc6f9bc729193203bbc03de2753cab2c60b8ff2fb6dd8140ee52c1e",
+        "version": "1.5.47",
+        "git": {
+          "commit": "d414189fdfd8044295b1372516d11a375c1dae7a",
+          "branch": "HEAD",
+          "dirty": false
+        },
+        "platform": "Linux 6.8.0-138-generic x86_64",
+        "source": "app"
+      },
+      "app_report": "saved /tmp/wf-docs/20261015-064226-docs/20261015-064226-bom-card-verdicts/out/shots/bom-card-verdicts.png (1600x900)",
+      "state": {
+        "active_document": "NE555 Blinker_schematic.schxml",
+        "active_type": "schematic",
+        "documents": 2,
+        "frame": 1277,
+        "panels": [
+          "MainDockSpace",
+          "Editor",
+          "Project Structure",
+          "Properties###Properties",
+          "AI Copilot Panel"
+        ]
+      },
+      "sha256": "b08cad2689c019c913149068117ba6f449da77a9929fc49db03f94f116841839",
+      "bytes": 422799,
+      "width": 1600,
+      "height": 900
+    },
     "docs/libraries/library-converter.md#import-an-altium-library": {
       "kind": "video",
       "format": "mp4",
@@ -1176,6 +1438,94 @@
       },
       "sha256": "5a290a10d33003bface28d72276570ff2d0790c33f9ea52bae8516202737f210",
       "bytes": 289125,
+      "width": 1600,
+      "height": 900
+    },
+    "docs/libraries/library-workspace.md#library-review-of-one-part": {
+      "kind": "video",
+      "format": "mp4",
+      "file": "docs/assets/wf/docs/libraries/library-workspace/library-review-of-one-part.mp4",
+      "page": "docs/libraries/library-workspace.md",
+      "slot": "library-review-of-one-part",
+      "slot_sha256": "b064f233bdd97bb28114701febc75aea687050bb03c5fd2a46a9a120c478cac6",
+      "caption": "/review on one part of the KLP4e library — the checks that need no model",
+      "script": "",
+      "planned_by": "",
+      "captured_at": "2026-10-14T23:51:52+00:00",
+      "run": "/tmp/wf-docs/20261015-065125-docs/20261015-065125-library-review-of-one-part",
+      "app": {
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "cb3707876bc6f9bc729193203bbc03de2753cab2c60b8ff2fb6dd8140ee52c1e",
+        "version": "1.5.47",
+        "git": {
+          "commit": "28802a04334cf9ccdae9cbe65c25e0629e7c102f",
+          "branch": "HEAD",
+          "dirty": false
+        },
+        "platform": "Linux 6.8.0-138-generic x86_64",
+        "source": "app"
+      },
+      "app_report": "recording /tmp/wf-docs/20261015-065125-docs/20261015-065125-library-review-of-one-part/out/videos/library-review-of-one-part.mp4",
+      "state": {
+        "active_document": "MCU Datalogger.schxml",
+        "active_type": "schematic",
+        "documents": 3,
+        "frame": 1431,
+        "panels": [
+          "MainDockSpace",
+          "Editor",
+          "Project Structure",
+          "Properties###Properties",
+          "AI Copilot Panel"
+        ]
+      },
+      "sha256": "7284533213a5a00a13a0b240963a33441cea7fdf1f943f4ffeca62c883ee89c1",
+      "bytes": 605913,
+      "width": 1598,
+      "height": 898,
+      "codec": "h264",
+      "duration": 18.067
+    },
+    "docs/libraries/library-workspace.md#library-workspace-overview": {
+      "kind": "shot",
+      "format": "png",
+      "file": "docs/assets/wf/docs/libraries/library-workspace/library-workspace-overview.png",
+      "page": "docs/libraries/library-workspace.md",
+      "slot": "library-workspace-overview",
+      "slot_sha256": "9433821df57fa2866e65ed59b944ca4ad2d44db83bcea99c0756b4b01ab726e2",
+      "caption": "The Library Workspace — the library's parts, the open part's details, and its symbol in the embedded editor",
+      "script": "",
+      "planned_by": "",
+      "captured_at": "2026-10-14T23:42:05+00:00",
+      "run": "/tmp/wf-docs/20261015-064157-docs/20261015-064157-library-workspace-overview",
+      "app": {
+        "binary": "cmake-build-release/src/wireframe",
+        "sha256": "cb3707876bc6f9bc729193203bbc03de2753cab2c60b8ff2fb6dd8140ee52c1e",
+        "version": "1.5.47",
+        "git": {
+          "commit": "d414189fdfd8044295b1372516d11a375c1dae7a",
+          "branch": "HEAD",
+          "dirty": false
+        },
+        "platform": "Linux 6.8.0-138-generic x86_64",
+        "source": "app"
+      },
+      "app_report": "saved /tmp/wf-docs/20261015-064157-docs/20261015-064157-library-workspace-overview/out/shots/library-workspace-overview.png (1600x900)",
+      "state": {
+        "active_document": "MCU Datalogger.schxml",
+        "active_type": "schematic",
+        "documents": 3,
+        "frame": 1356,
+        "panels": [
+          "MainDockSpace",
+          "Editor",
+          "Project Structure",
+          "Properties###Properties",
+          "AI Copilot Panel"
+        ]
+      },
+      "sha256": "f920f52d0439f0c26ed6066f1ebbbbc63193906445ee7c915748c5ac0f2632b3",
+      "bytes": 370211,
       "width": 1600,
       "height": 900
     },
