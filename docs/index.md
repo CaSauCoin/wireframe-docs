@@ -113,8 +113,8 @@ Ask for a circuit, then review what it proposes before anything is applied. → 
 
 -   [![The SPICE Simulation Workbench](assets/wf/docs/simulation/running-simulation/current-simulation-workbench.png)](simulation/index.md)
 
-    **Simulation** — choose an engine, pick the blocks to run, add loads and
-    assertions, measure waveforms. [Open the guide :octicons-arrow-right-24:](simulation/index.md)
+    **Simulation** — copy a block into a simulation of its own, choose an
+    engine, add sources and assertions, measure waveforms. [Open the guide :octicons-arrow-right-24:](simulation/index.md)
 
 -   [![AI Component Review of a planned BOM](assets/wf/docs/ai/design-agent/bom-component-review.png)](ai/index.md)
 

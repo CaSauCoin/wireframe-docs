@@ -72,7 +72,7 @@ Use **Tools** for **Symbol Library Editor**, **PCB Footprint Editor**, **Auto Wi
 
 ### Simulation
 
-Use **Simulation** for the **SPICE Simulation Panel**, **Pre-flight Validation Checklist**, and **SPICE Model Editor**.
+Use **Simulation** for **New Simulation (.simxml)**, **Simulate a Block of This Sheet...**, the **SPICE Simulation Panel**, **Pre-flight Validation Checklist**, and **SPICE Model Editor**. A simulation is a file of its own; sheets of the design are not simulated — see [Get a simulation](simulation/index.md#get-a-simulation).
 
 ### Preferences
 

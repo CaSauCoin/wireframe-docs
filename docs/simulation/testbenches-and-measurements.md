@@ -1,6 +1,6 @@
 # Testbenches and Measurements
 
-A waveform tells you what happened. A testbench lets you record what the circuit should do and asks WireFrame to check it after every run.
+A waveform tells you what happened. A testbench lets you record what the circuit should do and asks WireFrame to check it after every run. A testbench belongs to the simulation it is written in; the sheets of the design never see its loads or checks.
 
 ## A simple verification workflow
 
@@ -9,14 +9,14 @@ Add the expected load, choose a signal, define an acceptable limit, and run the 
 ### Image — Testbench with load and assertion
 
 !!! note "Image capture brief"
-    1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
-    2. **Build the frame:** Capture the current **Testbench** tab with one load and one assertion, plus a visible Last run result. Do not use a generated flowchart in place of the real UI. Suggested size: **1100 × 760 px**.
-    3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
-    4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
-    5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
+    1. **Prepare:** Copy the NE555 blinker's block into a simulation, add a 9 V supply, and set a 3 s transient.
+    2. **Build the frame:** Capture the **Testbench** tab with one load and one assertion, plus a visible **Last run** result, beside the waveform.
+    3. **Clean the frame:** Move the pointer away from key text.
+    4. **Approve:** Check the image at 100% zoom for current labels and a readable verdict.
 
 <!-- wf:shot id=testbench-with-load-and-assertion
-caption: The Testbench tab — loads, assertions and the last run
+caption: 'The Testbench of the NE555 blinker''s simulation: a 1 kΩ load on the timer output and a frequency
+  check that passes'
 project: samples/ne555-blinker/NE555 Blinker.prjxml
 setup:
 - open_project
@@ -25,9 +25,20 @@ setup:
 - keys:
   - F5
 - wait: 2
-- click_at:
-  - 385
-  - 760
+- click_match:
+    window: SPICE Circuit Simulation
+    pattern: ^.*Simulate a Block of This Sh.*$
+    timeout: 3
+- wait: 2
+- click_match:
+    window: Simulate a Block
+    pattern: ^.*Copy to New Simulation$
+    timeout: 3
+- wait: 4
+- click_match:
+    window: SPICE Circuit Simulation
+    pattern: ^[^A-Za-z]* Add$
+    timeout: 5
 - wait: 1
 - action:
     action: mouse_move_to
@@ -36,46 +47,84 @@ setup:
 - scroll: -3
 - wait: 0.5
 - type:
-    ref: //SPICE Circuit Simulation & Analysis/##DC
+    ref: //SPICE Circuit Simulation & Analysis/**/##DC
     text: '9'
 - keys:
   - Tab
 - click_at:
-  - 430
+  - 350
   - 112
 - wait: 0.5
 - click: //##Combo_00/{fa:wave-square} Transient (.tran)
 - wait: 0.5
 - type:
-    ref: //SPICE Circuit Simulation & Analysis/##StopTime
+    ref: //SPICE Circuit Simulation & Analysis/**/##StopTime
     text: '3000'
 - keys:
   - Tab
+- wait: 0.5
+- drag_at:
+    from:
+    - 430
+    - 500
+    to:
+    - 660
+    - 500
+    seconds: 1
+- wait: 0.5
+- tab: Testbench
+- wait: 0.5
+- click_at:
+  - 300
+  - 348
+- wait: 0.5
+- click_match:
+    window: '##Combo'
+    pattern: ^[Tt][Ii][Mm][Ee][Rr]_[Oo][Uu][Tt]$
+    timeout: 3
+- wait: 0.3
+- click_at:
+  - 582
+  - 348
+- wait: 0.5
+- click: //SPICE Circuit Simulation & Analysis/**/{fa:plus} Add assertion
+- wait: 0.5
 - type:
-    ref: //SPICE Circuit Simulation & Analysis/##TimeStep
+    ref: //SPICE Circuit Simulation & Analysis/**/##Signal
+    text: timer_out
+- keys:
+  - Tab
+- click_at:
+  - 237
+  - 464
+- wait: 0.5
+- click: //##Combo_00/frequency
+- wait: 0.3
+- type:
+    ref: //SPICE Circuit Simulation & Analysis/**/##Target
     text: '1'
 - keys:
   - Tab
-- wait: 0.5
+- type:
+    ref: //SPICE Circuit Simulation & Analysis/**/##Tol
+    text: '10'
+- keys:
+  - Tab
 - click_at:
   - 489
   - 112
 - wait: 12
-- &id001
-  action:
+- action:
     action: mouse_move_to
     x: 1000
     y: 12
-- tab: Testbench
-- wait: 1
-- *id001
-brief_sha256: 65c8b420720e7d67
+brief_sha256: 4f4413eebcc797d7
 -->
-<!-- wf:out id=testbench-with-load-and-assertion sha=15f8f8b9952a -->
-![The Testbench tab — loads, assertions and the last run](../assets/wf/docs/simulation/testbenches-and-measurements/testbench-with-load-and-assertion.png)
+<!-- wf:out id=testbench-with-load-and-assertion sha=b55a38e0c01a -->
+![The Testbench of the NE555 blinker's simulation: a 1 kΩ load on the timer output and a frequency check that passes](../assets/wf/docs/simulation/testbenches-and-measurements/testbench-with-load-and-assertion.png)
 <!-- /wf:out -->
 
-Open the Simulation Workbench and select the **Testbench** tab. The heading shows whether you are editing the whole-sheet testbench or one selected circuit block.
+Open the Simulation Workbench and select the **Testbench** tab. The heading names the circuit it applies to.
 
 ## Add a load
 
@@ -112,7 +161,10 @@ Use values taken from the product requirement, connected device, or component da
 
 ## Exclude startup from a steady-state check
 
-If the requirement applies only after startup, set a settled measurement window. You can also enable A/B cursors in **Signals** and measure only the interval between them.
+Assertions measure the whole record of the last run. When a requirement applies only after startup:
+
+- measure it between the A/B cursors: under **Signals → Measurements**, tick **Measure between cursors**, enable the cursors in **Setup → View**, and place them after the circuit has settled; or
+- add a `.meas` directive with a `FROM`/`TO` window under **Testbench → SPICE directives**.
 
 For example, check the average `VOUT` after the regulator has settled instead of including its initial rise from 0 V.
 

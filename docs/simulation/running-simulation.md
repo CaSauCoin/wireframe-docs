@@ -1,12 +1,12 @@
 # Running a Simulation
 
-Use the Simulation Workbench to select a supported circuit scope, configure the engine and analysis, prepare sources and loads, run preflight, and inspect results.
+Use the Simulation Workbench to prepare a simulation, configure the engine and analysis, add sources and loads, run preflight, and inspect results.
 
 ## Open the workbench
 
-With a schematic active, select **Simulation → SPICE Simulation Panel** or press **F5**.
+With a simulation (`.simxml`) in front, select **Simulation → SPICE Simulation Panel** or press **F5** — F5 also starts a run. With a sheet of the design in front, the workbench offers **New Simulation** and **Simulate a Block of This Sheet...** instead; see [Get a simulation](index.md#get-a-simulation).
 
-The current sidebar contains:
+The sidebar contains:
 
 - **Setup**;
 - **Blocks**;
@@ -15,19 +15,17 @@ The current sidebar contains:
 - **Models**;
 - **AI**.
 
-Older documentation referring to a separate Analysis tab or a different sidebar layout has been removed.
-
 ### Image — Current Simulation Workbench
 
 !!! note "Image capture brief"
-    1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
-    2. **Build the frame:** Capture the complete workbench with the current six sidebar tabs, the waveform area, and run controls visible. Use a small circuit with at least one selectable block and signal. Suggested size: **1600 × 900 px**.
-    3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
-    4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
-    5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
+    1. **Prepare:** Copy the NE555 blinker's block into a simulation, add a 9 V supply, and run a 3 s transient.
+    2. **Build the frame:** Capture the whole workbench with the toolbar, the sidebar on **Setup**, and the waveform.
+    3. **Clean the frame:** Move the pointer away from key text.
+    4. **Approve:** Check the image at 100% zoom for current labels and readable traces.
 
 <!-- wf:shot id=current-simulation-workbench
-caption: The Simulation Workbench after a transient run of the NE555 blinker
+caption: The Simulation Workbench on the NE555 blinker's simulation after a 3 s transient, with the 9
+  V supply under Setup → Sources
 project: samples/ne555-blinker/NE555 Blinker.prjxml
 setup:
 - open_project
@@ -36,9 +34,20 @@ setup:
 - keys:
   - F5
 - wait: 2
-- click_at:
-  - 385
-  - 760
+- click_match:
+    window: SPICE Circuit Simulation
+    pattern: ^.*Simulate a Block of This Sh.*$
+    timeout: 3
+- wait: 2
+- click_match:
+    window: Simulate a Block
+    pattern: ^.*Copy to New Simulation$
+    timeout: 3
+- wait: 4
+- click_match:
+    window: SPICE Circuit Simulation
+    pattern: ^[^A-Za-z]* Add$
+    timeout: 5
 - wait: 1
 - action:
     action: mouse_move_to
@@ -47,24 +56,19 @@ setup:
 - scroll: -3
 - wait: 0.5
 - type:
-    ref: //SPICE Circuit Simulation & Analysis/##DC
+    ref: //SPICE Circuit Simulation & Analysis/**/##DC
     text: '9'
 - keys:
   - Tab
 - click_at:
-  - 430
+  - 350
   - 112
 - wait: 0.5
 - click: //##Combo_00/{fa:wave-square} Transient (.tran)
 - wait: 0.5
 - type:
-    ref: //SPICE Circuit Simulation & Analysis/##StopTime
+    ref: //SPICE Circuit Simulation & Analysis/**/##StopTime
     text: '3000'
-- keys:
-  - Tab
-- type:
-    ref: //SPICE Circuit Simulation & Analysis/##TimeStep
-    text: '1'
 - keys:
   - Tab
 - wait: 0.5
@@ -76,10 +80,10 @@ setup:
     action: mouse_move_to
     x: 1000
     y: 12
-brief_sha256: 4df8cf3781bdb558
+brief_sha256: a3f4fa3a36ced761
 -->
-<!-- wf:out id=current-simulation-workbench sha=0812c6f13f55 -->
-![The Simulation Workbench after a transient run of the NE555 blinker](../assets/wf/docs/simulation/running-simulation/current-simulation-workbench.png)
+<!-- wf:out id=current-simulation-workbench sha=2e743d936893 -->
+![The Simulation Workbench on the NE555 blinker's simulation after a 3 s transient, with the 9 V supply under Setup → Sources](../assets/wf/docs/simulation/running-simulation/current-simulation-workbench.png)
 <!-- /wf:out -->
 
 ## 1. Select an engine and analysis
@@ -87,32 +91,30 @@ brief_sha256: 4df8cf3781bdb558
 In **Setup**:
 
 1. Select an available simulation engine.
-2. Choose the analysis type.
+2. Choose the analysis type on the toolbar.
 3. Set its values, such as transient stop time and step.
-4. Add any required SPICE directives.
+4. Add any required SPICE directives under **Testbench → SPICE directives**.
 
-Configure external engine paths in **Preferences → Simulation**. A release build normally includes or locates Ngspice; alternative engines must be installed and selected explicitly.
+Configure external engine paths in **Preferences → Simulation**. A release build includes ngspice; alternative engines must be installed and selected explicitly.
 
-## 2. Choose the circuit scope
+## 2. Choose the circuits to run
 
-Open **Blocks** and select:
+A simulation can hold several independent circuits — a block copied from a sheet is usually one. Open **Blocks** to see them, each with its readiness, and tick the ones to simulate; the netlist is built from those parts alone.
 
-- **Entire schematic**; or
-- one or more recognized functional blocks.
-
-Use **Only runnable** to select blocks with enough models and connectivity for simulation. Read the reason shown for any block that is not runnable.
+Use **Select all**, **Only runnable** (blocks with enough models and connectivity to simulate), **None**, and **Re-scan** after editing the circuit. Read the reason shown for any block that is not runnable.
 
 ### Short video — Select runnable simulation blocks
 
 !!! note "Video production brief"
-    1. **Prepare:** Use a schematic with at least two runnable blocks and one unsupported block with a readable reason.
-    2. **Opening shot (1–2 s):** Show the initial block list and scope summary.
-    3. **Action shot (5–8 s):** Click **Re-scan**, enable **Only runnable**, select two blocks, then briefly reveal the unsupported reason before filtering if needed.
-    4. **Result shot (2–3 s):** Hold on the updated two-block scope summary.
-    5. **Deliver:** Export a **10–15 second** 1080p MP4; do not remove the unsupported block merely to make the demo pass.
+    1. **Prepare:** Use a simulation that has been run, with **Blocks** open.
+    2. **Opening shot (1–2 s):** Show the block list and the scope summary.
+    3. **Action shot (4–6 s):** Click **None**, then **Only runnable**, then **Re-scan**.
+    4. **Result shot (2–3 s):** Hold on the runnable block selected again.
+    5. **Deliver:** Export a **10–15 second** 1080p MP4.
 
 <!-- wf:video id=select-runnable-simulation-blocks
-caption: 'Blocks tab: Re-scan, keep only runnable blocks, select them'
+caption: Blocks lists the circuits of the simulation with their readiness; None, Only runnable and Re-scan
+  set what runs
 project: samples/ne555-blinker/NE555 Blinker.prjxml
 setup:
 - open_project
@@ -121,9 +123,20 @@ setup:
 - keys:
   - F5
 - wait: 2
-- click_at:
-  - 385
-  - 760
+- click_match:
+    window: SPICE Circuit Simulation
+    pattern: ^.*Simulate a Block of This Sh.*$
+    timeout: 3
+- wait: 2
+- click_match:
+    window: Simulate a Block
+    pattern: ^.*Copy to New Simulation$
+    timeout: 3
+- wait: 4
+- click_match:
+    window: SPICE Circuit Simulation
+    pattern: ^[^A-Za-z]* Add$
+    timeout: 5
 - wait: 1
 - action:
     action: mouse_move_to
@@ -132,45 +145,50 @@ setup:
 - scroll: -3
 - wait: 0.5
 - type:
-    ref: //SPICE Circuit Simulation & Analysis/##DC
+    ref: //SPICE Circuit Simulation & Analysis/**/##DC
     text: '9'
 - keys:
   - Tab
 - click_at:
-  - 430
+  - 350
   - 112
 - wait: 0.5
 - click: //##Combo_00/{fa:wave-square} Transient (.tran)
 - wait: 0.5
 - type:
-    ref: //SPICE Circuit Simulation & Analysis/##StopTime
+    ref: //SPICE Circuit Simulation & Analysis/**/##StopTime
     text: '3000'
 - keys:
   - Tab
-- type:
-    ref: //SPICE Circuit Simulation & Analysis/##TimeStep
-    text: '1'
-- keys:
-  - Tab
 - wait: 0.5
-- tab: Blocks
-- wait: 1
-- action:
+- click_at:
+  - 489
+  - 112
+- wait: 12
+- &id001
+  action:
     action: mouse_move_to
     x: 1000
     y: 12
-steps:
+- tab: Blocks
 - wait: 1
-- click: //SPICE Circuit Simulation & Analysis/{fa:sync} Re-scan
+steps:
 - wait: 1.5
-- click: //SPICE Circuit Simulation & Analysis/Only runnable
+- click: //SPICE Circuit Simulation & Analysis/**/None
 - wait: 1.5
-- click: //SPICE Circuit Simulation & Analysis/Select all
-- wait: 2
-brief_sha256: c43a8bf5e8ebb61f
+- click: //SPICE Circuit Simulation & Analysis/**/Only runnable
+- wait: 1.5
+- click_match:
+    window: SPICE Circuit Simulation
+    pattern: ^.*Re-scan$
+    timeout: 3
+- wait: 1.5
+- *id001
+- wait: 1.5
+brief_sha256: e97d218f3c617120
 -->
-<!-- wf:out id=select-runnable-simulation-blocks sha=60c12550bd79 -->
-<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/simulation/running-simulation/select-runnable-simulation-blocks.mp4" title="Blocks tab: Re-scan, keep only runnable blocks, select them"></video>
+<!-- wf:out id=select-runnable-simulation-blocks sha=ed496d8fee0c -->
+<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/simulation/running-simulation/select-runnable-simulation-blocks.mp4" title="Blocks lists the circuits of the simulation with their readiness; None, Only runnable and Re-scan set what runs"></video>
 <!-- /wf:out -->
 
 ## 3. Add sources and loads
@@ -181,7 +199,7 @@ Check source polarity, units, waveform parameters, and reference ground. A sourc
 
 ## 4. Run preflight
 
-Select **Simulation → Pre-flight Validation Checklist** before running.
+Click **Preflight** on the toolbar (or **Simulation → Pre-flight Validation Checklist...**). The **Simulation Models & Preflight** window lists every part with its mapped SPICE model and whether it is ready; **Run Simulation** in that window starts the run once nothing is missing.
 
 Resolve blockers such as:
 
@@ -200,27 +218,28 @@ Open **Signals** and select the nets to plot. Use **Named nets** for a concise v
 
 ## 6. Run and inspect
 
-Start the simulation and wait for **Last run** to update. Review:
+Start the simulation and wait for the plot to update. Review:
 
 - completion status;
-- assertion results;
+- assertion results under **Testbench → Last run**;
 - simulation log;
 - selected waveform traces;
 - cursor measurements when required.
 
-If the run fails, open **AI** and use **Why did the last run fail?** or **Review preflight blockers**, then verify the explanation against the log and circuit.
+If the run fails, open **AI** and use **Why did the last run fail?** or **Review the preflight blockers**, then verify the explanation against the log and circuit.
 
 ### Short video — Preflight, run, and inspect
 
 !!! note "Video production brief"
-    1. **Prepare:** Load a small runnable circuit with a validated engine, models, and two useful signals.
-    2. **Opening shot (2 s):** Show the ready scope and run controls before preflight.
-    3. **Action shot (7–10 s):** Run preflight, hold on its success, select both signals, and start the simulation. Cut only inactive compute time.
-    4. **Result shot (4–5 s):** Hold on both waveform traces and the **Last run** result in the same final view.
-    5. **Deliver:** Export a **15–20 second** 1080p MP4 and replace clips containing obsolete controls.
+    1. **Prepare:** Load a small runnable simulation with a validated engine, models, and a supply.
+    2. **Opening shot (2 s):** Show the ready workbench before preflight.
+    3. **Action shot (7–10 s):** Run preflight, hold on its result, and start the simulation from it. Cut only inactive compute time.
+    4. **Result shot (4–5 s):** Hold on the waveform traces with **Signals** open.
+    5. **Deliver:** Export a **15–20 second** 1080p MP4.
 
 <!-- wf:video id=preflight-run-and-inspect
-caption: Preflight checks every part's SPICE model, then Run Simulation draws the waveforms
+caption: 'Preflight on the NE555 blinker''s simulation: every part has a model, Run Simulation, then the
+  waveforms under Signals'
 project: samples/ne555-blinker/NE555 Blinker.prjxml
 setup:
 - open_project
@@ -229,9 +248,20 @@ setup:
 - keys:
   - F5
 - wait: 2
-- click_at:
-  - 385
-  - 760
+- click_match:
+    window: SPICE Circuit Simulation
+    pattern: ^.*Simulate a Block of This Sh.*$
+    timeout: 3
+- wait: 2
+- click_match:
+    window: Simulate a Block
+    pattern: ^.*Copy to New Simulation$
+    timeout: 3
+- wait: 4
+- click_match:
+    window: SPICE Circuit Simulation
+    pattern: ^[^A-Za-z]* Add$
+    timeout: 5
 - wait: 1
 - action:
     action: mouse_move_to
@@ -240,39 +270,46 @@ setup:
 - scroll: -3
 - wait: 0.5
 - type:
-    ref: //SPICE Circuit Simulation & Analysis/##DC
+    ref: //SPICE Circuit Simulation & Analysis/**/##DC
     text: '9'
 - keys:
   - Tab
 - click_at:
-  - 430
+  - 350
   - 112
 - wait: 0.5
 - click: //##Combo_00/{fa:wave-square} Transient (.tran)
 - wait: 0.5
 - type:
-    ref: //SPICE Circuit Simulation & Analysis/##StopTime
+    ref: //SPICE Circuit Simulation & Analysis/**/##StopTime
     text: '3000'
 - keys:
   - Tab
-- type:
-    ref: //SPICE Circuit Simulation & Analysis/##TimeStep
-    text: '1'
-- keys:
-  - Tab
 - wait: 0.5
+- &id001
+  action:
+    action: mouse_move_to
+    x: 1000
+    y: 12
 steps:
-- wait: 1
+- wait: 1.5
 - click_at:
   - 580
   - 112
 - wait: 3
-- click: //Simulation Models & Preflight/{fa:play} Run Simulation
-- wait: 8
-brief_sha256: 103b64d4f5cf5014
+- click_match:
+    window: Simulation Models & Preflight
+    pattern: ^.*Run Simulation$
+    timeout: 3
+- wait: 10
+- tab: Signals
+- wait: 1
+- *id001
+- wait: 3
+brief_sha256: 434d6abc5a4a9a0b
 -->
-<!-- wf:out id=preflight-run-and-inspect sha=a38233eb8d2c -->
-<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/simulation/running-simulation/preflight-run-and-inspect.mp4" title="Preflight checks every part&#x27;s SPICE model, then Run Simulation draws the waveforms"></video>
+<!-- wf:out id=preflight-run-and-inspect sha=473b33c8e52c -->
+<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/simulation/running-simulation/preflight-run-and-inspect.mp4" title="Preflight on the NE555 blinker&#x27;s simulation: every part has a model, Run Simulation, then the waveforms under Signals"></video>
 <!-- /wf:out -->
 
 ## Stop or repeat a run
@@ -283,10 +320,11 @@ Stop an active run only when required. After changing component values, source s
 
 | Result | Check |
 |---|---|
+| Run is unavailable | A sheet is in front: open or create a simulation (`.simxml`) |
 | Engine unavailable | **Preferences → Simulation** engine path and executable |
 | No runnable blocks | Models, ground, connectivity, and block reasons |
 | Empty waveform | Selected signals and completed analysis |
-| Flat output | Source waveform, ground reference, operating point, and load |
+| Flat output | Source waveform, ground reference, operating point, and load — a copied block has no supply until you add one |
 | Assertion not measured | Signal selection, analysis window, and assertion metric |
 | Different engines disagree | Dialect, model version, sources, load, and analysis settings |
 

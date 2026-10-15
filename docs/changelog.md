@@ -7,7 +7,8 @@
 - Simulation Workbench with six tabs: **Setup**, **Blocks**, **Testbench**, **Signals**, **Models**, and **AI**.
 - ngspice built in; Xyce, LTspice, and an external ngspice selectable, with configurable executable paths, analysis defaults, and preflight readiness checks.
 - Functional-block scope, sources and loads, reusable testbench assertions, signal selection, SPICE model management, A/B cursor measurements, and explicit **Pass / Fail / Not measured** results.
-- **Probe Signal** tool on the schematic toolbar.
+- Simulations are files of their own (`.simxml`): **Simulation → Simulate a Block of This Sheet...** copies a block once, or **New Simulation (.simxml)** starts an empty one. Sheets of the design are no longer simulated.
+- **Probe Signal** tool on the toolbar of a simulation.
 - AI assistance for simulation setup and result explanation.
 
 ### AI Copilot

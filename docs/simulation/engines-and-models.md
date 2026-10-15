@@ -4,7 +4,7 @@ WireFrame includes a simulator for everyday use. You can also connect another su
 
 ## Choose a simulator
 
-Open **Simulation → SPICE Simulation Panel**, then go to **Setup → Engine**.
+With a simulation open, open the workbench (++f5++ or **Simulation → SPICE Simulation Panel**), then go to **Setup → Engine**.
 
 | Simulator | When to choose it |
 |---|---|
