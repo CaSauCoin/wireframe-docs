@@ -58,6 +58,11 @@ theme:
 # published to users.
 exclude_docs: |
   reference/media-production.md
+  # The old hand-made screenshots and clips: no page uses them, and several
+  # show a personal machine (home folder, file dialogs). Only the brand mark
+  # is published from img/; every page image comes from assets/wf (doc_builder).
+  /img/*
+  !/img/brand/
 
 # Production briefs (the capture scripts doc_builder reads) stay in the
 # Markdown but are left out of the built site — see the hook's docstring.
