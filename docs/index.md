@@ -8,7 +8,7 @@ hide:
 
 <svg xmlns="http://www.w3.org/2000/svg" class="wf-mark wf-hero-mark" viewBox="12 -18 326 236" aria-hidden="true" focusable="false"><defs><linearGradient id="wf-mark-hero" x1="0%" y1="0%" x2="100%" y2="100%"><stop class="wf-mark-a" offset="0%" stop-color="#00f2ff"/><stop class="wf-mark-b" offset="100%" stop-color="#00ff9d"/></linearGradient></defs><path d="M30 0 L80 200 L130 50 L180 200 L230 50 L230 0 L320 0" fill="none" stroke="url(#wf-mark-hero)" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/><circle class="wf-mark-via wf-mark-via-a" cx="80" cy="200" r="10" stroke="#00f2ff" stroke-width="6"/><circle class="wf-mark-via wf-mark-via-b" cx="180" cy="200" r="10" stroke="#00ff9d" stroke-width="6"/><circle class="wf-mark-node" cx="30" cy="0" r="14"/><circle class="wf-mark-node" cx="320" cy="0" r="14"/><circle class="wf-mark-node" cx="290" cy="100" r="14"/></svg>
 
-<p class="wf-eyebrow">WireFrame EDA · v1.5.47 guide</p>
+<p class="wf-eyebrow">WireFrame EDA · v1.5.47 guide · next release in beta</p>
 
 # <span class="wf-gradient-text">From idea to a board you can order.</span>
 
