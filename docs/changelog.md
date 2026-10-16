@@ -1,6 +1,36 @@
+---
+description: What is new in WireFrame EDA — the AI Copilot's placement review, edits that flow back into the plan, reference designs, and the release status of each version.
+---
+
 # Release Notes
 
-## v1.5.47
+!!! info "Release status"
+    The public download is **v1.3.8** (March 2026). Everything below it — v1.5.47 and the development builds after it — is in beta testing for the next public release, including the AI Copilot and SPICE simulation.
+
+## In development — October 2026
+
+Measured on 20 designs driven end to end through the real Copilot panel (36–106 parts, up to 597 pins: MCUs, an FPGA, SDRAM and eMMC, Ethernet, CAN/RS-485, a BLDC driver, a Raspberry Pi CM4 carrier): a requirement became a checked BOM and netlist in 6–17 minutes, and no design was left with nothing it could draw (two runs cut short by the model provider's quota were repeated).
+
+### AI Copilot
+
+- **Placement review (Penalty).** Blocks are placed with findings still open, each marked on the canvas with its number from `/issues`. Only a part the drawing would get wrong holds its block, and a minor part that cannot be drawn yet is left off its block and added later. Critical findings and unconfirmed parts are covered by you with **Place with issues** or `/place now`. See [Placement Review](ai/placement-review.md).
+- **Your edits flow back.** Values, footprints, deletions, rewired pins and renamed nets you change on the sheet update the BOM plan and the netlist, and the repair agents are told never to undo them.
+- **`/reference`** lifts a part's support circuit from a built KiCad or Altium design — a folder, a project or a GitHub repository — and adds it as a revision, with the source's licence named. See [Reference Designs](ai/reference-designs.md).
+- **Numbered findings.** `fix 2`, `explain 3` and `accept 4 because …` act on the numbers `/issues` and the canvas share. A new instruction is no longer mistaken for the answer to a pending question.
+- Revisions that name a part by what it does ("the RS-485 transceiver") reach that part.
+- Wiring no longer waits for every confirmation: parts awaiting your look are wired, and their land problems are marked rather than parked.
+
+### Libraries
+
+- Better binding for RGB LEDs (`LED_RGBA`/`LED_RGBK`), D-sub connectors (`DB9-M-RA` → `DE9_Pins` + `DSUB-9`), RJ45 jacks (never a header of the same pin count), FFC/FPC connectors named by series (Hirose FH12…), JST SH/PH/XH including Qwiic and STEMMA QT, and two-row headers (`Conn_02xNN_Odd_Even`).
+- A confirmation survives the part being copied into the project library.
+
+### Speed and reliability
+
+- The local agyserve bridge no longer hangs on tool servers or half-read answers; a 30-part design that took 16–25 minutes now takes under 10.
+- A provider out of quota is not called again every frame.
+
+## v1.5.47 (beta)
 
 ### Simulation and verification
 

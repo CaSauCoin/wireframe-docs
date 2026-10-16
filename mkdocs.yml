@@ -1,8 +1,10 @@
 site_name: WireFrame EDA Docs
-site_url: https://guideline-one.vercel.app/
+site_url: https://wireframe.com.vn/docs/
 site_description: >-
-  Release-ready user guidelines for schematic capture, PCB layout, simulation,
-  AI-assisted design, libraries, validation, and manufacturing output.
+  WireFrame EDA user guide: schematic capture, PCB layout, SPICE simulation,
+  and an AI Copilot that turns a written requirement into a checked BOM,
+  netlist and schematic, reviews placement, and lifts circuits from
+  reference designs.
 copyright: '© 2026 WireFrame EDA. All rights reserved.'
 
 # Theme configuration (Material dark mode)
@@ -137,6 +139,8 @@ nav:
       - AI Overview: ai/index.md
       - Copilot Commands: ai/commands.md
       - AI Design Agent: ai/design-agent.md
+      - Placement Review & Your Edits: ai/placement-review.md
+      - Reference Designs: ai/reference-designs.md
       - Placement & Routing Assistant: ai/auto-placer-router.md
       - "Fix or Create a Component": ai/component-generator.md
       - Datasheets, Repairs & Memory: ai/datasheets-and-memory.md

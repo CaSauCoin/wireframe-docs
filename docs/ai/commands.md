@@ -60,6 +60,8 @@ Before a schematic exists, the Copilot holds a **draft**: the requirements, the 
 | `/missing` | Parts with no library symbol. **No model call.** | These cannot be placed; each needs a library decision |
 | `/issues` | Numbered review findings: why each matters and what its fix would do | Answer them by number — `fix 2`, `accept 3 because the LED is decorative` |
 | `/specs` | The requirements the design was built from, and what was assumed for you | An assumption you did not make is the first thing to check |
+| `/place [now]` | Penalty's placement review: what can be drawn now, what waits and why. `now` covers the marked findings and builds the sheets | Place a design with findings still open, marked on the canvas — see [Placement Review](placement-review.md) |
+| `/reference <U2> [folder \| project \| URL]` | Lift the part's support circuit from a built KiCad or Altium design and add it as a revision | Reuse a circuit someone already built and tested — see [Reference Designs](reference-designs.md) |
 | `/pins [U1]` | Name a bound symbol's blank pins from the datasheet, keeping the pin numbers | A symbol with `Pin_1…Pin_8` cannot be wired by name |
 | `/fix <U1> <what is wrong> [file.pdf]` | Repair one part: describe it, attach a datasheet if you have one; WireFrame proposes before it changes anything | One wrong part, fixed with evidence, without redrawing the design |
 | `/symbol <U1> <describe it> [image \| pdf]` | Design one part's symbol from a description, pinout images or a datasheet, built live in the Symbol editor | When the library has no symbol for the part |
