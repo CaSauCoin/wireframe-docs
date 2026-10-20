@@ -23,7 +23,7 @@ Rule of thumb: **big boards sell, small boards teach.** A guide picture has to
 be readable at 100 % and show one feature; a showcase clip has to look like a
 real product being engineered.
 
-## 2. The user guide (this repo, MkDocs)
+## 2. The user guide (this repo — drawn by the website, see README)
 
 Feature by feature, each page:
 

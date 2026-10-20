@@ -196,9 +196,11 @@ brief_sha256: c4580440ada7f097
 
 ## Import scope
 
-The project importer supports KiCad `.kicad_pro` and legacy `.pro` project files. Altium and Eagle *projects* cannot be imported.
+The project importer reads KiCad `.kicad_pro` and legacy `.pro` projects, and Altium Designer projects through **File → Import → Altium Project (.PrjPcb, .SchDoc, .PcbDoc, .zip)...**. Eagle projects are not imported — open them in KiCad first.
 
-Altium library files remain supported through **View → Local Library Manager**. See [Library Import and Management](libraries/library-converter.md).
+A WireFrame project can also be written out as a KiCad, Altium Designer or EasyEDA project. See [Import and Export](import-export.md).
+
+Altium and KiCad library files are handled through **View → Local Library Manager**. See [Library Import and Management](libraries/library-converter.md).
 
 ## Import a PCB outline
 
@@ -218,4 +220,5 @@ If the previous session should not be restored, close its documents and project 
 - [Getting Started](getting-started.md)
 - [Configuration and Session Storage](reference/config-and-session.md)
 - [File Formats](reference/file-formats.md)
+- [Import and Export](import-export.md)
 - [Library Import and Management](libraries/library-converter.md)

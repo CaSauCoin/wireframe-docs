@@ -10,11 +10,11 @@ Press ++x++ or click **Route Trace** on the PCB toolbar (the vertical toolbar on
 
 ### Drawing a trace
 
-1. **Click a pad** (or an existing trace or via) to start. The trace takes the net of what you clicked and the width of that net's class.
-2. Move the cursor. WireFrame proposes a path with 45° or 90° steps and rounds or mitres the corners in the style set under **Properties → Board Settings → Corners**. If the straight path would break a rule, it tries a path that walks around the obstacle.
-3. **Click** to commit each waypoint. ++backspace++ takes back the last waypoint.
-4. **Click the destination pad** to finish — or a trace of the same net, which joins the new trace to it. When the pad is on the other copper layer, a via is inserted automatically. The ratsnest line disappears once the connection is complete.
-5. To stop elsewhere, **double-click**, or press ++esc++: the committed part of the trace is kept. ++esc++ before the first waypoint removes the trace.
+1. **Click a pad** (or an existing trace or via) to start. The trace takes the net of what you clicked and the width of that net's class. Starting from a track continues on that track's layer.
+2. Move the cursor. WireFrame previews the next leg with 45° or 90° steps, with corners rounded or mitred in the style set under **Properties → Board Settings → Corners**. ++slash++ flips the corner order (which way the 45° step goes first). The preview is exactly what a click lays — the same leg, snapped to the same point; inside a pad or via of the same net, the cursor snaps to its centre.
+3. **Click** to commit each waypoint. ++backspace++ steps the route back one waypoint — the followers of a bus and any via dropped at that point included.
+4. **Click the destination pad** to finish — or a trace of the same net, which joins the new trace to it. When the pad is on another copper layer, a via is dropped at the last point and a 45° leg reaches the pad on its layer. **Double-click** anywhere finishes the connection: a clean straight, 45° or L-shaped leg to the nearest pad of the net the trace does not reach yet, or, when there is no clean leg, [Route Assist](#route-assist) for that connection only. The ratsnest line disappears once the connection is complete.
+5. ++esc++ ends the track and keeps the route tool, ready for the next one; a second ++esc++ leaves the tool. Picking another tool mid-route ends the route the same way — it is always one undo step.
 
 ### Image — Completed pad-to-pad route
 
@@ -47,27 +47,57 @@ brief_sha256: 28fa26183f831998
 |---|---|
 | Start on a pad, trace, or via | Click |
 | Commit a waypoint | Click |
-| Take back the last waypoint | ++backspace++ |
+| Step the route back | ++backspace++ (also takes back a via dropped at that point) |
 | Finish on the destination pad | Click the pad |
-| Finish here | Double-click, or ++esc++ |
+| Finish the connection from here | Double-click |
+| End this track, keep routing | ++esc++ (a second ++esc++ leaves the tool) |
+| Flip the corner order | ++slash++ |
 | Thinner / wider trace | ++bracket-left++ / ++bracket-right++ (1 mil per press, within the net class limits) |
 | Change layer (drops a via) | ++v++, ++tab++, or ++space++ — see below |
+| Route the net under the pointer | ++ctrl+shift+w++ with nothing selected |
 
-While you route, a small readout near the cursor shows the net, its class, the layer, the width, the clearance, how violations are handled, and the routed length so far.
+Routing keys only act while a route is running and never from a text field: ++backspace++ does not delete the track you started from, and ++space++ does not rotate a footprint that is still selected.
+
+While you route, a small readout near the cursor shows the net, its class, the layer, the width, the clearance, how violations are handled, the routed length so far, and the keys that apply. For a net with high-speed rules it adds the return path, the plane edge and crosstalk of the track being drawn — see [High-Speed checks](../high-speed/checks-and-interfaces.md#while-you-route).
 
 ---
 
-## Clearance While Routing
+## Route Modes and Clashes
 
-When every candidate path would break the clearance of the net class, the net class setting **Design Rules → Clearance → When violated** decides what happens:
+**Properties → Board Settings → Track → Mode** chooses how a click behaves:
 
-| Setting | Preview colour | Result |
+| Mode | What happens |
+|---|---|
+| **Free (mark clashes)** (default) | The track goes exactly where you draw it. Anything it comes too close to — another net's track, pad, via, hole or the board edge — is measured on its real shape and **drawn** as you route, and DRC reports it afterwards. Nothing is refused, and nothing slows down on a dense board |
+| **Walkaround** | Each click searches for a way around obstacles. Slower on dense boards |
+
+How a clash is drawn follows the net class setting **Design Rules → Clearance → When violated**:
+
+| Setting | Preview colour |
+|---|---|
+| **Block** (default) | Red — the segment is still laid; DRC reports it as an error |
+| **Warn** | Amber — laid and marked |
+| **Allow** | The layer's colour |
+
+A route ends with a hint such as *too close to other copper · right-click › Reroute Clashing Tracks*. Fix clashes with [Route Assist](#route-assist), by moving the copper, or by changing the rule. Dragging a routed segment is never stopped by clearance either; its clashes are drawn the same way.
+
+Ending a route on a pad of a **different net** is allowed — a pad or via of another net is a waypoint, not an end — and DFM/DRC reports the short. Always run [DFM & DRC](dfm-and-drc.md) after routing.
+
+---
+
+## Route Assist
+
+Route Assist routes for you, on the board as it is, and applies the result as **one undo step**. It runs in the background (++esc++ stops it) and only touches the nets you gave it.
+
+| Command | Where | What it does |
 |---|---|---|
-| **Block** (default) | Red | The segment cannot be committed — move the cursor to a clear path |
-| **Warn** | Amber | The segment is committed; DRC will report it |
-| **Allow** | Layer colour | The segment is committed without a warning |
+| **Auto-route Net** / **Auto-route Bus** | Right-click a track; the **Auto-route** button on the PCB toolbar; ++ctrl+shift+w++ | Lays what is still ratsnest on the selected net(s), around every other net's copper |
+| **Auto-route** with nothing selected | ++ctrl+shift+w++ | Routes the net under the pointer |
+| **Reroute Track(s)** | Right-click a track | Takes the selected tracks up and routes their nets again, clear of everything else |
+| **Reroute Clashing Tracks (N)** | Right-click a track | Reroutes only the tracks of these nets that are too close to another net's copper |
+| Double-click while routing | Canvas | Finishes one connection (see above) |
 
-Ending a route on a pad of a **different net** is allowed; DFM/DRC reports the short. Always run [DFM & DRC](dfm-and-drc.md) after routing.
+Route Assist reads the board's design rules and stackup, and joins at track ends inside pads. Review its copper like your own, and run DRC.
 
 ---
 
@@ -166,7 +196,7 @@ brief_sha256: 79c5704094dcad31
 ### Placing a via by itself
 
 1. Select **Place Via** on the toolbar (++v++ when not routing).
-2. Click on the board. The via takes the net of the trace or pad under the cursor.
+2. Click on the board. On a track's centre line the via lands on it and takes its net; elsewhere it snaps to the grid and takes the net of the pad under the cursor. If it lands too close to another net, the tool says so at once.
 
 ### Via properties
 
@@ -215,6 +245,7 @@ Right-click a selected trace:
 
 | Group | Item | What it does |
 |---|---|---|
+| **Route Assist** | **Auto-route Net** / **Auto-route Bus**, **Reroute Track(s)**, **Reroute Clashing Tracks** | See [Route Assist](#route-assist) |
 | **Select** | **Connected Track Chain** | Every track joined end-to-end to the selection, through vias, up to the pads |
 | | **All Copper of Net(s)** | Every track and via of the selected nets |
 | | **Highlight Net** | Highlights the net on the canvas |
@@ -225,7 +256,7 @@ Right-click a selected trace:
 | **Bus** (several parallel tracks) | **Distribute Evenly** | Keeps the two outer tracks and spaces the ones between evenly |
 | | **Pack to Top / Left**, **Pack to Bottom / Right** | Closes the gaps to width + clearance toward one side; ends on pads stay put |
 | | **Set Pitch ▸** | Centre-to-centre spacing from the top or left track |
-| **High-speed ▸** | Tune length, pairs, and groups | See [Length tuning and pairs](#length-tuning-and-differential-pairs) |
+| **High-speed ▸** | Tune length, pairs, and groups | See [Length tuning and pairs](length-tuning.md) |
 | | **Delete Segment(s)** / **Delete Track(s)** | Removes the selected segments, or whole tracks |
 
 Review clearance after every group operation and re-run DFM.
@@ -277,17 +308,13 @@ brief_sha256: ed87886135515216
 
 ## Routing Several Traces Together
 
-Select two or more existing traces, choose **Route Trace**, and click one of the selected traces to continue them all at once. The other traces follow in parallel at their current spacing.
+Select two or more existing traces, choose **Route Trace**, and click one of the selected traces to continue them all at once. The other traces follow in parallel at their current spacing. When the leading trace lands on its pad, each follower lands on its own pad — with a clean leg, or with Route Assist when a clean leg would clash — and the whole bus is one undo step. ++backspace++ steps all of them back together.
 
 ---
 
 ## Length Tuning and Differential Pairs
 
-- **Tune Length** (toolbar, under Route Trace): hover a straight segment of a net that is shorter than its pair, its length group, or its class target. The distance from the segment sets the bump height and the side of the cursor sets the side; click to add a meander. ++esc++ leaves the tool.
-- Right-click → **High-speed ▸** adds a meander with set **Add**, **Height**, **Pitch**, side, and corner style, declares two nets as a differential pair (**Declare as differential pair**), or adds nets to a length group.
-- **Properties → Board Settings → High-speed**: with **Pairs → Both halves** on, starting a route on a pad of a declared pair routes both halves together; **Return vias → Add GND vias** drops a GND via beside a pair's vias when it changes layer; **Meanders** sets the corner style of tuning bumps.
-
-Pairs, length groups, and targets are defined in [Design Rules](design-rules.md).
+Routing a declared pair routes both halves together; meanders add length where a net is short against its pair, its group or its target; a live gauge shows the difference while you route. See [Length Tuning and Differential Pairs](length-tuning.md).
 
 ---
 
@@ -304,4 +331,6 @@ The AI Copilot can propose placement and routing for the whole board with `/layo
 - [Zones & Planes](zones-and-planes.md) — copper fills interact with trace clearances
 - [Design Rules & Net Classes](design-rules.md) — configure clearance and trace width rules
 - [DFM & DRC](dfm-and-drc.md) — check clearances and widths after routing
+- [Length Tuning & Differential Pairs](length-tuning.md) — pairs, groups and meanders
+- [High-Speed Workbench](../high-speed/index.md) — impedance, return path, crosstalk and power on the routed copper
 - [Placement and Routing Assistant](../ai/auto-placer-router.md) — AI-assisted placement and routing review

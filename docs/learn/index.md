@@ -36,6 +36,7 @@ Not sure what to read first? Choose the path that matches you. Each one lists th
     <div class="wf-path" markdown>
 
     - [ ] **[Projects & files](../projects.md)** <small>5 min</small> — `.prjxml`, `.schxml`, `.pcbxml`, and importing a KiCad project.
+    - [ ] **[Import & export](../import-export.md)** <small>5 min</small> — open Altium projects; write KiCad, Altium or EasyEDA projects back out.
     - [ ] **[Library import & management](../libraries/library-converter.md)** <small>10 min</small> — KiCad folders, Altium `.SchLib` / `.PcbLib` / `.IntLib`.
     - [ ] **[Keyboard shortcuts](../advanced/shortcuts.md)** <small>5 min</small> — the keys that differ from what your hands expect.
     - [ ] **[Selection, context menus & popups](../advanced/selection-and-editing.md)** <small>5 min</small>
@@ -64,6 +65,25 @@ Not sure what to read first? Choose the path that matches you. Each one lists th
 
     !!! success "At the end you can"
         turn a written requirement into a reviewed BOM and schematic, and tell a sound proposal from a risky one.
+
+=== ":material-sine-wave: High-speed and power"
+
+    ## High-speed and power
+
+    Your board has USB, Ethernet, DDR, PCIe or a hungry processor, and you want proof the copper is right. About **50 minutes**.
+
+    <div class="wf-path" markdown>
+
+    - [ ] **[Length tuning & differential pairs](../pcb/length-tuning.md)** <small>10 min</small> — route pairs as pairs, match a bus.
+    - [ ] **[High-Speed Workbench](../high-speed/index.md)** <small>10 min</small> — stack-up, rules, the six steps.
+    - [ ] **[Checks & interfaces](../high-speed/checks-and-interfaces.md)** <small>10 min</small> — read a result's evidence; check USB or Ethernet as a whole.
+    - [ ] **[Simulation, power & EMI](../high-speed/simulate-power-emi.md)** <small>10 min</small> — a pair in time, a rail's impedance, the nets that radiate.
+    - [ ] **[Power Analyzer](../power/power-analyzer.md)** <small>10 min</small> — the voltage each chip really sees.
+
+    </div>
+
+    !!! success "At the end you can"
+        tell which fast signals and rails are right, which are not and why — and fix them with changes you previewed and approved.
 
 === ":material-factory: Ready for manufacturing"
 

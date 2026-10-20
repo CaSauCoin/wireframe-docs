@@ -1,4 +1,4 @@
-# Enclosure Fit and Multi-Board Products
+# Enclosure Fit and Board Stacks
 
 Two tabs of the Component Review window deal with the physical product rather than the circuit:
 
@@ -12,6 +12,20 @@ Open them from AI Copilot's review window. Both are saved with the project. A de
 ## Board Fit
 
 **Board Fit** works from the BOM and the mechanics alone — before the schematic is drawn and long before placement — so a board that cannot hold its parts is found early.
+
+### First: what is fixed already?
+
+The tab opens on one question, kept with the project, which decides where the board's size comes from:
+
+| Answer | What follows |
+|---|---|
+| **The mechanics** | A case, a frame, a standard board or a drawing gives the shape; the parts have to fit it (below) |
+| **Nothing yet** | The circuit decides: the board is sized from the BOM, and the case is made around it |
+| **Only limits** | A largest size is fixed — a pocket, a slot, a product — and the board is sized from the BOM inside it |
+
+**Copper layers** (1, 2, 4 or 6) are chosen here too, before any size: they change how much room the parts need. The count belongs to the project — every layout is made on it, and **Update PCB** builds the board on that many copper layers.
+
+**Sizes from the BOM.** With nothing mechanical to follow, the tab offers sizes built from the parts, each one grown until the fit check agrees: **Compact** (the least square), **Edge row** (long enough for every part that must stand at one edge, when Compact's side is too short) and **Roomy** (more room, 4:3). Beside each: its area, aspect, the fit verdict, how much of one side the edge parts take, and whether it stays inside your limits. **Use this size** makes it the board — a plain rectangle you then shape on this tab or with `/board`.
 
 ### Give the board a shape
 
@@ -52,6 +66,15 @@ Each board in the stack can be bound to a PCB file. **Update PCB** then gives th
 **What it has to hold** measures the area each part really needs against the board, with the height of each part against the case. The area factor is a multiple of the courtyard for clearance, routing channels, and fanout — a judgement, not a measurement: a hand-assembled two-layer board needs more room than a dense four-layer module. **both sides** is off by default, because a design that only fits by using both faces is a decision to make on purpose.
 
 With several boards, **BOM across the boards** proposes which block goes on which board: blocks are kept whole, parts the case pins and parts already assigned stay where they are, and each remaining block — largest first — goes where most of its signals already are, on a board with room. The proposal is shown with the reason for each block; nothing moves until you accept it.
+
+### Export the board for the case maker
+
+**Export for the case (STEP)…** writes what a mechanical CAD tool needs to draw a case around the board: the board itself (outline, cutouts and holes, at its thickness), named and coloured, and
+
+- once the board is laid out, every part on it as its courtyard box at its stated height, on its side;
+- before layout, one **keep-in** block as tall as the tallest part — only when every part states a height.
+
+A part with no known height is never given a guessed one: it goes in as a thin red marker named **HEIGHT UNKNOWN**, and the export says how many there are. The thickness is the board's, the PCB's stated stack-up, or 1.6 mm said as the fab default.
 
 ### Put the board on the schematic
 
@@ -107,25 +130,9 @@ brief_sha256: 7bba4f5d3f64ddf6
 
 ## System: products made of several boards
 
-One project is one board. A product made of several — a flight stack, a HAT on a Pi, a display cabled to the main board — is an **assembly** (`.asmxml`): which boards, where each sits in the tower, and how they are wired to each other. Problems that no single project can see — a pinout that disagrees across a cable, two different rails joined, signals crossing without a ground — are checked here.
+A product of several boards — a flight stack, a HAT on a Pi, a display cabled to the main board — is one project with a PCB per board, each on a level of the board stack above, and one **assembly** (`.asmxml`) that says which boards make the product and how they are wired to each other. The **System** tab of this window shows that assembly: the boards, the connections pin by pin, the findings between boards, and the tower in 3D.
 
-### Build an assembly
-
-1. On the **System** tab, select **New assembly…** (or **Open assembly…**).
-2. **Add a board (project)…** for each board you design in WireFrame.
-3. **Add a board not designed here…** for bought boards — a Raspberry Pi, an ESC, a SoM — declared by what it is and the connector it offers. Its pins start with no nets, so nothing crossing to it is checked pin by pin until you declare them.
-4. **Place…** each board in the tower and state its spacer.
-5. **Connect two boards…** for each cable or header. Name what the connection is (for example *"JST-SH 1.0 mm"* or *"FFC 0.5 mm, contacts on opposite sides"*), then choose **Pin for pin** or **Reversed (1 meets N)** — what an FFC with contacts on opposite sides does between two connectors facing the same way.
-
-Use **Open the boards** to load every board's project so its drawn schematic can be read; the project you are working on stays active. **Read the boards again** refreshes after you edit a board.
-
-### Read the result
-
-The summary line reads *N board(s), N connection(s) — N blocker(s), N warning(s)*. In the connection view, line thickness shows the kind of link (thick: plugged together, medium: a cable, thin: loose wires) and colour shows the worst finding on it. Each connection can be expanded pin by pin.
-
-The **Assembly 3D** view shows the boards where the tower's spacers put them: left or right drag to turn, middle drag to move, wheel to zoom. Lifting the boards apart in that view is for looking only — the checks use the real spacers.
-
-A board's own pinout is edited in its own project; open it from the System tab.
+Everything about it — creating an assembly, bought boards such as a Raspberry Pi or a BeagleBone, the checks between boards, and splitting one design into several boards with the Copilot — is on its own page: [Multi-Board Products](multi-board.md).
 
 ### Short video — Connect two boards in an assembly
 

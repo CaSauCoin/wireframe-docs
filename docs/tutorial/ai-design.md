@@ -38,7 +38,7 @@ brief_sha256: a79bc0ededcd8271
 
 ## Before you start
 
-You need a new project, an AI endpoint configured in **Preferences → AI Assistant** (an OpenRouter key, or the local agyserve preset), suitable component libraries, and a simulation engine (ngspice is built in). Save the project before starting the request, then open **View → AI Copilot Chat** (++ctrl+space++).
+You need a new project, the AI set up in **Preferences → AI Assistant** (your plan's WireFrame credit, or your own key at OpenRouter, DeepSeek or Google AI — see [Models, Credit and Your Data](../ai/models-and-credits.md)), suitable component libraries, and a simulation engine (ngspice is built in). Save the project before starting the request, then open **View → AI Copilot Chat** (++ctrl+space++).
 
 ## 1. State measurable requirements
 

@@ -54,7 +54,17 @@ The board shape is saved in the `.pcbxml`. See [Board Shape and Outline](../pcb/
 
 | Assembly | Extension | Contains |
 |---|---|---|
-| Multi-board assembly | `.asmxml` | Which board projects make up a product, where each sits in the stack, and how they are wired to each other — see [Enclosure Fit and Multi-Board Products](../advanced/enclosure-and-assembly.md) |
+| Multi-board assembly | `.asmxml` | The boards that make up a product — the project's PCBs, boards of other projects and bought boards — and every connection between them. The tower itself is the project's board stack. See [Multi-Board Products](../advanced/multi-board.md) |
+
+## Exchange with other EDA tools
+
+| Direction | Formats | Menu |
+|---|---|---|
+| Import | KiCad `.kicad_pro` / `.pro` projects; Altium `.PrjPcb`, `.SchDoc`, `.PcbDoc`, `.SchLib`, `.PcbLib`, `.IntLib`, `.zip` | **File → Import** |
+| Export | KiCad project, Altium Designer project, EasyEDA Standard (`_Schematic.json`, `_PCB.json`) | **File → Export** |
+| Mechanical | STEP (board and parts, for the case) | Board Fit → **Export for the case (STEP)...** |
+
+See [Import and Export](../import-export.md).
 
 ## Fabrication and documentation outputs
 
