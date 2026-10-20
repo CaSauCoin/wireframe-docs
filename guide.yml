@@ -1,0 +1,183 @@
+# The order of the user guide and the words on its home page.
+#
+# The guide is drawn by the website (wireframe-auth/app/docs_site.py) with the
+# site's own header, footer and theme, and published at
+# https://wireframe.com.vn/docs/. A page's URL is its path here:
+#   pcb/routing.md -> /docs/pcb/routing/      pcb/index.md -> /docs/pcb/
+#
+# A page is listed as a path, or as {page, title, status} when the sidebar
+# should call it something shorter than its H1 or mark it new / beta.
+# A page that exists but is not listed is not published.
+
+home:
+  title: WireFrame EDA Documentation
+  lead: >-
+    How to design a board in WireFrame, from the first sheet to the Gerbers you
+    send to the fab — schematic capture, PCB layout, high-speed and power
+    integrity, SPICE simulation, 3D, multi-board products, libraries, and an AI
+    Copilot that shows its work.
+  chips:
+    - {title: Install, page: installation.md}
+    - {title: Route a trace, page: pcb/routing.md}
+    - {title: Export Gerbers, page: pcb/fabrication-and-export.md}
+    - {title: High-Speed Workbench, page: high-speed/index.md}
+    - {title: IR drop, page: power/power-analyzer.md}
+    - {title: Copilot commands, page: ai/commands.md}
+    - {title: Keyboard shortcuts, page: advanced/shortcuts.md}
+  start:
+    - title: Install and sign in
+      text: Windows, macOS on Apple Silicon or Linux — the installer, the first launch and the account.
+      page: installation.md
+      icon: download
+      cta: Install
+    - title: Your first board
+      text: A small LED board from an empty project to Gerber files, step by step, in about an hour.
+      page: tutorial/index.md
+      icon: pcb
+      cta: Start the tutorial
+    - title: Design with the AI Copilot
+      text: Describe the circuit; review real parts, a checked netlist and the sheets it draws.
+      page: tutorial/ai-design.md
+      icon: ai
+      cta: Try it
+  tasks:
+    - {title: Import a KiCad project, page: projects.md}
+    - {title: Run the Electrical Rules Check, page: schematic/erc.md}
+    - {title: Send the schematic to the board, page: projects.md}
+    - {title: Draw the board outline, page: pcb/board-outline.md}
+    - {title: Pour a ground plane, page: pcb/zones-and-planes.md}
+    - {title: Set net classes and clearances, page: pcb/design-rules.md}
+    - {title: Fix DRC and DFM findings, page: pcb/dfm-and-drc.md}
+    - {title: Simulate a block of a sheet, page: simulation/running-simulation.md}
+    - {title: Find or create a part, page: libraries/how-parts-are-found.md}
+    - {title: Repair a part with /fix, page: ai/component-generator.md}
+    - {title: Fit the board to its case, page: advanced/enclosure-and-assembly.md}
+    - {title: Read the 3D view, page: advanced/3d-viewer.md}
+    - {title: Match lengths of a bus, page: pcb/length-tuning.md}
+    - {title: Check USB or Ethernet routing, page: high-speed/checks-and-interfaces.md#interfaces}
+    - {title: Find where a rail loses voltage, page: power/power-analyzer.md}
+    - {title: Open an Altium project, page: import-export.md}
+    - {title: Export to KiCad or Altium, page: import-export.md#export-to-another-eda-tool}
+    - {title: Connect a HAT to a Raspberry Pi, page: advanced/multi-board.md}
+
+sections:
+  - key: start
+    title: Start here
+    icon: flag
+    description: Install WireFrame, learn the window, and build a first board — by hand or with the Copilot.
+    pages:
+      - {page: learn/index.md, title: Learning paths}
+      - {page: installation.md, title: Install}
+      - {page: getting-started.md, title: Your first session}
+      - {page: ui-overview.md, title: The window}
+      - {page: projects.md, title: Projects & files}
+      - {page: import-export.md, title: Import & export, status: new}
+      - {page: tutorial/index.md, title: "Tutorial: an LED board"}
+      - {page: tutorial/ai-design.md, title: "Tutorial: AI-assisted design"}
+
+  - key: schematic
+    title: Schematic
+    icon: schematic
+    description: Place parts, wire nets across sheets, document the design and check it with the ERC.
+    pages:
+      - {page: schematic/index.md, title: Overview}
+      - schematic/placing-components.md
+      - schematic/wiring-and-nets.md
+      - schematic/properties-and-attributes.md
+      - schematic/graphics-and-annotations.md
+      - {page: schematic/erc.md, title: Electrical Rules Check}
+      - schematic/templates.md
+
+  - key: pcb
+    title: PCB layout
+    icon: pcb
+    description: Board shape, placement, routing, layers, zones, design rules, DRC/DFM and fabrication output.
+    pages:
+      - {page: pcb/index.md, title: Overview}
+      - pcb/board-outline.md
+      - pcb/footprints-and-placement.md
+      - pcb/routing.md
+      - {page: pcb/length-tuning.md, title: Length tuning & pairs, status: new}
+      - pcb/layers-and-views.md
+      - pcb/zones-and-planes.md
+      - pcb/design-rules.md
+      - {page: pcb/dfm-and-drc.md, title: DFM & DRC}
+      - pcb/fabrication-and-export.md
+
+  - key: high-speed
+    title: High-speed & power
+    icon: speed
+    description: Impedance, pairs, return paths, crosstalk, interfaces, EMI and DC IR drop — computed on the routed copper, with the evidence.
+    pages:
+      - {page: high-speed/index.md, title: High-Speed Workbench, status: new}
+      - {page: high-speed/checks-and-interfaces.md, title: Checks & interfaces}
+      - {page: high-speed/simulate-power-emi.md, title: "Simulation, power & EMI"}
+      - {page: high-speed/fixes-and-report.md, title: "Fixes, reports & the AI"}
+      - {page: power/power-analyzer.md, title: Power Analyzer (DC IR drop), status: new}
+
+  - key: simulation
+    title: Simulation
+    icon: wave
+    description: SPICE in the app — a block of a sheet as its own simulation, testbenches, measurements and models.
+    pages:
+      - {page: simulation/index.md, title: Simulation Workbench}
+      - simulation/running-simulation.md
+      - simulation/waveform-viewer.md
+      - simulation/testbenches-and-measurements.md
+      - simulation/engines-and-models.md
+
+  - key: ai
+    title: AI Copilot
+    icon: ai
+    description: From a written requirement to a checked BOM, netlist and sheets; reviews, repairs and memory.
+    pages:
+      - {page: ai/index.md, title: Overview}
+      - {page: ai/models-and-credits.md, title: "Models, credit & your data", status: new}
+      - ai/commands.md
+      - ai/design-agent.md
+      - ai/placement-review.md
+      - ai/reference-designs.md
+      - ai/component-generator.md
+      - ai/datasheets-and-memory.md
+      - ai/auto-placer-router.md
+      - {page: ai-copilot.md, title: Review & simulation guide}
+
+  - key: libraries
+    title: Libraries
+    icon: library
+    description: Symbols, footprints and 3D models — yours, KiCad's and Altium's, the catalogue, and how a part is chosen.
+    pages:
+      - libraries/symbols-library.md
+      - libraries/footprints-library.md
+      - libraries/symbol-creator.md
+      - libraries/library-converter.md
+      - libraries/library-workspace.md
+      - libraries/how-parts-are-found.md
+
+  - key: advanced
+    title: 3D, mechanics & products
+    icon: cube
+    description: The 3D viewer, the sheet, board and 3D side by side, fitting boards to an enclosure, and products made of several boards.
+    pages:
+      - advanced/3d-viewer.md
+      - {page: advanced/side-by-side-views.md, title: "Schematic, board & 3D side by side", status: new}
+      - {page: advanced/enclosure-and-assembly.md, title: Enclosure fit & board stacks}
+      - {page: advanced/multi-board.md, title: Multi-board products, status: new}
+      - advanced/selection-and-editing.md
+      - advanced/shortcuts.md
+
+  - key: reference
+    title: Reference
+    icon: book
+    description: Your account and plan, settings, file formats, a glossary, answers to common questions and the release notes.
+    pages:
+      - {page: reference/accounts-and-plans.md, title: "Account, plans & devices"}
+      - reference/config-and-session.md
+      - reference/file-formats.md
+      - {page: reference/glossary.md, title: Glossary}
+      - {page: faq.md, title: FAQ & troubleshooting}
+      - {page: changelog.md, title: Release notes}
+
+# Served although no page names them.
+copy:
+  - img/brand/favicon.svg

@@ -36,13 +36,13 @@ brief_sha256: 1ece0c294228e249
 
 Use **File** to:
 
-- **New** — **New Project (.prjxml)...**, **New Schematic (.schxml)** (++ctrl+n++), **New PCB (.pcbxml)**;
-- **Open File...** (++ctrl+o++) and **Open Project (.prjxml)...** (++ctrl+p++);
-- **Import** — **KiCad Project (.kicad_pro, .pro)...** and, with a PCB active, **CAD Outline (.svg / .dxf)...**;
+- **New** — **New Project (.prjxml)...**, **New Assembly (.asmxml)...**, **New Schematic (.schxml)** (++ctrl+n++), **New PCB (.pcbxml)**, **New Simulation (.simxml)**;
+- **Open File...** (++ctrl+o++), **Open Project (.prjxml)...** (++ctrl+p++) and **Open Assembly (.asmxml)...**;
+- **Import** — **KiCad Project (.kicad_pro, .pro)...**, **Altium Project (.PrjPcb, .SchDoc, .PcbDoc, .zip)...** and, with a PCB active, **CAD Outline (.svg / .dxf)...** — see [Import and Export](import-export.md);
 - **Save** (++ctrl+s++) and **Save As...** (++ctrl+shift+s++);
-- **Export** — **Export Schematic to PDF...**, **Print PCB to PDF (1:1)...**, **Fabrication Outputs (Gerber/Drill/BOM)...**;
+- **Export** — **Export Schematic to PDF...**, **Print PCB to PDF (1:1)...**, **Fabrication Outputs (Gerber/Drill/BOM)...**, **KiCad Project...**, **Altium Designer Project...**, **EasyEDA Project (Standard)...**;
 - **Page Settings...** for the active schematic;
-- **Close Document**, **Close Project**, and **Exit**.
+- **Close Document**, **Close Project**, **Close Assembly**, and **Exit**.
 
 Commands that do not apply to the active document are disabled.
 
@@ -63,7 +63,11 @@ Use **View** to show or hide:
 - PCB Layers;
 - Zone Manager — see [Zone Manager](pcb/zones-and-planes.md#zone-manager);
 - Design Rules — see [Design Rules](pcb/design-rules.md);
+- High-Speed Workbench — see [High-Speed Workbench](high-speed/index.md);
+- Power Analyzer (DC IR drop) — see [Power Analyzer](power/power-analyzer.md);
 - 3D Viewer (++3++);
+- Assembly View — see [Multi-Board Products](advanced/multi-board.md);
+- **Schematic | PCB | 3D** and **Views as Tabs** — see [Side by Side](advanced/side-by-side-views.md);
 - Performance HUD — a frame-time overlay; see the FAQ entry *The canvas feels slow or stutters* under [Schematic and PCB](faq.md#schematic-and-pcb).
 
 ### Tools
@@ -82,7 +86,11 @@ Use **Simulation** for **New Simulation (.simxml)**, **Simulate a Block of This 
 
 The **Help** menu has **Documentation** (this guide), **Report a Bug...**, **Request a Feature...** (see [Reporting an issue](faq.md#reporting-an-issue)), **Download Latest Version** — or **Update to v…** when a newer version exists — and **About WireFrame EDA**.
 
-The account menu at the right end of the menu bar shows your name and mode, for example *Engineer | Community*. WireFrame runs in community mode — free local use, and **Login is optional**. The menu offers **Star repository**, **Donate / Buy me a coffee**, **Check for Updates**, and **Clear saved login**.
+The account menu at the right end of the menu bar shows who is signed in and the plan. It offers **Sign in with browser** (or **Manage account, plan & devices** and **Sign out of this device** once signed in), **Star repository**, **Donate / Buy me a coffee** and **Check for Updates**. See [Account, Plans and Devices](reference/accounts-and-plans.md).
+
+### Light and dark
+
+**Preferences → Appearance** switches the whole app between **Dark** and **Light** — a soft-grey light theme with colours deepened to stay readable — and sets the accent colour, the interface font and its size. The schematic canvas has its own **Auto / Paper / Dark** choice: Auto follows the theme, Paper is a white sheet, Dark is the classic dark sheet.
 
 ## Docking layout
 

@@ -12,3 +12,5 @@ Bản đầy đủ nằm trong repo WireFrame, nhánh `docs/rebuild`:
   không còn chữ tiếng Việt / đường dẫn máy trong ảnh; `docs-verify`, `mkdocs build`.
 - `samples/ne555-blinker/ai_design_plan.json` còn đường dẫn tuyệt đối của máy
   (lỗi app, đã có task riêng) — đừng sửa tay file đó.
+
+**2026-10-20:** MkDocs đã bỏ. Website (`wireframe-auth/app/docs_site.py`) vẽ docs từ repo này theo `guide.yml`; xem README. Trang mới thêm vào một section trong `guide.yml`, chạy `python scripts/build_docs.py OUT --strict` trong wireframe-auth để kiểm tra link.

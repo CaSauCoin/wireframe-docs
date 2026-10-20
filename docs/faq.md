@@ -81,7 +81,7 @@ Use this page to diagnose common release issues. Start with the check that match
 ## AI Copilot
 
 ??? question "How do I configure AI Copilot?"
-    Open **Preferences → AI Assistant** (or **AI settings...** in the Copilot menu), pick the **OpenRouter** preset and enter your own key — or pick **agyserve** to use a local endpoint with no key — then press **Test** or **Check server**. If requests fail with HTTP 400/404, press **List** and choose model ids the endpoint actually serves. Never include the key in screenshots, shared projects, or support reports.
+    Open **Preferences → AI Assistant** (or **AI settings...** in the Copilot menu) and choose who pays: **WireFrame credit** (your plan's credit, no key), or your own key at **OpenRouter**, **DeepSeek** or **Google AI**, then **Save & test**. If a model returns errors or empty answers, pick another one in **Models**. Never include a key in screenshots, shared projects, or support reports. See [Models, Credit and Your Data](ai/models-and-credits.md).
 
 ??? question "AI Copilot is not responding"
     Check the network connection, API-key validity, provider credit or rate limit, and the visible error message. Retry only after the current request has clearly stopped; repeated clicks can create duplicate provider charges.

@@ -50,12 +50,32 @@ brief_sha256: 1f97eea2e9acd5ff
 
 | Action | Input | Effect |
 |---|---|---|
-| **Orbit** | Left or right mouse button drag | Rotate the camera around the board |
+| **Pick a part** | Click without dragging | Selects nothing — it probes the part: boxed and labelled here, ringed on the board and the sheet |
+| **Orbit** | Right mouse button drag | Rotate the camera around the board |
 | **Pan** | Middle mouse button drag | Move the camera parallel to the screen |
 | **Zoom** | Mouse scroll wheel | Zoom in / out |
-| **Reset** | **Reset Camera**, or ++home++ | Back to the default view |
+| **Reset** | **Reset Camera**, or ++home++ | Back to the default three-quarter view, framed on the board and its parts |
 
-The panel shows the frame rate and the hint *Orbit: Right Click \| Pan: Middle \| Zoom: Scroll*.
+The toolbar shows **Reset Camera**, **Colors** (load the models' full STEP colours), a count such as *⚠ 1 without a model*, and the hint *Click: pick a part \| Orbit: Right Click \| Pan: Middle \| Zoom: Scroll*. Hovering a part names it.
+
+The view always shows the board you are working on (or the last one), so it can stay open beside the schematic — see [Schematic, Board and 3D Side by Side](side-by-side-views.md). While you drag a footprint on the board, the 3D view follows it.
+
+---
+
+## How It Looks
+
+The viewer renders physically: metals reflect, the mask has depth, the light follows the camera, edges are anti-aliased, and the board sits on a soft shadow like a product shot. STEP colours are read as the model's author set them.
+
+**Board look** — in the 3D view's **Properties** while the view is in front, and in **Preferences → 3D Viewer**, saved with the session:
+
+| Setting | Choices |
+|---|---|
+| **Mask** | Green (default), red, blue, black, white, purple… |
+| **Finish** | ENIG, HASL or bare copper — the colour of exposed pads |
+| **Assembly (Fab) layer** | Show the fabrication layer's outlines and designators |
+| **Pin 1** | Highlight pin 1 of every part in orange |
+
+Silkscreen is clipped to the board outline, so a connector's outline hanging over the edge does not float in the air.
 
 ---
 
@@ -83,7 +103,7 @@ The panel shows the frame rate and the hint *Orbit: Right Click \| Pan: Middle \
 | S | Red | Switch |
 | H | Tan | Mechanical hole |
 
-Board materials — solder mask, copper under mask, pad plating, silkscreen — are set in **Preferences → 3D Viewer**.
+Board materials — solder mask, finish, silkscreen — are set as described in [How It Looks](#how-it-looks).
 
 ---
 
@@ -103,6 +123,7 @@ Use the underside camera view to confirm that flipped models, silkscreen, pad pl
 | **Check physical clearances** | Zoom into tall components (connectors, relays) to check they don't interfere |
 | **Inspect bottom-side components** | Orbit below the board to view B.Cu placement |
 | **Capture for documentation** | Position the view and take a screenshot with your operating system's tool |
+| **Hand the board to the case designer** | Board Fit's **Export for the case (STEP)…** — see [Enclosure Fit](enclosure-and-assembly.md#export-the-board-for-the-case-maker) |
 
 !!! tip "STEP files load slowly the first time"
     First-time loading of STEP files may take several seconds due to mesh tessellation and GPU upload. Subsequent frames use the cached mesh and are fast.
@@ -126,4 +147,6 @@ In a 3D preview (Library panel or Library Manager), **Load Colors** reloads the 
 ## See Also
 
 - [PCB Editor](../pcb/index.md) — the 2D PCB workspace
+- [Schematic, Board and 3D Side by Side](side-by-side-views.md) — cross-probing
+- [Multi-Board Products](multi-board.md) — the Assembly 3D of a tower of boards
 - [Fabrication & Export](../pcb/fabrication-and-export.md) — export after 3D verification

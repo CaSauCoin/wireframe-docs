@@ -4,74 +4,14 @@ AI Copilot helps turn a circuit request into a reviewable design, inspect an exi
 
 ## Configure AI access
 
-Open **Preferences → Preferences... → AI Assistant**, or the **⋮** menu of the AI Copilot panel → **AI settings...**. WireFrame speaks one protocol to every provider (an OpenAI-style `/chat/completions` endpoint), so the setup is an endpoint, the model ids it serves, and a key when the endpoint bills per token.
+Open **Preferences → AI Assistant**, or the **⋮** menu of the AI Copilot panel → **AI settings...**, and answer one question — **who pays for the AI**:
 
-1. In the **Provider** card, pick **OpenRouter**, **agyserve**, or **Custom**. With **Custom**, type the **Endpoint URL** — any server that speaks the OpenAI chat API.
-2. For a hosted provider, paste the **API key** (for OpenRouter it starts with `sk-or-v1-`). A local endpoint shows **Not required**. **Clear key** removes a saved key.
-3. In the **Models** card, fill **Design model** and **Fast model**. **List** beside each field asks the endpoint which ids it serves.
-4. Select **Save & test** (hosted) or **Check server** (local) and wait for the **Connection** line.
-5. Open **View → AI Copilot Chat** (++ctrl+space++).
+- **WireFrame credit** — your plan's AI credit; nothing else to set up. The card shows the credit left (1 credit = $0.01 of model use).
+- **OpenRouter**, **DeepSeek** or **Google AI** — your own key at that provider, which bills you directly. Paste it, then **Save & test**.
 
-Until a key is saved for a hosted provider, the dialog reads *AI is disabled until a key is saved*.
+Then choose the **Design model** (plans the BOM and netlist, repairs findings, reviews a board — the one that decides circuits) and the **Fast model** (routing your request, research, board questions). Open **View → AI Copilot Chat** (++ctrl+space++) and start.
 
-| Preset | What it configures | Key |
-|---|---|---|
-| **OpenRouter** | `https://openrouter.ai/api/v1` with `google/gemini-2.5-pro` (design) and `google/gemini-2.5-flash` (fast) | Required |
-| **agyserve** | A local bridge to the Antigravity CLI on port 8799, so calls are covered by that subscription instead of per token | None |
-
-A preset sets the endpoint **and** its model ids together. Model ids are not portable between providers: `google/gemini-2.5-flash` on OpenRouter is not a valid id on a local server. If you switch endpoints by hand, press **List** and pick ids from the new endpoint; WireFrame warns when a hosted-provider id (one containing `/`) is paired with a local endpoint.
-
-### Two model tiers
-
-| Field | Used for |
-|---|---|
-| **Design model** | Planning the BOM and netlist, repairing findings, generating library parts, reviewing a board — the model that decides circuits |
-| **Fast model** | Request routing, project naming, requirement research, board questions — classification and summaries. Leave it empty to use the design model |
-
-The **Fast-tier routing** card can send the fast tier to its own endpoint: **Fast endpoint** — **Same**, **OpenRouter**, **agyserve**, or **Custom** — with its own **Fast endpoint URL** and **Fast endpoint key** (empty = the key above). A common split is routine calls on **agyserve** while design calls stay on a hosted model. If both tiers name the same model, the dialog says that nothing is saved by the split.
-
-The **Usage** card shows what the key has left or has spent, when the provider reports it.
-
-### Local endpoints and agyserve
-
-The line **Requests go to …** shows where requests are sent and whether they are *Billed per token by the provider* or stay on this machine.
-
-For **agyserve**, WireFrame starts the bridge in the background on the first request when port 8799 is offline; **Check server** then reads **Running — n models**. If it reads **Not reachable**, WireFrame could not start it — read `wireframe-agyserve.log` (the dialog names its folder), make sure the Antigravity CLI (`agy`) is installed and signed in, and check again. Expect 20–30 seconds per request — slower than a hosted provider.
-
-Keys are stored in the local WireFrame configuration. Do not place a key in screenshots, project files, bug reports, or shared configuration examples.
-
-### Image — AI settings
-
-!!! note "Image capture brief"
-    1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
-    2. **Build the frame:** Capture **Preferences → AI Assistant** with the key value hidden. Show the endpoint presets, the **Design model** and **Fast model** fields, and the **Requests go to** status line. Do not use the older screenshot placeholder that shows a different header or input text. Suggested size: **900 × 620 px**.
-    3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
-    4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
-    5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
-
-<!-- wf:shot id=ai-settings
-caption: 'Preferences → AI Assistant: provider presets, endpoint, key and the Design and Fast models'
-project: samples/ne555-blinker/NE555 Blinker.prjxml
-setup:
-- open_project
-- wait: 1
-- menu:
-  - Preferences
-  - Preferences...
-- wait: 1
-- click_at:
-  - 380
-  - 622
-- wait: 1
-- action:
-    action: mouse_move_to
-    x: 1000
-    y: 12
-brief_sha256: a0ecc288e65e8366
--->
-<!-- wf:out id=ai-settings sha=3a93ebeb3b9d -->
-![Preferences → AI Assistant: provider presets, endpoint, key and the Design and Fast models](../assets/wf/docs/ai/index/ai-settings.png)
-<!-- /wf:out -->
+Everything about the choices, the plans and what is sent where is on [Models, Credit and Your Data](models-and-credits.md).
 
 ## Start a focused session
 
@@ -219,7 +159,7 @@ brief_sha256: cf3dd64d95d11c33
 
 ## Safety and privacy
 
-- AI requests and attached datasheet content are sent to the configured endpoint. With a hosted provider that means a third-party service; with a local endpoint such as agyserve, to the service that endpoint forwards to.
+- A request carries your message and the part of the design it is about (and an attached datasheet's content). It goes through WireFrame's AI service to the model provider you chose — see [what is sent, and where](models-and-credits.md#what-is-sent-and-where). Your projects stay on your computer.
 - Review every proposed change before applying it.
 - Treat generated symbols and footprints as unverified until checked against the datasheet.
 - Limit each request to the relevant sheet, block, or signal.
@@ -229,6 +169,7 @@ brief_sha256: cf3dd64d95d11c33
 ## Continue learning
 
 - [Copilot Commands](commands.md)
+- [Models, Credit and Your Data](models-and-credits.md)
 - [Datasheets, Repairs and Project Memory](datasheets-and-memory.md)
 - [AI Design Agent](design-agent.md)
 - [Fix or Create a Component](component-generator.md)
