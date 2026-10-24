@@ -81,6 +81,7 @@ Each row shows an icon, a code, and a message, for example `[E05] Clearance Erro
 | **E07** | Error | A track or a pad too close to the board edge, measured against the board's real shape (notches and cutouts too), once per pad |
 | **E08** | Error | Annular ring of a via or pad below the minimum |
 | **E09** | Error | Two holes closer than the hole-to-hole minimum (a slot is measured as the slot it is; microvias are not mechanical holes) |
+| **E10** | Error | Solder mask bridge: the mask openings of two pads of different nets meet (closer than the board's minimum web), or an opening bares a track of another net. The openings are the pads grown by their own mask margin or the board's **Mask swell** |
 | **W01** | Warning | Track narrower than its net class |
 | **W02** | Warning | Via smaller than its net class |
 | **W05** | Warning | Orphaned track (wrong or missing net) |
@@ -95,6 +96,7 @@ Each row shows an icon, a code, and a message, for example `[E05] Clearance Erro
 | **W16** | Warning | The two halves of a pair change layer a different number of times |
 | **W17** | Warning | High-speed net without a reference plane on the next layer |
 | **W18** | Warning | Two holes drilled on the same centre (a via dropped in a through-hole pad) |
+| **W19** | Warning | Custom rules from a KiCad `.kicad_dru` that WireFrame does not read (and so does not apply), or reads but does not check yet — named once, so a clean list is not read as "the board's rules passed" |
 
 The limits come from **Design Rules → Constraints** and the net classes — see [Design Rules](design-rules.md).
 
@@ -103,6 +105,8 @@ The limits come from **Design Rules → Constraints** and the net classes — se
 Right-click a row to **Change to Warning** (or **Change to Error**) for this result, or **Reset Severity to Default**. Record why a downgraded item is acceptable; do not hide real problems to get a clean report.
 
 A board imported from KiCad keeps the severities its designer set in the project (`rule_severities`): a check set to *warning* reports as a warning, one set to *ignore* is not reported, and the progress list says how many results each check left out ("ignored by board rules"). They are saved with the board and written back when it is exported to KiCad.
+
+The project's custom rules (`.kicad_dru`) come with it too, kept as written. WireFrame applies a rule's hole size, via diameter and clearance when it understands every part of its condition — the rule areas an item touches, its net class, a differential pair, its type — and lists the rest under **W19**. The board's solder mask settings (mask swell, minimum web, whether one part's openings may meet) come from KiCad's board setup and are the ones the **Fabrication** window plots.
 
 ### AI Explain Violations
 
