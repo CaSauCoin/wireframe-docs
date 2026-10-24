@@ -19,7 +19,7 @@ The first card asks one question: **Pay with**
 | **DeepSeek** | Your DeepSeek account | A DeepSeek API key |
 | **Google AI** | Your Google AI Studio account | A Google AI API key |
 
-**With WireFrame credit**, the card shows **Credit left**. One credit is **$0.01 of model use**; it renews with your plan each month (Free-Trial's comes once). **Refresh** asks again. If your plan has no AI credit, the card says so: choose a provider and use your own key.
+**With WireFrame credit**, the card shows **Credit left**. One credit is **$0.01 of model use**; it renews with your plan each month. **Refresh** asks again. If your plan has no AI credit, the card says so: choose a provider and use your own key.
 
 **With your own key**, paste it in **API key**, then **Save & test**; the **Connection** line says whether it works. **Get a key at …** names the provider's page. The provider bills you directly; WireFrame's AI service forwards the key with each request and **does not store it**. **Clear key** removes it from this computer.
 
@@ -38,12 +38,11 @@ On WireFrame credit the pickers offer the models the credit funds; a model that 
 
 | Plan | AI Copilot |
 |---|---|
-| **Free-Trial** | Everything, with a little WireFrame credit for the first days after your first sign-in from the app |
-| **Free** (after the trial) | Every design tool stays, with no time limit; the Copilot runs on your own key |
-| **Plus**, **Pro** | A monthly WireFrame credit — or your own key — and more devices |
+| **Free** | Every design tool, with no time limit — no AI Copilot, with or without your own key |
+| **Plus**, **Pro** | The AI Copilot on a monthly WireFrame credit — or on your own key — and more devices |
 | **Enterprise** | By agreement |
 
-Current prices, credit amounts and device counts are on the [pricing page](https://wireframe.com.vn/pricing). The design tools — schematic, PCB, 3D, checks, simulation and fabrication export — never depend on the AI or on a paid plan.
+Current prices, credit amounts and device counts are on the [pricing page](https://wireframe.com.vn/pricing). There is no trial: the AI Copilot comes with a paid plan. The design tools — schematic, PCB, 3D, checks, simulation and fabrication export — never depend on the AI or on a paid plan.
 
 ## What is sent, and where
 

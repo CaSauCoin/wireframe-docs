@@ -1,5 +1,5 @@
 ---
-description: Sign in to WireFrame EDA from the desktop app, how devices, the free trial and plans work, working offline, usage statistics, updates, and where to report a problem.
+description: Sign in to WireFrame EDA from the desktop app, how devices and plans work, working offline, usage statistics, updates, and where to report a problem.
 ---
 
 # Account, Plans and Devices
@@ -23,11 +23,11 @@ The account menu (top right of the window) shows who is signed in and the plan, 
 
 Each plan allows a number of computers signed in at the same time. To use another one, sign one out — from that computer, or from **Manage account, plan & devices** on the website, which lists every device with its last use.
 
-## The trial, and what comes after
+## Plans
 
-- **Free-Trial** starts the first time you sign in **from the desktop app**: every tool, plus a little WireFrame credit for the AI Copilot. One trial per computer.
-- After it, the plan becomes **Free**: every design tool stays, with no time limit, and the Copilot keeps working on your own model key (see [Models, Credit and Your Data](../ai/models-and-credits.md)).
-- **Plus** and **Pro** add a monthly AI credit and more devices; **Enterprise** is by agreement.
+- **Free** starts the first time you sign in **from the desktop app**: every design tool, with no time limit. It has no AI Copilot, with or without your own model key.
+- **Plus** and **Pro** add the AI Copilot — on a monthly WireFrame credit or on your own key (see [Models, Credit and Your Data](../ai/models-and-credits.md)) — and more devices; **Enterprise** is by agreement.
+- There is no trial.
 
 Prices and amounts are on the [pricing page](https://wireframe.com.vn/pricing). A plan's end date is counted on WireFrame's clock, not your computer's.
 
