@@ -58,6 +58,7 @@ home:
     - {title: Find where a rail loses voltage, page: power/power-analyzer.md}
     - {title: Open an Altium project, page: import-export.md}
     - {title: Export to KiCad or Altium, page: import-export.md#export-to-another-eda-tool}
+    - {title: Build one variant of the board, page: pcb/design-variants.md#build-a-variant}
     - {title: Connect a HAT to a Raspberry Pi, page: advanced/multi-board.md}
 
 sections:
@@ -103,6 +104,7 @@ sections:
       - pcb/design-rules.md
       - {page: pcb/dfm-and-drc.md, title: DFM & DRC}
       - pcb/fabrication-and-export.md
+      - {page: pcb/design-variants.md, title: Design variants, status: new}
 
   - key: high-speed
     title: High-speed & power
