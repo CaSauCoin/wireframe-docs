@@ -70,6 +70,7 @@ While you route, a small readout near the cursor shows the net, its class, the l
 |---|---|
 | **Free (mark clashes)** (default) | The track goes exactly where you draw it. Anything it comes too close to — another net's track, pad, via, hole or the board edge — is measured on its real shape and **drawn** as you route, and DRC reports it afterwards. Nothing is refused, and nothing slows down on a dense board |
 | **Walkaround** | Each click searches for a way around obstacles. Slower on dense boards |
+| **Shove (push tracks)** | As Free, and the tracks of other nets in the way are **pushed off** by their clearance — the preview draws them where they will go before you click. A pushed track keeps its ends and its 0/45/90° shape, and pushes the tracks behind it in turn (a few deep). Pads, vias, a track that crosses yours, a track tied to a pad inside the clearance and your own route's copper are never moved: then nothing moves, the leg is laid as in Free and the clash is marked, with the reason beside it. The route and every track it pushed are **one undo step** |
 
 How a clash is drawn follows the net class setting **Design Rules → Clearance → When violated**:
 

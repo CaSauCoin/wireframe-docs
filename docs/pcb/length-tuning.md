@@ -26,6 +26,12 @@ When the pair changes layer, **Return vias: Add GND vias** drops a ground via be
 
 While you route a net that belongs to a pair, a length group or a class with a target length, the readout beside the cursor shows the routed length against its target — how long it is, how long it should be, and the difference — and the high-speed nets show markers in the layer list. In **Properties**, a selected track of such a net shows its measured length and its delta to the target.
 
+The readout also gives the **delay** of the net as routed so far, in picoseconds, from the board's stack-up (the same model the impedance readout and the High-Speed checks use). When the pair's skew or the group's tolerance is set **in time** (ps), the skew is shown in ps too and "short" means short in time: the same length on an inner and an outer layer is not the same delay.
+
+### Tune while you route
+
+When the readout says the net is **short**, press ++7++ (KiCad's length-tuning key; change it in **Preferences ▸ Hotkeys**): meanders that make up what is missing are added to the net's copper at once — the same meanders the Tune Length tool would place — and the route goes on. They belong to the route: one ++ctrl+z++ after finishing takes the route and its meanders back.
+
 ## Add meanders
 
 ### With the Tune Length tool

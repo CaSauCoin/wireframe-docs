@@ -58,6 +58,10 @@ home:
     - {title: Find where a rail loses voltage, page: power/power-analyzer.md}
     - {title: Open an Altium project, page: import-export.md}
     - {title: Export to KiCad or Altium, page: import-export.md#export-to-another-eda-tool}
+    - {title: Build one variant of the board, page: pcb/design-variants.md#build-a-variant}
+    - {title: Keep a circuit and place it again, page: schematic/design-blocks.md}
+    - {title: Lay out one channel and repeat it, page: schematic/design-blocks.md#repeat-a-channels-layout}
+    - {title: See what an edit broke, page: live-checks.md}
     - {title: Connect a HAT to a Raspberry Pi, page: advanced/multi-board.md}
 
 sections:
@@ -86,6 +90,8 @@ sections:
       - schematic/properties-and-attributes.md
       - schematic/graphics-and-annotations.md
       - {page: schematic/erc.md, title: Electrical Rules Check}
+      - {page: schematic/design-blocks.md, title: Design blocks & channels, status: new}
+      - {page: live-checks.md, title: Live Checks, status: new}
       - schematic/templates.md
 
   - key: pcb
@@ -103,6 +109,7 @@ sections:
       - pcb/design-rules.md
       - {page: pcb/dfm-and-drc.md, title: DFM & DRC}
       - pcb/fabrication-and-export.md
+      - {page: pcb/design-variants.md, title: Design variants, status: new}
 
   - key: high-speed
     title: High-speed & power
