@@ -50,6 +50,21 @@ Things worth knowing:
 - **A sheet placed twice** keeps its per-placement designators in Altium.
 - **EasyEDA** text on the board carries its stroke-font paths, because EasyEDA draws text from them. KiCad 10 imports the exported EasyEDA board with every placement, pad, via, track and arc in place.
 
+## A round trip loses nothing
+
+Export a WireFrame project to KiCad or Altium Designer and import it again, and you get **the same design back** — every part, pin and net; every pad with its shape, mask, paste, clearance and zone connection; every track, arc, via, pour, keep-out, teardrop and length-tuning meander; the board outline and its cut-outs; the stack-up, net classes, design rules and DRC severities; designators and values where the board prints them; drawings, text and 3D models; and the design variants.
+
+That is measured, not assumed. A round-trip check compares the original and the re-imported design field by field — by the copper and ink they put down, so a rectangle written as four lines or a track split where a via lands still counts as the same. On 36 of the demo projects that ship with KiCad (two- to ten-layer boards, hierarchical sheets, DDR4 length tuning, custom pads, net ties), **all 72 round trips — 36 through KiCad, 36 through Altium — come back identical.**
+
+What to know when the other tool edits the file:
+
+- **Altium has no field for some KiCad data** (a pad's own zone connection, KiCad's minimum clearance beside the Default class, teardrops, which mechanical layer is *Eco1.User*, KiCad-only variant flags). WireFrame stores them under extra keys Altium ignores. They survive a trip *through the files*; once Altium itself saves the project, Altium keeps only what it understands.
+- **Altium keeps a pad's corner radius in whole percent**, so a rounded-rectangle pad can come back up to half a percent rounder.
+
+## Design variants
+
+A KiCad 10 project's variants (*Variant 1: R5 not fitted; Variant 2: R1 is 22 k*) and an Altium project's `[ProjectVariant]`s come in with the project and go back out with it — the variant list in the project, and what each variant does to each part in the schematic and on the board. See [Design Variants](pcb/design-variants.md).
+
 ## Documents and manufacturing
 
 | Menu | Writes |
