@@ -21,7 +21,16 @@ The account menu (top right of the window) shows who is signed in and the plan, 
 
 ## Devices
 
-Each plan allows a number of computers signed in at the same time. To use another one, sign one out — from that computer, or from **Manage account, plan & devices** on the website, which lists every device with its last use.
+Each plan allows a number of computers signed in at the same time:
+
+| Plan | Computers at once |
+|---|---|
+| **Free** | 1 |
+| **Pro** | 3 |
+| **Plus** | 5 |
+| **Enterprise** | 10 |
+
+To use another one, sign one out — from that computer, or from **Manage account, plan & devices** on the website, which lists every device with its last use.
 
 ## Plans
 

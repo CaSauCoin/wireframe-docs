@@ -71,7 +71,7 @@ The left column lists the classes; **Default** (star) is what every net falls ba
 | Card | Fields |
 |---|---|
 | **Tracks** | **Width** (drawn when routing starts on a net of the class), **Minimum** (++bracket-left++ narrows to it), **Maximum** (++bracket-right++ widens to it) |
-| **Clearance** | **Copper to copper** (between two classes the larger value applies), **When violated** — **Allow**, **Warn**, or **Block** (default); see [Routing](routing.md#clearance-while-routing) |
+| **Clearance** | **Copper to copper** (between two classes the larger value applies), **When violated** — **Allow**, **Warn**, or **Block** (default); see [Routing](routing.md#route-modes-and-clashes) |
 | **Vias** | **Diameter**, **Drill**, **Annular ring** (worked out for you), **Type** used when the routing via mode is *Net class* |
 | **Microvias** | **Diameter** and **Drill** of laser-drilled microvias |
 | **Impedance** | **Single-ended Z0** and **Differential Zdiff** targets, **Pair gap**; **Use that width** / **Use that gap** fill in the values that hit the target on the current stackup. DRC rule W13 compares the routed width |

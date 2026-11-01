@@ -75,7 +75,7 @@ sections:
       - {page: getting-started.md, title: Your first session}
       - {page: ui-overview.md, title: The window}
       - {page: projects.md, title: Projects & files}
-      - {page: import-export.md, title: Import & export, status: new}
+      - {page: import-export.md, title: Import & export, status: next}
       - {page: tutorial/index.md, title: "Tutorial: an LED board"}
       - {page: tutorial/ai-design.md, title: "Tutorial: AI-assisted design"}
 
@@ -103,7 +103,7 @@ sections:
       - pcb/board-outline.md
       - pcb/footprints-and-placement.md
       - pcb/routing.md
-      - {page: pcb/length-tuning.md, title: Length tuning & pairs, status: new}
+      - {page: pcb/length-tuning.md, title: Length tuning & pairs, status: next}
       - pcb/layers-and-views.md
       - pcb/zones-and-planes.md
       - pcb/design-rules.md
@@ -116,11 +116,11 @@ sections:
     icon: speed
     description: Impedance, pairs, return paths, crosstalk, interfaces, EMI and DC IR drop — computed on the routed copper, with the evidence.
     pages:
-      - {page: high-speed/index.md, title: High-Speed Workbench, status: new}
+      - {page: high-speed/index.md, title: High-Speed Workbench, status: next}
       - {page: high-speed/checks-and-interfaces.md, title: Checks & interfaces}
       - {page: high-speed/simulate-power-emi.md, title: "Simulation, power & EMI"}
       - {page: high-speed/fixes-and-report.md, title: "Fixes, reports & the AI"}
-      - {page: power/power-analyzer.md, title: Power Analyzer (DC IR drop), status: new}
+      - {page: power/power-analyzer.md, title: Power Analyzer (DC IR drop), status: next}
 
   - key: simulation
     title: Simulation
@@ -139,7 +139,7 @@ sections:
     description: From a written requirement to a checked BOM, netlist and sheets; reviews, repairs and memory.
     pages:
       - {page: ai/index.md, title: Overview}
-      - {page: ai/models-and-credits.md, title: "Models, credit & your data", status: new}
+      - {page: ai/models-and-credits.md, title: "Models, credit & your data", status: next}
       - ai/commands.md
       - ai/design-agent.md
       - ai/placement-review.md
@@ -167,9 +167,9 @@ sections:
     description: The 3D viewer, the sheet, board and 3D side by side, fitting boards to an enclosure, and products made of several boards.
     pages:
       - advanced/3d-viewer.md
-      - {page: advanced/side-by-side-views.md, title: "Schematic, board & 3D side by side", status: new}
+      - {page: advanced/side-by-side-views.md, title: "Schematic, board & 3D side by side", status: next}
       - {page: advanced/enclosure-and-assembly.md, title: Enclosure fit & board stacks}
-      - {page: advanced/multi-board.md, title: Multi-board products, status: new}
+      - {page: advanced/multi-board.md, title: Multi-board products, status: next}
       - advanced/selection-and-editing.md
       - advanced/shortcuts.md
 
