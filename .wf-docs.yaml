@@ -27,6 +27,7 @@ samples:
   - samples/outlines/demo-board.svg
   - samples/datasheets/wf-demo8.pdf
   - samples/datasheets/wf-demo8-pinout.png
+  - samples/led-chaser/led_chaser_outline.dxf
   - board:buck-converter:kicad
   - wireframe:tests/data/altium_libraries/Schlib1.SchLib
   - wireframe:tests/data/altium_libraries/PcbLib1.PcbLib
@@ -41,8 +42,6 @@ scenes:
   # ── Không chụp được từ trong app ─────────────────────────────────────────
   "docs/reference/config-and-session.md#recover-a-damaged-workspace-configuration":
     skip: backing up and opening the config folder happens in the OS file manager, outside the app
-  "docs/tutorial/index.md#*":
-    skip: needs the LED tutorial project (J1 2-pin header, R1 330 ohm 0805, D1 red LED 0805), which is not in samples/ yet — add it to enable these scenes
 
   # ── Cần file đầu vào ──────────────────────────────────────────────────────
   "*cad-outline-import-verdict":
@@ -207,6 +206,10 @@ scenes:
       for one — show the review instead.
   "docs/ai-copilot.md#*":
     hint: *ai_review
+  # The tutorial's LED chaser (samples/led-chaser, samples/README.md): each slot on
+  # the page names the stage it starts from — 1-schematic, 2-placed or 3-routed.
+  # completed-schematic is taken at 3840 x 2160: run docs-fill for this page under
+  # xvfb-run -s "-screen 0 3840x2160x24".
   "docs/tutorial/ai-design.md#*":
     hint: *ai_review
   # /layout and the router on a real 4-layer board (a copy; nothing is saved).

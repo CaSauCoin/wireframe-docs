@@ -19,7 +19,7 @@ Not sure what to read first? Choose the path that matches you. Each one lists th
     - [ ] **[Getting started](../getting-started.md)** <small>10 min</small> — create a project, add a schematic and a PCB.
     - [ ] **[The user interface](../ui-overview.md)** <small>5 min</small> — what every panel is for.
     - [ ] **[Placing components](../schematic/placing-components.md)** and **[Wiring & nets](../schematic/wiring-and-nets.md)** <small>10 min</small>
-    - [ ] **[Tutorial: A Simple LED Board](../tutorial/index.md)** <small>25 min</small> — the whole flow on one small board.
+    - [ ] **[Tutorial: An LED Chaser Board](../tutorial/index.md)** <small>60 min</small> — the whole flow on one 25-part board.
     - [ ] **[ERC](../schematic/erc.md)** and **[DFM & DRC](../pcb/dfm-and-drc.md)** <small>5 min</small> — read the checks before you trust a board.
 
     </div>

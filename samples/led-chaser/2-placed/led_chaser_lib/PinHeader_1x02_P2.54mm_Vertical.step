@@ -1,0 +1,235 @@
+ISO-10303-21;
+HEADER;
+/* PinHeader_1x02_P2.54mm_Vertical.step 3D STEP model for use in ECAD systems
+ * Copyright (C) 2017, kicad StepUp
+ * 
+ * This work is licensed under the [Creative Commons CC-BY-SA 4.0 License](https://creativecommons.org/licenses/by-sa/4.0/legalcode), 
+ * with the following exception:
+ * To the extent that the creation of electronic designs that use 'Licensed Material' can be considered to be 'Adapted Material', 
+ * then the copyright holder waives article 3 of the license with respect to these designs and any generated files which use data provided 
+ * as part of the 'Licensed Material'.
+ * You are free to use the library data in your own projects without the obligation to share your project files under this or any other license agreement.
+ * However, if you wish to redistribute these libraries, or parts thereof (including in modified form) as a collection then the exception above does not apply. 
+ * Please refer to https://github.com/KiCad/kicad-packages3D/blob/master/LICENSE.md for further clarification of the exception.
+ * Disclaimer of Warranties and Limitation of Liability.
+ * These libraries are provided in the hope that they will be useful, but are provided without warranty of any kind, express or implied.
+ * *USE 3D CAD DATA AT YOUR OWN RISK*
+ * *DO NOT RELY UPON ANY INFORMATION FOUND HERE WITHOUT INDEPENDENT VERIFICATION.*
+ * 
+ */
+
+FILE_DESCRIPTION(
+/* description */ ('model of PinHeader_1x02_P2.54mm_Vertical'),
+/* implementation_level */ '2;1');
+
+FILE_NAME(
+/* name */ 'PinHeader_1x02_P2.54mm_Vertical.step',
+/* time_stamp */ '2017-12-09T23:53:40',
+/* author */ ('kicad StepUp','ksu'),
+/* organization */ ('FreeCAD'),
+/* preprocessor_version */ 'OCC',
+/* originating_system */ 'kicad StepUp',
+/* authorisation */ '');
+
+FILE_SCHEMA(('AUTOMOTIVE_DESIGN { 1 0 10303 214 1 1 1 1 }'));
+ENDSEC;
+
+DATA;
+#1 = APPLICATION_PROTOCOL_DEFINITION('international standard',
+'automotive_design',2000,#2);
+#2 = APPLICATION_CONTEXT(
+'core data for automotive mechanical design processes');
+#3 = SHAPE_DEFINITION_REPRESENTATION(#4,#10);
+#4 = PRODUCT_DEFINITION_SHAPE('','',#5);
+#5 = PRODUCT_DEFINITION('design','',#6,#9);
+#6 = PRODUCT_DEFINITION_FORMATION('','',#7);
+#7 = PRODUCT('PinHeader_1x02_P254mm_Vertical',
+'PinHeader_1x02_P254mm_Vertical','',(#8));
+#8 = PRODUCT_CONTEXT('',#2,'mechanical');
+#9 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
+#10 = ADVANCED_BREP_SHAPE_REPRESENTATION('',(#11,#15),#1447);
+#11 = AXIS2_PLACEMENT_3D('',#12,#13,#14);
+#12 = CARTESIAN_POINT('',(0.,0.,0.));
+#13 = DIRECTION('',(0.,0.,1.));
+#14 = DIRECTION('',(1.,0.,-0.));
+#15 = MANIFOLD_SOLID_BREP('',#16);
+#16 = CLOSED_SHELL('',(#17,#57,#88,#119,#284,#449,#466,#483,#500,#517,
+#534,#551,#568,#585,#602,#619,#631,#662,#686,#710,#727,#758,#782,
+#806,#823,#854,#878,#902,#919,#950,#974,#998,#1015,#1046,#1070,#1094
+,#1111,#1142,#1166,#1190,#1207,#1238,#1262,#1286,#1303,#1334,#1358,
+#1382,#1399,#1411,#1423,#1435));
+#17 = ADVANCED_FACE('',(#18),#52,.F.);
+#18 = FACE_BOUND('',#19,.F.);
+#19 = EDGE_LOOP('',(#20,#30,#38,#46));
+#20 = ORIENTED_EDGE('',*,*,#21,.T.);
+#21 = EDGE_CURVE('',#22,#24,#26,.T.);
+#22 = VERTEX_POINT('',#23);
+#23 = CARTESIAN_POINT('',(-1.016,1.27,0.));
+#24 = VERTEX_POINT('',#25);
+#25 = CARTESIAN_POINT('',(-1.016,1.27,2.54));
+#26 = LINE('',#27,#28);
+#27 = CARTESIAN_POINT('',(-1.016,1.27,0.));
+#28 = VECTOR('',#29,1.);
+#29 = DIRECTION('',(0.,0.,1.));
+#30 = ORIENTED_EDGE('',*,*,#31,.T.);
+#31 = EDGE_CURVE('',#24,#32,#34,.T.);
+#32 = VERTEX_POINT('',#33);
+#33 = CARTESIAN_POINT('',(-1.27,1.016,2.54));
+#34 = LINE('',#35,#36);
+#35 = CARTESIAN_POINT('',(-1.016,1.27,2.54));
+#36 = VECTOR('',#37,1.);
+#37 = DIRECTION('',(-0.707106781187,-0.707106781187,0.));
+#38 = ORIENTED_EDGE('',*,*,#39,.F.);
+#39 = EDGE_CURVE('',#40,#32,#42,.T.);
+#40 = VERTEX_POINT('',#41);
+#41 = CARTESIAN_POINT('',(-1.27,1.016,0.));
+#42 = LINE('',#43,#44);
+#43 = CARTESIAN_POINT('',(-1.27,1.016,0.));
+#44 = VECTOR('',#45,1.);
+#45 = DIRECTION('',(0.,0.,1.));
+#46 = ORIENTED_EDGE('',*,*,#47,.F.);
+#47 = EDGE_CURVE('',#22,#40,#48,.T.);
+#48 = LINE('',#49,#50);
+#49 = CARTESIAN_POINT('',(-1.016,1.27,0.));
+#50 = VECTOR('',#51,1.);
+#51 = DIRECTION('',(-0.707106781187,-0.707106781187,0.));
+#52 = PLANE('',#53);
+#53 = AXIS2_PLACEMENT_3D('',#54,#55,#56);
+#54 = CARTESIAN_POINT('',(-1.016,1.27,0.));
+#55 = DIRECTION('',(0.707106781187,-0.707106781187,0.));
+#56 = DIRECTION('',(-0.707106781187,-0.707106781187,0.));
+#57 = ADVANCED_FACE('',(#58),#83,.F.);
+#58 = FACE_BOUND('',#59,.F.);
+#59 = EDGE_LOOP('',(#60,#70,#76,#77));
+#60 = ORIENTED_EDGE('',*,*,#61,.T.);
+#61 = EDGE_CURVE('',#62,#64,#66,.T.);
+#62 = VERTEX_POINT('',#63);
+#63 = CARTESIAN_POINT('',(1.016,1.27,0.));
+#64 = VERTEX_POINT('',#65);
+#65 = CARTESIAN_POINT('',(1.016,1.27,2.54));
+#66 = LINE('',#67,#68);
+#67 = CARTESIAN_POINT('',(1.016,1.27,0.));
+#68 = VECTOR('',#69,1.);
+#69 = DIRECTION('',(0.,0.,1.));
+#70 = ORIENTED_EDGE('',*,*,#71,.T.);
+#71 = EDGE_CURVE('',#64,#24,#72,.T.);
+#72 = LINE('',#73,#74);
+#73 = CARTESIAN_POINT('',(1.016,1.27,2.54));
+#74 = VECTOR('',#75,1.);
+#75 = DIRECTION('',(-1.,0.,0.));
+#76 = ORIENTED_EDGE('',*,*,#21,.F.);
+#77 = ORIENTED_EDGE('',*,*,#78,.F.);
+#78 = EDGE_CURVE('',#62,#22,#79,.T.);
+#79 = LINE('',#80,#81);
+#80 = CARTESIAN_POINT('',(1.016,1.27,0.));
+#81 = VECTOR('',#82,1.);
+#82 = DIRECTION('',(-1.,0.,0.));
+#83 = PLANE('',#84);
+#84 = AXIS2_PLACEMENT_3D('',#85,#86,#87);
+#85 = CARTESIAN_POINT('',(1.016,1.27,0.));
+#86 = DIRECTION('',(0.,-1.,0.));
+#87 = DIRECTION('',(-1.,0.,0.));
+#88 = ADVANCED_FACE('',(#89),#114,.F.);
+#89 = FACE_BOUND('',#90,.F.);
+#90 = EDGE_LOOP('',(#91,#92,#100,#108));
+#91 = ORIENTED_EDGE('',*,*,#39,.T.);
+#92 = ORIENTED_EDGE('',*,*,#93,.T.);
+#93 = EDGE_CURVE('',#32,#94,#96,.T.);
+#94 = VERTEX_POINT('',#95);
+#95 = CARTESIAN_POINT('',(-1.27,-1.016,2.54));
+#96 = LINE('',#97,#98);
+#97 = CARTESIAN_POINT('',(-1.27,1.016,2.54));
+#98 = VECTOR('',#99,1.);
+#99 = DIRECTION('',(0.,-1.,0.));
+#100 = ORIENTED_EDGE('',*,*,#101,.F.);
+#101 = EDGE_CURVE('',#102,#94,#104,.T.);
+#102 = VERTEX_POINT('',#103);
+#103 = CARTESIAN_POINT('',(-1.27,-1.016,0.));
+#104 = LINE('',#105,#106);
+#105 = CARTESIAN_POINT('',(-1.27,-1.016,0.));
+#106 = VECTOR('',#107,1.);
+#107 = DIRECTION('',(0.,0.,1.));
+#108 = ORIENTED_EDGE('',*,*,#109,.F.);
+#109 = EDGE_CURVE('',#40,#102,#110,.T.);
+#110 = LINE('',#111,#112);
+#111 = CARTESIAN_POINT('',(-1.27,1.016,0.));
+#112 = VECTOR('',#113,1.);
+#113 = DIRECTION('',(0.,-1.,0.));
+#114 = PLANE('',#115);
+#115 = AXIS2_PLACEMENT_3D('',#116,#117,#118);
+#116 = CARTESIAN_POINT('',(-1.27,1.016,0.));
+#117 = DIRECTION('',(1.,0.,0.));
+#118 = DIRECTION('',(0.,-1.,0.));
+#119 = ADVANCED_FACE('',(#120,#211,#245),#279,.F.);
+#120 = FACE_BOUND('',#121,.F.);
+#121 = EDGE_LOOP('',(#122,#123,#124,#132,#140,#148,#156,#164,#172,#180,
+#188,#196,#204,#210));
+#122 = ORIENTED_EDGE('',*,*,#47,.T.);
+#123 = ORIENTED_EDGE('',*,*,#109,.T.);
+#124 = ORIENTED_EDGE('',*,*,#125,.T.);
+#125 = EDGE_CURVE('',#102,#126,#128,.T.);
+#126 = VERTEX_POINT('',#127);
+#127 = CARTESIAN_POINT('',(-1.016,-1.27,0.));
+#128 = LINE('',#129,#130);
+#129 = CARTESIAN_POINT('',(-1.27,-1.016,0.));
+#130 = VECTOR('',#131,1.);
+#131 = DIRECTION('',(0.707106781187,-0.707106781187,0.));
+#132 = ORIENTED_EDGE('',*,*,#133,.T.);
+#133 = EDGE_CURVE('',#126,#134,#136,.T.);
+#134 = VERTEX_POINT('',#135);
+#135 = CARTESIAN_POINT('',(-1.27,-1.524,0.));
+#136 = LINE('',#137,#138);
+#137 = CARTESIAN_POINT('',(-1.016,-1.27,0.));
+#138 = VECTOR('',#139,1.);
+#139 = DIRECTION('',(-0.707106781187,-0.707106781187,0.));
+#140 = ORIENTED_EDGE('',*,*,#141,.T.);
+#141 = EDGE_CURVE('',#134,#142,#144,.T.);
+#142 = VERTEX_POINT('',#143);
+#143 = CARTESIAN_POINT('',(-1.27,-3.556,0.));
+#144 = LINE('',#145,#146);
+#145 = CARTESIAN_POINT('',(-1.27,-1.524,0.));
+#146 = VECTOR('',#147,1.);
+#147 = DIRECTION('',(0.,-1.,0.));
+#148 = ORIENTED_EDGE('',*,*,#149,.T.);
+#149 = EDGE_CURVE('',#142,#150,#152,.T.);
+#150 = VERTEX_POINT('',#151);
+#151 = CARTESIAN_POINT('',(-1.016,-3.81,0.));
+#152 = LINE('',#153,#154);
+#153 = CARTESIAN_POINT('',(-1.27,-3.556,0.));
+#154 = VECTOR('',#155,1.);
+#155 = DIRECTION('',(0.707106781187,-0.707106781187,0.));
+#156 = ORIENTED_EDGE('',*,*,#157,.T.);
+#157 = EDGE_CURVE('',#150,#158,#160,.T.);
+#158 = VERTEX_POINT('',#159);
+#159 = CARTESIAN_POINT('',(1.016,-3.81,0.));
+#160 = LINE('',#161,#162);
+#161 = CARTESIAN_POINT('',(-1.016,-3.81,0.));
+#162 = VECTOR('',#163,1.);
+#163 = DIRECTION('',(1.,0.,0.));
+#164 = ORIENTED_EDGE('',*,*,#165,.T.);
+#165 = EDGE_CURVE('',#158,#166,#168,.T.);
+#166 = VERTEX_POINT('',#167);
+#167 = CARTESIAN_POINT('',(1.27,-3.556,0.));
+#168 = LINE('',#169,#170);
+#169 = CARTESIAN_POINT('',(1.016,-3.81,0.));
+#170 = VECTOR('',#171,1.);
+#171 = DIRECTION('',(0.707106781187,0.707106781187,0.));
+#172 = ORIENTED_EDGE('',*,*,#173,.T.);
+#173 = EDGE_CURVE('',#166,#174,#176,.T.);
+#174 = VERTEX_POINT('',#175);
+#175 = CARTESIAN_POINT('',(1.27,-1.524,0.));
+#176 = LINE('',#177,#178);
+#177 = CARTESIAN_POINT('',(1.27,-3.556,0.));
+#178 = VECTOR('',#179,1.);
+#179 = DIRECTION('',(0.,1.,0.));
+#180 = ORIENTED_EDGE('',*,*,#181,.T.);
+#181 = EDGE_CURVE('',#174,#182,#184,.T.);
+#182 = VERTEX_POINT('',#183);
+#183 = CARTESIAN_POINT('',(1.016,-1.27,0.));
+#184 = LINE('',#185,#186);
+#185 = CARTESIAN_POINT('',(1.27,-1.524,0.));
+#186 = VECTOR('',#187,1.);
+#187 = DIRECTION('',(-0.707106781187,0.707106781187,0.));
+#188 = ORIENTED_EDGE('',*,*,#189,.T.);
+#189 = EDGE_CURVE('',#182,#190,#192,.T.);
+#190

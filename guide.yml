@@ -31,7 +31,7 @@ home:
       icon: download
       cta: Install
     - title: Your first board
-      text: A small LED board from an empty project to Gerber files, step by step, in about an hour.
+      text: An LED chaser — an NE555, a 74HC4017 and ten LEDs in a ring — from an empty project to Gerber files, step by step, in about an hour.
       page: tutorial/index.md
       icon: pcb
       cta: Start the tutorial
@@ -76,7 +76,7 @@ sections:
       - {page: ui-overview.md, title: The window}
       - {page: projects.md, title: Projects & files}
       - {page: import-export.md, title: Import & export, status: next}
-      - {page: tutorial/index.md, title: "Tutorial: an LED board"}
+      - {page: tutorial/index.md, title: "Tutorial: an LED chaser board"}
       - {page: tutorial/ai-design.md, title: "Tutorial: AI-assisted design"}
 
   - key: schematic

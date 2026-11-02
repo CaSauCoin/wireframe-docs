@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<WireFrameProject version="1.2">
+  <Settings>
+    <LibFolder>led_chaser_lib</LibFolder>
+  </Settings>
+  <Schematics>
+    <File>led_chaser.schxml</File>
+  </Schematics>
+  <PCBs />
+  <ERC grid="12.6999998" />
+  <Libraries>
+    <Library path="led_chaser_lib/C_0805_2012Metric.kicad_mod" />
+    <Library path="led_chaser_lib/GND.kicad_sym" />
+    <Library path="led_chaser_lib/+5V.kicad_sym" />
+    <Library path="led_chaser_lib/MountingHole_3.2mm_M3.kicad_mod" />
+    <Library path="led_chaser_lib/SOIC-8_3.9x4.9mm_P1.27mm.kicad_mod" />
+    <Library path="led_chaser_lib/4017.kicad_sym" />
+    <Library path="led_chaser_lib/LED.kicad_sym" />
+    <Library path="led_chaser_lib/MountingHole.kicad_sym" />
+    <Library path="led_chaser_lib/PWR_FLAG.kicad_sym" />
+    <Library path="led_chaser_lib/LED_0805_2012Metric.kicad_mod" />
+    <Library path="led_chaser_lib/R_0805_2012Metric.kicad_mod" />
+    <Library path="led_chaser_lib/PinHeader_1x02_P2.54mm_Vertical.kicad_mod" />
+    <Library path="led_chaser_lib/SOIC-16_3.9x9.9mm_P1.27mm.kicad_mod" />
+    <Library path="led_chaser_lib/Conn_01x02_Pin.kicad_sym" />
+    <Library path="led_chaser_lib/NE555D.kicad_sym" />
+    <Library path="led_chaser_lib/R.kicad_sym" />
+    <Library path="led_chaser_lib/C.kicad_sym" />
+  </Libraries>
+</WireFrameProject>

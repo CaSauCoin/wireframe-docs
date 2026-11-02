@@ -3799,6 +3799,358 @@
       "width": 252,
       "height": 850
     },
+    "docs/tutorial/index.md#clean-dfm-drc-result": {
+      "kind": "shot",
+      "format": "png",
+      "file": "docs/assets/wf/docs/tutorial/index/clean-dfm-drc-result.png",
+      "page": "docs/tutorial/index.md",
+      "slot": "clean-dfm-drc-result",
+      "slot_sha256": "0d848171a34163a39608e32cc17936ef9128b71f606650d2e371726c3eefd7d7",
+      "caption": "The routed LED chaser with the DFM & DRC Check panel after a run — nothing to fix",
+      "script": "",
+      "planned_by": "",
+      "captured_at": "2026-11-02T05:30:20+00:00",
+      "run": "doc_builder/runs/20261102-122811-docs/20261102-123011-clean-dfm-drc-result",
+      "app": {
+        "binary": "cmake-build-debug/src/wireframe",
+        "sha256": "56507c92f4d99ae7c7b25d0f7349de7e2abd5759f18a9aded561f3ba5d817cc5",
+        "version": "1.5.47",
+        "git": {
+          "commit": "f0118f9a0658e78eab102cb5a9b1e9077a13c86b",
+          "branch": "AI/PCB/implement",
+          "dirty": true
+        },
+        "platform": "Linux 6.8.0-138-generic x86_64",
+        "source": "app"
+      },
+      "app_report": "saved /home/casaucoin/Documents/Wireframe_EDA/wireframe/doc_builder/runs/20261102-122811-docs/20261102-123011-clean-dfm-drc-result/out/shots/clean-dfm-drc-result.png (1600x900)",
+      "state": {
+        "active_document": "led_chaser.pcbxml",
+        "active_type": "pcb",
+        "documents": 2,
+        "frame": 693,
+        "panels": [
+          "MainDockSpace",
+          "Editor",
+          "Project Structure",
+          "Properties###Properties",
+          "AI Copilot Panel"
+        ]
+      },
+      "sha256": "19c524a67103dd4a45b6459b49fc4a7cbba6b1369524854df8ac8b02779e5a04",
+      "bytes": 335931,
+      "width": 1600,
+      "height": 900
+    },
+    "docs/tutorial/index.md#completed-schematic": {
+      "kind": "shot",
+      "format": "png",
+      "file": "docs/assets/wf/docs/tutorial/index/completed-schematic.png",
+      "page": "docs/tutorial/index.md",
+      "slot": "completed-schematic",
+      "slot_sha256": "de1b7aebd489473a0443dbb999e73d884f9dca4b9f89b44b87ae373dd980be4c",
+      "caption": "The LED chaser schematic — supply and PWR_FLAGs, the NE555 clock, the 74HC4017 with its ten LEDs, and the mounting holes",
+      "script": "",
+      "planned_by": "",
+      "captured_at": "2026-11-02T05:28:49+00:00",
+      "run": "doc_builder/runs/20261102-122811-docs/20261102-122842-completed-schematic",
+      "app": {
+        "binary": "cmake-build-debug/src/wireframe",
+        "sha256": "56507c92f4d99ae7c7b25d0f7349de7e2abd5759f18a9aded561f3ba5d817cc5",
+        "version": "1.5.47",
+        "git": {
+          "commit": "f0118f9a0658e78eab102cb5a9b1e9077a13c86b",
+          "branch": "AI/PCB/implement",
+          "dirty": true
+        },
+        "platform": "Linux 6.8.0-138-generic x86_64",
+        "source": "app"
+      },
+      "app_report": "saved /home/casaucoin/Documents/Wireframe_EDA/wireframe/doc_builder/runs/20261102-122811-docs/20261102-122842-completed-schematic/out/shots/completed-schematic.png (2480x1100)",
+      "state": {
+        "active_document": "led_chaser.schxml",
+        "active_type": "schematic",
+        "documents": 1,
+        "frame": 287,
+        "panels": [
+          "MainDockSpace",
+          "Editor",
+          "Project Structure",
+          "Properties###Properties",
+          "AI Copilot Panel"
+        ]
+      },
+      "sha256": "f908993fe7d65f0f2d7828a781b66876171fa0685f18181ce7e6147e9abbc289",
+      "bytes": 265438,
+      "width": 2480,
+      "height": 1100
+    },
+    "docs/tutorial/index.md#create-the-tutorial-project": {
+      "kind": "video",
+      "format": "mp4",
+      "file": "docs/assets/wf/docs/tutorial/index/create-the-tutorial-project.mp4",
+      "page": "docs/tutorial/index.md",
+      "slot": "create-the-tutorial-project",
+      "slot_sha256": "3ca56fc399345413acc02f4d26ba931c9d1fa55ec39e67eebef0d47fffd19610",
+      "caption": "File → New → New Project, the folder, the name led_chaser, Create",
+      "script": "",
+      "planned_by": "",
+      "captured_at": "2026-11-02T05:28:42+00:00",
+      "run": "doc_builder/runs/20261102-122811-docs/20261102-122823-create-the-tutorial-project",
+      "app": {
+        "binary": "cmake-build-debug/src/wireframe",
+        "sha256": "56507c92f4d99ae7c7b25d0f7349de7e2abd5759f18a9aded561f3ba5d817cc5",
+        "version": "1.5.47",
+        "git": {
+          "commit": "f0118f9a0658e78eab102cb5a9b1e9077a13c86b",
+          "branch": "AI/PCB/implement",
+          "dirty": true
+        },
+        "platform": "Linux 6.8.0-138-generic x86_64",
+        "source": "app"
+      },
+      "app_report": "recording /home/casaucoin/Documents/Wireframe_EDA/wireframe/doc_builder/runs/20261102-122811-docs/20261102-122823-create-the-tutorial-project/out/videos/create-the-tutorial-project.mp4",
+      "state": {
+        "active_document": "",
+        "active_type": "none",
+        "documents": 0,
+        "frame": 3170,
+        "panels": [
+          "MainDockSpace",
+          "Editor",
+          "Project Structure",
+          "Properties###Properties",
+          "AI Copilot Panel"
+        ]
+      },
+      "sha256": "118294fccc3f8595786f2a5b87e0263b4702038695e9cee6a37acfed071acbcf",
+      "bytes": 243087,
+      "width": 1598,
+      "height": 898,
+      "codec": "h264",
+      "duration": 10.467
+    },
+    "docs/tutorial/index.md#finished-tutorial-project": {
+      "kind": "shot",
+      "format": "png",
+      "file": "docs/assets/wf/docs/tutorial/index/finished-tutorial-project.png",
+      "page": "docs/tutorial/index.md",
+      "slot": "finished-tutorial-project",
+      "slot_sha256": "940b48aaf42d226c31c87ec9c4dd0240c97ae3085653e12542a511747b9ceab6",
+      "caption": "The finished LED chaser: its schematic above, the routed two-layer board below",
+      "script": "",
+      "planned_by": "",
+      "captured_at": "2026-11-02T05:28:22+00:00",
+      "run": "doc_builder/runs/20261102-122811-docs/20261102-122811-finished-tutorial-project",
+      "app": {
+        "binary": "cmake-build-debug/src/wireframe",
+        "sha256": "56507c92f4d99ae7c7b25d0f7349de7e2abd5759f18a9aded561f3ba5d817cc5",
+        "version": "1.5.47",
+        "git": {
+          "commit": "f0118f9a0658e78eab102cb5a9b1e9077a13c86b",
+          "branch": "AI/PCB/implement",
+          "dirty": true
+        },
+        "platform": "Linux 6.8.0-138-generic x86_64",
+        "source": "app"
+      },
+      "app_report": "saved /home/casaucoin/Documents/Wireframe_EDA/wireframe/doc_builder/runs/20261102-122811-docs/20261102-122811-finished-tutorial-project/out/shots/finished-tutorial-project.png (1600x900)",
+      "state": {
+        "active_document": "led_chaser.pcbxml",
+        "active_type": "pcb",
+        "documents": 2,
+        "frame": 1320,
+        "panels": [
+          "MainDockSpace",
+          "Editor",
+          "Project Structure",
+          "Properties###Properties",
+          "AI Copilot Panel"
+        ]
+      },
+      "sha256": "3ee1aff45217c5f5347261b2ca327feb6279b80390212c5a85ea38ffb25461bf",
+      "bytes": 347274,
+      "width": 1600,
+      "height": 900
+    },
+    "docs/tutorial/index.md#fix-one-erc-issue": {
+      "kind": "video",
+      "format": "mp4",
+      "file": "docs/assets/wf/docs/tutorial/index/fix-one-erc-issue.mp4",
+      "page": "docs/tutorial/index.md",
+      "slot": "fix-one-erc-issue",
+      "slot_sha256": "738142e9ab3bb2b9d50c23b300d3ff876162d47f148028a7ea86de3a4c77c04a",
+      "caption": "ERC lists the broken clock wire: U2 pin 14 (CLK) is not connected. The row shows the pin; W draws the missing wire.",
+      "script": "",
+      "planned_by": "",
+      "captured_at": "2026-11-02T05:29:21+00:00",
+      "run": "doc_builder/runs/20261102-122811-docs/20261102-122849-fix-one-erc-issue",
+      "app": {
+        "binary": "cmake-build-debug/src/wireframe",
+        "sha256": "56507c92f4d99ae7c7b25d0f7349de7e2abd5759f18a9aded561f3ba5d817cc5",
+        "version": "1.5.47",
+        "git": {
+          "commit": "f0118f9a0658e78eab102cb5a9b1e9077a13c86b",
+          "branch": "AI/PCB/implement",
+          "dirty": true
+        },
+        "platform": "Linux 6.8.0-138-generic x86_64",
+        "source": "app"
+      },
+      "app_report": "recording /home/casaucoin/Documents/Wireframe_EDA/wireframe/doc_builder/runs/20261102-122811-docs/20261102-122849-fix-one-erc-issue/out/videos/fix-one-erc-issue.mp4",
+      "state": {
+        "active_document": "led_chaser.schxml",
+        "active_type": "schematic",
+        "documents": 1,
+        "frame": 1363,
+        "panels": [
+          "MainDockSpace",
+          "Editor",
+          "Project Structure",
+          "Properties###Properties",
+          "AI Copilot Panel"
+        ]
+      },
+      "sha256": "2f8f6b5e00634a4818ec727c64422a09375a7d3ac01908cb7c021a58c93af25c",
+      "bytes": 803121,
+      "width": 1598,
+      "height": 898,
+      "codec": "h264",
+      "duration": 24.5
+    },
+    "docs/tutorial/index.md#pcb-after-schematic-update": {
+      "kind": "shot",
+      "format": "png",
+      "file": "docs/assets/wf/docs/tutorial/index/pcb-after-schematic-update.png",
+      "page": "docs/tutorial/index.md",
+      "slot": "pcb-after-schematic-update",
+      "slot_sha256": "739e7e4a81998732789370b5e91fec64210eda0580981ed7dac150d90c152787",
+      "caption": "Right after Update Schematic to PCB and the outline import — 25 footprints in a grid, the ratsnest, and the 50 × 60 mm board",
+      "script": "",
+      "planned_by": "",
+      "captured_at": "2026-11-02T05:29:40+00:00",
+      "run": "doc_builder/runs/20261102-122811-docs/20261102-122921-pcb-after-schematic-update",
+      "app": {
+        "binary": "cmake-build-debug/src/wireframe",
+        "sha256": "56507c92f4d99ae7c7b25d0f7349de7e2abd5759f18a9aded561f3ba5d817cc5",
+        "version": "1.5.47",
+        "git": {
+          "commit": "f0118f9a0658e78eab102cb5a9b1e9077a13c86b",
+          "branch": "AI/PCB/implement",
+          "dirty": true
+        },
+        "platform": "Linux 6.8.0-138-generic x86_64",
+        "source": "app"
+      },
+      "app_report": "saved /home/casaucoin/Documents/Wireframe_EDA/wireframe/doc_builder/runs/20261102-122811-docs/20261102-122921-pcb-after-schematic-update/out/shots/pcb-after-schematic-update.png (1600x900)",
+      "state": {
+        "active_document": "led_chaser.pcbxml",
+        "active_type": "pcb",
+        "documents": 2,
+        "frame": 2071,
+        "panels": [
+          "MainDockSpace",
+          "Editor",
+          "Project Structure",
+          "Properties###Properties",
+          "AI Copilot Panel"
+        ]
+      },
+      "sha256": "65bdc76f33547ce4bc217e8c8611af20dfc9e9b3e12ede2367e1a05f641a4d05",
+      "bytes": 280585,
+      "width": 1600,
+      "height": 900
+    },
+    "docs/tutorial/index.md#route-the-led-chaser": {
+      "kind": "video",
+      "format": "mp4",
+      "file": "docs/assets/wf/docs/tutorial/index/route-the-led-chaser.mp4",
+      "page": "docs/tutorial/index.md",
+      "slot": "route-the-led-chaser",
+      "slot_sha256": "e2599067bda0189314d5a778b51dbd2ea57a3d67e07c0bde1ab75767a3230f79",
+      "caption": "C4 to U2 pin 16 routed by hand, then Auto-route (Ctrl+Shift+W): 26 of 27 connections, the last GND pin left to the ground pour",
+      "script": "",
+      "planned_by": "",
+      "captured_at": "2026-11-02T05:35:46+00:00",
+      "run": "doc_builder/runs/20261102-123516-docs/20261102-123516-route-the-led-chaser",
+      "app": {
+        "binary": "cmake-build-debug/src/wireframe",
+        "sha256": "56507c92f4d99ae7c7b25d0f7349de7e2abd5759f18a9aded561f3ba5d817cc5",
+        "version": "1.5.47",
+        "git": {
+          "commit": "f0118f9a0658e78eab102cb5a9b1e9077a13c86b",
+          "branch": "AI/PCB/implement",
+          "dirty": true
+        },
+        "platform": "Linux 6.8.0-138-generic x86_64",
+        "source": "app"
+      },
+      "app_report": "recording /home/casaucoin/Documents/Wireframe_EDA/wireframe/doc_builder/runs/20261102-123516-docs/20261102-123516-route-the-led-chaser/out/videos/route-the-led-chaser.mp4",
+      "state": {
+        "active_document": "led_chaser.pcbxml",
+        "active_type": "pcb",
+        "documents": 2,
+        "frame": 392,
+        "panels": [
+          "MainDockSpace",
+          "Editor",
+          "Project Structure",
+          "Properties###Properties",
+          "AI Copilot Panel"
+        ]
+      },
+      "sha256": "e61e520c8281d160ea80d91ff5977560b8595602f2e5b4e7bf1ec853c1ea9965",
+      "bytes": 1217285,
+      "width": 1598,
+      "height": 898,
+      "codec": "h264",
+      "duration": 26.367
+    },
+    "docs/tutorial/index.md#verify-the-fabrication-package": {
+      "kind": "video",
+      "format": "mp4",
+      "file": "docs/assets/wf/docs/tutorial/index/verify-the-fabrication-package.mp4",
+      "page": "docs/tutorial/index.md",
+      "slot": "verify-the-fabrication-package",
+      "slot_sha256": "241f5b5e5daefe106ec1c4bb453c6b0a20290737a3014e240a1040d107772d92",
+      "caption": "Revision A, Generate & verify package: the package matches the design; its files, then the Gerber preview",
+      "script": "",
+      "planned_by": "",
+      "captured_at": "2026-11-02T05:30:54+00:00",
+      "run": "doc_builder/runs/20261102-122811-docs/20261102-123020-verify-the-fabrication-package",
+      "app": {
+        "binary": "cmake-build-debug/src/wireframe",
+        "sha256": "56507c92f4d99ae7c7b25d0f7349de7e2abd5759f18a9aded561f3ba5d817cc5",
+        "version": "1.5.47",
+        "git": {
+          "commit": "f0118f9a0658e78eab102cb5a9b1e9077a13c86b",
+          "branch": "AI/PCB/implement",
+          "dirty": true
+        },
+        "platform": "Linux 6.8.0-138-generic x86_64",
+        "source": "app"
+      },
+      "app_report": "recording /home/casaucoin/Documents/Wireframe_EDA/wireframe/doc_builder/runs/20261102-122811-docs/20261102-123020-verify-the-fabrication-package/out/videos/verify-the-fabrication-package.mp4",
+      "state": {
+        "active_document": "led_chaser.pcbxml",
+        "active_type": "pcb",
+        "documents": 2,
+        "frame": 406,
+        "panels": [
+          "MainDockSpace",
+          "Editor",
+          "Project Structure",
+          "Properties###Properties",
+          "AI Copilot Panel"
+        ]
+      },
+      "sha256": "ed0170e49337a9415985efb89227a6c502f669d4102cf2cc7f0f4252a11122a7",
+      "bytes": 973806,
+      "width": 1598,
+      "height": 898,
+      "codec": "h264",
+      "duration": 29.234
+    },
     "docs/ui-overview.md#current-project-structure": {
       "kind": "shot",
       "format": "png",

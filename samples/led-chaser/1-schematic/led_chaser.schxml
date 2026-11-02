@@ -1,0 +1,2306 @@
+<?xml version="1.0"?>
+<schematic>
+	<page_settings paper_size="0" title_width="1728" title_height="512">
+		<title>LED Chaser</title>
+		<company>WireFrame tutorial</company>
+		<revision>A</revision>
+		<date>2026-11-02</date>
+		<drawn_by>Author</drawn_by>
+		<sheet_num>1</sheet_num>
+		<sheet_total>1</sheet_total>
+		<comment1>NE555 clock, 74HC4017 counter, 10 LEDs</comment1>
+		<comment2></comment2>
+		<comment3></comment3>
+		<comment4></comment4>
+		<logo_base64></logo_base64>
+		<border_color>0</border_color>
+	</page_settings>
+	<sim_config analysis="1" tran_stopTime="0.0050000000000000001" tran_stepTime="1.0000000000000001e-05" ac_startFreq="1" ac_stopFreq="1000000" ac_ptsDec="100">
+		<power_rails />
+	</sim_config>
+	<components>
+		<component id="NetLabel_1" type="NetLabel" x="787.399963" y="838.200012" rotation="0" oriented="true" sourceFolderPath="" footprint="">
+			<value>DIS</value>
+			<designatorAttribute content="" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<valueAttribute content="DIS" x="5" y="-15" rotation="0" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="net" x="0" y="0" length="0" angle="0" electrical_type="unspecified">
+					<nameAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+				</pin>
+			</pins>
+			<generic_shapes />
+			<parameters>
+				<param key="LabelKind" value="local" />
+			</parameters>
+		</component>
+		<component id="NetLabel_2" type="NetLabel" x="787.399963" y="914.400024" rotation="0" oriented="true" sourceFolderPath="" footprint="">
+			<value>THR</value>
+			<designatorAttribute content="" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<valueAttribute content="THR" x="5" y="-15" rotation="0" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="net" x="0" y="0" length="0" angle="0" electrical_type="unspecified">
+					<nameAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+				</pin>
+			</pins>
+			<generic_shapes />
+			<parameters>
+				<param key="LabelKind" value="local" />
+			</parameters>
+		</component>
+		<component id="NetLabel_3" type="NetLabel" x="1066.80005" y="635" rotation="0" oriented="true" sourceFolderPath="" footprint="">
+			<value>CV</value>
+			<designatorAttribute content="" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<valueAttribute content="CV" x="5" y="-15" rotation="0" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="net" x="0" y="0" length="0" angle="0" electrical_type="unspecified">
+					<nameAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+				</pin>
+			</pins>
+			<generic_shapes />
+			<parameters>
+				<param key="LabelKind" value="local" />
+			</parameters>
+		</component>
+		<component id="NetLabel_4" type="NetLabel" x="1130.30005" y="863.599976" rotation="0" oriented="true" sourceFolderPath="" footprint="">
+			<value>CLK</value>
+			<designatorAttribute content="" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<valueAttribute content="CLK" x="5" y="-15" rotation="0" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="net" x="0" y="0" length="0" angle="0" electrical_type="unspecified">
+					<nameAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+				</pin>
+			</pins>
+			<generic_shapes />
+			<parameters>
+				<param key="LabelKind" value="local" />
+			</parameters>
+		</component>
+		<component id="NetLabel_5" type="NetLabel" x="1663.69995" y="762" rotation="0" oriented="true" sourceFolderPath="" footprint="">
+			<value>Q0</value>
+			<designatorAttribute content="" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<valueAttribute content="Q0" x="5" y="-15" rotation="0" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="net" x="0" y="0" length="0" angle="0" electrical_type="unspecified">
+					<nameAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+				</pin>
+			</pins>
+			<generic_shapes />
+			<parameters>
+				<param key="LabelKind" value="local" />
+			</parameters>
+		</component>
+		<component id="NetLabel_6" type="NetLabel" x="1663.69995" y="787.399963" rotation="0" oriented="true" sourceFolderPath="" footprint="">
+			<value>Q1</value>
+			<designatorAttribute content="" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<valueAttribute content="Q1" x="5" y="-15" rotation="0" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="net" x="0" y="0" length="0" angle="0" electrical_type="unspecified">
+					<nameAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+				</pin>
+			</pins>
+			<generic_shapes />
+			<parameters>
+				<param key="LabelKind" value="local" />
+			</parameters>
+		</component>
+		<component id="NetLabel_7" type="NetLabel" x="1663.69995" y="812.799988" rotation="0" oriented="true" sourceFolderPath="" footprint="">
+			<value>Q2</value>
+			<designatorAttribute content="" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<valueAttribute content="Q2" x="5" y="-15" rotation="0" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="net" x="0" y="0" length="0" angle="0" electrical_type="unspecified">
+					<nameAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+				</pin>
+			</pins>
+			<generic_shapes />
+			<parameters>
+				<param key="LabelKind" value="local" />
+			</parameters>
+		</component>
+		<component id="NetLabel_8" type="NetLabel" x="1663.69995" y="838.200012" rotation="0" oriented="true" sourceFolderPath="" footprint="">
+			<value>Q3</value>
+			<designatorAttribute content="" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<valueAttribute content="Q3" x="5" y="-15" rotation="0" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="net" x="0" y="0" length="0" angle="0" electrical_type="unspecified">
+					<nameAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+				</pin>
+			</pins>
+			<generic_shapes />
+			<parameters>
+				<param key="LabelKind" value="local" />
+			</parameters>
+		</component>
+		<component id="NetLabel_9" type="NetLabel" x="1663.69995" y="863.599976" rotation="0" oriented="true" sourceFolderPath="" footprint="">
+			<value>Q4</value>
+			<designatorAttribute content="" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<valueAttribute content="Q4" x="5" y="-15" rotation="0" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="net" x="0" y="0" length="0" angle="0" electrical_type="unspecified">
+					<nameAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+				</pin>
+			</pins>
+			<generic_shapes />
+			<parameters>
+				<param key="LabelKind" value="local" />
+			</parameters>
+		</component>
+		<component id="NetLabel_10" type="NetLabel" x="1663.69995" y="889" rotation="0" oriented="true" sourceFolderPath="" footprint="">
+			<value>Q5</value>
+			<designatorAttribute content="" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<valueAttribute content="Q5" x="5" y="-15" rotation="0" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="net" x="0" y="0" length="0" angle="0" electrical_type="unspecified">
+					<nameAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+				</pin>
+			</pins>
+			<generic_shapes />
+			<parameters>
+				<param key="LabelKind" value="local" />
+			</parameters>
+		</component>
+		<component id="NetLabel_11" type="NetLabel" x="1663.69995" y="914.400024" rotation="0" oriented="true" sourceFolderPath="" footprint="">
+			<value>Q6</value>
+			<designatorAttribute content="" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<valueAttribute content="Q6" x="5" y="-15" rotation="0" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="net" x="0" y="0" length="0" angle="0" electrical_type="unspecified">
+					<nameAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+				</pin>
+			</pins>
+			<generic_shapes />
+			<parameters>
+				<param key="LabelKind" value="local" />
+			</parameters>
+		</component>
+		<component id="NetLabel_12" type="NetLabel" x="1663.69995" y="939.800049" rotation="0" oriented="true" sourceFolderPath="" footprint="">
+			<value>Q7</value>
+			<designatorAttribute content="" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<valueAttribute content="Q7" x="5" y="-15" rotation="0" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="net" x="0" y="0" length="0" angle="0" electrical_type="unspecified">
+					<nameAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+				</pin>
+			</pins>
+			<generic_shapes />
+			<parameters>
+				<param key="LabelKind" value="local" />
+			</parameters>
+		</component>
+		<component id="NetLabel_13" type="NetLabel" x="1663.69995" y="965.199951" rotation="0" oriented="true" sourceFolderPath="" footprint="">
+			<value>Q8</value>
+			<designatorAttribute content="" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<valueAttribute content="Q8" x="5" y="-15" rotation="0" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="net" x="0" y="0" length="0" angle="0" electrical_type="unspecified">
+					<nameAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+				</pin>
+			</pins>
+			<generic_shapes />
+			<parameters>
+				<param key="LabelKind" value="local" />
+			</parameters>
+		</component>
+		<component id="NetLabel_14" type="NetLabel" x="1663.69995" y="990.599976" rotation="0" oriented="true" sourceFolderPath="" footprint="">
+			<value>Q9</value>
+			<designatorAttribute content="" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<valueAttribute content="Q9" x="5" y="-15" rotation="0" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="net" x="0" y="0" length="0" angle="0" electrical_type="unspecified">
+					<nameAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+				</pin>
+			</pins>
+			<generic_shapes />
+			<parameters>
+				<param key="LabelKind" value="local" />
+			</parameters>
+		</component>
+		<component id="NetLabel_15" type="NetLabel" x="2425.7002" y="431.799988" rotation="0" oriented="true" sourceFolderPath="" footprint="">
+			<value>LED_K</value>
+			<designatorAttribute content="" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<valueAttribute content="LED_K" x="5" y="-15" rotation="0" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="net" x="0" y="0" length="0" angle="0" electrical_type="unspecified">
+					<nameAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+				</pin>
+			</pins>
+			<generic_shapes />
+			<parameters>
+				<param key="LabelKind" value="local" />
+			</parameters>
+		</component>
+		<component id="#NC1" type="NoConnect" x="1651" y="1041.40002" rotation="0" sourceFolderPath="" footprint="">
+			<value></value>
+			<designatorAttribute content="" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<valueAttribute content="" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<pins />
+			<generic_shapes />
+			<parameters />
+		</component>
+		<component id="J1" type="Connector:Conn_01x02_Pin" x="254" y="812.799988" rotation="0" sourceFolderPath="" styled="true" pinNameOffset="10.1599998" footprint="Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical">
+			<value>5V IN</value>
+			<designatorAttribute content="J1" x="-8" y="12.6999998" rotation="90" visible="true" fontSize="12" />
+			<valueAttribute content="5V IN" x="20.7000008" y="12.6999998" rotation="90" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="Pin_1" x="50.7999992" y="-0" length="38.0999985" angle="180" electrical_type="passive">
+					<nameAttribute content="Pin_1" x="-58.0999985" y="-5" rotation="0" visible="false" fontSize="12.6999998" />
+					<numberAttribute content="1" x="-15" y="-15" rotation="0" visible="true" fontSize="12.6999998" />
+				</pin>
+				<pin number="2" name="Pin_2" x="50.7999992" y="25.3999996" length="38.0999985" angle="180" electrical_type="passive">
+					<nameAttribute content="Pin_2" x="-58.0999985" y="-5" rotation="0" visible="false" fontSize="12.6999998" />
+					<numberAttribute content="2" x="-15" y="-15" rotation="0" visible="true" fontSize="12.6999998" />
+				</pin>
+			</pins>
+			<generic_shapes>
+				<rect x1="8.63599968" y1="-1.26999998" x2="0" y2="1.26999998" fill="1" width="1.52400005" closed="true" />
+				<rect x1="8.63599968" y1="24.1300011" x2="0" y2="26.6700001" fill="1" width="1.52400005" closed="true" />
+				<polyline width="1.52400005">
+					<pt x="12.6999998" y="-0" />
+					<pt x="8.63599968" y="-0" />
+				</polyline>
+				<polyline width="1.52400005">
+					<pt x="12.6999998" y="25.3999996" />
+					<pt x="8.63599968" y="25.3999996" />
+				</polyline>
+			</generic_shapes>
+			<parameters>
+				<param key="Datasheet" value="~" />
+			</parameters>
+		</component>
+		<component id="C5" type="Device:C" x="508" y="863.599976" rotation="0" sourceFolderPath="" styled="true" pinNameOffset="2.53999996" footprint="Capacitor_SMD:C_0805_2012Metric">
+			<value>10u</value>
+			<designatorAttribute content="C5" x="-28.3199997" y="0" rotation="90" visible="true" fontSize="12" />
+			<valueAttribute content="10u" x="28.3199997" y="0" rotation="90" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="" x="0" y="-38.0999985" length="27.9399986" angle="90" electrical_type="passive">
+					<nameAttribute content="" x="-5" y="32.9399986" rotation="0" visible="true" fontSize="12.6999998" />
+					<numberAttribute content="1" x="-15" y="5" rotation="0" visible="false" fontSize="12.6999998" />
+				</pin>
+				<pin number="2" name="" x="0" y="38.0999985" length="27.9399986" angle="270" electrical_type="passive">
+					<nameAttribute content="" x="-5" y="-47.9399986" rotation="0" visible="true" fontSize="12.6999998" />
+					<numberAttribute content="2" x="-15" y="-15" rotation="0" visible="false" fontSize="12.6999998" />
+				</pin>
+			</pins>
+			<generic_shapes>
+				<polyline width="5.07999992">
+					<pt x="-20.3199997" y="-7.62000036" />
+					<pt x="20.3199997" y="-7.62000036" />
+				</polyline>
+				<polyline width="5.07999992">
+					<pt x="-20.3199997" y="7.62000036" />
+					<pt x="20.3199997" y="7.62000036" />
+				</polyline>
+			</generic_shapes>
+			<parameters>
+				<param key="Datasheet" value="~" />
+			</parameters>
+		</component>
+		<component id="#PWR001" type="Power" x="508" y="812.799988" rotation="0" sourceFolderPath="" styled="true" pinNameOffset="0" footprint="">
+			<value>+5V</value>
+			<designatorAttribute content="#PWR001" x="-15.6200008" y="-12.6999998" rotation="-90" visible="false" fontSize="12" />
+			<valueAttribute content="" x="15.6200008" y="-12.6999998" rotation="-90" visible="false" fontSize="12" />
+			<pins>
+				<pin number="1" name="" x="0" y="-0" length="0" angle="270" electrical_type="power_in">
+					<nameAttribute content="" x="-5" y="-20" rotation="0" visible="false" fontSize="12.6999998" />
+					<numberAttribute content="1" x="-15" y="-15" rotation="0" visible="false" fontSize="12.6999998" />
+				</pin>
+			</pins>
+			<generic_shapes>
+				<polyline>
+					<pt x="-7.62000036" y="-12.6999998" />
+					<pt x="0" y="-25.3999996" />
+				</polyline>
+				<polyline>
+					<pt x="0" y="-25.3999996" />
+					<pt x="7.62000036" y="-12.6999998" />
+				</polyline>
+				<polyline>
+					<pt x="0" y="-0" />
+					<pt x="0" y="-25.3999996" />
+				</polyline>
+			</generic_shapes>
+			<parameters />
+		</component>
+		<component id="#PWR002" type="Power" x="508" y="965.199951" rotation="0" sourceFolderPath="" footprint="">
+			<value>GND</value>
+			<designatorAttribute content="#PWR002" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<valueAttribute content="" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<pins>
+				<pin number="1" name="GND" x="0" y="0" length="0" angle="0" electrical_type="power_in">
+					<nameAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+				</pin>
+			</pins>
+			<generic_shapes />
+			<parameters />
+		</component>
+		<component id="#FLG01" type="Power" x="406.399994" y="812.799988" rotation="0" sourceFolderPath="" styled="true" pinNameOffset="0" footprint="">
+			<value>PWR_FLAG</value>
+			<designatorAttribute content="#FLG01" x="-18.1599998" y="-12.6999998" rotation="-90" visible="false" fontSize="12" />
+			<valueAttribute content="" x="18.1599998" y="-12.6999998" rotation="-90" visible="false" fontSize="12" />
+			<pins>
+				<pin number="1" name="" x="0" y="-0" length="0" angle="270" electrical_type="power_out">
+					<nameAttribute content="" x="-5" y="-20" rotation="0" visible="false" fontSize="12.6999998" />
+					<numberAttribute content="1" x="-15" y="-15" rotation="0" visible="false" fontSize="12.6999998" />
+				</pin>
+			</pins>
+			<generic_shapes>
+				<polyline>
+					<pt x="0" y="-0" />
+					<pt x="0" y="-12.6999998" />
+					<pt x="-10.1599998" y="-19.0499992" />
+					<pt x="0" y="-25.3999996" />
+					<pt x="10.1599998" y="-19.0499992" />
+					<pt x="0" y="-12.6999998" />
+				</polyline>
+			</generic_shapes>
+			<parameters />
+		</component>
+		<component id="#FLG02" type="Power" x="406.399994" y="939.800049" rotation="0" sourceFolderPath="" styled="true" pinNameOffset="0" footprint="">
+			<value>PWR_FLAG</value>
+			<designatorAttribute content="#FLG02" x="-18.1599998" y="-12.6999998" rotation="-90" visible="false" fontSize="12" />
+			<valueAttribute content="" x="18.1599998" y="-12.6999998" rotation="-90" visible="false" fontSize="12" />
+			<pins>
+				<pin number="1" name="" x="0" y="-0" length="0" angle="270" electrical_type="power_out">
+					<nameAttribute content="" x="-5" y="-20" rotation="0" visible="false" fontSize="12.6999998" />
+					<numberAttribute content="1" x="-15" y="-15" rotation="0" visible="false" fontSize="12.6999998" />
+				</pin>
+			</pins>
+			<generic_shapes>
+				<polyline>
+					<pt x="0" y="-0" />
+					<pt x="0" y="-12.6999998" />
+					<pt x="-10.1599998" y="-19.0499992" />
+					<pt x="0" y="-25.3999996" />
+					<pt x="10.1599998" y="-19.0499992" />
+					<pt x="0" y="-12.6999998" />
+				</polyline>
+			</generic_shapes>
+			<parameters />
+		</component>
+		<component id="U1" type="Timer:NE555D" x="990.599976" y="863.599976" rotation="0" sourceFolderPath="" styled="true" pinNameOffset="5.07999992" footprint="Package_SO:SOIC-8_3.9x4.9mm_P1.27mm">
+			<value>NE555D</value>
+			<designatorAttribute content="U1" x="-84.1999969" y="0" rotation="51.3401947" visible="true" fontSize="12" />
+			<valueAttribute content="NE555D" x="84.1999969" y="0" rotation="51.3401947" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="GND" x="0" y="101.599998" length="25.3999996" angle="270" electrical_type="power_in">
+					<nameAttribute content="GND" x="-5" y="-45.4000015" rotation="0" visible="true" fontSize="12.6999998" />
+					<numberAttribute content="1" x="-15" y="-15" rotation="0" visible="true" fontSize="12.6999998" />
+				</pin>
+				<pin number="8" name="VCC" x="25.3999996" y="-101.599998" length="25.3999996" angle="90" electrical_type="power_in">
+					<nameAttribute content="VCC" x="-5" y="30.3999996" rotation="0" visible="true" fontSize="12.6999998" />
+					<numberAttribute content="8" x="-15" y="5" rotation="0" visible="true" fontSize="12.6999998" />
+				</pin>
+				<pin number="2" name="TRIG" x="-101.599998" y="50.7999992" length="25.3999996" angle="0" electrical_type="input">
+					<nameAttribute content="TRIG" x="30.3999996" y="-5" rotation="0" visible="true" fontSize="12.6999998" />
+					<numberAttribute content="2" x="5" y="-15" rotation="0" visible="true" fontSize="12.6999998" />
+				</pin>
+				<pin number="3" name="OUT" x="101.599998" y="-0" length="25.3999996" angle="180" electrical_type="output">
+					<nameAttribute content="OUT" x="-45.4000015" y="-5" rotation="0" visible="true" fontSize="12.6999998" />
+					<numberAttribute content="3" x="-15" y="-15" rotation="0" visible="true" fontSize="12.6999998" />
+				</pin>
+				<pin number="4" name="~{RST}" x="-101.599998" y="-50.7999992" length="25.3999996" angle="0" electrical_type="input">
+					<nameAttribute content="~{RST}" x="30.3999996" y="-5" rotation="0" visible="true" fontSize="12.6999998" />
+					<numberAttribute content="4" x="5" y="-15" rotation="0" visible="true" fontSize="12.6999998" />
+				</pin>
+				<pin number="5" name="CONT" x="0" y="-101.599998" length="25.3999996" angle="90" electrical_type="passive">
+					<nameAttribute content="CONT" x="-5" y="30.3999996" rotation="0" visible="true" fontSize="12.6999998" />
+					<numberAttribute content="5" x="-15" y="5" rotation="0" visible="true" fontSize="12.6999998" />
+				</pin>
+				<pin number="6" name="THRES" x="-101.599998" y="25.3999996" length="25.3999996" angle="0" electrical_type="input">
+					<nameAttribute content="THRES" x="30.3999996" y="-5" rotation="0" visible="true" fontSize="12.6999998" />
+					<numberAttribute content="6" x="5" y="-15" rotation="0" visible="true" fontSize="12.6999998" />
+				</pin>
+				<pin number="7" name="DISCH" x="-101.599998" y="-25.3999996" length="25.3999996" angle="0" electrical_type="input">
+					<nameAttribute content="DISCH" x="30.3999996" y="-5" rotation="0" visible="true" fontSize="12.6999998" />
+					<numberAttribute content="7" x="5" y="-15" rotation="0" visible="true" fontSize="12.6999998" />
+				</pin>
+			</pins>
+			<generic_shapes>
+				<rect x1="-76.1999969" y1="-76.1999969" x2="76.1999969" y2="76.1999969" fill="2" width="2.53999996" closed="true" />
+			</generic_shapes>
+			<parameters>
+				<param key="Datasheet" value="~" />
+			</parameters>
+		</component>
+		<component id="R1" type="Device:R" x="762" y="749.299988" rotation="0" sourceFolderPath="" styled="true" pinNameOffset="0" footprint="Resistor_SMD:R_0805_2012Metric">
+			<value>1k</value>
+			<designatorAttribute content="R1" x="-18.1599998" y="0" rotation="90" visible="true" fontSize="12" />
+			<valueAttribute content="1k" x="18.1599998" y="0" rotation="90" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="" x="0" y="-38.0999985" length="12.6999998" angle="90" electrical_type="passive">
+					<nameAttribute content="" x="-5" y="17.7000008" rotation="0" visible="true" fontSize="12.6999998" />
+					<numberAttribute content="1" x="-15" y="5" rotation="0" visible="false" fontSize="12.6999998" />
+				</pin>
+				<pin number="2" name="" x="0" y="38.0999985" length="12.6999998" angle="270" electrical_type="passive">
+					<nameAttribute content="" x="-5" y="-32.7000008" rotation="0" visible="true" fontSize="12.6999998" />
+					<numberAttribute content="2" x="-15" y="-15" rotation="0" visible="false" fontSize="12.6999998" />
+				</pin>
+			</pins>
+			<generic_shapes>
+				<rect x1="-10.1599998" y1="25.3999996" x2="10.1599998" y2="-25.3999996" width="2.53999996" closed="true" />
+			</generic_shapes>
+			<parameters>
+				<param key="Datasheet" value="~" />
+			</parameters>
+		</component>
+		<component id="R2" type="Device:R" x="762" y="876.299988" rotation="0" sourceFolderPath="" styled="true" pinNameOffset="0" footprint="Resistor_SMD:R_0805_2012Metric">
+			<value>68k</value>
+			<designatorAttribute content="R2" x="-18.1599998" y="0" rotation="90" visible="true" fontSize="12" />
+			<valueAttribute content="68k" x="18.1599998" y="0" rotation="90" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="" x="0" y="-38.0999985" length="12.6999998" angle="90" electrical_type="passive">
+					<nameAttribute content="" x="-5" y="17.7000008" rotation="0" visible="true" fontSize="12.6999998" />
+					<numberAttribute content="1" x="-15" y="5" rotation="0" visible="false" fontSize="12.6999998" />
+				</pin>
+				<pin number="2" name="" x="0" y="38.0999985" length="12.6999998" angle="270" electrical_type="passive">
+					<nameAttribute content="" x="-5" y="-32.7000008" rotation="0" visible="true" fontSize="12.6999998" />
+					<numberAttribute content="2" x="-15" y="-15" rotation="0" visible="false" fontSize="12.6999998" />
+				</pin>
+			</pins>
+			<generic_shapes>
+				<rect x1="-10.1599998" y1="25.3999996" x2="10.1599998" y2="-25.3999996" width="2.53999996" closed="true" />
+			</generic_shapes>
+			<parameters>
+				<param key="Datasheet" value="~" />
+			</parameters>
+		</component>
+		<component id="C1" type="Device:C" x="762" y="990.599976" rotation="0" sourceFolderPath="" styled="true" pinNameOffset="2.53999996" footprint="Capacitor_SMD:C_0805_2012Metric">
+			<value>1u</value>
+			<designatorAttribute content="C1" x="-28.3199997" y="0" rotation="90" visible="true" fontSize="12" />
+			<valueAttribute content="1u" x="28.3199997" y="0" rotation="90" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="" x="0" y="-38.0999985" length="27.9399986" angle="90" electrical_type="passive">
+					<nameAttribute content="" x="-5" y="32.9399986" rotation="0" visible="true" fontSize="12.6999998" />
+					<numberAttribute content="1" x="-15" y="5" rotation="0" visible="false" fontSize="12.6999998" />
+				</pin>
+				<pin number="2" name="" x="0" y="38.0999985" length="27.9399986" angle="270" electrical_type="passive">
+					<nameAttribute content="" x="-5" y="-47.9399986" rotation="0" visible="true" fontSize="12.6999998" />
+					<numberAttribute content="2" x="-15" y="-15" rotation="0" visible="false" fontSize="12.6999998" />
+				</pin>
+			</pins>
+			<generic_shapes>
+				<polyline width="5.07999992">
+					<pt x="-20.3199997" y="-7.62000036" />
+					<pt x="20.3199997" y="-7.62000036" />
+				</polyline>
+				<polyline width="5.07999992">
+					<pt x="-20.3199997" y="7.62000036" />
+					<pt x="20.3199997" y="7.62000036" />
+				</polyline>
+			</generic_shapes>
+			<parameters>
+				<param key="Datasheet" value="~" />
+			</parameters>
+		</component>
+		<component id="#PWR003" type="Power" x="762" y="685.800049" rotation="0" sourceFolderPath="" styled="true" pinNameOffset="0" footprint="">
+			<value>+5V</value>
+			<designatorAttribute content="#PWR003" x="-15.6200008" y="-12.6999998" rotation="-90" visible="false" fontSize="12" />
+			<valueAttribute content="" x="15.6200008" y="-12.6999998" rotation="-90" visible="false" fontSize="12" />
+			<pins>
+				<pin number="1" name="" x="0" y="-0" length="0" angle="270" electrical_type="power_in">
+					<nameAttribute content="" x="-5" y="-20" rotation="0" visible="false" fontSize="12.6999998" />
+					<numberAttribute content="1" x="-15" y="-15" rotation="0" visible="false" fontSize="12.6999998" />
+				</pin>
+			</pins>
+			<generic_shapes>
+				<polyline>
+					<pt x="-7.62000036" y="-12.6999998" />
+					<pt x="0" y="-25.3999996" />
+				</polyline>
+				<polyline>
+					<pt x="0" y="-25.3999996" />
+					<pt x="7.62000036" y="-12.6999998" />
+				</polyline>
+				<polyline>
+					<pt x="0" y="-0" />
+					<pt x="0" y="-25.3999996" />
+				</polyline>
+			</generic_shapes>
+			<parameters />
+		</component>
+		<component id="#PWR004" type="Power" x="762" y="1054.1001" rotation="0" sourceFolderPath="" footprint="">
+			<value>GND</value>
+			<designatorAttribute content="#PWR004" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<valueAttribute content="" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<pins>
+				<pin number="1" name="GND" x="0" y="0" length="0" angle="0" electrical_type="power_in">
+					<nameAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+				</pin>
+			</pins>
+			<generic_shapes />
+			<parameters />
+		</component>
+		<component id="#PWR005" type="Power" x="990.599976" y="990.599976" rotation="0" sourceFolderPath="" footprint="">
+			<value>GND</value>
+			<designatorAttribute content="#PWR005" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<valueAttribute content="" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<pins>
+				<pin number="1" name="GND" x="0" y="0" length="0" angle="0" electrical_type="power_in">
+					<nameAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+				</pin>
+			</pins>
+			<generic_shapes />
+			<parameters />
+		</component>
+		<component id="C3" type="Device:C" x="1117.59998" y="749.299988" rotation="0" sourceFolderPath="" styled="true" pinNameOffset="2.53999996" footprint="Capacitor_SMD:C_0805_2012Metric">
+			<value>100n</value>
+			<designatorAttribute content="C3" x="-28.3199997" y="0" rotation="90" visible="true" fontSize="12" />
+			<valueAttribute content="100n" x="28.3199997" y="0" rotation="90" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="" x="0" y="-38.0999985" length="27.9399986" angle="90" electrical_type="passive">
+					<nameAttribute content="" x="-5" y="32.9399986" rotation="0" visible="true" fontSize="12.6999998" />
+					<numberAttribute content="1" x="-15" y="5" rotation="0" visible="false" fontSize="12.6999998" />
+				</pin>
+				<pin number="2" name="" x="0" y="38.0999985" length="27.9399986" angle="270" electrical_type="passive">
+					<nameAttribute content="" x="-5" y="-47.9399986" rotation="0" visible="true" fontSize="12.6999998" />
+					<numberAttribute content="2" x="-15" y="-15" rotation="0" visible="false" fontSize="12.6999998" />
+				</pin>
+			</pins>
+			<generic_shapes>
+				<polyline width="5.07999992">
+					<pt x="-20.3199997" y="-7.62000036" />
+					<pt x="20.3199997" y="-7.62000036" />
+				</polyline>
+				<polyline width="5.07999992">
+					<pt x="-20.3199997" y="7.62000036" />
+					<pt x="20.3199997" y="7.62000036" />
+				</polyline>
+			</generic_shapes>
+			<parameters>
+				<param key="Datasheet" value="~" />
+			</parameters>
+		</component>
+		<component id="#PWR006" type="Power" x="1016" y="711.200012" rotation="0" sourceFolderPath="" styled="true" pinNameOffset="0" footprint="">
+			<value>+5V</value>
+			<designatorAttribute content="#PWR006" x="-15.6200008" y="-12.6999998" rotation="-90" visible="false" fontSize="12" />
+			<valueAttribute content="" x="15.6200008" y="-12.6999998" rotation="-90" visible="false" fontSize="12" />
+			<pins>
+				<pin number="1" name="" x="0" y="-0" length="0" angle="270" electrical_type="power_in">
+					<nameAttribute content="" x="-5" y="-20" rotation="0" visible="false" fontSize="12.6999998" />
+					<numberAttribute content="1" x="-15" y="-15" rotation="0" visible="false" fontSize="12.6999998" />
+				</pin>
+			</pins>
+			<generic_shapes>
+				<polyline>
+					<pt x="-7.62000036" y="-12.6999998" />
+					<pt x="0" y="-25.3999996" />
+				</polyline>
+				<polyline>
+					<pt x="0" y="-25.3999996" />
+					<pt x="7.62000036" y="-12.6999998" />
+				</polyline>
+				<polyline>
+					<pt x="0" y="-0" />
+					<pt x="0" y="-25.3999996" />
+				</polyline>
+			</generic_shapes>
+			<parameters />
+		</component>
+		<component id="#PWR007" type="Power" x="1117.59998" y="787.399963" rotation="0" sourceFolderPath="" footprint="">
+			<value>GND</value>
+			<designatorAttribute content="#PWR007" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<valueAttribute content="" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<pins>
+				<pin number="1" name="GND" x="0" y="0" length="0" angle="0" electrical_type="power_in">
+					<nameAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+				</pin>
+			</pins>
+			<generic_shapes />
+			<parameters />
+		</component>
+		<component id="C2" type="Device:C" x="1219.19995" y="673.099976" rotation="0" sourceFolderPath="" styled="true" pinNameOffset="2.53999996" footprint="Capacitor_SMD:C_0805_2012Metric">
+			<value>10n</value>
+			<designatorAttribute content="C2" x="-28.3199997" y="0" rotation="90" visible="true" fontSize="12" />
+			<valueAttribute content="10n" x="28.3199997" y="0" rotation="90" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="" x="0" y="-38.0999985" length="27.9399986" angle="90" electrical_type="passive">
+					<nameAttribute content="" x="-5" y="32.9399986" rotation="0" visible="true" fontSize="12.6999998" />
+					<numberAttribute content="1" x="-15" y="5" rotation="0" visible="false" fontSize="12.6999998" />
+				</pin>
+				<pin number="2" name="" x="0" y="38.0999985" length="27.9399986" angle="270" electrical_type="passive">
+					<nameAttribute content="" x="-5" y="-47.9399986" rotation="0" visible="true" fontSize="12.6999998" />
+					<numberAttribute content="2" x="-15" y="-15" rotation="0" visible="false" fontSize="12.6999998" />
+				</pin>
+			</pins>
+			<generic_shapes>
+				<polyline width="5.07999992">
+					<pt x="-20.3199997" y="-7.62000036" />
+					<pt x="20.3199997" y="-7.62000036" />
+				</polyline>
+				<polyline width="5.07999992">
+					<pt x="-20.3199997" y="7.62000036" />
+					<pt x="20.3199997" y="7.62000036" />
+				</polyline>
+			</generic_shapes>
+			<parameters>
+				<param key="Datasheet" value="~" />
+			</parameters>
+		</component>
+		<component id="#PWR008" type="Power" x="1219.19995" y="711.200012" rotation="0" sourceFolderPath="" footprint="">
+			<value>GND</value>
+			<designatorAttribute content="#PWR008" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<valueAttribute content="" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<pins>
+				<pin number="1" name="GND" x="0" y="0" length="0" angle="0" electrical_type="power_in">
+					<nameAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+				</pin>
+			</pins>
+			<generic_shapes />
+			<parameters />
+		</component>
+		<component id="U2" type="4xxx:4017" x="1524" y="889" rotation="0" sourceFolderPath="" styled="true" pinNameOffset="10.1599998" footprint="Package_SO:SOIC-16_3.9x9.9mm_P1.27mm">
+			<value>74HC4017</value>
+			<designatorAttribute content="U2" x="-84.1999969" y="12.7000046" rotation="57.9946213" visible="true" fontSize="12" />
+			<valueAttribute content="74HC4017" x="84.1999969" y="12.7000046" rotation="57.9946213" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="Q5" x="127" y="-0" length="50.7999992" angle="180" electrical_type="output">
+					<nameAttribute content="Q5" x="-70.8000031" y="-5" rotation="0" visible="true" fontSize="12.6999998" />
+					<numberAttribute content="1" x="-15" y="-15" rotation="0" visible="true" fontSize="12.6999998" />
+				</pin>
+				<pin number="2" name="Q1" x="127" y="-101.599998" length="50.7999992" angle="180" electrical_type="output">
+					<nameAttribute content="Q1" x="-70.8000031" y="-5" rotation="0" visible="true" fontSize="12.6999998" />
+					<numberAttribute content="2" x="-15" y="-15" rotation="0" visible="true" fontSize="12.6999998" />
+				</pin>
+				<pin number="3" name="Q0" x="127" y="-127" length="50.7999992" angle="180" electrical_type="output">
+					<nameAttribute content="Q0" x="-70.8000031" y="-5" rotation="0" visible="true" fontSize="12.6999998" />
+					<numberAttribute content="3" x="-15" y="-15" rotation="0" visible="true" fontSize="12.6999998" />
+				</pin>
+				<pin number="4" name="Q2" x="127" y="-76.1999969" length="50.7999992" angle="180" electrical_type="output">
+					<nameAttribute content="Q2" x="-70.8000031" y="-5" rotation="0" visible="true" fontSize="12.6999998" />
+					<numberAttribute content="4" x="-15" y="-15" rotation="0" visible="true" fontSize="12.6999998" />
+				</pin>
+				<pin number="5" name="Q6" x="127" y="25.3999996" length="50.7999992" angle="180" electrical_type="output">
+					<nameAttribute content="Q6" x="-70.8000031" y="-5" rotation="0" visible="true" fontSize="12.6999998" />
+					<numberAttribute content="5" x="-15" y="-15" rotation="0" visible="true" fontSize="12.6999998" />
+				</pin>
+				<pin number="6" name="Q7" x="127" y="50.7999992" length="50.7999992" angle="180" electrical_type="output">
+					<nameAttribute content="Q7" x="-70.8000031" y="-5" rotation="0" visible="true" fontSize="12.6999998" />
+					<numberAttribute content="6" x="-15" y="-15" rotation="0" visible="true" fontSize="12.6999998" />
+				</pin>
+				<pin number="7" name="Q3" x="127" y="-50.7999992" length="50.7999992" angle="180" electrical_type="output">
+					<nameAttribute content="Q3" x="-70.8000031" y="-5" rotation="0" visible="true" fontSize="12.6999998" />
+					<numberAttribute content="7" x="-15" y="-15" rotation="0" visible="true" fontSize="12.6999998" />
+				</pin>
+				<pin number="8" name="VSS" x="0" y="228.600006" length="50.7999992" angle="270" electrical_type="power_in">
+					<nameAttribute content="VSS" x="-5" y="-70.8000031" rotation="0" visible="true" fontSize="12.6999998" />
+					<numberAttribute content="8" x="-15" y="-15" rotation="0" visible="true" fontSize="12.6999998" />
+				</pin>
+				<pin number="9" name="Q8" x="127" y="76.1999969" length="50.7999992" angle="180" electrical_type="output">
+					<nameAttribute content="Q8" x="-70.8000031" y="-5" rotation="0" visible="true" fontSize="12.6999998" />
+					<numberAttribute content="9" x="-15" y="-15" rotation="0" visible="true" fontSize="12.6999998" />
+				</pin>
+				<pin number="10" name="Q4" x="127" y="-25.3999996" length="50.7999992" angle="180" electrical_type="output">
+					<nameAttribute content="Q4" x="-70.8000031" y="-5" rotation="0" visible="true" fontSize="12.6999998" />
+					<numberAttribute content="10" x="-15" y="-15" rotation="0" visible="true" fontSize="12.6999998" />
+				</pin>
+				<pin number="11" name="Q9" x="127" y="101.599998" length="50.7999992" angle="180" electrical_type="output">
+					<nameAttribute content="Q9" x="-70.8000031" y="-5" rotation="0" visible="true" fontSize="12.6999998" />
+					<numberAttribute content="11" x="-15" y="-15" rotation="0" visible="true" fontSize="12.6999998" />
+				</pin>
+				<pin number="12" name="Cout" x="127" y="152.399994" length="50.7999992" angle="180" electrical_type="output">
+					<nameAttribute content="Cout" x="-70.8000031" y="-5" rotation="0" visible="true" fontSize="12.6999998" />
+					<numberAttribute content="12" x="-15" y="-15" rotation="0" visible="true" fontSize="12.6999998" />
+				</pin>
+				<pin number="13" name="CKEN" x="-127" y="-101.599998" length="50.7999992" angle="0" electrical_type="input">
+					<nameAttribute content="CKEN" x="55.7999992" y="-5" rotation="0" visible="true" fontSize="12.6999998" />
+					<numberAttribute content="13" x="5" y="-15" rotation="0" visible="true" fontSize="12.6999998" />
+				</pin>
+				<pin number="14" name="CLK" x="-127" y="-127" length="50.7999992" angle="0" electrical_type="input">
+					<nameAttribute content="CLK" x="55.7999992" y="-5" rotation="0" visible="true" fontSize="12.6999998" />
+					<numberAttribute content="14" x="5" y="-15" rotation="0" visible="true" fontSize="12.6999998" />
+				</pin>
+				<pin number="15" name="Reset" x="-127" y="-50.7999992" length="50.7999992" angle="0" electrical_type="input">
+					<nameAttribute content="Reset" x="55.7999992" y="-5" rotation="0" visible="true" fontSize="12.6999998" />
+					<numberAttribute content="15" x="5" y="-15" rotation="0" visible="true" fontSize="12.6999998" />
+				</pin>
+				<pin number="16" name="VDD" x="0" y="-203.199997" length="50.7999992" angle="90" electrical_type="power_in">
+					<nameAttribute content="VDD" x="-5" y="55.7999992" rotation="0" visible="true" fontSize="12.6999998" />
+					<numberAttribute content="16" x="-15" y="5" rotation="0" visible="true" fontSize="12.6999998" />
+				</pin>
+			</pins>
+			<generic_shapes>
+				<rect x1="-76.1999969" y1="-152.399994" x2="76.1999969" y2="177.800003" fill="2" width="2.53999996" closed="true" />
+			</generic_shapes>
+			<parameters>
+				<param key="Datasheet" value="~" />
+			</parameters>
+		</component>
+		<component id="#PWR009" type="Power" x="1346.19995" y="863.599976" rotation="0" sourceFolderPath="" footprint="">
+			<value>GND</value>
+			<designatorAttribute content="#PWR009" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<valueAttribute content="" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<pins>
+				<pin number="1" name="GND" x="0" y="0" length="0" angle="0" electrical_type="power_in">
+					<nameAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+				</pin>
+			</pins>
+			<generic_shapes />
+			<parameters />
+		</component>
+		<component id="C4" type="Device:C" x="1447.80005" y="647.699951" rotation="0" sourceFolderPath="" styled="true" pinNameOffset="2.53999996" footprint="Capacitor_SMD:C_0805_2012Metric">
+			<value>100n</value>
+			<designatorAttribute content="C4" x="-28.3199997" y="0" rotation="90" visible="true" fontSize="12" />
+			<valueAttribute content="100n" x="28.3199997" y="0" rotation="90" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="" x="0" y="-38.0999985" length="27.9399986" angle="90" electrical_type="passive">
+					<nameAttribute content="" x="-5" y="32.9399986" rotation="0" visible="true" fontSize="12.6999998" />
+					<numberAttribute content="1" x="-15" y="5" rotation="0" visible="false" fontSize="12.6999998" />
+				</pin>
+				<pin number="2" name="" x="0" y="38.0999985" length="27.9399986" angle="270" electrical_type="passive">
+					<nameAttribute content="" x="-5" y="-47.9399986" rotation="0" visible="true" fontSize="12.6999998" />
+					<numberAttribute content="2" x="-15" y="-15" rotation="0" visible="false" fontSize="12.6999998" />
+				</pin>
+			</pins>
+			<generic_shapes>
+				<polyline width="5.07999992">
+					<pt x="-20.3199997" y="-7.62000036" />
+					<pt x="20.3199997" y="-7.62000036" />
+				</polyline>
+				<polyline width="5.07999992">
+					<pt x="-20.3199997" y="7.62000036" />
+					<pt x="20.3199997" y="7.62000036" />
+				</polyline>
+			</generic_shapes>
+			<parameters>
+				<param key="Datasheet" value="~" />
+			</parameters>
+		</component>
+		<component id="#PWR010" type="Power" x="1524" y="609.599976" rotation="0" sourceFolderPath="" styled="true" pinNameOffset="0" footprint="">
+			<value>+5V</value>
+			<designatorAttribute content="#PWR010" x="-15.6200008" y="-12.6999998" rotation="-90" visible="false" fontSize="12" />
+			<valueAttribute content="" x="15.6200008" y="-12.6999998" rotation="-90" visible="false" fontSize="12" />
+			<pins>
+				<pin number="1" name="" x="0" y="-0" length="0" angle="270" electrical_type="power_in">
+					<nameAttribute content="" x="-5" y="-20" rotation="0" visible="false" fontSize="12.6999998" />
+					<numberAttribute content="1" x="-15" y="-15" rotation="0" visible="false" fontSize="12.6999998" />
+				</pin>
+			</pins>
+			<generic_shapes>
+				<polyline>
+					<pt x="-7.62000036" y="-12.6999998" />
+					<pt x="0" y="-25.3999996" />
+				</polyline>
+				<polyline>
+					<pt x="0" y="-25.3999996" />
+					<pt x="7.62000036" y="-12.6999998" />
+				</polyline>
+				<polyline>
+					<pt x="0" y="-0" />
+					<pt x="0" y="-25.3999996" />
+				</polyline>
+			</generic_shapes>
+			<parameters />
+		</component>
+		<component id="#PWR011" type="Power" x="1447.80005" y="685.800049" rotation="0" sourceFolderPath="" footprint="">
+			<value>GND</value>
+			<designatorAttribute content="#PWR011" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<valueAttribute content="" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<pins>
+				<pin number="1" name="GND" x="0" y="0" length="0" angle="0" electrical_type="power_in">
+					<nameAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+				</pin>
+			</pins>
+			<generic_shapes />
+			<parameters />
+		</component>
+		<component id="#PWR012" type="Power" x="1524" y="1117.59998" rotation="0" sourceFolderPath="" footprint="">
+			<value>GND</value>
+			<designatorAttribute content="#PWR012" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<valueAttribute content="" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<pins>
+				<pin number="1" name="GND" x="0" y="0" length="0" angle="0" electrical_type="power_in">
+					<nameAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+				</pin>
+			</pins>
+			<generic_shapes />
+			<parameters />
+		</component>
+		<component id="D1" type="Device:LED" x="1727.19995" y="508" rotation="90" sourceFolderPath="" styled="true" pinNameOffset="10.1599998" footprint="LED_SMD:LED_0805_2012Metric">
+			<value>RED</value>
+			<designatorAttribute content="D1" x="-16.5100002" y="-20.7000008" rotation="0" visible="true" fontSize="12" />
+			<valueAttribute content="RED" x="-16.5100002" y="30.8600006" rotation="0" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="K" x="-38.0999985" y="-0" length="25.3999996" angle="0" electrical_type="passive">
+					<nameAttribute content="K" x="30.3999996" y="-5" rotation="0" visible="false" fontSize="12.6999998" />
+					<numberAttribute content="1" x="5" y="-15" rotation="0" visible="false" fontSize="12.6999998" />
+				</pin>
+				<pin number="2" name="A" x="38.0999985" y="-0" length="25.3999996" angle="180" electrical_type="passive">
+					<nameAttribute content="A" x="-45.4000015" y="-5" rotation="0" visible="false" fontSize="12.6999998" />
+					<numberAttribute content="2" x="-15" y="-15" rotation="0" visible="false" fontSize="12.6999998" />
+				</pin>
+			</pins>
+			<generic_shapes>
+				<polyline>
+					<pt x="-30.4800014" y="7.62000036" />
+					<pt x="-45.7200012" y="22.8600006" />
+					<pt x="-38.0999985" y="22.8600006" />
+					<pt x="-45.7200012" y="22.8600006" />
+					<pt x="-45.7200012" y="15.2400007" />
+				</polyline>
+				<polyline>
+					<pt x="-17.7800007" y="7.62000036" />
+					<pt x="-33.0200005" y="22.8600006" />
+					<pt x="-25.3999996" y="22.8600006" />
+					<pt x="-33.0200005" y="22.8600006" />
+					<pt x="-33.0200005" y="15.2400007" />
+				</polyline>
+				<polyline>
+					<pt x="-12.6999998" y="-0" />
+					<pt x="12.6999998" y="-0" />
+				</polyline>
+				<polyline width="2.53999996">
+					<pt x="-12.6999998" y="12.6999998" />
+					<pt x="-12.6999998" y="-12.6999998" />
+				</polyline>
+				<polyline width="2.53999996" closed="true">
+					<pt x="12.6999998" y="12.6999998" />
+					<pt x="12.6999998" y="-12.6999998" />
+					<pt x="-12.6999998" y="-0" />
+					<pt x="12.6999998" y="12.6999998" />
+				</polyline>
+			</generic_shapes>
+			<parameters>
+				<param key="Datasheet" value="~" />
+			</parameters>
+		</component>
+		<component id="D2" type="Device:LED" x="1803.3999" y="508" rotation="90" sourceFolderPath="" styled="true" pinNameOffset="10.1599998" footprint="LED_SMD:LED_0805_2012Metric">
+			<value>RED</value>
+			<designatorAttribute content="D2" x="-16.5100002" y="-20.7000008" rotation="0" visible="true" fontSize="12" />
+			<valueAttribute content="RED" x="-16.5100002" y="30.8600006" rotation="0" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="K" x="-38.0999985" y="-0" length="25.3999996" angle="0" electrical_type="passive">
+					<nameAttribute content="K" x="30.3999996" y="-5" rotation="0" visible="false" fontSize="12.6999998" />
+					<numberAttribute content="1" x="5" y="-15" rotation="0" visible="false" fontSize="12.6999998" />
+				</pin>
+				<pin number="2" name="A" x="38.0999985" y="-0" length="25.3999996" angle="180" electrical_type="passive">
+					<nameAttribute content="A" x="-45.4000015" y="-5" rotation="0" visible="false" fontSize="12.6999998" />
+					<numberAttribute content="2" x="-15" y="-15" rotation="0" visible="false" fontSize="12.6999998" />
+				</pin>
+			</pins>
+			<generic_shapes>
+				<polyline>
+					<pt x="-30.4800014" y="7.62000036" />
+					<pt x="-45.7200012" y="22.8600006" />
+					<pt x="-38.0999985" y="22.8600006" />
+					<pt x="-45.7200012" y="22.8600006" />
+					<pt x="-45.7200012" y="15.2400007" />
+				</polyline>
+				<polyline>
+					<pt x="-17.7800007" y="7.62000036" />
+					<pt x="-33.0200005" y="22.8600006" />
+					<pt x="-25.3999996" y="22.8600006" />
+					<pt x="-33.0200005" y="22.8600006" />
+					<pt x="-33.0200005" y="15.2400007" />
+				</polyline>
+				<polyline>
+					<pt x="-12.6999998" y="-0" />
+					<pt x="12.6999998" y="-0" />
+				</polyline>
+				<polyline width="2.53999996">
+					<pt x="-12.6999998" y="12.6999998" />
+					<pt x="-12.6999998" y="-12.6999998" />
+				</polyline>
+				<polyline width="2.53999996" closed="true">
+					<pt x="12.6999998" y="12.6999998" />
+					<pt x="12.6999998" y="-12.6999998" />
+					<pt x="-12.6999998" y="-0" />
+					<pt x="12.6999998" y="12.6999998" />
+				</polyline>
+			</generic_shapes>
+			<parameters>
+				<param key="Datasheet" value="~" />
+			</parameters>
+		</component>
+		<component id="D3" type="Device:LED" x="1879.6001" y="508" rotation="90" sourceFolderPath="" styled="true" pinNameOffset="10.1599998" footprint="LED_SMD:LED_0805_2012Metric">
+			<value>RED</value>
+			<designatorAttribute content="D3" x="-16.5100002" y="-20.7000008" rotation="0" visible="true" fontSize="12" />
+			<valueAttribute content="RED" x="-16.5100002" y="30.8600006" rotation="0" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="K" x="-38.0999985" y="-0" length="25.3999996" angle="0" electrical_type="passive">
+					<nameAttribute content="K" x="30.3999996" y="-5" rotation="0" visible="false" fontSize="12.6999998" />
+					<numberAttribute content="1" x="5" y="-15" rotation="0" visible="false" fontSize="12.6999998" />
+				</pin>
+				<pin number="2" name="A" x="38.0999985" y="-0" length="25.3999996" angle="180" electrical_type="passive">
+					<nameAttribute content="A" x="-45.4000015" y="-5" rotation="0" visible="false" fontSize="12.6999998" />
+					<numberAttribute content="2" x="-15" y="-15" rotation="0" visible="false" fontSize="12.6999998" />
+				</pin>
+			</pins>
+			<generic_shapes>
+				<polyline>
+					<pt x="-30.4800014" y="7.62000036" />
+					<pt x="-45.7200012" y="22.8600006" />
+					<pt x="-38.0999985" y="22.8600006" />
+					<pt x="-45.7200012" y="22.8600006" />
+					<pt x="-45.7200012" y="15.2400007" />
+				</polyline>
+				<polyline>
+					<pt x="-17.7800007" y="7.62000036" />
+					<pt x="-33.0200005" y="22.8600006" />
+					<pt x="-25.3999996" y="22.8600006" />
+					<pt x="-33.0200005" y="22.8600006" />
+					<pt x="-33.0200005" y="15.2400007" />
+				</polyline>
+				<polyline>
+					<pt x="-12.6999998" y="-0" />
+					<pt x="12.6999998" y="-0" />
+				</polyline>
+				<polyline width="2.53999996">
+					<pt x="-12.6999998" y="12.6999998" />
+					<pt x="-12.6999998" y="-12.6999998" />
+				</polyline>
+				<polyline width="2.53999996" closed="true">
+					<pt x="12.6999998" y="12.6999998" />
+					<pt x="12.6999998" y="-12.6999998" />
+					<pt x="-12.6999998" y="-0" />
+					<pt x="12.6999998" y="12.6999998" />
+				</polyline>
+			</generic_shapes>
+			<parameters>
+				<param key="Datasheet" value="~" />
+			</parameters>
+		</component>
+		<component id="D4" type="Device:LED" x="1955.80005" y="508" rotation="90" sourceFolderPath="" styled="true" pinNameOffset="10.1599998" footprint="LED_SMD:LED_0805_2012Metric">
+			<value>RED</value>
+			<designatorAttribute content="D4" x="-16.5100002" y="-20.7000008" rotation="0" visible="true" fontSize="12" />
+			<valueAttribute content="RED" x="-16.5100002" y="30.8600006" rotation="0" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="K" x="-38.0999985" y="-0" length="25.3999996" angle="0" electrical_type="passive">
+					<nameAttribute content="K" x="30.3999996" y="-5" rotation="0" visible="false" fontSize="12.6999998" />
+					<numberAttribute content="1" x="5" y="-15" rotation="0" visible="false" fontSize="12.6999998" />
+				</pin>
+				<pin number="2" name="A" x="38.0999985" y="-0" length="25.3999996" angle="180" electrical_type="passive">
+					<nameAttribute content="A" x="-45.4000015" y="-5" rotation="0" visible="false" fontSize="12.6999998" />
+					<numberAttribute content="2" x="-15" y="-15" rotation="0" visible="false" fontSize="12.6999998" />
+				</pin>
+			</pins>
+			<generic_shapes>
+				<polyline>
+					<pt x="-30.4800014" y="7.62000036" />
+					<pt x="-45.7200012" y="22.8600006" />
+					<pt x="-38.0999985" y="22.8600006" />
+					<pt x="-45.7200012" y="22.8600006" />
+					<pt x="-45.7200012" y="15.2400007" />
+				</polyline>
+				<polyline>
+					<pt x="-17.7800007" y="7.62000036" />
+					<pt x="-33.0200005" y="22.8600006" />
+					<pt x="-25.3999996" y="22.8600006" />
+					<pt x="-33.0200005" y="22.8600006" />
+					<pt x="-33.0200005" y="15.2400007" />
+				</polyline>
+				<polyline>
+					<pt x="-12.6999998" y="-0" />
+					<pt x="12.6999998" y="-0" />
+				</polyline>
+				<polyline width="2.53999996">
+					<pt x="-12.6999998" y="12.6999998" />
+					<pt x="-12.6999998" y="-12.6999998" />
+				</polyline>
+				<polyline width="2.53999996" closed="true">
+					<pt x="12.6999998" y="12.6999998" />
+					<pt x="12.6999998" y="-12.6999998" />
+					<pt x="-12.6999998" y="-0" />
+					<pt x="12.6999998" y="12.6999998" />
+				</polyline>
+			</generic_shapes>
+			<parameters>
+				<param key="Datasheet" value="~" />
+			</parameters>
+		</component>
+		<component id="D5" type="Device:LED" x="2032" y="508" rotation="90" sourceFolderPath="" styled="true" pinNameOffset="10.1599998" footprint="LED_SMD:LED_0805_2012Metric">
+			<value>RED</value>
+			<designatorAttribute content="D5" x="-16.5100002" y="-20.7000008" rotation="0" visible="true" fontSize="12" />
+			<valueAttribute content="RED" x="-16.5100002" y="30.8600006" rotation="0" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="K" x="-38.0999985" y="-0" length="25.3999996" angle="0" electrical_type="passive">
+					<nameAttribute content="K" x="30.3999996" y="-5" rotation="0" visible="false" fontSize="12.6999998" />
+					<numberAttribute content="1" x="5" y="-15" rotation="0" visible="false" fontSize="12.6999998" />
+				</pin>
+				<pin number="2" name="A" x="38.0999985" y="-0" length="25.3999996" angle="180" electrical_type="passive">
+					<nameAttribute content="A" x="-45.4000015" y="-5" rotation="0" visible="false" fontSize="12.6999998" />
+					<numberAttribute content="2" x="-15" y="-15" rotation="0" visible="false" fontSize="12.6999998" />
+				</pin>
+			</pins>
+			<generic_shapes>
+				<polyline>
+					<pt x="-30.4800014" y="7.62000036" />
+					<pt x="-45.7200012" y="22.8600006" />
+					<pt x="-38.0999985" y="22.8600006" />
+					<pt x="-45.7200012" y="22.8600006" />
+					<pt x="-45.7200012" y="15.2400007" />
+				</polyline>
+				<polyline>
+					<pt x="-17.7800007" y="7.62000036" />
+					<pt x="-33.0200005" y="22.8600006" />
+					<pt x="-25.3999996" y="22.8600006" />
+					<pt x="-33.0200005" y="22.8600006" />
+					<pt x="-33.0200005" y="15.2400007" />
+				</polyline>
+				<polyline>
+					<pt x="-12.6999998" y="-0" />
+					<pt x="12.6999998" y="-0" />
+				</polyline>
+				<polyline width="2.53999996">
+					<pt x="-12.6999998" y="12.6999998" />
+					<pt x="-12.6999998" y="-12.6999998" />
+				</polyline>
+				<polyline width="2.53999996" closed="true">
+					<pt x="12.6999998" y="12.6999998" />
+					<pt x="12.6999998" y="-12.6999998" />
+					<pt x="-12.6999998" y="-0" />
+					<pt x="12.6999998" y="12.6999998" />
+				</polyline>
+			</generic_shapes>
+			<parameters>
+				<param key="Datasheet" value="~" />
+			</parameters>
+		</component>
+		<component id="D6" type="Device:LED" x="2108.2002" y="508" rotation="90" sourceFolderPath="" styled="true" pinNameOffset="10.1599998" footprint="LED_SMD:LED_0805_2012Metric">
+			<value>RED</value>
+			<designatorAttribute content="D6" x="-16.5100002" y="-20.7000008" rotation="0" visible="true" fontSize="12" />
+			<valueAttribute content="RED" x="-16.5100002" y="30.8600006" rotation="0" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="K" x="-38.0999985" y="-0" length="25.3999996" angle="0" electrical_type="passive">
+					<nameAttribute content="K" x="30.3999996" y="-5" rotation="0" visible="false" fontSize="12.6999998" />
+					<numberAttribute content="1" x="5" y="-15" rotation="0" visible="false" fontSize="12.6999998" />
+				</pin>
+				<pin number="2" name="A" x="38.0999985" y="-0" length="25.3999996" angle="180" electrical_type="passive">
+					<nameAttribute content="A" x="-45.4000015" y="-5" rotation="0" visible="false" fontSize="12.6999998" />
+					<numberAttribute content="2" x="-15" y="-15" rotation="0" visible="false" fontSize="12.6999998" />
+				</pin>
+			</pins>
+			<generic_shapes>
+				<polyline>
+					<pt x="-30.4800014" y="7.62000036" />
+					<pt x="-45.7200012" y="22.8600006" />
+					<pt x="-38.0999985" y="22.8600006" />
+					<pt x="-45.7200012" y="22.8600006" />
+					<pt x="-45.7200012" y="15.2400007" />
+				</polyline>
+				<polyline>
+					<pt x="-17.7800007" y="7.62000036" />
+					<pt x="-33.0200005" y="22.8600006" />
+					<pt x="-25.3999996" y="22.8600006" />
+					<pt x="-33.0200005" y="22.8600006" />
+					<pt x="-33.0200005" y="15.2400007" />
+				</polyline>
+				<polyline>
+					<pt x="-12.6999998" y="-0" />
+					<pt x="12.6999998" y="-0" />
+				</polyline>
+				<polyline width="2.53999996">
+					<pt x="-12.6999998" y="12.6999998" />
+					<pt x="-12.6999998" y="-12.6999998" />
+				</polyline>
+				<polyline width="2.53999996" closed="true">
+					<pt x="12.6999998" y="12.6999998" />
+					<pt x="12.6999998" y="-12.6999998" />
+					<pt x="-12.6999998" y="-0" />
+					<pt x="12.6999998" y="12.6999998" />
+				</polyline>
+			</generic_shapes>
+			<parameters>
+				<param key="Datasheet" value="~" />
+			</parameters>
+		</component>
+		<component id="D7" type="Device:LED" x="2184.3999" y="508" rotation="90" sourceFolderPath="" styled="true" pinNameOffset="10.1599998" footprint="LED_SMD:LED_0805_2012Metric">
+			<value>RED</value>
+			<designatorAttribute content="D7" x="-16.5100002" y="-20.7000008" rotation="0" visible="true" fontSize="12" />
+			<valueAttribute content="RED" x="-16.5100002" y="30.8600006" rotation="0" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="K" x="-38.0999985" y="-0" length="25.3999996" angle="0" electrical_type="passive">
+					<nameAttribute content="K" x="30.3999996" y="-5" rotation="0" visible="false" fontSize="12.6999998" />
+					<numberAttribute content="1" x="5" y="-15" rotation="0" visible="false" fontSize="12.6999998" />
+				</pin>
+				<pin number="2" name="A" x="38.0999985" y="-0" length="25.3999996" angle="180" electrical_type="passive">
+					<nameAttribute content="A" x="-45.4000015" y="-5" rotation="0" visible="false" fontSize="12.6999998" />
+					<numberAttribute content="2" x="-15" y="-15" rotation="0" visible="false" fontSize="12.6999998" />
+				</pin>
+			</pins>
+			<generic_shapes>
+				<polyline>
+					<pt x="-30.4800014" y="7.62000036" />
+					<pt x="-45.7200012" y="22.8600006" />
+					<pt x="-38.0999985" y="22.8600006" />
+					<pt x="-45.7200012" y="22.8600006" />
+					<pt x="-45.7200012" y="15.2400007" />
+				</polyline>
+				<polyline>
+					<pt x="-17.7800007" y="7.62000036" />
+					<pt x="-33.0200005" y="22.8600006" />
+					<pt x="-25.3999996" y="22.8600006" />
+					<pt x="-33.0200005" y="22.8600006" />
+					<pt x="-33.0200005" y="15.2400007" />
+				</polyline>
+				<polyline>
+					<pt x="-12.6999998" y="-0" />
+					<pt x="12.6999998" y="-0" />
+				</polyline>
+				<polyline width="2.53999996">
+					<pt x="-12.6999998" y="12.6999998" />
+					<pt x="-12.6999998" y="-12.6999998" />
+				</polyline>
+				<polyline width="2.53999996" closed="true">
+					<pt x="12.6999998" y="12.6999998" />
+					<pt x="12.6999998" y="-12.6999998" />
+					<pt x="-12.6999998" y="-0" />
+					<pt x="12.6999998" y="12.6999998" />
+				</polyline>
+			</generic_shapes>
+			<parameters>
+				<param key="Datasheet" value="~" />
+			</parameters>
+		</component>
+		<component id="D8" type="Device:LED" x="2260.6001" y="508" rotation="90" sourceFolderPath="" styled="true" pinNameOffset="10.1599998" footprint="LED_SMD:LED_0805_2012Metric">
+			<value>RED</value>
+			<designatorAttribute content="D8" x="-16.5100002" y="-20.7000008" rotation="0" visible="true" fontSize="12" />
+			<valueAttribute content="RED" x="-16.5100002" y="30.8600006" rotation="0" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="K" x="-38.0999985" y="-0" length="25.3999996" angle="0" electrical_type="passive">
+					<nameAttribute content="K" x="30.3999996" y="-5" rotation="0" visible="false" fontSize="12.6999998" />
+					<numberAttribute content="1" x="5" y="-15" rotation="0" visible="false" fontSize="12.6999998" />
+				</pin>
+				<pin number="2" name="A" x="38.0999985" y="-0" length="25.3999996" angle="180" electrical_type="passive">
+					<nameAttribute content="A" x="-45.4000015" y="-5" rotation="0" visible="false" fontSize="12.6999998" />
+					<numberAttribute content="2" x="-15" y="-15" rotation="0" visible="false" fontSize="12.6999998" />
+				</pin>
+			</pins>
+			<generic_shapes>
+				<polyline>
+					<pt x="-30.4800014" y="7.62000036" />
+					<pt x="-45.7200012" y="22.8600006" />
+					<pt x="-38.0999985" y="22.8600006" />
+					<pt x="-45.7200012" y="22.8600006" />
+					<pt x="-45.7200012" y="15.2400007" />
+				</polyline>
+				<polyline>
+					<pt x="-17.7800007" y="7.62000036" />
+					<pt x="-33.0200005" y="22.8600006" />
+					<pt x="-25.3999996" y="22.8600006" />
+					<pt x="-33.0200005" y="22.8600006" />
+					<pt x="-33.0200005" y="15.2400007" />
+				</polyline>
+				<polyline>
+					<pt x="-12.6999998" y="-0" />
+					<pt x="12.6999998" y="-0" />
+				</polyline>
+				<polyline width="2.53999996">
+					<pt x="-12.6999998" y="12.6999998" />
+					<pt x="-12.6999998" y="-12.6999998" />
+				</polyline>
+				<polyline width="2.53999996" closed="true">
+					<pt x="12.6999998" y="12.6999998" />
+					<pt x="12.6999998" y="-12.6999998" />
+					<pt x="-12.6999998" y="-0" />
+					<pt x="12.6999998" y="12.6999998" />
+				</polyline>
+			</generic_shapes>
+			<parameters>
+				<param key="Datasheet" value="~" />
+			</parameters>
+		</component>
+		<component id="D9" type="Device:LED" x="2336.7998" y="508" rotation="90" sourceFolderPath="" styled="true" pinNameOffset="10.1599998" footprint="LED_SMD:LED_0805_2012Metric">
+			<value>RED</value>
+			<designatorAttribute content="D9" x="-16.5100002" y="-20.7000008" rotation="0" visible="true" fontSize="12" />
+			<valueAttribute content="RED" x="-16.5100002" y="30.8600006" rotation="0" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="K" x="-38.0999985" y="-0" length="25.3999996" angle="0" electrical_type="passive">
+					<nameAttribute content="K" x="30.3999996" y="-5" rotation="0" visible="false" fontSize="12.6999998" />
+					<numberAttribute content="1" x="5" y="-15" rotation="0" visible="false" fontSize="12.6999998" />
+				</pin>
+				<pin number="2" name="A" x="38.0999985" y="-0" length="25.3999996" angle="180" electrical_type="passive">
+					<nameAttribute content="A" x="-45.4000015" y="-5" rotation="0" visible="false" fontSize="12.6999998" />
+					<numberAttribute content="2" x="-15" y="-15" rotation="0" visible="false" fontSize="12.6999998" />
+				</pin>
+			</pins>
+			<generic_shapes>
+				<polyline>
+					<pt x="-30.4800014" y="7.62000036" />
+					<pt x="-45.7200012" y="22.8600006" />
+					<pt x="-38.0999985" y="22.8600006" />
+					<pt x="-45.7200012" y="22.8600006" />
+					<pt x="-45.7200012" y="15.2400007" />
+				</polyline>
+				<polyline>
+					<pt x="-17.7800007" y="7.62000036" />
+					<pt x="-33.0200005" y="22.8600006" />
+					<pt x="-25.3999996" y="22.8600006" />
+					<pt x="-33.0200005" y="22.8600006" />
+					<pt x="-33.0200005" y="15.2400007" />
+				</polyline>
+				<polyline>
+					<pt x="-12.6999998" y="-0" />
+					<pt x="12.6999998" y="-0" />
+				</polyline>
+				<polyline width="2.53999996">
+					<pt x="-12.6999998" y="12.6999998" />
+					<pt x="-12.6999998" y="-12.6999998" />
+				</polyline>
+				<polyline width="2.53999996" closed="true">
+					<pt x="12.6999998" y="12.6999998" />
+					<pt x="12.6999998" y="-12.6999998" />
+					<pt x="-12.6999998" y="-0" />
+					<pt x="12.6999998" y="12.6999998" />
+				</polyline>
+			</generic_shapes>
+			<parameters>
+				<param key="Datasheet" value="~" />
+			</parameters>
+		</component>
+		<component id="D10" type="Device:LED" x="2413" y="508" rotation="90" sourceFolderPath="" styled="true" pinNameOffset="10.1599998" footprint="LED_SMD:LED_0805_2012Metric">
+			<value>RED</value>
+			<designatorAttribute content="D10" x="-16.5100002" y="-20.7000008" rotation="0" visible="true" fontSize="12" />
+			<valueAttribute content="RED" x="-16.5100002" y="30.8600006" rotation="0" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="K" x="-38.0999985" y="-0" length="25.3999996" angle="0" electrical_type="passive">
+					<nameAttribute content="K" x="30.3999996" y="-5" rotation="0" visible="false" fontSize="12.6999998" />
+					<numberAttribute content="1" x="5" y="-15" rotation="0" visible="false" fontSize="12.6999998" />
+				</pin>
+				<pin number="2" name="A" x="38.0999985" y="-0" length="25.3999996" angle="180" electrical_type="passive">
+					<nameAttribute content="A" x="-45.4000015" y="-5" rotation="0" visible="false" fontSize="12.6999998" />
+					<numberAttribute content="2" x="-15" y="-15" rotation="0" visible="false" fontSize="12.6999998" />
+				</pin>
+			</pins>
+			<generic_shapes>
+				<polyline>
+					<pt x="-30.4800014" y="7.62000036" />
+					<pt x="-45.7200012" y="22.8600006" />
+					<pt x="-38.0999985" y="22.8600006" />
+					<pt x="-45.7200012" y="22.8600006" />
+					<pt x="-45.7200012" y="15.2400007" />
+				</polyline>
+				<polyline>
+					<pt x="-17.7800007" y="7.62000036" />
+					<pt x="-33.0200005" y="22.8600006" />
+					<pt x="-25.3999996" y="22.8600006" />
+					<pt x="-33.0200005" y="22.8600006" />
+					<pt x="-33.0200005" y="15.2400007" />
+				</polyline>
+				<polyline>
+					<pt x="-12.6999998" y="-0" />
+					<pt x="12.6999998" y="-0" />
+				</polyline>
+				<polyline width="2.53999996">
+					<pt x="-12.6999998" y="12.6999998" />
+					<pt x="-12.6999998" y="-12.6999998" />
+				</polyline>
+				<polyline width="2.53999996" closed="true">
+					<pt x="12.6999998" y="12.6999998" />
+					<pt x="12.6999998" y="-12.6999998" />
+					<pt x="-12.6999998" y="-0" />
+					<pt x="12.6999998" y="12.6999998" />
+				</polyline>
+			</generic_shapes>
+			<parameters>
+				<param key="Datasheet" value="~" />
+			</parameters>
+		</component>
+		<component id="R3" type="Device:R" x="2540" y="431.799988" rotation="270" sourceFolderPath="" styled="true" pinNameOffset="0" footprint="Resistor_SMD:R_0805_2012Metric">
+			<value>330</value>
+			<designatorAttribute content="R3" x="-18.1599998" y="0" rotation="90" visible="true" fontSize="12" />
+			<valueAttribute content="330" x="18.1599998" y="0" rotation="90" visible="true" fontSize="12" />
+			<pins>
+				<pin number="1" name="" x="0" y="-38.0999985" length="12.6999998" angle="90" electrical_type="passive">
+					<nameAttribute content="" x="-5" y="17.7000008" rotation="0" visible="true" fontSize="12.6999998" />
+					<numberAttribute content="1" x="-15" y="5" rotation="0" visible="false" fontSize="12.6999998" />
+				</pin>
+				<pin number="2" name="" x="0" y="38.0999985" length="12.6999998" angle="270" electrical_type="passive">
+					<nameAttribute content="" x="-5" y="-32.7000008" rotation="0" visible="true" fontSize="12.6999998" />
+					<numberAttribute content="2" x="-15" y="-15" rotation="0" visible="false" fontSize="12.6999998" />
+				</pin>
+			</pins>
+			<generic_shapes>
+				<rect x1="-10.1599998" y1="25.3999996" x2="10.1599998" y2="-25.3999996" width="2.53999996" closed="true" />
+			</generic_shapes>
+			<parameters>
+				<param key="Datasheet" value="~" />
+			</parameters>
+		</component>
+		<component id="#PWR013" type="Power" x="2628.90015" y="482.599976" rotation="0" sourceFolderPath="" footprint="">
+			<value>GND</value>
+			<designatorAttribute content="#PWR013" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<valueAttribute content="" x="0" y="0" rotation="0" visible="false" fontSize="12" />
+			<pins>
+				<pin number="1" name="GND" x="0" y="0" length="0" angle="0" electrical_type="power_in">
+					<nameAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+					<numberAttribute content="" x="0" y="0" rotation="0" visible="true" fontSize="12" />
+				</pin>
+			</pins>
+			<generic_shapes />
+			<parameters />
+		</component>
+		<component id="H1" type="Mechanical:MountingHole" x="279.399994" y="1270" rotation="0" sourceFolderPath="" styled="true" pinNameOffset="10.1599998" footprint="MountingHole:MountingHole_3.2mm_M3">
+			<value>MountingHole</value>
+			<designatorAttribute content="H1" x="0" y="-20.7000008" rotation="0" visible="true" fontSize="12" />
+			<valueAttribute content="MountingHole" x="0" y="20.7000008" rotation="0" visible="true" fontSize="12" />
+			<pins />
+			<generic_shapes>
+				<circle cx="0" cy="-0" r="12.6999998" width="12.6999998" closed="true" />
+			</generic_shapes>
+			<parameters>
+				<param key="Datasheet" value="~" />
+			</parameters>
+		</component>
+		<component id="H2" type="Mechanical:MountingHole" x="381" y="1270" rotation="0" sourceFolderPath="" styled="true" pinNameOffset="10.1599998" footprint="MountingHole:MountingHole_3.2mm_M3">
+			<value>MountingHole</value>
+			<designatorAttribute content="H2" x="0" y="-20.7000008" rotation="0" visible="true" fontSize="12" />
+			<valueAttribute content="MountingHole" x="0" y="20.7000008" rotation="0" visible="true" fontSize="12" />
+			<pins />
+			<generic_shapes>
+				<circle cx="0" cy="-0" r="12.6999998" width="12.6999998" closed="true" />
+			</generic_shapes>
+			<parameters>
+				<param key="Datasheet" value="~" />
+			</parameters>
+		</component>
+		<component id="H3" type="Mechanical:MountingHole" x="482.599976" y="1270" rotation="0" sourceFolderPath="" styled="true" pinNameOffset="10.1599998" footprint="MountingHole:MountingHole_3.2mm_M3">
+			<value>MountingHole</value>
+			<designatorAttribute content="H3" x="0" y="-20.7000008" rotation="0" visible="true" fontSize="12" />
+			<valueAttribute content="MountingHole" x="0" y="20.7000008" rotation="0" visible="true" fontSize="12" />
+			<pins />
+			<generic_shapes>
+				<circle cx="0" cy="-0" r="12.6999998" width="12.6999998" closed="true" />
+			</generic_shapes>
+			<parameters>
+				<param key="Datasheet" value="~" />
+			</parameters>
+		</component>
+		<component id="H4" type="Mechanical:MountingHole" x="584.199951" y="1270" rotation="0" sourceFolderPath="" styled="true" pinNameOffset="10.1599998" footprint="MountingHole:MountingHole_3.2mm_M3">
+			<value>MountingHole</value>
+			<designatorAttribute content="H4" x="0" y="-20.7000008" rotation="0" visible="true" fontSize="12" />
+			<valueAttribute content="MountingHole" x="0" y="20.7000008" rotation="0" visible="true" fontSize="12" />
+			<pins />
+			<generic_shapes>
+				<circle cx="0" cy="-0" r="12.6999998" width="12.6999998" closed="true" />
+			</generic_shapes>
+			<parameters>
+				<param key="Datasheet" value="~" />
+			</parameters>
+		</component>
+	</components>
+	<wires>
+		<wire id="1">
+			<points>
+				<point x="304.799988" y="812.799988" />
+				<point x="406.399994" y="812.799988" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="J1" pin_num="1" />
+				<connection point_index="1" comp_id="#FLG01" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="2">
+			<points>
+				<point x="406.399994" y="812.799988" />
+				<point x="508" y="812.799988" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="#FLG01" pin_num="1" />
+				<connection point_index="1" comp_id="#PWR001" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="3">
+			<points>
+				<point x="508" y="812.799988" />
+				<point x="508" y="825.5" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="#PWR001" pin_num="1" />
+				<connection point_index="1" comp_id="C5" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="4">
+			<points>
+				<point x="304.799988" y="838.200012" />
+				<point x="355.600006" y="838.200012" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="J1" pin_num="2" />
+			</connections>
+		</wire>
+		<wire id="5">
+			<points>
+				<point x="355.600006" y="838.200012" />
+				<point x="355.600006" y="939.799988" />
+			</points>
+			<connections />
+		</wire>
+		<wire id="6">
+			<points>
+				<point x="355.600006" y="939.799988" />
+				<point x="406.399994" y="939.799988" />
+			</points>
+			<connections>
+				<connection point_index="1" comp_id="#FLG02" pin_num="1" off_x="0" off_y="-6.10351562e-05" />
+			</connections>
+		</wire>
+		<wire id="7">
+			<points>
+				<point x="406.399994" y="939.799988" />
+				<point x="508" y="939.799988" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="#FLG02" pin_num="1" off_x="0" off_y="-6.10351562e-05" />
+			</connections>
+		</wire>
+		<wire id="8">
+			<points>
+				<point x="508" y="939.799988" />
+				<point x="508" y="901.700012" />
+			</points>
+			<connections>
+				<connection point_index="1" comp_id="C5" pin_num="2" off_x="0" off_y="6.10351562e-05" />
+			</connections>
+		</wire>
+		<wire id="9">
+			<points>
+				<point x="508" y="939.799988" />
+				<point x="508" y="965.200012" />
+			</points>
+			<connections>
+				<connection point_index="1" comp_id="#PWR002" pin_num="1" off_x="0" off_y="6.10351562e-05" />
+			</connections>
+		</wire>
+		<wire id="10">
+			<points>
+				<point x="762" y="685.799988" />
+				<point x="762" y="711.200012" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="#PWR003" pin_num="1" off_x="0" off_y="-6.10351562e-05" />
+				<connection point_index="1" comp_id="R1" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="11">
+			<points>
+				<point x="762" y="787.400024" />
+				<point x="762" y="838.200012" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="R1" pin_num="2" off_x="0" off_y="6.10351562e-05" />
+				<connection point_index="1" comp_id="R2" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="12">
+			<points>
+				<point x="762" y="838.200012" />
+				<point x="787.400024" y="838.200012" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="R2" pin_num="1" />
+				<connection point_index="1" comp_id="NetLabel_1" pin_num="1" off_x="6.10351562e-05" off_y="0" />
+			</connections>
+		</wire>
+		<wire id="13">
+			<points>
+				<point x="787.400024" y="838.200012" />
+				<point x="889" y="838.200012" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="NetLabel_1" pin_num="1" off_x="6.10351562e-05" off_y="0" />
+				<connection point_index="1" comp_id="U1" pin_num="7" off_x="0" off_y="6.10351562e-05" />
+			</connections>
+		</wire>
+		<wire id="14">
+			<points>
+				<point x="762" y="914.400024" />
+				<point x="762" y="952.5" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="R2" pin_num="2" off_x="0" off_y="6.10351562e-05" />
+				<connection point_index="1" comp_id="C1" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="15">
+			<points>
+				<point x="762" y="914.400024" />
+				<point x="787.400024" y="914.400024" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="R2" pin_num="2" off_x="0" off_y="6.10351562e-05" />
+				<connection point_index="1" comp_id="NetLabel_2" pin_num="1" off_x="6.10351562e-05" off_y="0" />
+			</connections>
+		</wire>
+		<wire id="16">
+			<points>
+				<point x="787.400024" y="914.400024" />
+				<point x="863.599976" y="914.400024" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="NetLabel_2" pin_num="1" off_x="6.10351562e-05" off_y="0" />
+			</connections>
+		</wire>
+		<wire id="17">
+			<points>
+				<point x="863.599976" y="914.400024" />
+				<point x="889" y="914.400024" />
+			</points>
+			<connections>
+				<connection point_index="1" comp_id="U1" pin_num="2" off_x="0" off_y="6.10351562e-05" />
+			</connections>
+		</wire>
+		<wire id="18">
+			<points>
+				<point x="889" y="889" />
+				<point x="863.599976" y="889" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="U1" pin_num="6" />
+			</connections>
+		</wire>
+		<wire id="19">
+			<points>
+				<point x="863.599976" y="889" />
+				<point x="863.599976" y="914.400024" />
+			</points>
+			<connections />
+		</wire>
+		<wire id="20">
+			<points>
+				<point x="762" y="1028.69995" />
+				<point x="762" y="1054.09998" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="C1" pin_num="2" />
+				<connection point_index="1" comp_id="#PWR004" pin_num="1" off_x="0" off_y="-0.000122070312" />
+			</connections>
+		</wire>
+		<wire id="21">
+			<points>
+				<point x="889" y="812.799988" />
+				<point x="838.200012" y="812.799988" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="U1" pin_num="4" />
+			</connections>
+		</wire>
+		<wire id="22">
+			<points>
+				<point x="838.200012" y="812.799988" />
+				<point x="838.200012" y="685.799988" />
+			</points>
+			<connections />
+		</wire>
+		<wire id="23">
+			<points>
+				<point x="838.200012" y="685.799988" />
+				<point x="762" y="685.799988" />
+			</points>
+			<connections>
+				<connection point_index="1" comp_id="#PWR003" pin_num="1" off_x="0" off_y="-6.10351562e-05" />
+			</connections>
+		</wire>
+		<wire id="24">
+			<points>
+				<point x="990.599976" y="965.200012" />
+				<point x="990.599976" y="990.599976" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="U1" pin_num="1" off_x="0" off_y="6.10351562e-05" />
+				<connection point_index="1" comp_id="#PWR005" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="25">
+			<points>
+				<point x="1016" y="762" />
+				<point x="1016" y="711.200012" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="U1" pin_num="8" />
+				<connection point_index="1" comp_id="#PWR006" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="26">
+			<points>
+				<point x="1016" y="711.200012" />
+				<point x="1117.59998" y="711.200012" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="#PWR006" pin_num="1" />
+				<connection point_index="1" comp_id="C3" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="27">
+			<points>
+				<point x="990.599976" y="762" />
+				<point x="990.599976" y="635" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="U1" pin_num="5" />
+			</connections>
+		</wire>
+		<wire id="28">
+			<points>
+				<point x="990.599976" y="635" />
+				<point x="1066.80005" y="635" />
+			</points>
+			<connections>
+				<connection point_index="1" comp_id="NetLabel_3" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="29">
+			<points>
+				<point x="1066.80005" y="635" />
+				<point x="1219.19995" y="635" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="NetLabel_3" pin_num="1" />
+				<connection point_index="1" comp_id="C2" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="30">
+			<points>
+				<point x="1092.19995" y="863.599976" />
+				<point x="1130.30005" y="863.599976" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="U1" pin_num="3" />
+				<connection point_index="1" comp_id="NetLabel_4" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="31">
+			<points>
+				<point x="1130.30005" y="863.599976" />
+				<point x="1270" y="863.599976" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="NetLabel_4" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="32">
+			<points>
+				<point x="1270" y="863.599976" />
+				<point x="1270" y="762" />
+			</points>
+			<connections />
+		</wire>
+		<wire id="33">
+			<points>
+				<point x="1270" y="762" />
+				<point x="1397" y="762" />
+			</points>
+			<connections>
+				<connection point_index="1" comp_id="U2" pin_num="14" />
+			</connections>
+		</wire>
+		<wire id="34">
+			<points>
+				<point x="1397" y="787.400024" />
+				<point x="1346.19995" y="787.400024" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="U2" pin_num="13" />
+			</connections>
+		</wire>
+		<wire id="35">
+			<points>
+				<point x="1346.19995" y="787.400024" />
+				<point x="1346.19995" y="838.200012" />
+			</points>
+			<connections />
+		</wire>
+		<wire id="36">
+			<points>
+				<point x="1346.19995" y="838.200012" />
+				<point x="1346.19995" y="863.599976" />
+			</points>
+			<connections>
+				<connection point_index="1" comp_id="#PWR009" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="37">
+			<points>
+				<point x="1397" y="838.200012" />
+				<point x="1346.19995" y="838.200012" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="U2" pin_num="15" />
+			</connections>
+		</wire>
+		<wire id="38">
+			<points>
+				<point x="1524" y="685.799988" />
+				<point x="1524" y="609.599976" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="U2" pin_num="16" />
+				<connection point_index="1" comp_id="#PWR010" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="39">
+			<points>
+				<point x="1524" y="609.599976" />
+				<point x="1447.80005" y="609.599976" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="#PWR010" pin_num="1" />
+				<connection point_index="1" comp_id="C4" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="40">
+			<points>
+				<point x="1651" y="762" />
+				<point x="1663.69995" y="762" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="U2" pin_num="3" />
+				<connection point_index="1" comp_id="NetLabel_5" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="41">
+			<points>
+				<point x="1663.69995" y="762" />
+				<point x="1727.19995" y="762" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="NetLabel_5" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="42">
+			<points>
+				<point x="1727.19995" y="762" />
+				<point x="1727.19995" y="546.099976" />
+			</points>
+			<connections>
+				<connection point_index="1" comp_id="D1" pin_num="2" />
+			</connections>
+		</wire>
+		<wire id="43">
+			<points>
+				<point x="1727.19995" y="469.899994" />
+				<point x="1727.19995" y="431.799988" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="D1" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="44">
+			<points>
+				<point x="1651" y="787.400024" />
+				<point x="1663.69995" y="787.400024" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="U2" pin_num="2" />
+				<connection point_index="1" comp_id="NetLabel_6" pin_num="1" off_x="0" off_y="6.10351562e-05" />
+			</connections>
+		</wire>
+		<wire id="45">
+			<points>
+				<point x="1663.69995" y="787.400024" />
+				<point x="1803.40002" y="787.400024" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="NetLabel_6" pin_num="1" off_x="0" off_y="6.10351562e-05" />
+			</connections>
+		</wire>
+		<wire id="46">
+			<points>
+				<point x="1803.40002" y="787.400024" />
+				<point x="1803.40002" y="546.099976" />
+			</points>
+			<connections>
+				<connection point_index="1" comp_id="D2" pin_num="2" off_x="-5.33586283e-12" off_y="-0.000122070312" />
+			</connections>
+		</wire>
+		<wire id="47">
+			<points>
+				<point x="1803.40002" y="469.899994" />
+				<point x="1803.40002" y="431.799988" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="D2" pin_num="1" off_x="-5.33586283e-12" off_y="-0.000122070312" />
+			</connections>
+		</wire>
+		<wire id="48">
+			<points>
+				<point x="1651" y="812.799988" />
+				<point x="1663.69995" y="812.799988" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="U2" pin_num="4" />
+				<connection point_index="1" comp_id="NetLabel_7" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="49">
+			<points>
+				<point x="1663.69995" y="812.799988" />
+				<point x="1879.59998" y="812.799988" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="NetLabel_7" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="50">
+			<points>
+				<point x="1879.59998" y="812.799988" />
+				<point x="1879.59998" y="546.099976" />
+			</points>
+			<connections>
+				<connection point_index="1" comp_id="D3" pin_num="2" off_x="5.33586283e-12" off_y="0.000122070312" />
+			</connections>
+		</wire>
+		<wire id="51">
+			<points>
+				<point x="1879.59998" y="469.899994" />
+				<point x="1879.59998" y="431.799988" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="D3" pin_num="1" off_x="5.33586283e-12" off_y="0.000122070312" />
+			</connections>
+		</wire>
+		<wire id="52">
+			<points>
+				<point x="1651" y="838.200012" />
+				<point x="1663.69995" y="838.200012" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="U2" pin_num="7" />
+				<connection point_index="1" comp_id="NetLabel_8" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="53">
+			<points>
+				<point x="1663.69995" y="838.200012" />
+				<point x="1955.80005" y="838.200012" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="NetLabel_8" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="54">
+			<points>
+				<point x="1955.80005" y="838.200012" />
+				<point x="1955.80005" y="546.099976" />
+			</points>
+			<connections>
+				<connection point_index="1" comp_id="D4" pin_num="2" />
+			</connections>
+		</wire>
+		<wire id="55">
+			<points>
+				<point x="1955.80005" y="469.899994" />
+				<point x="1955.80005" y="431.799988" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="D4" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="56">
+			<points>
+				<point x="1651" y="863.599976" />
+				<point x="1663.69995" y="863.599976" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="U2" pin_num="10" />
+				<connection point_index="1" comp_id="NetLabel_9" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="57">
+			<points>
+				<point x="1663.69995" y="863.599976" />
+				<point x="2032" y="863.599976" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="NetLabel_9" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="58">
+			<points>
+				<point x="2032" y="863.599976" />
+				<point x="2032" y="546.099976" />
+			</points>
+			<connections>
+				<connection point_index="1" comp_id="D5" pin_num="2" />
+			</connections>
+		</wire>
+		<wire id="59">
+			<points>
+				<point x="2032" y="469.899994" />
+				<point x="2032" y="431.799988" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="D5" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="60">
+			<points>
+				<point x="1651" y="889" />
+				<point x="1663.69995" y="889" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="U2" pin_num="1" />
+				<connection point_index="1" comp_id="NetLabel_10" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="61">
+			<points>
+				<point x="1663.69995" y="889" />
+				<point x="2108.19995" y="889" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="NetLabel_10" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="62">
+			<points>
+				<point x="2108.19995" y="889" />
+				<point x="2108.19995" y="546.099976" />
+			</points>
+			<connections>
+				<connection point_index="1" comp_id="D6" pin_num="2" off_x="1.06717257e-11" off_y="0.000244140625" />
+			</connections>
+		</wire>
+		<wire id="63">
+			<points>
+				<point x="2108.19995" y="469.899994" />
+				<point x="2108.19995" y="431.799988" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="D6" pin_num="1" off_x="1.06717257e-11" off_y="0.000244140625" />
+			</connections>
+		</wire>
+		<wire id="64">
+			<points>
+				<point x="1651" y="914.400024" />
+				<point x="1663.69995" y="914.400024" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="U2" pin_num="5" />
+				<connection point_index="1" comp_id="NetLabel_11" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="65">
+			<points>
+				<point x="1663.69995" y="914.400024" />
+				<point x="2184.3999" y="914.400024" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="NetLabel_11" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="66">
+			<points>
+				<point x="2184.3999" y="914.400024" />
+				<point x="2184.3999" y="546.099976" />
+			</points>
+			<connections>
+				<connection point_index="1" comp_id="D7" pin_num="2" />
+			</connections>
+		</wire>
+		<wire id="67">
+			<points>
+				<point x="2184.3999" y="469.899994" />
+				<point x="2184.3999" y="431.799988" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="D7" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="68">
+			<points>
+				<point x="1651" y="939.799988" />
+				<point x="1663.69995" y="939.799988" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="U2" pin_num="6" />
+				<connection point_index="1" comp_id="NetLabel_12" pin_num="1" off_x="0" off_y="-6.10351562e-05" />
+			</connections>
+		</wire>
+		<wire id="69">
+			<points>
+				<point x="1663.69995" y="939.799988" />
+				<point x="2260.6001" y="939.799988" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="NetLabel_12" pin_num="1" off_x="0" off_y="-6.10351562e-05" />
+			</connections>
+		</wire>
+		<wire id="70">
+			<points>
+				<point x="2260.6001" y="939.799988" />
+				<point x="2260.6001" y="546.099976" />
+			</points>
+			<connections>
+				<connection point_index="1" comp_id="D8" pin_num="2" />
+			</connections>
+		</wire>
+		<wire id="71">
+			<points>
+				<point x="2260.6001" y="469.899994" />
+				<point x="2260.6001" y="431.799988" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="D8" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="72">
+			<points>
+				<point x="1651" y="965.200012" />
+				<point x="1663.69995" y="965.200012" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="U2" pin_num="9" />
+				<connection point_index="1" comp_id="NetLabel_13" pin_num="1" off_x="0" off_y="6.10351562e-05" />
+			</connections>
+		</wire>
+		<wire id="73">
+			<points>
+				<point x="1663.69995" y="965.200012" />
+				<point x="2336.80005" y="965.200012" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="NetLabel_13" pin_num="1" off_x="0" off_y="6.10351562e-05" />
+			</connections>
+		</wire>
+		<wire id="74">
+			<points>
+				<point x="2336.80005" y="965.200012" />
+				<point x="2336.80005" y="546.099976" />
+			</points>
+			<connections>
+				<connection point_index="1" comp_id="D9" pin_num="2" off_x="-1.06717257e-11" off_y="-0.000244140625" />
+			</connections>
+		</wire>
+		<wire id="75">
+			<points>
+				<point x="2336.80005" y="469.899994" />
+				<point x="2336.80005" y="431.799988" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="D9" pin_num="1" off_x="-1.06717257e-11" off_y="-0.000244140625" />
+			</connections>
+		</wire>
+		<wire id="76">
+			<points>
+				<point x="1651" y="990.599976" />
+				<point x="1663.69995" y="990.599976" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="U2" pin_num="11" />
+				<connection point_index="1" comp_id="NetLabel_14" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="77">
+			<points>
+				<point x="1663.69995" y="990.599976" />
+				<point x="2413" y="990.599976" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="NetLabel_14" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="78">
+			<points>
+				<point x="2413" y="990.599976" />
+				<point x="2413" y="546.099976" />
+			</points>
+			<connections>
+				<connection point_index="1" comp_id="D10" pin_num="2" />
+			</connections>
+		</wire>
+		<wire id="79">
+			<points>
+				<point x="2413" y="469.899994" />
+				<point x="2413" y="431.799988" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="D10" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="80">
+			<points>
+				<point x="1727.19995" y="431.799988" />
+				<point x="1803.40002" y="431.799988" />
+			</points>
+			<connections />
+		</wire>
+		<wire id="81">
+			<points>
+				<point x="1803.40002" y="431.799988" />
+				<point x="1879.59998" y="431.799988" />
+			</points>
+			<connections />
+		</wire>
+		<wire id="82">
+			<points>
+				<point x="1879.59998" y="431.799988" />
+				<point x="1955.80005" y="431.799988" />
+			</points>
+			<connections />
+		</wire>
+		<wire id="83">
+			<points>
+				<point x="1955.80005" y="431.799988" />
+				<point x="2032" y="431.799988" />
+			</points>
+			<connections />
+		</wire>
+		<wire id="84">
+			<points>
+				<point x="2032" y="431.799988" />
+				<point x="2108.19995" y="431.799988" />
+			</points>
+			<connections />
+		</wire>
+		<wire id="85">
+			<points>
+				<point x="2108.19995" y="431.799988" />
+				<point x="2184.3999" y="431.799988" />
+			</points>
+			<connections />
+		</wire>
+		<wire id="86">
+			<points>
+				<point x="2184.3999" y="431.799988" />
+				<point x="2260.6001" y="431.799988" />
+			</points>
+			<connections />
+		</wire>
+		<wire id="87">
+			<points>
+				<point x="2260.6001" y="431.799988" />
+				<point x="2336.80005" y="431.799988" />
+			</points>
+			<connections />
+		</wire>
+		<wire id="88">
+			<points>
+				<point x="2336.80005" y="431.799988" />
+				<point x="2413" y="431.799988" />
+			</points>
+			<connections />
+		</wire>
+		<wire id="89">
+			<points>
+				<point x="2413" y="431.799988" />
+				<point x="2425.69995" y="431.799988" />
+			</points>
+			<connections>
+				<connection point_index="1" comp_id="NetLabel_15" pin_num="1" off_x="-0.000244140625" off_y="0" />
+			</connections>
+		</wire>
+		<wire id="90">
+			<points>
+				<point x="2425.69995" y="431.799988" />
+				<point x="2501.8999" y="431.799988" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="NetLabel_15" pin_num="1" off_x="-0.000244140625" off_y="0" />
+				<connection point_index="1" comp_id="R3" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="91">
+			<points>
+				<point x="2578.1001" y="431.799988" />
+				<point x="2628.8999" y="431.799988" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="R3" pin_num="2" />
+			</connections>
+		</wire>
+		<wire id="92">
+			<points>
+				<point x="2628.8999" y="431.799988" />
+				<point x="2628.8999" y="482.600006" />
+			</points>
+			<connections>
+				<connection point_index="1" comp_id="#PWR013" pin_num="1" off_x="-0.000244140625" off_y="3.05175781e-05" />
+			</connections>
+		</wire>
+		<wire id="93">
+			<points>
+				<point x="1117.59998" y="787.399963" />
+				<point x="1117.59998" y="787.399963" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="C3" pin_num="2" />
+				<connection point_index="1" comp_id="#PWR007" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="94">
+			<points>
+				<point x="1219.19995" y="711.199951" />
+				<point x="1219.19995" y="711.199951" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="C2" pin_num="2" />
+				<connection point_index="1" comp_id="#PWR008" pin_num="1" off_x="0" off_y="-6.10351562e-05" />
+			</connections>
+		</wire>
+		<wire id="95">
+			<points>
+				<point x="1524" y="1117.59998" />
+				<point x="1524" y="1117.59998" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="U2" pin_num="8" />
+				<connection point_index="1" comp_id="#PWR012" pin_num="1" />
+			</connections>
+		</wire>
+		<wire id="96">
+			<points>
+				<point x="1447.80005" y="685.799927" />
+				<point x="1447.80005" y="685.799927" />
+			</points>
+			<connections>
+				<connection point_index="0" comp_id="C4" pin_num="2" />
+				<connection point_index="1" comp_id="#PWR011" pin_num="1" off_x="0" off_y="-0.000122070312" />
+			</connections>
+		</wire>
+	</wires>
+	<graphics>
+		<images />
+		<lines />
+		<rects />
+		<circles />
+		<texts />
+		<arcs />
+		<polygons />
+		<junctions>
+			<junction id="1" x="406.399994" y="812.799988" />
+			<junction id="2" x="406.399994" y="939.800049" />
+			<junction id="3" x="508" y="812.799988" />
+			<junction id="4" x="508" y="939.800049" />
+			<junction id="5" x="762" y="685.800049" />
+			<junction id="6" x="762" y="838.200012" />
+			<junction id="7" x="762" y="914.400024" />
+			<junction id="8" x="863.599976" y="914.400024" />
+			<junction id="9" x="1016" y="711.200012" />
+			<junction id="10" x="1346.19995" y="838.200012" />
+			<junction id="11" x="1524" y="609.599976" />
+			<junction id="12" x="1803.3999" y="431.799988" />
+			<junction id="13" x="1879.6001" y="431.799988" />
+			<junction id="14" x="1955.80005" y="431.799988" />
+			<junction id="15" x="2032" y="431.799988" />
+			<junction id="16" x="2108.2002" y="431.799988" />
+			<junction id="17" x="2184.3999" y="431.799988" />
+			<junction id="18" x="2260.6001" y="431.799988" />
+			<junction id="19" x="2336.7998" y="431.799988" />
+			<junction id="20" x="2413" y="431.799988" />
+		</junctions>
+		<harnesses />
+	</graphics>
+</schematic>
