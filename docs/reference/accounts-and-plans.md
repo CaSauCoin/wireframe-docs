@@ -27,7 +27,7 @@ Each plan allows a number of computers signed in at the same time:
 |---|---|
 | **Free** | 1 |
 | **Pro** | 3 |
-| **Plus** | 5 |
+| **Max** | 5 |
 | **Enterprise** | 10 |
 
 To use another one, sign one out — from that computer, or from **Manage account, plan & devices** on the website, which lists every device with its last use.
@@ -35,7 +35,7 @@ To use another one, sign one out — from that computer, or from **Manage accoun
 ## Plans
 
 - **Free** starts the first time you sign in **from the desktop app**: every design tool, with no time limit. It has no AI Copilot, with or without your own model key.
-- **Plus** and **Pro** add the AI Copilot — on a monthly WireFrame credit or on your own key (see [Models, Credit and Your Data](../ai/models-and-credits.md)) — and more devices; **Enterprise** is by agreement.
+- **Max** and **Pro** add the AI Copilot — on a monthly WireFrame credit or on your own key (see [Models, Credit and Your Data](../ai/models-and-credits.md)) — and more devices; **Enterprise** is by agreement.
 - There is no trial.
 
 Prices and amounts are on the [pricing page](https://wireframe.com.vn/pricing). A plan's end date is counted on WireFrame's clock, not your computer's.

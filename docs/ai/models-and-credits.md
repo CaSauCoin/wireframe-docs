@@ -39,7 +39,7 @@ On WireFrame credit the pickers offer the models the credit funds; a model that 
 | Plan | AI Copilot |
 |---|---|
 | **Free** | Every design tool, with no time limit — no AI Copilot, with or without your own key |
-| **Plus**, **Pro** | The AI Copilot on a monthly WireFrame credit — or on your own key — and more devices |
+| **Max**, **Pro** | The AI Copilot on a monthly WireFrame credit — or on your own key — and more devices |
 | **Enterprise** | By agreement |
 
 Current prices, credit amounts and device counts are on the [pricing page](https://wireframe.com.vn/pricing). There is no trial: the AI Copilot comes with a paid plan. The design tools — schematic, PCB, 3D, checks, simulation and fabrication export — never depend on the AI or on a paid plan.
@@ -59,7 +59,7 @@ Current prices, credit amounts and device counts are on the [pricing page](https
 
 | You see | What to do |
 |---|---|
-| *Your plan has no AI credit* | Choose OpenRouter, DeepSeek or Google AI and paste your own key — or upgrade to Plus or Pro |
+| *Your plan has no AI credit* | Choose OpenRouter, DeepSeek or Google AI and paste your own key — or upgrade to Max or Pro |
 | *Choose who pays above; until you do, AI requests stop on this computer* | An old configuration points at an endpoint the service does not forward to. Pick a choice in **Pay with** |
 | *… rejected this key* | The key is wrong, revoked or out of balance at the provider. Make a new one there |
 | A model returns empty answers | Pick another model in **Models**; on credit, use one the picker marks as funded |
