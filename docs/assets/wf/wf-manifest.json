@@ -3979,15 +3979,15 @@
       "file": "docs/assets/wf/docs/tutorial/index/fix-one-erc-issue.mp4",
       "page": "docs/tutorial/index.md",
       "slot": "fix-one-erc-issue",
-      "slot_sha256": "738142e9ab3bb2b9d50c23b300d3ff876162d47f148028a7ea86de3a4c77c04a",
-      "caption": "ERC lists the broken clock wire: U2 pin 14 (CLK) is not connected. The row shows the pin; W draws the missing wire.",
+      "slot_sha256": "3e29c97ad8d0443ff556065455b229380b849580ba4d4bf97404ca420c161982",
+      "caption": "ERC lists the broken clock wire: U2 pin 14 (CLK) is not connected. The row shows the pin, W draws the missing wire, and Run ERC comes back clean.",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-11-02T05:29:21+00:00",
-      "run": "doc_builder/runs/20261102-122811-docs/20261102-122849-fix-one-erc-issue",
+      "captured_at": "2026-11-02T06:43:09+00:00",
+      "run": "doc_builder/runs/20261102-134233-docs/20261102-134233-fix-one-erc-issue",
       "app": {
         "binary": "cmake-build-debug/src/wireframe",
-        "sha256": "56507c92f4d99ae7c7b25d0f7349de7e2abd5759f18a9aded561f3ba5d817cc5",
+        "sha256": "52073289ecaf2be9ce974de0e00de1a96e849991c8fc4e03189ccb0385b1d4d0",
         "version": "1.5.47",
         "git": {
           "commit": "f0118f9a0658e78eab102cb5a9b1e9077a13c86b",
@@ -3997,12 +3997,12 @@
         "platform": "Linux 6.8.0-138-generic x86_64",
         "source": "app"
       },
-      "app_report": "recording /home/casaucoin/Documents/Wireframe_EDA/wireframe/doc_builder/runs/20261102-122811-docs/20261102-122849-fix-one-erc-issue/out/videos/fix-one-erc-issue.mp4",
+      "app_report": "recording /home/casaucoin/Documents/Wireframe_EDA/wireframe/doc_builder/runs/20261102-134233-docs/20261102-134233-fix-one-erc-issue/out/videos/fix-one-erc-issue.mp4",
       "state": {
         "active_document": "led_chaser.schxml",
         "active_type": "schematic",
         "documents": 1,
-        "frame": 1363,
+        "frame": 1344,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -4011,12 +4011,12 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "2f8f6b5e00634a4818ec727c64422a09375a7d3ac01908cb7c021a58c93af25c",
-      "bytes": 803121,
+      "sha256": "3427ebcdfd448bc1b878d9d9d45ccafba80d2e328d766b99d3972edd36d2c05a",
+      "bytes": 936274,
       "width": 1598,
       "height": 898,
       "codec": "h264",
-      "duration": 24.5
+      "duration": 28.367
     },
     "docs/tutorial/index.md#pcb-after-schematic-update": {
       "kind": "shot",

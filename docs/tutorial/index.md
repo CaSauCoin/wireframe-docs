@@ -216,12 +216,12 @@ Run the check again after each fix. A drawing that *looks* connected is not enou
     1. **Prepare:** In `samples/led-chaser/1-schematic`, delete the wire that joins the `CLK` net to U2 pin 14, so ERC has one real problem to show. Turn **Snap to grid** off first (**Preferences → Grid & Snap**): the sample comes from KiCad, whose pins sit on a 1.27 mm grid that the default snap step misses.
     2. **Opening shot (2 s):** Open the ERC window with the error rows readable, and move it down so the gap on the sheet stays in view.
     3. **Action shot (6–8 s):** Select the U2 pin 14 row so the sheet shows the pin, then draw the missing wire with ++w++ from the pin to the loose wire end, double-clicking on it to finish.
-    4. **Result shot (2–3 s):** Hold on the corrected connection.
+    4. **Result shot (2–3 s):** Select **Run ERC** and hold on the clean result: **ERC clean: nothing to report on any sheet.**
     5. **Deliver:** Export a short 1080p MP4 with the error text readable before the correction.
 
 <!-- wf:video id=fix-one-erc-issue
-caption: 'ERC lists the broken clock wire: U2 pin 14 (CLK) is not connected. The row shows the pin; W
-  draws the missing wire.'
+caption: 'ERC lists the broken clock wire: U2 pin 14 (CLK) is not connected. The row shows the pin, W
+  draws the missing wire, and Run ERC comes back clean.'
 project: samples/led-chaser/1-schematic/led_chaser.prjxml
 setup:
 - open_project
@@ -289,15 +289,18 @@ steps:
 - wait: 0.5
 - keys:
   - Escape
+- wait: 1
+- click: //Electrical Rules Check (ERC)/{fa:play} Run ERC
+- wait: 0.5
 - action:
     action: mouse_move_to
     x: 1000
     y: 12
-- wait: 2
-brief_sha256: ed36c0ef94dc2c6e
+- wait: 2.5
+brief_sha256: 52723884434238f7
 -->
-<!-- wf:out id=fix-one-erc-issue sha=2f8f6b5e0063 -->
-<video controls muted playsinline preload="metadata" src="../assets/wf/docs/tutorial/index/fix-one-erc-issue.mp4" title="ERC lists the broken clock wire: U2 pin 14 (CLK) is not connected. The row shows the pin; W draws the missing wire."></video>
+<!-- wf:out id=fix-one-erc-issue sha=3427ebcdfd44 -->
+<video controls muted playsinline preload="metadata" src="../assets/wf/docs/tutorial/index/fix-one-erc-issue.mp4" title="ERC lists the broken clock wire: U2 pin 14 (CLK) is not connected. The row shows the pin, W draws the missing wire, and Run ERC comes back clean."></video>
 <!-- /wf:out -->
 
 ## 3. Bring the parts onto the board
