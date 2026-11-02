@@ -28,6 +28,8 @@ Which part a block is built around is decided by weight: its connections, or the
 
 Critical findings and unconfirmed parts are yours to accept, not the Copilot's. The Penalty card in **BOM Review** shows a verdict — **READY TO PLACE**, **PLACE WITH ISSUES**, **PARTLY PLACEABLE** or **BLOCKED** — with what waits and why.
 
+![The review of an NE555 blinker: the BOM cards with their verdicts on the left, the NE555's symbol and land in the middle, and on the right the Penalty card — PLACE WITH ISSUES, three of three blocks can be drawn, Place with issues (9) and Explain in chat](../assets/app/ai/penalty-card-in-the-review.webp)
+
 1. Read the card, or say `/place` in the chat for the full account.
 2. Press **Place with issues (N)**, or say `/place now`. This records your decision for exactly the parts it lists.
 3. Build the sheets as usual. Held blocks stay queued for **Update Schematic**.

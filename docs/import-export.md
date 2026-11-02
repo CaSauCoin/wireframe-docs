@@ -23,6 +23,8 @@ Sheets (hierarchical and flat), the board, the project's own libraries and 3D mo
 
 On the KiCad demo projects WireFrame was measured against, the imported connectivity is identical to `kicad-cli`'s own netlist — 15 of 15 projects. See [Projects & Files](projects.md#import-a-kicad-project) for the step-by-step.
 
+![A KiCad project imported into WireFrame: its sheets in the project tree and the board open on the canvas](assets/app/import/kicad-imported.webp)
+
 ### Altium Designer projects
 
 Schematics (parts, wires, net labels, ports, power ports, sheet symbols), and the board: the layer stack, components with their pads, vias, tracks, arcs, polygons and their poured copper, keep-outs and cut-outs, teardrops, plane split lines (as pour keep-outs), rules and embedded STEP models.
