@@ -63,6 +63,7 @@ home:
     - {title: Lay out one channel and repeat it, page: schematic/design-blocks.md#repeat-a-channels-layout}
     - {title: See what an edit broke, page: live-checks.md}
     - {title: Connect a HAT to a Raspberry Pi, page: advanced/multi-board.md}
+    - {title: Drive WireFrame from Claude or Codex, page: ai/mcp-connect.md}
 
 sections:
   - key: start
@@ -148,6 +149,8 @@ sections:
       - ai/datasheets-and-memory.md
       - ai/auto-placer-router.md
       - {page: ai-copilot.md, title: Review & simulation guide}
+      - {page: ai/mcp.md, title: "Your own agent (MCP)", status: next}
+      - {page: ai/mcp-connect.md, title: "Connect Claude, Codex, Cursor", status: next}
 
   - key: libraries
     title: Libraries
