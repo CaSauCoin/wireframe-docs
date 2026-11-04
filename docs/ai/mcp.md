@@ -33,6 +33,8 @@ Most work mixes the two: let WireFrame's agent lay the board out, then have your
 
 ## Nothing changes until it is applied
 
+Nothing at all happens until you **allow** the agent: the first time it calls a tool, WireFrame's AI panel asks, and every call waits for your **Allow** — see [Allow it in WireFrame](mcp-connect.md#allow-it-in-wireframe).
+
 Every tool that would move a part, lay copper or rewrite a rule works on a **copy** first and reports what it would do: `propose_layout`, `evaluate_layouts`, `preview_patch`, `power_preview_fix`. The change reaches the board only through a step that applies it — `apply_layout`, `apply_placement` — and each of those is one undoable step in the app's history, recorded against the client that made it.
 
 Some changes wait for **you**. A high-speed patch or a power fix is proposed by the agent and applied only once you approve it in WireFrame's own window: `apply_approved_patch` and `power_apply_approved_fix` apply what a person approved, and nothing else. The same goes for the number of copper layers and for splitting a product into several boards — the agent records your answer; it does not choose for you.
@@ -52,7 +54,7 @@ What your agent sees when it connects:
 | `is_busy` | Whether WireFrame's agent is still working |
 | `stop` | Cancel what the agent is doing |
 | `confirm_all` | Accept every change the agent is offering on a card |
-| `attach` | Put a datasheet PDF, a pinout image or a reference project in front of the agent |
+| `attach` | Put a datasheet PDF, a pinout image or a reference file in front of the agent — files one by one, not folders, and nothing hidden (no file under a folder whose name starts with a dot) |
 | `new_session` | Start a fresh conversation, keeping the planned BOM |
 | `build_blocks` | Group the planned design into blocks and build the sheets from them |
 | `update_schematic` | Draw the planned design onto the sheets, or update them after a revision |

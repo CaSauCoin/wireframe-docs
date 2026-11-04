@@ -114,11 +114,15 @@ WireFrame's bridge is an ordinary **stdio** MCP server. Give your client:
 - **arguments:** none
 - **environment:** none — no API key, no token
 
-It speaks MCP protocol version `2025-06-18`.
+It speaks MCP protocol versions `2025-06-18`, `2025-03-26` and `2024-11-05`, answering in the one your client asks for.
+
+## Allow it in WireFrame
+
+The first time your agent calls a tool, WireFrame's **AI panel** shows a card: *"claude-ai wants to work on this design over MCP"*, with **Allow** and **Decline**. Nothing runs until you press **Allow** — your agent is told it is waiting, and those calls are not counted. The permission lasts until the agent disconnects; the next connection asks again. Once allowed, one line in the panel says who is connected, with **Revoke** to take it back.
 
 ## Check that it works
 
-Ask your agent: *"Is WireFrame busy?"* It calls `is_busy` and answers that the agent is idle — WireFrame is connected. Then ask what it can do on the open board: it reads the tool list from `wireframe://tools`, which costs no calls.
+Press **Allow** in WireFrame, then ask your agent: *"Is WireFrame busy?"* It calls `is_busy` and answers that the agent is idle — WireFrame is connected. Then ask what it can do on the open board: it reads the tool list from `wireframe://tools`, which costs no calls.
 
 ## When it does not connect
 
@@ -127,8 +131,11 @@ The agent reports WireFrame's own words. Here is what each one means:
 | The agent says | Why | What to do |
 |---|---|---|
 | "WireFrame is not running, or has no project open…" | The bridge started, but no WireFrame was listening. | Start WireFrame, open the project, then reconnect — in Claude Desktop, restart it; in Claude Code, `/mcp`. |
+| "WireFrame is waiting for the person to allow this client…" | Nobody has pressed **Allow** yet. | Open WireFrame's AI panel and press **Allow** on the card. |
+| "The person declined this client in WireFrame…" | **Decline** or **Revoke** was pressed. | Press **Allow** on the line in the AI panel, or reconnect. |
 | "another MCP client is already connected to this WireFrame" | One client at a time. | Close the other agent, or disconnect WireFrame there. |
 | "No PCB is open." | The board tools work on the tab in front. | Click the board's tab in WireFrame. |
+| "… is not one of the design tools this project offers" | `call_tool` reaches only the tools listed in `wireframe://tools` for the open project. | Read the list and pick a tool from it. |
 | "MCP is not included in this plan. Pro and Max include it." | The account is on Free. | See the [plans](https://wireframe.com.vn/pricing#mcp). |
 | "This account's MCP allowance is spent…" | Pro's 500 calls this month are used. | Wait for the monthly reset, or add an MCP pack. |
 | "This build of WireFrame is older than the release MCP ships in…" | WireFrame is older than 2.0.1. | Update WireFrame. |
