@@ -33,6 +33,8 @@ Most work mixes the two: let WireFrame's agent lay the board out, then have your
 
 ## Nothing changes until it is applied
 
+A design tool opens what it reads: if no sheet or no board of the project is open, `call_tool` opens them before it runs. While the agent is working on a turn, a new `chat`, a slash command or any tool that changes the design is refused — not counted — until the turn ends; tools that only read still answer. A long turn sends progress to clients that ask for it.
+
 Nothing at all happens until you **allow** the agent: the first time it calls a tool, WireFrame's AI panel asks, and every call waits for your **Allow** — see [Allow it in WireFrame](mcp-connect.md#allow-it-in-wireframe).
 
 Every tool that would move a part, lay copper or rewrite a rule works on a **copy** first and reports what it would do: `propose_layout`, `evaluate_layouts`, `preview_patch`, `power_preview_fix`. The change reaches the board only through a step that applies it — `apply_layout`, `apply_placement` — and each of those is one undoable step in the app's history, recorded against the client that made it.

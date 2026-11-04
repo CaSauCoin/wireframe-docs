@@ -134,7 +134,8 @@ The agent reports WireFrame's own words. Here is what each one means:
 | "WireFrame is waiting for the person to allow this client…" | Nobody has pressed **Allow** yet. | Open WireFrame's AI panel and press **Allow** on the card. |
 | "The person declined this client in WireFrame…" | **Decline** or **Revoke** was pressed. | Press **Allow** on the line in the AI panel, or reconnect. |
 | "another MCP client is already connected to this WireFrame" | One client at a time. | Close the other agent, or disconnect WireFrame there. |
-| "No PCB is open." | The board tools work on the tab in front. | Click the board's tab in WireFrame. |
+| "No PCB is open." | The project has no board yet, or it could not be opened. | Run `update_pcb` first, or open the board in WireFrame. |
+| "The agent is still working on the last request…" | A turn is running; a second one, or a change, would land in the middle of it. Not counted. | Poll `is_busy`, then `read_transcript`; or call `stop`. |
 | "… is not one of the design tools this project offers" | `call_tool` reaches only the tools listed in `wireframe://tools` for the open project. | Read the list and pick a tool from it. |
 | "MCP is not included in this plan. Pro and Max include it." | The account is on Free. | See the [plans](https://wireframe.com.vn/pricing#mcp). |
 | "This account's MCP allowance is spent…" | Pro's 500 calls this month are used. | Wait for the monthly reset, or add an MCP pack. |
