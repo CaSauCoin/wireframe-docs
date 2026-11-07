@@ -110,7 +110,7 @@ Measured in early October on 20 designs driven end to end through the real Copil
 
 ### Account and plans
 
-- **No trial.** A new account is Free — every design tool, with no time limit; the AI Copilot comes with Pro or Max. See [Account, Plans and Devices](reference/accounts-and-plans.md#plans).
+- **No trial.** A new account is Free — schematic, PCB layout, 3D, SPICE and fabrication output, with no time limit; the AI Copilot, MCP, the High-Speed Workbench and the Power Analyzer come with Pro or Max. See [Account, Plans and Devices](reference/accounts-and-plans.md#plans).
 - A feature your plan does not include is not shown at all, rather than shown locked.
 - **Account & usage**, in the account menu: your plan, AI credits, the last 30 days and your devices in one window.
 - The account menu shows who is signed in and the plan, with **Account & usage**, **Plans & billing**, **Check for updates** and **Sign out of this device**.
