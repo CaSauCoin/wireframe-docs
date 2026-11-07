@@ -38,7 +38,7 @@ On WireFrame credit the pickers offer the models the credit funds; a model that 
 
 | Plan | AI Copilot |
 |---|---|
-| **Free** | Every design tool, with no time limit — no AI Copilot, with or without your own key |
+| **Free** | Schematic, PCB layout, 3D, SPICE and fabrication output, with no time limit — no AI Copilot (with or without your own key), no MCP, no High-Speed Workbench or Power Analyzer |
 | **Max**, **Pro** | The AI Copilot on a monthly WireFrame credit — or on your own key — and more devices |
 | **Enterprise** | By agreement |
 

@@ -174,5 +174,7 @@ brief_sha256: cf3dd64d95d11c33
 - [AI Design Agent](design-agent.md)
 - [Fix or Create a Component](component-generator.md)
 - [Placement and Routing Assistant](auto-placer-router.md)
+- [How the agent understands a project](how-the-agent-works.md)
+- [What waits for your approval](approvals.md)
 - [Review and Simulation Guide](../ai-copilot.md)
 - [AI-Assisted Design Tutorial](../tutorial/ai-design.md)

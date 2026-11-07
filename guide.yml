@@ -149,8 +149,17 @@ sections:
       - ai/datasheets-and-memory.md
       - ai/auto-placer-router.md
       - {page: ai-copilot.md, title: Review & simulation guide}
+
+  - key: agents
+    title: Agents & MCP
+    icon: ai
+    description: Drive WireFrame from Claude, Codex, Cursor or another MCP client — the tools it gets, how the agent reads a project, and what waits for your approval.
+    pages:
       - {page: ai/mcp.md, title: "Your own agent (MCP)", status: next}
       - {page: ai/mcp-connect.md, title: "Connect Claude, Codex, Cursor", status: next}
+      - {page: ai/mcp-tools.md, title: MCP tool reference, status: next}
+      - {page: ai/how-the-agent-works.md, title: How the agent works, status: next}
+      - {page: ai/approvals.md, title: What waits for your approval, status: next}
 
   - key: libraries
     title: Libraries

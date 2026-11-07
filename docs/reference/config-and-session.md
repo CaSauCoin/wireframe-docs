@@ -79,7 +79,7 @@ Renaming is preferable to immediate deletion because the previous settings remai
 
 !!! note "Image capture brief"
     1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
-    2. **Build the frame:** Capture the complete Preferences window in v1.5.47 with the category list visible. Use a test account, hide all credentials, and show no local user path.
+    2. **Build the frame:** Capture the complete Preferences window in 2.0.1 with the category list visible. Use a test account, hide all credentials, and show no local user path.
     3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.

@@ -6,7 +6,7 @@ This tutorial uses AI Copilot to prepare a small NE555 LED blinker, review its p
 
 !!! note "Image capture brief"
     1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
-    2. **Build the frame:** Capture the final schematic, routed PCB, and AI Copilot panel in one v1.5.47 workspace. Use a sample project and ensure no API key or private path is visible.
+    2. **Build the frame:** Capture the final schematic, routed PCB, and AI Copilot panel in one 2.0.1 workspace. Use a sample project and ensure no API key or private path is visible.
     3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.

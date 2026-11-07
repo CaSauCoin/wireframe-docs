@@ -12,7 +12,7 @@ Complete these fields before PDF release so every exported sheet can be identifi
 
 !!! note "Image capture brief"
     1. **Prepare:** Compare the existing asset with the current release UI and list every changed label or control before recapturing.
-    2. **Build the frame:** Capture the v1.5.47 Properties panel beside the title block it controls. Replace older media if fields, order, or styling have changed.
+    2. **Build the frame:** Capture the 2.0.1 Properties panel beside the title block it controls. Replace older media if fields, order, or styling have changed.
     3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
