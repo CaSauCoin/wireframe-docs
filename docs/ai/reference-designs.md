@@ -4,8 +4,17 @@ description: Lift a part's support circuit from a design that was built — a Ki
 
 # Reference Designs
 
-!!! info "In development"
-    `/reference` is new in the development builds after 1.5.47. The public download is still v1.3.8.
+<!-- wf:before-release -->
+
+!!! info "In the next release"
+    `/reference` is new in WireFrame 2.0.1, which is in beta testing. The public download is still v1.3.8.
+
+<!-- wf:after-release -->
+
+!!! info "New in 2.0.1"
+    `/reference` came with WireFrame 2.0.1.
+
+<!-- wf:end-release -->
 
 Most parts on a board have been wired correctly before, by the part's vendor on an evaluation board or by an open-hardware project that was built and tested. `/reference` takes that circuit from the design itself instead of asking a model to recall it.
 
