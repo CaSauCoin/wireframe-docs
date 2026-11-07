@@ -104,8 +104,8 @@ steps:
 - wait: 2
 brief_sha256: 7085671e0ff8e91c
 -->
-<!-- wf:out id=edit-and-align-component-text sha=a59b46582932 -->
-<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/schematic/properties-and-attributes/edit-and-align-component-text.mp4" title="Select R5, change its value from 330 Ω to 470 Ω in Properties, then undo"></video>
+<!-- wf:out id=edit-and-align-component-text sha=56fb45440f2e -->
+<video controls muted playsinline preload="metadata" src="../assets/wf/docs/schematic/properties-and-attributes/edit-and-align-component-text.mp4" title="Select R5, change its value from 330 Ω to 470 Ω in Properties, then undo"></video>
 <!-- /wf:out -->
 
 ## Wire and net properties

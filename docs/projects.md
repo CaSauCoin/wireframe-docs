@@ -43,8 +43,8 @@ steps:
 - wait: 3
 brief_sha256: 9fd78258131dd895
 -->
-<!-- wf:out id=create-a-new-project sha=7df94f3eb478 -->
-<video controls muted playsinline preload="metadata" src="../assets/wf/docs/projects/create-a-new-project.mp4" title="File → New → New Project, pick a folder, name it, Create"></video>
+<!-- wf:out id=create-a-new-project sha=062d2fd0d2ba -->
+<video controls muted playsinline preload="metadata" src="assets/wf/docs/projects/create-a-new-project.mp4" title="File → New → New Project, pick a folder, name it, Create"></video>
 <!-- /wf:out -->
 
 ## Open a project or document
@@ -82,7 +82,7 @@ capture:
   padding: 8
 brief_sha256: 252fa9b96dbcf65e
 -->
-<!-- wf:out id=project-structure-with-multiple-documents sha=fa75e73b67c3 -->
+<!-- wf:out id=project-structure-with-multiple-documents sha=8e27a1bda9da -->
 ![Project Structure of the hexapod robot's main board: the root sheet, eight sub-sheets and one PCB](assets/wf/docs/projects/project-structure-with-multiple-documents.png)
 <!-- /wf:out -->
 
@@ -142,8 +142,8 @@ steps:
 - wait: 3
 brief_sha256: 0a8cff539f0aacf1
 -->
-<!-- wf:out id=update-schematic-to-pcb sha=6e9edff590b3 -->
-<video controls muted playsinline preload="metadata" src="../assets/wf/docs/projects/update-schematic-to-pcb.mp4" title="Tools → Update Schematic to PCB, then the board"></video>
+<!-- wf:out id=update-schematic-to-pcb sha=678567f9d211 -->
+<video controls muted playsinline preload="metadata" src="assets/wf/docs/projects/update-schematic-to-pcb.mp4" title="Tools → Update Schematic to PCB, then the board"></video>
 <!-- /wf:out -->
 
 ## Import a KiCad project
@@ -190,8 +190,8 @@ steps:
 - wait: 2
 brief_sha256: c4580440ada7f097
 -->
-<!-- wf:out id=import-a-kicad-project sha=03898289074e -->
-<video controls muted playsinline preload="metadata" src="../assets/wf/docs/projects/import-a-kicad-project.mp4" title="File → Import → KiCad Project, then the imported project"></video>
+<!-- wf:out id=import-a-kicad-project sha=d25b9eb60751 -->
+<video controls muted playsinline preload="metadata" src="assets/wf/docs/projects/import-a-kicad-project.mp4" title="File → Import → KiCad Project, then the imported project"></video>
 <!-- /wf:out -->
 
 ## Import scope

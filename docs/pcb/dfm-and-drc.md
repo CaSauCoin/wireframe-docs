@@ -234,8 +234,8 @@ steps:
 - wait: 4
 brief_sha256: 0c438ae461c4de56
 -->
-<!-- wf:out id=resolve-and-recheck-a-violation sha=aabd644b729f -->
-<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/pcb/dfm-and-drc/resolve-and-recheck-a-violation.mp4" title="Default clearance set to 7 mil flags 13 places on a board laid out at 5 mil; focus one, set the rule back to the fab value, run the check again"></video>
+<!-- wf:out id=resolve-and-recheck-a-violation sha=cd79962cb21c -->
+<video controls muted playsinline preload="metadata" src="../assets/wf/docs/pcb/dfm-and-drc/resolve-and-recheck-a-violation.mp4" title="Default clearance set to 7 mil flags 13 places on a board laid out at 5 mil; focus one, set the rule back to the fab value, run the check again"></video>
 <!-- /wf:out -->
 
 ---

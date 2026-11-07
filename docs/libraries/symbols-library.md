@@ -118,8 +118,8 @@ steps:
 - wait: 4
 brief_sha256: 6f00fe6429c0a032
 -->
-<!-- wf:out id=assign-and-verify-a-footprint sha=c4f9ec3b55c8 -->
-<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/libraries/symbols-library/assign-and-verify-a-footprint.mp4" title="R1 (10 kΩ) shows its linked R_0805_2012Metric footprint in Properties; Link Footprint &amp; Save to File links the .kicad_mod you pick and saves it with the part"></video>
+<!-- wf:out id=assign-and-verify-a-footprint sha=1b9fd1a50657 -->
+<video controls muted playsinline preload="metadata" src="../assets/wf/docs/libraries/symbols-library/assign-and-verify-a-footprint.mp4" title="R1 (10 kΩ) shows its linked R_0805_2012Metric footprint in Properties; Link Footprint &amp; Save to File links the .kicad_mod you pick and saves it with the part"></video>
 <!-- /wf:out -->
 
 ## Import an Altium symbol library

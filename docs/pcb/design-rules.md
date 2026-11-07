@@ -168,6 +168,7 @@ steps:
   - Tools
   - DFM & DRC Check Panel...
 - wait: 1
+- focus: DFM & DRC Check
 - click: '**/{fa:play} Run DFM Analysis'
 - wait: 1
 - action:
@@ -177,8 +178,8 @@ steps:
 - wait: 3
 brief_sha256: c8d421ddcf7bfd61
 -->
-<!-- wf:out id=assign-and-verify-a-net-class sha=b4a74dcebd9b -->
-<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/pcb/design-rules/assign-and-verify-a-net-class.mp4" title="A Power class at the 1 mm (39.37 mil) the author used for the 12 V input; /12V_fused assigned to it under Every net (13 → 10 tracks off their class size), its track shows Class: Power, and DFM stays clean"></video>
+<!-- wf:out id=assign-and-verify-a-net-class sha=deb40089de80 -->
+<video controls muted playsinline preload="metadata" src="../assets/wf/docs/pcb/design-rules/assign-and-verify-a-net-class.mp4" title="A Power class at the 1 mm (39.37 mil) the author used for the 12 V input; /12V_fused assigned to it under Every net (13 → 10 tracks off their class size), its track shows Class: Power, and DFM stays clean"></video>
 <!-- /wf:out -->
 
 ## Release checklist

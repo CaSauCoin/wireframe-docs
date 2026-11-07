@@ -76,7 +76,7 @@ setup:
     y: 12
 brief_sha256: 780063412c1039f2
 -->
-<!-- wf:out id=ai-ocr-manager-with-a-clean-pin-table sha=7530eaf34d72 -->
+<!-- wf:out id=ai-ocr-manager-with-a-clean-pin-table sha=2ca6cd981f2f -->
 ![AI OCR Manager, opened from the Symbol Library Editor, before any image is added](../assets/wf/docs/libraries/symbol-creator/ai-ocr-manager-with-a-clean-pin-table.png)
 <!-- /wf:out -->
 

@@ -59,7 +59,7 @@ steps:
 - wait: 2
 brief_sha256: 30fae378f417ac88
 -->
-<!-- wf:out id=copy-a-block-into-a-simulation sha=1524371c661f -->
+<!-- wf:out id=copy-a-block-into-a-simulation sha=3904cc1abd38 -->
 <video controls muted playsinline preload="metadata" src="../assets/wf/docs/simulation/index/copy-a-block-into-a-simulation.mp4" title="The NE555 blinker&#x27;s sheet: Simulation → Simulate a Block of This Sheet, then Copy to New Simulation — the block opens as a simulation of its own"></video>
 <!-- /wf:out -->
 

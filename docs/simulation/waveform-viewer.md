@@ -102,7 +102,7 @@ setup:
 - *id001
 brief_sha256: 799df41323b40420
 -->
-<!-- wf:out id=waveform-viewer-with-two-signals sha=b25e3cf9839d -->
+<!-- wf:out id=waveform-viewer-with-two-signals sha=cc312468c857 -->
 ![Signals filtered to tim: timer_out and timing_node of the NE555 blinker plotted together, with their measurements](../assets/wf/docs/simulation/waveform-viewer/waveform-viewer-with-two-signals.png)
 <!-- /wf:out -->
 
@@ -231,8 +231,8 @@ steps:
 - wait: 3
 brief_sha256: a5b6b9b9dce5e1d2
 -->
-<!-- wf:out id=measure-a-waveform-with-a-b-cursors sha=e69b9702fd31 -->
-<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/simulation/waveform-viewer/measure-a-waveform-with-a-b-cursors.mp4" title="A/B cursors on two rising edges of timer_out read 1011 ms, 0.99 Hz; Measurements follow the window between them"></video>
+<!-- wf:out id=measure-a-waveform-with-a-b-cursors sha=e1673e20d7d1 -->
+<video controls muted playsinline preload="metadata" src="../assets/wf/docs/simulation/waveform-viewer/measure-a-waveform-with-a-b-cursors.mp4" title="A/B cursors on two rising edges of timer_out read 1011 ms, 0.99 Hz; Measurements follow the window between them"></video>
 <!-- /wf:out -->
 
 ## Interpret common analyses

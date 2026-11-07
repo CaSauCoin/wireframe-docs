@@ -48,7 +48,7 @@ setup:
     y: 12
 brief_sha256: a5f102850adc67cb
 -->
-<!-- wf:out id=pcb-workspace sha=300905941233 -->
+<!-- wf:out id=pcb-workspace sha=a6ebf87f4345 -->
 ![The PCB editor: canvas, vertical toolbar, Layers, Footprints and Board Settings](../assets/wf/docs/pcb/index/pcb-workspace.png)
 <!-- /wf:out -->
 
@@ -161,7 +161,7 @@ steps:
 - wait: 2
 brief_sha256: 101f88647dbaff97
 -->
-<!-- wf:out id=ratsnest-cleared-by-routing sha=87b1ea4c6255 -->
+<!-- wf:out id=ratsnest-cleared-by-routing sha=b127ef6d2bce -->
 <video controls muted playsinline preload="metadata" src="../assets/wf/docs/pcb/index/ratsnest-cleared-by-routing.mp4" title="With the C10–U1 bootstrap track deleted a ratsnest line shows the open connection; Route Trace (X) from C10 to the BST pin of U1 clears it"></video>
 <!-- /wf:out -->
 

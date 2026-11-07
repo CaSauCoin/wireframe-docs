@@ -137,8 +137,8 @@ steps:
 - wait: 3
 brief_sha256: fc44e3f2c570ac8b
 -->
-<!-- wf:out id=first-run-verification sha=4eaaeb99ad18 -->
-<video controls muted playsinline preload="metadata" src="../assets/wf/docs/installation/first-run-verification.mp4" title="Preferences, then a first empty project"></video>
+<!-- wf:out id=first-run-verification sha=874d743611bd -->
+<video controls muted playsinline preload="metadata" src="assets/wf/docs/installation/first-run-verification.mp4" title="Preferences, then a first empty project"></video>
 <!-- /wf:out -->
 
 ## Updates

@@ -58,8 +58,8 @@ steps:
 - wait: 2
 brief_sha256: ae328a0a2c365469
 -->
-<!-- wf:out id=find-and-place-a-symbol sha=d8c2c0cfc642 -->
-<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/schematic/placing-components/find-and-place-a-symbol.mp4" title="Filter the project library for 24LC, drag a third 24LC1025 EEPROM onto the sheet, press Esc — it becomes U5"></video>
+<!-- wf:out id=find-and-place-a-symbol sha=040f099d6acc -->
+<video controls muted playsinline preload="metadata" src="../assets/wf/docs/schematic/placing-components/find-and-place-a-symbol.mp4" title="Filter the project library for 24LC, drag a third 24LC1025 EEPROM onto the sheet, press Esc — it becomes U5"></video>
 <!-- /wf:out -->
 
 On the KLP4e datalogger the **Library** panel lists the symbols that came with the project — the 16 symbols imported from its KiCad project into the project's own library. A placed part takes the next free designator: after U1–U4 the new EEPROM becomes **U5**. Its pins are unconnected until you wire them, and [ERC](erc.md) reports each one.

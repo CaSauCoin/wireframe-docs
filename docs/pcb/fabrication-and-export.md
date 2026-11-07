@@ -154,7 +154,7 @@ capture:
   padding: 6
 brief_sha256: a30ac2b6b395155f
 -->
-<!-- wf:out id=verified-fabrication-package sha=d8c341a06687 -->
+<!-- wf:out id=verified-fabrication-package sha=427e7c60cff4 -->
 ![Fabrication & Assembly Output on the buck converter after Generate & verify package: revision A, and every file read back and checked against the board](../assets/wf/docs/pcb/fabrication-and-export/verified-fabrication-package.png)
 <!-- /wf:out -->
 

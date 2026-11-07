@@ -58,7 +58,7 @@ capture:
   padding: 8
 brief_sha256: aac3d86c82026b85
 -->
-<!-- wf:out id=pcb-layers-panel sha=34902d3f11e0 -->
+<!-- wf:out id=pcb-layers-panel sha=4675d174c8fe -->
 ![PCB Layers panel with F.Cu active](../assets/wf/docs/pcb/layers-and-views/pcb-layers-panel.png)
 <!-- /wf:out -->
 

@@ -19,7 +19,7 @@ The Electrical Rules Check (ERC) scans your schematic for common connectivity an
 
 1. Open any schematic of the project.
 2. Select **Tools → Electrical Rules Check (ERC)**. The **Electrical Rules Check (ERC)** panel opens.
-3. Select **Run Project-Wide ERC Analysis**. Every sheet of the project is checked together, so a net that continues on another sheet through a label is not reported as open.
+3. Select **Run ERC**. Every sheet of the project is checked together, so a net that continues on another sheet through a label is not reported as open.
 4. The panel shows the number of **Errors** and **Warnings** and a table of results.
 
 ### Image — ERC results and highlighted issue
@@ -42,7 +42,8 @@ setup:
   - Tools
   - Electrical Rules Check (ERC)
 - wait: 1
-- click: //Electrical Rules Check (ERC)/{fa:sync} Run Project-Wide ERC Analysis
+- focus: Electrical Rules Check (ERC)
+- click: //Electrical Rules Check (ERC)/{fa:play} Run ERC
 - wait: 1
 - action:
     action: mouse_move_to
@@ -80,7 +81,7 @@ Pins whose type is *no connect* are never reported. Two outputs are reported onl
 
 1. Read the **Affected Pins** of the row — for example `U4:19` is pin 19 of U4.
 2. Find the part on the sheet and correct the connection, value, or designator.
-3. Select **Run Project-Wide ERC Analysis** again.
+3. Select **Run ERC** again.
 
 Repeat **Run → locate → correct → Run** until no error remains. Review warnings individually before PCB conversion.
 
@@ -117,7 +118,7 @@ setup:
     to:
     - 1120
     - 412
-- click: //Electrical Rules Check (ERC)/{fa:sync} Run Project-Wide ERC Analysis
+- click: //Electrical Rules Check (ERC)/{fa:play} Run ERC
 - wait: 1
 - action:
     action: mouse_move_to
@@ -130,7 +131,7 @@ steps:
 - keys:
   - Delete
 - wait: 1
-- click: //Electrical Rules Check (ERC)/{fa:sync} Run Project-Wide ERC Analysis
+- click: //Electrical Rules Check (ERC)/{fa:play} Run ERC
 - action:
     action: mouse_move_to
     x: 1000
@@ -140,7 +141,7 @@ steps:
   - Ctrl
   - Z
 - wait: 1
-- click: //Electrical Rules Check (ERC)/{fa:sync} Run Project-Wide ERC Analysis
+- click: //Electrical Rules Check (ERC)/{fa:play} Run ERC
 - action:
     action: mouse_move_to
     x: 1000
@@ -148,8 +149,8 @@ steps:
 - wait: 3
 brief_sha256: d657ce8f2cad2a1b
 -->
-<!-- wf:out id=fix-and-re-run-erc sha=d63ff38cbf89 -->
-<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/schematic/erc/fix-and-re-run-erc.mp4" title="Remove the SDA label at U2 and ERC goes from 18 to 19 errors; undo, re-run, and it is back to 18"></video>
+<!-- wf:out id=fix-and-re-run-erc sha=80f821c6f5c5 -->
+<video controls muted playsinline preload="metadata" src="../assets/wf/docs/schematic/erc/fix-and-re-run-erc.mp4" title="Remove the SDA label at U2 and ERC goes from 18 to 19 errors; undo, re-run, and it is back to 18"></video>
 <!-- /wf:out -->
 
 In the video, the `SDA` net label next to the U2 EEPROM is deleted on purpose. Its pin is now alone, and the count goes from 18 to 19 errors. ++ctrl+z++ puts the label back, and the next run is back to 18 — the way to confirm that a change fixed what you meant and nothing else.
