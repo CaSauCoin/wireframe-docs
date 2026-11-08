@@ -2891,14 +2891,14 @@
       "caption": "The schematic editor on the KLP4e datalogger: canvas, toolbar, Library and Properties",
       "script": "",
       "planned_by": "",
-      "captured_at": "2026-11-07T16:12:47+00:00",
-      "run": "/tmp/wf-docs/20261107-230355-docs/20261107-231242-schematic-workspace",
+      "captured_at": "2026-11-08T03:10:19+00:00",
+      "run": "/tmp/wf-docs/20261108-101011-docs/20261108-101011-schematic-workspace",
       "app": {
         "binary": "cmake-build-capture/src/WireFrameEDA.app/Contents/MacOS/WireFrameEDA",
-        "sha256": "a3e528007e2330da6fd63bc3759f2a8e742883c363ca9c4d1a0095864cc38f34",
+        "sha256": "147e7d9ed53fa5b45f7835c99018075f468ae2d1789fcb6c24ec98c3aeca4ba6",
         "version": "2.0.1",
         "git": {
-          "commit": "fa64c5889515f31f3bc6f54334827d56154e7d3c",
+          "commit": "cd5514de48a2585da5a7b3dc84555240ebf47794",
           "branch": "capture/2.0.1",
           "dirty": false
         },
@@ -2906,12 +2906,12 @@
         "edition": "capture",
         "source": "app"
       },
-      "app_report": "saved /tmp/wf-docs/20261107-230355-docs/20261107-231242-schematic-workspace/out/shots/schematic-workspace.png (1600x870)",
+      "app_report": "saved /tmp/wf-docs/20261108-101011-docs/20261108-101011-schematic-workspace/out/shots/schematic-workspace.png (1600x870)",
       "state": {
         "active_document": "MCU Datalogger.schxml",
         "active_type": "schematic",
         "documents": 3,
-        "frame": 1452,
+        "frame": 984,
         "panels": [
           "MainDockSpace",
           "Editor",
@@ -2920,8 +2920,8 @@
           "AI Copilot Panel"
         ]
       },
-      "sha256": "840490841eca37efc435be19c5b1b0395e810f7377db2e45d26a2797a08d169a",
-      "bytes": 340035,
+      "sha256": "7c7ef88c15ad417f0ea20dc79b98d9e705d9e1f81db19d4d007667019dae8929",
+      "bytes": 329783,
       "width": 1600,
       "height": 870
     },
