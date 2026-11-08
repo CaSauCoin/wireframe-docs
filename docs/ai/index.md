@@ -4,14 +4,9 @@ AI Copilot helps turn a circuit request into a reviewable design, inspect an exi
 
 ## Configure AI access
 
-Open **Preferences → AI Assistant**, or the **⋮** menu of the AI Copilot panel → **AI settings...**, and answer one question — **who pays for the AI**:
+Nothing to configure. Sign in with a **Pro** or **Max** plan, open **View → AI Copilot Chat** (++ctrl+space++) and start: the AI Copilot runs on **WireFrame AI**, paid from your plan's AI credit, and WireFrame AI picks the model for each task. The top of the panel shows **WireFrame AI** and the credit left; **Preferences → AI Assistant** (or the **⋮** menu of the panel → **AI settings...**) shows the same.
 
-- **WireFrame credit** — your plan's AI credit; nothing else to set up. The card shows the credit left (1 credit = $0.01 of model use).
-- **OpenRouter**, **DeepSeek** or **Google AI** — your own key at that provider, which bills you directly. Paste it, then **Save & test**.
-
-Then choose the **Design model** (plans the BOM and netlist, repairs findings, reviews a board — the one that decides circuits) and the **Fast model** (routing your request, research, board questions). Open **View → AI Copilot Chat** (++ctrl+space++) and start.
-
-Everything about the choices, the plans and what is sent where is on [Models, Credit and Your Data](models-and-credits.md).
+The credit, the plans and what is sent where are on [AI Credit and Your Data](models-and-credits.md).
 
 ## Start a focused session
 
@@ -89,7 +84,7 @@ steps:
 - wait: 3
 brief_sha256: 78ff13376c9526fa
 -->
-<!-- wf:out id=start-and-reopen-a-copilot-session sha=63a468b7e772 -->
+<!-- wf:out id=start-and-reopen-a-copilot-session sha=121410b100bb -->
 <video controls muted playsinline preload="metadata" src="../assets/wf/docs/ai/index/start-and-reopen-a-copilot-session.mp4" title="Start a new session with +, then reopen the NE555 design session from History"></video>
 <!-- /wf:out -->
 
@@ -145,7 +140,7 @@ setup:
 - open_project
 - panel: ai
 - wait: 2
-- click: //AI Copilot Panel/{fa:tasks} Design Plan
+- click: //AI Copilot Panel/###AiPlan
 - wait: 2
 - action:
     action: mouse_move_to
@@ -153,13 +148,13 @@ setup:
     y: 12
 brief_sha256: cf3dd64d95d11c33
 -->
-<!-- wf:out id=current-component-review-tabs sha=3f474734b2b3 -->
+<!-- wf:out id=current-component-review-tabs sha=bd8a5314bd76 -->
 ![The review window: status chips, the tabs, and BOM Components selected](../assets/wf/docs/ai/index/current-component-review-tabs.png)
 <!-- /wf:out -->
 
 ## Safety and privacy
 
-- A request carries your message and the part of the design it is about (and an attached datasheet's content). It goes through WireFrame's AI service to the model provider you chose — see [what is sent, and where](models-and-credits.md#what-is-sent-and-where). Your projects stay on your computer.
+- A request carries your message and the part of the design it is about (and an attached datasheet's content). It goes to WireFrame AI — see [what is sent, and where](models-and-credits.md#what-is-sent-and-where). Your projects stay on your computer.
 - Review every proposed change before applying it.
 - Treat generated symbols and footprints as unverified until checked against the datasheet.
 - Limit each request to the relevant sheet, block, or signal.
@@ -169,10 +164,12 @@ brief_sha256: cf3dd64d95d11c33
 ## Continue learning
 
 - [Copilot Commands](commands.md)
-- [Models, Credit and Your Data](models-and-credits.md)
+- [AI Credit and Your Data](models-and-credits.md)
 - [Datasheets, Repairs and Project Memory](datasheets-and-memory.md)
 - [AI Design Agent](design-agent.md)
 - [Fix or Create a Component](component-generator.md)
 - [Placement and Routing Assistant](auto-placer-router.md)
+- [How the agent understands a project](how-the-agent-works.md)
+- [What waits for your approval](approvals.md)
 - [Review and Simulation Guide](../ai-copilot.md)
 - [AI-Assisted Design Tutorial](../tutorial/ai-design.md)

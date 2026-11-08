@@ -39,7 +39,7 @@ setup:
     y: 12
 brief_sha256: 28fa26183f831998
 -->
-<!-- wf:out id=completed-pad-to-pad-route sha=fc19e66b10ed -->
+<!-- wf:out id=completed-pad-to-pad-route sha=2a8192c610ff -->
 ![A completed +5V route on F.Cu, selected](../assets/wf/docs/pcb/routing/completed-pad-to-pad-route.png)
 <!-- /wf:out -->
 
@@ -181,6 +181,7 @@ setup:
   - Tools
   - DFM & DRC Check Panel...
 - wait: 1
+- focus: DFM & DRC Check
 - click: '**/{fa:play} Run DFM Analysis'
 - wait: 2
 - action:
@@ -190,7 +191,7 @@ setup:
 - wait: 1
 brief_sha256: 79c5704094dcad31
 -->
-<!-- wf:out id=route-changing-layer-through-a-via sha=21f4e54a3b11 -->
+<!-- wf:out id=route-changing-layer-through-a-via sha=2ad4e7d500d6 -->
 ![The LED feed rerouted through the back: it leaves D3 on F.Cu, V drops a via, it crosses on B.Cu, a second V brings it back up to R8 — and DFM stays clean](../assets/wf/docs/pcb/routing/route-changing-layer-through-a-via.png)
 <!-- /wf:out -->
 
@@ -301,7 +302,7 @@ setup:
 - wait: 1
 brief_sha256: ed87886135515216
 -->
-<!-- wf:out id=route-before-and-after-trace-consolidation sha=3538ea333591 -->
+<!-- wf:out id=route-before-and-after-trace-consolidation sha=b6f858129117 -->
 ![Right-click a selected /12V_filtered track: Merge Collinear Segments joins the pieces that run along one straight line](../assets/wf/docs/pcb/routing/route-before-and-after-trace-consolidation.png)
 <!-- /wf:out -->
 

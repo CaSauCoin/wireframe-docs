@@ -27,7 +27,7 @@ Download from the [official WireFrame download page](https://wireframe.com.vn/do
 
 !!! note "Image capture brief"
     1. **Prepare:** Compare the existing asset with the current release UI and list every changed label or control before recapturing.
-    2. **Build the frame:** Capture the final v1.5.47 download page with version, platform, architecture, file size, and checksum visible. Replace the current image if any filename or product branding differs.
+    2. **Build the frame:** Capture the final 2.0.1 download page with version, platform, architecture, file size, and checksum visible. Replace the current image if any filename or product branding differs.
     3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
@@ -45,7 +45,7 @@ Do not disable SmartScreen globally. If the publisher, file name, or checksum is
 
 !!! note "Image capture brief"
     1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
-    2. **Build the frame:** Capture the signed v1.5.47 installer or its first setup page with the exact product version visible. The previous image file was a 1×1 placeholder and must be replaced.
+    2. **Build the frame:** Capture the signed 2.0.1 installer or its first setup page with the exact product version visible. The previous image file was a 1×1 placeholder and must be replaced.
     3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
@@ -63,7 +63,7 @@ If macOS blocks the first launch, use **System Settings → Privacy & Security �
 
 !!! note "Image capture brief"
     1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
-    2. **Build the frame:** Capture the final disk-image layout and the legitimate Privacy & Security approval state for v1.5.47. The previous DMG and Gatekeeper image files were 1×1 placeholders.
+    2. **Build the frame:** Capture the final disk-image layout and the legitimate Privacy & Security approval state for 2.0.1. The previous DMG and Gatekeeper image files were 1×1 placeholders.
     3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
@@ -84,7 +84,7 @@ Before reporting a launch issue, record the distribution and release, the deskto
 
 !!! note "Image capture brief"
     1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
-    2. **Build the frame:** Capture the supported v1.5.47 package in a current Debian-based graphical installer, including version and architecture but no local username.
+    2. **Build the frame:** Capture the supported 2.0.1 package in a current Debian-based graphical installer, including version and architecture but no local username.
     3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
@@ -101,7 +101,7 @@ On first launch, open **Preferences → Preferences...** (++ctrl+comma++) and ch
 - **AI Assistant** — only when you intend to use Copilot;
 - **Updates** — the version and whether a newer one is ready.
 
-Never show AI API keys in screenshots or support reports.
+Never show sign-in details or API keys in screenshots or support reports.
 
 ### Short video — First-run verification
 
@@ -137,8 +137,8 @@ steps:
 - wait: 3
 brief_sha256: fc44e3f2c570ac8b
 -->
-<!-- wf:out id=first-run-verification sha=4eaaeb99ad18 -->
-<video controls muted playsinline preload="metadata" src="../assets/wf/docs/installation/first-run-verification.mp4" title="Preferences, then a first empty project"></video>
+<!-- wf:out id=first-run-verification sha=63436c8127a7 -->
+<video controls muted playsinline preload="metadata" src="assets/wf/docs/installation/first-run-verification.mp4" title="Preferences, then a first empty project"></video>
 <!-- /wf:out -->
 
 ## Updates

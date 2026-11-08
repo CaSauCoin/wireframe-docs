@@ -25,7 +25,7 @@ From an open PCB document:
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
 
 <!-- wf:shot id=3d-viewer
-caption: 'The 3D Viewer: the buck converter board with its component models'
+caption: 'The 3D Viewer: the h730duino board with its component models'
 project: board:h730duino
 setup:
 - open_project
@@ -33,15 +33,16 @@ setup:
 - wait: 1
 - keys:
   - '3'
-- wait: 3
+- focus: 3D View
+- wait: 25
 - action:
     action: mouse_move_to
     x: 1000
     y: 12
 brief_sha256: 1f97eea2e9acd5ff
 -->
-<!-- wf:out id=3d-viewer sha=20faa772e05f -->
-![The 3D Viewer: the buck converter board with its component models](../assets/wf/docs/advanced/3d-viewer/3d-viewer.png)
+<!-- wf:out id=3d-viewer sha=1ae55cd4273a -->
+![The 3D Viewer: the h730duino board with its component models](../assets/wf/docs/advanced/3d-viewer/3d-viewer.png)
 <!-- /wf:out -->
 
 ---

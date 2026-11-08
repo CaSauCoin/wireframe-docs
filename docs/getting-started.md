@@ -59,7 +59,7 @@ setup:
     y: 12
 brief_sha256: 7027d5fceb146593
 -->
-<!-- wf:out id=default-layout-with-a-project-open sha=b9d7589fb535 -->
+<!-- wf:out id=default-layout-with-a-project-open sha=b9397af02b4a -->
 ![The default layout with a project open](assets/wf/docs/getting-started/default-layout-with-a-project-open.png)
 <!-- /wf:out -->
 
@@ -130,7 +130,7 @@ setup:
     y: 12
 brief_sha256: ba0b9acca80cfbfc
 -->
-<!-- wf:out id=new-schematic sha=70fee785d1b7 -->
+<!-- wf:out id=new-schematic sha=9758e704c768 -->
 ![A new schematic: page outline, rulers and the schematic toolbar](assets/wf/docs/getting-started/new-schematic.png)
 <!-- /wf:out -->
 
@@ -166,7 +166,7 @@ setup:
     y: 12
 brief_sha256: 299edd20c74f66bc
 -->
-<!-- wf:out id=new-pcb sha=f596695a4405 -->
+<!-- wf:out id=new-pcb sha=581ebe11e367 -->
 ![A new PCB: rulers, the vertical PCB toolbar, Footprints, Properties and Layers](assets/wf/docs/getting-started/new-pcb.png)
 <!-- /wf:out -->
 

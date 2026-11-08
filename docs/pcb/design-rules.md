@@ -10,7 +10,7 @@ With a PCB active, select **View → Design Rules**. The **Design Rules Manager*
 
 !!! note "Image capture brief"
     1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
-    2. **Build the frame:** Capture the v1.5.47 manager with global limits and at least two net classes visible. Use clearly fictional example values and show the active unit.
+    2. **Build the frame:** Capture the 2.0.1 manager with global limits and at least two net classes visible. Use clearly fictional example values and show the active unit.
     3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
@@ -30,9 +30,9 @@ setup:
     action: mouse_move_to
     x: 1000
     y: 12
-brief_sha256: f62c8f826a83ff3a
+brief_sha256: 36408bebe1341a56
 -->
-<!-- wf:out id=design-rules-manager sha=38c567bd8798 -->
+<!-- wf:out id=design-rules-manager sha=8dd57abb1f3c -->
 ![The Design Rules Manager on the imported buck converter: its one class, Default, drawn to scale — 9.8 mil track, 5 mil clearance, 27.6 mil via](../assets/wf/docs/pcb/design-rules/design-rules-manager.png)
 <!-- /wf:out -->
 
@@ -168,6 +168,7 @@ steps:
   - Tools
   - DFM & DRC Check Panel...
 - wait: 1
+- focus: DFM & DRC Check
 - click: '**/{fa:play} Run DFM Analysis'
 - wait: 1
 - action:
@@ -177,8 +178,8 @@ steps:
 - wait: 3
 brief_sha256: c8d421ddcf7bfd61
 -->
-<!-- wf:out id=assign-and-verify-a-net-class sha=b4a74dcebd9b -->
-<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/pcb/design-rules/assign-and-verify-a-net-class.mp4" title="A Power class at the 1 mm (39.37 mil) the author used for the 12 V input; /12V_fused assigned to it under Every net (13 → 10 tracks off their class size), its track shows Class: Power, and DFM stays clean"></video>
+<!-- wf:out id=assign-and-verify-a-net-class sha=d09c509348f1 -->
+<video controls muted playsinline preload="metadata" src="../assets/wf/docs/pcb/design-rules/assign-and-verify-a-net-class.mp4" title="A Power class at the 1 mm (39.37 mil) the author used for the 12 V input; /12V_fused assigned to it under Every net (13 → 10 tracks off their class size), its track shows Class: Power, and DFM stays clean"></video>
 <!-- /wf:out -->
 
 ## Release checklist

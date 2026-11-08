@@ -15,7 +15,7 @@ For project portability, keep required custom libraries with the project or in a
 
 !!! note "Image capture brief"
     1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
-    2. **Build the frame:** Capture Local Library Manager in v1.5.47 with a KiCad symbol source selected and part of its active inventory visible. Hide personal filesystem paths.
+    2. **Build the frame:** Capture Local Library Manager in 2.0.1 with a KiCad symbol source selected and part of its active inventory visible. Hide personal filesystem paths.
     3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
@@ -34,9 +34,9 @@ setup:
     action: mouse_move_to
     x: 1000
     y: 12
-brief_sha256: b68c58cfdbecfa22
+brief_sha256: 58a03545327416ed
 -->
-<!-- wf:out id=kicad-symbol-source-and-inventory sha=5a290a10d330 -->
+<!-- wf:out id=kicad-symbol-source-and-inventory sha=8b2240098dea -->
 ![Local Library Manager — KiCad symbol sources and the active inventory](../assets/wf/docs/libraries/symbols-library/kicad-symbol-source-and-inventory.png)
 <!-- /wf:out -->
 
@@ -118,8 +118,8 @@ steps:
 - wait: 4
 brief_sha256: 6f00fe6429c0a032
 -->
-<!-- wf:out id=assign-and-verify-a-footprint sha=c4f9ec3b55c8 -->
-<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/libraries/symbols-library/assign-and-verify-a-footprint.mp4" title="R1 (10 kΩ) shows its linked R_0805_2012Metric footprint in Properties; Link Footprint &amp; Save to File links the .kicad_mod you pick and saves it with the part"></video>
+<!-- wf:out id=assign-and-verify-a-footprint sha=d67b3b20e1ab -->
+<video controls muted playsinline preload="metadata" src="../assets/wf/docs/libraries/symbols-library/assign-and-verify-a-footprint.mp4" title="R1 (10 kΩ) shows its linked R_0805_2012Metric footprint in Properties; Link Footprint &amp; Save to File links the .kicad_mod you pick and saves it with the part"></video>
 <!-- /wf:out -->
 
 ## Import an Altium symbol library

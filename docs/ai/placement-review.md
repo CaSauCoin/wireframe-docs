@@ -4,8 +4,17 @@ description: How the WireFrame AI Copilot decides what can be drawn while findin
 
 # Placement Review and Your Edits
 
+<!-- wf:before-release -->
+
 !!! info "In the next release"
-    The placement review and edit sync described here are in WireFrame 1.5.47, which is in beta testing. The public download is still v1.3.8.
+    The placement review and edit sync described here are in WireFrame 2.0.1, which is in beta testing. The public download is still v1.3.8.
+
+<!-- wf:after-release -->
+
+!!! info "New in 2.0.1"
+    The placement review and edit sync described here came with WireFrame 2.0.1.
+
+<!-- wf:end-release -->
 
 A design the Copilot drafts is rarely free of findings: a pull-up it is unsure of, a pin left floating, a part the library does not carry yet. Earlier builds refused to draw anything while a single critical finding was open, so a 300-part board could wait on one floating pin with nothing on the canvas to fix it on. Now the Copilot's reviewer, **Penalty**, separates two questions:
 

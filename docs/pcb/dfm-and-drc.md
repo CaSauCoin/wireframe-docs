@@ -18,7 +18,7 @@ Before exporting Gerber files, run the **DFM & DRC Check** to find design-rule a
 
 !!! note "Image capture brief"
     1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
-    2. **Build the frame:** Capture the v1.5.47 **DFM & DRC Check** panel with at least one error and one warning. Keep the selected violation and its highlighted canvas location visible.
+    2. **Build the frame:** Capture the 2.0.1 **DFM & DRC Check** panel with at least one error and one warning. Keep the selected violation and its highlighted canvas location visible.
     3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
@@ -39,9 +39,9 @@ setup:
     action: mouse_move_to
     x: 1000
     y: 12
-brief_sha256: 395b3d0325c9dbde
+brief_sha256: 8b4bc590b46d371a
 -->
-<!-- wf:out id=dfm-and-drc-results sha=b8d75a542c22 -->
+<!-- wf:out id=dfm-and-drc-results sha=878ccd4d0d95 -->
 ![DFM & DRC Check after a run — errors and warnings](../assets/wf/docs/pcb/dfm-and-drc/dfm-and-drc-results.png)
 <!-- /wf:out -->
 
@@ -234,8 +234,8 @@ steps:
 - wait: 4
 brief_sha256: 0c438ae461c4de56
 -->
-<!-- wf:out id=resolve-and-recheck-a-violation sha=aabd644b729f -->
-<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/pcb/dfm-and-drc/resolve-and-recheck-a-violation.mp4" title="Default clearance set to 7 mil flags 13 places on a board laid out at 5 mil; focus one, set the rule back to the fab value, run the check again"></video>
+<!-- wf:out id=resolve-and-recheck-a-violation sha=0672ce1bc3ad -->
+<video controls muted playsinline preload="metadata" src="../assets/wf/docs/pcb/dfm-and-drc/resolve-and-recheck-a-violation.mp4" title="Default clearance set to 7 mil flags 13 places on a board laid out at 5 mil; focus one, set the rule back to the fab value, run the check again"></video>
 <!-- /wf:out -->
 
 ---

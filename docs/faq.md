@@ -81,10 +81,10 @@ Use this page to diagnose common release issues. Start with the check that match
 ## AI Copilot
 
 ??? question "How do I configure AI Copilot?"
-    Open **Preferences → AI Assistant** (or **AI settings...** in the Copilot menu) and choose who pays: **WireFrame credit** (your plan's credit, no key), or your own key at **OpenRouter**, **DeepSeek** or **Google AI**, then **Save & test**. If a model returns errors or empty answers, pick another one in **Models**. Never include a key in screenshots, shared projects, or support reports. See [Models, Credit and Your Data](ai/models-and-credits.md).
+    Nothing to configure: sign in with a Pro or Max plan and the AI Copilot runs on **WireFrame AI**, paid from your plan's AI credit. **Preferences → AI Assistant** (or **AI settings...** in the Copilot menu) shows the credit left. See [AI Credit and Your Data](ai/models-and-credits.md).
 
 ??? question "AI Copilot is not responding"
-    Check the network connection, API-key validity, provider credit or rate limit, and the visible error message. Retry only after the current request has clearly stopped; repeated clicks can create duplicate provider charges.
+    Check the network connection, that you are signed in, the credit left in **Preferences → AI Assistant**, and the visible error message. Retry only after the current request has clearly stopped; repeated clicks can spend credit twice.
 
 ??? question "Does Copilot edit the design automatically?"
     Treat every generated proposal as unverified design input. Review its component, connection, block, and analysis tabs before applying changes. Afterward, run the relevant ERC, DFM/DRC, and simulation checks.

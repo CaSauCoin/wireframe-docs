@@ -76,7 +76,7 @@ setup:
     y: 12
 brief_sha256: 780063412c1039f2
 -->
-<!-- wf:out id=ai-ocr-manager-with-a-clean-pin-table sha=7530eaf34d72 -->
+<!-- wf:out id=ai-ocr-manager-with-a-clean-pin-table sha=be71ad1bb49a -->
 ![AI OCR Manager, opened from the Symbol Library Editor, before any image is added](../assets/wf/docs/libraries/symbol-creator/ai-ocr-manager-with-a-clean-pin-table.png)
 <!-- /wf:out -->
 
@@ -93,7 +93,7 @@ brief_sha256: 780063412c1039f2
 
 !!! note "Image capture brief"
     1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
-    2. **Build the frame:** Capture the v1.5.47 Symbol Library Editor with an eight-pin example selected. Show the body, pin numbers/names, and the properties used for one pin.
+    2. **Build the frame:** Capture the 2.0.1 Symbol Library Editor with an eight-pin example selected. Show the body, pin numbers/names, and the properties used for one pin.
     3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
@@ -111,9 +111,9 @@ setup:
     action: mouse_move_to
     x: 1000
     y: 12
-brief_sha256: 6b9b2ec42fafd6b5
+brief_sha256: dbcbf7cce79ad900
 -->
-<!-- wf:out id=symbol-library-editor sha=dbddcd7fe441 -->
+<!-- wf:out id=symbol-library-editor sha=77ad38f87f43 -->
 ![Symbol Library Editor](../assets/wf/docs/libraries/symbol-creator/symbol-library-editor.png)
 <!-- /wf:out -->
 

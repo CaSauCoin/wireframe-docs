@@ -88,7 +88,7 @@ An exported file is not self-validating. Inspect the package, confirm the saved 
 
 !!! note "Image capture brief"
     1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
-    2. **Build the frame:** Capture the v1.5.47 **File → Import** submenu with KiCad Project and CAD Outline visible. Use a second inset of Local Library Manager showing the Altium library importer.
+    2. **Build the frame:** Capture the 2.0.1 **File → Import** submenu with KiCad Project and CAD Outline visible. Use a second inset of Local Library Manager showing the Altium library importer.
     3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
@@ -105,9 +105,9 @@ setup:
 - wait: 2
 - click: //Library Manager/{fa:plus}  Add library  {fa:caret-down}
 - wait: 1
-brief_sha256: 3364480ac0fba1a9
+brief_sha256: 39f9feedd614afad
 -->
-<!-- wf:out id=supported-import-commands sha=3d1b072c7b9c -->
+<!-- wf:out id=supported-import-commands sha=99ff4c89048d -->
 ![Library Manager → Add library: KiCad folders and files, and Altium libraries](../assets/wf/docs/reference/file-formats/supported-import-commands.png)
 <!-- /wf:out -->
 

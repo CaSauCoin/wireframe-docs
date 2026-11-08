@@ -49,7 +49,7 @@ setup:
     y: 12
 brief_sha256: 4150fafce92026e0
 -->
-<!-- wf:out id=schematic-workspace sha=a995e7848f99 -->
+<!-- wf:out id=schematic-workspace sha=256acd150044 -->
 ![The schematic editor on the KLP4e datalogger: canvas, toolbar, Library and Properties](../assets/wf/docs/schematic/index/schematic-workspace.png)
 <!-- /wf:out -->
 

@@ -12,7 +12,7 @@ Complete these fields before PDF release so every exported sheet can be identifi
 
 !!! note "Image capture brief"
     1. **Prepare:** Compare the existing asset with the current release UI and list every changed label or control before recapturing.
-    2. **Build the frame:** Capture the v1.5.47 Properties panel beside the title block it controls. Replace older media if fields, order, or styling have changed.
+    2. **Build the frame:** Capture the 2.0.1 Properties panel beside the title block it controls. Replace older media if fields, order, or styling have changed.
     3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
@@ -35,9 +35,9 @@ setup:
     action: mouse_move_to
     x: 1000
     y: 12
-brief_sha256: b1fad8de01dc06c6
+brief_sha256: 6152e8edb3a609f5
 -->
-<!-- wf:out id=sheet-properties-and-title-block sha=e5f7e768b196 -->
+<!-- wf:out id=sheet-properties-and-title-block sha=506ea31ba01d -->
 ![Document Settings beside the KLP4e title block: the Title field holds ${project_name}, and the block shows the project name in its place](../assets/wf/docs/schematic/properties-and-attributes/sheet-properties-and-title-block.png)
 <!-- /wf:out -->
 
@@ -104,8 +104,8 @@ steps:
 - wait: 2
 brief_sha256: 7085671e0ff8e91c
 -->
-<!-- wf:out id=edit-and-align-component-text sha=a59b46582932 -->
-<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/schematic/properties-and-attributes/edit-and-align-component-text.mp4" title="Select R5, change its value from 330 Ω to 470 Ω in Properties, then undo"></video>
+<!-- wf:out id=edit-and-align-component-text sha=8e9f698e7997 -->
+<video controls muted playsinline preload="metadata" src="../assets/wf/docs/schematic/properties-and-attributes/edit-and-align-component-text.mp4" title="Select R5, change its value from 330 Ω to 470 Ω in Properties, then undo"></video>
 <!-- /wf:out -->
 
 ## Wire and net properties

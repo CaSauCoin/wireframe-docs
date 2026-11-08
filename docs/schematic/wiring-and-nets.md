@@ -22,7 +22,7 @@ Press ++w++ or click the **Wire** button on the toolbar.
 
 !!! note "Image capture brief"
     1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
-    2. **Build the frame:** Capture a close-up from v1.5.47 showing both wire endpoints snapped exactly to pin connection points. The existing placeholder file is empty and must be replaced.
+    2. **Build the frame:** Capture a close-up from 2.0.1 showing both wire endpoints snapped exactly to pin connection points. The existing placeholder file is empty and must be replaced.
     3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
@@ -44,9 +44,9 @@ setup:
     action: mouse_move_to
     x: 1000
     y: 12
-brief_sha256: 2e31690f8949c65b
+brief_sha256: 6fc8661ecbf0297a
 -->
-<!-- wf:out id=wire-attached-to-two-component-pins sha=87a0614170ad -->
+<!-- wf:out id=wire-attached-to-two-component-pins sha=21c9c5a75654 -->
 ![The 16 MHz crystal Y2 wired to its two 22 pF load capacitors, C2 and C3](../assets/wf/docs/schematic/wiring-and-nets/wire-attached-to-two-component-pins.png)
 <!-- /wf:out -->
 
@@ -116,7 +116,7 @@ setup:
 - wait: 1
 brief_sha256: ff7b6c01e4713d55
 -->
-<!-- wf:out id=junction-compared-with-a-wire-crossing sha=57af6730eca1 -->
+<!-- wf:out id=junction-compared-with-a-wire-crossing sha=44f6dc93a215 -->
 ![Left: a junction dot joins three wires into one net. Right: the GND wire crosses the same wire with no dot, so the two stay separate](../assets/wf/docs/schematic/wiring-and-nets/junction-compared-with-a-wire-crossing.png)
 <!-- /wf:out -->
 
@@ -194,7 +194,7 @@ setup:
     y: 12
 brief_sha256: 25131546c5754268
 -->
-<!-- wf:out id=power-symbols-on-a-decoupling-capacitor sha=d565197ae4af -->
+<!-- wf:out id=power-symbols-on-a-decoupling-capacitor sha=4c99cb82c2b3 -->
 ![C5 (100 nF) across the supply beside the battery BT1: a Vcc net label above, a GND symbol below, PWR_FLAG on both rails](../assets/wf/docs/schematic/wiring-and-nets/power-symbols-on-a-decoupling-capacitor.png)
 <!-- /wf:out -->
 

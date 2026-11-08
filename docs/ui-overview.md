@@ -26,7 +26,7 @@ setup:
     y: 12
 brief_sha256: 1ece0c294228e249
 -->
-<!-- wf:out id=main-window sha=32abb8da02ac -->
+<!-- wf:out id=main-window sha=21eaf11703e3 -->
 ![The main window with the automotive buck converter board open](assets/wf/docs/ui-overview/main-window.png)
 <!-- /wf:out -->
 
@@ -122,8 +122,8 @@ steps:
 - wait: 3
 brief_sha256: 194ebbf4934e46ed
 -->
-<!-- wf:out id=rearrange-and-restore-panels sha=ebf19a055f3b -->
-<video controls muted playsinline preload="metadata" src="../assets/wf/docs/ui-overview/rearrange-and-restore-panels.mp4" title="Close a panel, then Preferences → Reset to Default Layout"></video>
+<!-- wf:out id=rearrange-and-restore-panels sha=d595d102ded8 -->
+<video controls muted playsinline preload="metadata" src="assets/wf/docs/ui-overview/rearrange-and-restore-panels.mp4" title="Close a panel, then Preferences → Reset to Default Layout"></video>
 <!-- /wf:out -->
 
 ## Project Structure
@@ -161,7 +161,7 @@ capture:
   padding: 8
 brief_sha256: b38c0f17fbfead10
 -->
-<!-- wf:out id=current-project-structure sha=365b6a07c4ec -->
+<!-- wf:out id=current-project-structure sha=0d4b3ddf138a -->
 ![Project Structure: the buck converter project, its schematic and its board](assets/wf/docs/ui-overview/current-project-structure.png)
 <!-- /wf:out -->
 
@@ -232,8 +232,8 @@ steps:
 - wait: 5
 brief_sha256: 5081b018a987adf6
 -->
-<!-- wf:out id=notification-and-status-feedback sha=00e74b436661 -->
-<video controls muted playsinline preload="metadata" src="../assets/wf/docs/ui-overview/notification-and-status-feedback.mp4" title="An action reports back in a notification"></video>
+<!-- wf:out id=notification-and-status-feedback sha=fce83773f0c8 -->
+<video controls muted playsinline preload="metadata" src="assets/wf/docs/ui-overview/notification-and-status-feedback.mp4" title="An action reports back in a notification"></video>
 <!-- /wf:out -->
 
 ## Current Preferences categories
@@ -249,7 +249,7 @@ brief_sha256: 5081b018a987adf6
 | **Simulation** | **Default analysis**, **Transient defaults** (stop time, time step), **Engines** (ngspice is built in; Xyce, LTspice, and an external ngspice are optional) |
 | **Libraries** | Library Manager, online catalog, loaded sources, and the library cache folder |
 | **3D Viewer** | Materials of the 3D board preview: solder mask, trace under mask, pad plating, silkscreen |
-| **AI Assistant** | Provider, endpoint, API key, design and fast models — see [AI Copilot](ai/index.md#configure-ai-access) |
+| **AI Assistant** | WireFrame AI and your plan's AI credit left — see [AI Copilot](ai/index.md#configure-ai-access) |
 | **Updates** | Version, licence tier, and the update check |
 
 A search box at the top finds settings by keyword.

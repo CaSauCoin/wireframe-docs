@@ -51,7 +51,7 @@ setup:
     y: 12
 brief_sha256: ebfd641c410ab5d3
 -->
-<!-- wf:out id=keyboard-shortcuts-page sha=422b9b978bac -->
+<!-- wf:out id=keyboard-shortcuts-page sha=82437b444444 -->
 ![Preferences → Keyboard Shortcuts, filtered to “wire”](../assets/wf/docs/advanced/shortcuts/keyboard-shortcuts-page.png)
 <!-- /wf:out -->
 

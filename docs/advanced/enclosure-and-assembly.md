@@ -97,7 +97,7 @@ setup:
 - open_project
 - panel: ai
 - wait: 2
-- click: //AI Copilot Panel/{fa:tasks} Design Plan
+- click: //AI Copilot Panel/###AiPlan
 - wait: 2
 - tab: Board Fit
 - wait: 2
@@ -124,7 +124,7 @@ setup:
 - wait: 1
 brief_sha256: 7bba4f5d3f64ddf6
 -->
-<!-- wf:out id=board-fit-with-a-case-and-lid sha=ca0b380c5d66 -->
+<!-- wf:out id=board-fit-with-a-case-and-lid sha=531419d75dce -->
 ![Board Fit with the demo LED-matrix case and lid: the board cut from the case floor (114.6 × 78.6 mm, 4 holes, 4 keepouts, 18 lid openings), and a warning that the open project's PCB has a different, 59 × 22 mm edge](../assets/wf/docs/advanced/enclosure-and-assembly/board-fit-with-a-case-and-lid.png)
 <!-- /wf:out -->
 
@@ -150,7 +150,7 @@ setup:
 - open_project
 - panel: ai
 - wait: 2
-- click: //AI Copilot Panel/{fa:tasks} Design Plan
+- click: //AI Copilot Panel/###AiPlan
 - wait: 2
 - tab: System
 - wait: 2
@@ -183,7 +183,7 @@ steps:
 - wait: 1
 brief_sha256: 2fc69558f82527ec
 -->
-<!-- wf:out id=connect-two-boards-in-an-assembly sha=beb88684216f -->
+<!-- wf:out id=connect-two-boards-in-an-assembly sha=6368e78fc363 -->
 <video controls muted playsinline preload="metadata" src="../../assets/wf/docs/advanced/enclosure-and-assembly/connect-two-boards-in-an-assembly.mp4" title="System tab with the demo drone: ESC, flight controller and a bought VTX; cable X1 read pin by pin — the ESC&#x27;s CURR meets the controller&#x27;s CURRENT, and the mismatch is flagged"></video>
 <!-- /wf:out -->
 

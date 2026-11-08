@@ -17,7 +17,7 @@ Depending on the feature used, the local configuration can include:
 - Optional sign-in data, a device identifier, and AI provider settings.
 
 !!! warning "Contains private data"
-    The configuration can contain sign-in data and an AI API key. Never attach the complete file to an issue report or place it in source control.
+    The configuration contains your sign-in data and any distributor API keys. Never attach the complete file to an issue report or place it in source control.
 
 ## Change preferences safely
 
@@ -34,7 +34,7 @@ Open **Preferences → Preferences...** (++ctrl+comma++), pick a category on the
 | **Simulation** | Default analysis, transient defaults, engine executables |
 | **Libraries** | Library sources, online catalog, library cache folder |
 | **3D Viewer** | Board preview materials |
-| **AI Assistant** | Provider, endpoint, API key (hosted providers only), design and fast model ids |
+| **AI Assistant** | WireFrame AI and your plan's AI credit left |
 | **Updates** | Version, licence tier, and update check |
 
 For an important project, restart WireFrame once and verify that the setting persists.
@@ -79,7 +79,7 @@ Renaming is preferable to immediate deletion because the previous settings remai
 
 !!! note "Image capture brief"
     1. **Prepare:** Open a clean release-build workspace with fictional or public sample data and prepare the requested state.
-    2. **Build the frame:** Capture the complete Preferences window in v1.5.47 with the category list visible. Use a test account, hide all credentials, and show no local user path.
+    2. **Build the frame:** Capture the complete Preferences window in 2.0.1 with the category list visible. Use a test account, hide all credentials, and show no local user path.
     3. **Clean the frame:** Close unrelated panels and tooltips, move the pointer away from key text, and hide credentials, usernames, customer data, and private paths.
     4. **Capture and finish:** Capture a native-resolution PNG, crop without cutting titles or primary actions, and add at most three subtle callouts without altering engineering content.
     5. **Approve:** Check the image at 100% zoom for current labels, readable evidence, correct release branding, and absence of sensitive information.
@@ -97,9 +97,9 @@ setup:
     action: mouse_move_to
     x: 1000
     y: 12
-brief_sha256: be232845023a8ed3
+brief_sha256: 88c3a6d572ac6526
 -->
-<!-- wf:out id=preferences-categories sha=6187da44ad80 -->
+<!-- wf:out id=preferences-categories sha=9d6bd85eb69d -->
 ![Preferences with its category list](../assets/wf/docs/reference/config-and-session/preferences-categories.png)
 <!-- /wf:out -->
 

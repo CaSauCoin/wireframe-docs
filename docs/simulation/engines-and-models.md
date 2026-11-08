@@ -123,7 +123,7 @@ setup:
 - *id001
 brief_sha256: 2497a6f619e1bf63
 -->
-<!-- wf:out id=engine-and-model-readiness sha=ac2512a6b4bc -->
+<!-- wf:out id=engine-and-model-readiness sha=2a012f080694 -->
 ![Engine choice and the Models tab for the NE555 blinker](../assets/wf/docs/simulation/engines-and-models/engine-and-model-readiness.png)
 <!-- /wf:out -->
 

@@ -84,8 +84,8 @@ steps:
 - wait: 2
 brief_sha256: 8cd5372ce5390660
 -->
-<!-- wf:out id=copy-place-and-undo-a-group sha=030ddfc71404 -->
-<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/advanced/selection-and-editing/copy-place-and-undo-a-group.mp4" title="Box-select the two EEPROMs, copy, paste and click to place the copy (29 → 31 parts) — then undo"></video>
+<!-- wf:out id=copy-place-and-undo-a-group sha=a027049675d1 -->
+<video controls muted playsinline preload="metadata" src="../assets/wf/docs/advanced/selection-and-editing/copy-place-and-undo-a-group.mp4" title="Box-select the two EEPROMs, copy, paste and click to place the copy (29 → 31 parts) — then undo"></video>
 <!-- /wf:out -->
 
 ## Schematic object interactions
@@ -131,7 +131,7 @@ capture:
   popups: true
 brief_sha256: 0b1830046fdd9add
 -->
-<!-- wf:out id=schematic-component-context-menu sha=98dc3a3193ed -->
+<!-- wf:out id=schematic-component-context-menu sha=fd222eac3dc7 -->
 ![Right-click the ATmega328P (U4) for its component menu](../assets/wf/docs/advanced/selection-and-editing/schematic-component-context-menu.png)
 <!-- /wf:out -->
 
@@ -189,8 +189,8 @@ steps:
 - wait: 2.5
 brief_sha256: 4b4c7c8fc06f2235
 -->
-<!-- wf:out id=move-a-component-attribute-safely sha=a79cc838c462 -->
-<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/advanced/selection-and-editing/move-a-component-attribute-safely.mp4" title="Edit Attributes (Lock Body) moves only the R1 designator of the RTC pull-up; Finish Editing leaves the body where it was"></video>
+<!-- wf:out id=move-a-component-attribute-safely sha=c546aa36dc30 -->
+<video controls muted playsinline preload="metadata" src="../assets/wf/docs/advanced/selection-and-editing/move-a-component-attribute-safely.mp4" title="Edit Attributes (Lock Body) moves only the R1 designator of the RTC pull-up; Finish Editing leaves the body where it was"></video>
 <!-- /wf:out -->
 
 ## PCB context menus
@@ -233,7 +233,7 @@ capture:
   popups: true
 brief_sha256: 03f91b6ac02a4b69
 -->
-<!-- wf:out id=pcb-trace-context-menu sha=a5c227e8f824 -->
+<!-- wf:out id=pcb-trace-context-menu sha=d6b7af3f7e37 -->
 ![Trace context menu with two +5V traces selected](../assets/wf/docs/advanced/selection-and-editing/pcb-trace-context-menu.png)
 <!-- /wf:out -->
 
@@ -294,7 +294,7 @@ setup:
     y: 12
 brief_sha256: fa87a731de55cf82
 -->
-<!-- wf:out id=modal-versus-docked-panel sha=4f43c5b309b5 -->
+<!-- wf:out id=modal-versus-docked-panel sha=520a1f73a728 -->
 ![A modal (Page Settings) in front of the docked panels](../assets/wf/docs/advanced/selection-and-editing/modal-versus-docked-panel.png)
 <!-- /wf:out -->
 
