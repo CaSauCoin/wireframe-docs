@@ -65,14 +65,14 @@ setup:
 - open_project
 - panel: ai
 - wait: 1
-- click: //AI Copilot Panel/{fa:tasks} Design Plan
+- click: //AI Copilot Panel/###AiPlan
 - wait: 6
 - action:
     action: mouse_move_to
     x: 1000
     y: 12
 -->
-<!-- wf:out id=bom-card-verdicts sha=b08cad2689c0 -->
+<!-- wf:out id=bom-card-verdicts sha=7af7b798f4e7 -->
 ![A BOM card in the review — symbol and footprint verified with their contact count, the physical fit against the package drawing, and whether a person has confirmed it yet](../assets/wf/docs/libraries/how-parts-are-found/bom-card-verdicts.png)
 <!-- /wf:out -->
 

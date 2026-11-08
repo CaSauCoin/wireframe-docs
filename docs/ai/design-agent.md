@@ -88,7 +88,7 @@ capture:
   padding: 4
 brief_sha256: 6c41f47d30dc22ee
 -->
-<!-- wf:out id=clarifying-questions sha=d9c1a487dbe4 -->
+<!-- wf:out id=clarifying-questions sha=686f0f4b2dcb -->
 ![After the research step the Copilot asks its questions one at a time, with the suggested answer marked](../assets/wf/docs/ai/design-agent/clarifying-questions.png)
 <!-- /wf:out -->
 
@@ -131,7 +131,7 @@ setup:
 - open_project
 - panel: ai
 - wait: 2
-- click: //AI Copilot Panel/{fa:tasks} Design Plan
+- click: //AI Copilot Panel/###AiPlan
 - wait: 2
 - &id001
   action:
@@ -143,7 +143,7 @@ setup:
 - *id001
 brief_sha256: ef4d4450ef1871b7
 -->
-<!-- wf:out id=bom-component-review sha=5f8dd3fed4fe -->
+<!-- wf:out id=bom-component-review sha=11b8e654cede -->
 ![BOM Components for the NE555 blinker — every card with value, package, verification and actions](../assets/wf/docs/ai/design-agent/bom-component-review.png)
 <!-- /wf:out -->
 
@@ -183,7 +183,7 @@ setup:
 - open_project
 - panel: ai
 - wait: 2
-- click: //AI Copilot Panel/{fa:tasks} Design Plan
+- click: //AI Copilot Panel/###AiPlan
 - wait: 2
 - action:
     action: mouse_move_to
@@ -199,8 +199,8 @@ steps:
 - wait: 2
 brief_sha256: 1a4d1c57917d68d3
 -->
-<!-- wf:out id=generate-and-review-functional-blocks sha=c10050ead598 -->
-<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/ai/design-agent/generate-and-review-functional-blocks.mp4" title="The Blocks tab: power input, NE555 oscillator and LED output, each scoped to its parts"></video>
+<!-- wf:out id=generate-and-review-functional-blocks sha=d0a0180a44f4 -->
+<video controls muted playsinline preload="metadata" src="../assets/wf/docs/ai/design-agent/generate-and-review-functional-blocks.mp4" title="The Blocks tab: power input, NE555 oscillator and LED output, each scoped to its parts"></video>
 <!-- /wf:out -->
 
 ## Verify before applying

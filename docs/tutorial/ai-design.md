@@ -30,9 +30,9 @@ setup:
     action: mouse_move_to
     x: 1000
     y: 12
-brief_sha256: a79bc0ededcd8271
+brief_sha256: 79a30d082f3dddfa
 -->
-<!-- wf:out id=finished-ai-assisted-example sha=8d5ef477e6a1 -->
+<!-- wf:out id=finished-ai-assisted-example sha=652725e35eda -->
 ![The finished NE555 blinker: schematic generated from the reviewed plan, with the Copilot beside it](../assets/wf/docs/tutorial/ai-design/finished-ai-assisted-example.png)
 <!-- /wf:out -->
 
@@ -113,7 +113,7 @@ capture:
   padding: 4
 brief_sha256: fcd5386ecc342a33
 -->
-<!-- wf:out id=prompt-and-clarification sha=be5bbdfddf08 -->
+<!-- wf:out id=prompt-and-clarification sha=089dc856cd1e -->
 ![The NE555 request, then the first clarifying question](../assets/wf/docs/tutorial/ai-design/prompt-and-clarification.png)
 <!-- /wf:out -->
 
@@ -147,7 +147,7 @@ setup:
 - open_project
 - panel: ai
 - wait: 2
-- click: //AI Copilot Panel/{fa:tasks} Design Plan
+- click: //AI Copilot Panel/###AiPlan
 - wait: 2
 - &id001
   action:
@@ -159,7 +159,7 @@ setup:
 - *id001
 brief_sha256: d76ed8651b6d7381
 -->
-<!-- wf:out id=component-review-tabs sha=e52215effc29 -->
+<!-- wf:out id=component-review-tabs sha=55f053648212 -->
 ![Connections Netlist — every net of the NE555 blinker with the pins it joins and why](../assets/wf/docs/tutorial/ai-design/component-review-tabs.png)
 <!-- /wf:out -->
 

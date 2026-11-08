@@ -43,7 +43,7 @@ steps:
 - wait: 3
 brief_sha256: 9fd78258131dd895
 -->
-<!-- wf:out id=create-a-new-project sha=062d2fd0d2ba -->
+<!-- wf:out id=create-a-new-project sha=ad9149e36be4 -->
 <video controls muted playsinline preload="metadata" src="assets/wf/docs/projects/create-a-new-project.mp4" title="File → New → New Project, pick a folder, name it, Create"></video>
 <!-- /wf:out -->
 
@@ -82,7 +82,7 @@ capture:
   padding: 8
 brief_sha256: 252fa9b96dbcf65e
 -->
-<!-- wf:out id=project-structure-with-multiple-documents sha=8e27a1bda9da -->
+<!-- wf:out id=project-structure-with-multiple-documents sha=a6df7e1411b9 -->
 ![Project Structure of the hexapod robot's main board: the root sheet, eight sub-sheets and one PCB](assets/wf/docs/projects/project-structure-with-multiple-documents.png)
 <!-- /wf:out -->
 
@@ -142,7 +142,7 @@ steps:
 - wait: 3
 brief_sha256: 0a8cff539f0aacf1
 -->
-<!-- wf:out id=update-schematic-to-pcb sha=678567f9d211 -->
+<!-- wf:out id=update-schematic-to-pcb sha=68cb4fe5c46e -->
 <video controls muted playsinline preload="metadata" src="assets/wf/docs/projects/update-schematic-to-pcb.mp4" title="Tools → Update Schematic to PCB, then the board"></video>
 <!-- /wf:out -->
 
@@ -190,7 +190,7 @@ steps:
 - wait: 2
 brief_sha256: c4580440ada7f097
 -->
-<!-- wf:out id=import-a-kicad-project sha=d25b9eb60751 -->
+<!-- wf:out id=import-a-kicad-project sha=c52d82cb0d2f -->
 <video controls muted playsinline preload="metadata" src="assets/wf/docs/projects/import-a-kicad-project.mp4" title="File → Import → KiCad Project, then the imported project"></video>
 <!-- /wf:out -->
 

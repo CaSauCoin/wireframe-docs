@@ -41,7 +41,7 @@ setup:
     y: 12
 brief_sha256: 1f97eea2e9acd5ff
 -->
-<!-- wf:out id=3d-viewer sha=9fc531de7b98 -->
+<!-- wf:out id=3d-viewer sha=1ae55cd4273a -->
 ![The 3D Viewer: the h730duino board with its component models](../assets/wf/docs/advanced/3d-viewer/3d-viewer.png)
 <!-- /wf:out -->
 

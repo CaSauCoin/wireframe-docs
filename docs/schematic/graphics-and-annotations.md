@@ -73,7 +73,7 @@ steps:
 - wait: 2
 brief_sha256: f82d656a0bf9c147
 -->
-<!-- wf:out id=add-a-circuit-note-and-grouping-box sha=116884f72383 -->
+<!-- wf:out id=add-a-circuit-note-and-grouping-box sha=3c54ed869204 -->
 <video controls muted playsinline preload="metadata" src="../assets/wf/docs/schematic/graphics-and-annotations/add-a-circuit-note-and-grouping-box.mp4" title="Place a text note under the 32.768 kHz crystal Y1 and draw a grouping rectangle around it"></video>
 <!-- /wf:out -->
 
@@ -123,7 +123,7 @@ setup:
     y: 12
 brief_sha256: 5ead5ed9c76d8a4c
 -->
-<!-- wf:out id=documented-schematic-block sha=5deb235a4ab6 -->
+<!-- wf:out id=documented-schematic-block sha=90d37dc201eb -->
 ![The KLP4e real-time clock block as its author drew it: a grouping rectangle titled Real time clock around U1, its crystal and pull-ups](../assets/wf/docs/schematic/graphics-and-annotations/documented-schematic-block.png)
 <!-- /wf:out -->
 

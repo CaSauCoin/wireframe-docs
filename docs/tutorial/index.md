@@ -57,7 +57,7 @@ setup:
 - wait: 1.5
 brief_sha256: d88bc6ee62f5ceaf
 -->
-<!-- wf:out id=finished-tutorial-project sha=17841116af21 -->
+<!-- wf:out id=finished-tutorial-project sha=aaf7c86585f4 -->
 ![The finished LED chaser: its schematic above, the routed two-layer board below](../assets/wf/docs/tutorial/index/finished-tutorial-project.png)
 <!-- /wf:out -->
 
@@ -129,7 +129,7 @@ steps:
 - wait: 3
 brief_sha256: 4f9268199d486c1b
 -->
-<!-- wf:out id=create-the-tutorial-project sha=cd020824a3b7 -->
+<!-- wf:out id=create-the-tutorial-project sha=7a7bf11159ff -->
 <video controls muted playsinline preload="metadata" src="../assets/wf/docs/tutorial/index/create-the-tutorial-project.mp4" title="File → New → New Project, the folder, the name led_chaser, Create"></video>
 <!-- /wf:out -->
 
@@ -194,7 +194,7 @@ capture:
     h: 784
 brief_sha256: 1c1aa1a61701ba4f
 -->
-<!-- wf:out id=completed-schematic sha=cca77a047172 -->
+<!-- wf:out id=completed-schematic sha=a575dd9d06ee -->
 ![The LED chaser schematic — supply and PWR_FLAGs, the NE555 clock, the 74HC4017 with its ten LEDs, and the mounting holes](../assets/wf/docs/tutorial/index/completed-schematic.png)
 <!-- /wf:out -->
 
@@ -299,7 +299,7 @@ steps:
 - wait: 2.5
 brief_sha256: 52723884434238f7
 -->
-<!-- wf:out id=fix-one-erc-issue sha=c06738cf184f -->
+<!-- wf:out id=fix-one-erc-issue sha=4e9f08979b92 -->
 <video controls muted playsinline preload="metadata" src="../assets/wf/docs/tutorial/index/fix-one-erc-issue.mp4" title="ERC lists the broken clock wire: U2 pin 14 (CLK) is not connected. The row shows the pin, W draws the missing wire, and Run ERC comes back clean."></video>
 <!-- /wf:out -->
 
@@ -350,7 +350,7 @@ setup:
 - wait: 1
 brief_sha256: 1994162bd8e78464
 -->
-<!-- wf:out id=pcb-after-schematic-update sha=3425c62c3dcb -->
+<!-- wf:out id=pcb-after-schematic-update sha=c46eb1a61493 -->
 ![Right after Update Schematic to PCB and the outline import — 25 footprints in a grid, the ratsnest, and the 50 × 60 mm board](../assets/wf/docs/tutorial/index/pcb-after-schematic-update.png)
 <!-- /wf:out -->
 
@@ -461,7 +461,7 @@ steps:
 - wait: 3
 brief_sha256: 28cdc790b934ecdc
 -->
-<!-- wf:out id=route-the-led-chaser sha=e5b7ddad9a31 -->
+<!-- wf:out id=route-the-led-chaser sha=89b86192c7e1 -->
 <video controls muted playsinline preload="metadata" src="../assets/wf/docs/tutorial/index/route-the-led-chaser.mp4" title="C4 to U2 pin 16 routed by hand, then Auto-route (Ctrl+Shift+W): 26 of 27 connections, the last GND pin left to the ground pour"></video>
 <!-- /wf:out -->
 
@@ -496,7 +496,7 @@ setup:
 - wait: 0.5
 brief_sha256: f459d5fd6d5e5f48
 -->
-<!-- wf:out id=clean-dfm-drc-result sha=2dab14903deb -->
+<!-- wf:out id=clean-dfm-drc-result sha=95bcc63d807d -->
 ![The routed LED chaser with the DFM & DRC Check panel after a run — nothing to fix](../assets/wf/docs/tutorial/index/clean-dfm-drc-result.png)
 <!-- /wf:out -->
 
@@ -559,7 +559,7 @@ steps:
 - wait: 4
 brief_sha256: ef5c8aec0190aec9
 -->
-<!-- wf:out id=verify-the-fabrication-package sha=28137872ab5f -->
+<!-- wf:out id=verify-the-fabrication-package sha=cc6a5cab8e4d -->
 <video controls muted playsinline preload="metadata" src="../assets/wf/docs/tutorial/index/verify-the-fabrication-package.mp4" title="Revision A, Generate &amp; verify package: the package matches the design; its files, then the Gerber preview"></video>
 <!-- /wf:out -->
 

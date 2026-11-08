@@ -82,7 +82,7 @@ setup:
     y: 12
 brief_sha256: a3f4fa3a36ced761
 -->
-<!-- wf:out id=current-simulation-workbench sha=2708ce455587 -->
+<!-- wf:out id=current-simulation-workbench sha=73159e4a2b85 -->
 ![The Simulation Workbench on the NE555 blinker's simulation after a 3 s transient, with the 9 V supply under Setup → Sources](../assets/wf/docs/simulation/running-simulation/current-simulation-workbench.png)
 <!-- /wf:out -->
 
@@ -187,7 +187,7 @@ steps:
 - wait: 1.5
 brief_sha256: e97d218f3c617120
 -->
-<!-- wf:out id=select-runnable-simulation-blocks sha=0d6cd5de1815 -->
+<!-- wf:out id=select-runnable-simulation-blocks sha=8beeee568f52 -->
 <video controls muted playsinline preload="metadata" src="../assets/wf/docs/simulation/running-simulation/select-runnable-simulation-blocks.mp4" title="Blocks lists the circuits of the simulation with their readiness; None, Only runnable and Re-scan set what runs"></video>
 <!-- /wf:out -->
 
@@ -308,7 +308,7 @@ steps:
 - wait: 3
 brief_sha256: 434d6abc5a4a9a0b
 -->
-<!-- wf:out id=preflight-run-and-inspect sha=adef5208b0b6 -->
+<!-- wf:out id=preflight-run-and-inspect sha=6653ae1f4fd8 -->
 <video controls muted playsinline preload="metadata" src="../assets/wf/docs/simulation/running-simulation/preflight-run-and-inspect.mp4" title="Preflight on the NE555 blinker&#x27;s simulation: every part has a model, Run Simulation, then the waveforms under Signals"></video>
 <!-- /wf:out -->
 

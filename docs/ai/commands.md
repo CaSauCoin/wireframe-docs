@@ -17,7 +17,7 @@ setup:
 - wait: 1
 brief_sha256: 7b6bb049dcfb2f4c
 -->
-<!-- wf:out id=copilot-command-list sha=b5edb0b043a9 -->
+<!-- wf:out id=copilot-command-list sha=9e424c9d3151 -->
 ![Typing / in the Copilot chat lists the commands](../assets/wf/docs/ai/commands/copilot-command-list.png)
 <!-- /wf:out -->
 
@@ -83,8 +83,8 @@ steps:
   - Enter
 - wait: 5
 -->
-<!-- wf:out id=bom-of-the-planned-design sha=a3a6632a6317 -->
-<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/ai/commands/bom-of-the-planned-design.mp4" title="/bom on the NE555 blinker&#x27;s planned design — the BOM and what is unresolved, with no model call"></video>
+<!-- wf:out id=bom-of-the-planned-design sha=e23cbcf50f1f -->
+<video controls muted playsinline preload="metadata" src="../assets/wf/docs/ai/commands/bom-of-the-planned-design.mp4" title="/bom on the NE555 blinker&#x27;s planned design — the BOM and what is unresolved, with no model call"></video>
 <!-- /wf:out -->
 
 ### Resume a design run
@@ -142,7 +142,7 @@ setup:
 capture:
   window: AI Copilot Panel
 -->
-<!-- wf:out id=copilot-commands-on-the-pcb sha=88f42d75dcd4 -->
+<!-- wf:out id=copilot-commands-on-the-pcb sha=3c229ef01410 -->
 ![On the PCB, / offers the board's commands — review, findings, board, topology, layout](../assets/wf/docs/ai/commands/copilot-commands-on-the-pcb.png)
 <!-- /wf:out -->
 
@@ -164,8 +164,8 @@ steps:
   - Enter
 - wait: 6
 -->
-<!-- wf:out id=findings-on-the-board sha=f61d27764cb3 -->
-<video controls muted playsinline preload="metadata" src="../../assets/wf/docs/ai/commands/findings-on-the-board.mp4" title="/findings on the automotive buck converter — WireFrame&#x27;s own checks, listed with no model call"></video>
+<!-- wf:out id=findings-on-the-board sha=8764b674106a -->
+<video controls muted playsinline preload="metadata" src="../assets/wf/docs/ai/commands/findings-on-the-board.mp4" title="/findings on the automotive buck converter — WireFrame&#x27;s own checks, listed with no model call"></video>
 <!-- /wf:out -->
 
 ## Simulation workbench
@@ -205,7 +205,7 @@ setup:
 capture:
   window: AI Copilot Panel
 -->
-<!-- wf:out id=copilot-commands-in-the-simulation-workbench sha=eb8cd5d2b756 -->
+<!-- wf:out id=copilot-commands-in-the-simulation-workbench sha=dd90ae372c36 -->
 ![In the simulation workbench, / offers the simulation commands](../assets/wf/docs/ai/commands/copilot-commands-in-the-simulation-workbench.png)
 <!-- /wf:out -->
 
@@ -248,7 +248,7 @@ setup:
     text: /
 - wait: 1
 -->
-<!-- wf:out id=copilot-commands-in-the-library-workspace sha=c9c3429d8656 -->
+<!-- wf:out id=copilot-commands-in-the-library-workspace sha=1a1fa1de5510 -->
 ![In the Library Workspace, / offers the library commands — they work on the open part, the selection or the whole library](../assets/wf/docs/ai/commands/copilot-commands-in-the-library-workspace.png)
 <!-- /wf:out -->
 

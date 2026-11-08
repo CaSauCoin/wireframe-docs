@@ -58,7 +58,7 @@ steps:
 - wait: 2
 brief_sha256: ae328a0a2c365469
 -->
-<!-- wf:out id=find-and-place-a-symbol sha=040f099d6acc -->
+<!-- wf:out id=find-and-place-a-symbol sha=96ba382698e8 -->
 <video controls muted playsinline preload="metadata" src="../assets/wf/docs/schematic/placing-components/find-and-place-a-symbol.mp4" title="Filter the project library for 24LC, drag a third 24LC1025 EEPROM onto the sheet, press Esc — it becomes U5"></video>
 <!-- /wf:out -->
 

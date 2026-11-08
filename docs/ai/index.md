@@ -84,7 +84,7 @@ steps:
 - wait: 3
 brief_sha256: 78ff13376c9526fa
 -->
-<!-- wf:out id=start-and-reopen-a-copilot-session sha=63a468b7e772 -->
+<!-- wf:out id=start-and-reopen-a-copilot-session sha=121410b100bb -->
 <video controls muted playsinline preload="metadata" src="../assets/wf/docs/ai/index/start-and-reopen-a-copilot-session.mp4" title="Start a new session with +, then reopen the NE555 design session from History"></video>
 <!-- /wf:out -->
 
@@ -140,7 +140,7 @@ setup:
 - open_project
 - panel: ai
 - wait: 2
-- click: //AI Copilot Panel/{fa:tasks} Design Plan
+- click: //AI Copilot Panel/###AiPlan
 - wait: 2
 - action:
     action: mouse_move_to
@@ -148,7 +148,7 @@ setup:
     y: 12
 brief_sha256: cf3dd64d95d11c33
 -->
-<!-- wf:out id=current-component-review-tabs sha=3f474734b2b3 -->
+<!-- wf:out id=current-component-review-tabs sha=bd8a5314bd76 -->
 ![The review window: status chips, the tabs, and BOM Components selected](../assets/wf/docs/ai/index/current-component-review-tabs.png)
 <!-- /wf:out -->
 

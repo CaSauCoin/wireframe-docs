@@ -105,9 +105,9 @@ setup:
 - wait: 2
 - click: //Library Manager/{fa:plus}  Add library  {fa:caret-down}
 - wait: 1
-brief_sha256: 3364480ac0fba1a9
+brief_sha256: 39f9feedd614afad
 -->
-<!-- wf:out id=supported-import-commands sha=3d1b072c7b9c -->
+<!-- wf:out id=supported-import-commands sha=99ff4c89048d -->
 ![Library Manager → Add library: KiCad folders and files, and Altium libraries](../assets/wf/docs/reference/file-formats/supported-import-commands.png)
 <!-- /wf:out -->
 

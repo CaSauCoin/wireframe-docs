@@ -34,9 +34,9 @@ setup:
     action: mouse_move_to
     x: 1000
     y: 12
-brief_sha256: b68c58cfdbecfa22
+brief_sha256: 58a03545327416ed
 -->
-<!-- wf:out id=kicad-symbol-source-and-inventory sha=5a290a10d330 -->
+<!-- wf:out id=kicad-symbol-source-and-inventory sha=8b2240098dea -->
 ![Local Library Manager — KiCad symbol sources and the active inventory](../assets/wf/docs/libraries/symbols-library/kicad-symbol-source-and-inventory.png)
 <!-- /wf:out -->
 
@@ -118,7 +118,7 @@ steps:
 - wait: 4
 brief_sha256: 6f00fe6429c0a032
 -->
-<!-- wf:out id=assign-and-verify-a-footprint sha=1b9fd1a50657 -->
+<!-- wf:out id=assign-and-verify-a-footprint sha=d67b3b20e1ab -->
 <video controls muted playsinline preload="metadata" src="../assets/wf/docs/libraries/symbols-library/assign-and-verify-a-footprint.mp4" title="R1 (10 kΩ) shows its linked R_0805_2012Metric footprint in Properties; Link Footprint &amp; Save to File links the .kicad_mod you pick and saves it with the part"></video>
 <!-- /wf:out -->
 

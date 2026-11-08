@@ -29,7 +29,7 @@ setup:
     x: 1000
     y: 12
 -->
-<!-- wf:out id=library-workspace-overview sha=703947e206d8 -->
+<!-- wf:out id=library-workspace-overview sha=ac8d622047fe -->
 ![The Library Workspace — the library's parts, the open part's details, and its symbol in the embedded editor](../assets/wf/docs/libraries/library-workspace/library-workspace-overview.png)
 <!-- /wf:out -->
 
@@ -95,7 +95,7 @@ steps:
 - scroll: -20
 - wait: 3
 -->
-<!-- wf:out id=library-review-of-one-part sha=3d2c152f011f -->
+<!-- wf:out id=library-review-of-one-part sha=e5379ca9a211 -->
 <video controls muted playsinline preload="metadata" src="../assets/wf/docs/libraries/library-workspace/library-review-of-one-part.mp4" title="/review on one part of the KLP4e library — the checks that need no model"></video>
 <!-- /wf:out -->
 

@@ -44,9 +44,9 @@ setup:
     action: mouse_move_to
     x: 1000
     y: 12
-brief_sha256: 2e31690f8949c65b
+brief_sha256: 6fc8661ecbf0297a
 -->
-<!-- wf:out id=wire-attached-to-two-component-pins sha=87a0614170ad -->
+<!-- wf:out id=wire-attached-to-two-component-pins sha=21c9c5a75654 -->
 ![The 16 MHz crystal Y2 wired to its two 22 pF load capacitors, C2 and C3](../assets/wf/docs/schematic/wiring-and-nets/wire-attached-to-two-component-pins.png)
 <!-- /wf:out -->
 
@@ -116,7 +116,7 @@ setup:
 - wait: 1
 brief_sha256: ff7b6c01e4713d55
 -->
-<!-- wf:out id=junction-compared-with-a-wire-crossing sha=f83c3da25dce -->
+<!-- wf:out id=junction-compared-with-a-wire-crossing sha=44f6dc93a215 -->
 ![Left: a junction dot joins three wires into one net. Right: the GND wire crosses the same wire with no dot, so the two stay separate](../assets/wf/docs/schematic/wiring-and-nets/junction-compared-with-a-wire-crossing.png)
 <!-- /wf:out -->
 
@@ -194,7 +194,7 @@ setup:
     y: 12
 brief_sha256: 25131546c5754268
 -->
-<!-- wf:out id=power-symbols-on-a-decoupling-capacitor sha=100be9c1d30e -->
+<!-- wf:out id=power-symbols-on-a-decoupling-capacitor sha=4c99cb82c2b3 -->
 ![C5 (100 nF) across the supply beside the battery BT1: a Vcc net label above, a GND symbol below, PWR_FLAG on both rails](../assets/wf/docs/schematic/wiring-and-nets/power-symbols-on-a-decoupling-capacitor.png)
 <!-- /wf:out -->
 

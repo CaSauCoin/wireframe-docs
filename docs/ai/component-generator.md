@@ -39,7 +39,7 @@ setup:
 - open_project
 - panel: ai
 - wait: 2
-- click: //AI Copilot Panel/{fa:tasks} Design Plan
+- click: //AI Copilot Panel/###AiPlan
 - wait: 2
 - action:
     action: mouse_move_to
@@ -47,7 +47,7 @@ setup:
     y: 12
 brief_sha256: 9b7e360b92b75ea6
 -->
-<!-- wf:out id=missing-component-card-and-ai-gen-action sha=3f474734b2b3 -->
+<!-- wf:out id=missing-component-card-and-ai-gen-action sha=2f338b06ceab -->
 ![A card that needs work: Create, Import, and the /fix hint](../assets/wf/docs/ai/component-generator/missing-component-card-and-ai-gen-action.png)
 <!-- /wf:out -->
 

@@ -120,7 +120,7 @@ setup:
     y: 12
 brief_sha256: 4f4413eebcc797d7
 -->
-<!-- wf:out id=testbench-with-load-and-assertion sha=f385bb822d77 -->
+<!-- wf:out id=testbench-with-load-and-assertion sha=501490478baa -->
 ![The Testbench of the NE555 blinker's simulation: a 1 kΩ load on the timer output and a frequency check that passes](../assets/wf/docs/simulation/testbenches-and-measurements/testbench-with-load-and-assertion.png)
 <!-- /wf:out -->
 

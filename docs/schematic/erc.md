@@ -49,9 +49,9 @@ setup:
     action: mouse_move_to
     x: 1000
     y: 12
-brief_sha256: 4c536a2fc4099df8
+brief_sha256: 12b0cfe80ea5411c
 -->
-<!-- wf:out id=erc-results-and-highlighted-issue sha=21c7e3e998de -->
+<!-- wf:out id=erc-results-and-highlighted-issue sha=7ff5c31a2130 -->
 ![ERC on the KLP4e datalogger as published: 18 errors, 9 warnings, each with its net and pins](../assets/wf/docs/schematic/erc/erc-results-and-highlighted-issue.png)
 <!-- /wf:out -->
 
@@ -149,7 +149,7 @@ steps:
 - wait: 3
 brief_sha256: d657ce8f2cad2a1b
 -->
-<!-- wf:out id=fix-and-re-run-erc sha=80f821c6f5c5 -->
+<!-- wf:out id=fix-and-re-run-erc sha=ae0d17337530 -->
 <video controls muted playsinline preload="metadata" src="../assets/wf/docs/schematic/erc/fix-and-re-run-erc.mp4" title="Remove the SDA label at U2 and ERC goes from 18 to 19 errors; undo, re-run, and it is back to 18"></video>
 <!-- /wf:out -->
 

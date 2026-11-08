@@ -39,7 +39,7 @@ setup:
     y: 12
 brief_sha256: 544f6c3c7ff7fdf1
 -->
-<!-- wf:out id=a-filled-copper-zone sha=388efacb2ee7 -->
+<!-- wf:out id=a-filled-copper-zone sha=f1debb25656f -->
 ![A filled GND zone: clearance around other nets, thermal spokes to GND pads](../assets/wf/docs/pcb/zones-and-planes/a-filled-copper-zone.png)
 <!-- /wf:out -->
 
@@ -112,7 +112,7 @@ steps:
 - wait: 3
 brief_sha256: 669b938da1a35385
 -->
-<!-- wf:out id=fill-a-ground-plane-from-the-zone-manager sha=9786509f1af2 -->
+<!-- wf:out id=fill-a-ground-plane-from-the-zone-manager sha=4e63305b5d4b -->
 <video controls muted playsinline preload="metadata" src="../assets/wf/docs/pcb/zones-and-planes/fill-a-ground-plane-from-the-zone-manager.mp4" title="Zone Manager on the buck converter: the F.Cu GND pour fills 48 % at 19.7 mil clearance; 10 mil and Refill take it to 58 %, and DFM stays clean"></video>
 <!-- /wf:out -->
 
@@ -238,7 +238,7 @@ setup:
     y: 12
 brief_sha256: 2cc4a83854365dd4
 -->
-<!-- wf:out id=overlapping-zones-with-different-priorities sha=c7a6aeff4f0b -->
+<!-- wf:out id=overlapping-zones-with-different-priorities sha=24189e184f18 -->
 ![Zone Manager — the board's GND pours with their layer, priority and clearance](../assets/wf/docs/pcb/zones-and-planes/overlapping-zones-with-different-priorities.png)
 <!-- /wf:out -->
 

@@ -32,7 +32,7 @@ setup:
     y: 12
 brief_sha256: 34762e309e0ad239
 -->
-<!-- wf:out id=completed-schematic-title-block sha=4a62ffcaa745 -->
+<!-- wf:out id=completed-schematic-title-block sha=256acd150044 -->
 ![The KLP4e main sheet: A4 frame with zone marks, five titled blocks, and the title block bottom right](../assets/wf/docs/schematic/templates/completed-schematic-title-block.png)
 <!-- /wf:out -->
 
@@ -81,7 +81,7 @@ setup:
     y: 12
 brief_sha256: 0cfe94e2682e4ca2
 -->
-<!-- wf:out id=title-block-properties sha=60ecc7dbb92a -->
+<!-- wf:out id=title-block-properties sha=78808ff2198f -->
 ![Properties → Document Settings → Title Block Info beside the title block it fills](../assets/wf/docs/schematic/templates/title-block-properties.png)
 <!-- /wf:out -->
 
@@ -122,7 +122,7 @@ setup:
     y: 12
 brief_sha256: a3c155b78bae985c
 -->
-<!-- wf:out id=page-settings-modal sha=a89ef2bd23a4 -->
+<!-- wf:out id=page-settings-modal sha=37bbf1abc775 -->
 ![Page Settings for a schematic sheet](../assets/wf/docs/schematic/templates/page-settings-modal.png)
 <!-- /wf:out -->
 

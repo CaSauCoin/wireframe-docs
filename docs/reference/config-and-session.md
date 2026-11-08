@@ -97,9 +97,9 @@ setup:
     action: mouse_move_to
     x: 1000
     y: 12
-brief_sha256: be232845023a8ed3
+brief_sha256: 88c3a6d572ac6526
 -->
-<!-- wf:out id=preferences-categories sha=6187da44ad80 -->
+<!-- wf:out id=preferences-categories sha=9d6bd85eb69d -->
 ![Preferences with its category list](../assets/wf/docs/reference/config-and-session/preferences-categories.png)
 <!-- /wf:out -->
 

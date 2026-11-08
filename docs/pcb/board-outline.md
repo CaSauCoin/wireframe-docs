@@ -83,7 +83,7 @@ setup:
     y: 12
 brief_sha256: bbb0125a567efde2
 -->
-<!-- wf:out id=cad-outline-import-verdict sha=13e1a65bca0d -->
+<!-- wf:out id=cad-outline-import-verdict sha=bda076a8a07b -->
 ![Import CAD File with Import as BOARD OUTLINE ticked and the verdict](../assets/wf/docs/pcb/board-outline/cad-outline-import-verdict.png)
 <!-- /wf:out -->
 

@@ -34,9 +34,9 @@ setup:
     action: mouse_move_to
     x: 1000
     y: 12
-brief_sha256: 18e2a7efa4ab9d2e
+brief_sha256: 38a24bb546d06ed7
 -->
-<!-- wf:out id=footprint-source-and-active-inventory sha=5a290a10d330 -->
+<!-- wf:out id=footprint-source-and-active-inventory sha=d30c5fe3c0d1 -->
 ![Local Library Manager with the project's KiCad library folders loaded](../assets/wf/docs/libraries/footprints-library/footprint-source-and-active-inventory.png)
 <!-- /wf:out -->
 
@@ -81,9 +81,9 @@ setup:
     action: mouse_move_to
     x: 1000
     y: 12
-brief_sha256: a8d5ea63c48a9392
+brief_sha256: 47160c2b5a16ef4f
 -->
-<!-- wf:out id=pcb-footprint-editor sha=d804142997b5 -->
+<!-- wf:out id=pcb-footprint-editor sha=f41cb5d499d5 -->
 ![Footprint Library Editor with an 8-pin dual-row package](../assets/wf/docs/libraries/footprints-library/pcb-footprint-editor.png)
 <!-- /wf:out -->
 

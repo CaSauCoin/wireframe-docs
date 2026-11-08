@@ -35,9 +35,9 @@ setup:
     action: mouse_move_to
     x: 1000
     y: 12
-brief_sha256: b1fad8de01dc06c6
+brief_sha256: 6152e8edb3a609f5
 -->
-<!-- wf:out id=sheet-properties-and-title-block sha=e5f7e768b196 -->
+<!-- wf:out id=sheet-properties-and-title-block sha=506ea31ba01d -->
 ![Document Settings beside the KLP4e title block: the Title field holds ${project_name}, and the block shows the project name in its place](../assets/wf/docs/schematic/properties-and-attributes/sheet-properties-and-title-block.png)
 <!-- /wf:out -->
 
@@ -104,7 +104,7 @@ steps:
 - wait: 2
 brief_sha256: 7085671e0ff8e91c
 -->
-<!-- wf:out id=edit-and-align-component-text sha=56fb45440f2e -->
+<!-- wf:out id=edit-and-align-component-text sha=8e9f698e7997 -->
 <video controls muted playsinline preload="metadata" src="../assets/wf/docs/schematic/properties-and-attributes/edit-and-align-component-text.mp4" title="Select R5, change its value from 330 Ω to 470 Ω in Properties, then undo"></video>
 <!-- /wf:out -->
 
