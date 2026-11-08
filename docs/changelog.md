@@ -81,8 +81,7 @@ description: What is new in WireFrame EDA 2.0.1 — an MCP server for your own a
 
 ### AI Copilot
 
-- **Who pays**: your plan's WireFrame credit, or your own key at OpenRouter, DeepSeek or Google AI — each provider with its own key, refused before sending when the choice and the key disagree. See [Models, Credit and Your Data](ai/models-and-credits.md).
-- **On WireFrame credit, WireFrame AI picks the model for each task.** The Copilot panel shows **WireFrame AI** and the credit left; there are no model ids to choose or look after.
+- **The AI Copilot runs on WireFrame AI and your plan's AI credit.** WireFrame AI picks the model for each task; the Copilot panel shows **WireFrame AI** and the credit left, with no keys or model ids to set up. See [AI Credit and Your Data](ai/models-and-credits.md).
 - The AI knows what you changed in what it made: a change that keeps the checks is your decision and is never reverted; a change that breaks a check is pointed out and asked about.
 - **The agent sees what it draws**: a picture of the schematic it drew and of the board it lays out, each block in its own colour. See [How the agent understands a project](ai/how-the-agent-works.md).
 - **Board layout by block**: the agent places the board by schematic block, routes with its pairs laid as pairs, and keeps what you changed. See [Placement and Routing Assistant](ai/auto-placer-router.md).
@@ -96,7 +95,7 @@ description: What is new in WireFrame EDA 2.0.1 — an MCP server for your own a
 - Revisions that name a part by what it does ("the RS-485 transceiver") reach that part.
 - Wiring no longer waits for every confirmation: parts awaiting your look are wired, and their land problems are marked rather than parked.
 
-Measured in early October on 20 designs driven end to end through the real Copilot panel (36–106 parts, up to 597 pins: MCUs, an FPGA, SDRAM and eMMC, Ethernet, CAN/RS-485, a BLDC driver, a Raspberry Pi CM4 carrier): a requirement became a checked BOM and netlist in 6–17 minutes, and no design was left with nothing it could draw (two runs cut short by the model provider's quota were repeated).
+Measured in early October on 20 designs driven end to end through the real Copilot panel (36–106 parts, up to 597 pins: MCUs, an FPGA, SDRAM and eMMC, Ethernet, CAN/RS-485, a BLDC driver, a Raspberry Pi CM4 carrier): a requirement became a checked BOM and netlist in 6–17 minutes, and no design was left with nothing it could draw (two runs cut short by a usage quota were repeated).
 
 ### Parts and libraries
 
@@ -149,7 +148,7 @@ Measured in early October on 20 designs driven end to end through the real Copil
 - Component Review (**AI Planned BOM & Schematic Review**) with BOM, connections, blocks, Board Fit, System, netlist check, simulation, design analysis, and local-pool tabs.
 - Part repair and creation through `/fix <refdes> …` with an attached datasheet; the plan is shown before anything is written.
 - `/layout` for assisted placement, planes, vias, routing, and stitching on a copy of the board, applied only on request; `/board` and `/topology` for the board shape and multi-board products.
-- Provider presets and separate design and fast model tiers.
+- Separate tiers for design work and quick questions.
 
 ### Libraries and import
 

@@ -35,8 +35,8 @@ To use another one, sign one out — from that computer, from **Account & usage*
 
 ## Plans
 
-- **Free** starts the first time you sign in **from the desktop app**: schematic, PCB layout, 3D, DRC and DFM, SPICE and fabrication output, with no time limit. It has no AI Copilot (with or without your own model key), no MCP, and no High-Speed Workbench or Power Analyzer — those are not shown on Free.
-- **Max** and **Pro** add the AI Copilot — on a monthly WireFrame credit or on your own key (see [Models, Credit and Your Data](../ai/models-and-credits.md)) — MCP ([Use WireFrame from your own agent](../ai/mcp.md)), the High-Speed Workbench and the Power Analyzer, and more devices; **Enterprise** is by agreement.
+- **Free** starts the first time you sign in **from the desktop app**: schematic, PCB layout, 3D, DRC and DFM, SPICE and fabrication output, with no time limit. It has no AI Copilot, no MCP, and no High-Speed Workbench or Power Analyzer — those are not shown on Free.
+- **Max** and **Pro** add the AI Copilot — on a monthly AI credit (see [AI Credit and Your Data](../ai/models-and-credits.md)) — MCP ([Use WireFrame from your own agent](../ai/mcp.md)), the High-Speed Workbench and the Power Analyzer, and more devices; **Enterprise** is by agreement.
 - There is no trial.
 
 Prices and amounts are on the [pricing page](https://wireframe.com.vn/pricing). A plan's end date is counted on WireFrame's clock, not your computer's.
@@ -67,4 +67,4 @@ Installers for Windows, macOS on Apple Silicon and Linux are on [wireframe.com.v
 
 - [Install](../installation.md)
 - [FAQ & troubleshooting](../faq.md)
-- [Models, Credit and Your Data](../ai/models-and-credits.md)
+- [AI Credit and Your Data](../ai/models-and-credits.md)

@@ -17,7 +17,7 @@ Depending on the feature used, the local configuration can include:
 - Optional sign-in data, a device identifier, and AI provider settings.
 
 !!! warning "Contains private data"
-    The configuration can contain sign-in data and an AI API key. Never attach the complete file to an issue report or place it in source control.
+    The configuration contains your sign-in data and any distributor API keys. Never attach the complete file to an issue report or place it in source control.
 
 ## Change preferences safely
 
@@ -34,7 +34,7 @@ Open **Preferences → Preferences...** (++ctrl+comma++), pick a category on the
 | **Simulation** | Default analysis, transient defaults, engine executables |
 | **Libraries** | Library sources, online catalog, library cache folder |
 | **3D Viewer** | Board preview materials |
-| **AI Assistant** | Who pays (WireFrame credit or your own key), the credit left, and — with your own key — the key and the design and fast models |
+| **AI Assistant** | WireFrame AI and your plan's AI credit left |
 | **Updates** | Version, licence tier, and update check |
 
 For an important project, restart WireFrame once and verify that the setting persists.

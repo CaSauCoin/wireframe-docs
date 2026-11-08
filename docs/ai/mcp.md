@@ -239,4 +239,4 @@ The bridge your agent starts talks to WireFrame over a local socket in your own 
 - [MCP tool reference](mcp-tools.md) — the fourteen tools and their parameters
 - [What waits for your approval](approvals.md)
 - [Copilot commands](commands.md) — what `run_command` can run
-- [Models, credit & your data](models-and-credits.md) — what `chat` spends
+- [AI credit & your data](models-and-credits.md) — what `chat` spends

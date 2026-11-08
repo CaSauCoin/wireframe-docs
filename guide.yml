@@ -140,7 +140,7 @@ sections:
     description: From a written requirement to a checked BOM, netlist and sheets; reviews, repairs and memory.
     pages:
       - {page: ai/index.md, title: Overview}
-      - {page: ai/models-and-credits.md, title: "Models, credit & your data", status: next}
+      - {page: ai/models-and-credits.md, title: "AI credit & your data", status: next}
       - ai/commands.md
       - ai/design-agent.md
       - ai/placement-review.md

@@ -101,7 +101,7 @@ On first launch, open **Preferences → Preferences...** (++ctrl+comma++) and ch
 - **AI Assistant** — only when you intend to use Copilot;
 - **Updates** — the version and whether a newer one is ready.
 
-Never show AI API keys in screenshots or support reports.
+Never show sign-in details or API keys in screenshots or support reports.
 
 ### Short video — First-run verification
 

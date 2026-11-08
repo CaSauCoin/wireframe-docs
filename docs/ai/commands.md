@@ -89,11 +89,11 @@ steps:
 
 ### Resume a design run
 
-If a long run stops — the provider failed, a quota ran out, you changed the model — resume it instead of starting over. These are offered when a reply names them.
+If a long run stops — the AI service was busy, your credit ran out, the network dropped — resume it instead of starting over. These are offered when a reply names them.
 
 | Command | Resumes from |
 |---|---|
-| `/retry-research` | The retained original request, after you fix the provider |
+| `/retry-research` | The retained original request, once the cause is fixed |
 | `/retry-bom` | The retained research; only unresolved BOM rows are chosen again |
 | `/retry-bom-all` | The retained research; every BOM row is chosen again, confirmed parts included |
 | `/retry-netlist` | The current saved BOM; the wiring is generated again |

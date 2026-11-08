@@ -61,7 +61,7 @@ Some answers are never the agent's to give: the number of copper layers, splitti
 - **Not your other projects.** A project's own library is data of that project: the matcher refuses its files for another project, and a part reaches another project only after a person confirms it. Over MCP, an agent cannot reach a project other than the one open.
 - **Not a datasheet WireFrame did not download.** A paragraph the model *says* it read is never presented as evidence.
 - **Not what nobody stated.** Load currents are yours to state — WireFrame does not guess a chip's consumption. A stack-up nobody confirmed caps every high-speed result at **WARNING**, and a missing input such as a rise time or a load step makes a result **UNKNOWN**, never PASS. See [High-Speed Workbench](../high-speed/index.md#two-rules-behind-every-page) and [Power Analyzer](../power/power-analyzer.md#what-it-does-not-do).
-- **No copy in a cloud.** Your projects stay on your computer. WireFrame's AI service records which model and which task were used, and what it cost — not the contents of your messages or your design.
+- **No copy in a cloud.** Your projects stay on your computer. WireFrame AI records which task was run and what it cost — not the contents of your messages or your design.
 
 ## Your own agent, over MCP
 

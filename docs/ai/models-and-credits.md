@@ -1,47 +1,25 @@
 ---
-description: Choose who pays for WireFrame's AI Copilot — your plan's WireFrame credit or your own key at OpenRouter, DeepSeek or Google AI — see the credit you have left, and see exactly what is sent where.
+description: WireFrame's AI Copilot runs on WireFrame AI and your plan's AI credit — how credit works, what you see in the app, and exactly what is sent where.
 ---
 
-# Models, Credit and Your Data
+# AI Credit and Your Data
 
-The AI Copilot needs a language model. In WireFrame you decide **who pays for it** — your plan's WireFrame credit, or your own account at a model provider. This page covers the settings, the plans, and what leaves your computer.
+The AI Copilot runs on **WireFrame AI**, WireFrame's own AI service, and is paid from your plan's **AI credit**. There is no key to get and no model to choose: sign in with a Pro or Max plan and start. This page covers the credit, the plans, and what leaves your computer.
 
 Open the settings with **Preferences ▸ AI Assistant**, or the **⋮** menu of the AI Copilot panel ▸ **AI settings…**.
 
-## Who pays for the AI
+## Your AI credit
 
-The first card asks one question: **Pay with**
-
-| Choice | Who is billed | What you need |
-|---|---|---|
-| **WireFrame credit** | Your plan's AI credit | Nothing — sign in to WireFrame |
-| **OpenRouter** | Your OpenRouter account (one key for Gemini, Claude, GPT and many others) | An OpenRouter API key |
-| **DeepSeek** | Your DeepSeek account | A DeepSeek API key |
-| **Google AI** | Your Google AI Studio account | A Google AI API key |
-
-**With WireFrame credit**, the card shows **Credit left**. One credit is **$0.01 of model use**; it renews with your plan each month. **Refresh** asks again. If your plan has no AI credit, the card says so: choose a provider and use your own key.
-
-**With your own key**, paste it in **API key**, then **Save & test**; the **Connection** line says whether it works. **Get a key at …** names the provider's page. The provider bills you directly; WireFrame's AI service forwards the key with each request and **does not store it**. **Clear key** removes it from this computer.
-
-Each provider keeps its **own** key, so switching between them never sends one company's key to another. If the choice and the saved key disagree — a provider chosen with no key yet, or an old configuration pointing somewhere the service does not forward to — WireFrame refuses the request **before anything leaves the computer** and tells you what to fix, rather than billing the wrong party.
-
-## Models
-
-**On WireFrame credit there is nothing to choose.** WireFrame AI picks the model for each task — planning a design, repairing findings, generating parts, routing and answering questions — and your plan's credit pays for all of them. The **Models** card says so, and the AI Copilot panel shows **WireFrame AI** and the **credit left**.
-
-**With your own key**, you choose the models your provider serves:
-
-| Field | Used for |
-|---|---|
-| **Design model** | Planning the BOM and the netlist, repairing findings, generating library parts, reviewing a board — the model that decides circuits |
-| **Fast model** | Routing your request, naming, requirement research, board questions — classification and summaries |
+- The **AI Assistant** page shows **Credit left**. One credit is **$0.01 of AI use**; it renews with your plan each month. **Refresh** asks again.
+- The AI Copilot panel shows the same at a glance: **WireFrame AI · 3,999 credits** at the top of the panel. Hover over it for the details, or click it for the AI status.
+- **WireFrame AI picks the model for each task** — planning a design, repairing findings, generating parts, routing, answering questions. There is nothing to set up or look after.
 
 ## Plans and the AI
 
 | Plan | AI Copilot |
 |---|---|
-| **Free** | Schematic, PCB layout, 3D, SPICE and fabrication output, with no time limit — no AI Copilot (with or without your own key), no MCP, no High-Speed Workbench or Power Analyzer |
-| **Max**, **Pro** | The AI Copilot on a monthly WireFrame credit — or on your own key — and more devices |
+| **Free** | Schematic, PCB layout, 3D, SPICE and fabrication output, with no time limit — no AI Copilot, no MCP, no High-Speed Workbench or Power Analyzer |
+| **Max**, **Pro** | The AI Copilot on a monthly AI credit, and more devices |
 | **Enterprise** | By agreement |
 
 Current prices, credit amounts and device counts are on the [pricing page](https://wireframe.com.vn/pricing). There is no trial: the AI Copilot comes with a paid plan. The design tools — schematic, PCB, 3D, checks, simulation and fabrication export — never depend on the AI or on a paid plan.
@@ -50,22 +28,17 @@ Current prices, credit amounts and device counts are on the [pricing page](https
 
 - **Your projects stay on your computer.** WireFrame has no cloud copy of your design.
 - A Copilot request carries **only what that request needs**: your message, and the part of the design it is about — a block, a net, the BOM rows in question, a datasheet page.
-- Requests go through **WireFrame's AI service**, which adds WireFrame's instructions, checks your plan and spending limits, and forwards the request to the model provider. It records which model and which task were used, and what it cost — **not** the contents of your messages or your design.
-- The **model provider** — the one behind the WireFrame credit, or the one whose key you gave — processes the request under its own terms.
+- Requests go to **WireFrame AI**, which adds WireFrame's instructions and checks your plan and spending limits. It records which task was run and what it cost — **not** the contents of your messages or your design.
 - The design tools work **offline**. The app confirms your plan with WireFrame at least every 14 days; until then it keeps working without a network.
-
-!!! warning "Keys are secrets"
-    Do not put an API key in a screenshot, a shared project, a bug report or a configuration you send someone. If one leaks, revoke it at the provider.
 
 ## Troubleshooting
 
 | You see | What to do |
 |---|---|
-| *Your plan has no AI credit* | Choose OpenRouter, DeepSeek or Google AI and paste your own key — or upgrade to Max or Pro |
-| *Choose who pays above; until you do, AI requests stop on this computer* | An old configuration points at an endpoint the service does not forward to. Pick a choice in **Pay with** |
-| *… rejected this key* | The key is wrong, revoked or out of balance at the provider. Make a new one there |
+| *Your plan has no AI credit* | Upgrade to Pro or Max on the [pricing page](https://wireframe.com.vn/pricing) |
+| *This period's AI credit is used up* | Top up, or wait for your plan to renew |
 | *The WireFrame AI service is busy right now* | Wait a minute and ask again; WireFrame also retries by itself |
-| A model returns empty answers (own key) | Pick another model in **Models** |
+| *Sign in to WireFrame to use the AI* | Sign in from the account menu; your session may have expired |
 
 ## See also
 
