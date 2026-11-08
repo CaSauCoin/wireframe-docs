@@ -82,6 +82,7 @@ description: What is new in WireFrame EDA 2.0.1 — an MCP server for your own a
 ### AI Copilot
 
 - **Who pays**: your plan's WireFrame credit, or your own key at OpenRouter, DeepSeek or Google AI — each provider with its own key, refused before sending when the choice and the key disagree. See [Models, Credit and Your Data](ai/models-and-credits.md).
+- **On WireFrame credit, WireFrame AI picks the model for each task.** The Copilot panel shows **WireFrame AI** and the credit left; there are no model ids to choose or look after.
 - The AI knows what you changed in what it made: a change that keeps the checks is your decision and is never reverted; a change that breaks a check is pointed out and asked about.
 - **The agent sees what it draws**: a picture of the schematic it drew and of the board it lays out, each block in its own colour. See [How the agent understands a project](ai/how-the-agent-works.md).
 - **Board layout by block**: the agent places the board by schematic block, routes with its pairs laid as pairs, and keeps what you changed. See [Placement and Routing Assistant](ai/auto-placer-router.md).

@@ -1,10 +1,10 @@
 ---
-description: Choose who pays for WireFrame's AI Copilot — your plan's WireFrame credit or your own key at OpenRouter, DeepSeek or Google AI — pick the design and fast models, and see exactly what is sent where.
+description: Choose who pays for WireFrame's AI Copilot — your plan's WireFrame credit or your own key at OpenRouter, DeepSeek or Google AI — see the credit you have left, and see exactly what is sent where.
 ---
 
 # Models, Credit and Your Data
 
-The AI Copilot needs a language model. In WireFrame you decide **who pays for it** — your plan's WireFrame credit, or your own account at a model provider — and which models do the work. This page covers the settings, the plans, and what leaves your computer.
+The AI Copilot needs a language model. In WireFrame you decide **who pays for it** — your plan's WireFrame credit, or your own account at a model provider. This page covers the settings, the plans, and what leaves your computer.
 
 Open the settings with **Preferences ▸ AI Assistant**, or the **⋮** menu of the AI Copilot panel ▸ **AI settings…**.
 
@@ -27,12 +27,14 @@ Each provider keeps its **own** key, so switching between them never sends one c
 
 ## Models
 
+**On WireFrame credit there is nothing to choose.** WireFrame AI picks the model for each task — planning a design, repairing findings, generating parts, routing and answering questions — and your plan's credit pays for all of them. The **Models** card says so, and the AI Copilot panel shows **WireFrame AI** and the **credit left**.
+
+**With your own key**, you choose the models your provider serves:
+
 | Field | Used for |
 |---|---|
 | **Design model** | Planning the BOM and the netlist, repairing findings, generating library parts, reviewing a board — the model that decides circuits |
 | **Fast model** | Routing your request, naming, requirement research, board questions — classification and summaries |
-
-On WireFrame credit the pickers offer the models the credit funds; a model that is not funded is flagged and fixed in one click. With your own key, any model your provider serves can be chosen.
 
 ## Plans and the AI
 
@@ -62,7 +64,8 @@ Current prices, credit amounts and device counts are on the [pricing page](https
 | *Your plan has no AI credit* | Choose OpenRouter, DeepSeek or Google AI and paste your own key — or upgrade to Max or Pro |
 | *Choose who pays above; until you do, AI requests stop on this computer* | An old configuration points at an endpoint the service does not forward to. Pick a choice in **Pay with** |
 | *… rejected this key* | The key is wrong, revoked or out of balance at the provider. Make a new one there |
-| A model returns empty answers | Pick another model in **Models**; on credit, use one the picker marks as funded |
+| *The WireFrame AI service is busy right now* | Wait a minute and ask again; WireFrame also retries by itself |
+| A model returns empty answers (own key) | Pick another model in **Models** |
 
 ## See also
 

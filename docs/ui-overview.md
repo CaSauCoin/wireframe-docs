@@ -249,7 +249,7 @@ brief_sha256: 5081b018a987adf6
 | **Simulation** | **Default analysis**, **Transient defaults** (stop time, time step), **Engines** (ngspice is built in; Xyce, LTspice, and an external ngspice are optional) |
 | **Libraries** | Library Manager, online catalog, loaded sources, and the library cache folder |
 | **3D Viewer** | Materials of the 3D board preview: solder mask, trace under mask, pad plating, silkscreen |
-| **AI Assistant** | Provider, endpoint, API key, design and fast models — see [AI Copilot](ai/index.md#configure-ai-access) |
+| **AI Assistant** | Who pays for the AI, the credit left, and — with your own key — the key and the models — see [AI Copilot](ai/index.md#configure-ai-access) |
 | **Updates** | Version, licence tier, and the update check |
 
 A search box at the top finds settings by keyword.

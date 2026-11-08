@@ -9,7 +9,7 @@ Open **Preferences → AI Assistant**, or the **⋮** menu of the AI Copilot pan
 - **WireFrame credit** — your plan's AI credit; nothing else to set up. The card shows the credit left (1 credit = $0.01 of model use).
 - **OpenRouter**, **DeepSeek** or **Google AI** — your own key at that provider, which bills you directly. Paste it, then **Save & test**.
 
-Then choose the **Design model** (plans the BOM and netlist, repairs findings, reviews a board — the one that decides circuits) and the **Fast model** (routing your request, research, board questions). Open **View → AI Copilot Chat** (++ctrl+space++) and start.
+On WireFrame credit there is nothing else to choose: WireFrame AI picks the model for each task, and the Copilot panel shows **WireFrame AI** and the credit left. With your own key, also choose the **Design model** (plans the BOM and netlist, repairs findings, reviews a board — the one that decides circuits) and the **Fast model** (routing your request, research, board questions). Open **View → AI Copilot Chat** (++ctrl+space++) and start.
 
 Everything about the choices, the plans and what is sent where is on [Models, Credit and Your Data](models-and-credits.md).
 

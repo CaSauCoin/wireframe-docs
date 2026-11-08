@@ -34,7 +34,7 @@ Open **Preferences → Preferences...** (++ctrl+comma++), pick a category on the
 | **Simulation** | Default analysis, transient defaults, engine executables |
 | **Libraries** | Library sources, online catalog, library cache folder |
 | **3D Viewer** | Board preview materials |
-| **AI Assistant** | Provider, endpoint, API key (hosted providers only), design and fast model ids |
+| **AI Assistant** | Who pays (WireFrame credit or your own key), the credit left, and — with your own key — the key and the design and fast models |
 | **Updates** | Version, licence tier, and update check |
 
 For an important project, restart WireFrame once and verify that the setting persists.
