@@ -14,7 +14,7 @@ It is installed beside WireFrame itself:
 
 | System | Where it is |
 |---|---|
-| Windows | `wf-mcp-server.exe`, in the `bin` folder of the WireFrame installation, next to `WireFrame.exe`. Right-click WireFrame in the Start menu → **Open file location** to find the folder. |
+| Windows | `wf-mcp-server.exe`, in the WireFrame installation folder, next to `WireFrame.exe`. Right-click WireFrame in the Start menu → **Open file location** to find the folder. |
 | macOS | `/Applications/WireFrameEDA.app/Contents/MacOS/wf-mcp-server` |
 | Linux | `/usr/bin/wf-mcp-server` — on your `PATH`, so `wf-mcp-server` alone works |
 
@@ -41,11 +41,11 @@ Add WireFrame under `mcpServers` — keep any servers already there:
 }
 ```
 
-On Windows, write the path with doubled backslashes: `"C:\\…\\bin\\wf-mcp-server.exe"`. Quit Claude Desktop completely and open it again; WireFrame appears among its connectors with fourteen tools. Open WireFrame **first**: started without it, the bridge connects, offers no tools, and says why — and it does not look again until Claude Desktop restarts it.
+On Windows, write the path with doubled backslashes: `"C:\\…\\WireFrame\\wf-mcp-server.exe"`. Quit Claude Desktop completely and open it again; WireFrame appears among its connectors with fourteen tools. Open WireFrame **first**: started without it, the bridge connects, offers no tools, and says why — and it does not look again until Claude Desktop restarts it.
 
 ### Or install it as an extension
 
-WireFrame also comes as a Claude Desktop extension — one `.mcpb` file holding the bridge, WireFrame's icon and the list of tools. If you have it, double-click it, drag it onto the Claude Desktop window, or use **Settings → Extensions → Advanced settings → Install Extension…**. Nothing to edit, and WireFrame shows with its own icon.
+WireFrame also comes as a Claude Desktop extension — one `.mcpb` file holding the bridge, WireFrame's icon and the list of tools. Get it from the [download page](https://wireframe.com.vn/download), below the three installers. Then double-click it, drag it onto the Claude Desktop window, or use **Settings → Extensions → Advanced settings → Install Extension…**. Nothing to edit, and WireFrame shows with its own icon.
 
 ![What is inside the WireFrame extension file](../img/ai/mcp-bundle.png)
 
