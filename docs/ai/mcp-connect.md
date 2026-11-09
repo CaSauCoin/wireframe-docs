@@ -8,6 +8,20 @@ Before you start:
 2. **Signed in, on Pro or Max.** MCP is not in Free.
 3. **WireFrame open, with the project open.** For the board tools, the board's tab should be the one in front.
 
+## Claude Desktop in five steps
+
+Follow them in this order:
+
+1. **Install the extension.** Get the `.mcpb` file from the [download page](https://wireframe.com.vn/download), then double-click it or drag it onto the Claude Desktop window.
+2. **Open WireFrame**, and sign in.
+3. **Turn the extension on in Claude.** In **Settings → Extensions → WireFrame EDA**, switch on **Enabled**.
+4. **Create your project**, or open an existing one. Claude works on the project that is open, and cannot open one for you.
+5. **Press Allow** on the card in WireFrame's AI panel. Nothing runs until you do, and each new connection asks again.
+
+WireFrame has to be open before step 3: the extension looks for it once, when it starts. If you turned the extension on first, open WireFrame, then quit Claude Desktop completely and open it again.
+
+Using another agent, or the config file instead of the extension? The sections below have the exact setup for each.
+
 ## Find the bridge
 
 It is installed beside WireFrame itself:
