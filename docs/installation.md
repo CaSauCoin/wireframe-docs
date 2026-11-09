@@ -10,7 +10,7 @@ Install WireFrame only from the official release channel and choose the package 
 | Package | `WireFrame_v<version>_Setup_Windows_x64.exe` | `WireFrame_v<version>_macOS.dmg` | `WireFrame_v<version>_<Distro>-<release>_amd64.deb` |
 | Graphics | OpenGL 3.3 or later | OpenGL 3.3 or later | OpenGL 3.3 or later |
 
-A graphics driver without OpenGL 3.3 support — some virtual machines and remote desktops — shows a blank or black window. Update the driver or run WireFrame on the host machine.
+WireFrame draws with OpenGL, which comes from the computer's graphics driver and is not part of the installer. Without OpenGL 3.3, WireFrame cannot open its window: see [Graphics driver](#graphics-driver).
 
 AI Copilot needs an internet connection to a hosted AI provider or a local endpoint; everything else works offline.
 
@@ -140,6 +140,23 @@ brief_sha256: fc44e3f2c570ac8b
 <!-- wf:out id=first-run-verification sha=63436c8127a7 -->
 <video controls muted playsinline preload="metadata" src="assets/wf/docs/installation/first-run-verification.mp4" title="Preferences, then a first empty project"></video>
 <!-- /wf:out -->
+
+## Graphics driver
+
+WireFrame needs OpenGL 3.3, and the graphics driver is what provides it. Without it WireFrame does not open: on Windows, a message titled **WireFrame EDA could not start** says so; on Linux, WireFrame exits and prints the reason in the terminal. Macs on Apple silicon include it.
+
+To update the driver on Windows:
+
+1. Open **Settings → Windows Update**, install the available updates, and look under **Advanced options → Optional updates** for driver updates.
+2. If that does not help, install the current driver from the maker of your graphics hardware: [Intel](https://www.intel.com/content/www/us/en/support/detect.html), [AMD](https://www.amd.com/en/support/download/drivers.html), or [NVIDIA](https://www.nvidia.com/en-us/drivers/). On a laptop, check the laptop maker's support page first.
+3. Restart the computer and start WireFrame again.
+
+On Linux, install your distribution's current graphics driver.
+
+| Where WireFrame runs | What to do |
+|---|---|
+| A virtual machine | Turn on 3D acceleration in the machine's display settings. If it has none, run WireFrame on the host. |
+| Remote Desktop | Start WireFrame on the computer itself first, then connect. A session started remotely may not reach the graphics hardware. |
 
 ## Updates
 
