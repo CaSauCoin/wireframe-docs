@@ -159,7 +159,7 @@ The agent reports WireFrame's own words. Here is what each one means:
 | "The account server could not be reached…" | WireFrame is offline. | Check the connection; the call was not counted. |
 | "Too many MCP calls just now…" | A burst over the fair-use rate. | Wait a minute. |
 
-Every refusal in this table costs nothing, with two exceptions: "No PCB is open." and "… is not one of the design tools this project offers" are the answers of a tool that ran and looked, so they count when the tool called is one that counts — a change to the design, or `call_tool` with a name that is not a design tool. What counts and what does not is on [the MCP page](mcp.md#how-calls-are-counted).
+Every refusal in this table costs nothing, with one exception: "No PCB is open." is the answer of a tool that ran and looked, so it counts when the tool called is one that counts (a change to the design). A `call_tool` naming a design tool that does not exist is given back: the answer ends "No call was counted." What counts and what does not is on [the MCP page](mcp.md#how-calls-are-counted).
 
 ## Next
 

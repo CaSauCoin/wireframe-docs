@@ -1,6 +1,6 @@
 # Use WireFrame from your own agent
 
-WireFrame speaks the [Model Context Protocol](https://modelcontextprotocol.io), so the agent you already work in — Claude, Codex, Cursor, or any other MCP client — can design the board open in front of you. It gets 29 tools of its own, with which it writes the BOM and the wiring, draws the sheets and hands jobs to WireFrame's own agent; and through one of them the design tools WireFrame's Copilot works with: the placer and the layout optimiser, the router's stages, copper pours, the power and signal-integrity solvers, the board check. On a real project with its schematic and board open that is **105 tools**.
+WireFrame speaks the [Model Context Protocol](https://modelcontextprotocol.io), so the agent you already work in — Claude, Codex, Cursor, or any other MCP client — can design the board open in front of you. It gets 29 tools of its own, with which it writes the BOM and the wiring, draws the sheets and hands jobs to WireFrame's own agent; and through one of them the design tools WireFrame's Copilot works with: the placer and the layout optimiser, the router's stages, copper pours, the power and signal-integrity solvers, the board check. On a real project with its schematic and board open that is **116 tools**.
 
 It is not a second WireFrame. Every answer comes from the application you have open, on the project you have open, by the same code that answers the Copilot panel — an agent asking `score_board` over MCP gets the number the panel would show.
 
@@ -99,7 +99,7 @@ What your agent sees when it connects — each one with its parameters is on the
 
 ## The design tools
 
-Which ones are offered follows what is open — the board tools need a board, the planned-design tools a planned design, and `lookup_part_catalog` your own DigiKey or Mouser keys. On a real project with its schematic and board open there are 105. `list_design_tools` gives the list as it stands, one line each, and any one tool in full with its parameters; the resource `wireframe://tools` holds the same. Neither costs a call.
+Which ones are offered follows what is open — the board tools need a board, the planned-design tools a planned design, and `lookup_part_catalog` your own DigiKey or Mouser keys. On a real project with its schematic and board open there are 116. `list_design_tools` gives the list as it stands, one line each, and any one tool in full with its parameters; the resource `wireframe://tools` holds the same. Neither costs a call.
 
 ### Lay the board out
 
@@ -286,7 +286,7 @@ You pay for changes, not for looking. A call counts when it changes your design 
 
 The design tools that count through `call_tool` are the ones that change the design: `apply_layout`, `apply_placement`, `propose_layout_intent`, `close_open_connections`, `restore_board`, `repeat_channel` with `commit: true`, `set_layout_rules`, `set_copper_layers`, `edit_zones`, `set_board_sides`, `edit_board_stack`, `apply_topology`, `apply_board_split`, `apply_approved_patch`, `rollback_revision`, `power_setup_rail`, `power_apply_approved_fix`, `arrange_block` and `install_spice_model` — and `edit_board_shape` and `high_speed` whatever they are asked, because each can change the board as well as read it. Every other design tool only reads, measures or proposes, and is free.
 
-A call that counts still counts when it answers with an error: it did the work of finding out. That includes `call_tool` naming a design tool that does not exist — the call went to the application to find that out — so let your agent read `list_design_tools` first, which is free.
+A call that counts still counts when it answers with an error: it did the work of finding out. The one exception is `call_tool` naming a design tool that does not exist: nothing ran, the call is given back, and the answer ends "No call was counted." `list_design_tools`, which is free, gives the names.
 
 **WireFrame 2.0.1 and 2.0.2 count every call**, a read such as `is_busy` included. Update to stop paying for reads.
 
