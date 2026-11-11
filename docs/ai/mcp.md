@@ -302,7 +302,7 @@ The bridge your agent starts talks to WireFrame over a local socket in your own 
 ## Next
 
 - [Connect Claude, Codex, Cursor or another agent](mcp-connect.md)
-- [MCP tool reference](mcp-tools.md) — the fourteen tools and their parameters
+- [MCP tool reference](mcp-tools.md) — the 29 tools and their parameters
 - [What waits for your approval](approvals.md)
 - [Copilot commands](commands.md) — what `run_command` can run
 - [AI credit & your data](models-and-credits.md) — what `ask_penalty` spends

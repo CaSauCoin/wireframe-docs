@@ -164,5 +164,5 @@ Every refusal in this table costs nothing, with one exception: "No PCB is open."
 ## Next
 
 - [What every tool does](mcp.md)
-- [MCP tool reference](mcp-tools.md) — the fourteen tools and their parameters
+- [MCP tool reference](mcp-tools.md) — the 29 tools and their parameters
 - [Copilot commands](commands.md) — what `run_command` can run
