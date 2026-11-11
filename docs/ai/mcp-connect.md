@@ -4,7 +4,7 @@ Your agent reaches WireFrame through a small program that comes with it, `wf-mcp
 
 Before you start:
 
-1. **WireFrame 2.0.1 or later.** Earlier releases have no MCP server.
+1. **WireFrame 2.0.1 or later.** Earlier releases have no MCP server. This guide describes 2.0.3, where your agent takes command of the design and only the calls that change it are counted; 2.0.1 and 2.0.2 offer fourteen tools and count every call.
 2. **Signed in, on Pro or Max.** MCP is not in Free.
 3. **WireFrame open, with the project open.** For the board tools, the board's tab should be the one in front.
 
@@ -55,7 +55,7 @@ Add WireFrame under `mcpServers` — keep any servers already there:
 }
 ```
 
-On Windows, write the path with doubled backslashes: `"C:\\…\\WireFrame\\wf-mcp-server.exe"`. Quit Claude Desktop completely and open it again; WireFrame appears among its connectors with fourteen tools. Open WireFrame **first**: started without it, the bridge connects, offers no tools, and says why — and it does not look again until Claude Desktop restarts it.
+On Windows, write the path with doubled backslashes: `"C:\\…\\WireFrame\\wf-mcp-server.exe"`. Quit Claude Desktop completely and open it again; WireFrame appears among its connectors with 29 tools. Open WireFrame **first**: started without it, the bridge connects, offers no tools, and says why — and it does not look again until Claude Desktop restarts it.
 
 ### Or install it as an extension
 
@@ -132,11 +132,11 @@ It speaks MCP protocol versions `2025-06-18`, `2025-03-26` and `2024-11-05`, ans
 
 ## Allow it in WireFrame
 
-The first time your agent calls a tool, WireFrame's **AI panel** shows a card: *"claude-ai wants to work on this design over MCP"*, with **Allow** and **Decline**. Nothing runs until you press **Allow** — your agent is told it is waiting, and those calls are not counted. The permission lasts until the agent disconnects; the next connection asks again. Once allowed, one line in the panel says who is connected, with **Revoke** to take it back.
+The first time your agent calls a tool, WireFrame's **AI panel** shows a card: *"claude-ai wants to take command of this design over MCP"* — it decides the parts, the wiring and the layout, edits the schematic and the board, and directs WireFrame's own agent — with **Allow** and **Decline**. Nothing runs until you press **Allow** — your agent is told it is waiting, and those calls are not counted. The permission lasts until the agent disconnects; the next connection asks again. Once allowed, one line in the panel says which agent is in command, with **Revoke** to take it back.
 
 ## Check that it works
 
-Press **Allow** in WireFrame, then ask your agent: *"Is WireFrame busy?"* It calls `is_busy` and answers that the agent is idle — WireFrame is connected. Then ask what it can do on the open board: it reads the tool list from `wireframe://tools`, which costs no calls.
+Press **Allow** in WireFrame, then ask your agent: *"Is WireFrame busy?"* It calls `is_busy` and answers that the agent is idle — WireFrame is connected. Then ask what it can do on the open board: it lists the design tools with `list_design_tools`, or reads them from `wireframe://tools`, and neither costs a call. Before it designs anything, have it read the guide `start_here` with `read_guide`, which is free too.
 
 ## When it does not connect
 
@@ -150,7 +150,8 @@ The agent reports WireFrame's own words. Here is what each one means:
 | "another MCP client is already connected to this WireFrame" | One client at a time. | Close the other agent, or disconnect WireFrame there. |
 | "No PCB is open." | The project has no board yet, or it could not be opened. | Run `update_pcb` first, or open the board in WireFrame. |
 | "The agent is still working on the last request…" | A turn is running; a second one, or a change, would land in the middle of it. Not counted. | Poll `is_busy`, then `read_transcript`; or call `stop`. |
-| "… is not one of the design tools this project offers" | `call_tool` reaches only the tools listed in `wireframe://tools` for the open project. | Read the list and pick a tool from it. |
+| "Job … is still running, so nothing was sent…" | A long design tool is running as a job; a second one, or a change, would race it on the same board. Not counted. Reads keep working. | Call `job_status` for its answer, or `stop`. |
+| "… is not one of the design tools this project offers" | `call_tool` reaches only the tools `list_design_tools` lists for the open project. | Read the list and pick a tool from it. |
 | "MCP is not included in this plan. Pro and Max include it." | The account is on Free. | See the [plans](https://wireframe.com.vn/pricing#mcp). |
 | "This account's MCP allowance is spent…" | Pro's 500 calls this month are used. | Wait for the monthly reset, or add an MCP pack. |
 | "This build of WireFrame is older than the release MCP ships in…" | WireFrame is older than 2.0.1. | Update WireFrame. |
@@ -158,7 +159,7 @@ The agent reports WireFrame's own words. Here is what each one means:
 | "The account server could not be reached…" | WireFrame is offline. | Check the connection; the call was not counted. |
 | "Too many MCP calls just now…" | A burst over the fair-use rate. | Wait a minute. |
 
-Every refusal in this table costs nothing, with one exception: "No PCB is open." is a tool's own answer — the tool ran and looked — so it counts as a call. What counts and what does not is on [the MCP page](mcp.md#how-calls-are-counted).
+Every refusal in this table costs nothing, with two exceptions: "No PCB is open." and "… is not one of the design tools this project offers" are the answers of a tool that ran and looked, so they count when the tool called is one that counts — a change to the design, or `call_tool` with a name that is not a design tool. What counts and what does not is on [the MCP page](mcp.md#how-calls-are-counted).
 
 ## Next
 
