@@ -15,7 +15,7 @@ Follow them in this order:
 1. **Install the extension.** Get the `.mcpb` file from the [download page](https://wireframe.com.vn/download), then double-click it or drag it onto the Claude Desktop window.
 2. **Open WireFrame**, and sign in.
 3. **Turn the extension on in Claude.** In **Settings → Extensions → WireFrame EDA**, switch on **Enabled**.
-4. **Create your project**, or open an existing one. Claude works on the project that is open, and cannot open one for you.
+4. **Create your project**, or open an existing one — or let Claude do it: it can open a project, start a new one and switch between them. It works on the one that is active.
 5. **Press Allow** on the card in WireFrame's AI panel. Nothing runs until you do, and each new connection asks again.
 
 WireFrame has to be open before step 3: the extension looks for it once, when it starts. If you turned the extension on first, open WireFrame, then quit Claude Desktop completely and open it again.
@@ -55,7 +55,7 @@ Add WireFrame under `mcpServers` — keep any servers already there:
 }
 ```
 
-On Windows, write the path with doubled backslashes: `"C:\\…\\WireFrame\\wf-mcp-server.exe"`. Quit Claude Desktop completely and open it again; WireFrame appears among its connectors with 29 tools. Open WireFrame **first**: started without it, the bridge connects, offers no tools, and says why — and it does not look again until Claude Desktop restarts it.
+On Windows, write the path with doubled backslashes: `"C:\\…\\WireFrame\\wf-mcp-server.exe"`. Quit Claude Desktop completely and open it again; WireFrame appears among its connectors with 33 tools. Open WireFrame **first**: started without it, the bridge connects, offers no tools, and says why — and it does not look again until Claude Desktop restarts it.
 
 ### Or install it as an extension
 
@@ -164,5 +164,5 @@ Every refusal in this table costs nothing, with one exception: "No PCB is open."
 ## Next
 
 - [What every tool does](mcp.md)
-- [MCP tool reference](mcp-tools.md) — the 29 tools and their parameters
+- [MCP tool reference](mcp-tools.md) — the 33 tools and their parameters
 - [Copilot commands](commands.md) — what `run_command` can run

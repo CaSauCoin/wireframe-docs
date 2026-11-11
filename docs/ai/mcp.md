@@ -1,6 +1,6 @@
 # Use WireFrame from your own agent
 
-WireFrame speaks the [Model Context Protocol](https://modelcontextprotocol.io), so the agent you already work in — Claude, Codex, Cursor, or any other MCP client — can design the board open in front of you. It gets 29 tools of its own, with which it writes the BOM and the wiring, draws the sheets and hands jobs to WireFrame's own agent; and through one of them the design tools WireFrame's Copilot works with: the placer and the layout optimiser, the router's stages, copper pours, the power and signal-integrity solvers, the board check. On a real project with its schematic and board open that is **117 tools**.
+WireFrame speaks the [Model Context Protocol](https://modelcontextprotocol.io), so the agent you already work in — Claude, Codex, Cursor, or any other MCP client — can design the board open in front of you. It gets 33 tools of its own, with which it opens or starts the project, writes the BOM and the wiring, draws the sheets and hands jobs to WireFrame's own agent; and through one of them the design tools WireFrame's Copilot works with: the placer and the layout optimiser, the router's stages, copper pours, the power and signal-integrity solvers, the board check. On a real project with its schematic and board open that is **117 tools**.
 
 It is not a second WireFrame. Every answer comes from the application you have open, on the project you have open, by the same code that answers the Copilot panel — an agent asking `score_board` over MCP gets the number the panel would show.
 
@@ -57,9 +57,9 @@ Every tool that would move a part, lay copper or rewrite a rule works on a **cop
 
 Some changes wait for **you**. A high-speed patch or a power fix is applied only once you approve it in WireFrame's own window: `apply_approved_patch` and `power_apply_approved_fix` apply what a person approved, and nothing else. The rest is your agent's to decide: where a design tool's description says to ask the person first — the number of copper layers, splitting a product into several boards — your agent decides, because you put it in command. Tell it what you want before it starts.
 
-Some things it cannot do at all: it cannot reach a project other than the one open, it cannot export Gerbers (do that from the app), and only **one client** may be connected to a WireFrame at a time. A second one is told so and refused. Your agent's own subagents share its connection, so a reviewer can read the design while it works.
+It works on one project at a time, the **active** one: it can open another project, start a new one or close one whose work is saved, and every other tool then works on the project now active. It never closes a project with unsaved changes — that choice stays yours. Some things it cannot do at all: it cannot export Gerbers (do that from the app), and only **one client** may be connected to a WireFrame at a time. A second one is told so and refused. Your agent's own subagents share its connection, so a reviewer can read the design while it works.
 
-## The 29 tools
+## The 33 tools
 
 What your agent sees when it connects — each one with its parameters is on the [MCP tool reference](mcp-tools.md):
 
@@ -78,6 +78,10 @@ What your agent sees when it connects — each one with its parameters is on the
 | `edit_schematic` | Change the drawn schematic as one undo step; a change that introduces an error is refused |
 | `resolve_erc` | Apply WireFrame's own fixes to ERC items, or keep an item as designed, with the reason |
 | `save_design` | Write every open sheet and board to disk |
+| `list_projects` | The projects open in WireFrame, the active one marked; with `folder`, the projects saved under it |
+| `open_project` | Open a project, by its `.prjxml` or its folder, and make it the active one; already open, it only becomes active |
+| `new_project` | Create an empty project in a folder of its own and make it the active one |
+| `close_project` | Close an open project; refused while any of its sheets or boards has unsaved changes |
 | `ask_penalty` | Give WireFrame's own agent one bounded job; its answer ends with what WireFrame measured it changing |
 | `run_command` | Have WireFrame's agent run one of its slash commands, such as `/layout` or `/bom` |
 | `list_commands` | Every slash command offered right now, with what it does |
@@ -275,15 +279,16 @@ You pay for changes, not for looking. A call counts when it changes your design 
 
 | What happens | MCP calls |
 |---|---|
-| A change to the design: `submit_bom`, `bind_part`, `install_part`, `confirm_parts`, `confirm_all`, `submit_netlist`, `revise_design`, `submit_blocks`, `edit_schematic`, `resolve_erc`, `save_design`, `update_schematic`, `place_schematic`, `update_pcb` | 1 |
+| A change to the design: `new_project`, `submit_bom`, `bind_part`, `install_part`, `confirm_parts`, `confirm_all`, `submit_netlist`, `revise_design`, `submit_blocks`, `edit_schematic`, `resolve_erc`, `save_design`, `update_schematic`, `place_schematic`, `update_pcb` | 1 |
 | A design tool that changes the design, through `call_tool` (listed below) | 1 |
 | `ask_penalty`, `run_command` or `build_blocks` — WireFrame's agent does the work | 1, plus the AI credits its turn spends |
 | Any other design tool through `call_tool`: a layout proposed, evaluated or optimised and not applied, a solve, a check, a picture, a lookup | 0 |
 | `read_design`, `read_guide`, `design_status`, `job_status`, `list_design_tools`, `list_commands`, `read_transcript`, `is_busy` | 0 |
 | `stop`, `attach`, `new_session`, and `place_schematic` with `review_only` | 0 |
+| `list_projects`, `open_project`, `close_project` | 0 |
 | Connecting, listing the tools, reading `wireframe://tools` or a guide | 0 |
 | A call refused: no plan with MCP, the month's calls spent, WireFrame's agent busy, a job still running | 0 |
-| One of the 29 the app cannot offer right now, or a name that is not one of them | 0 |
+| One of the 33 the app cannot offer right now, or a name that is not one of them | 0 |
 
 The design tools that count through `call_tool` are the ones that change the design: `apply_layout`, `apply_placement`, `propose_layout_intent`, `close_open_connections`, `restore_board`, `repeat_channel` with `commit: true`, `set_layout_rules`, `set_copper_layers`, `edit_zones`, `set_board_sides`, `edit_board_stack`, `apply_topology`, `apply_board_split`, `apply_approved_patch`, `rollback_revision`, `power_setup_rail`, `power_apply_approved_fix`, `add_vias`, `arrange_block` and `install_spice_model` — and `edit_board_shape` and `high_speed` whatever they are asked, because each can change the board as well as read it. Every other design tool only reads, measures or proposes, and is free.
 
@@ -302,7 +307,7 @@ The bridge your agent starts talks to WireFrame over a local socket in your own 
 ## Next
 
 - [Connect Claude, Codex, Cursor or another agent](mcp-connect.md)
-- [MCP tool reference](mcp-tools.md) — the 29 tools and their parameters
+- [MCP tool reference](mcp-tools.md) — the 33 tools and their parameters
 - [What waits for your approval](approvals.md)
 - [Copilot commands](commands.md) — what `run_command` can run
 - [AI credit & your data](models-and-credits.md) — what `ask_penalty` spends

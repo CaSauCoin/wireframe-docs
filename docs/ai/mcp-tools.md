@@ -1,18 +1,18 @@
 ---
-description: The 29 tools WireFrame's MCP bridge offers your agent in 2.0.3 — what each one does, its parameters, whether it only reads or may change the design, and whether it counts as a call.
+description: The 33 tools WireFrame's MCP bridge offers your agent in 2.0.3 — what each one does, its parameters, whether it only reads or may change the design, and whether it counts as a call.
 ---
 
 # MCP Tool Reference
 
-When your agent connects to WireFrame, the bridge offers it **29 tools**. This page describes each one as WireFrame 2.0.3 reports it. The descriptions are the ones `wf-mcp-server --tools` of 2.0.3 prints, edited lightly for this guide; the parameters and the read-only marks are the ones each tool declares to your agent when it connects. WireFrame 2.0.1 and 2.0.2 offer fourteen of them, call `ask_penalty` `chat`, and count every call.
+When your agent connects to WireFrame, the bridge offers it **33 tools**. This page describes each one as WireFrame 2.0.3 reports it. The descriptions are the ones `wf-mcp-server --tools` of 2.0.3 prints, edited lightly for this guide; the parameters and the read-only marks are the ones each tool declares to your agent when it connects. WireFrame 2.0.1 and 2.0.2 offer fourteen of them, call `ask_penalty` `chat`, and count every call.
 
-`wf-mcp-server --tools` prints the list as JSON and needs no WireFrame running, so it is a quick way to see what your copy has (where the bridge is: [Find the bridge](mcp-connect.md#find-the-bridge)). It prints all 29. A connected agent is offered them only while WireFrame is open and signed in to a plan that includes MCP — started without WireFrame, or with nobody signed in, the bridge offers none and says why.
+`wf-mcp-server --tools` prints the list as JSON and needs no WireFrame running, so it is a quick way to see what your copy has (where the bridge is: [Find the bridge](mcp-connect.md#find-the-bridge)). It prints all 33. A connected agent is offered them only while WireFrame is open and signed in to a plan that includes MCP — started without WireFrame, or with nobody signed in, the bridge offers none and says why.
 
 None of them runs until you press **Allow** in WireFrame's AI panel — see [Allow it in WireFrame](mcp-connect.md#allow-it-in-wireframe). Only a call that changes the design, or puts Penalty, WireFrame's own agent, to work, counts as an MCP call; reading, checking and analysing are free. With `ask_penalty`, `run_command` and `build_blocks`, Penalty's job also spends AI credits, as it would if you had typed the request in the panel. See [How calls are counted](mcp.md#how-calls-are-counted).
 
 ## The design tools behind `call_tool`
 
-One of the 29, `call_tool`, reaches the design tools WireFrame's own Copilot works with. Which ones are offered follows what is open — the board tools need a board, the simulation tools a simulation — and on a real project with its schematic and board open there are **117**. They are listed by task on [Use WireFrame from your own agent](mcp.md#the-design-tools). `list_design_tools` gives the list as it stands, and one tool's full description with `name`; the resource `wireframe://tools` gives every tool's parameters. Both are free.
+One of the 33, `call_tool`, reaches the design tools WireFrame's own Copilot works with. Which ones are offered follows what is open — the board tools need a board, the simulation tools a simulation — and on a real project with its schematic and board open there are **117**. They are listed by task on [Use WireFrame from your own agent](mcp.md#the-design-tools). `list_design_tools` gives the list as it stands, and one tool's full description with `name`; the resource `wireframe://tools` gives every tool's parameters. Both are free.
 
 A design tool that can run for minutes — `propose_layout`, `optimize_layout`, `evaluate_layouts`, `propose_placement`, `propose_floorplans`, `close_open_connections`, `analyze_current`, `analyze_thermal`, `run_simulation`, `research_layout`, `repeat_channel` — answers within `wait_s` seconds (20 unless your agent asks for up to 50) or carries on as a job, and `job_status` gives its answer when it is done.
 
@@ -22,8 +22,8 @@ Each tool carries MCP's hints — `readOnlyHint`, and for the tools that are not
 
 | Marked | Tools |
 |---|---|
-| **Read-only** | `read_design`, `read_guide`, `design_status`, `list_commands`, `read_transcript`, `is_busy`, `list_design_tools`, `job_status` |
-| **Not read-only, not destructive** | `stop`, `attach`, `new_session` |
+| **Read-only** | `read_design`, `read_guide`, `design_status`, `list_projects`, `list_commands`, `read_transcript`, `is_busy`, `list_design_tools`, `job_status` |
+| **Not read-only, not destructive** | `open_project`, `new_project`, `close_project`, `stop`, `attach`, `new_session` |
 | **May change the design** (destructive) | `submit_bom`, `bind_part`, `install_part`, `confirm_parts`, `submit_netlist`, `revise_design`, `submit_blocks`, `edit_schematic`, `resolve_erc`, `save_design`, `ask_penalty`, `run_command`, `confirm_all`, `update_schematic`, `build_blocks`, `place_schematic`, `update_pcb`, `call_tool` |
 
 `ask_penalty`, `run_command` and `call_tool` are marked as changing the design because they can: what they do depends on what is asked. `/bom`, or `call_tool` with `score_board`, only reads; `/layout apply`, or `call_tool` with `apply_layout`, writes. What counts as a call follows what really happens, not the mark: `call_tool` with `score_board` is free.
@@ -82,6 +82,51 @@ The answer of a long tool that outlasted its call (optimize_layout, propose_layo
 |---|---|---|---|
 | `job` | string | no | The id the call gave, e.g. "j3" |
 | `wait_s` | integer | no | Seconds to wait first. Default 0 |
+
+## Choose the project
+
+Every other tool works on the active project. Listing, opening and closing projects are free; a new project is written to disk and counts as a call. `close_project` never discards anything: it refuses while any sheet or board of the project has unsaved changes, and names them.
+
+### `list_projects`
+
+*Read-only. Free.*
+
+The projects open in WireFrame, the active one marked: every other tool works on that one. With `folder`, also the WireFrame projects (.prjxml) under it, three levels deep.
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `folder` | string | no | An absolute folder to look in. Omit for the open projects only |
+
+### `open_project`
+
+*Changes which project is active, not a design. Free.*
+
+Open a WireFrame project and make it the active one, the project every other tool works on. `path` is its .prjxml, or a folder holding exactly one. A project already open only becomes active. Its sheets and board open with it.
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `path` | string | yes | Absolute path to the .prjxml, or to its folder |
+
+### `new_project`
+
+*Writes a new, empty project to disk. Counts as a call.*
+
+Create an empty WireFrame project at `<folder>/<name>/<name>.prjxml` and make it the active one, ready for submit_bom. Refused when that folder already holds a project: open_project it instead. **This writes to disk.**
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `folder` | string | yes | Absolute path of the folder the project's own folder goes in |
+| `name` | string | yes | The project's name: letters, digits, spaces, - and _ |
+
+### `close_project`
+
+*Changes which project is active, not a design. Free; refused while the project has unsaved changes.*
+
+Close an open project, the active one unless `path` names another. Refused while any of its sheets or boards has unsaved changes: call save_design first, or leave it to the person. Nothing is ever discarded, and the plan stays with the project for when it is opened again.
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `path` | string | no | The .prjxml of an open project. Omit for the active one |
 
 ## Write the design yourself
 
