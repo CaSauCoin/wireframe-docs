@@ -46,7 +46,7 @@ Every edit on the undo stack carries **who made it** — you or the AI. After ea
 
 ### The tools it may call, and the edits it may only propose
 
-The agent works through tools. About 110 are defined. Which ones are offered follows what is open — the board tools need a board, the simulation tools a simulation — and with a board open there are 95. They are listed by task on [Use WireFrame from your own agent](mcp.md#the-design-tools): the same tools your own agent reaches over MCP.
+The agent works through tools. Which ones are offered follows what is open — the board tools need a board, the simulation tools a simulation — and on a real project with its schematic and board open there are 117. They are listed by task on [Use WireFrame from your own agent](mcp.md#the-design-tools): the same tools your own agent reaches over MCP.
 
 Most of them read or measure. The ones that would change the design come in two kinds:
 
@@ -58,7 +58,7 @@ Some answers are never the agent's to give: the number of copper layers, splitti
 ## What it does not see
 
 - **Not the whole project with every question.** A request carries your message and the part of the design it is about — a block, a net, the BOM rows in question, a datasheet page. Mention a reference designator (`U1`) or a net name (`VBUS`) and only that part of the design is sent with it. See [What is sent, and where](models-and-credits.md#what-is-sent-and-where).
-- **Not your other projects.** A project's own library is data of that project: the matcher refuses its files for another project, and a part reaches another project only after a person confirms it. Over MCP, an agent cannot reach a project other than the one open.
+- **Not your other projects.** A project's own library is data of that project: the matcher refuses its files for another project, and a part reaches another project only after a person confirms it. Over MCP, an agent works on the active project; it can open another, but never sees two at once, and never closes one with unsaved changes.
 - **Not a datasheet WireFrame did not download.** A paragraph the model *says* it read is never presented as evidence.
 - **Not what nobody stated.** Load currents are yours to state — WireFrame does not guess a chip's consumption. A stack-up nobody confirmed caps every high-speed result at **WARNING**, and a missing input such as a rise time or a load step makes a result **UNKNOWN**, never PASS. See [High-Speed Workbench](../high-speed/index.md#two-rules-behind-every-page) and [Power Analyzer](../power/power-analyzer.md#what-it-does-not-do).
 - **No copy in a cloud.** Your projects stay on your computer. WireFrame AI records which task was run and what it cost — not the contents of your messages or your design.
@@ -67,12 +67,13 @@ Some answers are never the agent's to give: the number of copper layers, splitti
 
 An agent you run yourself — Claude, Codex, Cursor or another MCP client — reaches the same engines through `wf-mcp-server`, the bridge installed beside WireFrame. The bridge talks to the WireFrame you have open over a local socket in your own user folder; there is no network port. See [Connect Claude, Codex, Cursor or another agent](mcp-connect.md).
 
-It can work in two ways:
+It can work in three ways:
 
-- **Hand the request to WireFrame's agent** with `chat` or `run_command`. WireFrame's agent then works from everything above — the design graph, the contracts, the datasheets, the project's memory — with its own sequencing, and spends your plan's AI credits exactly as it would if you had typed the request in the panel.
+- **Write the design itself** with its own tools — `submit_bom`, `bind_part`, `submit_netlist`, `submit_blocks`, `edit_schematic` — and ask `design_status` whether it is done. The reasoning is your agent's, and such a call spends no AI credits.
+- **Hand a job to WireFrame's agent** with `ask_penalty` or `run_command`. WireFrame's agent then works from everything above — the design graph, the contracts, the datasheets, the project's memory — with its own sequencing, and spends your plan's AI credits exactly as it would if you had typed the request in the panel.
 - **Call the design tools itself** with `call_tool`. The reasoning is your agent's, and WireFrame supplies the measurements, by the same code that answers the Copilot panel: `score_board` over MCP gets the number the panel would show. Such a call spends no AI credits.
 
-Either way the same rules hold. Nothing runs until you press **Allow**; proposals work on a copy; a high-speed patch or a power fix waits for your approval in WireFrame's own window; and each step that applies is one undoable step, recorded against the client that made it. Your agent cannot reach another project or export Gerbers, and only one client is connected to a WireFrame at a time.
+Either way the same rules hold. Nothing runs until you press **Allow**; proposals work on a copy; a high-speed patch or a power fix waits for your approval in WireFrame's own window; and each step that applies is one undoable step, recorded against the client that made it. Your agent works on the active project — it can open another or start a new one, and closes one only when its work is saved — it cannot export Gerbers, and only one client is connected to a WireFrame at a time.
 
 What your agent does with an answer is between you and your agent's provider. For MCP itself, WireFrame sends your account only how many calls were used and the name of the agent that used them. See [Your design stays on your machine](mcp.md#your-design-stays-on-your-machine) and the [MCP tool reference](mcp-tools.md).
 
