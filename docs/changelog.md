@@ -1,5 +1,5 @@
 ---
-description: What is new in WireFrame EDA 2.0.1 — an MCP server for your own agent, Live Checks, push-and-shove routing, the High-Speed Workbench and Power Analyzer, multi-board products, KiCad and Altium round trips, IPC-2581 and ODB++ — and the release status of each version.
+description: What is new in WireFrame EDA 2.0.4 back to 2.0.1 — your own agent in command over MCP, datasheets read on every computer, an MCP server for your own agent, Live Checks, push-and-shove routing, the High-Speed Workbench and Power Analyzer, multi-board products, KiCad and Altium round trips, IPC-2581 and ODB++ — and the release status of each version.
 ---
 
 # Release Notes
@@ -12,9 +12,40 @@ description: What is new in WireFrame EDA 2.0.1 — an MCP server for your own a
 <!-- wf:after-release -->
 
 !!! info "Release status"
-    **WireFrame 2.0.1** is the current release — get it from the [download page](https://wireframe.com.vn/download). The notes below are what changed since **v1.3.8** (March 2026): 2.0.1 itself, then v1.5.47, the beta on the way to it.
+    **WireFrame 2.0.4** is the current release — get it from the [download page](https://wireframe.com.vn/download). The notes below are what changed since **v1.3.8** (March 2026): 2.0.4 back to 2.0.1, then v1.5.47, the beta on the way to 2.0.1.
 
 <!-- wf:end-release -->
+
+## 2.0.4
+
+- **Windows: datasheets are read on every computer.** In 2.0.3 the PDF readers that come with WireFrame could not start on a computer without Microsoft's Visual C++ Redistributable, so an attached datasheet gave no text and no page images. They now carry what they need. Nothing else changes from 2.0.3.
+
+## 2.0.3
+
+### Your agent in command
+
+- **The agent you connect over MCP now does the design work itself.** It opens or starts the project, writes the BOM, the wiring and the sheets, lays out the board and judges whether it is done; Penalty, WireFrame's own agent, takes the jobs it is handed with `ask_penalty`, `run_command` and `build_blocks`. See [Your agent in command](ai/mcp.md#your-agent-in-command).
+- **33 tools**, and through `call_tool` the **117** design tools WireFrame's Copilot works with, on a project with its schematic and board open. See [The 33 tools](ai/mcp.md#the-33-tools) and the [MCP tool reference](ai/mcp-tools.md).
+- **Reading is free.** Only a call that changes the design or puts Penalty to work counts as an MCP call; reading, checking and analysing do not. WireFrame 2.0.1 and 2.0.2 count every call. See [How calls are counted](ai/mcp.md#how-calls-are-counted).
+- **What an agent needs to finish a board, without a shell:** `read_guide` and the guides as MCP resources, `design_status` (ERC, checks, open connections, signal integrity and manufacturability in one answer), long tools that run as jobs so no client times out, checkpoints of the board, and checks of current, heat, noise and manufacturability. See [How your agent learns the way, and knows it is done](ai/mcp.md#how-your-agent-learns-the-way-and-knows-it-is-done).
+- **Projects:** `list_projects`, `open_project`, `new_project` and `close_project`. Closing never discards anything: it is refused while a sheet or board has unsaved changes.
+
+### Datasheets and the Copilot
+
+- **PDF datasheets are read on a customer's computer.** The Windows and macOS installers carry the PDF readers WireFrame uses; on Linux the package installs them from the distribution. Before, a datasheet came back empty unless the computer already had them.
+- A real board's requirements give a complete BOM; a part's **Import** reads the file before it says it worked, and **Manage** opens the Footprint Editor as well as the Symbol Editor.
+- **Account & usage** shows your MCP calls, and every allowance turns amber, then red, as it runs low.
+
+### Boards
+
+- Through-hole wire pads for power leads, rated by the wire their hole takes: 1.7 mm for 16 AWG (22 A), 2.5 mm for 12 AWG (60 A).
+- The 3D view orbits over the top and bottom, so a board can be turned over.
+
+## 2.0.2
+
+- **The AI panel holds still while the agent works:** a message near the top edge no longer jumps as new lines arrive.
+- **Windows without OpenGL:** instead of closing without a word, WireFrame says the graphics driver is missing and offers to open the [graphics driver guide](installation.md#graphics-driver).
+- The ngspice source published with the macOS installer is the version the application carries.
 
 ## 2.0.1
 
